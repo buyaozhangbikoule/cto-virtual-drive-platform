@@ -1,0 +1,22 @@
+{
+  "source": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/output/CTO第一月组会汇报_第5及12_14_15页修订_2026-09-06.pptx",
+  "sourceSha256": "40945aeb7871fa87239ab89a201e84dd4b96d9babfdbaea5fb4bbf1636430e44",
+  "expectedChanges": [
+    "ppt/slides/slide14.xml",
+    "ppt/slides/_rels/slide14.xml.rels",
+    "ppt/notesSlides/notesSlide14.xml"
+  ],
+  "newImage": "ppt/media/acceptance_candidate_20260909.png",
+  "outputs": [
+    {
+      "candidate": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_acceptance_update_20260909/build/candidate-full.pptx",
+      "final": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_acceptance_update_20260909/output/CTO组会汇报_第14页验收进展更新_2026-09-09.pptx",
+      "count": 28
+    },
+    {
+      "candidate": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_acceptance_update_20260909/build/candidate-single.pptx",
+      "final": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_acceptance_update_20260909/output/第14页_稳态验收与未解决风险_2026-09-09.pptx",
+      "count": 1
+    }
+  ]
+}

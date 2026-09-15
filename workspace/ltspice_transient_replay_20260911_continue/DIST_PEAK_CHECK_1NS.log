@@ -1,0 +1,20 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\ltspice_transient_replay_20260911_continue\DIST_PEAK_CHECK_1NS.cir
+Start Time: Fri Sep 11 20:03:45 2026
+Options:plotwinsize=0 reltol=0.0001 abstol=1p vntol=0.1u
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+reltol = 0.0001
+volttol = 1e-07
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 13.117 seconds.
+
+Files loaded:
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\ltspice_transient_replay_20260911_continue\DIST_PEAK_CHECK_1NS.cir
+
+port_vpp: PP(V(n_port) )=96.9185791016 FROM 0.0028 TO 0.003
+port_irms: RMS(I(Vprobe) )=0.0049342431522 FROM 0.0028 TO 0.003
+motional_power: AVG((I(Rm)*I(Rm)*7352.9411764705856) )=0.139332685189 FROM 0.0028 TO 0.003

@@ -1,0 +1,486 @@
+[
+  {
+    "page": 1,
+    "title": "CTO超声换能器虚拟阻抗建模与自适应驱动控制",
+    "visual": "封面，无实验图",
+    "seconds": 20,
+    "speech": "各位老师好，今天汇报第一月的虚拟电学建模与控制工作。现阶段已经有BVD建模、匹配交叉验证、参数扫描和控制原型的文件证据，但原计划的固定频率、周期扫频、相位闭环统一验收还没有全部完成。本汇报不把仿真假设写成实测器件参数，也不作声学输出或治疗效果结论。",
+    "pointer": "只讲封面题目、当前阶段和未完成边界，不需要额外图片。",
+    "limits": "应用背景为CTO。研究对象是可调参数的小信号线性等效模型，不是定型器械。",
+    "qa": "问：现在是否做出了治疗器械？答：没有。当前是可复现的虚拟电学仿真与控制原型。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md"
+    ],
+    "change": "统一开场完成状态，去掉全项目完成的暗示。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第1页  CTO超声换能器虚拟阻抗建模与自适应驱动控制\n\n【建议时长】20秒\n\n【本页实际图表】封面，无实验图\n\n【逐字讲稿】各位老师好，今天汇报第一月的虚拟电学建模与控制工作。现阶段已经有BVD建模、匹配交叉验证、参数扫描和控制原型的文件证据，但原计划的固定频率、周期扫频、相位闭环统一验收还没有全部完成。本汇报不把仿真假设写成实测器件参数，也不作声学输出或治疗效果结论。\n\n【本页指示顺序】只讲封面题目、当前阶段和未完成边界，不需要额外图片。\n\n【口径与限制】应用背景为CTO。研究对象是可调参数的小信号线性等效模型，不是定型器械。\n\n【教授追问与回答】问：现在是否做出了治疗器械？答：没有。当前是可复现的虚拟电学仿真与控制原型。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md"
+  },
+  {
+    "page": 2,
+    "title": "研究问题：参数漂移后，怎样选择受约束的电学工作点",
+    "visual": "左到右五节点研究流程示意",
+    "seconds": 40,
+    "speech": "本项目依次回答三个问题：BVD怎样描述频率响应，匹配和参数变化怎样改变阻抗及功率，以及三种控制方法在共同条件下怎样表现。页面流程从假设BVD、L型匹配和参数扰动，进入虚拟测量与选频保护。当前功率目标具体采用运动支路电阻Rm的有功耗散P_Rm。端口电压和电流用于计算相量、阻抗及功率，输入端相位和反射代理用于匹配评价。完整受约束控制仍需统一验收。",
+    "pointer": "沿本页箭头从左向右指示。五个方框是流程，不是五次实物实验。",
+    "limits": "P_Rm不是声功率。Rs是戴维南源阻抗，不是完整功放模型。输入端和换能器端口是不同测点，匹配网络改变的是二者之间的阻抗变换关系。",
+    "qa": "问：为什么不直接以零相位为目标？答：相位、反射和有功功率是不同目标函数，而且必须先确定测点。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+    ],
+    "change": "明确定义P_Rm、测点和流程图身份。",
+    "uncertain": "此处为模糊推测内容：真实负载变化可能映射为BVD参数漂移，具体映射方向和幅度尚未用实测标定。",
+    "notes": "第2页  研究问题：参数漂移后，怎样选择受约束的电学工作点\n\n【建议时长】40秒\n\n【本页实际图表】左到右五节点研究流程示意\n\n【逐字讲稿】本项目依次回答三个问题：BVD怎样描述频率响应，匹配和参数变化怎样改变阻抗及功率，以及三种控制方法在共同条件下怎样表现。页面流程从假设BVD、L型匹配和参数扰动，进入虚拟测量与选频保护。当前功率目标具体采用运动支路电阻Rm的有功耗散P_Rm。端口电压和电流用于计算相量、阻抗及功率，输入端相位和反射代理用于匹配评价。完整受约束控制仍需统一验收。\n\n【本页指示顺序】沿本页箭头从左向右指示。五个方框是流程，不是五次实物实验。\n\n【口径与限制】P_Rm不是声功率。Rs是戴维南源阻抗，不是完整功放模型。输入端和换能器端口是不同测点，匹配网络改变的是二者之间的阻抗变换关系。\n\n【教授追问与回答】问：为什么不直接以零相位为目标？答：相位、反射和有功功率是不同目标函数，而且必须先确定测点。\n\n【模糊推测内容】此处为模糊推测内容：真实负载变化可能映射为BVD参数漂移，具体映射方向和幅度尚未用实测标定。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+  },
+  {
+    "page": 3,
+    "title": "先满足电压、电流的数量级一致性，再建立假设BVD基线",
+    "visual": "左侧代数冲突示例，右侧假设参数表",
+    "seconds": 50,
+    "speech": "100 Vpp正弦电压对应35.36 V RMS。若运动支路正好串联谐振且Rm只有100欧姆，单是运动支路就需要约353.6 mA RMS，耗散12.5 W，因此不可能同时符合约5 mA的要求。右侧v2.1改用一组满足目标量级的假设基线：Rm约7.353千欧，C0约6.858 pF，Qm为800，fs为0.9 MHz，再反推Lm和Cm。这是数学自洽的虚拟模型，不是从真实换能器辨识得到的参数。",
+    "pointer": "先指左侧电压换算及电流、功率，再指右侧Rm和fs，其他元件不必逐个朗读。",
+    "limits": "353.6 mA为运动支路电流，C0还会产生无功电流。100 Vpp和5 mA RMS对应视在功率0.1768 VA，有功功率不大于它。Lm为机械支路等效电感，不能当作需要采购的1 H匹配电感。",
+    "qa": "问：为什么参数这么特殊？答：它们为流程验证而设，满足当前量级并不证明真实器件适用。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+    ],
+    "change": "区分运动支路电流与总电流；旧Rm=100Ω只作为冲突示例。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第3页  先满足电压、电流的数量级一致性，再建立假设BVD基线\n\n【建议时长】50秒\n\n【本页实际图表】左侧代数冲突示例，右侧假设参数表\n\n【逐字讲稿】100 Vpp正弦电压对应35.36 V RMS。若运动支路正好串联谐振且Rm只有100欧姆，单是运动支路就需要约353.6 mA RMS，耗散12.5 W，因此不可能同时符合约5 mA的要求。右侧v2.1改用一组满足目标量级的假设基线：Rm约7.353千欧，C0约6.858 pF，Qm为800，fs为0.9 MHz，再反推Lm和Cm。这是数学自洽的虚拟模型，不是从真实换能器辨识得到的参数。\n\n【本页指示顺序】先指左侧电压换算及电流、功率，再指右侧Rm和fs，其他元件不必逐个朗读。\n\n【口径与限制】353.6 mA为运动支路电流，C0还会产生无功电流。100 Vpp和5 mA RMS对应视在功率0.1768 VA，有功功率不大于它。Lm为机械支路等效电感，不能当作需要采购的1 H匹配电感。\n\n【教授追问与回答】问：为什么参数这么特殊？答：它们为流程验证而设，满足当前量级并不证明真实器件适用。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+  },
+  {
+    "page": 4,
+    "title": "裸BVD交叉验证：同一配置下，两条求解路径数值吻合",
+    "visual": "上下两幅完整曲线：|Zport|与arg Zport",
+    "seconds": 45,
+    "speech": "裸BVD先在0.5到1.5 MHz范围验证，频率间隔10 Hz，共100001点。蓝线来自已保存的LTspice RAW，橙色虚线是按同一元件配置独立复核的Python解析解。两条曲线基本重合，最大复阻抗相对误差约1.36乘10的负5次方百分比。电导峰在0.900000 MHz，两条路径的阻抗最小点都在0.899850 MHz。这支持数值实现一致，不构成实测验证。",
+    "pointer": "上图看阻抗幅值，下面看端口相位；最后读右侧误差和电导峰。横轴都是MHz。",
+    "limits": "误差定义为max(|Z_LT−Z_Py|/|Z_Py|)，原值1.359979×10⁻⁷为比例，不是百分数，也不是只比较|Z|的误差。BVD保留Rm损耗，仅无外部匹配。电导峰、|Z|最小值和相位零点不能混称同一谐振点。",
+    "qa": "问：极小误差是不是自我验证？答：两种数值求解实现不同，但拓扑和输入参数相同，不能排除共同的参数或模型假设错误。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_STAGE1_audit.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_BARE_BVD_Q800.raw",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_full_audit_20260911/build/stage1_independent_recheck.json"
+    ],
+    "change": "重绘完整坐标；复阻抗误差替代错误的幅值误差名称；用已复核特征点代替含糊峰位差。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第4页  裸BVD交叉验证：同一配置下，两条求解路径数值吻合\n\n【建议时长】45秒\n\n【本页实际图表】上下两幅完整曲线：|Zport|与arg Zport\n\n【逐字讲稿】裸BVD先在0.5到1.5 MHz范围验证，频率间隔10 Hz，共100001点。蓝线来自已保存的LTspice RAW，橙色虚线是按同一元件配置独立复核的Python解析解。两条曲线基本重合，最大复阻抗相对误差约1.36乘10的负5次方百分比。电导峰在0.900000 MHz，两条路径的阻抗最小点都在0.899850 MHz。这支持数值实现一致，不构成实测验证。\n\n【本页指示顺序】上图看阻抗幅值，下面看端口相位；最后读右侧误差和电导峰。横轴都是MHz。\n\n【口径与限制】误差定义为max(|Z_LT−Z_Py|/|Z_Py|)，原值1.359979×10⁻⁷为比例，不是百分数，也不是只比较|Z|的误差。BVD保留Rm损耗，仅无外部匹配。电导峰、|Z|最小值和相位零点不能混称同一谐振点。\n\n【教授追问与回答】问：极小误差是不是自我验证？答：两种数值求解实现不同，但拓扑和输入参数相同，不能排除共同的参数或模型假设错误。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_STAGE1_audit.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_BARE_BVD_Q800.raw\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_full_audit_20260911/build/stage1_independent_recheck.json"
+  },
+  {
+    "page": 5,
+    "title": "同一源条件下，0.9 MHz有损匹配的P_Rm约为未匹配的32.8倍",
+    "visual": "上图匹配前后P_Rm，下图输入反射代理",
+    "seconds": 60,
+    "speech": "本页全部曲线使用同一个戴维南源：约6.217 V RMS，源阻抗50欧姆。上图灰色虚线为未匹配，橙色实线为有损匹配，蓝色点线为理想匹配参考。在0.9000 MHz处，未匹配P_Rm为5.186 mW，有损匹配为170.0 mW，比值约32.8。100 Vpp和5 mA RMS是有损匹配后的换能器端口工作点，不是源电压，也不表示整个扫频范围恒定。下图输入反射代理下降说明这个频点输入匹配改善，但32.8倍不是电声效率增益。",
+    "pointer": "先指源条件。再沿0.9000 MHz比较上图两处功率标注，最后看下图反射代理。",
+    "limits": "原LTspice用1 V RMS等效AC源，功率按Vs²=38.65557649统一缩放：0.134168562和4.397811886 mW分别变成5.186363126和169.999953760 mW。Γ=|(Zin−50)/(Zin+50)|，不是以瓦特计的反射功率。图中未保护离线扫频不能证明全频段电压受限。",
+    "qa": "问：怎么理解源功率与端口功率？答：校准工作点源有功约362.3 mW，端口约170.0 mW，Pport/Psource约46.9%，其余主要消耗在Rs和匹配ESR，仍不是声学效率。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage2/stage2_audit.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv"
+    ],
+    "change": "保留正确的同源缩放图，统一讲稿的源电压、功率和效率口径。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第5页  同一源条件下，0.9 MHz有损匹配的P_Rm约为未匹配的32.8倍\n\n【建议时长】60秒\n\n【本页实际图表】上图匹配前后P_Rm，下图输入反射代理\n\n【逐字讲稿】本页全部曲线使用同一个戴维南源：约6.217 V RMS，源阻抗50欧姆。上图灰色虚线为未匹配，橙色实线为有损匹配，蓝色点线为理想匹配参考。在0.9000 MHz处，未匹配P_Rm为5.186 mW，有损匹配为170.0 mW，比值约32.8。100 Vpp和5 mA RMS是有损匹配后的换能器端口工作点，不是源电压，也不表示整个扫频范围恒定。下图输入反射代理下降说明这个频点输入匹配改善，但32.8倍不是电声效率增益。\n\n【本页指示顺序】先指源条件。再沿0.9000 MHz比较上图两处功率标注，最后看下图反射代理。\n\n【口径与限制】原LTspice用1 V RMS等效AC源，功率按Vs²=38.65557649统一缩放：0.134168562和4.397811886 mW分别变成5.186363126和169.999953760 mW。Γ=|(Zin−50)/(Zin+50)|，不是以瓦特计的反射功率。图中未保护离线扫频不能证明全频段电压受限。\n\n【教授追问与回答】问：怎么理解源功率与端口功率？答：校准工作点源有功约362.3 mW，端口约170.0 mW，Pport/Psource约46.9%，其余主要消耗在Rs和匹配ESR，仍不是声学效率。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage2/stage2_audit.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv"
+  },
+  {
+    "page": 6,
+    "title": "匹配测点是Zin：有损网络包含电感与电容ESR",
+    "visual": "左侧Zin幅值与相位曲线，右侧0.9 MHz数值表",
+    "seconds": 60,
+    "speech": "这一页专门说明输入阻抗Zin，它在源电阻之后、匹配网络之前测量。左上只比较匹配后的阻抗幅值，未匹配的高阻值放在右表。左下相位包括三个网络。0.9 MHz处，理想匹配接近50欧姆，有损网络为56.686减j1.067欧姆。实际有损网络不仅有电感损耗：电感在0.9 MHz按Q等于100折算ESR约6.035欧姆，匹配电容按Q等于1000折算ESR约0.624欧姆，L和C还进行了小量微调。因此不能把结果简单解释为50欧姆加一只电阻。",
+    "pointer": "先左上幅值、左下相位，再指右表有损一列，最后指底部两项ESR。只需本页。",
+    "limits": "源为1 V RMS等效AC源，阻抗不随线性源幅度缩放。QL、QC在0.9 MHz定义，网表使用固定ESR，并不是全频保持常Q。Zin相位−1.0782°与BVD端口相位约−15.916°不同。没有声学损耗或热模型。",
+    "qa": "问：损耗到底多大？答：RL=6.0352Ω、RC=0.6236Ω；校准源下电感损耗约20.5 mW、电容约2.0 mW。1 V RMS源时电感约0.530 mW，不能混用。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage2/stage2_audit.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/ltspice/stage2/V2_1_MATCH_ACTIVE_LOSSY.cir",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv"
+    ],
+    "change": "纠正只归因电感损耗的说法；标明两种ESR、Q参考频率与L/C微调。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第6页  匹配测点是Zin：有损网络包含电感与电容ESR\n\n【建议时长】60秒\n\n【本页实际图表】左侧Zin幅值与相位曲线，右侧0.9 MHz数值表\n\n【逐字讲稿】这一页专门说明输入阻抗Zin，它在源电阻之后、匹配网络之前测量。左上只比较匹配后的阻抗幅值，未匹配的高阻值放在右表。左下相位包括三个网络。0.9 MHz处，理想匹配接近50欧姆，有损网络为56.686减j1.067欧姆。实际有损网络不仅有电感损耗：电感在0.9 MHz按Q等于100折算ESR约6.035欧姆，匹配电容按Q等于1000折算ESR约0.624欧姆，L和C还进行了小量微调。因此不能把结果简单解释为50欧姆加一只电阻。\n\n【本页指示顺序】先左上幅值、左下相位，再指右表有损一列，最后指底部两项ESR。只需本页。\n\n【口径与限制】源为1 V RMS等效AC源，阻抗不随线性源幅度缩放。QL、QC在0.9 MHz定义，网表使用固定ESR，并不是全频保持常Q。Zin相位−1.0782°与BVD端口相位约−15.916°不同。没有声学损耗或热模型。\n\n【教授追问与回答】问：损耗到底多大？答：RL=6.0352Ω、RC=0.6236Ω；校准源下电感损耗约20.5 mW、电容约2.0 mW。1 V RMS源时电感约0.530 mW，不能混用。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage2/stage2_audit.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/ltspice/stage2/V2_1_MATCH_ACTIVE_LOSSY.cir\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv"
+  },
+  {
+    "page": 7,
+    "title": "代表性单因素：fs改变峰位，Rm与匹配损耗改变峰形",
+    "visual": "六行单因素汇总表，不是柱图",
+    "seconds": 50,
+    "speech": "这页是汇总表，不是柱状图。每行只列一个代表扰动的最高档，三列分别是P_Rm峰位、峰高和半高宽相对基线的变化。在表内，fs下降5%使功率峰下移45.2 kHz；Rm增加50%时，网格上峰位不变，峰高下降6.36%，半高宽增加26.50%。C0增加30%的功率峰变化很小。匹配电感和电感Q也会改变峰形。这里的“最明显”仅指本表所列因素，不包括下一页Cm-only的更大漂移。",
+    "pointer": "用鼠标依次指fs−5%行的峰位、Rm+50%行的峰高和峰宽、C0+30%行。无需临时再打开三层柱图。",
+    "limits": "全部相对于v2.1基线，固定源电压；除指定扰动外其余元件固定。Rs和Lmatch本身是扫描变量时不能说这些参数也被冻结。0.0 kHz是100 Hz扫描网格上的结果，不证明任意精度下绝对无漂移。FWHM为P_Rm半高宽，不是阻抗峰宽。",
+    "qa": "问：C0是不是没有影响？答：在本次C0量级及范围内，功率峰影响较小；不能外推为所有换能器都不敏感。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_trend_table.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv"
+    ],
+    "change": "整页讲稿按实际表格重写；峰移最大值限定为所列因素；修正冻结条件。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第7页  代表性单因素：fs改变峰位，Rm与匹配损耗改变峰形\n\n【建议时长】50秒\n\n【本页实际图表】六行单因素汇总表，不是柱图\n\n【逐字讲稿】这页是汇总表，不是柱状图。每行只列一个代表扰动的最高档，三列分别是P_Rm峰位、峰高和半高宽相对基线的变化。在表内，fs下降5%使功率峰下移45.2 kHz；Rm增加50%时，网格上峰位不变，峰高下降6.36%，半高宽增加26.50%。C0增加30%的功率峰变化很小。匹配电感和电感Q也会改变峰形。这里的“最明显”仅指本表所列因素，不包括下一页Cm-only的更大漂移。\n\n【本页指示顺序】用鼠标依次指fs−5%行的峰位、Rm+50%行的峰高和峰宽、C0+30%行。无需临时再打开三层柱图。\n\n【口径与限制】全部相对于v2.1基线，固定源电压；除指定扰动外其余元件固定。Rs和Lmatch本身是扫描变量时不能说这些参数也被冻结。0.0 kHz是100 Hz扫描网格上的结果，不证明任意精度下绝对无漂移。FWHM为P_Rm半高宽，不是阻抗峰宽。\n\n【教授追问与回答】问：C0是不是没有影响？答：在本次C0量级及范围内，功率峰影响较小；不能外推为所有换能器都不敏感。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_trend_table.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv"
+  },
+  {
+    "page": 8,
+    "title": "机械支路电容Cm单因素扰动的功率与电压、电流响应",
+    "visual": "完整三联P_Rm、Vpp、Irms曲线",
+    "seconds": 55,
+    "speech": "这里Cm专指机械支路电容，不是匹配电容。由基准到Cm增加5%、10%和20%，P_Rm峰位依次为0.9000、0.8781、0.8579和0.8214 MHz，峰高为170.0、164.3、144.3和96.4 mW。Cm增加20%相对基线的峰移为负78.6 kHz，峰高下降43.3%。方向与fs反比于Cm平方根一致，但系统功率峰还受匹配影响。下方保留完整电压、电流曲线，所有四条未保护扫频均存在超过160 Vpp的频点。",
+    "pointer": "先看上图四个峰由右向左移动，再看电压图红色160 Vpp线，最后看电流图。右侧摘要专指Cm+20%相对基准。",
+    "limits": "同一冻结源、a=1、100 Hz步长。只改Cm时fs与Qm一起派生变化。红色虚线为160 Vpp/6 mA硬限，橙色为130 Vpp/5.5 mA假设软阈值。功率峰所在点的电压与全扫描最大电压不同；本页是未保护静态响应，不是安全控制结果。",
+    "qa": "问：图上越限是不是控制器失效？答：此图未接保护，用于显示离线裸扫的约束风险，不能当作闭环运行。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_summary.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_curves.csv"
+    ],
+    "change": "重绘可读坐标并保留越限区间；明确Cm+20%摘要及派生量。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第8页  机械支路电容Cm单因素扰动的功率与电压、电流响应\n\n【建议时长】55秒\n\n【本页实际图表】完整三联P_Rm、Vpp、Irms曲线\n\n【逐字讲稿】这里Cm专指机械支路电容，不是匹配电容。由基准到Cm增加5%、10%和20%，P_Rm峰位依次为0.9000、0.8781、0.8579和0.8214 MHz，峰高为170.0、164.3、144.3和96.4 mW。Cm增加20%相对基线的峰移为负78.6 kHz，峰高下降43.3%。方向与fs反比于Cm平方根一致，但系统功率峰还受匹配影响。下方保留完整电压、电流曲线，所有四条未保护扫频均存在超过160 Vpp的频点。\n\n【本页指示顺序】先看上图四个峰由右向左移动，再看电压图红色160 Vpp线，最后看电流图。右侧摘要专指Cm+20%相对基准。\n\n【口径与限制】同一冻结源、a=1、100 Hz步长。只改Cm时fs与Qm一起派生变化。红色虚线为160 Vpp/6 mA硬限，橙色为130 Vpp/5.5 mA假设软阈值。功率峰所在点的电压与全扫描最大电压不同；本页是未保护静态响应，不是安全控制结果。\n\n【教授追问与回答】问：图上越限是不是控制器失效？答：此图未接保护，用于显示离线裸扫的约束风险，不能当作闭环运行。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_summary.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_curves.csv"
+  },
+  {
+    "page": 9,
+    "title": "Qm敏感性：本组参数下，Qm越高，P_Rm半高宽越小",
+    "visual": "上图P_Rm，下图|Zin|，右侧FWHM表",
+    "seconds": 45,
+    "speech": "本次Qm取500、800和1000，保持fs、Rm及C0不变，通过重算Lm和Cm实现。三条功率峰在基准频点都约170 mW，半高宽分别为3.451、2.144和1.713 kHz。它说明这组假设模型的高Q曲线更窄，频率偏离相同数值时可能损失更多功率。下图显示对应的匹配网络输入阻抗。高Q并不自动表示控制效果更好，时间响应和噪声下表现没有由这张静态图验证。",
+    "pointer": "先比较上图峰宽，再读右侧三个FWHM数值，下图用于确认输入阻抗也有频率选择性。",
+    "limits": "Qm不是匹配电感QL，不能与第6页QL=100混淆。FWHM基于离散扫描半高点插值，是数值描述，不是实测带宽精度。",
+    "qa": "问：是不是证明高Q需要更长稳定时间？答：本页只证明静态峰宽变化，没有验证实际建立时间。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_Qm_500_800_1000_summary.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/stage3_frequency_response_all_cases.csv"
+    ],
+    "change": "完整保留上下图，去掉静态数据直接证明驻留时间的推断。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第9页  Qm敏感性：本组参数下，Qm越高，P_Rm半高宽越小\n\n【建议时长】45秒\n\n【本页实际图表】上图P_Rm，下图|Zin|，右侧FWHM表\n\n【逐字讲稿】本次Qm取500、800和1000，保持fs、Rm及C0不变，通过重算Lm和Cm实现。三条功率峰在基准频点都约170 mW，半高宽分别为3.451、2.144和1.713 kHz。它说明这组假设模型的高Q曲线更窄，频率偏离相同数值时可能损失更多功率。下图显示对应的匹配网络输入阻抗。高Q并不自动表示控制效果更好，时间响应和噪声下表现没有由这张静态图验证。\n\n【本页指示顺序】先比较上图峰宽，再读右侧三个FWHM数值，下图用于确认输入阻抗也有频率选择性。\n\n【口径与限制】Qm不是匹配电感QL，不能与第6页QL=100混淆。FWHM基于离散扫描半高点插值，是数值描述，不是实测带宽精度。\n\n【教授追问与回答】问：是不是证明高Q需要更长稳定时间？答：本页只证明静态峰宽变化，没有验证实际建立时间。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_Qm_500_800_1000_summary.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/stage3_frequency_response_all_cases.csv"
+  },
+  {
+    "page": 10,
+    "title": "离线三准则选点不同，最小绝对输入相位不等于最大功率",
+    "visual": "基准与fs−5%两个P_Rm频率图及三种选点竖线",
+    "seconds": 60,
+    "speech": "两幅图用相同的0.84到0.96 MHz范围和0.5 kHz步长。红线是最大P_Rm点，蓝色虚线是最小绝对输入相位点，青色点线是最小反射代理点。基准中功率和反射选点在0.9000 MHz，而最小绝对相位在0.9070 MHz。fs下降5%后，三点分别为0.8550、0.9045和0.8545 MHz，功率与相位选点相差49.5 kHz。因此不能无条件以零相位替代最大功率目标。这是离散、未保护的离线选点比较，不是三种闭环的控制排名。",
+    "pointer": "先看上图三种竖线，再看下图三线分离，最后读右侧49.5 kHz。图例颜色表示准则，不是控制器。",
+    "limits": "最小绝对相位是网格argmin，不一定恰好等于0°。fs−5%粗网格功率峰约130.06 mW，100 Hz网格在0.8548 MHz为140.2 mW；不可混标。0.9045 MHz相位选点的未保护Vpp约188.3 V，不能直接作为安全执行指令。",
+    "qa": "问：为什么“相位选点”还需要验证？答：它不仅可能低功率，还可能违反电压约束。固定基准相位目标也需随扰动检验适用性。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/stage3_frequency_response_all_cases.csv"
+    ],
+    "change": "用当前数据重绘双图横轴；三准则与未保护选点明确区分。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第10页  离线三准则选点不同，最小绝对输入相位不等于最大功率\n\n【建议时长】60秒\n\n【本页实际图表】基准与fs−5%两个P_Rm频率图及三种选点竖线\n\n【逐字讲稿】两幅图用相同的0.84到0.96 MHz范围和0.5 kHz步长。红线是最大P_Rm点，蓝色虚线是最小绝对输入相位点，青色点线是最小反射代理点。基准中功率和反射选点在0.9000 MHz，而最小绝对相位在0.9070 MHz。fs下降5%后，三点分别为0.8550、0.9045和0.8545 MHz，功率与相位选点相差49.5 kHz。因此不能无条件以零相位替代最大功率目标。这是离散、未保护的离线选点比较，不是三种闭环的控制排名。\n\n【本页指示顺序】先看上图三种竖线，再看下图三线分离，最后读右侧49.5 kHz。图例颜色表示准则，不是控制器。\n\n【口径与限制】最小绝对相位是网格argmin，不一定恰好等于0°。fs−5%粗网格功率峰约130.06 mW，100 Hz网格在0.8548 MHz为140.2 mW；不可混标。0.9045 MHz相位选点的未保护Vpp约188.3 V，不能直接作为安全执行指令。\n\n【教授追问与回答】问：为什么“相位选点”还需要验证？答：它不仅可能低功率，还可能违反电压约束。固定基准相位目标也需随扰动检验适用性。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/stage3_frequency_response_all_cases.csv"
+  },
+  {
+    "page": 11,
+    "title": "34场景复核：±50 kHz仍漏峰，宽窗口与细步长各有代价",
+    "visual": "两幅当前34场景热图",
+    "seconds": 55,
+    "speech": "左图显示各窗口和步长相对全频参考峰的最大频率偏差，右图是按每点1.5毫秒估算的时间。当前34个场景中，正负20 kHz窗口有10个场景的参考峰在窗外，最坏偏差58.6 kHz；正负50 kHz仍漏2个，最坏28.6 kHz。正负100 kHz在这组登记场景中没有排除参考峰。其1 kHz步长需要201点、301.5毫秒代理时间，但网格误差仍可能造成明显功率损失，因此覆盖峰并不等于精确捕获峰高。",
+    "pointer": "先左图按窗口三行看58.6、28.6和小误差，再在右图同一格比较点数成本。不要再按旧图25.2 kHz讲。",
+    "limits": "窗口以0.9 MHz为中心。当前表含34场景；1.5 ms/点是假设，非LTspice实际运行耗时、非硬件测量。±100 kHz/1 kHz时最大频率偏差0.43 kHz，最大窗口内目标损失37.06%，窄峰会放大误差。±50 kHz/1 kHz为101点、151.5 ms，但不能作为全场景覆盖方案。",
+    "qa": "问：宽粗扫再细扫一定更好吗？答：它是合理候选，需要在相同控制时序和保护下评价全过程代价，本页不直接证明算法更优。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_aggregate.csv"
+    ],
+    "change": "旧热图替换为当前34场景结果；删除无条件推荐±50 kHz的结论。",
+    "uncertain": "此处为模糊推测内容：分级搜索可能改善覆盖与扫描时间的折中，实际收益需闭环对照验证。",
+    "notes": "第11页  34场景复核：±50 kHz仍漏峰，宽窗口与细步长各有代价\n\n【建议时长】55秒\n\n【本页实际图表】两幅当前34场景热图\n\n【逐字讲稿】左图显示各窗口和步长相对全频参考峰的最大频率偏差，右图是按每点1.5毫秒估算的时间。当前34个场景中，正负20 kHz窗口有10个场景的参考峰在窗外，最坏偏差58.6 kHz；正负50 kHz仍漏2个，最坏28.6 kHz。正负100 kHz在这组登记场景中没有排除参考峰。其1 kHz步长需要201点、301.5毫秒代理时间，但网格误差仍可能造成明显功率损失，因此覆盖峰并不等于精确捕获峰高。\n\n【本页指示顺序】先左图按窗口三行看58.6、28.6和小误差，再在右图同一格比较点数成本。不要再按旧图25.2 kHz讲。\n\n【口径与限制】窗口以0.9 MHz为中心。当前表含34场景；1.5 ms/点是假设，非LTspice实际运行耗时、非硬件测量。±100 kHz/1 kHz时最大频率偏差0.43 kHz，最大窗口内目标损失37.06%，窄峰会放大误差。±50 kHz/1 kHz为101点、151.5 ms，但不能作为全场景覆盖方案。\n\n【教授追问与回答】问：宽粗扫再细扫一定更好吗？答：它是合理候选，需要在相同控制时序和保护下评价全过程代价，本页不直接证明算法更优。\n\n【模糊推测内容】此处为模糊推测内容：分级搜索可能改善覆盖与扫描时间的折中，实际收益需闭环对照验证。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_aggregate.csv"
+  },
+  {
+    "page": 12,
+    "title": "历史保护示例：记录样本受限，不代表采样间隙无越限",
+    "visual": "右侧三联历史时序；左侧保护状态名称示意",
+    "seconds": 60,
+    "speech": "本页保留历史固定频率、周期扫频和扫描辅助P&O的同批次时序，分别为灰、蓝、红。上中下是端口电压、电流和源幅度命令，横轴是离散准稳态时间。2.4秒发生fs下降5%的扰动后，程序先预估风险并保存保护后的输出，所以幅度出现归零、保持和渐升。后续低幅扫描又会改变电压电流，不能把每一次下降都解释为新扰动。左侧只列出保护状态名称，不表示所有情况必须依次走完同一条链。",
+    "pointer": "先指2.4 s竖线，再上下对照电压、电流和幅度的归零与恢复。最后解释蓝红低幅扫描带。",
+    "limits": "时序来自a734eca013旧批次，与第24页一致，不是第23页候选。旧主线的扫描点保护调用与普通控制点不完全一致。HARD_TRIP记录是模型预估触发，不要求保存样本已超过硬限。图不是示波器或LTspice瞬态。",
+    "qa": "问：图中没有超过160 V，为什么说有风险？答：保存的是保护处理后的准稳态样本，采样间的旧指令继续保持可能另有越限，需独立检查。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py"
+    ],
+    "change": "取消误导性的单向状态箭头；图形保留真实历史时序并明确其范围。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第12页  历史保护示例：记录样本受限，不代表采样间隙无越限\n\n【建议时长】60秒\n\n【本页实际图表】右侧三联历史时序；左侧保护状态名称示意\n\n【逐字讲稿】本页保留历史固定频率、周期扫频和扫描辅助P&O的同批次时序，分别为灰、蓝、红。上中下是端口电压、电流和源幅度命令，横轴是离散准稳态时间。2.4秒发生fs下降5%的扰动后，程序先预估风险并保存保护后的输出，所以幅度出现归零、保持和渐升。后续低幅扫描又会改变电压电流，不能把每一次下降都解释为新扰动。左侧只列出保护状态名称，不表示所有情况必须依次走完同一条链。\n\n【本页指示顺序】先指2.4 s竖线，再上下对照电压、电流和幅度的归零与恢复。最后解释蓝红低幅扫描带。\n\n【口径与限制】时序来自a734eca013旧批次，与第24页一致，不是第23页候选。旧主线的扫描点保护调用与普通控制点不完全一致。HARD_TRIP记录是模型预估触发，不要求保存样本已超过硬限。图不是示波器或LTspice瞬态。\n\n【教授追问与回答】问：图中没有超过160 V，为什么说有风险？答：保存的是保护处理后的准稳态样本，采样间的旧指令继续保持可能另有越限，需独立检查。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py"
+  },
+  {
+    "page": 13,
+    "title": "已有电压、电流保护，完整约束验收仍未闭合",
+    "visual": "三列实现、保存记录、未解决问题",
+    "seconds": 50,
+    "speech": "当前已经加入频率范围、幅度权限以及电压和电流保护。在历史主线的1795条保存记录中，峰值电压130 Vpp，峰值电流约5.124 mA RMS，保存样本硬越限为零。但这些是已知模型预估和保护处理后的结果，不能扩展为实际硬件或采样间隙绝不越限。仍需统一逐扫描点保护、功率相对上限、反射约束以及无可行点的处理规则。右侧这些缺口没有因为存在状态机就自动解决。",
+    "pointer": "左列说明已实现什么，中列只读记录统计，右列说明尚未证明什么。",
+    "limits": "160 Vpp为用户边界；6 mA、130 Vpp及5.5 mA是假设阈值。E01/E02隔离仿真分支已处理逐点保护调用与幅度同步，但尚不能等同正式三策略主线完成回归。固定频率下线性降幅不会改变Zin或Γ。",
+    "qa": "问：一定要加独立PI吗？答：最大功率目标不强制需要PI。调频与安全降额可以先作为简单候选，但要通过统一约束验收。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/control_feasibility_20260907/run_experiments.py"
+    ],
+    "change": "限制零越限的证据范围；原型、隔离分支和正式集成分开。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第13页  已有电压、电流保护，完整约束验收仍未闭合\n\n【建议时长】50秒\n\n【本页实际图表】三列实现、保存记录、未解决问题\n\n【逐字讲稿】当前已经加入频率范围、幅度权限以及电压和电流保护。在历史主线的1795条保存记录中，峰值电压130 Vpp，峰值电流约5.124 mA RMS，保存样本硬越限为零。但这些是已知模型预估和保护处理后的结果，不能扩展为实际硬件或采样间隙绝不越限。仍需统一逐扫描点保护、功率相对上限、反射约束以及无可行点的处理规则。右侧这些缺口没有因为存在状态机就自动解决。\n\n【本页指示顺序】左列说明已实现什么，中列只读记录统计，右列说明尚未证明什么。\n\n【口径与限制】160 Vpp为用户边界；6 mA、130 Vpp及5.5 mA是假设阈值。E01/E02隔离仿真分支已处理逐点保护调用与幅度同步，但尚不能等同正式三策略主线完成回归。固定频率下线性降幅不会改变Zin或Γ。\n\n【教授追问与回答】问：一定要加独立PI吗？答：最大功率目标不强制需要PI。调频与安全降额可以先作为简单候选，但要通过统一约束验收。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/control_feasibility_20260907/run_experiments.py"
+  },
+  {
+    "page": 14,
+    "title": "相位闭环历史结果：输入相位目标不能保证扰动后的功率最优",
+    "visual": "K=5 Hz/°当前CSV三联图：频率、相位误差、P_Rm",
+    "seconds": 60,
+    "speech": "相位闭环使用匹配网络输入相位arg Zin，目标固定为基准功率峰处的负1.0782度，不是零度。左图是增益5 Hz每度的已保存时序，依次显示控制频率、目标减测量的相位误差和P_Rm。淡色区域为fs下降5%的扰动段：频率仍在0.9 MHz附近，P_Rm很低，说明这个固定相位目标和局部跟踪没有重新找到新功率峰。右侧另列全增益表的结果，50和100 Hz每度分别存在1段小相位误差但低功率的情况。",
+    "pointer": "上图读频率范围，中图读相位误差，下图读绝对功率mW。右侧错误锁定统计来自其他增益表，不是左图K=5的计数。",
+    "limits": "完整增益为5、10、25、50、100 Hz/°。频率更新有±500 Hz限幅，频率范围0.8–1.0 MHz。局部斜率由已知模型在f±100 Hz求取，未计探针测量与驻留耗时；不是仅依赖一个可测样本的完整硬件实现。历史“错误锁定”判据是尾段平均|相位误差|≤0.5°且功率比<95%，不等于新的连续验收。当前绘图数据哈希b170bc930d，替换旧图片约120%的不一致捕获率。",
+    "qa": "问：为什么乘相位斜率的符号？答：相同误差在正负斜率区需要相反的频率修正；但符号正确也不保证全局收敛或最大功率。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_timeline_selected_gain.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_gain_sweep_summary.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/run_phase_ablation.py"
+    ],
+    "change": "旧相位图与当前CSV不符，重绘为频率/相位误差/绝对功率；披露模型探针简化。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第14页  相位闭环历史结果：输入相位目标不能保证扰动后的功率最优\n\n【建议时长】60秒\n\n【本页实际图表】K=5 Hz/°当前CSV三联图：频率、相位误差、P_Rm\n\n【逐字讲稿】相位闭环使用匹配网络输入相位arg Zin，目标固定为基准功率峰处的负1.0782度，不是零度。左图是增益5 Hz每度的已保存时序，依次显示控制频率、目标减测量的相位误差和P_Rm。淡色区域为fs下降5%的扰动段：频率仍在0.9 MHz附近，P_Rm很低，说明这个固定相位目标和局部跟踪没有重新找到新功率峰。右侧另列全增益表的结果，50和100 Hz每度分别存在1段小相位误差但低功率的情况。\n\n【本页指示顺序】上图读频率范围，中图读相位误差，下图读绝对功率mW。右侧错误锁定统计来自其他增益表，不是左图K=5的计数。\n\n【口径与限制】完整增益为5、10、25、50、100 Hz/°。频率更新有±500 Hz限幅，频率范围0.8–1.0 MHz。局部斜率由已知模型在f±100 Hz求取，未计探针测量与驻留耗时；不是仅依赖一个可测样本的完整硬件实现。历史“错误锁定”判据是尾段平均|相位误差|≤0.5°且功率比<95%，不等于新的连续验收。当前绘图数据哈希b170bc930d，替换旧图片约120%的不一致捕获率。\n\n【教授追问与回答】问：为什么乘相位斜率的符号？答：相同误差在正负斜率区需要相反的频率修正；但符号正确也不保证全局收敛或最大功率。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_timeline_selected_gain.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_gain_sweep_summary.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/run_phase_ablation.py"
+  },
+  {
+    "page": 15,
+    "title": "计划书三策略都有原型，统一正式验收尚未完成",
+    "visual": "三行策略进展表，不是成绩排名表",
+    "seconds": 50,
+    "speech": "原计划的三种方法是固定频率、周期扫频和相位误差闭环。这三种方法已有代码和代表性时序，但相位补充表与另外两种策略的统计窗口、部分资格判据还不统一，文件也明确标明不能用于正式排名。因此这一页只报告实现进展，不将旧表中的误差数字硬拼为优劣排序。静态登记34个场景，旧主控制序列只覆盖其中7个不同场景，完整单因素和组合闭环还需要补齐。扫描辅助P&O保留为第四种扩展。",
+    "pointer": "从三行的策略名称看到统一正式指标列，最后指底部场景覆盖缺口。",
+    "limits": "固定频率基线带共同保护：名义固定幅度，触发保护时允许降幅，不能称全时段绝对固定幅度。原补充表保留不修改。",
+    "qa": "问：三策略比较算完成了吗？答：原型与历史比较已做，按计划要求的统一正式比较尚未完成。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/plan_fixed_periodic_phase_integrated.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/静态与闭环覆盖核查.csv"
+    ],
+    "change": "统一正式三策略身份；不用P&O替代相位或以旧补充表排名。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第15页  计划书三策略都有原型，统一正式验收尚未完成\n\n【建议时长】50秒\n\n【本页实际图表】三行策略进展表，不是成绩排名表\n\n【逐字讲稿】原计划的三种方法是固定频率、周期扫频和相位误差闭环。这三种方法已有代码和代表性时序，但相位补充表与另外两种策略的统计窗口、部分资格判据还不统一，文件也明确标明不能用于正式排名。因此这一页只报告实现进展，不将旧表中的误差数字硬拼为优劣排序。静态登记34个场景，旧主控制序列只覆盖其中7个不同场景，完整单因素和组合闭环还需要补齐。扫描辅助P&O保留为第四种扩展。\n\n【本页指示顺序】从三行的策略名称看到统一正式指标列，最后指底部场景覆盖缺口。\n\n【口径与限制】固定频率基线带共同保护：名义固定幅度，触发保护时允许降幅，不能称全时段绝对固定幅度。原补充表保留不修改。\n\n【教授追问与回答】问：三策略比较算完成了吗？答：原型与历史比较已做，按计划要求的统一正式比较尚未完成。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/plan_fixed_periodic_phase_integrated.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/静态与闭环覆盖核查.csv"
+  },
+  {
+    "page": 16,
+    "title": "电—声接口已定义字段，尚未运行结构声场求解",
+    "visual": "接口数据流，最后两个节点为待填声学结果",
+    "seconds": 40,
+    "speech": "这页是接口定义，不是声场结果。已有基准和低、中、高组合共4条电学导出记录，包括频率、复端口电压以及电学功率，采用RMS相量和exp正jωt约定。声学查找表、靶区和壁面压力代理还没有数值，统一标记NOT_AVAILABLE。接口审计通过只说明字段、单位和内部关系满足当前定义，不表示已经运行COMSOL，也不代表已建立电功率到声功率的标定关系。",
+    "pointer": "从左向右讲到复端口激励，明确后两个节点标为待完成，再读声学字段为空。",
+    "limits": "这是2026-09-01已有接口记录。接口工作点是模型计算所得，不是硬件安全保证。接入有限元前还需核对材料、极化、电极边界和软件谐波幅值约定。",
+    "qa": "问：输入电压后声压就能得到吗？答：还必须有完整的几何、材料、边界、网格和求解验证。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/interfaces/electro_acoustic_v1/electro_acoustic_interface_audit.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv"
+    ],
+    "change": "将声学节点明确标为待完成；不把内部接口版本称为行业标准。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第16页  电—声接口已定义字段，尚未运行结构声场求解\n\n【建议时长】40秒\n\n【本页实际图表】接口数据流，最后两个节点为待填声学结果\n\n【逐字讲稿】这页是接口定义，不是声场结果。已有基准和低、中、高组合共4条电学导出记录，包括频率、复端口电压以及电学功率，采用RMS相量和exp正jωt约定。声学查找表、靶区和壁面压力代理还没有数值，统一标记NOT_AVAILABLE。接口审计通过只说明字段、单位和内部关系满足当前定义，不表示已经运行COMSOL，也不代表已建立电功率到声功率的标定关系。\n\n【本页指示顺序】从左向右讲到复端口激励，明确后两个节点标为待完成，再读声学字段为空。\n\n【口径与限制】这是2026-09-01已有接口记录。接口工作点是模型计算所得，不是硬件安全保证。接入有限元前还需核对材料、极化、电极边界和软件谐波幅值约定。\n\n【教授追问与回答】问：输入电压后声压就能得到吗？答：还必须有完整的几何、材料、边界、网格和求解验证。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/interfaces/electro_acoustic_v1/electro_acoustic_interface_audit.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv"
+  },
+  {
+    "page": 17,
+    "title": "扰动是模型压力测试，不是病变到BVD的定量映射",
+    "visual": "研究背景、扫描假设、待标定关系三个层次",
+    "seconds": 40,
+    "speech": "本页说明扰动的来源身份。CTO和治疗超声是项目背景，但当前没有把具体病变分级换算为BVD元件变化的实测或定量文献依据。C0、Rm和fs的等级是为了检验模型敏感性及控制恢复而登记的扫描变量，不代表临床低、中、高严重程度。我们能报告的是特定假设模型内的电学响应，不能说钙化必然导致Rm增加50%，也不能由P_Rm恢复推出声压或治疗效果恢复。",
+    "pointer": "依次指背景、扫描假设和待标定映射，再看右侧当前范围。",
+    "limits": "本页没有引用未经核对页码的具体病理事实。几何声场未完成；热效应、空化、临床效果属于本项目排除范围，不是本月待补的实验。",
+    "qa": "问：扰动百分比有医学依据吗？答：目前是工程压力测试范围，需用可控负载实验和阻抗测量建立物理映射。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/scenarios/stage3_scenario_registry_and_summary.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"
+    ],
+    "change": "删除无逐页文献支撑的医学因果表述，保留明确的工程假设和边界。",
+    "uncertain": "此处为模糊推测内容：真实负载可通过机电耦合改变等效参数，但具体参数、方向和幅度尚待标定。",
+    "notes": "第17页  扰动是模型压力测试，不是病变到BVD的定量映射\n\n【建议时长】40秒\n\n【本页实际图表】研究背景、扫描假设、待标定关系三个层次\n\n【逐字讲稿】本页说明扰动的来源身份。CTO和治疗超声是项目背景，但当前没有把具体病变分级换算为BVD元件变化的实测或定量文献依据。C0、Rm和fs的等级是为了检验模型敏感性及控制恢复而登记的扫描变量，不代表临床低、中、高严重程度。我们能报告的是特定假设模型内的电学响应，不能说钙化必然导致Rm增加50%，也不能由P_Rm恢复推出声压或治疗效果恢复。\n\n【本页指示顺序】依次指背景、扫描假设和待标定映射，再看右侧当前范围。\n\n【口径与限制】本页没有引用未经核对页码的具体病理事实。几何声场未完成；热效应、空化、临床效果属于本项目排除范围，不是本月待补的实验。\n\n【教授追问与回答】问：扰动百分比有医学依据吗？答：目前是工程压力测试范围，需用可控负载实验和阻抗测量建立物理映射。\n\n【模糊推测内容】此处为模糊推测内容：真实负载可通过机电耦合改变等效参数，但具体参数、方向和幅度尚待标定。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/scenarios/stage3_scenario_registry_and_summary.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"
+  },
+  {
+    "page": 18,
+    "title": "已有电学建模与控制原型证据，计划书验收仍有缺口",
+    "visual": "已有证据、待补内部验收、后续建模与外部验证三列",
+    "seconds": 50,
+    "speech": "本月成果可以概括为：建立了v2.1假设电学模型和匹配网络，保留Python与LTspice交叉验证，完成34个登记场景的静态扫描，并有选频、保护及控制原型和电声接口。仍未完成的内部任务是固定、扫频、相位三策略统一验收、完整闭环场景覆盖、逐扫描点保护正式集成，以及功率、反射和采样间隙的统一评估。实测阻抗、功率标定与声场验证属于下一阶段外部验证，不能用它们替代当前内部缺口的说明。",
+    "pointer": "左列先总结成果，中列逐项说明未完成，右列只介绍下一阶段。",
+    "limits": "34场景指1基准、30个单因素/敏感性变体及3组合；其中12个代表场景有LTspice静态交叉验证，不是34个全部用LTspice。后续候选通过某个稳态段不等于所有任务完成。",
+    "qa": "问：能否写本月全部完成？答：不能，应写电学平台和控制原型已建立，统一验收及部分验证待完成。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_audit.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/静态与闭环覆盖核查.csv"
+    ],
+    "change": "完成状态逐层限定，补充34静态与12 LTspice验证的区别。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第18页  已有电学建模与控制原型证据，计划书验收仍有缺口\n\n【建议时长】50秒\n\n【本页实际图表】已有证据、待补内部验收、后续建模与外部验证三列\n\n【逐字讲稿】本月成果可以概括为：建立了v2.1假设电学模型和匹配网络，保留Python与LTspice交叉验证，完成34个登记场景的静态扫描，并有选频、保护及控制原型和电声接口。仍未完成的内部任务是固定、扫频、相位三策略统一验收、完整闭环场景覆盖、逐扫描点保护正式集成，以及功率、反射和采样间隙的统一评估。实测阻抗、功率标定与声场验证属于下一阶段外部验证，不能用它们替代当前内部缺口的说明。\n\n【本页指示顺序】左列先总结成果，中列逐项说明未完成，右列只介绍下一阶段。\n\n【口径与限制】34场景指1基准、30个单因素/敏感性变体及3组合；其中12个代表场景有LTspice静态交叉验证，不是34个全部用LTspice。后续候选通过某个稳态段不等于所有任务完成。\n\n【教授追问与回答】问：能否写本月全部完成？答：不能，应写电学平台和控制原型已建立，统一验收及部分验证待完成。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_audit.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/静态与闭环覆盖核查.csv"
+  },
+  {
+    "page": 19,
+    "title": "备份：用户工作要求与假设模型、控制参数分别登记",
+    "visual": "参数来源表",
+    "seconds": 35,
+    "speech": "参数必须按来源解释。0.8到1.0 MHz范围、初始0.9 MHz、约100 Vpp及160 Vpp边界来自用户要求。5 mA是用户给定量级，本次把它解释为RMS。6 mA硬限、130 Vpp和5.5 mA软阈值、Rs等于50欧姆及全部BVD元件是仿真假设。表中没有把无实测数据的参数写成器件额定值。",
+    "pointer": "优先指来源类别列，说明用户要求与假设基线的区别，不逐项朗读数值。",
+    "limits": "用户边界另列，不强行写为文献值。扫描变量来自参数登记；控制增益和周期也是假设控制参数。",
+    "qa": "问：哪些最需要实测？答：复阻抗频响、源等效阻抗、端口电压电流功率，以及额定限制。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+    ],
+    "change": "补充用户边界与RMS解释身份，不声称所有数值均有文献依据。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第19页  备份：用户工作要求与假设模型、控制参数分别登记\n\n【建议时长】35秒\n\n【本页实际图表】参数来源表\n\n【逐字讲稿】参数必须按来源解释。0.8到1.0 MHz范围、初始0.9 MHz、约100 Vpp及160 Vpp边界来自用户要求。5 mA是用户给定量级，本次把它解释为RMS。6 mA硬限、130 Vpp和5.5 mA软阈值、Rs等于50欧姆及全部BVD元件是仿真假设。表中没有把无实测数据的参数写成器件额定值。\n\n【本页指示顺序】优先指来源类别列，说明用户要求与假设基线的区别，不逐项朗读数值。\n\n【口径与限制】用户边界另列，不强行写为文献值。扫描变量来自参数登记；控制增益和周期也是假设控制参数。\n\n【教授追问与回答】问：哪些最需要实测？答：复阻抗频响、源等效阻抗、端口电压电流功率，以及额定限制。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+  },
+  {
+    "page": 20,
+    "title": "备份：单因素派生量与历史控制场景覆盖",
+    "visual": "左表代表因素，右侧历史序列及基线量",
+    "seconds": 40,
+    "speech": "左表是部分代表性单因素最高档，右侧是旧主控制序列，共8段但只有7个不同场景，因为基准重复出现。Rm-only必须固定Lm和Cm，所以Rm增加15%、30%和50%时，派生Qm分别为695.7、615.4和533.3，而不能仍写800。之前修订只纠正派生登记，保留了电学响应。组合场景按各自登记规则联合构造，不是把所有元件单因素直接相加。",
+    "pointer": "先左表、右上序列，最后指底部派生Qm关系和右下端口基线。",
+    "limits": "右下是换能器端口|Zport|约7.071kΩ、相位−15.916°，不是Zin。2026-09-10保存回归报告记录34×2001频点电学数组一致；这是历史回归，不冒称本次重新运行。",
+    "qa": "问：低中组合也在闭环序列中吗？答：旧主序列只有高组合；低中组合已有静态验证，统一闭环还未覆盖。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/Rm派生Qm修正验证.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv"
+    ],
+    "change": "标明代表因素与8段7场景，元数据修订日期与当前工作分开。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第20页  备份：单因素派生量与历史控制场景覆盖\n\n【建议时长】40秒\n\n【本页实际图表】左表代表因素，右侧历史序列及基线量\n\n【逐字讲稿】左表是部分代表性单因素最高档，右侧是旧主控制序列，共8段但只有7个不同场景，因为基准重复出现。Rm-only必须固定Lm和Cm，所以Rm增加15%、30%和50%时，派生Qm分别为695.7、615.4和533.3，而不能仍写800。之前修订只纠正派生登记，保留了电学响应。组合场景按各自登记规则联合构造，不是把所有元件单因素直接相加。\n\n【本页指示顺序】先左表、右上序列，最后指底部派生Qm关系和右下端口基线。\n\n【口径与限制】右下是换能器端口|Zport|约7.071kΩ、相位−15.916°，不是Zin。2026-09-10保存回归报告记录34×2001频点电学数组一致；这是历史回归，不冒称本次重新运行。\n\n【教授追问与回答】问：低中组合也在闭环序列中吗？答：旧主序列只有高组合；低中组合已有静态验证，统一闭环还未覆盖。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/Rm派生Qm修正验证.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv"
+  },
+  {
+    "page": 21,
+    "title": "备份：低、中、高组合的已保存LTspice静态交叉验证",
+    "visual": "三档误差和证据表",
+    "seconds": 35,
+    "speech": "低、中、高组合都保留了LTspice批处理文件及对应Python对照。每档2001个频点，最大复输入阻抗相对误差分别约0.01461%、0.00751%和0.00295%，低于5%验收线。这说明两条求解路径在登记配置下吻合。它不能排除共同模型假设错误，也不能证明低、中、高组合均已通过包含相位策略的统一闭环验收。",
+    "pointer": "读表内三档复阻抗误差，再指网表、RAW、Log及哈希证据行。",
+    "limits": "误差为复Zin之差的模除以Python复Zin的模，不是仅|Zin|差值。原始误差列为比例，显示时乘100。功率交叉验证另用峰值归一化的全量程误差，不能统称所有指标逐点相对误差。",
+    "qa": "问：这能证明没有代码错误吗？答：不能，能支持相同输入下的数值一致性，仍可能存在共同配置错误。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_LTspice_cross_validation.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_audit.json"
+    ],
+    "change": "纠正误差变量名称，删除“排除主要实现差异”的过强因果表述。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第21页  备份：低、中、高组合的已保存LTspice静态交叉验证\n\n【建议时长】35秒\n\n【本页实际图表】三档误差和证据表\n\n【逐字讲稿】低、中、高组合都保留了LTspice批处理文件及对应Python对照。每档2001个频点，最大复输入阻抗相对误差分别约0.01461%、0.00751%和0.00295%，低于5%验收线。这说明两条求解路径在登记配置下吻合。它不能排除共同模型假设错误，也不能证明低、中、高组合均已通过包含相位策略的统一闭环验收。\n\n【本页指示顺序】读表内三档复阻抗误差，再指网表、RAW、Log及哈希证据行。\n\n【口径与限制】误差为复Zin之差的模除以Python复Zin的模，不是仅|Zin|差值。原始误差列为比例，显示时乘100。功率交叉验证另用峰值归一化的全量程误差，不能统称所有指标逐点相对误差。\n\n【教授追问与回答】问：这能证明没有代码错误吗？答：不能，能支持相同输入下的数值一致性，仍可能存在共同配置错误。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_LTspice_cross_validation.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_audit.json"
+  },
+  {
+    "page": 22,
+    "title": "备份：最大功率、最小相位、最小反射各有不同定义",
+    "visual": "三个目标函数对照表",
+    "seconds": 40,
+    "speech": "最大功率点是冻结源、未保护离线P_Rm曲线的最大值。最小相位点是输入相位arg Zin的绝对值最小。最小反射点是相对50欧姆实参考阻抗的Γ最小。相位接近零只说明虚部接近零，并不说明实部接近50欧姆，也不说明Rm分得的功率最大。正式控制还要把电压电流和幅度权限加进可行性判断，不能直接把这个离线argmax当作安全命令。",
+    "pointer": "逐行对应三个目标函数，最后指fs−5%的粗网格反例。",
+    "limits": "Γ无量纲，不是瓦特数；除非进一步声明功率波参考及入射功率，否则不称实测反射功率。最小|相位|网格点和插值相位零点也不是同一个统计量。",
+    "qa": "问：能否仅靠降幅改善Γ？答：在线性模型中固定频率与元件时，整体降幅不改变Zin，所以Γ也不变。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+    ],
+    "change": "补全反射定义、测点和未保护离线选点范围。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第22页  备份：最大功率、最小相位、最小反射各有不同定义\n\n【建议时长】40秒\n\n【本页实际图表】三个目标函数对照表\n\n【逐字讲稿】最大功率点是冻结源、未保护离线P_Rm曲线的最大值。最小相位点是输入相位arg Zin的绝对值最小。最小反射点是相对50欧姆实参考阻抗的Γ最小。相位接近零只说明虚部接近零，并不说明实部接近50欧姆，也不说明Rm分得的功率最大。正式控制还要把电压电流和幅度权限加进可行性判断，不能直接把这个离线argmax当作安全命令。\n\n【本页指示顺序】逐行对应三个目标函数，最后指fs−5%的粗网格反例。\n\n【口径与限制】Γ无量纲，不是瓦特数；除非进一步声明功率波参考及入射功率，否则不称实测反射功率。最小|相位|网格点和插值相位零点也不是同一个统计量。\n\n【教授追问与回答】问：能否仅靠降幅改善Γ？答：在线性模型中固定频率与元件时，整体降幅不改变Zin，所以Γ也不变。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/models/python/model_v2_1.py"
+  },
+  {
+    "page": 23,
+    "title": "扩展候选通过本段稳态窗口，但电能损失与间隙越限未解决",
+    "visual": "后续无PI P&O候选三联图及验收摘要",
+    "seconds": 70,
+    "speech": "这一页是后续B0_T500_A90_R2无PI候选，不与第12、24页旧批次拼成同一组结果。fs下降5%的0.8秒段中，首次合格样本在2.962秒，第10个样本在3.142秒确认，确认延迟742毫秒，最长连续12个，因此通过原有连续10样本标准。但本段保持指令重放的电能捕获率仅45.4%。下图重放了采样间隙中旧指令继续作用于新负载的情况，出现188.2 Vpp，超过160 Vpp累计约1毫秒。因此稳态通过并没有解决全过程电能与硬限问题。",
+    "pointer": "上图看首次合格和确认时刻，中图看最终0.8548 MHz，下图看2.4 s附近的越限尖峰。",
+    "limits": "条件保持0.8 s/段、捕获率≥98%、CONTROL且NORMAL、频率未冻结、连续10样本，相邻控制样本间隔≤30 ms。10个20 ms样本首末跨度180 ms。功率分母为当前场景约140.2 mW，不是基准170 mW。图为已存候选结果和模型保持指令重放，不是LTspice瞬态或硬件捕获。",
+    "qa": "问：通过了为什么不宣布成功？答：只通过一个维度的稳态标准，电能和硬限仍有明确未解决项。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/po_scheduling_20260909/results/B0_T500_A90_R2_dwell_0.8s/timeline.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/po_scheduling_20260909/results/B0_T500_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/po_scheduling_20260909/results/B0_T500_A90_R2_dwell_0.8s/config.json"
+    ],
+    "change": "保留后续候选原数据图，明确其独立版本、确认时刻和重放局限。",
+    "uncertain": "此处为模糊推测内容：后续优化恢复时序或安全裕量能否提高电能、消除越限，需重新验证，本页不声称已解决。",
+    "notes": "第23页  扩展候选通过本段稳态窗口，但电能损失与间隙越限未解决\n\n【建议时长】70秒\n\n【本页实际图表】后续无PI P&O候选三联图及验收摘要\n\n【逐字讲稿】这一页是后续B0_T500_A90_R2无PI候选，不与第12、24页旧批次拼成同一组结果。fs下降5%的0.8秒段中，首次合格样本在2.962秒，第10个样本在3.142秒确认，确认延迟742毫秒，最长连续12个，因此通过原有连续10样本标准。但本段保持指令重放的电能捕获率仅45.4%。下图重放了采样间隙中旧指令继续作用于新负载的情况，出现188.2 Vpp，超过160 Vpp累计约1毫秒。因此稳态通过并没有解决全过程电能与硬限问题。\n\n【本页指示顺序】上图看首次合格和确认时刻，中图看最终0.8548 MHz，下图看2.4 s附近的越限尖峰。\n\n【口径与限制】条件保持0.8 s/段、捕获率≥98%、CONTROL且NORMAL、频率未冻结、连续10样本，相邻控制样本间隔≤30 ms。10个20 ms样本首末跨度180 ms。功率分母为当前场景约140.2 mW，不是基准170 mW。图为已存候选结果和模型保持指令重放，不是LTspice瞬态或硬件捕获。\n\n【教授追问与回答】问：通过了为什么不宣布成功？答：只通过一个维度的稳态标准，电能和硬限仍有明确未解决项。\n\n【模糊推测内容】此处为模糊推测内容：后续优化恢复时序或安全裕量能否提高电能、消除越限，需重新验证，本页不声称已解决。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/po_scheduling_20260909/results/B0_T500_A90_R2_dwell_0.8s/timeline.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/po_scheduling_20260909/results/B0_T500_A90_R2_dwell_0.8s/acceptance_and_energy.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/po_scheduling_20260909/results/B0_T500_A90_R2_dwell_0.8s/config.json"
+  },
+  {
+    "page": 24,
+    "title": "扩展旧批次：尾段误差为零，仍存在全程电能损失",
+    "visual": "左表三种历史策略指标，右图记录积分电能比",
+    "seconds": 65,
+    "speech": "本页回到与第12页相同的旧批次。左表中的尾段误差采用筛选和回退样本，因此零误差不能代表连续稳态通过，也没有完整计入前面的停机、扫描和试探。右图按相同0.8到6.4秒区间，对已记录功率按持续时间积分：固定频率加保护为0.588焦耳，周期扫频0.474焦耳，扫描辅助P&O为0.525焦耳。用共同安全参考电能0.77568焦耳归一化，分别为75.8%、61.1%和67.7%。本批次固定频率记录积分较高，但不能因此称其在所有扰动和模型下更好。",
+    "pointer": "先指出左表“尾段误差*”不等于验收，再读右侧三根电能柱，最后看相同时间区间和方法说明。",
+    "limits": "积分规则是每条p_rm_W在记录duration_s内保持，与[0.8,6.4)相交后求和，包含全部动作；不是第23页跨扰动保持指令的物理响应重放。尾段规则：末25%合格CONTROL；缺少时最后5个合格CONTROL；仍缺少时最后5个CONTROL，再按7段均值。因此是历史描述指标，非新正式稳态定义。未通过段分别3、2、3。",
+    "qa": "问：为什么出现0%但没通过？答：取样集合和连续验收不同，回退甚至可能包含未达状态资格的控制点。缺少正式稳态窗口应在正式表记NA，而不是用回退宣布通过。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_energy_update_20260909/build/data.json"
+    ],
+    "change": "保留记录积分图，明确尾段回退、分母、时间范围和非物理重放身份。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第24页  扩展旧批次：尾段误差为零，仍存在全程电能损失\n\n【建议时长】65秒\n\n【本页实际图表】左表三种历史策略指标，右图记录积分电能比\n\n【逐字讲稿】本页回到与第12页相同的旧批次。左表中的尾段误差采用筛选和回退样本，因此零误差不能代表连续稳态通过，也没有完整计入前面的停机、扫描和试探。右图按相同0.8到6.4秒区间，对已记录功率按持续时间积分：固定频率加保护为0.588焦耳，周期扫频0.474焦耳，扫描辅助P&O为0.525焦耳。用共同安全参考电能0.77568焦耳归一化，分别为75.8%、61.1%和67.7%。本批次固定频率记录积分较高，但不能因此称其在所有扰动和模型下更好。\n\n【本页指示顺序】先指出左表“尾段误差*”不等于验收，再读右侧三根电能柱，最后看相同时间区间和方法说明。\n\n【口径与限制】积分规则是每条p_rm_W在记录duration_s内保持，与[0.8,6.4)相交后求和，包含全部动作；不是第23页跨扰动保持指令的物理响应重放。尾段规则：末25%合格CONTROL；缺少时最后5个合格CONTROL；仍缺少时最后5个CONTROL，再按7段均值。因此是历史描述指标，非新正式稳态定义。未通过段分别3、2、3。\n\n【教授追问与回答】问：为什么出现0%但没通过？答：取样集合和连续验收不同，回退甚至可能包含未达状态资格的控制点。缺少正式稳态窗口应在正式表记NA，而不是用回退宣布通过。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_energy_update_20260909/build/data.json"
+  },
+  {
+    "page": 25,
+    "title": "备份：历史LTspice截图仅作运行留痕，原截图仍不完整",
+    "visual": "历史GUI局部图与Error Log局部图",
+    "seconds": 35,
+    "speech": "目前保留有2026年8月15日的基准场景GUI和日志截图。左图展示的是V(n_port)的幅值及相位，不是Zin相位或端口电压除以电流的阻抗相位。原截图本身缺少横轴下沿，日志长路径也没有完整显示，所以本页只把它们作为历史运行留痕，不能用于完整定量读图。本次不补造缺失像素，也不将它们说成新的仿真截图。完整数值仍应查网表、RAW和Log。",
+    "pointer": "先读历史日期，再说明左图变量名和截图不完整，右侧Log仅对应同一历史基准。",
+    "limits": "软件Log显示26.0.2，元数据文件版本为26.0.2.1。GUI源AC设置、幅相参考应查对应cir/plt，不能把其电压相位误认为阻抗相位。另一个名为waveform_V_n_port的历史PNG被其他窗口遮挡，不作为波形证据。完整GUI与轴线需用户重新打开原始RAW截图。",
+    "qa": "问：能补成完整真实截图吗？答：不能从已裁掉像素恢复真实软件界面；应在LTspice中重新打开对应RAW与日志后截取。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/LTspice_GUI_evidence_metadata.json",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/LTspice_GUI_waveform_mag_phase.png",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/LTspice_SPICE_Error_Log.png"
+    ],
+    "change": "披露历史截图原件缺边和测量变量，不用后处理图冒充真实GUI。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第25页  备份：历史LTspice截图仅作运行留痕，原截图仍不完整\n\n【建议时长】35秒\n\n【本页实际图表】历史GUI局部图与Error Log局部图\n\n【逐字讲稿】目前保留有2026年8月15日的基准场景GUI和日志截图。左图展示的是V(n_port)的幅值及相位，不是Zin相位或端口电压除以电流的阻抗相位。原截图本身缺少横轴下沿，日志长路径也没有完整显示，所以本页只把它们作为历史运行留痕，不能用于完整定量读图。本次不补造缺失像素，也不将它们说成新的仿真截图。完整数值仍应查网表、RAW和Log。\n\n【本页指示顺序】先读历史日期，再说明左图变量名和截图不完整，右侧Log仅对应同一历史基准。\n\n【口径与限制】软件Log显示26.0.2，元数据文件版本为26.0.2.1。GUI源AC设置、幅相参考应查对应cir/plt，不能把其电压相位误认为阻抗相位。另一个名为waveform_V_n_port的历史PNG被其他窗口遮挡，不作为波形证据。完整GUI与轴线需用户重新打开原始RAW截图。\n\n【教授追问与回答】问：能补成完整真实截图吗？答：不能从已裁掉像素恢复真实软件界面；应在LTspice中重新打开对应RAW与日志后截取。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/LTspice_GUI_evidence_metadata.json\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/LTspice_GUI_waveform_mag_phase.png\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/LTspice_SPICE_Error_Log.png"
+  },
+  {
+    "page": 26,
+    "title": "备份：正式比较应冻结统一评价口径",
+    "visual": "拟统一的验收定义表，尚未形成新成绩",
+    "seconds": 45,
+    "speech": "下一轮正式比较要先固定口径。安全最优参考只用于离线评价，不能把场景答案直接提供给控制器。连续验收保持功率捕获率至少98%、NORMAL且频率未冻结、连续10个控制样本，并同时报告合格序列起点和第10样本确认时刻。没有合格窗口就记未通过、稳态指标NA。全过程还需计入扫描、试探、停机和恢复电能，并单列记录样本与保持区间越限。功率和反射约束必须先定义对象、阈值和无解处置。",
+    "pointer": "从安全参考、稳态、恢复三行讲到全程电能和约束两行，最后强调不放宽原门槛。",
+    "limits": "这是统一验收方案，不是三种算法都已采用的结果。不能延长原段或提高电压限值换通过。独立PI非必需，无积分器时积分饱和为不适用。",
+    "qa": "问：缺少稳态样本如何报告？答：数量和失败状态明示，正式稳态指标不填0，不让回退样本伪装连续验收。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md"
+    ],
+    "change": "保留拟定而未执行身份，严格区分统计回退与正式验收。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第26页  备份：正式比较应冻结统一评价口径\n\n【建议时长】45秒\n\n【本页实际图表】拟统一的验收定义表，尚未形成新成绩\n\n【逐字讲稿】下一轮正式比较要先固定口径。安全最优参考只用于离线评价，不能把场景答案直接提供给控制器。连续验收保持功率捕获率至少98%、NORMAL且频率未冻结、连续10个控制样本，并同时报告合格序列起点和第10样本确认时刻。没有合格窗口就记未通过、稳态指标NA。全过程还需计入扫描、试探、停机和恢复电能，并单列记录样本与保持区间越限。功率和反射约束必须先定义对象、阈值和无解处置。\n\n【本页指示顺序】从安全参考、稳态、恢复三行讲到全程电能和约束两行，最后强调不放宽原门槛。\n\n【口径与限制】这是统一验收方案，不是三种算法都已采用的结果。不能延长原段或提高电压限值换通过。独立PI非必需，无积分器时积分饱和为不适用。\n\n【教授追问与回答】问：缺少稳态样本如何报告？答：数量和失败状态明示，正式稳态指标不填0，不让回退样本伪装连续验收。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/验收缺口与版本边界_20260910.md"
+  },
+  {
+    "page": 27,
+    "title": "备份：每张结果图都应追溯到场景、脚本和原始数据",
+    "visual": "参数到图表的证据链示意",
+    "seconds": 35,
+    "speech": "这里给出结果追溯方法。先定位场景参数和源条件，再找到生成脚本与LTspice网表，随后核对RAW、Log或控制时序CSV，再到汇总表和展示图。文件哈希用于判断是不是同一份保存版本，不证明物理模型正确。静态批处理、离散控制、保持指令重放和GUI截图属于不同证据类型，不能互相冒充。本次只做旧文件审核、数据复核和图文修订，没有新增控制或LTspice仿真。",
+    "pointer": "沿证据链左到右说明。此页讲研究留痕，不朗读内部修稿过程。",
+    "limits": "已知旧清单在Rm元数据修订后有变更，保留原清单并另记当前哈希。本次讲稿每页给出确切路径，证据索引独立保存。",
+    "qa": "问：哈希相同是不是证明做过实验？答：只能证明当前文件与登记版本相同；实际运行身份要结合网表、求解输出、日志和来源说明判断。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/manifests/evidence_manifest.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/历史哈希清单核查.csv"
+    ],
+    "change": "删除与科学汇报无关的失效引用修复计数，改讲实际证据链和不同数据身份。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第27页  备份：每张结果图都应追溯到场景、脚本和原始数据\n\n【建议时长】35秒\n\n【本页实际图表】参数到图表的证据链示意\n\n【逐字讲稿】这里给出结果追溯方法。先定位场景参数和源条件，再找到生成脚本与LTspice网表，随后核对RAW、Log或控制时序CSV，再到汇总表和展示图。文件哈希用于判断是不是同一份保存版本，不证明物理模型正确。静态批处理、离散控制、保持指令重放和GUI截图属于不同证据类型，不能互相冒充。本次只做旧文件审核、数据复核和图文修订，没有新增控制或LTspice仿真。\n\n【本页指示顺序】沿证据链左到右说明。此页讲研究留痕，不朗读内部修稿过程。\n\n【口径与限制】已知旧清单在Rm元数据修订后有变更，保留原清单并另记当前哈希。本次讲稿每页给出确切路径，证据索引独立保存。\n\n【教授追问与回答】问：哈希相同是不是证明做过实验？答：只能证明当前文件与登记版本相同；实际运行身份要结合网表、求解输出、日志和来源说明判断。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/manifests/evidence_manifest.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/project_audit_20260910/output/历史哈希清单核查.csv"
+  },
+  {
+    "page": 28,
+    "title": "备份：结构声场模型与结果尚未完成",
+    "visual": "建模输入及未来求解证据清单，无云图",
+    "seconds": 35,
+    "speech": "结构声场部分尚未完成。下一步需要确定几何、压电材料及极化方向、电极与机械边界、耦合面和吸收边界，再进行粗中细网格、模态和谐响应计算。结果侧需保存端口阻抗、位移幅相、声压云图及轴向曲线、网格收敛表和正常结束日志。当前没有这些求解结果，因此不能展示示意云图并称它是ANSYS或COMSOL结果，也不能宣称已完成声场验证。",
+    "pointer": "只按本页左右两列讲“需要输入什么”和“需要保存什么”，不需要额外云图。",
+    "limits": "软件版本与许可证信息需记录。模态是求解结果不是材料输入；PML是未来边界方案之一，具体需匹配模型域。热、空化和临床效应不属于当前建模范围。",
+    "qa": "问：现在能否算声学效率？答：不能，声学字段为空，需完成并校核耦合模型，再做实验外部验证。",
+    "sources": [
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv",
+      "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"
+    ],
+    "change": "未来输入与求解结果分清，保留没有真实结构声场结果的明确状态。",
+    "uncertain": "无。本页仅陈述文件证据、定义或代数复核。",
+    "notes": "第28页  备份：结构声场模型与结果尚未完成\n\n【建议时长】35秒\n\n【本页实际图表】建模输入及未来求解证据清单，无云图\n\n【逐字讲稿】结构声场部分尚未完成。下一步需要确定几何、压电材料及极化方向、电极与机械边界、耦合面和吸收边界，再进行粗中细网格、模态和谐响应计算。结果侧需保存端口阻抗、位移幅相、声压云图及轴向曲线、网格收敛表和正常结束日志。当前没有这些求解结果，因此不能展示示意云图并称它是ANSYS或COMSOL结果，也不能宣称已完成声场验证。\n\n【本页指示顺序】只按本页左右两列讲“需要输入什么”和“需要保存什么”，不需要额外云图。\n\n【口径与限制】软件版本与许可证信息需记录。模态是求解结果不是材料输入；PML是未来边界方案之一，具体需匹配模型域。热、空化和临床效应不属于当前建模范围。\n\n【教授追问与回答】问：现在能否算声学效率？答：不能，声学字段为空，需完成并校核耦合模型，再做实验外部验证。\n\n【模糊推测内容】无。本页仅陈述文件证据、定义或代数复核。\n\n[Sources]\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"
+  }
+]

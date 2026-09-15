@@ -1,0 +1,28 @@
+{
+  "original_raw_archive": {
+    "bytes": 2477939795,
+    "sha256": "739b1ca924b20c638b7fcf04e7019f9417e845b77cd68bee4b29e427620b2a24"
+  },
+  "raw_parts": [
+    {
+      "name": "project_handoff_raw.zip.part001",
+      "bytes": 1073741824,
+      "sha256": "ef6453390fb719a9475a2f2e6614f29592361434b3c5778726da6d02c80b0c8c"
+    },
+    {
+      "name": "project_handoff_raw.zip.part002",
+      "bytes": 1073741824,
+      "sha256": "fee54d185a50629d037e0f7ef1890384857e3ec01f2ce0d0f8d63be88052f91d"
+    },
+    {
+      "name": "project_handoff_raw.zip.part003",
+      "bytes": 330456147,
+      "sha256": "f0765b8bdfb6ecae0fb1906c613e88ae2228cdaad54d368912b04e735890b654"
+    }
+  ],
+  "main_archive": {
+    "name": "project_handoff_main.zip",
+    "bytes": 447239356,
+    "sha256": "085bbf0c937de70e65e37289f226e4259645038ec798ca0dc28a641213c38775"
+  }
+}

@@ -1,0 +1,850 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/jyx0ra1s",
+    "id": "jyx0ra1s",
+    "slide": 5,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0ba143al",
+      "id": "3",
+      "name": "title-4",
+      "bbox": [
+        80,
+        38,
+        1130,
+        58
+      ],
+      "geometry": "rect",
+      "text": "裸BVD交叉验证：同一配置下，两条求解路径数值吻合",
+      "textPreview": "裸BVD交叉验证：同一配置下，两条求解路径数值吻合",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "裸BVD交叉验证：同一配置下，两条求解路径数值吻合"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "裸BVD交叉验证：同一配置下，两条求解路径数值吻合",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "裸BVD交叉验证：同一配置下，两条求解路径数值吻合",
+              "fontSize": 32,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ql8jytsj",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sna103ap",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih8ju9sn",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        72,
+        688,
+        1100,
+        20
+      ],
+      "geometry": "rect",
+      "text": "裸BVD，保留Rm损耗    复核已保存RAW，非新LTspice仿真    误差以Python复阻抗为分母",
+      "textPreview": "裸BVD，保留Rm损耗    复核已保存RAW，非新LTspice仿真    误差以Python复阻抗为分母",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "裸BVD，保留Rm损耗    复核已保存RAW，非新LTspice仿真    误差以Python复阻抗为分母"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "裸BVD，保留Rm损耗    复核已保存RAW，非新LTspice仿真    误差以Python复阻抗为分母",
+          "resolvedTextStyle": {
+            "fontSize": 11.51,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "裸BVD，保留Rm损耗    复核已保存RAW，非新LTspice仿真    误差以Python复阻抗为分母",
+              "fontSize": 11.51,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5cva1cfq",
+      "id": "11",
+      "name": "矩形 10",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "5",
+      "textPreview": "5",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "5"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "5",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x8vaxsfe",
+      "id": "15",
+      "name": "矩形 14",
+      "bbox": [
+        936,
+        136,
+        220,
+        44
+      ],
+      "geometry": "rect",
+      "text": "0.5–1.5 MHz",
+      "textPreview": "0.5–1.5 MHz",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0.5–1.5 MHz"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "0.5–1.5 MHz",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "0.5–1.5 MHz",
+              "fontSize": 34,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/v6tsv2xo",
+      "id": "17",
+      "name": "矩形 16",
+      "bbox": [
+        936,
+        178,
+        220,
+        26
+      ],
+      "geometry": "rect",
+      "text": "100001点｜Δf=10 Hz",
+      "textPreview": "100001点｜Δf=10 Hz",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "100001点｜Δf=10 Hz"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "100001点｜Δf=10 Hz",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "color": "#5F6B76",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "100001点｜Δf=10 Hz",
+              "fontSize": 17,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/h4fa9wfy",
+      "id": "19",
+      "name": "矩形 18",
+      "bbox": [
+        936,
+        236,
+        220,
+        44
+      ],
+      "geometry": "rect",
+      "text": "1.36×10⁻⁵ %",
+      "textPreview": "1.36×10⁻⁵ %",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1.36×10⁻⁵ %"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1.36×10⁻⁵ %",
+          "resolvedTextStyle": {
+            "fontSize": 29,
+            "typeface": "Calibri",
+            "color": "#328898",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1.36×10⁻⁵ %",
+              "fontSize": 29,
+              "typeface": "Calibri",
+              "color": "#328898",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/oz29krqh",
+      "id": "21",
+      "name": "矩形 20",
+      "bbox": [
+        936,
+        278,
+        220,
+        28
+      ],
+      "geometry": "rect",
+      "text": "最大复阻抗相对误差",
+      "textPreview": "最大复阻抗相对误差",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "最大复阻抗相对误差"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "最大复阻抗相对误差",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "最大复阻抗相对误差",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2xkrih8b",
+      "id": "23",
+      "name": "矩形 22",
+      "bbox": [
+        950,
+        339,
+        290,
+        44
+      ],
+      "geometry": "rect",
+      "text": "0.900000 MHz",
+      "textPreview": "0.900000 MHz",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0.900000 MHz"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "0.900000 MHz",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Calibri",
+            "color": "#DE8800",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "0.900000 MHz",
+              "fontSize": 27,
+              "typeface": "Calibri",
+              "color": "#DE8800",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gv29g7q5",
+      "id": "25",
+      "name": "矩形 24",
+      "bbox": [
+        952,
+        386,
+        276,
+        42
+      ],
+      "geometry": "rect",
+      "text": "两条路径的电导峰",
+      "textPreview": "两条路径的电导峰",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "两条路径的电导峰"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "两条路径的电导峰",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "两条路径的电导峰",
+              "fontSize": 20,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/et0reh8f",
+      "id": "27",
+      "name": "矩形 26",
+      "bbox": [
+        935,
+        464,
+        298,
+        115
+      ],
+      "geometry": "rect",
+      "text": "已存RAW与解析复核\n同参数、同网格对照\n实现吻合不等于参数真实",
+      "textPreview": "已存RAW与解析复核 | 同参数、同网格对照 | 实现吻合不等于参数真实",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "已存RAW与解析复核"
+          },
+          {
+            "index": 2,
+            "text": "同参数、同网格对照"
+          },
+          {
+            "index": 3,
+            "text": "实现吻合不等于参数真实"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "已存RAW与解析复核",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#B84040",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "已存RAW与解析复核",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#B84040",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "同参数、同网格对照",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#B84040",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "同参数、同网格对照",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#B84040",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "实现吻合不等于参数真实",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#B84040",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "实现吻合不等于参数真实",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#B84040",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/q9876pkv",
+      "id": "28",
+      "name": "AUDIT_P4_p04_bare_bvd",
+      "bbox": [
+        92.73,
+        125,
+        780.53,
+        525
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/full_audit_20260911_p4_1.png",
+        "contentType": "image/png",
+        "byteLength": 111935
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/full_audit_20260911_p4_1.png",
+        "contentType": "image/png",
+        "byteLength": 111935
+      }
+    }
+  ],
+  "composeRuns": []
+}

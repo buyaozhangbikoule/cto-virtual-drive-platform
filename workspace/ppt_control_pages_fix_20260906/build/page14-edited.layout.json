@@ -1,0 +1,1051 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/6lsnupw7",
+    "id": "6lsnupw7",
+    "slide": 14,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kre1k3y9",
+      "id": "14",
+      "name": "title-11",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "到达0.8548 MHz新峰位，尚未满足连续稳态验收",
+      "textPreview": "到达0.8548 MHz新峰位，尚未满足连续稳态验收",
+      "resolvedFontSize": 36,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 36,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "到达0.8548 MHz新峰位，尚未满足连续稳态验收"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "到达0.8548 MHz新峰位，尚未满足连续稳态验收",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "到达0.8548 MHz新峰位，尚未满足连续稳态验收",
+              "fontSize": 36,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xc7eds76",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbydknq1",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jepwf2pc",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        720,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Hypothetical BVD model — non-measured parameters",
+      "textPreview": "Hypothetical BVD model — non-measured parameters",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Hypothetical BVD model — non-measured parameters"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Hypothetical BVD model — non-measured parameters",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Hypothetical BVD model — non-measured parameters",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idgvmx8r",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "14",
+      "textPreview": "14",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "14"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "14",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "14",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kfidonqx",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        907,
+        123,
+        297,
+        35
+      ],
+      "geometry": "rect",
+      "text": "fs−5%验收窗口",
+      "textPreview": "fs−5%验收窗口",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "fs−5%验收窗口"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "fs−5%验收窗口",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "fs−5%验收窗口",
+              "fontSize": 25,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi5c3y98",
+      "id": "8",
+      "name": "矩形 7",
+      "bbox": [
+        907,
+        168,
+        297,
+        111
+      ],
+      "geometry": "rect",
+      "text": "2.400–3.200 s\n连续10个CONTROL样本\nNORMAL、未冻结、捕获率≥98%\n相邻控制样本间隔≤30 ms",
+      "textPreview": "2.400–3.200 s | 连续10个CONTROL样本 | NORMAL、未冻结、捕获率≥98% | 相邻控制样本间隔≤30 ms",
+      "resolvedFontSize": 19.51,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 19.51,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2.400–3.200 s"
+          },
+          {
+            "index": 2,
+            "text": "连续10个CONTROL样本"
+          },
+          {
+            "index": 3,
+            "text": "NORMAL、未冻结、捕获率≥98%"
+          },
+          {
+            "index": 4,
+            "text": "相邻控制样本间隔≤30 ms"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2.400–3.200 s",
+          "resolvedTextStyle": {
+            "fontSize": 19.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2.400–3.200 s",
+              "fontSize": 19.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "连续10个CONTROL样本",
+          "resolvedTextStyle": {
+            "fontSize": 19.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "连续10个CONTROL样本",
+              "fontSize": 19.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "NORMAL、未冻结、捕获率≥98%",
+          "resolvedTextStyle": {
+            "fontSize": 19.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NORMAL、未冻结、捕获率≥98%",
+              "fontSize": 19.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "相邻控制样本间隔≤30 ms",
+          "resolvedTextStyle": {
+            "fontSize": 19.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "相邻控制样本间隔≤30 ms",
+              "fontSize": 19.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehwvat8n",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        907,
+        291,
+        297,
+        36
+      ],
+      "geometry": "rect",
+      "text": "周期扫频：未通过",
+      "textPreview": "周期扫频：未通过",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "Calibri",
+        "color": "#2F73B7",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "周期扫频：未通过"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "周期扫频：未通过",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Calibri",
+            "color": "#2F73B7",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "周期扫频：未通过",
+              "fontSize": 25,
+              "typeface": "Calibri",
+              "color": "#2F73B7",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3e1gjyd",
+      "id": "10",
+      "name": "矩形 9",
+      "bbox": [
+        907,
+        334,
+        297,
+        96
+      ],
+      "geometry": "rect",
+      "text": "到达峰位 0.8548 MHz\n尾段捕获率 100%\n合格连续样本 6 / 10",
+      "textPreview": "到达峰位 0.8548 MHz | 尾段捕获率 100% | 合格连续样本 6 / 10",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "到达峰位 0.8548 MHz"
+          },
+          {
+            "index": 2,
+            "text": "尾段捕获率 100%"
+          },
+          {
+            "index": 3,
+            "text": "合格连续样本 6 / 10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "到达峰位 0.8548 MHz",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "到达峰位 0.8548 MHz",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "尾段捕获率 100%",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "尾段捕获率 100%",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "合格连续样本 6 / 10",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "合格连续样本 6 / 10",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4ni9ofy",
+      "id": "11",
+      "name": "矩形 10",
+      "bbox": [
+        907,
+        450,
+        297,
+        36
+      ],
+      "geometry": "rect",
+      "text": "P&O：未通过",
+      "textPreview": "P&O：未通过",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "Calibri",
+        "color": "#C84444",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "P&O：未通过"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "P&O：未通过",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Calibri",
+            "color": "#C84444",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "P&O：未通过",
+              "fontSize": 25,
+              "typeface": "Calibri",
+              "color": "#C84444",
+              "bold": true,
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1wze9g7",
+      "id": "12",
+      "name": "矩形 11",
+      "bbox": [
+        907,
+        492,
+        297,
+        96
+      ],
+      "geometry": "rect",
+      "text": "到达峰位 0.8548 MHz\n尾段捕获率 100%\n合格连续样本 9 / 10",
+      "textPreview": "到达峰位 0.8548 MHz | 尾段捕获率 100% | 合格连续样本 9 / 10",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "到达峰位 0.8548 MHz"
+          },
+          {
+            "index": 2,
+            "text": "尾段捕获率 100%"
+          },
+          {
+            "index": 3,
+            "text": "合格连续样本 9 / 10"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "到达峰位 0.8548 MHz",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "到达峰位 0.8548 MHz",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "尾段捕获率 100%",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "尾段捕获率 100%",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "合格连续样本 9 / 10",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "合格连续样本 9 / 10",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b2507exs",
+      "id": "13",
+      "name": "矩形 12",
+      "bbox": [
+        907,
+        606,
+        297,
+        65
+      ],
+      "geometry": "rect",
+      "text": "100%按当前场景安全峰值归一化\n对应约140.2 mW\n不等于恢复基准170.0 mW",
+      "textPreview": "100%按当前场景安全峰值归一化 | 对应约140.2 mW | 不等于恢复基准170.0 mW",
+      "resolvedFontSize": 17.51,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 17.51,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 2,
+          "right": 4,
+          "bottom": 2,
+          "left": 4
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "100%按当前场景安全峰值归一化"
+          },
+          {
+            "index": 2,
+            "text": "对应约140.2 mW"
+          },
+          {
+            "index": 3,
+            "text": "不等于恢复基准170.0 mW"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "100%按当前场景安全峰值归一化",
+          "resolvedTextStyle": {
+            "fontSize": 17.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "100%按当前场景安全峰值归一化",
+              "fontSize": 17.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "对应约140.2 mW",
+          "resolvedTextStyle": {
+            "fontSize": 17.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "对应约140.2 mW",
+              "fontSize": 17.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "不等于恢复基准170.0 mW",
+          "resolvedTextStyle": {
+            "fontSize": 17.51,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不等于恢复基准170.0 mW",
+              "fontSize": 17.51,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "alignment": "left"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/qpsv2lkb",
+      "id": "15",
+      "name": "图片 5",
+      "bbox": [
+        72,
+        113,
+        800,
+        557.69
+      ],
+      "alt": "基准与fs减5%的离线安全功率峰，以及同一当前时序中的捕获率和CONTROL频率。两种自适应策略均未通过本段连续10样本验收。",
+      "contentType": "image/png",
+      "imageCrop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0
+      },
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "/ppt/media/image9.png",
+        "contentType": "image/png",
+        "byteLength": 273125
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image9.png",
+        "contentType": "image/png",
+        "byteLength": 273125
+      }
+    }
+  ],
+  "composeRuns": []
+}

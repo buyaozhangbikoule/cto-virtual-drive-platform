@@ -1,0 +1,16 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/i107q5of","slide":1,"title":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textShapes":6}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":1,"name":"title-5","text":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textPreview":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textChars":30,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/dgbulwnm","slide":1,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cf2tcr61","slide":1,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":1,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":1,"name":"矩形 4","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/n6dcr65o","slide":1,"name":"矩形: 圆角 7","bbox":[818,126,390,418]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":1,"name":"矩形 8","text":"0.9 MHz固定频点\n同一1 Vrms Thevenin源｜Rs=50 Ω","textPreview":"0.9 MHz固定频点 | 同一1 Vrms Thevenin源｜Rs=50 Ω","textChars":38,"textLines":2,"bbox":[838,142,350,58]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":1,"name":"矩形 9","text":"有损：56.70 Ω ∠−1.08°","textPreview":"有损：56.70 Ω ∠−1.08°","textChars":18,"textLines":1,"bbox":[840,494,340,34]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":1,"name":"矩形 10","text":"理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页","textPreview":"理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页","textChars":55,"textLines":1,"bbox":[100,634,1080,28]}
+{"kind":"chart","id":"ch/f6d076h4","slide":1,"name":"","chartType":"scatter","title":"匹配后输入阻抗幅值（匹配前量级见右表）","bbox":[72,126,720,224]}
+{"kind":"chart","id":"ch/4b61kbil","slide":1,"name":"","chartType":"scatter","title":"输入阻抗相位","bbox":[72,366,720,242]}
+{"kind":"table","id":"tb/ql47mto7","slide":1,"name":"","rows":5,"cols":4,"preview":"指标 | 匹配前 | 理想匹配 | 有损匹配","bbox":[830,207,366,270]}
+{"kind":"notes","id":"nt/i107q5of","slide":1,"text":"讲述顺序：先看右表的0.9 MHz固定频点，再看左上匹配后|Zin|局部曲线，最后看左下相位变化。\n比较条件：同一个1 Vrms RMS戴维南源和50 Ω源阻抗；换能器BVD参数相同。\n0.9 MHz结果：匹配前Zin=6800.001−j1939.072 Ω；理想匹配Zin≈50−j0 Ω；有损匹配Zin=56.686−j1.067 Ω。\n理想网络同时接近50 Ω和0°。有损网络由于电感Q=100、电容Q=1000，并且优化目标是最大化P_Rm而不是强制Γ=0，因此保留小量失配。\n左上图不画匹配前曲线，是因为匹配前|Z|在局部窗口内约6.8 kΩ至96.8 kΩ，若与0–65 Ω的匹配后曲线共用线性坐标，匹配后曲线将不可读；匹配前数值已保留在右表。\n结论边界：结果来自假设BVD参数和线性AC模型，不是实测换能器参数。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_LTspice逐频数据.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_匹配前后特征汇总.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_匹配设计参数.json"}

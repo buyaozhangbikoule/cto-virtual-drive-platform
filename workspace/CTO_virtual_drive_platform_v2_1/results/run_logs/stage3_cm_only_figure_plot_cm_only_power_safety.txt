@@ -1,0 +1,20 @@
+COMMAND: C:\Users\24739\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe plot_cm_only_power_safety.py
+CWD: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\CTO_virtual_drive_platform_v2_1\scripts
+RETURN_CODE: 0
+
+STDOUT:
+{
+  "status": "PASS",
+  "figure": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\figures\\stage3_disturbance\\cm_only\\stage3_07_cm_only_power_and_electrical_limits.png",
+  "summary": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\tables\\stage3_disturbance\\stage3_cm_only_power_safety_summary.csv",
+  "display_peaks_MHz": [
+    "0.9000",
+    "0.8781",
+    "0.8579",
+    "0.8214"
+  ]
+}
+
+
+STDERR:
+

@@ -1,0 +1,12 @@
+{
+  "name": "B1_T100_A40_R0",
+  "dwell_s": 1.6,
+  "rows": 840,
+  "timeline_sha256": "34d483d86ac6325de5d69379ad52c61a4b31f725abfcafdfadacc7174c441453",
+  "previous_round_exact_reproduction": {
+    "matched": true,
+    "reference": "frozen/reference/E04_B_dwell_1.6s/timeline.csv",
+    "rows": 840,
+    "mismatch_count": 0
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "audit_status": "INCOMPLETE",
+  "pass_count": 6,
+  "blocking_count": 4,
+  "total_items": 12,
+  "blocking_items": [
+    "阶段三A：活动扰动扫描",
+    "阶段三B：活动选频准则",
+    "阶段四：活动三策略与保护",
+    "阶段五：活动综合比较"
+  ],
+  "rows": [
+    {
+      "item": "修订版任务说明与边界",
+      "status": "PASS",
+      "evidence": "03_Codex任务说明_修订版_v2_1.md",
+      "gap_or_action": "无",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "活动参数来源身份",
+      "status": "PASS",
+      "evidence": "v2_1_活动参数清单.json",
+      "gap_or_action": "无",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "阶段一：活动裸BVD",
+      "status": "PASS",
+      "evidence": "8/8 files; fs error=0.0%; max relative error=1.3599790127721423e-07; hashes=True",
+      "gap_or_action": "无",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "LTspice真实执行证据",
+      "status": "PASS",
+      "evidence": "LTspice version line + RAW/LOG SHA-256",
+      "gap_or_action": "无",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "阶段二：活动匹配网络",
+      "status": "PASS",
+      "evidence": "20/20 files; numeric=True; same_source=True; hashes=True",
+      "gap_or_action": "无",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "阶段三A：活动扰动扫描",
+      "status": "NOT_STARTED",
+      "evidence": "no active v2.1 deliverable directory",
+      "gap_or_action": "必须基于MODEL_V2_1重新运行；根目录旧成果仅作LEGACY",
+      "blocks_final_acceptance": true
+    },
+    {
+      "item": "阶段三B：活动选频准则",
+      "status": "NOT_STARTED",
+      "evidence": "no active v2.1 deliverable directory",
+      "gap_or_action": "必须基于MODEL_V2_1重新运行；根目录旧成果仅作LEGACY",
+      "blocks_final_acceptance": true
+    },
+    {
+      "item": "阶段四：活动三策略与保护",
+      "status": "NOT_STARTED",
+      "evidence": "no active v2.1 deliverable directory",
+      "gap_or_action": "必须基于MODEL_V2_1重新运行；根目录旧成果仅作LEGACY",
+      "blocks_final_acceptance": true
+    },
+    {
+      "item": "阶段五：活动综合比较",
+      "status": "NOT_STARTED",
+      "evidence": "no active v2.1 deliverable directory",
+      "gap_or_action": "必须基于MODEL_V2_1重新运行；根目录旧成果仅作LEGACY",
+      "blocks_final_acceptance": true
+    },
+    {
+      "item": "旧成果隔离",
+      "status": "WARN",
+      "evidence": "4/4 legacy directories retained outside active v2.1 directory",
+      "gap_or_action": "保留作工作痕迹，但必须通过README_CURRENT和报告水印避免被误作活动结论",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "活动模型统一入口与manifest",
+      "status": "PASS",
+      "evidence": "run_manifest.json",
+      "gap_or_action": "无",
+      "blocks_final_acceptance": false
+    },
+    {
+      "item": "LTspice GUI补充截图",
+      "status": "USER_ACTION",
+      "evidence": "0 GUI screenshot(s)",
+      "gap_or_action": "最终报告前由用户手工补截版本窗口、网表、波形和Error Log；RAW证据不受此项影响",
+      "blocks_final_acceptance": false
+    }
+  ]
+}

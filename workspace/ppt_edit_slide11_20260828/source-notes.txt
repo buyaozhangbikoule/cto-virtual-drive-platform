@@ -1,0 +1,14 @@
+[Sources]
+- Project-generated sweep data: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\active_stage3_5\stage3_disturbance\stage3_frequency_response_all_cases.csv
+- Project-generated controller timeline: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\report_evidence_final\06_控制与保护\stage4_control_timeline.csv
+- Source presentation: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\report_evidence_final\CTO超声换能器第一月教授组会汇报_全部图像完整修正版_2026-08-28.pptx
+
+Computed values used on slide 11:
+- Baseline maximum safe motional power: 169.999978 mW at 0.9000 MHz.
+- fs -5% maximum safe motional power: 140.230383 mW at 0.8548 MHz.
+- Peak-frequency shift: -45.2 kHz.
+- Fixed 0.9 MHz safe-power capture in CASE_FS_M5 steady state: 0.0303869%.
+- Periodic scan and scan-assisted P&O locked frequency in CASE_FS_M5: 0.8548 MHz, steady safe-power capture 100%.
+- Periodic scan satisfies the 98% / 10 consecutive NORMAL control-sample criterion in 96.5 ms.
+- P&O first reaches 0.8548 MHz and 100% capture at 98.5 ms after the disturbance, but does not satisfy the consecutive steady-state criterion in this segment because reference/probe actions interrupt the holding window.
+- A 100% capture ratio is normalized to the current scenario's own safe maximum; it does not mean recovery to the baseline absolute power of approximately 170.0 mW.

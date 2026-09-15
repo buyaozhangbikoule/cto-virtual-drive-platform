@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "raw_sha256": "5d21d049bb81ecce4855aeaa0d2d4daae8ea77c17ed8931521f66a8c3c387663",
+  "log_sha256": "598ee8a8284b6513d89f360e378ca274b2e4a7f914d4716b00a08aab7a95643d",
+  "points": 100001,
+  "conductance_peak_Hz": 900000.0,
+  "absZ_min_Hz": 899850.0,
+  "phase_zero_Hz": "900176.201;901793.884",
+  "absZ_at_fs_ohm": 7071.06870125852,
+  "ReZ_at_fs_ohm": 6800.000785796725,
+  "ImZ_at_fs_ohm": -1939.0724305919543,
+  "phase_at_fs_deg": -15.915907153226337,
+  "max_Z_relative_error": 1.3599790127721423e-07,
+  "series_resonance_error_pct": 0.0
+}

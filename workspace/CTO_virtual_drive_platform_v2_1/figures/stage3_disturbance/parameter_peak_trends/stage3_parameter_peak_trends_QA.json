@@ -1,0 +1,31 @@
+{
+  "status": "PASS",
+  "core_conclusion": "Under the same frozen Thevenin source, Lm-only/Cm-only shifts, prescribed fs drift, source/matching errors and inductor loss reduce active-power peak height more strongly than C0 or Qm in the registered v2.1 ranges.",
+  "archetype": "quantitative grid",
+  "backend": "Python/matplotlib only",
+  "source_data": "results\\tables\\stage3_disturbance\\stage3_parameter_peak_trends_source.csv",
+  "source_scope": "deterministic MODEL_V2_1_HYPOTHETICAL outputs; not measured data",
+  "statistics": "No error bars or hypothesis tests: this is a deterministic parameter sweep, not replicated experimental sampling.",
+  "absolute_figure": "shared y-axis across all panels for honest magnitude comparison",
+  "relative_zoom_figure": "independent y-axis per panel; intended only to reveal within-factor direction and small changes",
+  "baseline_power_peak_mW": 169.99997832489854,
+  "max_abs_change_pct_by_factor": {
+    "C0": 0.15255191614284014,
+    "Rm": 6.355573480309418,
+    "fs": 17.511529085282184,
+    "Lm": 43.41657467742856,
+    "Cm": 43.26763098530066,
+    "Rs": 16.40420765788031,
+    "Lmatch": 14.803584803083469,
+    "Cmatch": 16.489458718024828,
+    "inductor_Q": 33.497839103371284,
+    "Qm": 6.661338147750939e-14
+  },
+  "known_missing_cases": [],
+  "lm_cm_only_convention": "For Lm-only/Cm-only scans, only the named motional element changes; all other BVD elements are frozen and the resulting fs/Qm are derived.",
+  "reviewer_risks": [
+    "Do not compare apparent slopes across panels in the relative-zoom figure because y-scales differ.",
+    "Categorical x spacing represents registered levels, not continuous dose-response sampling.",
+    "Conclusions are limited to the frozen source, hypothetical BVD model and declared disturbance ranges."
+  ]
+}

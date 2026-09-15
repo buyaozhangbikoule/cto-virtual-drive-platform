@@ -1,0 +1,327 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"CTO超声换能器虚拟阻抗建模","textShapes":5}
+{"kind":"shape","id":"sh/fu94fe98","slide":1,"name":"矩形 7","bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"textChars":23,"textLines":2}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"textChars":24,"textLines":1}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"name":"矩形 3","bbox":[96,405,160,5]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"textChars":19,"textLines":1}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"textChars":1,"textLines":1}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"开场只做边界定义：本月完成的是端口电学模型、匹配、扰动扫描和控制原型，不是CTO治疗效果验证。 |  | [Sources] | - C:\\Users\\2..."}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textShapes":11}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"textChars":27,"textLines":1}
+{"kind":"shape","id":"sh/9072xkry","slide":2,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"name":"箭头: 右 5","bbox":[244,264,70,34]}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"箭头: 右 6","bbox":[464,264,70,34]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"箭头: 右 7","bbox":[684,264,70,34]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"箭头: 右 8","bbox":[904,264,70,34]}
+{"kind":"shape","id":"sh/ove9o7yd","slide":2,"name":"矩形: 圆角 9","bbox":[86,235,160,92]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"textChars":8,"textLines":2}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"矩形: 圆角 11","bbox":[306,235,160,92]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/wjy9sry9","slide":2,"name":"矩形: 圆角 13","bbox":[526,235,160,92]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"矩形: 圆角 15","bbox":[746,235,160,92]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"textChars":5,"textLines":1}
+{"kind":"shape","id":"sh/cnupgny5","slide":2,"name":"矩形: 圆角 17","bbox":[966,235,190,92]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"textChars":5,"textLines":1}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"textChars":16,"textLines":1}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"这页回答项目在解决什么：负载或参数变化导致电学最优点移动，固定频率可能失配。随后引出参数必须先自洽。 |  | [Sources] | - C:\\User..."}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textShapes":17}
+{"kind":"textbox","id":"sh/03ix43e5","slide":3,"textChars":31,"textLines":1}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"矩形 5","bbox":[72,130,520,470]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"textChars":27,"textLines":1}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"textChars":17,"textLines":1}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"textChars":10,"textLines":1}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"textChars":19,"textLines":1}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"矩形 12","bbox":[620,130,588,470]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/e10f2twf","slide":3,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/f29gbyx0","slide":3,"textChars":18,"textLines":1}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"教授最可能追问参数来源。先主动展示旧参数冲突，再强调v2.1只解决数学自洽，不代表器件真实性。 |  | [Sources] | - C:\\Users\\2..."}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"10 Hz网格下，Python与LTspice结果数值一致","textShapes":10}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"textChars":29,"textLines":1}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"矩形 4","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/sna103ap","slide":4,"name":"矩形 6","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/v6tsv2xo","slide":4,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/gv29g7q5","slide":4,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"textChars":49,"textLines":4}
+{"kind":"image","id":"im/q9876pkv","slide":4,"name":"图片 12","bbox":[72,122,820,520]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"同一源条件下，L型匹配将运动支路有功功率代理提高约32.8倍","textShapes":6}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"textChars":30,"textLines":1}
+{"kind":"shape","id":"sh/dgbulwnm","slide":5,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"矩形: 圆角 7","bbox":[846,418,318,150]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"textChars":52,"textLines":3}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"textChars":23,"textLines":1}
+{"kind":"image","id":"im/srmx0vmd","slide":5,"name":"图片 19","bbox":[72,124,725,500]}
+{"kind":"image","id":"im/jmdw3qlg","slide":5,"name":"图片 20","bbox":[830,132,350,255]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"强调比较使用同一Thevenin源，不在每个网络后重新校准端电压。32.8倍只描述P_Rm代理，不应称为效率。 |  | [Sources] | - C:..."}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textShapes":6}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"textChars":23,"textLines":1}
+{"kind":"shape","id":"sh/yhg7epsj","slide":6,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/7m98ru9g","slide":6,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/oryp8fah","slide":6,"textChars":34,"textLines":5}
+{"kind":"shape","id":"sh/pc76hkr2","slide":6,"name":"矩形: 圆角 8","bbox":[966,468,218,86]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"textChars":16,"textLines":2}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"这页不是念完整扫描表，而是回答谁控制峰位、峰高和峰宽。重点指出fs漂移决定控制器的捕获范围。 |  | [Sources] | - C:\\Users\\24..."}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textShapes":11}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"textChars":25,"textLines":1}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/eh0ba1sr","slide":7,"name":"矩形: 圆角 7","bbox":[890,220,280,62]}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"textChars":9,"textLines":1}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"name":"矩形: 圆角 10","bbox":[890,318,280,62]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"textChars":9,"textLines":1}
+{"kind":"shape","id":"sh/n6x0fqlo","slide":7,"name":"矩形: 圆角 13","bbox":[890,416,280,62]}
+{"kind":"textbox","id":"sh/25ojml43","slide":7,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"textChars":27,"textLines":2}
+{"kind":"image","id":"im/tsze1szm","slide":7,"name":"图片 24","bbox":[80,112,717,550]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"三组保持fs、Rm和C0固定，并重新推导Lm/Cm。峰高约0.17 W保持不变，峰宽随Qm增加而缩小。 |  | [Sources] | - C:\\Use..."}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textShapes":8}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"textChars":26,"textLines":1}
+{"kind":"shape","id":"sh/18byd4zy","slide":8,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/je9g3ahk","slide":8,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"textChars":8,"textLines":1}
+{"kind":"shape","id":"sh/o7ydoret","slide":8,"name":"矩形: 圆角 9","bbox":[980,220,220,162]}
+{"kind":"textbox","id":"sh/98rehwve","slide":8,"textChars":32,"textLines":5}
+{"kind":"shape","id":"sh/m5gvmhwn","slide":8,"name":"矩形: 圆角 11","bbox":[980,420,220,92]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"textChars":13,"textLines":2}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"textChars":23,"textLines":1}
+{"kind":"image","id":"im/1svqhoje","slide":8,"name":"图片 22","bbox":[90.17,150,843.65,205]}
+{"kind":"image","id":"im/0rmpoj2t","slide":8,"name":"图片 23","bbox":[98.13,385,827.74,205]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"先看基准场景，再看fs-5%的反例。最大功率点与最小相位点相差49.5 kHz，说明零相位不能直接作为功率最大化目标。 |  | [Sources] | ..."}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textShapes":6}
+{"kind":"textbox","id":"sh/p0ji9kf2","slide":9,"textChars":23,"textLines":1}
+{"kind":"shape","id":"sh/1cfmhgne","slide":9,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0b65obm9","slide":9,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/ofq5svm5","slide":9,"name":"矩形: 圆角 6","bbox":[814,522,360,92]}
+{"kind":"textbox","id":"sh/bih4na5w","slide":9,"textChars":40,"textLines":3}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"textChars":20,"textLines":1}
+{"kind":"image","id":"im/hcz65kbq","slide":9,"name":"图片 17","bbox":[72,150,1136,360]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"±20 kHz会漏掉部分漂移峰；±50 kHz可覆盖当前28场景。扫描时间按1.5 ms/点估算，只是准稳态代理。 |  | [Sources] | - ..."}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textShapes":9}
+{"kind":"textbox","id":"sh/wvetgbud","slide":10,"textChars":22,"textLines":1}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/l036l83y","slide":10,"name":"箭头: 右 5","bbox":[156,210,32,22]}
+{"kind":"shape","id":"sh/kzu5c32t","slide":10,"name":"箭头: 右 6","bbox":[156,310,32,22]}
+{"kind":"shape","id":"sh/725onyl4","slide":10,"name":"箭头: 右 7","bbox":[156,410,32,22]}
+{"kind":"shape","id":"sh/m1cnetkj","slide":10,"name":"箭头: 右 8","bbox":[156,510,32,22]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"矩形: 圆角 9","bbox":[82,158,145,62]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"textChars":6,"textLines":1}
+{"kind":"shape","id":"sh/q5gb21kb","slide":10,"name":"矩形: 圆角 11","bbox":[82,258,145,62]}
+{"kind":"textbox","id":"sh/r6pcv6lw","slide":10,"textChars":8,"textLines":1}
+{"kind":"shape","id":"sh/0bit8b2d","slide":10,"name":"矩形: 圆角 13","bbox":[82,358,145,62]}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/e9gb61k7","slide":10,"name":"矩形: 圆角 15","bbox":[82,458,145,62]}
+{"kind":"textbox","id":"sh/fapcz6ls","slide":10,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/ozitcv29","slide":10,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/xwnupgvy","slide":10,"textChars":50,"textLines":1}
+{"kind":"image","id":"im/8jmtobq9","slide":10,"name":"图片 40","bbox":[268,124,930,515]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"围绕约2.4 s真实触发窗口讲解。任何非NORMAL状态都先调幅并冻结频率，预测裁剪保证实际硬越限次数为0。阈值是仿真假设。 |  | [Sources]..."}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"固定频率在谐振漂移段失去功率，自适应策略可重新定位峰值","textShapes":10}
+{"kind":"textbox","id":"sh/0b6tc3yx","slide":11,"textChars":27,"textLines":1}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/wbih4b6d","slide":11,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/o7ih0r6h","slide":11,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/mdobedg3","slide":11,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/nehs7iho","slide":11,"textChars":21,"textLines":1}
+{"kind":"image","id":"im/21cnihkf","slide":11,"name":"图片 20","bbox":[72,130,880,520]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"按照扰动—响应—恢复顺序讲图，不逐点念曲线。不要说P&O恢复最快；当前严格验收下周期扫频更稳健。 |  | [Sources] | - C:\\Users\\..."}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"按98%功率连续10样本验收，周期扫频在当前参数下最稳健","textShapes":4}
+{"kind":"textbox","id":"sh/wvupgz6t","slide":12,"textChars":28,"textLines":1}
+{"kind":"shape","id":"sh/1gbm9s3a","slide":12,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0f2lgnmp","slide":12,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/b6d4f2lc","slide":12,"name":"矩形: 圆角 7","bbox":[72,506,1118,112]}
+{"kind":"textbox","id":"sh/a543mx4r","slide":12,"textChars":66,"textLines":2}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"这页给出正式验收结论。固定频率稳态误差高；周期扫频在所有扰动段满足验收；P&O尾段可到最优，但7段未满足连续10样本确认。 |  | [Sources] ..."}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textShapes":10}
+{"kind":"textbox","id":"sh/kjmxsfm1","slide":13,"textChars":30,"textLines":1}
+{"kind":"shape","id":"sh/q50nydsj","slide":13,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/bq9orito","slide":13,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/21gnuts7","slide":13,"name":"箭头: 右 5","bbox":[236,232,48,28]}
+{"kind":"shape","id":"sh/32ponyts","slide":13,"name":"箭头: 右 6","bbox":[526,232,48,28]}
+{"kind":"shape","id":"sh/gzy5s3a1","slide":13,"name":"矩形: 圆角 7","bbox":[82,178,220,130]}
+{"kind":"textbox","id":"sh/1076lobm","slide":13,"textChars":21,"textLines":4}
+{"kind":"shape","id":"sh/hcfy9k3u","slide":13,"name":"矩形: 圆角 9","bbox":[350,178,220,130]}
+{"kind":"textbox","id":"sh/gb6x0zm9","slide":13,"textChars":23,"textLines":4}
+{"kind":"shape","id":"sh/vaxg7ulo","slide":13,"name":"矩形: 圆角 11","bbox":[618,178,220,130]}
+{"kind":"textbox","id":"sh/u9ofyp43","slide":13,"textChars":21,"textLines":4}
+{"kind":"shape","id":"sh/t8fy5k3i","slide":13,"name":"矩形 13","bbox":[892,152,286,390]}
+{"kind":"textbox","id":"sh/876xwfmx","slide":13,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/7mdg3als","slide":13,"textChars":43,"textLines":8}
+{"kind":"textbox","id":"sh/6l4fu547","slide":13,"textChars":18,"textLines":1}
+{"kind":"textbox","id":"sh/lkvy103m","slide":13,"textChars":24,"textLines":1}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"文献可以支持CTO结构异质性及负载变化的物理背景，但不能直接给出病变类型到fs、Rm、C0的定量换算。 |  | [Sources] | - C:\\Use..."}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"电学链条已闭环，真实参数、P&O整定和结构声场仍需继续","textShapes":10}
+{"kind":"textbox","id":"sh/y5wjitgj","slide":14,"textChars":27,"textLines":1}
+{"kind":"shape","id":"sh/xc7eds76","slide":14,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/wbydknq1","slide":14,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/jepwf2pc","slide":14,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/5grehs7i","slide":14,"name":"矩形 5","bbox":[438,150,2,430]}
+{"kind":"shape","id":"sh/kfidonqx","slide":14,"name":"矩形 6","bbox":[850,150,2,430]}
+{"kind":"textbox","id":"sh/zi5c3y98","slide":14,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/ehwvat8n","slide":14,"textChars":51,"textLines":4}
+{"kind":"textbox","id":"sh/c3e1gjyd","slide":14,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/x4ni9ofy","slide":14,"textChars":43,"textLines":4}
+{"kind":"textbox","id":"sh/a1wze9g7","slide":14,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/b2507exs","slide":14,"textChars":43,"textLines":4}
+{"kind":"shape","id":"sh/kre1k3y9","slide":14,"name":"矩形: 圆角 13","bbox":[104,550,1070,64]}
+{"kind":"textbox","id":"sh/ls7idofu","slide":14,"textChars":24,"textLines":1}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"结束时保持本页。用三列明确区分已完成、未证明和下一步，不以泛化结论收尾。 |  | [Sources] | - C:\\Users\\24739\\Docume..."}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"备份：v2.1参数均有明确来源类别","textShapes":3}
+{"kind":"textbox","id":"sh/s7y5sv2x","slide":15,"textChars":17,"textLines":1}
+{"kind":"shape","id":"sh/547mhg3m","slide":15,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/k3y5ov21","slide":15,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/76p4jqls","slide":15,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/65gnqlk7","slide":15,"textChars":2,"textLines":1}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"答疑时用这页回答参数从哪里来。所有数值分成用户约束、假设基线和扫描变量，不能称为实测。 |  | [Sources] | - C:\\Users\\24739..."}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"备份：单因素与组合扰动均有编号和复现参数","textShapes":7}
+{"kind":"textbox","id":"sh/1ojy10ne","slide":16,"textChars":20,"textLines":1}
+{"kind":"shape","id":"sh/8z2h8bq1","slide":16,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/9kby1g7m","slide":16,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ytkf2h8j","slide":16,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/kv2h4rqp","slide":16,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/ip4zel83","slide":16,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/3qdg7qpo","slide":16,"textChars":82,"textLines":2}
+{"kind":"shape","id":"sh/fm1gzq5o","slide":16,"name":"矩形: 圆角 9","bbox":[596,336,570,188]}
+{"kind":"textbox","id":"sh/e1sf65o3","slide":16,"textChars":93,"textLines":4}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"用于回答扰动为何这样选、各场景是否可复现，以及基准0.9 MHz各指标。 |  | [Sources] | - C:\\Users\\24739\\Docume..."}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"备份：三种选频准则优化的是不同目标函数","textShapes":4}
+{"kind":"textbox","id":"sh/ihcvml4j","slide":17,"textChars":19,"textLines":1}
+{"kind":"shape","id":"sh/1c7e50ni","slide":17,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/gbedwfmx","slide":17,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/rm5czq50","slide":17,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/6lwvql4v","slide":17,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/snedsvml","slide":17,"name":"矩形: 圆角 6","bbox":[148,480,970,100]}
+{"kind":"textbox","id":"sh/jilcvq54","slide":17,"textChars":56,"textLines":1}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"用于回答为什么主控制目标选择最大功率，而相位和反射只作为对照。 |  | [Sources] | - C:\\Users\\24739\\Documents\\C..."}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textShapes":7}
+{"kind":"textbox","id":"sh/1cr2tg72","slide":18,"textChars":26,"textLines":1}
+{"kind":"shape","id":"sh/wrelszu9","slide":18,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/hsn2l4bu","slide":18,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/itw3upcf","slide":18,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/je5knut0","slide":18,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/5gnmp4bq","slide":18,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/6hw3y9sb","slide":18,"textChars":13,"textLines":2}
+{"kind":"textbox","id":"sh/rip4retw","slide":18,"textChars":14,"textLines":1}
+{"kind":"shape","id":"sh/fapkr6pw","slide":18,"name":"矩形: 圆角 9","bbox":[850,420,340,130]}
+{"kind":"textbox","id":"sh/upg3i18r","slide":18,"textChars":44,"textLines":2}
+{"kind":"image","id":"im/vmhknex4","slide":18,"name":"图片 18","bbox":[129.54,132,644.91,500]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":"相位目标不是0度，而是基准受约束最大功率点的相位。局部相位曲线斜率决定更新方向。高增益仍可能错误锁定。 |  | [Sources] | - C:\\Use..."}
+{"kind":"slide","id":"sl/nid43ytk","slide":19,"title":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textShapes":5}
+{"kind":"textbox","id":"sh/dsri9sr6","slide":19,"textChars":33,"textLines":1}
+{"kind":"shape","id":"sh/9gb6xgbi","slide":19,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/8v2pobax","slide":19,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/vitozqt8","slide":19,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/ahk7qls3","slide":19,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/jmd83atk","slide":19,"name":"矩形: 圆角 7","bbox":[830,352,350,198]}
+{"kind":"textbox","id":"sh/il47u5sz","slide":19,"textChars":49,"textLines":5}
+{"kind":"textbox","id":"sh/cri1gnql","slide":19,"textChars":17,"textLines":1}
+{"kind":"image","id":"im/1wzmx8je","slide":19,"name":"图片 18","bbox":[72,147.23,720,385.55]}
+{"kind":"image","id":"im/0v65432t","slide":19,"name":"图片 19","bbox":[830,147.41,350,161.18]}
+{"kind":"notes","id":"nt/nid43ytk","slide":19,"text":"用于回应‘是否真的运行LTspice’。截图证明运行痕迹，RAW解析与误差CSV才证明结果一致，哈希用于追溯。 |  | [Sources] | - C:..."}
+{"kind":"slide","id":"sl/zyxsni5k","slide":20,"title":"备份：控制器比较采用统一且可复现的指标定义","textShapes":4}
+{"kind":"textbox","id":"sh/gjuhg7ql","slide":20,"textChars":21,"textLines":1}
+{"kind":"shape","id":"sh/qpwjmh8n","slide":20,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/rq50vmp8","slide":20,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/4nu1krqh","slide":20,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/po3itc72","slide":20,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/3ml0rmpw","slide":20,"textChars":50,"textLines":1}
+{"kind":"notes","id":"nt/zyxsni5k","slide":20,"text":"用于回答恢复时间、稳态误差和错误锁定如何定义。强调所有策略用相同定义。 |  | [Sources] | - C:\\Users\\24739\\Documen..."}
+{"kind":"slide","id":"sl/m1wvqtk3","slide":21,"title":"备份：每张图都能追溯到参数、脚本和原始输出","textShapes":11}
+{"kind":"textbox","id":"sh/2l0vypkn","slide":21,"textChars":21,"textLines":1}
+{"kind":"shape","id":"sh/1gbmxs7a","slide":21,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0f2lon6p","slide":21,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ra9kryp8","slide":21,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/qp03yt8n","slide":21,"textChars":2,"textLines":1}
+{"kind":"shape","id":"sh/dcb2t87y","slide":21,"name":"箭头: 右 5","bbox":[260,270,54,28]}
+{"kind":"shape","id":"sh/sb2lk36t","slide":21,"name":"箭头: 右 6","bbox":[486,270,54,28]}
+{"kind":"shape","id":"sh/b6d432pc","slide":21,"name":"箭头: 右 7","bbox":[712,270,54,28]}
+{"kind":"shape","id":"sh/al43uxor","slide":21,"name":"箭头: 右 8","bbox":[938,270,54,28]}
+{"kind":"shape","id":"sh/4jax4nqd","slide":21,"name":"矩形: 圆角 9","bbox":[82,220,180,120]}
+{"kind":"textbox","id":"sh/5kjydsri","slide":21,"textChars":11,"textLines":2}
+{"kind":"shape","id":"sh/ixsf2d87","slide":21,"name":"矩形: 圆角 11","bbox":[314,220,180,120]}
+{"kind":"textbox","id":"sh/jy1gbi9s","slide":21,"textChars":21,"textLines":2}
+{"kind":"shape","id":"sh/wvax03q1","slide":21,"name":"矩形: 圆角 13","bbox":[540,220,180,120]}
+{"kind":"textbox","id":"sh/hwjy98rm","slide":21,"textChars":19,"textLines":2}
+{"kind":"shape","id":"sh/utsfyt8v","slide":21,"name":"矩形: 圆角 15","bbox":[766,220,180,120]}
+{"kind":"textbox","id":"sh/vu1w7y9g","slide":21,"textChars":9,"textLines":2}
+{"kind":"shape","id":"sh/8rqxw3q5","slide":21,"name":"矩形: 圆角 17","bbox":[992,220,180,120]}
+{"kind":"textbox","id":"sh/9sze58rq","slide":21,"textChars":17,"textLines":2}
+{"kind":"textbox","id":"sh/porutkje","slide":21,"textChars":18,"textLines":1}
+{"kind":"textbox","id":"sh/onid0f2t","slide":21,"textChars":15,"textLines":1}
+{"kind":"textbox","id":"sh/nm9cru18","slide":21,"textChars":19,"textLines":1}
+{"kind":"notes","id":"nt/m1wvqtk3","slide":21,"text":"用于回答复现性和文件组织。展示从参数到图表的完整链条。 |  | [Sources] | - C:\\Users\\24739\\Documents\\Codex..."}
+{"kind":"slide","id":"sl/5onypobq","slide":22,"title":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textShapes":8}
+{"kind":"textbox","id":"sh/2honyx8r","slide":22,"textChars":28,"textLines":1}
+{"kind":"shape","id":"sh/6987itcr","slide":22,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/7a18rydc","slide":22,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/k7qpgjul","slide":22,"textChars":62,"textLines":1}
+{"kind":"textbox","id":"sh/58zqpov6","slide":22,"textChars":2,"textLines":1}
+{"kind":"textbox","id":"sh/il87etcv","slide":22,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/jmh8nyd0","slide":22,"textChars":72,"textLines":9}
+{"kind":"shape","id":"sh/43u9snu5","slide":22,"name":"矩形 7","bbox":[630,142,2,440]}
+{"kind":"textbox","id":"sh/p43q1sva","slide":22,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/p4z6tcri","slide":22,"textChars":64,"textLines":9}
+{"kind":"shape","id":"sh/436507qx","slide":22,"name":"矩形: 圆角 10","bbox":[164,590,950,50]}
+{"kind":"textbox","id":"sh/3ixor29c","slide":22,"textChars":33,"textLines":1}
+{"kind":"notes","id":"nt/5onypobq","slide":22,"text":"这页用于坦诚说明结构声场尚未完成，并列出下一阶段需要自己从ANSYS/COMSOL截图保存的证据。 |  | [Sources] | - C:\\Users..."}
+{"kind":"notice","message":"Truncated: omitted 0 lines. Increase maxChars or narrow target."}

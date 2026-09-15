@@ -1,0 +1,8 @@
+# Observed direct dependencies on the source machine, Python 3.12.10 / Windows.
+# Not a universal or transitive lock file. Install into a fresh virtual environment.
+numpy==2.2.4
+scipy==1.17.1
+matplotlib==3.10.9
+pandas==3.0.5
+streamlit==1.62.0
+pillow==11.1.0

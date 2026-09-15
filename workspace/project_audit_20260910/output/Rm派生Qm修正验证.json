@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "cases": 34,
+  "frequencies": 2001,
+  "tested_response_fields": 24,
+  "electrical_response_all_arrays_exact": true,
+  "corrected": [
+    {
+      "case_id": "CASE_RM_P15",
+      "old_Qm": 800.0,
+      "new_Qm": 695.6521739130435,
+      "expected_Qm": 695.6521739130435,
+      "Lm_unchanged": true,
+      "Cm_unchanged": true,
+      "response_exact": true
+    },
+    {
+      "case_id": "CASE_RM_P30",
+      "old_Qm": 800.0,
+      "new_Qm": 615.3846153846154,
+      "expected_Qm": 615.3846153846154,
+      "Lm_unchanged": true,
+      "Cm_unchanged": true,
+      "response_exact": true
+    },
+    {
+      "case_id": "CASE_RM_P50",
+      "old_Qm": 800.0,
+      "new_Qm": 533.3333333333334,
+      "expected_Qm": 533.3333333333334,
+      "Lm_unchanged": true,
+      "Cm_unchanged": true,
+      "response_exact": true
+    }
+  ],
+  "old_model_sha256": "2561ec5dd2bd8d321cb2bf02b46b0a55c7275b9dbbbc3b85cec9498e9dca7aae",
+  "new_model_sha256": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23",
+  "registry_changes": "Qm and description only in the three Rm-only rows",
+  "controller_rerun": false,
+  "LTspice_rerun": false
+}

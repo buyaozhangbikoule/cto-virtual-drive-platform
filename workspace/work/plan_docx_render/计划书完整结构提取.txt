@@ -1,0 +1,130 @@
+pages=8 tables=3 paragraphs=111 comments=False insertions=True deletions=False
+[P1 style=Normal] 面向冠状动脉CTO的虚拟换能器阻抗建模与
+自适应驱动控制仿真研究
+
+[TABLE 1 rows=2 cols=2]
+R1: 研究定位 | 以BVD等效电路、匹配网络和自适应频率/功率控制为核心的虚拟驱动平台。
+R2: 研究边界 | 不涉及实物换能器、功放或人体/动物实验；不输出临床剂量和CTO开通效果结论。
+[END TABLE 1]
+
+[P2 style=Heading 1] 一、研究定位与范围
+[P3 style=Normal] 本计划旨在建立面向超声换能器的虚拟电学驱动与控制平台。研究对象不是某一已定型器械，而是一个可调参数的压电换能器等效模型：在给定驱动源、功放输出阻抗、匹配网络和负载变化条件下，能够计算输入阻抗、谐振状态、电压、电流、相位、有功功率和相对能量传递效率。
+[P4 style=Normal] CTO病变的复杂性决定了未来导管所面对的声学负载可能随血管尺寸、闭塞段组成、耦合状态和器械位置而变化。以具有代表性的负载扰动情景，研究固定频率驱动为何会失配，以及频率跟踪和功率限制如何提升系统稳定性。
+
+[TABLE 2 rows=1 cols=1]
+R1: 建模级别：本计划采用小信号或归一化驱动下的线性等效电路模型。暂不模拟功放开关损耗、器件温升、介质非线性、空化、组织热效应和机械破坏；这些是后续与COMSOL声场模型、真实阻抗测量结合后再逐步加入的内容。
+[END TABLE 2]
+
+[P5 style=Heading 1] 二、核心问题、研究目标与软件技术栈
+[P6 style=Heading 2] 1. 核心问题
+[P7 style=Normal] 当换能器的等效谐振频率、静态电容或机械支路损耗因负载变化而漂移时，能否利用虚拟测得的电压、电流和相位信息，自动调整驱动频率或幅度，使电学有功功率和匹配状态保持在预先定义的合理范围，并避免电压、电流或反射功率异常升高？
+[P8 style=Normal] 该问题分为三个可操作的子问题：第一，如何用BVD等效电路描述压电换能器的频率响应；第二，匹配网络和负载变化如何影响输入阻抗、有功功率和谐振点；第三，固定频率、周期扫频和相位误差闭环控制三种策略在不同扰动下的稳定性有何差异。
+[P9 style=Heading 2] 2. 本次计划所需软件
+[P10 style=Normal] LTspice或QucsStudio是本计划的主仿真平台。学生可用其中之一搭建“正弦驱动源—源阻抗—LC匹配网络—BVD换能器模型”的交流小信号电路，并获取幅频曲线、相频曲线、电压、电流和功率。LTspice更适合快速电路扫描；QucsStudio更便于查看射频网络的参数响应。
+[P11 style=Normal] MATLAB或Python用于生成扰动序列、读取电路仿真结果、计算复功率、拟合频率响应，并实现固定频率、扫频和相位误差控制策略。控制器先以离散的准稳态步骤运行，不要求模拟真实硬件锁相环。
+[P12 style=Normal] COMSOL不是本计划的主工具，但可作为计划书一的接口：若计划书一已形成“频率/幅度—靶区声压—壁面声压”的查找表，计划可将该表作为相对声学效率模块接入。没有该表时，本计划仍可独立完成全部电学控制仿真。
+[P13 style=Heading 2] 3. 本次计划需要掌握的相关技术
+[P14 style=Normal] 交流电路基础：正弦稳态、复阻抗、复导纳、电阻/电感/电容的频率特性、相位和有效值。
+[P15 style=Normal] 压电换能器等效建模：静态电容C0、机械支路Rm、Lm、Cm、串联/并联谐振、品质因数和辐射负载的概念。
+[P16 style=Normal] 匹配与功率：源阻抗、负载阻抗、LC匹配、反射、复功率、有功功率、无功功率与效率代理指标。
+[P17 style=Normal] 控制基础：扫频、极值搜索、相位误差、比例控制、积分饱和、频率步长、限幅和异常停机逻辑。
+[P18 style=Normal] 数据规范：所有电路参数区分为文献参考值、假设基线值和扫描变量；不把无来源的数值写成器械真实参数。
+[P19 style=Heading 1] 三、CTO相关学习内容与参数框架
+[P20 style=Heading 2] 1. 血管、血液与血流的基础认识
+[P21 style=Normal] 首先需要理解冠状动脉的基本层次结构，包括血管腔、内膜、中膜和外膜，以及血管直径、壁厚、分叉和弯曲对介入路径的影响。对于本项目，血液应被视为传播介质之一，但可以先忽略脉动流、剪切应力或血流—声场耦合；其声学性质只作为材料参数的一部分。
+[P22 style=Normal] 与物理模型相关的血液参数包括密度、声速、衰减、黏度、红细胞压积、红细胞聚集及血液黏弹性。当前计划中只建议把密度、声速和衰减纳入参数登记表；黏度和流变特性暂且不考虑。
+[P23 style=Heading 2] 2. CTO形成机制
+[P24 style=Normal] CTO可经历粥样硬化进展、斑块破裂或侵蚀、血栓形成与组织化、纤维基质沉积和钙化等过程。不同区域可能呈现软斑块、纤维组织、组织化血栓或高钙化成分，且近端帽、病变主体和远端帽的结构并不相同。对本计划而言，病变异质性的价值不在于立即给出精确电路参数，而在于说明为什么未来换能器不能只在单一负载、单一谐振点下工作。
+[P25 style=Heading 2] 3. 当前CTO治疗与超声研究的关系
+[P26 style=Normal] 冠状动脉CTO的治疗决策需结合症状、缺血或存活心肌、冠脉解剖和总体血运重建策略。CTO-PCI中常见正向导丝升级、正向夹层再进入和逆向技术；部分患者需要药物治疗或冠脉旁路移植。导丝通过后，难扩张或钙化病变还可能使用球囊、旋磨、激光或血管内碎石等病变预处理。
+[P27 style=Normal] 本计划必须区分IVUS成像导航、治疗性超声换能器和血管内碎石三类技术。它们可以共同启发导管设计，但不能相互替代证据。计划二只处理换能器与驱动系统的稳定性，不论证CTO穿越、病变裂解或临床再通。
+[P28 style=Heading 2] 4. CTO相关参数及其向虚拟驱动情景的映射
+[P29 style=Normal] 临床上应掌握闭塞长度、近端帽形态、钙化程度、弯曲/迂曲、分叉、远端落点、血管直径、既往失败尝试和侧支循环。J-CTO评分所包含的钝性近端帽、钙化、弯曲大于45度、闭塞长度大于20 mm和既往失败尝试，是理解介入难度的重要起点。
+[P30 style=Normal] 在本计划中，这些临床参数不直接写入BVD方程，而是通过“低、中、高负载变化情景”间接体现：例如，用谐振频率漂移、静态电容变化、机械支路损耗增加、等效电阻变化或效率曲线变化模拟不同耦合和传播状态。每个扰动只代表一个电学压力测试情景，不应被描述为某一具体CTO病变的真实阻抗。
+
+[TABLE 3 rows=1 cols=1]
+R1: 参数原则：临床病变参数、声学材料参数和电学等效参数属于三个层次。第一阶段可建立它们之间的概念映射，但不能缺少实验或多物理场依据地把其中一个层次的数值直接代入另一个层次。
+[END TABLE 3]
+
+[P32 style=Heading 1] 四、虚拟电学模型与控制研究的总体方法
+[P33 style=Heading 2] 1. 最小可行电路模型
+[P34 style=Normal] 模型从BVD等效电路开始：以静态电容C0表示压电材料的介电特性，以串联Rm、Lm、Cm支路表示机械谐振与损耗；驱动端由可调频正弦电压源和指定源阻抗组成，中间加入最简单的L型匹配网络。所有元件先采用理想值，再在敏感性分析中加入有限损耗。
+[P35 style=Normal] 模型需要输出输入阻抗实部与虚部、阻抗幅值、相位、换能器两端电压、电流、复功率及有功功率。工作频率附近既要观察串联谐振，也要观察并联谐振特征；不能只以“阻抗最低”作为唯一工作点判据。
+[P36 style=Heading 2] 2. 虚拟传感与扰动定义
+[P37 style=Normal] 虚拟传感器包括驱动端电压、换能器端电压、回路电流、输入阻抗相位和有功功率。它们分别对应未来可能的电压采样、电流采样和反射/功率监测模块，但目前仅由电路仿真直接获得。
+[P38 style=Normal] 扰动至少包括四类：谐振频率偏移、C0变化、机械支路电阻变化和源/匹配网络参数偏差。每类扰动设置低、中、高三个等级，并分别进行单因素与组合扰动测试。这样可以避免控制器只在理想模型中有效。
+[P39 style=Heading 2] 3. 控制策略与计划书一的接口
+[P40 style=Normal] 第一个控制策略为固定频率和固定幅度，是所有比较的基线。第二个策略为周期性局部扫频：在预设频率窗口内寻找最大有功功率或最小相位误差点。第三个策略为基于相位误差的离散频率跟踪，并可在幅度上加入功率限幅。
+[P41 style=Normal] 若计划书一已完成COMSOL声场扫描，可将其导出的相对声学效率表作为附加模块。电路控制器输出的频率和幅度经查表得到相对靶区声压，再与计划书一的壁面约束共同评价。该连接仅代表模型级耦合，不能替代真实电声效率标定。
+[P42 style=Heading 1] 五、四周详细任务安排
+[P43 style=Heading 2] 第1周：建立CTO背景、电路语言与模型边界
+[P44 style=Normal] 本周目标是使学生能够从临床病变复杂性过渡到“负载变化和驱动稳定性”的工程问题。前半周学习CTO与血液/病变参数，后半周学习压电换能器等效电路和软件界面。
+[P45 style=List Bullet] 阅读CTO临床共识，理解CTO患者评估、PCI策略、手术/药物治疗选择及并发症控制。
+[P46 style=List Bullet] 梳理血脂、糖代谢、炎症、凝血、纤维蛋白原、血小板及D-二聚体等临床背景参数；另列出密度、声速、衰减、黏度等未来物理模型候选参数。
+[P47 style=List Bullet] 学习组织化血栓、纤维化、钙化和近端/远端帽的形成，明确不同CTO不能被视为相同负载。
+[P48 style=List Bullet] 比较IVUS导航、旋磨/激光、血管内碎石与治疗性超声的作用边界，避免混用机制与疗效证据。
+[P49 style=List Bullet] 学习复阻抗、复功率、相位、串联/并联谐振、品质因数与频率响应。
+[P50 style=List Bullet] 阅读BVD模型资料，理解C0与Rm/Lm/Cm各自代表的物理意义，画出最小等效电路。
+[P51 style=List Bullet] 熟悉LTspice或QucsStudio的交流分析、参数扫描、测量表达式和数据导出；选择MATLAB或Python作为唯一后处理工具。
+[P52 style=List Bullet] 确定第一月采用归一化驱动、理想BVD模型、L型匹配、准稳态离线控制和三等级负载扰动，不加入实际器件参数或临床剂量。
+[P53 style=Heading 2] 第2周：搭建BVD换能器与匹配网络基线模型
+[P54 style=Normal] 本周目标是得到可解释的阻抗曲线和功率曲线。模型结构应保持简单，以便学生理解每个元件变化对结果的影响。
+[P55 style=List Bullet] 在电路软件中搭建包含C0与Rm/Lm/Cm支路的BVD模型；先用无匹配网络、无损耗的情况观察谐振和反谐振。
+[P56 style=List Bullet] 扫描频率并输出阻抗幅值、实部、虚部和相位，确认曲线形态与BVD理论相符。
+[P57 style=List Bullet] 加入可调频正弦源和指定源阻抗；分别观察源端、换能器端和机械支路的电压、电流与相位。
+[P58 style=List Bullet] 计算复功率和有功功率，明确电压最大并不必然意味着有功功率最大。
+[P59 style=List Bullet] 加入一个串联和一个并联元件的L型网络，比较匹配前后输入阻抗、相位和有功功率。
+[P60 style=List Bullet] 只在基线频率附近设计匹配；不追求宽带或高功率优化，重点是理解匹配会随负载变化而失效。
+[P61 style=List Bullet] 给电感、电容或机械支路引入有限损耗，观察品质因数、峰宽和功率传递的变化。
+[P62 style=List Bullet] 学习如何由阻抗曲线识别串联谐振、并联谐振和主要参数趋势，但不在本周追求从真实测量曲线拟合器件。
+[P63 style=List Bullet] 核对元件单位、频率单位、功率表达式和相位符号；将所有假设值与扫描范围登记。
+[P64 style=List Bullet] 检查电路软件与后处理脚本中同一频率点的阻抗和功率是否一致，避免控制器建立在错误数据上。
+[P65 style=Heading 2] 第3周：负载扰动与自适应频率策略
+[P66 style=Normal] 本周将“CTO环境复杂”抽象为电路级的负载变化。目标不是为每个病变寻找唯一参数，而是测试不同控制策略面对失配时是否仍然稳定。
+[P67 style=List Bullet] 分别改变C0、Rm、Lm、Cm或源/匹配参数，生成阻抗峰位、相位零点和有功功率峰值的变化曲线。
+[P68 style=List Bullet] 记录哪类扰动主要改变频率，哪类扰动主要改变峰值高度或峰宽。
+[P69 style=List Bullet] 组合两类或更多扰动，构造低、中、高复杂度场景；观察固定频率驱动下的功率下降和相位偏离。
+[P70 style=List Bullet] 设定电压、电流和功率的相对上限，作为控制器不得越过的模型内部约束。
+[P71 style=List Bullet] 在当前工作点周围定义局部扫频窗口，比较“最大有功功率”“最小绝对相位误差”和“最小反射代理指标”作为频率选择准则时的差异。
+[P72 style=List Bullet] 分析扫频步长和扫描范围：步长过粗会错过峰值，范围过大则增加控制延迟。
+[P73 style=List Bullet] 以换能器输入阻抗相位或电压—电流相位差为误差信号，构建离散频率更新规则。
+[P74 style=List Bullet] 从小增益开始，观察不同增益下的收敛、振荡和频率饱和；当前无需设计真实模拟/数字锁相环。
+[P75 style=List Bullet] 统一导出每种扰动下的频率、阻抗、相位、电压、电流和有功功率，形成后处理数据集。
+[P76 style=List Bullet] 将每一组数据与对应电路版本、匹配网络参数和扰动编号关联，保证后续比较可复现。
+[P77 style=Heading 2] 第4周：功率限幅、策略比较与电声接口
+[P78 style=Normal] 本周目标是把频率跟踪从单纯“找峰值”升级为带约束的控制问题，并将电学结果整理为可与计划书一声场模型连接的接口。
+[P79 style=List Bullet] 在相同扰动序列下运行固定频率、固定幅度驱动，量化有功功率和相位偏离，为所有控制策略提供基线。
+[P80 style=List Bullet] 区分“基线较差”与“模型出错”：先检查输入参数和单位，再解释失配现象。
+[P81 style=List Bullet] 运行局部扫频和相位闭环，记录锁定频率、恢复时间、峰值电流和功率变化。
+[P82 style=List Bullet] 在电压、电流或壁面代理约束触发时限制幅度增长，避免控制器仅以追踪功率最大为目标。
+[P83 style=List Bullet] 在同一组单因素和组合扰动下，对比固定频率、周期扫频和相位闭环的稳态误差、恢复时间、功率稳定性和约束触发次数。
+[P84 style=List Bullet] 分析哪些情景更适合扫频，哪些情景更适合相位闭环；不要把一个模型内的优劣描述成通用器械结论。
+[P85 style=List Bullet] 若已有COMSOL声场结果，将电路模型输出的频率和幅度代入相对声学效率查找表，得到相对靶区与壁面压力代理值。
+[P86 style=List Bullet] 若COMSOL结果尚未完成，则定义标准化接口字段：频率、驱动幅度、电学有功功率、相对声学效率、靶区声压代理值和壁面声压代理值。
+[P87 style=List Bullet] 逐条检查结论是否限于“特定BVD模型与扰动范围内的电学稳定性”，不将其外推为真实换能器输出、组织开通或临床安全。
+[P88 style=List Bullet] 明确下一阶段需要用真实阻抗分析仪、功率测量和水听器声场测量验证的假设。
+[P89 style=Heading 1] 六、分析指标
+[P90 style=List Bullet] 输入阻抗实部、虚部、幅值和相位；串联/并联谐振点的漂移。
+[P91 style=List Bullet] 换能器端电压、回路电流、复功率、有功功率和相对功率传递效率。
+[P92 style=List Bullet] 固定频率、扫频和相位闭环的稳态误差、恢复时间、峰值过冲和约束触发次数。
+[P93 style=List Bullet] BVD参数、匹配网络参数和控制器增益变化对结果的敏感性。
+[P94 style=List Bullet] 若连接COMSOL模型，则同时记录相对靶区声压、壁面声压及其比值；所有声学结果均标记为代理值。
+[P95 style=Heading 1] 七、推荐文献与阅读用途
+[P96 style=Normal] 建议先建立CTO的临床与病理背景，再阅读压电换能器和阻抗控制文献。每篇文献均应记录研究问题、对象、关键参数、模型/实验方法、主要结论、局限性及其对本计划的直接启发。
+[P97 style=Heading 2] A. CTO与血管介入背景
+[P98 style=Normal] [1] Evaluation and management of patients with coronary chronic total occlusions considered for revascularisation (EAPCI clinical consensus statement, 2024)。最优先阅读。用于理解CTO患者评估、血运重建策略、影像和安全边界；不用于直接设定换能器驱动参数。
+[P99 style=Normal] [2] Applied Pathology for Interventions of Coronary Chronic Total Occlusion (2015)。用于理解CTO的组织化、纤维化、钙化及近端/远端帽结构，并说明为何将临床环境简化成单一电学负载是不充分的。
+[P100 style=Normal] [3] Accuracy of J-CTO Score Derived From Computed Tomography Versus Angiography to Predict Successful PCI (2018)。介绍J-CTO评分涉及的钝性残端、钙化、弯曲、病变长度和既往失败尝试，用于建立临床特征与后续仿真复杂度之间的概念联系。
+[P101 style=Normal] [4] Quantitative Coronary CTA Assessment of CTO PCI (2022)。显示闭塞长度、致密钙化、纤维成分等定量特征与导丝穿越和PCI成功有关；有助于避免把CTO看成均匀介质。
+[P102 style=Normal] [5] A 40-MHz Ultrasound Transducer with an Angled Aperture for Guiding Percutaneous Revascularization of CTO (2018)。最接近本课题器械背景的文献之一。重点看换能器几何、成像方向和介入导航逻辑；该文不证明治疗性超声可开通CTO。
+[P103 style=Heading 2] B. 换能器建模、阻抗匹配与功率控制
+[P104 style=Normal] [6] Precise Experimental Determination of Electrical Equivalent Circuit Parameters for Ultrasonic Piezoelectric Ceramic Transducers (2021)。计划二的核心文献。介绍如何从谐振特性理解压电陶瓷的等效电路参数；第一月可先学习其物理意义和曲线特征。
+[P105 style=Normal] [7] Broadband Electrical Impedance Matching for Piezoelectric Ultrasound Transducers (2011)。讲解从测得导纳、等效模型到Smith圆图/网络设计与仿真验证的工作流。当前先学习L型网络和失配概念，不要求完成宽带优化。
+[P106 style=Normal] [8] HIFU Power Monitoring Using Combined Instantaneous Current and Voltage Measurement (2020)。说明只观察电压不能可靠描述实际功率；重点理解同步电压、电流和相位对于有功功率估算的重要性。
+[P107 style=Normal] [9] Complete Ultrasonic Transducer Characterization and Its Use for Models and Measurements (2006)。介绍电阻抗、辐射阻抗、有效尺寸和焦距等参数如何共同影响模型与测量，是后续电学—声学联合建模的桥梁。
+[P108 style=Normal] [10] Hydrophone Measurements for Biomedical Ultrasound Applications: A Review (2023)。虽然计划二不直接使用水听器，但需理解未来电学稳定并不等于声学输出稳定；该文可帮助确定日后应如何做声场标定。
+[P109 style=Heading 2] C. 控制与多物理场衔接
+[P110 style=Normal] [11] Blood-brain barrier opening using closed-loop microbubble cavitation-based feedback control of focused ultrasound sonication (2022)。生物学目标不同，但其“观测量—设定值—反馈调节—安全约束”的控制逻辑可作为系统设计范例。
+[P111 style=Normal] [12] k-Wave: MATLAB toolbox for the simulation and reconstruction of photoacoustic wave fields (2010)。本计划主用电路软件，但该文可帮助理解异质介质声学模型与后续计划书一COMSOL模型的共通问题。
+[SECTION 1 HEADER] 研究计划书 | 虚拟阻抗建模与自适应驱动控制
+[SECTION 1 FOOTER] 第  页

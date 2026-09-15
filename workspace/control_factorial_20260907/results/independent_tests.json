@@ -1,0 +1,1817 @@
+{
+  "status": "PASS",
+  "check_count": 452,
+  "checks": [
+    {
+      "name": "D01_LOCAL_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_0.8s:E02_exact_reproduction",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E02_000_dwell_1.6s:E02_exact_reproduction",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E03_A_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E04_B_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E05_C_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E06_AB_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E07_AC_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E08_BC_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_0.8s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:frozen_hard_limits",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:actual_points_within_limits",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:no_joint_frequency_jump_and_upward_amplitude",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:source_ceiling_and_frequency_bounds",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:amplitude_state_sync",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:FIXED_0P9:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:FIXED_0P9:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:FIXED_0P9:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:FIXED_0P9:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:FIXED_0P9:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:PERIODIC_SCAN:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:PERIODIC_SCAN:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:PERIODIC_SCAN:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:PERIODIC_SCAN:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:PERIODIC_SCAN:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:P_AND_O:guard_each_action",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:P_AND_O:time_complete",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:P_AND_O:60ms_hard_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:P_AND_O:100ms_recovery_hold",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:P_AND_O:upward_slew",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC_dwell_1.6s:file_hash",
+      "pass": true
+    },
+    {
+      "name": "observable_constrained_score_matches_exact_model",
+      "pass": true,
+      "points": 612,
+      "max_relative_error": 2.9598139909051338e-12
+    },
+    {
+      "name": "zero_amplitude_measurement_rejected",
+      "pass": true
+    },
+    {
+      "name": "amplitude_PI_subunit_target",
+      "pass": true
+    },
+    {
+      "name": "amplitude_integrator_reset_on_hard_trip",
+      "pass": true
+    },
+    {
+      "name": "regulated_target_does_not_bypass_soft_hold",
+      "pass": true
+    },
+    {
+      "name": "regulated_target_can_settle_after_soft_hold",
+      "pass": true
+    },
+    {
+      "name": "phase_sign_and_wrap:0.01:0.0",
+      "pass": true
+    },
+    {
+      "name": "phase_sign_and_wrap:-0.01:0.0",
+      "pass": true
+    },
+    {
+      "name": "phase_sign_and_wrap:0.01:179.0",
+      "pass": true
+    },
+    {
+      "name": "E02_000:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E02_000:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E03_A:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E03_A:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E04_B:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E04_B:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E05_C:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E05_C:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E06_AB:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E06_AB:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E07_AC:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E07_AC:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E08_BC:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E08_BC:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC:PERIODIC_SCAN:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "E09_ABC:P_AND_O:no_evaluator_optimum_leak",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_0.8s:phase_disabled_control",
+      "pass": true
+    },
+    {
+      "name": "D01_LOCAL_dwell_1.6s:phase_disabled_control",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_0.8s:phase_disabled_control",
+      "pass": true
+    },
+    {
+      "name": "D02_LOCAL_BC_dwell_1.6s:phase_disabled_control",
+      "pass": true
+    },
+    {
+      "name": "frozen_and_previous_artifacts_unchanged",
+      "pass": true
+    }
+  ],
+  "scope": "Software invariants on registered tests; not continuous-time or hardware safety"
+}

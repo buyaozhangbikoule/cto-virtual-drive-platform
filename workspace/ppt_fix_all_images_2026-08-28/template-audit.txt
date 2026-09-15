@@ -1,0 +1,7 @@
+Source deck: CTO超声换能器第一月教授组会汇报_2026-08-24_图像完整修正版.pptx
+Slides: 22
+Communication job: preserve the existing professor-group-meeting narrative while showing every plotted source image without clipping axes, legends, titles, thresholds, or time scales.
+Preserved: slide order, master/layout hierarchy, typography, colors, tables, charts, notes, page chrome, and all numerical results.
+Image audit: slides 4, 5, 7, 9, 10, and 11 contained non-zero source cropping. Slides 8, 18, and 19 already used complete containment and remain unchanged.
+Inspection: every source slide and every image object was inspected through artifact-tool. The bundled template inspection helper was also attempted, but could not complete because the Windows runtime lacks the unzip executable it invokes.
+Insertion contract: edit existing inherited image and text objects in place; do not add overlay replacements or rebuild slides.

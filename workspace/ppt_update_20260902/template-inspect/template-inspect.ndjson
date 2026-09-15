@@ -1,0 +1,145 @@
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"CTO超声换能器虚拟阻抗建模","textShapes":5}
+{"kind":"shape","id":"sh/fu94fe98","slide":1,"name":"矩形 7","bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"textChars":23,"textLines":2}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"textChars":24,"textLines":1}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"name":"矩形 3","bbox":[96,405,160,5]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"textChars":19,"textLines":1}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"textChars":22,"textLines":1}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"textChars":1,"textLines":1}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textShapes":11}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"textChars":27,"textLines":1}
+{"kind":"shape","id":"sh/9072xkry","slide":2,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"name":"箭头: 右 5","bbox":[244,264,70,34]}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"箭头: 右 6","bbox":[464,264,70,34]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"箭头: 右 7","bbox":[684,264,70,34]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"箭头: 右 8","bbox":[904,264,70,34]}
+{"kind":"shape","id":"sh/ove9o7yd","slide":2,"name":"矩形: 圆角 9","bbox":[86,235,160,92]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"textChars":8,"textLines":2}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"矩形: 圆角 11","bbox":[306,235,160,92]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/wjy9sry9","slide":2,"name":"矩形: 圆角 13","bbox":[526,235,160,92]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"矩形: 圆角 15","bbox":[746,235,160,92]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"textChars":5,"textLines":1}
+{"kind":"shape","id":"sh/cnupgny5","slide":2,"name":"矩形: 圆角 17","bbox":[966,235,190,92]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"textChars":5,"textLines":1}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"textChars":16,"textLines":1}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textShapes":17}
+{"kind":"textbox","id":"sh/03ix43e5","slide":3,"textChars":31,"textLines":1}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"矩形 5","bbox":[72,130,520,470]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"textChars":27,"textLines":1}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"textChars":17,"textLines":1}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"textChars":10,"textLines":1}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"textChars":19,"textLines":1}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"矩形 12","bbox":[620,130,588,470]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"textChars":13,"textLines":1}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"textChars":8,"textLines":1}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"textChars":14,"textLines":1}
+{"kind":"textbox","id":"sh/e10f2twf","slide":3,"textChars":12,"textLines":1}
+{"kind":"textbox","id":"sh/f29gbyx0","slide":3,"textChars":18,"textLines":1}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"10 Hz网格下，Python与LTspice结果数值一致","textShapes":10}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"textChars":29,"textLines":1}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"矩形 4","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/sna103ap","slide":4,"name":"矩形 6","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/v6tsv2xo","slide":4,"textChars":16,"textLines":1}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/gv29g7q5","slide":4,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"textChars":49,"textLines":4}
+{"kind":"image","id":"im/q9876pkv","slide":4,"name":"图片 12","bbox":[72,122,820,520]}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"同一源条件下，L型匹配将运动支路有功功率代理提高约32.8倍","textShapes":6}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"textChars":30,"textLines":1}
+{"kind":"shape","id":"sh/dgbulwnm","slide":5,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"矩形: 圆角 7","bbox":[880.06,269.5,318,150]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"textChars":52,"textLines":3}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"textChars":11,"textLines":1}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"textChars":23,"textLines":1}
+{"kind":"image","id":"im/srmx0vmd","slide":5,"name":"图片 19","bbox":[72,124,725,500]}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textShapes":6}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"textChars":30,"textLines":1}
+{"kind":"shape","id":"sh/yhg7epsj","slide":6,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"name":"矩形: 圆角 7","bbox":[818,126,390,418]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"textChars":38,"textLines":2}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"textChars":18,"textLines":1}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"textChars":55,"textLines":1}
+{"kind":"chart","id":"ch/a1ojqds7","slide":6,"name":"Chart","chartType":"scatter","title":"匹配后输入阻抗幅值（匹配前量级见右表）","bbox":[72,126,720,224]}
+{"kind":"chart","id":"ch/lsz25sru","slide":6,"name":"Chart","chartType":"scatter","title":"输入阻抗相位","bbox":[72,366,720,242]}
+{"kind":"table","id":"tb/rmh0zal0","slide":6,"name":"表格 26","rows":5,"cols":4,"preview":"指标 | 匹配前 | 理想匹配 | 有损匹配","bbox":[830,207,366,270]}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textShapes":6}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"textChars":23,"textLines":1}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"textChars":34,"textLines":5}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"矩形: 圆角 8","bbox":[966,468,218,86]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"textChars":16,"textLines":2}
+{"kind":"table","id":"tb/25snm1gr","slide":7,"name":"表格 17","rows":7,"cols":4,"preview":"最高档扰动 | 峰位变化 | 峰高变化 | 峰宽变化","bbox":[72,142,850,440]}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textShapes":11}
+{"kind":"textbox","id":"sh/kfixwbe1","slide":8,"textChars":25,"textLines":1}
+{"kind":"shape","id":"sh/18byd4zy","slide":8,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/sjix0zy1","slide":8,"textChars":4,"textLines":1}
+{"kind":"shape","id":"sh/je9g3ahk","slide":8,"name":"矩形: 圆角 7","bbox":[890,220,280,62]}
+{"kind":"textbox","id":"sh/id0fu50z","slide":8,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"textChars":9,"textLines":1}
+{"kind":"shape","id":"sh/98rehwve","slide":8,"name":"矩形: 圆角 10","bbox":[890,318,280,62]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"textChars":6,"textLines":1}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"textChars":9,"textLines":1}
+{"kind":"shape","id":"sh/0jydkreh","slide":8,"name":"矩形: 圆角 13","bbox":[890,416,280,62]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"textChars":7,"textLines":1}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"textChars":9,"textLines":1}
+{"kind":"textbox","id":"sh/zipwbmdc","slide":8,"textChars":27,"textLines":2}
+{"kind":"image","id":"im/mt47qt0z","slide":8,"name":"图片 24","bbox":[80,112,717,550]}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textShapes":9}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"textChars":26,"textLines":1}
+{"kind":"shape","id":"sh/1cfmhgne","slide":9,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0b65obm9","slide":9,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"textChars":1,"textLines":1}
+{"kind":"textbox","id":"sh/bih4na5w","slide":9,"textChars":4,"textLines":1}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"textChars":8,"textLines":1}
+{"kind":"shape","id":"sh/oza1gfyh","slide":9,"name":"矩形: 圆角 9","bbox":[980,220,220,162]}
+{"kind":"textbox","id":"sh/p0ji9kf2","slide":9,"textChars":32,"textLines":5}
+{"kind":"shape","id":"sh/2xsjepgb","slide":9,"name":"矩形: 圆角 11","bbox":[980,420,220,92]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"textChars":13,"textLines":2}
+{"kind":"textbox","id":"sh/cnu1kzyd","slide":9,"textChars":23,"textLines":1}
+{"kind":"textbox","id":"sh/ofq5svm5","slide":9,"textChars":13,"textLines":1}
+{"kind":"image","id":"im/t8z610vu","slide":9,"name":"图片 22","bbox":[90.17,150,843.65,205]}
+{"kind":"image","id":"im/s76psvu9","slide":9,"name":"图片 23","bbox":[98.13,385,827.74,205]}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textShapes":6}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"textChars":23,"textLines":1}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"textChars":48,"textLines":1}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"textChars":1,"textLines":1}
+{"kind":"shape","id":"sh/kzu5c32t","slide":10,"name":"矩形: 圆角 6","bbox":[814,522,360,92]}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"textChars":37,"textLines":3}
+{"kind":"notice","message":"Truncated: omitted 188 lines. Increase maxChars or narrow target."}

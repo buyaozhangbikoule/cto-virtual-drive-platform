@@ -1,0 +1,1165 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/hgzapcr6",
+    "id": "hgzapcr6",
+    "slide": 13,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kjmxsfm1",
+      "id": "19",
+      "name": "title-13",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射",
+      "textPreview": "文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射",
+              "fontSize": 36,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q50nydsj",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq9orito",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o3i5w3ad",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        720,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Hypothetical BVD model — non-measured parameters",
+      "textPreview": "Hypothetical BVD model — non-measured parameters",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Hypothetical BVD model — non-measured parameters"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Hypothetical BVD model — non-measured parameters",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Hypothetical BVD model — non-measured parameters",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4r6p8by",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "13",
+      "textPreview": "13",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "13"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "13",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "13",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/21gnuts7",
+      "id": "6",
+      "name": "箭头: 右 5",
+      "bbox": [
+        236,
+        232,
+        48,
+        28
+      ],
+      "geometry": "rightArrow",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32ponyts",
+      "id": "7",
+      "name": "箭头: 右 6",
+      "bbox": [
+        526,
+        232,
+        48,
+        28
+      ],
+      "geometry": "rightArrow",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gzy5s3a1",
+      "id": "8",
+      "name": "矩形: 圆角 7",
+      "bbox": [
+        82,
+        178,
+        220,
+        130
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#EAF1F7",
+      "lineColor": "#3978B8",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1076lobm",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        92,
+        186,
+        200,
+        114
+      ],
+      "geometry": "rect",
+      "text": "文献直接事实\n\n纤维化、钙化、\n结构异质性",
+      "textPreview": "文献直接事实 |  | 纤维化、钙化、 | 结构异质性",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "文献直接事实"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "纤维化、钙化、"
+          },
+          {
+            "index": 4,
+            "text": "结构异质性"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "文献直接事实",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "文献直接事实",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "纤维化、钙化、",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "纤维化、钙化、",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "结构异质性",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "结构异质性",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcfy9k3u",
+      "id": "10",
+      "name": "矩形: 圆角 9",
+      "bbox": [
+        350,
+        178,
+        220,
+        130
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF4DD",
+      "lineColor": "#E69F00",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gb6x0zm9",
+      "id": "11",
+      "name": "矩形 10",
+      "bbox": [
+        360,
+        186,
+        200,
+        114
+      ],
+      "geometry": "rect",
+      "text": "工程建模假设\n\nfs、Rm、匹配状态\n可能变化",
+      "textPreview": "工程建模假设 |  | fs、Rm、匹配状态 | 可能变化",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "工程建模假设"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "fs、Rm、匹配状态"
+          },
+          {
+            "index": 4,
+            "text": "可能变化"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "工程建模假设",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "工程建模假设",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "fs、Rm、匹配状态",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "fs、Rm、匹配状态",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "可能变化",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "可能变化",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vaxg7ulo",
+      "id": "12",
+      "name": "矩形: 圆角 11",
+      "bbox": [
+        618,
+        178,
+        220,
+        130
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#F9E7E7",
+      "lineColor": "#B33A3A",
+      "lineWidth": 1.5
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9ofyp43",
+      "id": "13",
+      "name": "矩形 12",
+      "bbox": [
+        628,
+        186,
+        200,
+        114
+      ],
+      "geometry": "rect",
+      "text": "待验证\n\n病变类型到BVD参数\n的定量映射",
+      "textPreview": "待验证 |  | 病变类型到BVD参数 | 的定量映射",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "待验证"
+          },
+          {
+            "index": 2,
+            "text": ""
+          },
+          {
+            "index": 3,
+            "text": "病变类型到BVD参数"
+          },
+          {
+            "index": 4,
+            "text": "的定量映射"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "待验证",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "待验证",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "病变类型到BVD参数",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "病变类型到BVD参数",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "的定量映射",
+          "resolvedTextStyle": {
+            "fontSize": 20,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "的定量映射",
+              "fontSize": 20,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8fy5k3i",
+      "id": "14",
+      "name": "矩形 13",
+      "bbox": [
+        892,
+        152,
+        286,
+        390
+      ],
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 1
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/876xwfmx",
+      "id": "15",
+      "name": "矩形 14",
+      "bbox": [
+        918,
+        178,
+        235,
+        34
+      ],
+      "geometry": "rect",
+      "text": "当前能力边界",
+      "textPreview": "当前能力边界",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "当前能力边界"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "当前能力边界",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "当前能力边界",
+              "fontSize": 25,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 16,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mdg3als",
+      "id": "16",
+      "name": "矩形 15",
+      "bbox": [
+        932,
+        232,
+        208,
+        260
+      ],
+      "geometry": "rect",
+      "text": "已完成\n端口电学模型\n准稳态控制原型\n\n未完成\n结构模态与声场\n热效应与空化\n临床效果",
+      "textPreview": "已完成 | 端口电学模型 | 准稳态控制原型 |  | 未完成 | 结构模态与声场 | 热效应与空化 | 临床效果",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 8,
+        "lines": [
+          {
+            "index": 1,
+            "text": "已完成"
+          },
+          {
+            "index": 2,
+            "text": "端口电学模型"
+          },
+          {
+            "index": 3,
+            "text": "准稳态控制原型"
+          },
+          {
+            "index": 4,
+            "text": ""
+          },
+          {
+            "index": 5,
+            "text": "未完成"
+          },
+          {
+            "index": 6,
+            "text": "结构模态与声场"
+          },
+          {
+            "index": 7,
+            "text": "热效应与空化"
+          },
+          {
+            "index": 8,
+            "text": "临床效果"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "已完成",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "已完成",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "端口电学模型",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "端口电学模型",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "准稳态控制原型",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "准稳态控制原型",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "未完成",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "未完成",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "结构模态与声场",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "结构模态与声场",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "热效应与空化",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "热效应与空化",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "临床效果",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "临床效果",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 17,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6l4fu547",
+      "id": "17",
+      "name": "矩形 16",
+      "bbox": [
+        118,
+        394,
+        680,
+        50
+      ],
+      "geometry": "rect",
+      "text": "文献层、工程假设层、待验证层必须分开",
+      "textPreview": "文献层、工程假设层、待验证层必须分开",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "文献层、工程假设层、待验证层必须分开"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "文献层、工程假设层、待验证层必须分开",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "文献层、工程假设层、待验证层必须分开",
+              "fontSize": 26,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 18,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lkvy103m",
+      "id": "18",
+      "name": "矩形 17",
+      "bbox": [
+        118,
+        474,
+        680,
+        50
+      ],
+      "geometry": "rect",
+      "text": "当前模型只讨论特定BVD与扰动范围内的电学稳定性",
+      "textPreview": "当前模型只讨论特定BVD与扰动范围内的电学稳定性",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "当前模型只讨论特定BVD与扰动范围内的电学稳定性"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "当前模型只讨论特定BVD与扰动范围内的电学稳定性",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#2A7F8E",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "当前模型只讨论特定BVD与扰动范围内的电学稳定性",
+              "fontSize": 21,
+              "color": "#2A7F8E"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

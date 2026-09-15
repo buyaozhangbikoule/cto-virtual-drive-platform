@@ -1,0 +1,225 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "name": "all_reexecuted_CSV_identical",
+      "pass": true,
+      "count": 61
+    },
+    {
+      "name": "C_comparison_recorded_without_forcing_equivalence",
+      "pass": true
+    },
+    {
+      "name": "12_real_AC_runs",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_LOW025.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_LOW025.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_LOW025.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_LOW025.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SCAN040.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SCAN040.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SCAN040.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SCAN040.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SOFT_OPTIMUM.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SOFT_OPTIMUM.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SOFT_OPTIMUM.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_000_BASELINE_SOFT_OPTIMUM.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_LOW025.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_LOW025.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_LOW025.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_LOW025.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SCAN040.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SCAN040.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SCAN040.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SCAN040.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SOFT_OPTIMUM.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SOFT_OPTIMUM.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SOFT_OPTIMUM.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "CASE_COMBINED_HIGH_SOFT_OPTIMUM.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_LOW025.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_LOW025.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_LOW025.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_LOW025.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SCAN040.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SCAN040.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SCAN040.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SCAN040.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SOFT_OPTIMUM.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SOFT_OPTIMUM.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SOFT_OPTIMUM.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M30_SOFT_OPTIMUM.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_LOW025.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_LOW025.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_LOW025.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_LOW025.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SCAN040.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SCAN040.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SCAN040.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SCAN040.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SOFT_OPTIMUM.cir:solver_success",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SOFT_OPTIMUM.cir:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SOFT_OPTIMUM.raw:sha256",
+      "pass": true
+    },
+    {
+      "name": "STRESS_RM_M50_SOFT_OPTIMUM.log:sha256",
+      "pass": true
+    },
+    {
+      "name": "all_static_and_stress_recorded_points_guarded",
+      "pass": true,
+      "rows": 22772,
+      "continuous_safety_proven": false
+    },
+    {
+      "name": "previous_round_untouched",
+      "pass": true
+    },
+    {
+      "name": "independent_tests_pass",
+      "pass": true,
+      "tests": 452
+    }
+  ]
+}

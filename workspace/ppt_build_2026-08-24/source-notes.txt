@@ -1,0 +1,20 @@
+Communication job: By the end of the professor group meeting, the audience should understand that the project has established a self-consistent and reproducible electrical simulation chain, while the controller ranking remains conditional on the hypothetical BVD model, disturbance schedule, and quasi-steady timing assumptions.
+
+Primary local evidence root:
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\report_evidence_final
+
+Active control results (2026-08-18 rerun):
+- Recovery: >=98% constrained P* for 10 consecutive NORMAL control samples.
+- Fixed: 30.14% steady error, 345.7 ms penalized recovery, 3 unsettled segments.
+- Periodic scan: 0% steady error, 95.5 ms, 0 unsettled segments.
+- P&O: 0% tail steady error, 800.0 ms penalized recovery, 7 unsettled segments.
+- Actual hard violations: 0 for all strategies.
+
+Boundary language:
+- All BVD values are hypothetical baseline values or scan variables, not measurements.
+- P_Rm is an electrical active-power proxy in the motional resistance, not acoustic power or electro-acoustic efficiency.
+- Quasi-steady timing proxies are not measured hardware response times.
+- No ANSYS/COMSOL result, structural mode, acoustic pressure, temperature, cavitation, or CTO treatment outcome is claimed.
+
+All chart images are generated from the scripts and CSV files under the evidence root. The LTspice screenshots, RAW comparison, and Error Log are local simulation work traces.
+

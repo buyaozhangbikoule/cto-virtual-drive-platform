@@ -1,0 +1,1162 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l7an3k",
+    "id": "l7an3k",
+    "slide": 4,
+    "layoutId": "dfac47bf-2518-4769-af3d-36795d592be2",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Calibri"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "dfac47bf-2518-4769-af3d-36795d592be2",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6h0369wj",
+      "id": "1",
+      "name": "title",
+      "bbox": [
+        72,
+        36,
+        1136,
+        57
+      ],
+      "geometry": "rect",
+      "text": "阶段完成度：平台与联算证据已补齐，统一验收仍有缺口",
+      "textPreview": "阶段完成度：平台与联算证据已补齐，统一验收仍有缺口",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 32,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "阶段完成度：平台与联算证据已补齐，统一验收仍有缺口"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "阶段完成度：平台与联算证据已补齐，统一验收仍有缺口",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "阶段完成度：平台与联算证据已补齐，统一验收仍有缺口",
+              "fontSize": 32,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tkr2hofa",
+      "id": "2",
+      "bbox": [
+        72,
+        98,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sjil8jep",
+      "id": "3",
+      "bbox": [
+        72,
+        678,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#C7D1DC",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/fmt4jyx0",
+      "id": "4",
+      "name": "scope",
+      "bbox": [
+        72,
+        687,
+        1090,
+        21
+      ],
+      "geometry": "rect",
+      "text": "汇报截止：2026-09-15    完成软件与电学验证不等于完成结构声场、器件测量或安全验证",
+      "textPreview": "汇报截止：2026-09-15    完成软件与电学验证不等于完成结构声场、器件测量或安全验证",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 12,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "汇报截止：2026-09-15    完成软件与电学验证不等于完成结构声场、器件测量或安全验证"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "汇报截止：2026-09-15    完成软件与电学验证不等于完成结构声场、器件测量或安全验证",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "汇报截止：2026-09-15    完成软件与电学验证不等于完成结构声场、器件测量或安全验证",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ul03atwf",
+      "id": "5",
+      "name": "page-number",
+      "bbox": [
+        1170,
+        687,
+        38,
+        21
+      ],
+      "geometry": "rect",
+      "text": "21",
+      "textPreview": "21",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 12,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "21"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "21",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "21",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/krydw7yt",
+      "id": "6",
+      "bbox": [
+        72,
+        139,
+        1136,
+        391
+      ],
+      "text": "工作范围 | 当前已有证据 | 尚未完成／不能据此宣称\n电学模型与匹配 | v2.1自洽基线，Python/LTspice AC对照 | 真实器件参数辨识\n静态扰动与选频 | 34个登记场景，单因素与组合扫描 | 全部场景的同口径闭环评估\n网页平台 | 单场景计算、登记结果、AC及反馈入口 | 完整软件测试与硬件实时部署\n控制与改进研究 | 控制原型，8组合＋2对照，已有部分验收 | 固定／扫频／相位的统一性能排名\nLTspice瞬态与反馈 | P&O片段重放，固定低幅五轮反馈 | 动态负载闭环、全过程约束证明\n结构—声场连接 | 电学字段与声学回传模板已定义 | ANSYS/COMSOL结构声场求解",
+      "textPreview": "工作范围 | 当前已有证据 | 尚未完成／不能据此宣称 | 电学模型与匹配 | v2.1自洽基线，Python/LTspice AC对照 | 真实器件参数辨识 | 静态扰动与选频 | 34个登记场景，单因素与组合扫描 | 全部场景的同口径闭环评估 | 网页平台 | 单场景计...",
+      "rows": 7,
+      "cols": 3,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            72,
+            139,
+            218,
+            55.86
+          ],
+          "text": "工作范围",
+          "textPreview": "工作范围",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "工作范围",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#FFFFFF",
+                "bold": true
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "工作范围",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            290,
+            139,
+            458,
+            55.86
+          ],
+          "text": "当前已有证据",
+          "textPreview": "当前已有证据",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "当前已有证据",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#FFFFFF",
+                "bold": true
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "当前已有证据",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            748,
+            139,
+            460,
+            55.86
+          ],
+          "text": "尚未完成／不能据此宣称",
+          "textPreview": "尚未完成／不能据此宣称",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "尚未完成／不能据此宣称",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#FFFFFF",
+                "bold": true
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "尚未完成／不能据此宣称",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            72,
+            194.86,
+            218,
+            55.86
+          ],
+          "text": "电学模型与匹配",
+          "textPreview": "电学模型与匹配",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "电学模型与匹配",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "电学模型与匹配",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            290,
+            194.86,
+            458,
+            55.86
+          ],
+          "text": "v2.1自洽基线，Python/LTspice AC对照",
+          "textPreview": "v2.1自洽基线，Python/LTspice AC对照",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "v2.1自洽基线，Python/LTspice AC对照",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "v2.1自洽基线，Python/LTspice AC对照",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            748,
+            194.86,
+            460,
+            55.86
+          ],
+          "text": "真实器件参数辨识",
+          "textPreview": "真实器件参数辨识",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "真实器件参数辨识",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "真实器件参数辨识",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            72,
+            250.71,
+            218,
+            55.86
+          ],
+          "text": "静态扰动与选频",
+          "textPreview": "静态扰动与选频",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "静态扰动与选频",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "静态扰动与选频",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            290,
+            250.71,
+            458,
+            55.86
+          ],
+          "text": "34个登记场景，单因素与组合扫描",
+          "textPreview": "34个登记场景，单因素与组合扫描",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "34个登记场景，单因素与组合扫描",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "34个登记场景，单因素与组合扫描",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            748,
+            250.71,
+            460,
+            55.86
+          ],
+          "text": "全部场景的同口径闭环评估",
+          "textPreview": "全部场景的同口径闭环评估",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "全部场景的同口径闭环评估",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "全部场景的同口径闭环评估",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            72,
+            306.57,
+            218,
+            55.86
+          ],
+          "text": "网页平台",
+          "textPreview": "网页平台",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "网页平台",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "网页平台",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            290,
+            306.57,
+            458,
+            55.86
+          ],
+          "text": "单场景计算、登记结果、AC及反馈入口",
+          "textPreview": "单场景计算、登记结果、AC及反馈入口",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "单场景计算、登记结果、AC及反馈入口",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "单场景计算、登记结果、AC及反馈入口",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            748,
+            306.57,
+            460,
+            55.86
+          ],
+          "text": "完整软件测试与硬件实时部署",
+          "textPreview": "完整软件测试与硬件实时部署",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "完整软件测试与硬件实时部署",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "完整软件测试与硬件实时部署",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            72,
+            362.43,
+            218,
+            55.86
+          ],
+          "text": "控制与改进研究",
+          "textPreview": "控制与改进研究",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "控制与改进研究",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "控制与改进研究",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            290,
+            362.43,
+            458,
+            55.86
+          ],
+          "text": "控制原型，8组合＋2对照，已有部分验收",
+          "textPreview": "控制原型，8组合＋2对照，已有部分验收",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "控制原型，8组合＋2对照，已有部分验收",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "控制原型，8组合＋2对照，已有部分验收",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            748,
+            362.43,
+            460,
+            55.86
+          ],
+          "text": "固定／扫频／相位的统一性能排名",
+          "textPreview": "固定／扫频／相位的统一性能排名",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "固定／扫频／相位的统一性能排名",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "固定／扫频／相位的统一性能排名",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            72,
+            418.29,
+            218,
+            55.86
+          ],
+          "text": "LTspice瞬态与反馈",
+          "textPreview": "LTspice瞬态与反馈",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "LTspice瞬态与反馈",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "LTspice瞬态与反馈",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            290,
+            418.29,
+            458,
+            55.86
+          ],
+          "text": "P&O片段重放，固定低幅五轮反馈",
+          "textPreview": "P&O片段重放，固定低幅五轮反馈",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "P&O片段重放，固定低幅五轮反馈",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "P&O片段重放，固定低幅五轮反馈",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            748,
+            418.29,
+            460,
+            55.86
+          ],
+          "text": "动态负载闭环、全过程约束证明",
+          "textPreview": "动态负载闭环、全过程约束证明",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "动态负载闭环、全过程约束证明",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "动态负载闭环、全过程约束证明",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            72,
+            474.14,
+            218,
+            55.86
+          ],
+          "text": "结构—声场连接",
+          "textPreview": "结构—声场连接",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "结构—声场连接",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "结构—声场连接",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            290,
+            474.14,
+            458,
+            55.86
+          ],
+          "text": "电学字段与声学回传模板已定义",
+          "textPreview": "电学字段与声学回传模板已定义",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "电学字段与声学回传模板已定义",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "电学字段与声学回传模板已定义",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 7,
+          "column": 3,
+          "bbox": [
+            748,
+            474.14,
+            460,
+            55.86
+          ],
+          "text": "ANSYS/COMSOL结构声场求解",
+          "textPreview": "ANSYS/COMSOL结构声场求解",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "ANSYS/COMSOL结构声场求解",
+              "resolvedTextStyle": {
+                "fontSize": 21,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "ANSYS/COMSOL结构声场求解",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/g72lc3el",
+      "id": "7",
+      "name": "next",
+      "bbox": [
+        72,
+        554,
+        1136,
+        36
+      ],
+      "geometry": "rect",
+      "text": "下一步优先级",
+      "textPreview": "下一步优先级",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "Calibri",
+        "color": "#2B70B5",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "下一步优先级"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "下一步优先级",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Calibri",
+            "color": "#2B70B5",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "下一步优先级",
+              "fontSize": 25,
+              "typeface": "Calibri",
+              "color": "#2B70B5",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vqpk7uxw",
+      "id": "8",
+      "name": "nextdesc",
+      "bbox": [
+        72,
+        603,
+        1136,
+        60
+      ],
+      "geometry": "rect",
+      "text": "统一三策略的统计窗口与场景覆盖，再核查扫描逐点保护、采样间隙风险及功率／反射约束。",
+      "textPreview": "统一三策略的统计窗口与场景覆盖，再核查扫描逐点保护、采样间隙风险及功率／反射约束。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "统一三策略的统计窗口与场景覆盖，再核查扫描逐点保护、采样间隙风险及功率／反射约束。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "统一三策略的统计窗口与场景覆盖，再核查扫描逐点保护、采样间隙风险及功率／反射约束。",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "统一三策略的统计窗口与场景覆盖，再核查扫描逐点保护、采样间隙风险及功率／反射约束。",
+              "fontSize": 24,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

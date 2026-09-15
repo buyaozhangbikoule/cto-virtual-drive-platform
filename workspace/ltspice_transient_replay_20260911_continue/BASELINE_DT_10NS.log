@@ -1,0 +1,20 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\ltspice_transient_replay_20260911_continue\BASELINE_DT_10NS.cir
+Start Time: Fri Sep 11 19:57:15 2026
+Options:plotwinsize=0 reltol=0.0001 abstol=1p vntol=0.1u
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+reltol = 0.0001
+volttol = 1e-07
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 1.204 seconds.
+
+Files loaded:
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\ltspice_transient_replay_20260911_continue\BASELINE_DT_10NS.cir
+
+port_vpp: PP(V(n_port) )=106.228481293 FROM 0.0018 TO 0.002
+port_irms: RMS(I(Vprobe) )=0.00432323972872 FROM 0.0018 TO 0.002
+motional_power: AVG((I(Rm)*I(Rm)*7352.9411764705856) )=0.160996251702 FROM 0.0018 TO 0.002

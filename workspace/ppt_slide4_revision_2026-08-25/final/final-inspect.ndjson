@@ -1,0 +1,17 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":1,"title":"10 Hz网格下，Python与LTspice结果数值一致","textShapes":10}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":1,"name":"title-4","text":"10 Hz网格下，Python与LTspice结果数值一致","textPreview":"10 Hz网格下，Python与LTspice结果数值一致","textChars":29,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1cj2d8b6","slide":1,"bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0ba143al","slide":1,"bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/rm1k7yt4","slide":1,"text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/ql8jytsj","slide":1,"text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/sna103ap","slide":1,"text":"0.5–1.5 MHz","textPreview":"0.5–1.5 MHz","textChars":11,"textLines":1,"bbox":[936,136,220,44]}
+{"kind":"textbox","id":"sh/3ihk3et8","slide":1,"text":"100001点｜Δf=10 Hz","textPreview":"100001点｜Δf=10 Hz","textChars":16,"textLines":1,"bbox":[936,178,220,26]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":1,"text":"1.36×10⁻⁷","textPreview":"1.36×10⁻⁷","textChars":9,"textLines":1,"bbox":[936,236,220,44]}
+{"kind":"textbox","id":"sh/kbm987y5","slide":1,"text":"最大|Z|相对误差","textPreview":"最大|Z|相对误差","textChars":9,"textLines":1,"bbox":[936,278,220,28]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":1,"text":"< 10 Hz","textPreview":"< 10 Hz","textChars":7,"textLines":1,"bbox":[936,334,220,44]}
+{"kind":"textbox","id":"sh/i94r6xgz","slide":1,"text":"峰位差（网格分辨率内）","textPreview":"峰位差（网格分辨率内）","textChars":11,"textLines":1,"bbox":[936,376,220,28]}
+{"kind":"textbox","id":"sh/w72947yt","slide":1,"text":"LTspice：.cir→.raw\nPython：解析模型\n同网格逐点比较\n实现一致 ≠ 参数真实","textPreview":"LTspice：.cir→.raw | Python：解析模型 | 同网格逐点比较 | 实现一致 ≠ 参数真实","textChars":49,"textLines":4,"bbox":[912,448,282,142]}
+{"kind":"image","id":"im/tcvm5gji","slide":1,"name":"","bbox":[72,122,820,520]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":1,"text":"讲述口径：同一BVD拓扑、同一组假设基线参数、同一0.5–1.5 MHz频率网格下，分别由LTspice生成.raw结果、由Python计算解析结果，再逐点比较。\n扫描设置：0.5–1.5 MHz，等间隔100001点，步长10 Hz。\n结果：最大|Z|相对误差为1.36×10⁻⁷；两种实现识别的串联谐振位置均落在0.900000 MHz网格点，因此只能表述为峰位差小于10 Hz网格分辨率，不应表述为连续频域的绝对0误差。\n结论边界：该页只验证Python公式与LTspice网表的数值实现一致，不证明假设BVD参数代表真实换能器。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\02_LTspice真实运行\\V2_1_STAGE1_LTspice_解析交叉验证.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\V2_1_STAGE1_LTspice_RAW交叉验证.png\n- LTspice Error Log截图作为独立运行证据保留，不在本页缩小展示。"}

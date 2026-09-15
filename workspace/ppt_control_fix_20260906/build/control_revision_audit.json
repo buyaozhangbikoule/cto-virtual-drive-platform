@@ -1,0 +1,384 @@
+{
+  "source_manifest": [
+    {
+      "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\tables\\stage4_5\\stage4_control_timeline.csv",
+      "snapshot": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\stage4_control_timeline.csv",
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\tables\\stage4_5\\stage5_per_segment_metrics.csv",
+      "snapshot": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\stage5_per_segment_metrics.csv",
+      "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+    },
+    {
+      "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\tables\\stage4_5\\stage5_integrated_strategy_table.csv",
+      "snapshot": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\stage5_integrated_strategy_table.csv",
+      "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+    },
+    {
+      "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\tables\\stage4_5\\stage4_5_audit.json",
+      "snapshot": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\stage4_5_audit.json",
+      "sha256": "df4a814bae6e63a39fa9a010a6f61b6918cf0e842c0658bec6b94ee65ad575ca"
+    },
+    {
+      "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\active_stage3_5\\run_stage4_5_control.py",
+      "snapshot": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\run_stage4_5_control.py",
+      "sha256": "240b203d43ead0988695845df9eaef493a4daf1ba95fb747eaa6a3c4612bf6f0"
+    },
+    {
+      "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\active_stage3_5\\stage3_disturbance\\stage3_frequency_response_all_cases.csv",
+      "sha256": "bcf9e30ee64e80df35e8644c922f2991e8ccdecd169b60653ceb3c6b3a33d9be",
+      "snapshot": "offline_safe_power_reference.csv",
+      "filter": "baseline and fs -5% only, all frequencies"
+    }
+  ],
+  "controller_rerun": false,
+  "LTspice_rerun": false,
+  "claim": "Both adaptive strategies reach the new peak but fail the 10-sample acceptance within the fs -5% segment.",
+  "schedule_sha256": "a8e7ec357265d2410ac8ae141beb4e010ba358538d917879652a55c585fe8495",
+  "period_s": 0.02,
+  "threshold": 0.98,
+  "required_consecutive_samples": 10,
+  "fs_segment": {
+    "state_index": 3,
+    "case_id": "CASE_FS_M5",
+    "start_s": 2.4000000000000004,
+    "end_s": 3.2
+  },
+  "peaks": {
+    "CASE_000_BASELINE": {
+      "f_MHz": 0.9,
+      "power_mW": 169.99997832489854
+    },
+    "CASE_FS_M5": {
+      "f_MHz": 0.8548,
+      "power_mW": 140.23038267556055
+    }
+  },
+  "fs_details": {
+    "FIXED_0P9": {
+      "max_consecutive_good": 0,
+      "first_good_normal_s": null,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false,
+      "first_control_at_peak_s": null,
+      "tail_capture_pct": 0.030386948763709835,
+      "scan_start_s": null,
+      "scan_end_s": null
+    },
+    "PERIODIC_SCAN": {
+      "max_consecutive_good": 6,
+      "first_good_normal_s": 3.097000000000011,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false,
+      "first_control_at_peak_s": 2.977000000000011,
+      "tail_capture_pct": 100.0,
+      "scan_start_s": 2.897500000000008,
+      "scan_end_s": 2.977000000000011
+    },
+    "P_AND_O": {
+      "max_consecutive_good": 9,
+      "first_good_normal_s": 3.039000000000008,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false,
+      "first_control_at_peak_s": 2.919000000000008,
+      "tail_capture_pct": 100.0,
+      "scan_start_s": 2.839500000000005,
+      "scan_end_s": 2.919000000000008
+    }
+  },
+  "integrated": [
+    {
+      "strategy": "FIXED_0P9",
+      "steady_error_pct": "30.14473442397421",
+      "mean_recovery_time_ms_penalized": "345.7142857142817",
+      "unsettled_segments": "3",
+      "power_stability_cv_pct": "6.0791251997897906e-15",
+      "peak_current_mA_RMS": "5.1241662511780515",
+      "peak_voltage_vpp": "130.0",
+      "soft_limit_triggers": "1",
+      "hard_trip_triggers": "1",
+      "actual_hard_violations": "0",
+      "frequency_saturation_ms": "0.0",
+      "locked_frequency_min_MHz": "0.9",
+      "locked_frequency_max_MHz": "0.9",
+      "max_power_overshoot_pct": "0.0",
+      "oscillating_segments": "0",
+      "wrong_phase_lock_segments": "0",
+      "observable_detector_triggers": "0",
+      "limit_event_triggers": "2",
+      "scan_episodes": "0",
+      "scan_points": "0",
+      "scan_time_s": "0.0"
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "steady_error_pct": "0.0",
+      "mean_recovery_time_ms_penalized": "409.0000000000009",
+      "unsettled_segments": "2",
+      "power_stability_cv_pct": "6.818962689908922e-15",
+      "peak_current_mA_RMS": "5.1241662511780515",
+      "peak_voltage_vpp": "130.0",
+      "soft_limit_triggers": "2",
+      "hard_trip_triggers": "2",
+      "actual_hard_violations": "0",
+      "frequency_saturation_ms": "0.0",
+      "locked_frequency_min_MHz": "0.8548",
+      "locked_frequency_max_MHz": "0.9003",
+      "max_power_overshoot_pct": "0.0",
+      "oscillating_segments": "0",
+      "wrong_phase_lock_segments": "0",
+      "observable_detector_triggers": "0",
+      "limit_event_triggers": "4",
+      "scan_episodes": "11",
+      "scan_points": "583",
+      "scan_time_s": "0.8745"
+    },
+    {
+      "strategy": "P_AND_O",
+      "steady_error_pct": "0.0",
+      "mean_recovery_time_ms_penalized": "458.85714285714323",
+      "unsettled_segments": "3",
+      "power_stability_cv_pct": "1.7536284371614765e-15",
+      "peak_current_mA_RMS": "5.1241662511780515",
+      "peak_voltage_vpp": "130.0",
+      "soft_limit_triggers": "2",
+      "hard_trip_triggers": "2",
+      "actual_hard_violations": "0",
+      "frequency_saturation_ms": "0.0",
+      "locked_frequency_min_MHz": "0.8548",
+      "locked_frequency_max_MHz": "0.9003",
+      "max_power_overshoot_pct": "0.0",
+      "oscillating_segments": "0",
+      "wrong_phase_lock_segments": "0",
+      "observable_detector_triggers": "4",
+      "limit_event_triggers": "4",
+      "scan_episodes": "6",
+      "scan_points": "318",
+      "scan_time_s": "0.47700000000000004"
+    }
+  ],
+  "acceptance_rechecks": [
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 0,
+      "max_consecutive_good": 40,
+      "first_good_normal_s": 0.0,
+      "accepted_run_start_s": 0.0,
+      "acceptance_confirmation_s": 0.18,
+      "settled": true
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 1,
+      "max_consecutive_good": 40,
+      "first_good_normal_s": 0.8000000000000004,
+      "accepted_run_start_s": 0.8000000000000004,
+      "acceptance_confirmation_s": 0.9800000000000005,
+      "settled": true
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 2,
+      "max_consecutive_good": 40,
+      "first_good_normal_s": 1.600000000000001,
+      "accepted_run_start_s": 1.600000000000001,
+      "acceptance_confirmation_s": 1.7800000000000011,
+      "settled": true
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 3,
+      "max_consecutive_good": 0,
+      "first_good_normal_s": null,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 4,
+      "max_consecutive_good": 0,
+      "first_good_normal_s": null,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 5,
+      "max_consecutive_good": 41,
+      "first_good_normal_s": 4.000000000000003,
+      "accepted_run_start_s": 4.000000000000003,
+      "acceptance_confirmation_s": 4.179999999999999,
+      "settled": true
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 6,
+      "max_consecutive_good": 0,
+      "first_good_normal_s": null,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "FIXED_0P9",
+      "state_index": 7,
+      "max_consecutive_good": 39,
+      "first_good_normal_s": 5.619999999999968,
+      "accepted_run_start_s": 5.619999999999968,
+      "acceptance_confirmation_s": 5.799999999999964,
+      "settled": true
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 0,
+      "max_consecutive_good": 25,
+      "first_good_normal_s": 0.07950000000000004,
+      "accepted_run_start_s": 0.07950000000000004,
+      "acceptance_confirmation_s": 0.2595,
+      "settled": true
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 1,
+      "max_consecutive_good": 18,
+      "first_good_normal_s": 0.8189999999999975,
+      "accepted_run_start_s": 0.8189999999999975,
+      "acceptance_confirmation_s": 0.9989999999999977,
+      "settled": true
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 2,
+      "max_consecutive_good": 24,
+      "first_good_normal_s": 1.6185000000000012,
+      "accepted_run_start_s": 1.8380000000000043,
+      "acceptance_confirmation_s": 2.0180000000000042,
+      "settled": true
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 3,
+      "max_consecutive_good": 6,
+      "first_good_normal_s": 3.097000000000011,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 4,
+      "max_consecutive_good": 9,
+      "first_good_normal_s": 3.8365000000000147,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 5,
+      "max_consecutive_good": 24,
+      "first_good_normal_s": 4.336000000000013,
+      "accepted_run_start_s": 4.336000000000013,
+      "acceptance_confirmation_s": 4.516000000000009,
+      "settled": true
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 6,
+      "max_consecutive_good": 25,
+      "first_good_normal_s": 4.935500000000005,
+      "accepted_run_start_s": 4.935500000000005,
+      "acceptance_confirmation_s": 5.115500000000001,
+      "settled": true
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "state_index": 7,
+      "max_consecutive_good": 14,
+      "first_good_normal_s": 6.1344999999999885,
+      "accepted_run_start_s": 6.1344999999999885,
+      "acceptance_confirmation_s": 6.314499999999985,
+      "settled": true
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 0,
+      "max_consecutive_good": 5,
+      "first_good_normal_s": 0.04,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 1,
+      "max_consecutive_good": 4,
+      "first_good_normal_s": 0.8000000000000004,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 2,
+      "max_consecutive_good": 29,
+      "first_good_normal_s": 1.600000000000001,
+      "accepted_run_start_s": 1.759500000000004,
+      "acceptance_confirmation_s": 1.9395000000000042,
+      "settled": true
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 3,
+      "max_consecutive_good": 9,
+      "first_good_normal_s": 3.039000000000008,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 4,
+      "max_consecutive_good": 9,
+      "first_good_normal_s": 3.838500000000012,
+      "accepted_run_start_s": null,
+      "acceptance_confirmation_s": null,
+      "settled": false
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 5,
+      "max_consecutive_good": 26,
+      "first_good_normal_s": 4.298000000000011,
+      "accepted_run_start_s": 4.298000000000011,
+      "acceptance_confirmation_s": 4.478000000000007,
+      "settled": true
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 6,
+      "max_consecutive_good": 30,
+      "first_good_normal_s": 4.977500000000001,
+      "accepted_run_start_s": 4.977500000000001,
+      "acceptance_confirmation_s": 5.157499999999997,
+      "settled": true
+    },
+    {
+      "strategy": "P_AND_O",
+      "state_index": 7,
+      "max_consecutive_good": 30,
+      "first_good_normal_s": 5.776999999999989,
+      "accepted_run_start_s": 5.776999999999989,
+      "acceptance_confirmation_s": 5.956999999999985,
+      "settled": true
+    }
+  ],
+  "curve_rendering": "All saved actions, zero-order hold using recorded durations; no temporal or vertical offset. Frequency scan samples retained.",
+  "scope": "Hypothetical BVD electrical quasi-steady simulation, no measured transducer/hardware safety claim."
+}

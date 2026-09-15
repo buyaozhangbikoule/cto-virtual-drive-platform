@@ -1,0 +1,18 @@
+{
+  "backend": "Python matplotlib only",
+  "archetype": "quantitative grids",
+  "claim": "No universally superior tested combination; objective differs when limits bind; phase attribution requires matched controls",
+  "formats": [
+    "PNG",
+    "SVG",
+    "PDF"
+  ],
+  "replicates": "deterministic model runs, not biological or statistical repeats",
+  "integrity": "main and exploratory results separated; failures and held-command risk retained; no curve offsets or fabricated data",
+  "source": [
+    "results/summary.csv",
+    "diagnostics/static_scan_summary.csv",
+    "diagnostics/objective_landscape.csv"
+  ],
+  "not_hardware_or_acoustic_results": true
+}

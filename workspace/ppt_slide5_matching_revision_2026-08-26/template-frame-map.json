@@ -1,0 +1,26 @@
+{
+  "outputSlides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 5,
+      "narrativeRole": "0.9 MHz输入阻抗匹配验证",
+      "reuseMode": "retain-source-slide",
+      "editTargets": [
+        {"sourceElementId":"sh/ahkvi1cb","action":"rewrite","reason":"标题准确区分理想匹配与有损匹配"},
+        {"sourceElementId":"im/srmx0vmd","action":"delete","reason":"原左图为功率/反射复合图，不符合本页阻抗验证任务"},
+        {"sourceElementId":"im/jmdw3qlg","action":"delete","reason":"原右侧阻抗图过小不可读"},
+        {"sourceElementId":"sh/n6dcr65o","action":"rewrite-and-reposition","reason":"扩大为0.9 MHz数值表背景区"},
+        {"sourceElementId":"sh/m5kbi1oj","action":"rewrite-and-reposition","reason":"显示固定频点及统一源条件"},
+        {"sourceElementId":"sh/w32dkbuh","action":"rewrite-and-reposition","reason":"突出有损匹配保留小量失配"},
+        {"sourceElementId":"sh/x4vedgvm","action":"rewrite-and-reposition","reason":"给出定量结论及备份页说明"},
+        {"action":"add","zone":[72,126,720,481],"objectType":"two-native-scatter-charts","reason":"以可读字号展示0.88–0.92 MHz局部阻抗幅值与相位"},
+        {"action":"add","zone":[830,207,360,270],"objectType":"native-table","reason":"展示0.9 MHz处ReZ、ImZ、|Z|和相位的真实数据"},
+        {"sourceElementId":"nt/i107q5of","action":"rewrite","reason":"更新讲述口径和来源"}
+      ]
+    }
+  ],
+  "omittedSourceSlides": [
+    {"sourceSlides":"1-4,6-22","reason":"用户要求独立单页，便于复制回原PPT"}
+  ]
+}
+

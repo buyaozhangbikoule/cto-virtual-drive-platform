@@ -1,0 +1,85 @@
+{
+  "exit_code": 0,
+  "result": {
+    "checked_column_count": 0,
+    "checks": [],
+    "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+    "eligible_table_count": 0,
+    "finding_count": 0,
+    "findings": [],
+    "native_table_count": 13,
+    "passed": true,
+    "schema_version": "presentation-native-table-arithmetic.v1",
+    "skipped_tables": [
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 7,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 8,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 17,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 18,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 21,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 22,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 23,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 24,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 25,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 26,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 28,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 30,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 31,
+        "table": 1
+      }
+    ],
+    "slide_count": 32,
+    "warning_count": 0,
+    "warnings": []
+  },
+  "stderr": ""
+}

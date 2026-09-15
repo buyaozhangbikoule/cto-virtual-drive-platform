@@ -1,0 +1,22 @@
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textShapes":9}
+{"kind":"textbox","id":"sh/wvetgbud","slide":10,"name":"title-10","text":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textPreview":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textChars":22,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"矩形 4","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/l036l83y","slide":10,"name":"箭头: 右 5","bbox":[156,210,32,22]}
+{"kind":"shape","id":"sh/kzu5c32t","slide":10,"name":"箭头: 右 6","bbox":[156,310,32,22]}
+{"kind":"shape","id":"sh/725onyl4","slide":10,"name":"箭头: 右 7","bbox":[156,410,32,22]}
+{"kind":"shape","id":"sh/m1cnetkj","slide":10,"name":"箭头: 右 8","bbox":[156,510,32,22]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"矩形: 圆角 9","bbox":[82,158,145,62]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"name":"矩形 10","text":"NORMAL","textPreview":"NORMAL","textChars":6,"textLines":1,"bbox":[92,166,125,46]}
+{"kind":"shape","id":"sh/q5gb21kb","slide":10,"name":"矩形: 圆角 11","bbox":[82,258,145,62]}
+{"kind":"textbox","id":"sh/r6pcv6lw","slide":10,"name":"矩形 12","text":"FOLDBACK","textPreview":"FOLDBACK","textChars":8,"textLines":1,"bbox":[92,266,125,46]}
+{"kind":"shape","id":"sh/0bit8b2d","slide":10,"name":"矩形: 圆角 13","bbox":[82,358,145,62]}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"矩形 14","text":"HOLD","textPreview":"HOLD","textChars":4,"textLines":1,"bbox":[92,366,125,46]}
+{"kind":"shape","id":"sh/e9gb61k7","slide":10,"name":"矩形: 圆角 15","bbox":[82,458,145,62]}
+{"kind":"textbox","id":"sh/fapcz6ls","slide":10,"name":"矩形 16","text":"RAMP UP","textPreview":"RAMP UP","textChars":7,"textLines":1,"bbox":[92,466,125,46]}
+{"kind":"textbox","id":"sh/ozitcv29","slide":10,"name":"矩形 17","text":"硬触发：HARD TRIP","textPreview":"硬触发：HARD TRIP","textChars":13,"textLines":1,"bbox":[66,554,190,46]}
+{"kind":"textbox","id":"sh/xwnupgvy","slide":10,"name":"矩形 19","text":"软触发：130 Vpp / 5.5 mA RMS    硬上限：160 Vpp / 6 mA RMS","textPreview":"软触发：130 Vpp / 5.5 mA RMS    硬上限：160 Vpp / 6 mA RMS","textChars":50,"textLines":1,"bbox":[340,640,790,28]}
+{"kind":"image","id":"im/8jmtobq9","slide":10,"name":"图片 40","bbox":[385,124,702,500]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"围绕约2.4 s真实触发窗口讲解。任何非NORMAL状态都先调幅并冻结频率，预测裁剪保证实际硬越限次数为0。阈值是仿真假设。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_control_timeline.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_5_control_report.md\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\stage4_02_protection_state_machine.png"}

@@ -1,0 +1,32 @@
+{
+  "scenario": {
+    "case_id": "BENCH_RM_M30",
+    "family": "baseline",
+    "factor": "Rm",
+    "level": "-30%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 6.858064105198409e-12,
+      "rm": 5147.05882352941,
+      "lm": 1.0402283862215378,
+      "cm": 3.006260036180247e-14,
+      "qm": 800.0,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.00010672581904440851,
+      "c_f": 2.8359878734546773e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0
+  },
+  "pi": true,
+  "initial": 0.9,
+  "step": 0.025,
+  "scan_or_probe_enabled": false,
+  "prior_holds_excluded": true,
+  "time_origin_s": 0.02,
+  "source_class": "HYPOTHETICAL_BASELINE_AND_SCAN_VARIABLES",
+  "target_definition": "fixed-frequency soft-limited power"
+}

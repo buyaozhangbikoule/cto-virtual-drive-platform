@@ -1,0 +1,90 @@
+[
+  {
+    "figure": "p04_bare_bvd",
+    "claim": "裸BVD两条求解路径在同一配置下吻合",
+    "method": "解码已保存RAW，按原参数复核解析解；没有新LTspice运行。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_BARE_BVD_Q800.raw",
+        "sha256": "5d21d049bb81ecce4855aeaa0d2d4daae8ea77c17ed8931521f66a8c3c387663"
+      }
+    ]
+  },
+  {
+    "figure": "p06_input_impedance",
+    "claim": "输入端阻抗与换能器端口阻抗不同",
+    "method": "读取原有LTspice逐频CSV，显示0.88–0.92 MHz；上图不绘未匹配高阻值，以右表报告。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv",
+        "sha256": "f0171bb1f3126e19c2c5389d7c66927c18ef799ad86d5fd76c8458acf720ab70"
+      }
+    ]
+  },
+  {
+    "figure": "p08_cm_power_limits",
+    "claim": "Cm单因素改变峰位峰高；未保护扫频有电压越限",
+    "method": "完整0.8–1.0 MHz原始曲线；不裁切160 Vpp以上数据；a=1未保护。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_curves.csv",
+        "sha256": "083ffba9ebb37a216b41374473d8289d5b880bce8d77ae2119c6b6ff5512d90c"
+      }
+    ]
+  },
+  {
+    "figure": "p09_qm_response",
+    "claim": "固定fs、Rm、C0时Qm增大使功率峰变窄",
+    "method": "既有全频CSV；Qm通过联合重算Lm/Cm实现；无峰高偏移。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/stage3_frequency_response_all_cases.csv",
+        "sha256": "bcf9e30ee64e80df35e8644c922f2991e8ccdecd169b60653ceb3c6b3a33d9be"
+      }
+    ]
+  },
+  {
+    "figure": "p10_criteria",
+    "claim": "三个离散选频准则不总重合",
+    "method": "严格取0.5 kHz网格，峰高fs−5%为130.06 mW，不用0.1 kHz峰高140.2 mW混标。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/stage3_frequency_response_all_cases.csv",
+        "sha256": "bcf9e30ee64e80df35e8644c922f2991e8ccdecd169b60653ceb3c6b3a33d9be"
+      },
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv",
+        "sha256": "4268d0022a8375d121d0b8b07af55d808d0b435ddc409bbc2d1a9d35deb41e5e"
+      }
+    ]
+  },
+  {
+    "figure": "p11_windows",
+    "claim": "扩大场景集后±50 kHz仍漏2场景，±100 kHz无峰被排除",
+    "method": "当前34场景aggregate；不沿用早期热图。时间按1.5 ms/点假设计算，非实测。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_aggregate.csv",
+        "sha256": "6482c6813bd774c3b5ae0068fb53a2893822b1910b8b60aea8047b6f126a408a"
+      }
+    ]
+  },
+  {
+    "figure": "p14_phase_current",
+    "claim": "K=5历史相位控制在fs−5%段未追到功率峰",
+    "method": "当前选定增益CSV逐样本保持绘图；下图改为有功功率mW，避免旧图错误的120%归一化。",
+    "new_simulation": false,
+    "sources": [
+      {
+        "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_timeline_selected_gain.csv",
+        "sha256": "b170bc930dfbdcd07a58b9f3b2d37f7121f9cd9d3cd0239ebe8034ec079f8085"
+      }
+    ]
+  }
+]

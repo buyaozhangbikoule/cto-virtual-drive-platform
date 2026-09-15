@@ -1,0 +1,1622 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/re983m5c",
+    "id": "re983m5c",
+    "slide": 18,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8f65kr2t",
+      "id": "14",
+      "name": "title",
+      "bbox": [
+        72,
+        36,
+        1136,
+        57
+      ],
+      "geometry": "rect",
+      "text": "五轮LTspice反馈：功率下降后反向指令已实际执行",
+      "textPreview": "五轮LTspice反馈：功率下降后反向指令已实际执行",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "五轮LTspice反馈：功率下降后反向指令已实际执行"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "五轮LTspice反馈：功率下降后反向指令已实际执行",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "五轮LTspice反馈：功率下降后反向指令已实际执行",
+              "fontSize": 32,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1ov214ve",
+      "id": "2",
+      "bbox": [
+        72,
+        98,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gnmlszut",
+      "id": "3",
+      "bbox": [
+        72,
+        678,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#C7D1DC",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3qdk3ed4",
+      "id": "4",
+      "name": "scope",
+      "bbox": [
+        72,
+        687,
+        1090,
+        21
+      ],
+      "geometry": "rect",
+      "text": "真实求解批次：CL_20260914_124949_410d5f9d    固定负载、低幅离线反馈接口检查",
+      "textPreview": "真实求解批次：CL_20260914_124949_410d5f9d    固定负载、低幅离线反馈接口检查",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "真实求解批次：CL_20260914_124949_410d5f9d    固定负载、低幅离线反馈接口检查"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "真实求解批次：CL_20260914_124949_410d5f9d    固定负载、低幅离线反馈接口检查",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "真实求解批次：CL_20260914_124949_410d5f9d    固定负载、低幅离线反馈接口检查",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2p43u9cz",
+      "id": "5",
+      "name": "page-number",
+      "bbox": [
+        1170,
+        687,
+        38,
+        21
+      ],
+      "geometry": "rect",
+      "text": "18",
+      "textPreview": "18",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "18"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "18",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "18",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/psv254va",
+      "id": "6",
+      "name": "sub",
+      "bbox": [
+        72,
+        116,
+        1136,
+        36
+      ],
+      "geometry": "rect",
+      "text": "固定基准负载，a＝0.40，每轮电路时间1 ms，功率取末200 μs",
+      "textPreview": "固定基准负载，a＝0.40，每轮电路时间1 ms，功率取末200 μs",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "固定基准负载，a＝0.40，每轮电路时间1 ms，功率取末200 μs"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "固定基准负载，a＝0.40，每轮电路时间1 ms，功率取末200 μs",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "固定基准负载，a＝0.40，每轮电路时间1 ms，功率取末200 μs",
+              "fontSize": 24,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/e5cv290z",
+      "id": "15",
+      "bbox": [
+        72,
+        183,
+        736,
+        335
+      ],
+      "text": "轮次 | 本轮频率\nMHz | RAW端口功率\nmW | 下一条频率\nMHz\n1 | 0.8990 | 14.697 | 0.8995\n2 | 0.8995 | 22.514 | 0.9000\n3 | 0.9000 | 27.187 | 0.9005\n4 | 0.9005 | 22.175 | 0.9000\n5 | 0.9000 | 27.186 | 0.8995",
+      "textPreview": "轮次 | 本轮频率 | MHz | RAW端口功率 | mW | 下一条频率 | MHz | 1 | 0.8990 | 14.697 | 0.8995 | 2 | 0.8995 | 22.514 | 0.9000 | 3 | 0.9000 | 27.187 | 0.9005...",
+      "rows": 6,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            72,
+            183,
+            90,
+            55.83
+          ],
+          "text": "轮次",
+          "textPreview": "轮次",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "轮次",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "轮次",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            162,
+            183,
+            206,
+            55.83
+          ],
+          "text": "本轮频率\nMHz",
+          "textPreview": "本轮频率 | MHz",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "本轮频率",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "本轮频率",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "MHz",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "MHz",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            368,
+            183,
+            224,
+            55.83
+          ],
+          "text": "RAW端口功率\nmW",
+          "textPreview": "RAW端口功率 | mW",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "RAW端口功率",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "RAW端口功率",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "mW",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "mW",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            592,
+            183,
+            216,
+            55.83
+          ],
+          "text": "下一条频率\nMHz",
+          "textPreview": "下一条频率 | MHz",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "下一条频率",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "下一条频率",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "MHz",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "MHz",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            72,
+            238.83,
+            90,
+            55.83
+          ],
+          "text": "1",
+          "textPreview": "1",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "1",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "1",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            162,
+            238.83,
+            206,
+            55.83
+          ],
+          "text": "0.8990",
+          "textPreview": "0.8990",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.8990",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.8990",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            368,
+            238.83,
+            224,
+            55.83
+          ],
+          "text": "14.697",
+          "textPreview": "14.697",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "14.697",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "14.697",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            592,
+            238.83,
+            216,
+            55.83
+          ],
+          "text": "0.8995",
+          "textPreview": "0.8995",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.8995",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.8995",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            72,
+            294.67,
+            90,
+            55.83
+          ],
+          "text": "2",
+          "textPreview": "2",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            162,
+            294.67,
+            206,
+            55.83
+          ],
+          "text": "0.8995",
+          "textPreview": "0.8995",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.8995",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.8995",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            368,
+            294.67,
+            224,
+            55.83
+          ],
+          "text": "22.514",
+          "textPreview": "22.514",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "22.514",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "22.514",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            592,
+            294.67,
+            216,
+            55.83
+          ],
+          "text": "0.9000",
+          "textPreview": "0.9000",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9000",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9000",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            72,
+            350.5,
+            90,
+            55.83
+          ],
+          "text": "3",
+          "textPreview": "3",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "3",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "3",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            162,
+            350.5,
+            206,
+            55.83
+          ],
+          "text": "0.9000",
+          "textPreview": "0.9000",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9000",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9000",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            368,
+            350.5,
+            224,
+            55.83
+          ],
+          "text": "27.187",
+          "textPreview": "27.187",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "27.187",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "27.187",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            592,
+            350.5,
+            216,
+            55.83
+          ],
+          "text": "0.9005",
+          "textPreview": "0.9005",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9005",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9005",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            72,
+            406.33,
+            90,
+            55.83
+          ],
+          "text": "4",
+          "textPreview": "4",
+          "fillColor": "#F9E8E5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "4",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "4",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            162,
+            406.33,
+            206,
+            55.83
+          ],
+          "text": "0.9005",
+          "textPreview": "0.9005",
+          "fillColor": "#F9E8E5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9005",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9005",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            368,
+            406.33,
+            224,
+            55.83
+          ],
+          "text": "22.175",
+          "textPreview": "22.175",
+          "fillColor": "#F9E8E5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "22.175",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "22.175",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 5,
+          "column": 4,
+          "bbox": [
+            592,
+            406.33,
+            216,
+            55.83
+          ],
+          "text": "0.9000",
+          "textPreview": "0.9000",
+          "fillColor": "#F9E8E5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9000",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9000",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            72,
+            462.17,
+            90,
+            55.83
+          ],
+          "text": "5",
+          "textPreview": "5",
+          "fillColor": "#E3F0F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "5",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "5",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 22,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            162,
+            462.17,
+            206,
+            55.83
+          ],
+          "text": "0.9000",
+          "textPreview": "0.9000",
+          "fillColor": "#E3F0F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9000",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9000",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 23,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            368,
+            462.17,
+            224,
+            55.83
+          ],
+          "text": "27.186",
+          "textPreview": "27.186",
+          "fillColor": "#E3F0F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "27.186",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "27.186",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 24,
+          "row": 6,
+          "column": 4,
+          "bbox": [
+            592,
+            462.17,
+            216,
+            55.83
+          ],
+          "text": "0.8995",
+          "textPreview": "0.8995",
+          "fillColor": "#E3F0F2",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.8995",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.8995",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bexk7etg",
+      "id": "8",
+      "name": "event",
+      "bbox": [
+        848,
+        181,
+        360,
+        40
+      ],
+      "geometry": "rect",
+      "text": "第4轮：功率下降",
+      "textPreview": "第4轮：功率下降",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "第4轮：功率下降"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "第4轮：功率下降",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Calibri",
+            "color": "#BE3A3A",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "第4轮：功率下降",
+              "fontSize": 27,
+              "typeface": "Calibri",
+              "color": "#BE3A3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qt43y9cv",
+      "id": "9",
+      "name": "eventdetail",
+      "bbox": [
+        848,
+        233,
+        360,
+        102
+      ],
+      "geometry": "rect",
+      "text": "27.187降至22.175 mW\nPython反转调频方向\n提出0.9000 MHz下一指令",
+      "textPreview": "27.187降至22.175 mW | Python反转调频方向 | 提出0.9000 MHz下一指令",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "27.187降至22.175 mW"
+          },
+          {
+            "index": 2,
+            "text": "Python反转调频方向"
+          },
+          {
+            "index": 3,
+            "text": "提出0.9000 MHz下一指令"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "27.187降至22.175 mW",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "27.187降至22.175 mW",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "Python反转调频方向",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Python反转调频方向",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "提出0.9000 MHz下一指令",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "提出0.9000 MHz下一指令",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kb65gr2h",
+      "id": "10",
+      "name": "executed",
+      "bbox": [
+        848,
+        363,
+        360,
+        40
+      ],
+      "geometry": "rect",
+      "text": "第5轮：执行反向指令",
+      "textPreview": "第5轮：执行反向指令",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "第5轮：执行反向指令"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "第5轮：执行反向指令",
+          "resolvedTextStyle": {
+            "fontSize": 27,
+            "typeface": "Calibri",
+            "color": "#167B88",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "第5轮：执行反向指令",
+              "fontSize": 27,
+              "typeface": "Calibri",
+              "color": "#167B88",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/lcf69cj2",
+      "id": "11",
+      "name": "executeddetail",
+      "bbox": [
+        848,
+        417,
+        360,
+        102
+      ],
+      "geometry": "rect",
+      "text": "LTspice以0.9000 MHz求解\n功率回到27.186 mW\n保留RAW、日志和前后指令哈希",
+      "textPreview": "LTspice以0.9000 MHz求解 | 功率回到27.186 mW | 保留RAW、日志和前后指令哈希",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "LTspice以0.9000 MHz求解"
+          },
+          {
+            "index": 2,
+            "text": "功率回到27.186 mW"
+          },
+          {
+            "index": 3,
+            "text": "保留RAW、日志和前后指令哈希"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "LTspice以0.9000 MHz求解",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "LTspice以0.9000 MHz求解",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "功率回到27.186 mW",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "功率回到27.186 mW",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "保留RAW、日志和前后指令哈希",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "保留RAW、日志和前后指令哈希",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/y94nehkr",
+      "id": "12",
+      "name": "method",
+      "bbox": [
+        72,
+        552,
+        1136,
+        59
+      ],
+      "geometry": "rect",
+      "text": "每轮重算完整指令历史，保留电路状态历史效应。单轮实际耗时约14–27 s，非实时控制。",
+      "textPreview": "每轮重算完整指令历史，保留电路状态历史效应。单轮实际耗时约14–27 s，非实时控制。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "每轮重算完整指令历史，保留电路状态历史效应。单轮实际耗时约14–27 s，非实时控制。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "每轮重算完整指令历史，保留电路状态历史效应。单轮实际耗时约14–27 s，非实时控制。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "每轮重算完整指令历史，保留电路状态历史效应。单轮实际耗时约14–27 s，非实时控制。",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jado7m1w",
+      "id": "13",
+      "name": "limit",
+      "bbox": [
+        72,
+        626,
+        1136,
+        43
+      ],
+      "geometry": "rect",
+      "text": "第5轮产生的0.8995 MHz尚未执行。本页不证明动态扰动追踪、连续稳态或全过程硬保护。",
+      "textPreview": "第5轮产生的0.8995 MHz尚未执行。本页不证明动态扰动追踪、连续稳态或全过程硬保护。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "第5轮产生的0.8995 MHz尚未执行。本页不证明动态扰动追踪、连续稳态或全过程硬保护。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "第5轮产生的0.8995 MHz尚未执行。本页不证明动态扰动追踪、连续稳态或全过程硬保护。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#BE3A3A",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "第5轮产生的0.8995 MHz尚未执行。本页不证明动态扰动追踪、连续稳态或全过程硬保护。",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#BE3A3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

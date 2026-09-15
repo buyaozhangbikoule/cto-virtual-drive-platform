@@ -1,0 +1,781 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l0bepsfm",
+    "id": "l0bepsfm",
+    "slide": 26,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kbil0r2p",
+      "id": "8",
+      "name": "title-20",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "备份：控制器比较采用统一且可复现的指标定义",
+      "textPreview": "备份：控制器比较采用统一且可复现的指标定义",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备份：控制器比较采用统一且可复现的指标定义"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备份：控制器比较采用统一且可复现的指标定义",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备份：控制器比较采用统一且可复现的指标定义",
+              "fontSize": 36,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uhk36lk7",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vitkzqlc",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fil4b21",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        720,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Electrical model only — structural/acoustic validation pending",
+      "textPreview": "Electrical model only — structural/acoustic validation pending",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Electrical model only — structural/acoustic validation pending"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Electrical model only — structural/acoustic validation pending",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Electrical model only — structural/acoustic validation pending",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgr2xg3m",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "26",
+      "textPreview": "26",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "26"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "26",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "26",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/s3698rmp",
+      "id": "9",
+      "name": "表格 14",
+      "bbox": [
+        92,
+        142,
+        1090,
+        420
+      ],
+      "text": "指标 | 本次定义\nP* | 该场景约束下离线高分辨率最大P_Rm\n稳态误差 | 最后25% NORMAL控制样本的(1−P/P*)均值\n恢复时间 | P≥0.98P*并连续保持10个NORMAL控制样本\n过冲 | 相对新场景P*的最大正偏差\n频率饱和 | 频率停留在0.8或1.0 MHz边界的时间\n错误相位锁定 | 相位误差达标但P_Rm<0.95P*",
+      "textPreview": "指标 | 本次定义 | P* | 该场景约束下离线高分辨率最大P_Rm | 稳态误差 | 最后25% NORMAL控制样本的(1−P/P*)均值 | 恢复时间 | P≥0.98P*并连续保持10个NORMAL控制样本 | 过冲 | 相对新场景P*的最大正偏差 | 频率饱和 ...",
+      "rows": 7,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            92,
+            142,
+            266.44,
+            60
+          ],
+          "text": "指标",
+          "textPreview": "指标",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "指标",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "指标",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            358.44,
+            142,
+            823.56,
+            60
+          ],
+          "text": "本次定义",
+          "textPreview": "本次定义",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "本次定义",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "本次定义",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            92,
+            202,
+            266.44,
+            60
+          ],
+          "text": "P*",
+          "textPreview": "P*",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "P*",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "P*",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            358.44,
+            202,
+            823.56,
+            60
+          ],
+          "text": "该场景约束下离线高分辨率最大P_Rm",
+          "textPreview": "该场景约束下离线高分辨率最大P_Rm",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "该场景约束下离线高分辨率最大P_Rm",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "该场景约束下离线高分辨率最大P_Rm",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            92,
+            262,
+            266.44,
+            60
+          ],
+          "text": "稳态误差",
+          "textPreview": "稳态误差",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "稳态误差",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "稳态误差",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            358.44,
+            262,
+            823.56,
+            60
+          ],
+          "text": "最后25% NORMAL控制样本的(1−P/P*)均值",
+          "textPreview": "最后25% NORMAL控制样本的(1−P/P*)均值",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "最后25% NORMAL控制样本的(1−P/P*)均值",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "最后25% NORMAL控制样本的(1−P/P*)均值",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            92,
+            322,
+            266.44,
+            60
+          ],
+          "text": "恢复时间",
+          "textPreview": "恢复时间",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "恢复时间",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "恢复时间",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            358.44,
+            322,
+            823.56,
+            60
+          ],
+          "text": "P≥0.98P*并连续保持10个NORMAL控制样本",
+          "textPreview": "P≥0.98P*并连续保持10个NORMAL控制样本",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "P≥0.98P*并连续保持10个NORMAL控制样本",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "P≥0.98P*并连续保持10个NORMAL控制样本",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            92,
+            382,
+            266.44,
+            60
+          ],
+          "text": "过冲",
+          "textPreview": "过冲",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "过冲",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "过冲",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            358.44,
+            382,
+            823.56,
+            60
+          ],
+          "text": "相对新场景P*的最大正偏差",
+          "textPreview": "相对新场景P*的最大正偏差",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "相对新场景P*的最大正偏差",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "相对新场景P*的最大正偏差",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            92,
+            442,
+            266.44,
+            60
+          ],
+          "text": "频率饱和",
+          "textPreview": "频率饱和",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "频率饱和",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "频率饱和",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            358.44,
+            442,
+            823.56,
+            60
+          ],
+          "text": "频率停留在0.8或1.0 MHz边界的时间",
+          "textPreview": "频率停留在0.8或1.0 MHz边界的时间",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "频率停留在0.8或1.0 MHz边界的时间",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "频率停留在0.8或1.0 MHz边界的时间",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            92,
+            502,
+            266.44,
+            60
+          ],
+          "text": "错误相位锁定",
+          "textPreview": "错误相位锁定",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "错误相位锁定",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "错误相位锁定",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            358.44,
+            502,
+            823.56,
+            60
+          ],
+          "text": "相位误差达标但P_Rm<0.95P*",
+          "textPreview": "相位误差达标但P_Rm<0.95P*",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "相位误差达标但P_Rm<0.95P*",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "相位误差达标但P_Rm<0.95P*",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7e9kv6lg",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        118,
+        596,
+        1040,
+        42
+      ],
+      "geometry": "rect",
+      "text": "130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。",
+      "textPreview": "130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。",
+          "resolvedTextStyle": {
+            "fontSize": 19,
+            "color": "#B33A3A",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。",
+              "fontSize": 19,
+              "color": "#B33A3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

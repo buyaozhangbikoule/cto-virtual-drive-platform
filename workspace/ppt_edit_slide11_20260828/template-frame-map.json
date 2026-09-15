@@ -1,0 +1,33 @@
+{
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"narrativeRole":"opening","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":2,"sourceSlide":2,"narrativeRole":"problem","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":3,"sourceSlide":3,"narrativeRole":"parameter consistency","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":4,"sourceSlide":4,"narrativeRole":"cross validation","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":5,"sourceSlide":5,"narrativeRole":"matching network","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":6,"sourceSlide":6,"narrativeRole":"disturbance sensitivity","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":7,"sourceSlide":7,"narrativeRole":"Qm sensitivity","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":8,"sourceSlide":8,"narrativeRole":"selection criteria","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":9,"sourceSlide":9,"narrativeRole":"scan tradeoff","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":10,"sourceSlide":10,"narrativeRole":"protection state machine","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":11,"sourceSlide":11,"narrativeRole":"peak migration evidence and relock response","reuseMode":"duplicate-slide","editTargets":[
+      {"action":"rewrite","sourceElementId":"sh/0b6tc3yx"},
+      {"action":"replace","sourceElementId":"im/21cnihkf"},
+      {"action":"rewrite-and-reposition","sourceElementIds":["sh/o7ih0r6h","sh/72t03qp0","sh/61kzalof","sh/ofqtgnyt","sh/9gza9sze","sh/mdobedg3","sh/nehs7iho"]},
+      {"action":"add","zone":{"left":72,"top":112,"width":820,"height":530},"reason":"editable sweep and focused timeline charts"},
+      {"action":"add","zone":{"left":900,"top":112,"width":308,"height":530},"reason":"peak-frequency values and interpretation"}
+    ]},
+    {"outputSlide":12,"sourceSlide":12,"narrativeRole":"integrated comparison","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":13,"sourceSlide":13,"narrativeRole":"literature boundary","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":14,"sourceSlide":14,"narrativeRole":"status and next work","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":15,"sourceSlide":15,"narrativeRole":"appendix parameters","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":16,"sourceSlide":16,"narrativeRole":"appendix disturbances","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":17,"sourceSlide":17,"narrativeRole":"appendix criteria","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":18,"sourceSlide":18,"narrativeRole":"appendix phase loop","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":19,"sourceSlide":19,"narrativeRole":"appendix LTspice evidence","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":20,"sourceSlide":20,"narrativeRole":"appendix metric definitions","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":21,"sourceSlide":21,"narrativeRole":"appendix reproducibility","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":22,"sourceSlide":22,"narrativeRole":"appendix structural-acoustic gap","reuseMode":"duplicate-slide","editTargets":[]}
+  ],
+  "omittedSourceSlides": []
+}

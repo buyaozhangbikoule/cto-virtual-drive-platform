@@ -1,0 +1,38 @@
+{
+  "exit_code": 0,
+  "result": {
+    "checks": [
+      {
+        "chart": 1,
+        "slide": 6,
+        "status": "present"
+      },
+      {
+        "chart": 2,
+        "slide": 6,
+        "status": "present"
+      },
+      {
+        "chart": 1,
+        "slide": 15,
+        "status": "absent"
+      },
+      {
+        "chart": 1,
+        "slide": 24,
+        "status": "absent"
+      }
+    ],
+    "finding_count": 0,
+    "findings": [],
+    "native_chart_count": 4,
+    "native_powerpoint_verified": false,
+    "passed": true,
+    "presentation_sha256": "8186452b2e53feaa8821a544f84413fad99fd6cf55407f5ace1d64ba133f4e15",
+    "schema_version": "presentation-native-chart-titles.v1",
+    "slide_count": 28,
+    "source_text_emitted": false,
+    "unresolved_linked_title_count": 0
+  },
+  "stderr": ""
+}

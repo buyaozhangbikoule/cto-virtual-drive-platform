@@ -1,0 +1,22 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\fourth_step_control_strategies\ltspice_cases\CASE_420_RS_P10.cir
+Start Time: Tue Aug 11 16:40:46 2026
+Options:meascplxfmt=cartesian
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+.OP point found by inspection.
+.OP point found by inspection.
+Total elapsed time: 0.085 seconds.
+
+Files loaded:
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\fourth_step_control_strategies\ltspice_cases\CASE_420_RS_P10.cir
+
+p_0p9: re(V(n_in)*conj(I(Rmot))) =(0.11409155105,0) at 900000
+itrans_peak_0p9: mag(I(Rmot)+I(Cstatic))*sqrt(2) =(0.00479398333086,0) at 900000
+vpp_0p9: mag(V(n_in))*2*sqrt(2) =(95.5370348249,0) at 900000
+phase_0p9: ph(V(n_s)/I(Rlesr)) =(-0.0131974560497,0) at 900000
+gamma_0p9: mag((V(n_s)/I(Rlesr)-55)/(V(n_s)/I(Rlesr)+55)) =(0.0183433715276,0) at 900000
+pmax: MAX(re(V(n_in)*conj(I(Rmot))))=(0.114114184758,0) FROM 840000 TO 960000

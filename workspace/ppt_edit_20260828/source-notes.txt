@@ -1,0 +1,13 @@
+Slide 11 native sweep chart data:
+- C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\active_stage3_5\stage3_disturbance\stage3_frequency_response_all_cases.csv
+- Filtered scenarios: CASE_000_BASELINE and CASE_FS_M5, frequency 0.84-0.92 MHz.
+
+Slide 11 time-series image and metrics:
+- C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\report_evidence_final\07_汇报截图\stage4_01_three_strategy_timeline.png
+- C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\report_evidence_final\06_控制与保护\stage5_per_segment_metrics.csv
+
+Verified values:
+- f_peak,base = 0.9000 MHz
+- f_peak,disturbed = 0.8548 MHz for CASE_FS_M5
+- delta f_peak = -45.2 kHz
+

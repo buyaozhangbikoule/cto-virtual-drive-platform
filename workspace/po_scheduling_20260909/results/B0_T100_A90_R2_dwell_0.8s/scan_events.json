@@ -1,0 +1,56 @@
+[
+  {
+    "start_s": 1.660000000000001,
+    "end_s": 1.7610000000000041,
+    "duration_ms": 101.00000000000308,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FULL_SCAN",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.1591955047859494
+  },
+  {
+    "start_s": 2.561000000000005,
+    "end_s": 2.662000000000008,
+    "duration_ms": 101.00000000000308,
+    "reason": "HARD_LIMIT_EVENT",
+    "path": "FULL_SCAN",
+    "selected_Hz": 854800.0,
+    "selected_score_W": 0.14023038267556054
+  },
+  {
+    "start_s": 3.3620000000000085,
+    "end_s": 3.4630000000000116,
+    "duration_ms": 101.00000000000308,
+    "reason": "HARD_LIMIT_EVENT",
+    "path": "FULL_SCAN",
+    "selected_Hz": 900300.0,
+    "selected_score_W": 0.14483388736834862
+  },
+  {
+    "start_s": 4.06300000000001,
+    "end_s": 4.164000000000013,
+    "duration_ms": 101.00000000000264,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FULL_SCAN",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.11305365910985793
+  },
+  {
+    "start_s": 4.923999999999997,
+    "end_s": 5.0249999999999995,
+    "duration_ms": 101.00000000000264,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FULL_SCAN",
+    "selected_Hz": 854900.0,
+    "selected_score_W": 0.0725426263390658
+  },
+  {
+    "start_s": 5.664999999999986,
+    "end_s": 5.7659999999999885,
+    "duration_ms": 101.00000000000264,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FULL_SCAN",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.16999997832489852
+  }
+]

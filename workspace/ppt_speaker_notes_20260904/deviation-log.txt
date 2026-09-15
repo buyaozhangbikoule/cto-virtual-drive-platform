@@ -1,0 +1,4 @@
+1. Slide 15: updated stale recovery and unsettled-segment values from the current stage5_integrated_strategy_table.csv; revised note so shortest penalized time is not misread as best performance.
+2. Slide 20: relabeled the 7.071 kΩ / -15.916° values as transducer-port quantities behind the matching network, not source-side Zin.
+3. Slide 23: corrected phase definition from arg(Vport/Iport) to matching-network input phase arg(Zin)=arg(Vinput/Isource), consistent with model_v2_1.py and the controller implementation.
+4. All 28 slides: added structured graduate-group-meeting speaker notes with conclusion, exact script, visual reading order, limitations, likely question, answer, fuzzy-inference flag, and source paths.

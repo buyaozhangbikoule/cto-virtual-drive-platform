@@ -1,0 +1,311 @@
+{
+  "pass": true,
+  "csv_count": 61,
+  "files": [
+    {
+      "file": "D01_LOCAL_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "ab3924d9c22892a2b8f6c823c8834b2333607288f8078f043199b9a8726ea099"
+    },
+    {
+      "file": "D01_LOCAL_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "e7d9c4f12412e17a8fcacb475c177e4c0d1f02e0d67a2f679003dc8372a13799"
+    },
+    {
+      "file": "D01_LOCAL_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "344e0dfc17523a6e80512a15622b4af18a6075fc485ac4e833d06d67dd253175"
+    },
+    {
+      "file": "D01_LOCAL_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "918f0336f271e9ab64477e565bc678e832ae1e15b867732b256b82c13e398616"
+    },
+    {
+      "file": "D01_LOCAL_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "f2ef910a71e7704a202d08524a322f79f5f8786d645aba9f3c054850361691e7"
+    },
+    {
+      "file": "D01_LOCAL_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "339cebd4c73d039b730f7554687eaebf26c0f96b1d6ceb6cb744b7e9d9113c43"
+    },
+    {
+      "file": "D02_LOCAL_BC_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "454957b18bd1529965e056bee551a60437582d98343402892327a697247ea631"
+    },
+    {
+      "file": "D02_LOCAL_BC_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "e6e3927e968512565fc18b34381691896228e243af9b01058fa2da0df8184886"
+    },
+    {
+      "file": "D02_LOCAL_BC_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "a5cde1179ba2ffba74d31578efc861c4c3b550b5760df858c496eea0a02b6a72"
+    },
+    {
+      "file": "D02_LOCAL_BC_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "56256430fe509b084defde0aab06a66e845ffcfd6db19f482f4f5268980bd9aa"
+    },
+    {
+      "file": "D02_LOCAL_BC_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "5225c057c89be08506271d6970fbb2d33f52c90f5de7c0b2f0fe49add0fcb051"
+    },
+    {
+      "file": "D02_LOCAL_BC_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "81d691c2a002a9a32991a52da161b0c117bceb69b616248b8299358d2b138c02"
+    },
+    {
+      "file": "E02_000_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "86431f8af3aa6e9db9ebb14ef7d1ed4bd685fe5d7c42c961a1d3ce59c85033d2"
+    },
+    {
+      "file": "E02_000_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "f81207fa15264d16c9c46676f1bcf60255340c96fa18277313e6412da8716c97"
+    },
+    {
+      "file": "E02_000_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "2e7dff47e57bc0bb675bcafcf77414078ef26ced6d9fe7c024520191b1f1dd36"
+    },
+    {
+      "file": "E02_000_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "dcc30854e7cd89191c29105223a6b904ed1d10eac253a1eba6ac702a79844d41"
+    },
+    {
+      "file": "E02_000_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "c9d8a13ce1b23af5ab50827b7466266534b14eb6a1e1f6c150644f1fe8dc5dd9"
+    },
+    {
+      "file": "E02_000_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "fd83c64c5af1194b8ca41b60705d4ae78d658ef98eb59bba1b4fc395c2725748"
+    },
+    {
+      "file": "E03_A_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "4d0a31f08e6c9d2446221c0a0ccd85f15d8232be3f2a26ce296b556855a71381"
+    },
+    {
+      "file": "E03_A_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "82833e3f942b1870873617e329484f0396048249e278fc6c58534fef665810cc"
+    },
+    {
+      "file": "E03_A_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "84231e10a1c0ab9a5dd2e17905428f379bbbd33f9f7e2e953c31c85431668866"
+    },
+    {
+      "file": "E03_A_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "830e81ee9e83203b3b248d6a1c4e5f73039c042a98d3a530035e1d9e3e0480f3"
+    },
+    {
+      "file": "E03_A_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "cc4684258c8b6e3b3571425713bd5d699f8c711100057e8f96e07b245503b6a0"
+    },
+    {
+      "file": "E03_A_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "bb6020c73aa72aa18e52a62fde03d82204d4598aad514a81b24ad068f03f4e7a"
+    },
+    {
+      "file": "E04_B_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "6aeda416ff65828a0d9119b760784eb9deaa6ddaecd569a36b0d555da6a743b9"
+    },
+    {
+      "file": "E04_B_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "867aec0a225a912d24f4b3f4236e7d93dcd1e4873f70da14fbb4b23dc5921d31"
+    },
+    {
+      "file": "E04_B_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "d5e71e43322446b93a0cb93068dc87e7bd43346c8a43d36657137f3530e0f910"
+    },
+    {
+      "file": "E04_B_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "8584ac117c29d1265f010e8c2b744277d3daa72fe2726265d5f5e56a06b76858"
+    },
+    {
+      "file": "E04_B_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "a2c69c00395a55fabb5822970b4243eea80834662ae4df119e128532926a5d03"
+    },
+    {
+      "file": "E04_B_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "88bc9288944cc9a009f8402e4c56b519c17ba0b308a4297bc25a860372f07e25"
+    },
+    {
+      "file": "E05_C_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "1cc38a5814fee6d37fe27a5aa7ae7af0d94302670201e99a0615c452e9303d9e"
+    },
+    {
+      "file": "E05_C_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "f81207fa15264d16c9c46676f1bcf60255340c96fa18277313e6412da8716c97"
+    },
+    {
+      "file": "E05_C_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "badbcb5e6fb532deff12e0a1197c9e3839797acd0dd58c9a60c6bec9d50dbfa2"
+    },
+    {
+      "file": "E05_C_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "dcc30854e7cd89191c29105223a6b904ed1d10eac253a1eba6ac702a79844d41"
+    },
+    {
+      "file": "E05_C_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "c9d8a13ce1b23af5ab50827b7466266534b14eb6a1e1f6c150644f1fe8dc5dd9"
+    },
+    {
+      "file": "E05_C_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "940c563bd9c2858130de29b75e203320e2817521e18484660f93cd40a2988450"
+    },
+    {
+      "file": "E06_AB_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "6e6148d9fb5e7dcf559aa96257d80733c28734ca8e81782e3f3e6ecd70e88879"
+    },
+    {
+      "file": "E06_AB_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "c75e43acb630ac928ef2373087304cc37ae5c9c77acb511ffb0fb93ab350fb83"
+    },
+    {
+      "file": "E06_AB_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "b4aff707489139f5dff7237935e1ade532a31980905cd0d1e0a3801835acaca4"
+    },
+    {
+      "file": "E06_AB_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "45a188940c3ab0792ba20e376544396a35f79170a6d8b125f06826dfdf3890dd"
+    },
+    {
+      "file": "E06_AB_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "688f6e92358da24fe20fda56dbb4dd17199ffe6cbf52ebbd937ab03c88fd43ac"
+    },
+    {
+      "file": "E06_AB_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "e2a8c840a3c24a0c91dc571aea2ef4c939056ba3ce425cd3f67cf156bc223775"
+    },
+    {
+      "file": "E07_AC_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "671376671d823ce3280a774c5d2cf16ef9250100d27214e8ca2dff4956a12d07"
+    },
+    {
+      "file": "E07_AC_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "82833e3f942b1870873617e329484f0396048249e278fc6c58534fef665810cc"
+    },
+    {
+      "file": "E07_AC_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "efdff8b72bcf56a8340d1fe222463a2abea551df564357e194411c8218cb33c9"
+    },
+    {
+      "file": "E07_AC_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "830e81ee9e83203b3b248d6a1c4e5f73039c042a98d3a530035e1d9e3e0480f3"
+    },
+    {
+      "file": "E07_AC_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "cc4684258c8b6e3b3571425713bd5d699f8c711100057e8f96e07b245503b6a0"
+    },
+    {
+      "file": "E07_AC_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "73401a32d8fc2c375d9cca9001040a532e3af6aa475ddceb3b27ed2dd21f4870"
+    },
+    {
+      "file": "E08_BC_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "6aeda416ff65828a0d9119b760784eb9deaa6ddaecd569a36b0d555da6a743b9"
+    },
+    {
+      "file": "E08_BC_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "867aec0a225a912d24f4b3f4236e7d93dcd1e4873f70da14fbb4b23dc5921d31"
+    },
+    {
+      "file": "E08_BC_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "fe2269de590a46b369da50c1aed33ac22419fe1be58b190d9e9f1111cf71b07d"
+    },
+    {
+      "file": "E08_BC_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "8584ac117c29d1265f010e8c2b744277d3daa72fe2726265d5f5e56a06b76858"
+    },
+    {
+      "file": "E08_BC_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "a2c69c00395a55fabb5822970b4243eea80834662ae4df119e128532926a5d03"
+    },
+    {
+      "file": "E08_BC_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "9b464bb5b4b398b5d250a811e2781be79343e06ed303db2ee3caec8b78ae6c27"
+    },
+    {
+      "file": "E09_ABC_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "6e6148d9fb5e7dcf559aa96257d80733c28734ca8e81782e3f3e6ecd70e88879"
+    },
+    {
+      "file": "E09_ABC_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "c75e43acb630ac928ef2373087304cc37ae5c9c77acb511ffb0fb93ab350fb83"
+    },
+    {
+      "file": "E09_ABC_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "d85e75cb53d977971ac18b460e9378125191af2e1327dd08db5ef0c18b32fb16"
+    },
+    {
+      "file": "E09_ABC_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "45a188940c3ab0792ba20e376544396a35f79170a6d8b125f06826dfdf3890dd"
+    },
+    {
+      "file": "E09_ABC_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "688f6e92358da24fe20fda56dbb4dd17199ffe6cbf52ebbd937ab03c88fd43ac"
+    },
+    {
+      "file": "E09_ABC_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "c2c976f6f2079a72a73c4d68b113fb986a52b714e07bb496ac7701cb1c62a042"
+    },
+    {
+      "file": "summary.csv",
+      "identical_bytes": true,
+      "sha256": "2d96195fe88c30aff696a2b4e585bb445c087503bb2f8defc7cdd7bdd50811a6"
+    }
+  ]
+}

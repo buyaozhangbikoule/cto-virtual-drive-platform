@@ -1,0 +1,20 @@
+field,required_unit,source_class,status,notes
+geometry_outer_diameter,m,文献参考值/假设基线值/扫描变量,MISSING,不得默认为实物尺寸
+geometry_inner_diameter,m,文献参考值/假设基线值/扫描变量,MISSING,环形换能器时必需
+geometry_thickness_or_length,m,文献参考值/假设基线值/扫描变量,MISSING,决定厚度模态
+pzt_density,kg/m3,文献参考值,MISSING,需与材料牌号一致
+elastic_matrix,Pa,文献参考值,MISSING,注明constant-E或constant-D及矩阵顺序
+piezoelectric_matrix,C/m2_or_m/V,文献参考值,MISSING,注明e/d形式与极化轴
+permittivity_matrix,F/m,文献参考值,MISSING,注明constant-strain或constant-stress
+mechanical_loss,dimensionless,文献参考值/扫描变量,MISSING,可用损耗因子或Rayleigh阻尼
+dielectric_loss,dimensionless,文献参考值/扫描变量,MISSING,损耗角正切
+electrode_definition,-,假设基线值,MISSING,驱动端和接地端
+support_boundary,-,假设基线值,MISSING,自由/固定/弹性支撑不可混用
+backing_housing_material,SI,文献参考值/假设基线值,MISSING,若忽略需显式声明
+fluid_density,kg/m3,文献参考值,MISSING,温度相关
+fluid_sound_speed,m/s,文献参考值,MISSING,温度相关
+fluid_attenuation,Np/m,文献参考值/扫描变量,MISSING,线性声学损耗
+radiation_boundary_or_pml,-,假设基线值,MISSING,避免边界反射
+drive_voltage,Vpp_and_Vrms,假设基线值,READY,100 Vpp缩放工况；160 Vpp项目硬限
+analysis_band,Hz,假设基线值,READY,0.8e6至1.0e6；检查范围0.5e6至1.5e6
+

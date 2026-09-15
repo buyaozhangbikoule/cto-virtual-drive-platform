@@ -1,0 +1,45 @@
+{
+  "runs": [
+    {
+      "name": "B1_T100_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 470,
+      "timeline_sha256": "930e2469019252b300ee8c72b09fb749cbdceb638e1ab111255d04d890c6b8e8",
+      "previous_round_exact_reproduction": {
+        "matched": true,
+        "reference": "frozen/reference/E04_B_dwell_0.8s/timeline.csv",
+        "rows": 470,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "name": "B1_T500_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "9317bd8f70cf5442fee64ad9b2d1a0a4bbdb4d1c68360223e9e68bd4a9e79982"
+    },
+    {
+      "name": "B1_T100_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 840,
+      "timeline_sha256": "34d483d86ac6325de5d69379ad52c61a4b31f725abfcafdfadacc7174c441453",
+      "previous_round_exact_reproduction": {
+        "matched": true,
+        "reference": "frozen/reference/E04_B_dwell_1.6s/timeline.csv",
+        "rows": 840,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "name": "B1_T500_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "178aef9f5071b30cb619af13a677c2b4270a539d5252247fbb97740008a1ac7b"
+    }
+  ],
+  "elapsed_wall_s": 3.3587886999594048,
+  "script_sha256": "6d5b322cf5f10abb0760df161dc2a178825211f1aad50bb7e853078749ccf77f",
+  "new_LTspice_runs": false,
+  "known_model_guard": true,
+  "noise_and_hardware_delays_modelled": false
+}

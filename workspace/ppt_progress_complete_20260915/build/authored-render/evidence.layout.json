@@ -1,0 +1,1162 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/gi623n",
+    "id": "gi623n",
+    "slide": 7,
+    "layoutId": "dfac47bf-2518-4769-af3d-36795d592be2",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Calibri"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "dfac47bf-2518-4769-af3d-36795d592be2",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5kraxs3e",
+      "id": "1",
+      "name": "title",
+      "bbox": [
+        72,
+        36,
+        1136,
+        57
+      ],
+      "geometry": "rect",
+      "text": "备份：静态、准稳态、瞬态重放与反馈结果分别追溯",
+      "textPreview": "备份：静态、准稳态、瞬态重放与反馈结果分别追溯",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 32,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备份：静态、准稳态、瞬态重放与反馈结果分别追溯"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备份：静态、准稳态、瞬态重放与反馈结果分别追溯",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备份：静态、准稳态、瞬态重放与反馈结果分别追溯",
+              "fontSize": 32,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ixgrmxkn",
+      "id": "2",
+      "bbox": [
+        72,
+        98,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jipsvil8",
+      "id": "3",
+      "bbox": [
+        72,
+        678,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#C7D1DC",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wvy9kn2x",
+      "id": "4",
+      "name": "scope",
+      "bbox": [
+        72,
+        687,
+        1090,
+        21
+      ],
+      "geometry": "rect",
+      "text": "汇报截止2026-09-15    原数据与失败记录保留    完整路径、批次、窗口和哈希见备注及随附证据索引",
+      "textPreview": "汇报截止2026-09-15    原数据与失败记录保留    完整路径、批次、窗口和哈希见备注及随附证据索引",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 12,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "汇报截止2026-09-15    原数据与失败记录保留    完整路径、批次、窗口和哈希见备注及随附证据索引"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "汇报截止2026-09-15    原数据与失败记录保留    完整路径、批次、窗口和哈希见备注及随附证据索引",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "汇报截止2026-09-15    原数据与失败记录保留    完整路径、批次、窗口和哈希见备注及随附证据索引",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hw7ats32",
+      "id": "5",
+      "name": "page-number",
+      "bbox": [
+        1170,
+        687,
+        38,
+        21
+      ],
+      "geometry": "rect",
+      "text": "31",
+      "textPreview": "31",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 12,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "31"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "31",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "31",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/net872lc",
+      "id": "6",
+      "bbox": [
+        72,
+        135,
+        1136,
+        395
+      ],
+      "text": "证据类型／批次 | 原始文件 | 支持的结论\nv2.1静态AC对照 | 统一配置、.cir、.raw、.log、误差表 | 相同拓扑和参数的两条求解路径一致\n历史准稳态控制 a734… | 控制CSV、状态、扫描点、持续时间 | 该历史序列内的控制现象与能量统计\n2026-09-07消融／后续候选 | 8组合＋2对照、完整时序与验收表 | 改进来源、代价与未解决的约束风险\n2026-09-11/12瞬态重放 | 61条指令、真实RAW、.meas、GUI | P&O所选片段的真实电路响应\n2026-09-14五轮反馈 | 逐轮stimulus、RAW、feedback及哈希 | 本轮测量改变下一轮实际执行指令\n2026-09-15网页展示 | 实际网页截图、界面代码、历史会话 | 平台当前可查看和操作的功能",
+      "textPreview": "证据类型／批次 | 原始文件 | 支持的结论 | v2.1静态AC对照 | 统一配置、.cir、.raw、.log、误差表 | 相同拓扑和参数的两条求解路径一致 | 历史准稳态控制 a734… | 控制CSV、状态、扫描点、持续时间 | 该历史序列内的控制现象与能量统计 |...",
+      "rows": 7,
+      "cols": 3,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            72,
+            135,
+            292,
+            56.43
+          ],
+          "text": "证据类型／批次",
+          "textPreview": "证据类型／批次",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "证据类型／批次",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#FFFFFF",
+                "bold": true
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "证据类型／批次",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            364,
+            135,
+            424,
+            56.43
+          ],
+          "text": "原始文件",
+          "textPreview": "原始文件",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "原始文件",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#FFFFFF",
+                "bold": true
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "原始文件",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            788,
+            135,
+            420,
+            56.43
+          ],
+          "text": "支持的结论",
+          "textPreview": "支持的结论",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "支持的结论",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#FFFFFF",
+                "bold": true
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "支持的结论",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            72,
+            191.43,
+            292,
+            56.43
+          ],
+          "text": "v2.1静态AC对照",
+          "textPreview": "v2.1静态AC对照",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "v2.1静态AC对照",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "v2.1静态AC对照",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            364,
+            191.43,
+            424,
+            56.43
+          ],
+          "text": "统一配置、.cir、.raw、.log、误差表",
+          "textPreview": "统一配置、.cir、.raw、.log、误差表",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "统一配置、.cir、.raw、.log、误差表",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "统一配置、.cir、.raw、.log、误差表",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            788,
+            191.43,
+            420,
+            56.43
+          ],
+          "text": "相同拓扑和参数的两条求解路径一致",
+          "textPreview": "相同拓扑和参数的两条求解路径一致",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "相同拓扑和参数的两条求解路径一致",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "相同拓扑和参数的两条求解路径一致",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            72,
+            247.86,
+            292,
+            56.43
+          ],
+          "text": "历史准稳态控制 a734…",
+          "textPreview": "历史准稳态控制 a734…",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "历史准稳态控制 a734…",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "历史准稳态控制 a734…",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            364,
+            247.86,
+            424,
+            56.43
+          ],
+          "text": "控制CSV、状态、扫描点、持续时间",
+          "textPreview": "控制CSV、状态、扫描点、持续时间",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "控制CSV、状态、扫描点、持续时间",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "控制CSV、状态、扫描点、持续时间",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            788,
+            247.86,
+            420,
+            56.43
+          ],
+          "text": "该历史序列内的控制现象与能量统计",
+          "textPreview": "该历史序列内的控制现象与能量统计",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "该历史序列内的控制现象与能量统计",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "该历史序列内的控制现象与能量统计",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            72,
+            304.29,
+            292,
+            56.43
+          ],
+          "text": "2026-09-07消融／后续候选",
+          "textPreview": "2026-09-07消融／后续候选",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2026-09-07消融／后续候选",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2026-09-07消融／后续候选",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            364,
+            304.29,
+            424,
+            56.43
+          ],
+          "text": "8组合＋2对照、完整时序与验收表",
+          "textPreview": "8组合＋2对照、完整时序与验收表",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "8组合＋2对照、完整时序与验收表",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "8组合＋2对照、完整时序与验收表",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            788,
+            304.29,
+            420,
+            56.43
+          ],
+          "text": "改进来源、代价与未解决的约束风险",
+          "textPreview": "改进来源、代价与未解决的约束风险",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "改进来源、代价与未解决的约束风险",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "改进来源、代价与未解决的约束风险",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            72,
+            360.71,
+            292,
+            56.43
+          ],
+          "text": "2026-09-11/12瞬态重放",
+          "textPreview": "2026-09-11/12瞬态重放",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2026-09-11/12瞬态重放",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2026-09-11/12瞬态重放",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            364,
+            360.71,
+            424,
+            56.43
+          ],
+          "text": "61条指令、真实RAW、.meas、GUI",
+          "textPreview": "61条指令、真实RAW、.meas、GUI",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "61条指令、真实RAW、.meas、GUI",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "61条指令、真实RAW、.meas、GUI",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 5,
+          "column": 3,
+          "bbox": [
+            788,
+            360.71,
+            420,
+            56.43
+          ],
+          "text": "P&O所选片段的真实电路响应",
+          "textPreview": "P&O所选片段的真实电路响应",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "P&O所选片段的真实电路响应",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "P&O所选片段的真实电路响应",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            72,
+            417.14,
+            292,
+            56.43
+          ],
+          "text": "2026-09-14五轮反馈",
+          "textPreview": "2026-09-14五轮反馈",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2026-09-14五轮反馈",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2026-09-14五轮反馈",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            364,
+            417.14,
+            424,
+            56.43
+          ],
+          "text": "逐轮stimulus、RAW、feedback及哈希",
+          "textPreview": "逐轮stimulus、RAW、feedback及哈希",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "逐轮stimulus、RAW、feedback及哈希",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "逐轮stimulus、RAW、feedback及哈希",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 6,
+          "column": 3,
+          "bbox": [
+            788,
+            417.14,
+            420,
+            56.43
+          ],
+          "text": "本轮测量改变下一轮实际执行指令",
+          "textPreview": "本轮测量改变下一轮实际执行指令",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "本轮测量改变下一轮实际执行指令",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "本轮测量改变下一轮实际执行指令",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            72,
+            473.57,
+            292,
+            56.43
+          ],
+          "text": "2026-09-15网页展示",
+          "textPreview": "2026-09-15网页展示",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2026-09-15网页展示",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2026-09-15网页展示",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            364,
+            473.57,
+            424,
+            56.43
+          ],
+          "text": "实际网页截图、界面代码、历史会话",
+          "textPreview": "实际网页截图、界面代码、历史会话",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "实际网页截图、界面代码、历史会话",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "实际网页截图、界面代码、历史会话",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 21,
+          "row": 7,
+          "column": 3,
+          "bbox": [
+            788,
+            473.57,
+            420,
+            56.43
+          ],
+          "text": "平台当前可查看和操作的功能",
+          "textPreview": "平台当前可查看和操作的功能",
+          "fillColor": "#EAF1F5",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "平台当前可查看和操作的功能",
+              "resolvedTextStyle": {
+                "fontSize": 20,
+                "typeface": "Calibri",
+                "color": "#17324D"
+              },
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "平台当前可查看和操作的功能",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vupsrilc",
+      "id": "7",
+      "name": "contract",
+      "bbox": [
+        72,
+        554,
+        1136,
+        34
+      ],
+      "geometry": "rect",
+      "text": "各证据层不互相替代",
+      "textPreview": "各证据层不互相替代",
+      "resolvedFontSize": 25,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 25,
+        "typeface": "Calibri",
+        "color": "#2B70B5",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "各证据层不互相替代"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "各证据层不互相替代",
+          "resolvedTextStyle": {
+            "fontSize": 25,
+            "typeface": "Calibri",
+            "color": "#2B70B5",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "各证据层不互相替代",
+              "fontSize": 25,
+              "typeface": "Calibri",
+              "color": "#2B70B5",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gr2tw721",
+      "id": "8",
+      "name": "boundary",
+      "bbox": [
+        72,
+        600,
+        1136,
+        65
+      ],
+      "geometry": "rect",
+      "text": "AC数值一致性不能证明瞬态安全；开环重放不能证明闭环性能；五轮固定负载反馈不能证明动态扰动验收。",
+      "textPreview": "AC数值一致性不能证明瞬态安全；开环重放不能证明闭环性能；五轮固定负载反馈不能证明动态扰动验收。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "#BE3A3A",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "AC数值一致性不能证明瞬态安全；开环重放不能证明闭环性能；五轮固定负载反馈不能证明动态扰动验收。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "AC数值一致性不能证明瞬态安全；开环重放不能证明闭环性能；五轮固定负载反馈不能证明动态扰动验收。",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Calibri",
+            "color": "#BE3A3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "AC数值一致性不能证明瞬态安全；开环重放不能证明闭环性能；五轮固定负载反馈不能证明动态扰动验收。",
+              "fontSize": 24,
+              "typeface": "Calibri",
+              "color": "#BE3A3A"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

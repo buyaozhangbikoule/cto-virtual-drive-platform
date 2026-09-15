@@ -1,0 +1,1012 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/hgzapcr6",
+    "id": "hgzapcr6",
+    "slide": 13,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7mdg3als",
+      "id": "16",
+      "name": "title-14",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "控制已从“找峰值”升级为带频率、幅度与保护约束的问题",
+      "textPreview": "控制已从“找峰值”升级为带频率、幅度与保护约束的问题",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "控制已从“找峰值”升级为带频率、幅度与保护约束的问题"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "控制已从“找峰值”升级为带频率、幅度与保护约束的问题",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "控制已从“找峰值”升级为带频率、幅度与保护约束的问题",
+              "fontSize": 36,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/q50nydsj",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/bq9orito",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/o3i5w3ad",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        720,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Hypothetical BVD model — non-measured parameters",
+      "textPreview": "Hypothetical BVD model — non-measured parameters",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Hypothetical BVD model — non-measured parameters"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Hypothetical BVD model — non-measured parameters",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Hypothetical BVD model — non-measured parameters",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/p4r6p8by",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "13",
+      "textPreview": "13",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "13"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "13",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "13",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/21gnuts7",
+      "id": "6",
+      "name": "矩形 5",
+      "bbox": [
+        438,
+        150,
+        2,
+        430
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/32ponyts",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        850,
+        150,
+        2,
+        430
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gzy5s3a1",
+      "id": "8",
+      "name": "矩形 7",
+      "bbox": [
+        82,
+        160,
+        320,
+        38
+      ],
+      "geometry": "rect",
+      "text": "已接入约束",
+      "textPreview": "已接入约束",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "已接入约束"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "已接入约束",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#2A7F8E",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "已接入约束",
+              "fontSize": 28,
+              "color": "#2A7F8E",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1076lobm",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        92,
+        230,
+        300,
+        250
+      ],
+      "geometry": "rect",
+      "text": "0.8–1.0 MHz硬边界\n130/160 Vpp软/硬限\n5.5/6.0 mA RMS软/硬限\n幅度0–1与foldback",
+      "textPreview": "0.8–1.0 MHz硬边界 | 130/160 Vpp软/硬限 | 5.5/6.0 mA RMS软/硬限 | 幅度0–1与foldback",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0.8–1.0 MHz硬边界"
+          },
+          {
+            "index": 2,
+            "text": "130/160 Vpp软/硬限"
+          },
+          {
+            "index": 3,
+            "text": "5.5/6.0 mA RMS软/硬限"
+          },
+          {
+            "index": 4,
+            "text": "幅度0–1与foldback"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "0.8–1.0 MHz硬边界",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "0.8–1.0 MHz硬边界",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "130/160 Vpp软/硬限",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "130/160 Vpp软/硬限",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "5.5/6.0 mA RMS软/硬限",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "5.5/6.0 mA RMS软/硬限",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "幅度0–1与foldback",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "幅度0–1与foldback",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/hcfy9k3u",
+      "id": "10",
+      "name": "矩形 9",
+      "bbox": [
+        474,
+        160,
+        340,
+        38
+      ],
+      "geometry": "rect",
+      "text": "保存结果审计",
+      "textPreview": "保存结果审计",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "保存结果审计"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "保存结果审计",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#B33A3A",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "保存结果审计",
+              "fontSize": 28,
+              "color": "#B33A3A",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gb6x0zm9",
+      "id": "11",
+      "name": "矩形 10",
+      "bbox": [
+        492,
+        230,
+        304,
+        250
+      ],
+      "geometry": "rect",
+      "text": "1795条控制时序\n峰值Vpp = 130 V\n峰值电流 = 5.124 mA\n实际硬越限 = 0",
+      "textPreview": "1795条控制时序 | 峰值Vpp = 130 V | 峰值电流 = 5.124 mA | 实际硬越限 = 0",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "1795条控制时序"
+          },
+          {
+            "index": 2,
+            "text": "峰值Vpp = 130 V"
+          },
+          {
+            "index": 3,
+            "text": "峰值电流 = 5.124 mA"
+          },
+          {
+            "index": 4,
+            "text": "实际硬越限 = 0"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "1795条控制时序",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "1795条控制时序",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "峰值Vpp = 130 V",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "峰值Vpp = 130 V",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "峰值电流 = 5.124 mA",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "峰值电流 = 5.124 mA",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "实际硬越限 = 0",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "实际硬越限 = 0",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vaxg7ulo",
+      "id": "12",
+      "name": "矩形 11",
+      "bbox": [
+        888,
+        160,
+        280,
+        38
+      ],
+      "geometry": "rect",
+      "text": "仍有缺口",
+      "textPreview": "仍有缺口",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "仍有缺口"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "仍有缺口",
+          "resolvedTextStyle": {
+            "fontSize": 28,
+            "color": "#E69F00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "仍有缺口",
+              "fontSize": 28,
+              "color": "#E69F00",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/u9ofyp43",
+      "id": "13",
+      "name": "矩形 12",
+      "bbox": [
+        892,
+        230,
+        272,
+        250
+      ],
+      "geometry": "rect",
+      "text": "反射代理仅参与检测\n没有独立反射硬限\n没有壁面声压代理\n不是硬件安全验证",
+      "textPreview": "反射代理仅参与检测 | 没有独立反射硬限 | 没有壁面声压代理 | 不是硬件安全验证",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "反射代理仅参与检测"
+          },
+          {
+            "index": 2,
+            "text": "没有独立反射硬限"
+          },
+          {
+            "index": 3,
+            "text": "没有壁面声压代理"
+          },
+          {
+            "index": 4,
+            "text": "不是硬件安全验证"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "反射代理仅参与检测",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "反射代理仅参与检测",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "没有独立反射硬限",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "没有独立反射硬限",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "没有壁面声压代理",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "没有壁面声压代理",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "不是硬件安全验证",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "color": "#1F2933",
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不是硬件安全验证",
+              "fontSize": 21,
+              "color": "#1F2933"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 14,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/t8fy5k3i",
+      "id": "14",
+      "name": "矩形: 圆角 13",
+      "bbox": [
+        104,
+        550,
+        1070,
+        64
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 15,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/876xwfmx",
+      "id": "15",
+      "name": "矩形 14",
+      "bbox": [
+        140,
+        565,
+        1000,
+        36
+      ],
+      "geometry": "rect",
+      "text": "当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制",
+      "textPreview": "当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "color": "#FFFFFF",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制",
+              "fontSize": 24,
+              "color": "#FFFFFF",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

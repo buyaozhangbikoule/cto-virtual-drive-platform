@@ -1,0 +1,824 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/l0bepsfm",
+    "id": "l0bepsfm",
+    "slide": 26,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kbil0r2p",
+      "id": "8",
+      "name": "title-20",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "备份：正式比较需冻结以下口径，尚未统一重跑",
+      "textPreview": "备份：正式比较需冻结以下口径，尚未统一重跑",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备份：正式比较需冻结以下口径，尚未统一重跑"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备份：正式比较需冻结以下口径，尚未统一重跑",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备份：正式比较需冻结以下口径，尚未统一重跑",
+              "fontSize": 34,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/uhk36lk7",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vitkzqlc",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8fil4b21",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        720,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Electrical model only — structural/acoustic validation pending",
+      "textPreview": "Electrical model only — structural/acoustic validation pending",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Electrical model only — structural/acoustic validation pending"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Electrical model only — structural/acoustic validation pending",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Electrical model only — structural/acoustic validation pending",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tgr2xg3m",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "26",
+      "textPreview": "26",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "26"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "26",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "26",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/s3698rmp",
+      "id": "9",
+      "name": "表格 14",
+      "bbox": [
+        92,
+        142,
+        1090,
+        420
+      ],
+      "text": "指标 | 拟统一的正式口径（不是新仿真结果）\n安全最优P* | 同场景、同幅度权限与约束；仅作离线评价参考\n稳态窗口 | 98%以上、NORMAL且频率未冻结、连续10控制样本\n恢复与缺失 | 报告序列起点及第10样本确认；未通过单列，稳态记NA\n全程电能 | 相同时间区间积分，计入扫描、试探与保护降幅\n安全与饱和 | 分开报告保存样本、保持区间；电压／电流／频率边界\n功率／反射合同 | 明确上限对象、参考分母、阈值及无可行点处置",
+      "textPreview": "指标 | 拟统一的正式口径（不是新仿真结果） | 安全最优P* | 同场景、同幅度权限与约束；仅作离线评价参考 | 稳态窗口 | 98%以上、NORMAL且频率未冻结、连续10控制样本 | 恢复与缺失 | 报告序列起点及第10样本确认；未通过单列，稳态记NA | 全程电能 ...",
+      "rows": 7,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            92,
+            142,
+            266.44,
+            60
+          ],
+          "text": "指标",
+          "textPreview": "指标",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "指标",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "指标",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            358.44,
+            142,
+            823.56,
+            60
+          ],
+          "text": "拟统一的正式口径（不是新仿真结果）",
+          "textPreview": "拟统一的正式口径（不是新仿真结果）",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "拟统一的正式口径（不是新仿真结果）",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "拟统一的正式口径（不是新仿真结果）",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            92,
+            202,
+            266.44,
+            60
+          ],
+          "text": "安全最优P*",
+          "textPreview": "安全最优P*",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "安全最优P*",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "安全最优P*",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            358.44,
+            202,
+            823.56,
+            60
+          ],
+          "text": "同场景、同幅度权限与约束；仅作离线评价参考",
+          "textPreview": "同场景、同幅度权限与约束；仅作离线评价参考",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "同场景、同幅度权限与约束；仅作离线评价参考",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "同场景、同幅度权限与约束；仅作离线评价参考",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            92,
+            262,
+            266.44,
+            60
+          ],
+          "text": "稳态窗口",
+          "textPreview": "稳态窗口",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "稳态窗口",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "稳态窗口",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            358.44,
+            262,
+            823.56,
+            60
+          ],
+          "text": "98%以上、NORMAL且频率未冻结、连续10控制样本",
+          "textPreview": "98%以上、NORMAL且频率未冻结、连续10控制样本",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "98%以上、NORMAL且频率未冻结、连续10控制样本",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "98%以上、NORMAL且频率未冻结、连续10控制样本",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            92,
+            322,
+            266.44,
+            60
+          ],
+          "text": "恢复与缺失",
+          "textPreview": "恢复与缺失",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "恢复与缺失",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "恢复与缺失",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            358.44,
+            322,
+            823.56,
+            60
+          ],
+          "text": "报告序列起点及第10样本确认；未通过单列，稳态记NA",
+          "textPreview": "报告序列起点及第10样本确认；未通过单列，稳态记NA",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "报告序列起点及第10样本确认；未通过单列，稳态记NA",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "报告序列起点及第10样本确认；未通过单列，稳态记NA",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            92,
+            382,
+            266.44,
+            60
+          ],
+          "text": "全程电能",
+          "textPreview": "全程电能",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "全程电能",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "全程电能",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            358.44,
+            382,
+            823.56,
+            60
+          ],
+          "text": "相同时间区间积分，计入扫描、试探与保护降幅",
+          "textPreview": "相同时间区间积分，计入扫描、试探与保护降幅",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "相同时间区间积分，计入扫描、试探与保护降幅",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "相同时间区间积分，计入扫描、试探与保护降幅",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            92,
+            442,
+            266.44,
+            60
+          ],
+          "text": "安全与饱和",
+          "textPreview": "安全与饱和",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "安全与饱和",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "安全与饱和",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            358.44,
+            442,
+            823.56,
+            60
+          ],
+          "text": "分开报告保存样本、保持区间；电压／电流／频率边界",
+          "textPreview": "分开报告保存样本、保持区间；电压／电流／频率边界",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "分开报告保存样本、保持区间；电压／电流／频率边界",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "分开报告保存样本、保持区间；电压／电流／频率边界",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            92,
+            502,
+            266.44,
+            60
+          ],
+          "text": "功率／反射合同",
+          "textPreview": "功率／反射合同",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "功率／反射合同",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "功率／反射合同",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            358.44,
+            502,
+            823.56,
+            60
+          ],
+          "text": "明确上限对象、参考分母、阈值及无可行点处置",
+          "textPreview": "明确上限对象、参考分母、阈值及无可行点处置",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "明确上限对象、参考分母、阈值及无可行点处置",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "明确上限对象、参考分母、阈值及无可行点处置",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7e9kv6lg",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        105,
+        592,
+        1070,
+        67
+      ],
+      "geometry": "rect",
+      "text": "不降低98%门槛、不延长原0.8 s扰动段、不取消异常检测、不提高160 Vpp边界。\n独立PI不是必需项；无积分控制时，“积分饱和”标为不适用。",
+      "textPreview": "不降低98%门槛、不延长原0.8 s扰动段、不取消异常检测、不提高160 Vpp边界。 | 独立PI不是必需项；无积分控制时，“积分饱和”标为不适用。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "不降低98%门槛、不延长原0.8 s扰动段、不取消异常检测、不提高160 Vpp边界。"
+          },
+          {
+            "index": 2,
+            "text": "独立PI不是必需项；无积分控制时，“积分饱和”标为不适用。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "不降低98%门槛、不延长原0.8 s扰动段、不取消异常检测、不提高160 Vpp边界。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#B23A35",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不降低98%门槛、不延长原0.8 s扰动段、不取消异常检测、不提高160 Vpp边界。",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#B23A35"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "独立PI不是必需项；无积分控制时，“积分饱和”标为不适用。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#B23A35",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "独立PI不是必需项；无积分控制时，“积分饱和”标为不适用。",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#B23A35"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

@@ -1,0 +1,14 @@
+Final PPTX QA — 2026-08-28
+
+1. Artifact-tool export succeeded; final deck contains 22 slides.
+2. All 22 slides rendered successfully from the final English-path QA copy.
+3. Slides 1-10 and 12-22 have identical rendered SHA256 hashes to the source deck; only slide 11 changed.
+4. Slide 11 inspected at full resolution: title is one line, all three charts are fully visible, peak guides align with 0.8548 and 0.9000 MHz, and right-column text is not clipped.
+5. Final inspect bounds check: 0 objects outside the 1280 x 720 slide canvas.
+6. Empty structural placeholder check: 0.
+7. Source and final ppt/theme/theme1.xml SHA256 are identical:
+   8B500ABCCB3A86061340D95E2EDFE2CA62DA665F2741801D8790930DBA1507A0
+8. Project-data values displayed on slide 11 were rechecked against the source CSVs:
+   baseline peak 0.9000 MHz; fs−5% peak 0.8548 MHz; shift −45.2 kHz;
+   fixed-frequency steady capture 0.03%; adaptive steady capture 100%.
+9. slides_test.py could not complete because its temporary enlarged.pptx write was denied by the Windows managed-temp permissions. Equivalent artifact bounds and placeholder checks were completed directly, and full slide rendering succeeded.

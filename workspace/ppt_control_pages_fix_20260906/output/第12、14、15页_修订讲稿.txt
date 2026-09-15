@@ -1,0 +1,105 @@
+第12页
+
+【建议时长】约65秒
+
+【本页结论】在fs减5%的扰动段，模型执行硬触发、保持及幅度恢复。扫描也占用时间并暂时降低驱动幅度。
+
+【逐字讲稿】本页和后两页使用同一份保存的控制时序。图中2.400秒开始进入fs减5%的场景，三种策略经历相同的绝对时间扰动。三幅曲线分别是换能器端电压、电流和幅度命令。模型判断当前驱动在新负载下超过允许范围后，进入HARD_TRIP并将幅度置零，然后进入RECOVERY_HOLD，再逐步恢复幅度。在硬保持、恢复保持和幅度渐升阶段，控制器冻结调频。固定频率策略恢复后仍停在0.9 MHz，并受到软限幅约束。两种自适应策略还要执行低幅扫描，随后在新峰位继续恢复幅度。因此电压或电流下降可能来自保护，也可能来自扫描，不能只凭曲线形状判断保护状态。
+
+【看图顺序】先看2.400秒的扰动线，再对齐电压、电流及幅度的置零段。随后看保持、渐升和低幅扫描。左侧仅示意硬触发路径，恢复过程中还可能进入SOFT_FOLDBACK分支。
+
+【记录与时序】控制采样步长20 ms，扫描点驻留1.5 ms。控制时序采用离散准稳态模型，图上折线按记录duration_s保持值绘制，不是瞬态振荡或真实LTspice瞬态波形。固定、周期扫频、P&O在本段首次硬触发记录分别约为2.4000、2.4175、2.4195秒，差异与各策略当时的采样/扫描时序有关。
+
+【保护边界】电压160 Vpp为用户给定仿真边界，电流6 mA RMS为假设硬限。130 Vpp及5.5 mA RMS为假设软触发阈值。本图显示保护处理后的保存样本。未观察到保存样本的硬越限，不证明实物系统在传感、执行延迟和电气瞬态下绝不越限。
+
+【实现限制】允许幅度由当前线性模型计算。低幅扫描点尚未逐点复用与普通控制样本完全相同的保护状态更新流程，现有结果不能作为任意扩展场景的硬件安全保证。
+
+【教授可能追问】为什么幅度下降后还有扫描？
+
+【建议回答】保护优先恢复到允许范围，随后才允许低幅重捕获。扫描使用a=0.4，所以在图中也会出现幅度降低。不能将这些区间全部归因于foldback。
+
+【模糊推测】将本页结果推广到真实功放或换能器安全性属于未验证推断，本页不作该结论。
+
+[Sources]
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_per_segment_metrics.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json
+
+控制时序快照 SHA-256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0
+三页使用同一份控制时序及其复算一致的汇总结果。离线功率曲线的安全最优值与该时序的参考值逐场景核对一致。
+
+第14页
+
+【建议时长】约80秒
+
+【本页结论】两种自适应策略均到达0.8548 MHz附近的新峰位，但在2.400至3.200秒窗口内均未满足连续稳态验收。
+
+【逐字讲稿】先看上图离线安全功率曲线。基准峰位为0.9000 MHz、170.0 mW，fs减5%后的峰位为0.8548 MHz、140.2 mW，峰位下降45.2 kHz。中图显示当前保存时序的功率捕获率，包含保护、扫描和恢复阶段的数据。捕获率的分母是当前场景自身的安全最大功率，所以100%对应这个扰动场景约140.2 mW的峰值，并不表示恢复到了基准170.0 mW。下图只显示CONTROL样本的频率，在扫描区间断线。周期扫频和扫描辅助P&O都到达了新峰位，但这与通过连续稳态验收不同。判据要求连续10个合格控制样本。在本段结束前，周期扫频只有6个，P&O只有9个，因此两者均未通过。
+
+【严格判据】CONTROL样本必须处于NORMAL，frequency_frozen=0，安全功率捕获率不低于98%。相邻控制样本时间间隔还需不超过30 ms。RAMP_UP中达到98%的样本不计为合格，扫描或试探造成的间隔也可能打断连续计数。
+
+【本段数据】周期扫频首次在新峰位形成CONTROL记录的时刻为2.9770秒，此时仍在RAMP_UP。首个合格NORMAL样本为3.0970秒，本段最长连续合格序列为6个。P&O对应时刻为2.9190秒与3.0390秒，最长连续序列为9个。两者尾段捕获率均为100%，settled均为0，recovery_time_ms均为空。首次到达峰位、首次满足功率阈值和完成连续验收是三个不同事件。
+
+【原因边界】保护保持、恢复渐升和扫描已经占用了当前0.8秒扰动窗口，剩余时间不足以获得10个连续合格样本。不能仅将本段P&O未通过验收归因于周期性试探。
+
+【教授可能追问】P&O只差一个样本，能否算已经稳定？
+
+【建议回答】按事先设定的10样本判据，9个仍未通过。这是当前窗口内证据不足，不等同于证明系统发散或永远不能收敛。若要考察更长扰动驻留时间，应作为单独新实验，保留当前未通过结果。
+
+【模糊推测】延长窗口后可能通过，但当前记录未验证该推断。不能补画第10个样本。
+
+[Sources]
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_per_segment_metrics.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json
+
+控制时序快照 SHA-256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0
+三页使用同一份控制时序及其复算一致的汇总结果。离线功率曲线的安全最优值与该时序的参考值逐场景核对一致。
+
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\active_stage3_5\stage3_disturbance\stage3_frequency_response_all_cases.csv
+
+第15页
+
+【建议时长】约70秒
+
+【本页结论】同一批保存结果中，周期扫频与P&O的筛选尾段误差为零，但分别有2段和3段未通过连续验收。该表不能单独支持总体最优结论。
+
+【逐字讲稿】综合结果由前两页同一份控制时序复算得到，覆盖初始基准之后的7个时间段。固定频率策略的平均尾段误差为30.14%，周期扫频与P&O为0%。但尾段误差和连续验收是不同指标，周期扫频仍有2段、P&O有3段未通过。右侧柱图为含惩罚的平均恢复指标，分别为345.7、409.0和458.9毫秒。它对未通过的时间段使用800毫秒惩罚值，所以不能把这些数值解释为每段都实际恢复所需的时间。三种策略的保护处理后保存样本均无硬越限。本表反映当前模型和参数下的部分控制表现，尚不能据此给出总体优劣排名。
+
+【尾段误差的实际实现】每段优先选取最后25%时间内处于NORMAL且频率未冻结的CONTROL样本。若没有这些样本，则依次回退到该段最后5个NORMAL样本，或最后5个CONTROL样本。对选中样本计算平均捕获率，再计算相对当前场景安全功率参考的误差。因此零尾段误差不等于全时段零功率损失，也不等于通过连续10样本验收。
+
+【恢复指标的实际实现】对通过的段，记录首个满足10个连续合格控制样本窗口的起点相对扰动开始时刻的延迟；这是完成连续验收后的回溯起点，不是第10个样本的确认时刻。对未通过的段赋值800 ms，再对7段取平均。
+
+【安全计数口径】本表硬越限为保护处理后保存样本的电压/电流硬越限次数，不是HARD_TRIP事件次数。固定策略本批次硬触发1次，周期扫频和P&O各2次。已保存样本硬越限为0与发生过硬触发并不矛盾。
+
+【教授可能追问】为什么周期扫频的尾段误差为零，第14页仍然未通过？
+
+【建议回答】第14页尾段的6个合格样本都位于安全功率峰，因此它们的平均误差可以为零。但验收需要10个连续样本，6个不足。一个指标描述选中样本的功率水平，另一个指标描述持续保持证据。
+
+【评价边界】尚需结合全时段能量、扫描成本、更多扰动场景和统一的相位闭环比较，才能讨论更全面的策略权衡。这里不将某一指标的领先表述为普遍最优。
+
+【模糊推测】改变驻留时间、噪声或控制参数后的性能变化需要新实验，当前不作定量预测。
+
+[Sources]
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_per_segment_metrics.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json
+
+控制时序快照 SHA-256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0
+三页使用同一份控制时序及其复算一致的汇总结果。离线功率曲线的安全最优值与该时序的参考值逐场景核对一致。
+

@@ -1,0 +1,1190 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/7qto7e10",
+    "id": "7qto7e10",
+    "slide": 15,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/8veh8ril",
+      "id": "10",
+      "name": "title-12",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "正文三策略恢复计划书组合，统一验收仍是未完成项",
+      "textPreview": "正文三策略恢复计划书组合，统一验收仍是未完成项",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "正文三策略恢复计划书组合，统一验收仍是未完成项"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "正文三策略恢复计划书组合，统一验收仍是未完成项",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "正文三策略恢复计划书组合，统一验收仍是未完成项",
+              "fontSize": 34,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1sfqxsv6",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0r6p4nul",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nux8zidc",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        1065,
+        20
+      ],
+      "geometry": "rect",
+      "text": "计划书正式组合：固定频率／周期扫频／相位闭环    本次未运行新的统一闭环验收",
+      "textPreview": "计划书正式组合：固定频率／周期扫频／相位闭环    本次未运行新的统一闭环验收",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "计划书正式组合：固定频率／周期扫频／相位闭环    本次未运行新的统一闭环验收"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "计划书正式组合：固定频率／周期扫频／相位闭环    本次未运行新的统一闭环验收",
+          "resolvedTextStyle": {
+            "fontSize": 11.51,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "计划书正式组合：固定频率／周期扫频／相位闭环    本次未运行新的统一闭环验收",
+              "fontSize": 11.51,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/2to76dcr",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "15",
+      "textPreview": "15",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "15"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "15",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "15",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/ydgn6pcr",
+      "id": "15",
+      "name": "表格 17",
+      "bbox": [
+        72,
+        170,
+        1118,
+        290
+      ],
+      "text": "计划书策略 | 已有控制实现 | 已有时序证据 | 统一正式指标 | 本次状态\n固定频率 | 0.9 MHz\n共同保护 | 代表扰动段 | 待同口径重评 | 不作新排名\n周期扫频 | 离散局部寻峰\n共同保护 | 代表扰动段 | 待同口径重评 | 不作新排名\n相位误差闭环 | 输入相位跟踪\n增益试验 | 历史补充表 | 窗口／判据待统一 | 不作新排名",
+      "textPreview": "计划书策略 | 已有控制实现 | 已有时序证据 | 统一正式指标 | 本次状态 | 固定频率 | 0.9 MHz | 共同保护 | 代表扰动段 | 待同口径重评 | 不作新排名 | 周期扫频 | 离散局部寻峰 | 共同保护 | 代表扰动段 | 待同口径重评 | 不作新排名 ...",
+      "rows": 4,
+      "cols": 5,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            72,
+            170,
+            195,
+            72.5
+          ],
+          "text": "计划书策略",
+          "textPreview": "计划书策略",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "计划书策略",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "计划书策略",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            267,
+            170,
+            245,
+            72.5
+          ],
+          "text": "已有控制实现",
+          "textPreview": "已有控制实现",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "已有控制实现",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "已有控制实现",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            512,
+            170,
+            220,
+            72.5
+          ],
+          "text": "已有时序证据",
+          "textPreview": "已有时序证据",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "已有时序证据",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "已有时序证据",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            732,
+            170,
+            238,
+            72.5
+          ],
+          "text": "统一正式指标",
+          "textPreview": "统一正式指标",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "统一正式指标",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "统一正式指标",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 5,
+          "bbox": [
+            970,
+            170,
+            220,
+            72.5
+          ],
+          "text": "本次状态",
+          "textPreview": "本次状态",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "本次状态",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "本次状态",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            72,
+            242.5,
+            195,
+            72.5
+          ],
+          "text": "固定频率",
+          "textPreview": "固定频率",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "固定频率",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "固定频率",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            267,
+            242.5,
+            245,
+            72.5
+          ],
+          "text": "0.9 MHz\n共同保护",
+          "textPreview": "0.9 MHz | 共同保护",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.9 MHz",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.9 MHz",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "共同保护",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "共同保护",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            512,
+            242.5,
+            220,
+            72.5
+          ],
+          "text": "代表扰动段",
+          "textPreview": "代表扰动段",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "代表扰动段",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "代表扰动段",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            732,
+            242.5,
+            238,
+            72.5
+          ],
+          "text": "待同口径重评",
+          "textPreview": "待同口径重评",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "待同口径重评",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "待同口径重评",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 2,
+          "column": 5,
+          "bbox": [
+            970,
+            242.5,
+            220,
+            72.5
+          ],
+          "text": "不作新排名",
+          "textPreview": "不作新排名",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "不作新排名",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "不作新排名",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            72,
+            315,
+            195,
+            72.5
+          ],
+          "text": "周期扫频",
+          "textPreview": "周期扫频",
+          "fillColor": "#E8F3F3",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "周期扫频",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "周期扫频",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            267,
+            315,
+            245,
+            72.5
+          ],
+          "text": "离散局部寻峰\n共同保护",
+          "textPreview": "离散局部寻峰 | 共同保护",
+          "fillColor": "#E8F3F3",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "离散局部寻峰",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "离散局部寻峰",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "共同保护",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "共同保护",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            512,
+            315,
+            220,
+            72.5
+          ],
+          "text": "代表扰动段",
+          "textPreview": "代表扰动段",
+          "fillColor": "#E8F3F3",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "代表扰动段",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "代表扰动段",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            732,
+            315,
+            238,
+            72.5
+          ],
+          "text": "待同口径重评",
+          "textPreview": "待同口径重评",
+          "fillColor": "#E8F3F3",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "待同口径重评",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "待同口径重评",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 3,
+          "column": 5,
+          "bbox": [
+            970,
+            315,
+            220,
+            72.5
+          ],
+          "text": "不作新排名",
+          "textPreview": "不作新排名",
+          "fillColor": "#E8F3F3",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "不作新排名",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "不作新排名",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            72,
+            387.5,
+            195,
+            72.5
+          ],
+          "text": "相位误差闭环",
+          "textPreview": "相位误差闭环",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "相位误差闭环",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "相位误差闭环",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            267,
+            387.5,
+            245,
+            72.5
+          ],
+          "text": "输入相位跟踪\n增益试验",
+          "textPreview": "输入相位跟踪 | 增益试验",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "输入相位跟踪",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "输入相位跟踪",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "增益试验",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "增益试验",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            512,
+            387.5,
+            220,
+            72.5
+          ],
+          "text": "历史补充表",
+          "textPreview": "历史补充表",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "历史补充表",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "历史补充表",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            732,
+            387.5,
+            238,
+            72.5
+          ],
+          "text": "窗口／判据待统一",
+          "textPreview": "窗口／判据待统一",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "窗口／判据待统一",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "窗口／判据待统一",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 4,
+          "column": 5,
+          "bbox": [
+            970,
+            387.5,
+            220,
+            72.5
+          ],
+          "text": "不作新排名",
+          "textPreview": "不作新排名",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "不作新排名",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "不作新排名",
+                  "fontSize": 23,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/3ydonyd8",
+      "id": "8",
+      "name": "矩形: 圆角 7",
+      "bbox": [
+        72,
+        506,
+        1118,
+        112
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF4DD",
+      "lineColor": "#E69F00",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ix47utcn",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        100,
+        529,
+        1060,
+        70
+      ],
+      "geometry": "rect",
+      "text": "必须统一：源与模型、扰动日程、状态资格、功率参考、连续验收及扫描时间成本。\n相位闭环表现不佳也是结果；扫描辅助P&O作为第四种扩展方法，不替代计划策略。",
+      "textPreview": "必须统一：源与模型、扰动日程、状态资格、功率参考、连续验收及扫描时间成本。 | 相位闭环表现不佳也是结果；扫描辅助P&O作为第四种扩展方法，不替代计划策略。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "必须统一：源与模型、扰动日程、状态资格、功率参考、连续验收及扫描时间成本。"
+          },
+          {
+            "index": 2,
+            "text": "相位闭环表现不佳也是结果；扫描辅助P&O作为第四种扩展方法，不替代计划策略。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "必须统一：源与模型、扰动日程、状态资格、功率参考、连续验收及扫描时间成本。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "必须统一：源与模型、扰动日程、状态资格、功率参考、连续验收及扫描时间成本。",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "相位闭环表现不佳也是结果；扫描辅助P&O作为第四种扩展方法，不替代计划策略。",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "相位闭环表现不佳也是结果；扫描辅助P&O作为第四种扩展方法，不替代计划策略。",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/nu50zm10",
+      "id": "13",
+      "name": "formal-status-subtitle",
+      "bbox": [
+        72,
+        120,
+        1136,
+        36
+      ],
+      "geometry": "rect",
+      "text": "已有相位表明确标注 NOT_FORMAL_RANKING；本页仅报告实现进展，正式排名待补齐。",
+      "textPreview": "已有相位表明确标注 NOT_FORMAL_RANKING；本页仅报告实现进展，正式排名待补齐。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "已有相位表明确标注 NOT_FORMAL_RANKING；本页仅报告实现进展，正式排名待补齐。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "已有相位表明确标注 NOT_FORMAL_RANKING；本页仅报告实现进展，正式排名待补齐。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "已有相位表明确标注 NOT_FORMAL_RANKING；本页仅报告实现进展，正式排名待补齐。",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wzyhcrih",
+      "id": "14",
+      "name": "coverage-note",
+      "bbox": [
+        86,
+        644,
+        1105,
+        28
+      ],
+      "geometry": "rect",
+      "text": "覆盖缺口：34个静态登记场景，旧主控制序列仅含其中7个不同场景。",
+      "textPreview": "覆盖缺口：34个静态登记场景，旧主控制序列仅含其中7个不同场景。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "覆盖缺口：34个静态登记场景，旧主控制序列仅含其中7个不同场景。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "覆盖缺口：34个静态登记场景，旧主控制序列仅含其中7个不同场景。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#B23A35"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "覆盖缺口：34个静态登记场景，旧主控制序列仅含其中7个不同场景。",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#B23A35"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

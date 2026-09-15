@@ -1,0 +1,22 @@
+{
+  "source": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_acceptance_update_20260909/output/CTO组会汇报_第14页验收进展更新_2026-09-09.pptx",
+  "sourceSha256": "d1666be42fb7df375e210b9477500c2463a949a7fb1165f4086ab261c76d4869",
+  "expectedChanges": [
+    "ppt/slides/slide15.xml",
+    "ppt/slides/_rels/slide15.xml.rels",
+    "ppt/notesSlides/notesSlide15.xml"
+  ],
+  "newImage": "ppt/media/energy_comparison_20260909.png",
+  "outputs": [
+    {
+      "candidate": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_energy_update_20260909/build/candidate-full.pptx",
+      "final": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_energy_update_20260909/output/CTO组会汇报_第14与15页评价更新_2026-09-09.pptx",
+      "count": 28
+    },
+    {
+      "candidate": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_energy_update_20260909/build/candidate-single.pptx",
+      "final": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_energy_update_20260909/output/第15页_尾段误差与全过程电能_2026-09-09.pptx",
+      "count": 1
+    }
+  ]
+}

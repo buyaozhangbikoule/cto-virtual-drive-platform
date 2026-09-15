@@ -1,0 +1,117 @@
+{
+  "kind": "timestep convergence; actual LTspice transient versus Python sinusoidal steady state",
+  "original_failed_run_retained": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_side\\01_BASELINE_TRANSIENT.cir",
+  "same_circuit_and_tolerances": true,
+  "results": [
+    {
+      "max_step_ns": 50.0,
+      "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_side\\01_BASELINE_TRANSIENT.cir",
+      "new_run": false,
+      "measurement_window_s": [
+        0.0018,
+        0.002
+      ],
+      "frequency_Hz": 900000,
+      "amplitude": 1,
+      "LTspice_transient": {
+        "vport_vpp": 172.1463165283203,
+        "iport_irms_A": 0.0007575941518275177,
+        "p_rm_W": 0.04319816964593576
+      },
+      "Python_steady_state": {
+        "vport_vpp": 99.99999362496995,
+        "iport_irms_A": 0.004999999681248331,
+        "p_rm_W": 0.16999997832489855
+      },
+      "relative_error_percent": {
+        "vport_vpp": 72.14632750270043,
+        "iport_irms_A": 84.84811599751198,
+        "p_rm_W": 74.58930873310067
+      },
+      "raw_points": 78146
+    },
+    {
+      "max_step_ns": 10.0,
+      "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_DT_10NS.cir",
+      "new_run": true,
+      "measurement_window_s": [
+        0.0018,
+        0.002
+      ],
+      "frequency_Hz": 900000,
+      "amplitude": 1,
+      "LTspice_transient": {
+        "vport_vpp": 106.22848129272461,
+        "iport_irms_A": 0.004324299373594045,
+        "p_rm_W": 0.1610746443472912
+      },
+      "Python_steady_state": {
+        "vport_vpp": 99.99999362496995,
+        "iport_irms_A": 0.004999999681248331,
+        "p_rm_W": 0.16999997832489855
+      },
+      "relative_error_percent": {
+        "vport_vpp": 6.22848806482265,
+        "iport_irms_A": 13.51400701460818,
+        "p_rm_W": 5.250197126819347
+      },
+      "raw_points": 200052
+    },
+    {
+      "max_step_ns": 5.0,
+      "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_DT_5NS.cir",
+      "new_run": true,
+      "measurement_window_s": [
+        0.0018,
+        0.002
+      ],
+      "frequency_Hz": 900000,
+      "amplitude": 1,
+      "LTspice_transient": {
+        "vport_vpp": 100.60994720458984,
+        "iport_irms_A": 0.004841763527929704,
+        "p_rm_W": 0.1686295986064956
+      },
+      "Python_steady_state": {
+        "vport_vpp": 99.99999362496995,
+        "iport_irms_A": 0.004999999681248331,
+        "p_rm_W": 0.16999997832489855
+      },
+      "relative_error_percent": {
+        "vport_vpp": 0.6099536185046244,
+        "iport_irms_A": 3.164723268124702,
+        "p_rm_W": 0.8061058194865925
+      },
+      "raw_points": 400045
+    },
+    {
+      "max_step_ns": 2.0,
+      "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_DT_2NS.cir",
+      "new_run": true,
+      "measurement_window_s": [
+        0.0018,
+        0.002
+      ],
+      "frequency_Hz": 900000,
+      "amplitude": 1,
+      "LTspice_transient": {
+        "vport_vpp": 100.218505859375,
+        "iport_irms_A": 0.004966875637563082,
+        "p_rm_W": 0.1691567892443102
+      },
+      "Python_steady_state": {
+        "vport_vpp": 99.99999362496995,
+        "iport_irms_A": 0.004999999681248331,
+        "p_rm_W": 0.16999997832489855
+      },
+      "relative_error_percent": {
+        "vport_vpp": 0.21851224833527558,
+        "iport_irms_A": 0.662480915938356,
+        "p_rm_W": 0.4959936400561532
+      },
+      "raw_points": 1000036
+    }
+  ],
+  "finest_step_passes_2pct": true,
+  "new_simulation": true
+}

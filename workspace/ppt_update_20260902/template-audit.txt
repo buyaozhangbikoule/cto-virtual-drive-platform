@@ -1,0 +1,25 @@
+Communication job: 让教授组在12–15分钟内确认本月已经建立了自洽、可复现且带约束的换能器电学仿真流程，同时清楚看到哪些结论仍受假设模型、无实测和无结构声场结果限制。
+
+Source structure:
+- 16:9, 1280×720, light grey background, dark navy takeaway title and rule.
+- Main section uses image/table evidence with a restrained teal/orange/red accent system.
+- Backup section uses the same title/footer system and denser tables.
+- Source deck contains 24 slides; source slide 14 is a damaged duplicate of slide 13 and is repurposed as the independent Cm evidence frame after its damaged content is deleted.
+- Manual page numbers are slide-local text boxes, so every output slide is explicitly renumbered.
+
+Typography and spacing:
+- Preserve all inherited font families, sizes, weights, line spacing, insets and alignment.
+- New content is inserted only by duplicating source slides and rewriting/replacing inherited elements.
+- No parallel overlay design is added.
+
+Insertion contract:
+- New Cm evidence slide duplicates source slide 14, deletes its damaged chart/table region, and uses two explicitly bounded new-content zones for the final Python figure and concise callouts.
+- New constrained-control status slide duplicates source slide 16.
+- New electro-acoustic interface slide duplicates source slide 23.
+- New LTspice combined-validation backup duplicates source slide 22.
+- New fixed/periodic/phase supplement duplicates source slide 13.
+
+Evidence boundary:
+- Python/LTspice cross-validation proves implementation consistency, not real-device validity.
+- Cm and control results are derived from a hypothetical small-signal linear BVD model.
+- COMSOL/ANSYS and measured data remain unavailable; no acoustic or clinical result is invented.

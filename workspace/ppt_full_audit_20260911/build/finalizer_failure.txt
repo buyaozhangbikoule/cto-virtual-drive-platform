@@ -1,0 +1,6 @@
+Error: Cannot verify font families in the supplied PPTX/PDF reference
+spawnSync C:\Users\24739\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe EPERM
+    at processFailure (file:///C:/Users/24739/.codex/plugins/cache/openai-primary-runtime/presentations/26.909.12148/skills/presentations/container_tools/artifact_tool_utils.mjs:483:17)
+    at normalizePresentationFontPolicy (file:///C:/Users/24739/.codex/plugins/cache/openai-primary-runtime/presentations/26.909.12148/skills/presentations/container_tools/artifact_tool_utils.mjs:255:13)
+    at async finalizePresentation (file:///C:/Users/24739/.codex/plugins/cache/openai-primary-runtime/presentations/26.909.12148/skills/presentations/container_tools/artifact_tool_utils.mjs:861:22)
+    at async file:///C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_full_audit_20260911/build/finalize.mjs:9:15

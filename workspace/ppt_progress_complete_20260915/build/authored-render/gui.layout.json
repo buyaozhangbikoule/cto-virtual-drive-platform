@@ -1,0 +1,754 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/g66d1e",
+    "id": "g66d1e",
+    "slide": 6,
+    "layoutId": "dfac47bf-2518-4769-af3d-36795d592be2",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "bg1": "#FFFFFF",
+      "bg2": "#000000",
+      "tx1": "#1F1F1F",
+      "tx2": "#FFFFFF",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "typefaces": [
+      "Calibri"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "dfac47bf-2518-4769-af3d-36795d592be2",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "aa9b9bc9-7d59-49df-aadb-594c614c5cad",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/tk3qlc7i",
+      "id": "1",
+      "name": "title",
+      "bbox": [
+        72,
+        36,
+        1136,
+        57
+      ],
+      "geometry": "rect",
+      "text": "备份：完整瞬态GUI与日志已留存，按批次使用证据",
+      "textPreview": "备份：完整瞬态GUI与日志已留存，按批次使用证据",
+      "resolvedFontSize": 32,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 32,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备份：完整瞬态GUI与日志已留存，按批次使用证据"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备份：完整瞬态GUI与日志已留存，按批次使用证据",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备份：完整瞬态GUI与日志已留存，按批次使用证据",
+              "fontSize": 32,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/6hsrqx8r",
+      "id": "2",
+      "bbox": [
+        72,
+        98,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/7i18j2pc",
+      "id": "3",
+      "bbox": [
+        72,
+        678,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#C7D1DC",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kfapo7ql",
+      "id": "4",
+      "name": "scope",
+      "bbox": [
+        72,
+        687,
+        1090,
+        21
+      ],
+      "geometry": "rect",
+      "text": "截图时间：2026-09-12    求解时间：2026-09-11    LTspice 26.0.2    此图属于瞬态重放，不是旧AC截图",
+      "textPreview": "截图时间：2026-09-12    求解时间：2026-09-11    LTspice 26.0.2    此图属于瞬态重放，不是旧AC截图",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 12,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "截图时间：2026-09-12    求解时间：2026-09-11    LTspice 26.0.2    此图属于瞬态重放，不是旧AC截图"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "截图时间：2026-09-12    求解时间：2026-09-11    LTspice 26.0.2    此图属于瞬态重放，不是旧AC截图",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "截图时间：2026-09-12    求解时间：2026-09-11    LTspice 26.0.2    此图属于瞬态重放，不是旧AC截图",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/5gjqhs76",
+      "id": "5",
+      "name": "page-number",
+      "bbox": [
+        1170,
+        687,
+        38,
+        21
+      ],
+      "geometry": "rect",
+      "text": "29",
+      "textPreview": "29",
+      "resolvedFontSize": 12,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 12,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "29"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "29",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "29",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ids7mx8f",
+      "id": "6",
+      "name": "sub",
+      "bbox": [
+        72,
+        117,
+        1136,
+        37
+      ],
+      "geometry": "rect",
+      "text": "本页展示真实SPICE Output Log，第17页展示同一RAW的完整波形窗口",
+      "textPreview": "本页展示真实SPICE Output Log，第17页展示同一RAW的完整波形窗口",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "Calibri",
+        "color": "#5F6B76",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本页展示真实SPICE Output Log，第17页展示同一RAW的完整波形窗口"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本页展示真实SPICE Output Log，第17页展示同一RAW的完整波形窗口",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本页展示真实SPICE Output Log，第17页展示同一RAW的完整波形窗口",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/2hkf21kr",
+      "id": "7",
+      "bbox": [
+        72,
+        177,
+        820,
+        460
+      ],
+      "alt": "完整LTspice瞬态日志截图，含版本、正常结束和meas",
+      "contentType": "image/jpeg",
+      "imageFit": "contain",
+      "asset": {
+        "assetId": "a2a7233b-a193-4cec-9c4c-cc9d46231536",
+        "contentType": "image/jpeg",
+        "byteLength": 76841
+      }
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbqpknqp",
+      "id": "8",
+      "name": "items",
+      "bbox": [
+        927,
+        183,
+        281,
+        39
+      ],
+      "geometry": "rect",
+      "text": "截图中可核对",
+      "textPreview": "截图中可核对",
+      "resolvedFontSize": 26,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 26,
+        "typeface": "Calibri",
+        "color": "#2B70B5",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "截图中可核对"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "截图中可核对",
+          "resolvedTextStyle": {
+            "fontSize": 26,
+            "typeface": "Calibri",
+            "color": "#2B70B5",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "截图中可核对",
+              "fontSize": 26,
+              "typeface": "Calibri",
+              "color": "#2B70B5",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xcjqds7a",
+      "id": "9",
+      "name": "list",
+      "bbox": [
+        927,
+        245,
+        281,
+        168
+      ],
+      "geometry": "rect",
+      "text": "软件版本与文件名\n求解正常结束\n统计窗口0.223–0.224 s\nVpp、RMS及有功功率",
+      "textPreview": "软件版本与文件名 | 求解正常结束 | 统计窗口0.223–0.224 s | Vpp、RMS及有功功率",
+      "resolvedFontSize": 23,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 23,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "软件版本与文件名"
+          },
+          {
+            "index": 2,
+            "text": "求解正常结束"
+          },
+          {
+            "index": 3,
+            "text": "统计窗口0.223–0.224 s"
+          },
+          {
+            "index": 4,
+            "text": "Vpp、RMS及有功功率"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "软件版本与文件名",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "软件版本与文件名",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "求解正常结束",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "求解正常结束",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "统计窗口0.223–0.224 s",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "统计窗口0.223–0.224 s",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "Vpp、RMS及有功功率",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Vpp、RMS及有功功率",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0bulkz2",
+      "id": "10",
+      "name": "history",
+      "bbox": [
+        927,
+        441,
+        281,
+        37
+      ],
+      "geometry": "rect",
+      "text": "旧AC截图仍保留归档",
+      "textPreview": "旧AC截图仍保留归档",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "#17324D",
+        "bold": true,
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "旧AC截图仍保留归档"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "旧AC截图仍保留归档",
+          "resolvedTextStyle": {
+            "fontSize": 24,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "旧AC截图仍保留归档",
+              "fontSize": 24,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0f2tcfih",
+      "id": "11",
+      "name": "boundary",
+      "bbox": [
+        927,
+        494,
+        281,
+        112
+      ],
+      "geometry": "rect",
+      "text": "2026-08-15截图有裁切\n不能借此新瞬态截图\n补证旧AC全部场景",
+      "textPreview": "2026-08-15截图有裁切 | 不能借此新瞬态截图 | 补证旧AC全部场景",
+      "resolvedFontSize": 22,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 22,
+        "typeface": "Calibri",
+        "color": "#BE3A3A",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "2026-08-15截图有裁切"
+          },
+          {
+            "index": 2,
+            "text": "不能借此新瞬态截图"
+          },
+          {
+            "index": 3,
+            "text": "补证旧AC全部场景"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2026-08-15截图有裁切",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#BE3A3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2026-08-15截图有裁切",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#BE3A3A"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "不能借此新瞬态截图",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#BE3A3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "不能借此新瞬态截图",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#BE3A3A"
+            }
+          ],
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "补证旧AC全部场景",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#BE3A3A"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "补证旧AC全部场景",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#BE3A3A"
+            }
+          ],
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

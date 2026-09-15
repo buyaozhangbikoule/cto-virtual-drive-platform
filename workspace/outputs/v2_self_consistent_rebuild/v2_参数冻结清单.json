@@ -1,0 +1,57 @@
+{
+  "warning": "All values are hypothetical simulation assumptions, not measurements.",
+  "baseline": {
+    "source_class": "假设基线值（由目标端口量反推，非实测）",
+    "fs_Hz": 900000.0,
+    "Vpp_nominal_V": 100.0,
+    "Vrms_nominal_V": 35.35533905932737,
+    "Irms_nominal_A": 0.005,
+    "P_active_nominal_W": 0.125,
+    "S_apparent_nominal_VA": 0.17677669529663687,
+    "Q_reactive_nominal_var": 0.12499999999999996,
+    "Z_abs_nominal_ohm": 7071.067811865474,
+    "Z_phase_nominal_deg": -44.99999999999999,
+    "Rm_ohm": 9999.999999999996,
+    "C0_F": 1.768388256576615e-11,
+    "C0_pF": 17.68388256576615,
+    "Rs_ohm": 50.0,
+    "Vpp_soft_V": 130.0,
+    "Vpp_hard_V": 160.0,
+    "Irms_soft_A": 0.0055,
+    "Irms_hard_A": 0.006,
+    "f_min_Hz": 800000.0,
+    "f_max_Hz": 1000000.0
+  },
+  "qm_sensitivity": [
+    {
+      "source_class": "扫描变量（Qm敏感性）",
+      "Qm": 500.0,
+      "Lm_H": 0.8841941282883071,
+      "Cm_F": 3.5367765131532317e-14,
+      "Cm_pF": 0.035367765131532315,
+      "bare_bandwidth_Hz_approx": 1800.0,
+      "fp_Hz_ideal_BVD": 900899.5504494383,
+      "fp_minus_fs_Hz": 899.5504494382767
+    },
+    {
+      "source_class": "扫描变量（Qm敏感性）",
+      "Qm": 800.0,
+      "Lm_H": 1.4147106052612914,
+      "Cm_F": 2.2104853207207698e-14,
+      "Cm_pF": 0.0221048532072077,
+      "bare_bandwidth_Hz_approx": 1125.0,
+      "fp_Hz_ideal_BVD": 900562.3243285276,
+      "fp_minus_fs_Hz": 562.324328527553
+    },
+    {
+      "source_class": "扫描变量（Qm敏感性）",
+      "Qm": 1000.0,
+      "Lm_H": 1.7683882565766142,
+      "Cm_F": 1.7683882565766158e-14,
+      "Cm_pF": 0.017683882565766158,
+      "bare_bandwidth_Hz_approx": 900.0,
+      "fp_Hz_ideal_BVD": 900449.8875562148,
+      "fp_minus_fs_Hz": 449.88755621481687
+    }
+  ]
+}

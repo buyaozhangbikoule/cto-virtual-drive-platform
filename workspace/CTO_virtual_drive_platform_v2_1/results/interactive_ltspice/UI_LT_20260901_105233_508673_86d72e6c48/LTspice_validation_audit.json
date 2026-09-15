@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "ltspice_return_code": 0,
+  "ltspice_executable": "D:\\LTspice.exe",
+  "run_directory": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\interactive_ltspice\\UI_LT_20260901_105233_508673_86d72e6c48",
+  "cir_path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\interactive_ltspice\\UI_LT_20260901_105233_508673_86d72e6c48\\UI_CURRENT_SCENARIO.cir",
+  "raw_path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\interactive_ltspice\\UI_LT_20260901_105233_508673_86d72e6c48\\UI_CURRENT_SCENARIO.raw",
+  "log_path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\interactive_ltspice\\UI_LT_20260901_105233_508673_86d72e6c48\\UI_CURRENT_SCENARIO.log",
+  "detail_csv_path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\interactive_ltspice\\UI_LT_20260901_105233_508673_86d72e6c48\\LTspice_Python_frequency_comparison.csv",
+  "points": 401,
+  "raw_bytes": 59014,
+  "raw_sha256": "0127d3b5c8467b2d9c40005c603c16ce49b367e8560576e5bf3c8d2b38720c48",
+  "log_sha256": "dd477624a6a79332240152a922219941b56b09aa8b61b67c02c44b308f8a0e54",
+  "errors": {
+    "max_Zin_relative_error": 0.00014361836991136074,
+    "max_Zport_relative_error": 1.3078646874017913e-07,
+    "max_Vport_relative_error": 1.756954841143276e-05,
+    "max_Iport_relative_error": 1.7568939523833713e-05,
+    "max_Pport_full_scale_error": 1.8859356677283696e-05,
+    "max_Prm_full_scale_error": 1.8971061975274608e-05,
+    "max_gamma_absolute_error": 3.0866589494249475e-05
+  },
+  "note": "AC phasors use the project's RMS-equivalent convention; not a transient switching waveform."
+}

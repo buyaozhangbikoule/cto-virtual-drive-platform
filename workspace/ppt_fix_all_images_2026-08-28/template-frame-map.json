@@ -1,0 +1,27 @@
+{
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"narrativeRole":"opening","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":2,"sourceSlide":2,"narrativeRole":"scope","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":3,"sourceSlide":3,"narrativeRole":"parameter consistency","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":4,"sourceSlide":4,"narrativeRole":"cross-validation","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite-and-reposition","sourceElementId":"im/q9876pkv","shapeId":"28","reason":"show complete impedance and phase source image"}]},
+    {"outputSlide":5,"sourceSlide":5,"narrativeRole":"matching","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite-and-reposition","sourceElementId":"im/srmx0vmd","shapeId":"13","reason":"show complete power and reflection source image"},{"action":"rewrite-and-reposition","sourceElementId":"im/jmdw3qlg","shapeId":"14","reason":"show complete impedance source image"}]},
+    {"outputSlide":6,"sourceSlide":6,"narrativeRole":"sensitivity","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":7,"sourceSlide":7,"narrativeRole":"Qm sensitivity","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite-and-reposition","sourceElementId":"im/tsze1szm","shapeId":"19","reason":"show the complete original two-panel Qm figure"},{"action":"rewrite-and-reposition","sourceElementId":"sh/o761ov2t","reason":"prevent conclusion callout wrapping after image resize"}]},
+    {"outputSlide":8,"sourceSlide":8,"narrativeRole":"selection criteria","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":9,"sourceSlide":9,"narrativeRole":"window-step tradeoff","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite-and-reposition","sourceElementId":"im/hcz65kbq","shapeId":"12","reason":"restore complete heatmap titles, axes, and colorbars"},{"action":"rewrite-and-reposition","sourceElementIds":["sh/ofq5svm5","sh/bih4na5w","sh/ah8nu54b","sh/oza1gfyh"],"reason":"move callouts below complete figure"}]},
+    {"outputSlide":10,"sourceSlide":10,"narrativeRole":"protection","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite-and-reposition","sourceElementId":"im/8jmtobq9","shapeId":"22","reason":"restore chart title, all three panels, thresholds, and time axis"},{"action":"rewrite-and-reposition","sourceElementId":"sh/xwnupgvy","reason":"move threshold caption below complete figure"}]},
+    {"outputSlide":11,"sourceSlide":11,"narrativeRole":"control timeline","reuseMode":"duplicate-slide","editTargets":[{"action":"rewrite-and-reposition","sourceElementId":"im/21cnihkf","shapeId":"15","reason":"restore all three strategy panels and time axis"}]},
+    {"outputSlide":12,"sourceSlide":12,"narrativeRole":"strategy comparison","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":13,"sourceSlide":13,"narrativeRole":"limits","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":14,"sourceSlide":14,"narrativeRole":"conclusion","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":15,"sourceSlide":15,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":16,"sourceSlide":16,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":17,"sourceSlide":17,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":18,"sourceSlide":18,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":19,"sourceSlide":19,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":20,"sourceSlide":20,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":21,"sourceSlide":21,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":22,"sourceSlide":22,"narrativeRole":"backup","reuseMode":"duplicate-slide","editTargets":[]}
+  ],
+  "omittedSourceSlides":[]
+}

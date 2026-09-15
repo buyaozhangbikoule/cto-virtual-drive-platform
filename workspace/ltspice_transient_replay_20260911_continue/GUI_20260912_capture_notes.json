@@ -1,0 +1,31 @@
+{
+  "updated_at": "2026-09-11T17:24:30.472Z",
+  "window": {
+    "app": "process:D:\\LTspice.exe",
+    "id": 68476,
+    "title": "LTspice - [PO_FS_M5_REPLAY_DT2NS.raw]"
+  },
+  "source": "sky.get_window_state; actual LTspice app and native log dialog",
+  "pixel_editing": false,
+  "crop": "None; saved the native tool-provided window/dialog screenshot unchanged",
+  "simulation_rerun": false,
+  "raw_sha256_verified": "aacc5b49f002f3d5636968686499275533e614d7f9f71cc69ea619aeb1422288",
+  "scope": "Historical P_AND_O command replay, not live closed loop",
+  "files": [
+    {
+      "file": "GUI_20260912_replay_full.png",
+      "saved_at": "2026-09-11T17:15:49.228Z",
+      "bytes": 85719
+    },
+    {
+      "file": "GUI_20260912_LTspice_Error_Log.png",
+      "saved_at": "2026-09-11T17:19:10.141Z",
+      "bytes": 76841
+    },
+    {
+      "file": "GUI_20260912_tail_carrier.png",
+      "saved_at": "2026-09-11T17:24:30.437Z",
+      "bytes": 84313
+    }
+  ]
+}

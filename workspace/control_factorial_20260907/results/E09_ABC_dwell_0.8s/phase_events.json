@@ -1,0 +1,152 @@
+[
+  {
+    "time_s": 0.024500000000000004,
+    "reference_deg": null,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 0.5670000000000001,
+    "reference_deg": -1.0782096368565852,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 1.1095,
+    "reference_deg": 3.197021737182365,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 1.6520000000000012,
+    "reference_deg": 2.3956557602940656,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 2.1945000000000023,
+    "reference_deg": -4.835584983043558,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 2.7370000000000037,
+    "reference_deg": -4.8355849830435575,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": 0.006550700213860409,
+    "candidate_Hz": 905600.0,
+    "phase_candidate_used": true,
+    "outcome": "FALLBACK_PHASE_NOT_CONFIRMED",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 3.3900000000000077,
+    "reference_deg": -41.42656417373125,
+    "center_Hz": 854800.0,
+    "slope_deg_per_Hz": 0.004195929549081825,
+    "candidate_Hz": 857700.0,
+    "phase_candidate_used": true,
+    "outcome": "FALLBACK_PHASE_NOT_CONFIRMED",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 4.003000000000012,
+    "reference_deg": 36.73892727746398,
+    "center_Hz": 900300.0,
+    "slope_deg_per_Hz": -0.08611129462651929,
+    "candidate_Hz": 899700.0,
+    "phase_candidate_used": true,
+    "outcome": "FALLBACK_PHASE_NOT_CONFIRMED",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 4.636000000000004,
+    "reference_deg": -0.7562221784011868,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 5.198499999999993,
+    "reference_deg": -10.175881705796368,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": 0.0024484992588805596,
+    "candidate_Hz": 900000.0,
+    "phase_candidate_used": true,
+    "outcome": "FALLBACK_PHASE_NOT_CONFIRMED",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 5.831499999999985,
+    "reference_deg": -80.21114061037824,
+    "center_Hz": 854900.0,
+    "slope_deg_per_Hz": 0.0001206177468070564,
+    "candidate_Hz": 889200.0,
+    "phase_candidate_used": true,
+    "outcome": "FALLBACK_PHASE_NOT_CONFIRMED",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 2.524500000000002,
+    "reference_deg": null,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "P_AND_O"
+  },
+  {
+    "time_s": 3.390000000000006,
+    "reference_deg": -41.42656417373126,
+    "center_Hz": 854800.0,
+    "slope_deg_per_Hz": 0.004195929549081825,
+    "candidate_Hz": 857700.0,
+    "phase_candidate_used": true,
+    "outcome": "FALLBACK_PHASE_NOT_CONFIRMED",
+    "strategy": "P_AND_O"
+  },
+  {
+    "time_s": 4.123000000000007,
+    "reference_deg": 31.862506463587582,
+    "center_Hz": 900300.0,
+    "slope_deg_per_Hz": -0.04023908242551289,
+    "candidate_Hz": 899100.0,
+    "phase_candidate_used": true,
+    "outcome": "PHASE_HINT_POWER_CONFIRMED",
+    "strategy": "P_AND_O"
+  },
+  {
+    "time_s": 5.887999999999972,
+    "reference_deg": -0.7562221784011868,
+    "center_Hz": 899875.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "P_AND_O"
+  }
+]

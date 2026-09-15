@@ -1,0 +1,4362 @@
+[
+  {
+    "file": "audit_and_package.py",
+    "bytes": 4187,
+    "sha256": "5297c3d4822504c76929a69939c14c36242fe3700e29285ee89db1c91347121b"
+  },
+  {
+    "file": "deliverables/01_完整调度矩阵.pdf",
+    "bytes": 70237,
+    "sha256": "57e7be6d0e68eec2aeeea9315d5af95bf25be39fde33112bc534359ab2438b71"
+  },
+  {
+    "file": "deliverables/01_完整调度矩阵.png",
+    "bytes": 366037,
+    "sha256": "eb66ba3c20ae746977627137b7063179680601b6d6094b9061954a214c1e86d8"
+  },
+  {
+    "file": "deliverables/01_完整调度矩阵.svg",
+    "bytes": 80992,
+    "sha256": "9c4504ea9c94b09c69a1b736c01a9d1f0a0e8842031ad0e824302f66b4e4216e"
+  },
+  {
+    "file": "deliverables/02_匹配单因素效果.pdf",
+    "bytes": 63048,
+    "sha256": "26edae9473aafd76b6c475fc8ab10aba98ae50e6638f8d741f5b6ba7a087584a"
+  },
+  {
+    "file": "deliverables/02_匹配单因素效果.png",
+    "bytes": 189054,
+    "sha256": "af0f2e45839d9165ea818955a5c4596361737511dd13321ad6f664ca6749311f"
+  },
+  {
+    "file": "deliverables/02_匹配单因素效果.svg",
+    "bytes": 34860,
+    "sha256": "db62e75cc64c28bf26a43ba9bb59a64f6bade2178acee72ec918e58ad599adab"
+  },
+  {
+    "file": "deliverables/03_完整时序与间隙越限.pdf",
+    "bytes": 110060,
+    "sha256": "da81f43e20cbb60d0164f21a2cc78ee534774998689f7155a1b5d8b27059b975"
+  },
+  {
+    "file": "deliverables/03_完整时序与间隙越限.png",
+    "bytes": 492252,
+    "sha256": "6e61c37df98440bcbbde096b2f98c0de43cb6e650cb2e7fa116087d0318033e0"
+  },
+  {
+    "file": "deliverables/03_完整时序与间隙越限.svg",
+    "bytes": 161362,
+    "sha256": "91fa15a008674e3b56af86f448f62a4604c86d5b0e14ac8adfa1dcb418682840"
+  },
+  {
+    "file": "deliverables/04_独立恢复诊断.pdf",
+    "bytes": 70426,
+    "sha256": "b9d15d28d02faec81cf44718477e154cbebbfbc6d6ca0f4f31c940af47356f84"
+  },
+  {
+    "file": "deliverables/04_独立恢复诊断.png",
+    "bytes": 286373,
+    "sha256": "936c9c1076bca78a4eda184b7a4376a08feacb1ea2438fbdcd4e509b519a54ab"
+  },
+  {
+    "file": "deliverables/04_独立恢复诊断.svg",
+    "bytes": 26841,
+    "sha256": "c5346a00db1f779757611f78f948128fc30cff5cc7c17a311cc76e0561e373d4"
+  },
+  {
+    "file": "deliverables/parameter_registry.json",
+    "bytes": 26824,
+    "sha256": "a0e70f0823823c0ac3be210323a12c16f97b742f3e64db7bca5f1e9989c5f667"
+  },
+  {
+    "file": "deliverables/replay_energy_check.json",
+    "bytes": 309,
+    "sha256": "1c8e2561f5de4e569b3ae5bbb4d86963546b053e5f74ecd37e74aa2be3f7d7c9"
+  },
+  {
+    "file": "deliverables/source_03_B1_T100_A40_R0_held_replay.csv",
+    "bytes": 76568,
+    "sha256": "959218d06dbe6095e10579c55e4c4c93200e0e00a8645e7b384aca9246ddc6a1"
+  },
+  {
+    "file": "deliverables/source_03_B1_T500_A90_R2_held_replay.csv",
+    "bytes": 98173,
+    "sha256": "80245e2ddf8ed6e5d2b277aa492c4d9a3433123b9c3c34149fe29c806832d99e"
+  },
+  {
+    "file": "deliverables/vector_export_checks.json",
+    "bytes": 684,
+    "sha256": "6e0231d031311e88365cb565efedf75445735024dd66b5584393c2b554a276df"
+  },
+  {
+    "file": "deliverables/图表QA说明.md",
+    "bytes": 1762,
+    "sha256": "5b395366e78959117c03fd83e37707d9f949081fb63c597cda7327f5ac6d9d29"
+  },
+  {
+    "file": "deliverables/汇报用匹配对照表.csv",
+    "bytes": 3594,
+    "sha256": "970af02199ac6948da98d175249cd265b423fa9235f87c4b937c795a6d0475ef"
+  },
+  {
+    "file": "deliverables/独立调幅与P&O调度验证报告.md",
+    "bytes": 10509,
+    "sha256": "c1471f436be9e031d134f64725c9f4c4f3bb255dcc640ce276f4d606d3c97454"
+  },
+  {
+    "file": "execution_environment.json",
+    "bytes": 656,
+    "sha256": "ecd3107fa63e9c88ca5a268d7caa94a6e1f22a2d2163bf16a23cf51f5aac67f2"
+  },
+  {
+    "file": "frozen/frozen/reference/E02_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 5541,
+    "sha256": "69cd8ff984cd158ffee16bf72004f9401c233ad78a9f119b48850dc7fd7a7a95"
+  },
+  {
+    "file": "frozen/frozen/reference/E02_dwell_0.8s/config.json",
+    "bytes": 1583,
+    "sha256": "7b8fe8cef2c2324c0fff667ff9addaf217ef92826d3d9977e1254b4b775f9cfa"
+  },
+  {
+    "file": "frozen/frozen/reference/E02_dwell_0.8s/timeline.csv",
+    "bytes": 876649,
+    "sha256": "fef6696ffa10441de310266673daa2571e6b5528c62524aca33fae80e8379e70"
+  },
+  {
+    "file": "frozen/frozen/reference/E02_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 5735,
+    "sha256": "e1b0f099d659f153e8662b7c6e53aecca1c871fe85baebd74211e38383249064"
+  },
+  {
+    "file": "frozen/frozen/reference/E02_dwell_1.6s/config.json",
+    "bytes": 1582,
+    "sha256": "5628c1ee47ba2a04ff594fca8b56bbb541912223989befb1aa9bd8a474981c65"
+  },
+  {
+    "file": "frozen/frozen/reference/E02_dwell_1.6s/timeline.csv",
+    "bytes": 1680843,
+    "sha256": "0132e6b39ebb461ce228d9a93cc8017038c44c8be6ddd12ee965191a7b8e2db1"
+  },
+  {
+    "file": "frozen/frozen/round1.py",
+    "bytes": 25609,
+    "sha256": "90609c1627808e902708c6552330a86b65ba1cd3569c37e3b5423400aad23167"
+  },
+  {
+    "file": "frozen/frozen/snapshot/active_stage3_5/model_v2_1.py",
+    "bytes": 12134,
+    "sha256": "2561ec5dd2bd8d321cb2bf02b46b0a55c7275b9dbbbc3b85cec9498e9dca7aae"
+  },
+  {
+    "file": "frozen/frozen/snapshot/active_stage3_5/run_stage4_5_control.py",
+    "bytes": 45722,
+    "sha256": "240b203d43ead0988695845df9eaef493a4daf1ba95fb747eaa6a3c4612bf6f0"
+  },
+  {
+    "file": "frozen/frozen/snapshot/history/stage4_5_audit.json",
+    "bytes": 6902,
+    "sha256": "df4a814bae6e63a39fa9a010a6f61b6918cf0e842c0658bec6b94ee65ad575ca"
+  },
+  {
+    "file": "frozen/frozen/snapshot/history/stage4_control_timeline.csv",
+    "bytes": 768467,
+    "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+  },
+  {
+    "file": "frozen/frozen/snapshot/history/stage5_integrated_strategy_table.csv",
+    "bytes": 851,
+    "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+  },
+  {
+    "file": "frozen/frozen/snapshot/history/stage5_per_segment_metrics.csv",
+    "bytes": 3725,
+    "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+  },
+  {
+    "file": "frozen/frozen/snapshot/read_raw_reference.py",
+    "bytes": 5404,
+    "sha256": "633206b6db661791627620c56b22b30f42e945b5339dfa75382f9d9843ca6f34"
+  },
+  {
+    "file": "frozen/frozen/snapshot/stage2_matching/stage2_匹配设计参数.json",
+    "bytes": 1557,
+    "sha256": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202"
+  },
+  {
+    "file": "frozen/frozen/snapshot/stage2_matching/stage2_控制源幅度校准.json",
+    "bytes": 711,
+    "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4"
+  },
+  {
+    "file": "frozen/prior_AC/audit.json",
+    "bytes": 11138,
+    "sha256": "eb398d48297e7970eeb62df80fc6c2cbfd5deac166590d90e0a2abe0a3534458"
+  },
+  {
+    "file": "frozen/prior_AC/cross_validation.csv",
+    "bytes": 5655,
+    "sha256": "412590dd1321f407a7cbabfb1aca4fea60e82e2e4e9ddafc453279910719fca5"
+  },
+  {
+    "file": "frozen/reference/E02_000_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 6436,
+    "sha256": "86431f8af3aa6e9db9ebb14ef7d1ed4bd685fe5d7c42c961a1d3ce59c85033d2"
+  },
+  {
+    "file": "frozen/reference/E02_000_dwell_0.8s/config.json",
+    "bytes": 1788,
+    "sha256": "2f50515cbcc0cc911ce2f439ad9b12d7ca2102b7da8e33792c90fd8b3d52a9e7"
+  },
+  {
+    "file": "frozen/reference/E02_000_dwell_0.8s/timeline.csv",
+    "bytes": 1015349,
+    "sha256": "2e7dff47e57bc0bb675bcafcf77414078ef26ced6d9fe7c024520191b1f1dd36"
+  },
+  {
+    "file": "frozen/reference/E02_000_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 6778,
+    "sha256": "dcc30854e7cd89191c29105223a6b904ed1d10eac253a1eba6ac702a79844d41"
+  },
+  {
+    "file": "frozen/reference/E02_000_dwell_1.6s/config.json",
+    "bytes": 1787,
+    "sha256": "2c63edd0e98c1651a5d9028f144a62efea8d3f49a514b1fdcf85471b54f31710"
+  },
+  {
+    "file": "frozen/reference/E02_000_dwell_1.6s/timeline.csv",
+    "bytes": 1947250,
+    "sha256": "fd83c64c5af1194b8ca41b60705d4ae78d658ef98eb59bba1b4fc395c2725748"
+  },
+  {
+    "file": "frozen/reference/E04_B_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 6309,
+    "sha256": "6aeda416ff65828a0d9119b760784eb9deaa6ddaecd569a36b0d555da6a743b9"
+  },
+  {
+    "file": "frozen/reference/E04_B_dwell_0.8s/config.json",
+    "bytes": 1785,
+    "sha256": "7fdb0465ae9fd8fb2f98f0d724bee549d46f9760cfde68f471fe69a16cc26798"
+  },
+  {
+    "file": "frozen/reference/E04_B_dwell_0.8s/timeline.csv",
+    "bytes": 1021445,
+    "sha256": "d5e71e43322446b93a0cb93068dc87e7bd43346c8a43d36657137f3530e0f910"
+  },
+  {
+    "file": "frozen/reference/E04_B_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 6503,
+    "sha256": "8584ac117c29d1265f010e8c2b744277d3daa72fe2726265d5f5e56a06b76858"
+  },
+  {
+    "file": "frozen/reference/E04_B_dwell_1.6s/config.json",
+    "bytes": 1784,
+    "sha256": "bd36e8822ffd5003709bc93996a1bbcca310affded5dd24160a959670a2d11c6"
+  },
+  {
+    "file": "frozen/reference/E04_B_dwell_1.6s/timeline.csv",
+    "bytes": 1953433,
+    "sha256": "88bc9288944cc9a009f8402e4c56b519c17ba0b308a4297bc25a860372f07e25"
+  },
+  {
+    "file": "frozen/round2.py",
+    "bytes": 24958,
+    "sha256": "7ae8811f1bce34c841deaf0dc87cea878fc4f7ed61fefb886ea21c122b709aad"
+  },
+  {
+    "file": "historical_AC_hash_recheck.json",
+    "bytes": 9636,
+    "sha256": "369016153adff2e504024e1742581a9852a6bc5f70ae78f774823f85c6f993f5"
+  },
+  {
+    "file": "independent_tests.json",
+    "bytes": 225674,
+    "sha256": "14551dcfe846bff9ae8fc8e5a8b60b9c352a2323ccf1d83a9de89cb68b5a3128"
+  },
+  {
+    "file": "input_manifest.json",
+    "bytes": 9783,
+    "sha256": "cb60bbde563ca6564c361e94823e9a2b562e97c3ee50a382c0018f6dc245a0a9"
+  },
+  {
+    "file": "make_report.py",
+    "bytes": 21600,
+    "sha256": "ae36b67bd219204505a282c652e97480a3bf182c40edefb0824cb383177dbc6e"
+  },
+  {
+    "file": "portable_runner_check.json",
+    "bytes": 2120,
+    "sha256": "38a660fe47048f2d81e06cea9938f53deb551b7c78de38ebfed74687dda0c309"
+  },
+  {
+    "file": "README.md",
+    "bytes": 5287,
+    "sha256": "66cf8cedb7ac2f2567ee6509a6b5aa28baf720c2c96bd259aa2a7823f75f66fd"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a40_step25/config.json",
+    "bytes": 846,
+    "sha256": "1416bc2f9e529a8a74f17a5b452b05f37546d88f63e9e10e045fb988b347c057"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a40_step25/timeline.csv",
+    "bytes": 54414,
+    "sha256": "bd645ccef4c3a1428d11cbd02e32362cbb4c068207ced8e159893254429af298"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a40_step50/config.json",
+    "bytes": 845,
+    "sha256": "2c75b99997b6d90950bdce632b579b6fb29d207216537e4ccb85b2cf4027683e"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a40_step50/timeline.csv",
+    "bytes": 54226,
+    "sha256": "8d571f0c5724b6416a113a6e41404ff7a5749d3f4a47e3979c4b3fd101cdcaa1"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a70_step25/config.json",
+    "bytes": 846,
+    "sha256": "7b295dd953f41b3550b8f2d5eaa6bc3c3f7ef74d1afa63522e28c3188ab96896"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a70_step25/timeline.csv",
+    "bytes": 54273,
+    "sha256": "24f7d6692e76b3996febc22a110898bfa81aa8cbaa6171ad545490f32bef27ce"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a70_step50/config.json",
+    "bytes": 845,
+    "sha256": "85ad7b5efd271dfa4c67045bcd3a1efa3373755d765dd1e2a04144fd18f789a9"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a70_step50/timeline.csv",
+    "bytes": 54411,
+    "sha256": "14ff72ace4580a8914f6746b895c5407835ae1b9766370f049fe304a6fa10ee6"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a90_step25/config.json",
+    "bytes": 846,
+    "sha256": "b518ad8921c67e851685dcf26fb2fc4f1384b690d99ccc6149022491cf5e88e8"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a90_step25/timeline.csv",
+    "bytes": 54494,
+    "sha256": "92dd0d4ecf4cb1a37483a44cdeee8e309f69d732ffc97eec43752a247349edb6"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a90_step50/config.json",
+    "bytes": 845,
+    "sha256": "0ac915b6f9dbf408506c5f49e201658bfc94db99b93b1d83720d6da787771324"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B0_a90_step50/timeline.csv",
+    "bytes": 54550,
+    "sha256": "fa3e19146954d482b7a3024133612f261a1c0c4cca43d4a8878c483b42a3931e"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a40_step25/config.json",
+    "bytes": 845,
+    "sha256": "587fa3ff4fe9768ad2fa83a861ee877256744b608f3d93eb57c23526ce6de46a"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a40_step25/timeline.csv",
+    "bytes": 58504,
+    "sha256": "acb702ff172315af15c040f83fcc188b121bc742d54fd9b2bb37a03c4b7aed03"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a40_step50/config.json",
+    "bytes": 844,
+    "sha256": "73dee74282e5bedfcd1dbb8280022ca6dc98aa4d9f11da5e489ebafafee0f063"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a40_step50/timeline.csv",
+    "bytes": 58526,
+    "sha256": "e264cf16db1887714dd91664bbf2e37ee80a90f5c43016694f446dfed24614bb"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a70_step25/config.json",
+    "bytes": 845,
+    "sha256": "a363d86efb6f54f8f681ae7fb27da2cccf2cf067f81525e7ff9bb1c4ffe91fd1"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a70_step25/timeline.csv",
+    "bytes": 58572,
+    "sha256": "57f1576ca0eda0c36955c0f3b47e3f03b852d516633dd7aaf8632ca7a3838bc7"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a70_step50/config.json",
+    "bytes": 844,
+    "sha256": "209a7c2ededb0724765e4d1e3d55dfecc5b9df1ff69b7fb3e72f7a33797cbcae"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a70_step50/timeline.csv",
+    "bytes": 57689,
+    "sha256": "0d5c4999c965eed5abedfa1d5f66637afe6775323447d5ea6ea9204a6c4dd525"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a90_step25/config.json",
+    "bytes": 845,
+    "sha256": "5cf2af7b7d8da30f5356c21783ad0ab343ad6e6d4eef411f7617385b26e58a16"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a90_step25/timeline.csv",
+    "bytes": 57667,
+    "sha256": "22c9b7c8b943c7b5f3556b5cd09b3de1709d600d9b0f5a8ab76517c712a02727"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a90_step50/config.json",
+    "bytes": 844,
+    "sha256": "70bd56581985a5cebbf48b68a42aa9e46477aad75c8ceba3bf269627d2c3def5"
+  },
+  {
+    "file": "recovery/BENCH_RM_M30_B1_a90_step50/timeline.csv",
+    "bytes": 57821,
+    "sha256": "cb45d6a150387b057e35ce2be7be531fc75c6ee3ab6c85e2e7b8ee9fa4a5b1b2"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a40_step25/config.json",
+    "bytes": 862,
+    "sha256": "79e3d10e51c0e1b5e1a78bf3ea70696b8fce8a4b3ec0a548a4cb788b3387bf7d"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a40_step25/timeline.csv",
+    "bytes": 52928,
+    "sha256": "49d49f468268feb0bb16e908196ce5763071255db4bc275564c27c3b6e987574"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a40_step50/config.json",
+    "bytes": 861,
+    "sha256": "197b6f0aef097e0eee7549d7f097a8e664c890ec6c0f41fe1880c62490dd857e"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a40_step50/timeline.csv",
+    "bytes": 52769,
+    "sha256": "a1b66469fa0e418f13f4cf57c0a35bda9428f113b71a000ba3c03d70d35239dd"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a70_step25/config.json",
+    "bytes": 862,
+    "sha256": "4504aa2bded16207d2d73f0df3f00b288a050945c6b4c03bec351a1af9c48532"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a70_step25/timeline.csv",
+    "bytes": 52748,
+    "sha256": "750acf0d26dc8eb6e41413c656508c2ce04eed61e9fea52141451a1ea43e6f7a"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a70_step50/config.json",
+    "bytes": 861,
+    "sha256": "336c5a677aa35885c71e58dd7d4c9a950e85c0abeae2682e53fef77ff91c4e98"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a70_step50/timeline.csv",
+    "bytes": 52835,
+    "sha256": "16f78fa6af55cb8b3236ead457905a05ac2cbb177adb3763f3a212a5d153feec"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a90_step25/config.json",
+    "bytes": 862,
+    "sha256": "862563e2336433c71797f6b3523a21c9a969cec57c3437ec1fc64913686ee2be"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a90_step25/timeline.csv",
+    "bytes": 51739,
+    "sha256": "52889da6e3254d37a837a3235c11cccf98f56247fbfa5973a036f5edb7d74fb8"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a90_step50/config.json",
+    "bytes": 861,
+    "sha256": "15d70070fe9cd4053a9b7d7cd7d3c1fc8f91563be1ded44ec49a0a68c4b6046c"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B0_a90_step50/timeline.csv",
+    "bytes": 51759,
+    "sha256": "5099058485590ba306ae4873416e2160186863f81ec557287bee101bdf6749fc"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a40_step25/config.json",
+    "bytes": 861,
+    "sha256": "18928ab59083a736f963ce226de0b5232d0beed33abdbc27e7306193fbfa1805"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a40_step25/timeline.csv",
+    "bytes": 54575,
+    "sha256": "a1e1d26845b388220baaa52e029a106e758d4c7a4be96974453c98decce0810f"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a40_step50/config.json",
+    "bytes": 860,
+    "sha256": "0062ed64ba6e6c4d275d86df576d1c66ba04813c522724d5bfb036183b31f9c4"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a40_step50/timeline.csv",
+    "bytes": 53185,
+    "sha256": "b187fc4d3478808dbacd658a057d0a0542feb56e5126d4a6422a3304864e242b"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a70_step25/config.json",
+    "bytes": 861,
+    "sha256": "2d31277e04f42ba3da67ae453c515e7f3c70acf6c5d6520eb8bf471d8abc9924"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a70_step25/timeline.csv",
+    "bytes": 53186,
+    "sha256": "7293c8ad09482adc9d0696540fbed266ad0b4b6d3d3ddd96ae674eb6e934e36d"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a70_step50/config.json",
+    "bytes": 860,
+    "sha256": "4395f2627e4617c1d6a886c83e7c08b7057e60558f053706d935510ff0843a2c"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a70_step50/timeline.csv",
+    "bytes": 53194,
+    "sha256": "2cfc83a35cb81f2eead8137df6b811061273d329c634bfd65228af168167294a"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a90_step25/config.json",
+    "bytes": 861,
+    "sha256": "766f83dd23655ba73509132883e68e7cd0fb088f0559e97a43f4b7fa0da1e5aa"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a90_step25/timeline.csv",
+    "bytes": 53159,
+    "sha256": "17998d541b4329a95c636d994b4e3b12e1e1481ed116b584beaa9a5817600b61"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a90_step50/config.json",
+    "bytes": 860,
+    "sha256": "87602c5e8bc8660c9c6fd5daea05e6d55728d6e153855c9140ef0e449678720e"
+  },
+  {
+    "file": "recovery/CASE_000_BASELINE_B1_a90_step50/timeline.csv",
+    "bytes": 53106,
+    "sha256": "65a496065e17699765c3369a3e0946f0349a2b22ba1e27e8b54916e093acc3e5"
+  },
+  {
+    "file": "recovery/summary.csv",
+    "bytes": 6759,
+    "sha256": "6b402d5bdd00431e5ce885e21eab79812e342710866d20c8697e92f7eaaaace7"
+  },
+  {
+    "file": "reproduce.py",
+    "bytes": 947,
+    "sha256": "1c0b3667071b1371a7d3d8a9743737440ffc60a795f95a00e2fb4198d9668a72"
+  },
+  {
+    "file": "reproducibility.json",
+    "bytes": 105861,
+    "sha256": "0d28ba6ad94a74730f900de64bd2b862a6f059389ef81c50627f42a289c704a9"
+  },
+  {
+    "file": "requirements.txt",
+    "bytes": 115,
+    "sha256": "541e529cdb58e9cb896f7e25d2f524f80a43cd4f9cb5eaeab0ca6aed363e4bc3"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2434,
+    "sha256": "1572a53196e60a7aa3b6de9879074c7a353a7dfc14d976ed8258e07c2441e341"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/audit.json",
+    "bytes": 340,
+    "sha256": "a1d8690e5e7d0c15fd90287e1a098ae5f32300f8cd81c9dfc0c11be91e7b1065"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "0ac70ca212c43b665a56449405d22b74c12b55410aa18dc4379fc028e6078687"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1553,
+    "sha256": "39dad171a3863e753064650285b686b45f7cad513b05f62b0146f35751e7021d"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/probe_events.json",
+    "bytes": 5970,
+    "sha256": "c2615f2821a223ae4f8ec6881c5eccf1259bc612b6a4565d3804018c27bb8024"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1025,
+    "sha256": "fb035bcbe61c63376f8170138b6639b682de485c3baa2f074b76b00f0c5c7a2a"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_0.8s/timeline.csv",
+    "bytes": 320579,
+    "sha256": "a8836dcc211eb5d65cffb89feee13b7ea7519c68a85710f379c2f871b7b2a875"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2704,
+    "sha256": "c44c4f9e6e6b01b0f68b2811a152f5464f9ef02a2031a9102f648dd8701d69d8"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/audit.json",
+    "bytes": 340,
+    "sha256": "1fe418e09bca817fe5a91fe7f47c63295d5fe243f0e74aa80f3c002f0a0be62f"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "d5828fc6016607833a2435fc584f2ff1c7bf799d629612bf14458427edb00b0d"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1631,
+    "sha256": "702538f15e8c6293de0663d2c0ceac1f6f705faf19a6fa7489a1825110fe291f"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/probe_events.json",
+    "bytes": 14920,
+    "sha256": "bddee45a2078a8218a0d1918b6c19cdf19292d5428d4bea363a44072635b1f0f"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "e248978757016b82544c0fc20248459cbea5fc3633bf39122bc889328fed8361"
+  },
+  {
+    "file": "results/B0_T100_A40_R0_dwell_1.6s/timeline.csv",
+    "bytes": 582041,
+    "sha256": "670a11cedddeb72c72fc31146cab904a58c1552c998e02f890c5af5bc7791fe0"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2412,
+    "sha256": "e31f1fbb6f8ac6d05793690166e7c8fcf35672ff3cb2582b5ab1e3e735834080"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "988982868d770a0efe337e02c3e25d46ed589ee26ed5f52643bcf7e82bd2fbc3"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "9d9b7f6370e606806efd025daad042917680d4c519c57fd48b3d740c4e4aa940"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1467,
+    "sha256": "a7cd5db8716b574170cbacb5c0721e02c312d400847f38096b15f44eff5cc08a"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/probe_events.json",
+    "bytes": 4114,
+    "sha256": "b3310498c29d5771a07c61e7f72ac240403910dfd0ce04eb8109b68a597211c9"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1280,
+    "sha256": "224aeb46d96f21ad8efb38fd708eef7f51f30f8652e8c5f270e119ca31a09023"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_0.8s/timeline.csv",
+    "bytes": 351491,
+    "sha256": "6e655ba4e664d430581f05b6528e7656b29934a85c37f01f9b2b12e8e218ce53"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2632,
+    "sha256": "db1f7721c903be8657bc2b0ddc603bc20f8554432ce95b1c4560e0e9fda649f3"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "b5b50d534305a1467e0154433f4bf52f81fea3ec10397af68d121de63bb5b30d"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "5bfaa4b27af3fa1790007ed6f4389fdd7d450b7e50c5032ec664b77fff632c6f"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1757,
+    "sha256": "8e12fe958f7d0824a73d95aa9e5627e128f651403cdeaa418d5f74b39d5ab713"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/probe_events.json",
+    "bytes": 11797,
+    "sha256": "dbf76546e1ec7a85a7143c47294795d5d18b40d407a17c0649bc4b557c6050e5"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "429c4218c7632e015260ec47ac4b58b29a9f8b2bbc3adbef50dc04ca6639a88e"
+  },
+  {
+    "file": "results/B0_T100_A40_R1_dwell_1.6s/timeline.csv",
+    "bytes": 581464,
+    "sha256": "15087d19b46809c8e7b5810d2261859be85db12140bc7b4afdbaf88389c87c44"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2556,
+    "sha256": "99463b4c1f19a240712ba7cfc22b0312559ba47b99a287ba85f32e8eac6b6e63"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "a11a3fac7d342d411b512a9d397b0817ec37032c025a0df26b2a3bbb44de634b"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "f41160a3abd7316ca3178eda8c920d9d35fe4259ab88bdb026196c8f878126a7"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1548,
+    "sha256": "1a59c77ca2acb71690f287271540a7513b3d1e6a559710958661a1db51862dd7"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/probe_events.json",
+    "bytes": 2554,
+    "sha256": "06ce1c993e1b225aa61d85db80c0725777012fd8742632aa7173ecf6232ca9a2"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1281,
+    "sha256": "da4dba27f3871c982b423afc627e72847167fd2c1a3d750bf62a618ac7f70182"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_0.8s/timeline.csv",
+    "bytes": 353755,
+    "sha256": "526935359c084e6d5616010c8e53e5ce39c5f59d6cef043b031096f88977c3e4"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2733,
+    "sha256": "2f4b60fcea8ec40fbb0ea7b4da7c9d8fbcf164fcc348469f406cd6a66f5b1004"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "1418f04c602fc85c6b8e4aaa366df31c25d22aaedd285c5588d4b67357595095"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "07327705d7a7f86e0df75feca901519b28761ce765c598551fa8788792ff2758"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1686,
+    "sha256": "c7da2e881e5eb24e4b8416ef1d92617ec7f1ace39fa2d1a719567bb36ed5648f"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/probe_events.json",
+    "bytes": 9817,
+    "sha256": "d72b27f0f44f9d57a94850869e4e56aace13394eb83a118fe8758203d0433746"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "de6e980ddb3be0a3184d57558c0262254c206ecdd06a327b3f8e11cefdea3516"
+  },
+  {
+    "file": "results/B0_T100_A40_R2_dwell_1.6s/timeline.csv",
+    "bytes": 582127,
+    "sha256": "c4e0fc47c9df5a547e85b81ab8cc6af42a93eb93f4b521c08b6b31a53f2e9f0e"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2374,
+    "sha256": "245621254c2712f6b2c67d7e18144ea5ad1d00d24a2298cba0b8f79633ff9061"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "d8585d6b7366c65280bc678f3c710378b65740b6fd8675dbe546436a3ef47d46"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "fbbd34989cf83a8bc6bf6b7f8f5633fa431f833e54ab225ee0bba1bcd7a404e4"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1505,
+    "sha256": "a27742f6922a148cb9b655d2911a59f064ffc7c987713899e3e74ca649676894"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/probe_events.json",
+    "bytes": 10064,
+    "sha256": "7741c4180fa363ace44b0aeef260866c4484aea33cc0b6397b048b232156e2bf"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1025,
+    "sha256": "10ac811b6a3f00b4820257b7a1c61391095e787ecd9f4636f9d6f60ed7aadabc"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_0.8s/timeline.csv",
+    "bytes": 319230,
+    "sha256": "e65a4b9fb74f0ba899bb85f2ba266ccfcbf67dac344d4be3ce0673885f3e2984"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2599,
+    "sha256": "4b9f56445b4935127b82510869aa1d5ed6e4a1269ea0121a99da48e4491e8cfe"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "2db80eb8781467148d0f9aaa87fde5bcfd5cd6cfdeabe1f5d07bb41b208aa6f5"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "790bd4caedf9227b0fadcba9ffb583a94ebe849c899d2d2e982c1a28122e57ca"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1614,
+    "sha256": "0ff66e38cae82280a84edde1da43c171e431fb8cd5c53943086fac7d226d7fa2"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/probe_events.json",
+    "bytes": 26275,
+    "sha256": "1c3e7acede4429ce0a179f50b5cdc592ce6e38e1a3e2d03451e8a82c761918b5"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1281,
+    "sha256": "b1e9acb66d28ef1ac844f25b1a106836c6ebd632f6f516b558525a1fe6f416fe"
+  },
+  {
+    "file": "results/B0_T100_A70_R0_dwell_1.6s/timeline.csv",
+    "bytes": 545914,
+    "sha256": "223b2cd66ef4f3037149cdd328357e0b9480af70d2cb876e12da34dc4a314f75"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2396,
+    "sha256": "c27294450179a15c980c60dddaed3f4964545860a9d3d383f4b927ce899e51d7"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "bc52d68ade4d7cbdfbb07d75d3cb7e361d32b666d9014e78983cd666e4e81d34"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "3fbbc3a63f267e4ff87167cfee377a0c7265714ba9b23d0f4acf74859c1c6269"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1445,
+    "sha256": "83b3373fd4c54fe0d7e6d0be74cd4cd5b86df5eeef176d5b07ce0ed9bb7032df"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/probe_events.json",
+    "bytes": 6280,
+    "sha256": "13d5ad5199880c7d131257734cedbcf0675dbae54b4f68d59cca5acb59372bbc"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1282,
+    "sha256": "85a308fcc9b49580cc241bbe28172ba944b039aadae02aea8e3041b27bf8edff"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_0.8s/timeline.csv",
+    "bytes": 350030,
+    "sha256": "2fbd688b2f5d3916f3a042c59c2a032566cf8ba1885525757d8f39687b21fe7c"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2544,
+    "sha256": "c691a08d46eaddc5556be1670f7cefc4f64a4528d3e0613354b489d9c5ab4205"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "e1dc4db72c66de9dfb3cb6b5a212409a0a38fadfe2a53110ffa6279573b15e4f"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "034be2406f61ab3ed0dc282036a94e0c19267983ee07715fe2173bda5a6671fc"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1751,
+    "sha256": "91d02481d3ddaf1ee60150ddf1f69cd4559cb5a3ffcb198f492a981a38e8ffe3"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/probe_events.json",
+    "bytes": 16836,
+    "sha256": "31312ed151f2adf8cbd51879b92ab9c7fbb3c7aa056f4b16fb7d4e559070a433"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "0ac56c69c7acd5855e34ad10f1ce9f4b6775ad728f9aadf2564c0e3550f2504d"
+  },
+  {
+    "file": "results/B0_T100_A70_R1_dwell_1.6s/timeline.csv",
+    "bytes": 577234,
+    "sha256": "4078576b89f79f9bfdc28a18bc50278497b9da58da9ac898ad22f64351a32177"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2583,
+    "sha256": "94e45771aaefc9a5cf0e17ab36430f01761389b57beab92ec3a61c8dc6c6f731"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "779a1c3319decba9603a6e9c744e4482046ceeb683cbfad05d7f5849051e86ab"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "11a75187e7b7754aad9c771a00570a5b1ee66dd5f3b4b160bf423bdcdc058783"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1490,
+    "sha256": "72c8945d888d863ce6e676334663a5e21bfc5d1bea0eefef93d594b31ccdfae1"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/probe_events.json",
+    "bytes": 4017,
+    "sha256": "de00fc9987e011912683af3319c0464c69d4d27e3f314958575eaa94cc69201d"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "8337876baac56eaab4fd0748d3dca776363a2e06767acd2a9278aec1313e84bf"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_0.8s/timeline.csv",
+    "bytes": 383463,
+    "sha256": "2df6e566a0ae34788d118d5d82f9668e48e34aa015b216d643fdcb1573600cab"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2642,
+    "sha256": "b5800aed49aae6b98e7c919c295d6a125feda08e2e7d93c6c8bcda68058eae8f"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "1e734ee39c81eb8837973e1428eb27b622de8d94dfadd71084a072eb1a1d002f"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "d68c89737a25e62e06b6f84e62b45e666e19fef13d31f5a36af3a043e1b028bd"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1757,
+    "sha256": "4bbde3a454b0b134280511c35fd8dd92e0d246549fe61474181e87b91afb383a"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/probe_events.json",
+    "bytes": 13349,
+    "sha256": "17080e3d872d460910c7e0f517c6436c3af856a311bb7b12bfafeb0a73fbe43c"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1535,
+    "sha256": "4f3f37392763b1a2027c152f79ca5dbe441d29db0507753716c48f024c2aab16"
+  },
+  {
+    "file": "results/B0_T100_A70_R2_dwell_1.6s/timeline.csv",
+    "bytes": 581213,
+    "sha256": "cebda53f61c1f383760f08cc746b82b27680fe171c12f935f9a0c6f174880c06"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2478,
+    "sha256": "14ad92daeb0c5e680a6e093b60b9afbac61401d24d0772a89c54a0070b347216"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "a1c859fd007bfa0bf39512ce2fc29505df8f3197be0ed546fedf01b0582792e9"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "c4d7fbb54c81af2259c3f487fdb392616cb6839fff6a2ceef2549b884361c3c6"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1517,
+    "sha256": "2410c828c6cdc4f2419a727a494ec2bdb7e0c4beab2f1c391d2c867d4af6adba"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/probe_events.json",
+    "bytes": 6657,
+    "sha256": "14deefa29db2cdc0dc271e147060c1b98b83556dd55b370bec985b1d078ce86a"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "bdd5ba661c0db26c076017f1db7e4e97d33b20f5854aba3f2e604c0024a115a7"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_0.8s/timeline.csv",
+    "bytes": 381054,
+    "sha256": "6670a51ee4515c511f3366984023b325dc68a6c6be00d1fb18c60c3b6c523aa6"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2512,
+    "sha256": "d913ab4cf96bd0f7afa5da3d8b2e105280fb5e3f62e0d62868104a9263457dd8"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "b3cc70f7b966389c7544cb69d0566e35efa3495c1eb804af3a976242c00ef3e1"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "ba8a066a393656a593a906682cf88f6cd3e61b5785b7b9a90067ae2eee0d17d7"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1756,
+    "sha256": "26d452a7cbc781e0902a5012575808d2d20a1b5507603a1e57d4646a2f8f83da"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/probe_events.json",
+    "bytes": 25913,
+    "sha256": "b3341a88eb5f3adf2922877419212cbe4bf0edecfd5554c35face30f9a63fa6c"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "86a9d834c6960bd77978b4dbb6ca3298fca79e956af8fed6b11b94857a6b2c0f"
+  },
+  {
+    "file": "results/B0_T100_A90_R0_dwell_1.6s/timeline.csv",
+    "bytes": 575816,
+    "sha256": "9b5f2884673e36e15ae98ed8b580f8ba1b4bd91c0669583042710aa7c2cf9949"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2502,
+    "sha256": "7586b6774af256d07cd56569ab4fd284032812527a8e048ea2ef15cfb00f5f1f"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "98877faf61addbe86e8a783bbcfc11fffeee6c1a5182d9ffaf5a07bfa20c31d9"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "cbfbb5b3a757d31e980226ab2f2f794033c737ac5d2c5b063b53a2ba42f9f9fb"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1517,
+    "sha256": "ca02d21617e6b87317a772c65526c09fcc713b5154a8dbb5e255daa5129dbad4"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/probe_events.json",
+    "bytes": 6148,
+    "sha256": "7ab3e0180564a9f5e0fbbabe818c16429588e9248a254c7af4646003a3ed152f"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "bdd5ba661c0db26c076017f1db7e4e97d33b20f5854aba3f2e604c0024a115a7"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_0.8s/timeline.csv",
+    "bytes": 381210,
+    "sha256": "72bada0863ade2a8dfc2a654f43602899c6587118adfff9536fc9565fd3b2432"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2512,
+    "sha256": "b4ca74d22e18708562f3d61919190ded9bdef7b9ae7314dd5a9de05f22b36aa6"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "e857344eeb57cb85c4f526ccc6c6e48add8e48dd1bd4124021d99afd2229db2a"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "2982449444c67d075c915dff57acb651eedc05627f3cf54c63f312dbec4a47ae"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1756,
+    "sha256": "26d452a7cbc781e0902a5012575808d2d20a1b5507603a1e57d4646a2f8f83da"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/probe_events.json",
+    "bytes": 24883,
+    "sha256": "22d6d955cf32d2d6dd8c95f1b89e1eedc78b9b4d88bbc3f54c15b3537a2d86e5"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "86a9d834c6960bd77978b4dbb6ca3298fca79e956af8fed6b11b94857a6b2c0f"
+  },
+  {
+    "file": "results/B0_T100_A90_R1_dwell_1.6s/timeline.csv",
+    "bytes": 575954,
+    "sha256": "d5df26b41de845b59effd029de0d36fddbfb01b5a3e9b33cde416131bdbe02b9"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2584,
+    "sha256": "de2e38f92a7da185afe95226966005d25927e3bae124104f075b01ebfb3c7e0c"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "c0c8a6f918526ab238ce2120827bb06582ccf104a7752d79ab519daafaffef74"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "2a136fd45dccbc12e7bb0dd7ad93277a660be7f52a8ada3b6fc45695d62da082"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1503,
+    "sha256": "8b0d26bb8f2a329408cfc98b1bf7743635a0f16d51db5e173a8d5dfc3f58ca32"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/probe_events.json",
+    "bytes": 4230,
+    "sha256": "1e43aebeeaf46139ec6974993362bf4d635fdc5d177cde51f69093d54e97b5c4"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "d3406498eda86a3b3e48f1caa74c24d64dd7ca1bb22f21625e2f6f6908f7b14d"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_0.8s/timeline.csv",
+    "bytes": 383387,
+    "sha256": "16c75c1a9ae46305e3a1154d3b6b137d4531a426826016e12c737784168bdd57"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2574,
+    "sha256": "f97f800bf47fe4809871c13e9989d6a3a8bdf8ea27abf7402af59ab742814bed"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "4dc415c6c904165740886ed1405d5480b564c350280530969f81912d3e709330"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "4038a06473b512b4683661858a79cf2372ae7114b18246ecde8e2c1618150f9a"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1759,
+    "sha256": "4a3885b68818bfe1b9877e4bc3695ba62dcd7aa4f4394f4d1a6e6a2811ab5bbe"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/probe_events.json",
+    "bytes": 15839,
+    "sha256": "8bf8e9fc4b79ff1bfda8348d4da09040b39f3782a310e6abd9e28d9cfea0efdb"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B0_T100_A90_R2_dwell_1.6s/timeline.csv",
+    "bytes": 579810,
+    "sha256": "2d6e8fb06c41ec62fb86c1332e80eb16e7ecc0547b2b5fe45c31c4e58100e8cc"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2436,
+    "sha256": "4171058e20704f7d43b012e3021dfe7a67880c4b495e1c64f2ee9adaffc64102"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "dfc6d1ef931e09f6ce878a8443f53ddadc5bd272d86f196aeaddab50d8c0d7ca"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "066be76f9f49e4d33ae8c46497546b861564bb663a000becfbe8930132cf5aff"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1467,
+    "sha256": "ddd549db2b0048572f6d335e94fca1e44a63eeed6ccbcae7640414dbbf3d04a5"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/probe_events.json",
+    "bytes": 4427,
+    "sha256": "971adcedc3ee6ea690ac05f7ac3807be3d98621026fadaee96da2410f837a6f3"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1281,
+    "sha256": "eff87c91c73ed879f17b720aca1b6002d429c0563cfb5a96e913740b6f409ab8"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_0.8s/timeline.csv",
+    "bytes": 351396,
+    "sha256": "2953aabb44162f01b16ca62ac093bd010366229bd5287abda2cfbc4da13a8acf"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2512,
+    "sha256": "e6cc6b9a47d1ed657b876728e51368da6eabd2e787aba1b5f4cadd45d257416e"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "fd5035b19124bab5a34c94522d784bf52b69e44df61bb9c704b60e038fc77813"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "d2592f618258fda29fc41eff9fa48882bff86db2b112056cabc26f0cba2748db"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1698,
+    "sha256": "c602bf89a74b094702ed9157cd8e0497e66a53a55508902aa07c76e680234192"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/probe_events.json",
+    "bytes": 13360,
+    "sha256": "9a95e3692c3f0dd968380328f9b6d3dd827ba2f375c44f1c852f1c6ecc0fa829"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1280,
+    "sha256": "f01d74dbcedc5bb07bcc8d602f84cbc54e921d0a8d28177152408287f002845a"
+  },
+  {
+    "file": "results/B0_T300_A40_R0_dwell_1.6s/timeline.csv",
+    "bytes": 548262,
+    "sha256": "e5b5ae23d9227adde5856835d96b90829d6bed5839bd9ec7acde77b9f3669408"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2548,
+    "sha256": "85dc646865fe840de69003b537574bcd690e3b15b7f81f53e31bd2accb8c45e6"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "0d473ff9e16f846d0bb90e361100511afe73bc874f10e984971143320a96c5fb"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "06cfc720452398bfc31ec498c153076b5dd7cc6e1526a3ea2f73a65949344502"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1524,
+    "sha256": "26b4db742169b8e07d3eb3e804f38b4553857ba7cf1f5b69367dac537a6648b9"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/probe_events.json",
+    "bytes": 2542,
+    "sha256": "c9a4a7e28097393b6c3f7a868d461dcc0a2dc1b82a86af141f755913dcf31ea8"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "f47bb4bab735ca439bbca85458da552058422a01d0d72d293c301167b7c75be8"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_0.8s/timeline.csv",
+    "bytes": 384645,
+    "sha256": "81402604717ed232b446924f539b5bce208da42cf35afcf7dd328deffe2ce08f"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2722,
+    "sha256": "bb04ae83c1994f0edf6eec482be6a6c8acc496c0309e31cc7db01620fc5a19ae"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "813ea04ca2d4111fddc2768b4c5a1db293ea25c3dabb3650f5237f7a854aff5d"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "0fa84fb3f6587111676cc5841026c7b2b4e40101d5bbd0ff6bd1fa884552b61c"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1618,
+    "sha256": "94ba019a4bef54a6781b390b6f9554c04a4dbdfd7f7a63dee1170aaa86400f61"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/probe_events.json",
+    "bytes": 9219,
+    "sha256": "a4df39ecc6b4917fd7cfb8d5894c1d43a1ad9e1fc15d88142d8e9dd68b9ae705"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1535,
+    "sha256": "aad43a0a3dc577a785e6c9f1076ee315058bb544e26fa4ae893d57a87e91197f"
+  },
+  {
+    "file": "results/B0_T300_A40_R1_dwell_1.6s/timeline.csv",
+    "bytes": 582436,
+    "sha256": "90829df676ff2a1c5bbe273be5638aea9265cdc329f828aa6869ef0b6f77abad"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2548,
+    "sha256": "85dc646865fe840de69003b537574bcd690e3b15b7f81f53e31bd2accb8c45e6"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "ca4a5fddee2f6f15a9aae4ae2128d6d853aaa4f6150511ffaa848984d09cd098"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "38346a10a4d0aa249c13f77ec1b46c00e6e2e4eb2c77503dbbaef645f763b435"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1524,
+    "sha256": "26b4db742169b8e07d3eb3e804f38b4553857ba7cf1f5b69367dac537a6648b9"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/probe_events.json",
+    "bytes": 2542,
+    "sha256": "c9a4a7e28097393b6c3f7a868d461dcc0a2dc1b82a86af141f755913dcf31ea8"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "f47bb4bab735ca439bbca85458da552058422a01d0d72d293c301167b7c75be8"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_0.8s/timeline.csv",
+    "bytes": 384645,
+    "sha256": "da002e720ff49d24975501b54d2c75a3e9e89b80610d04f8a0818818c391a9bd"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2722,
+    "sha256": "bb04ae83c1994f0edf6eec482be6a6c8acc496c0309e31cc7db01620fc5a19ae"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "a5640b2fb82ce87dae9d5acc3ea47ea8f19153d77f8dcef23b379aa68b0a383d"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "ab51965eb9f454fb6f780d6729a8858998fce1c9656465964f7620be7f9e4f7c"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1618,
+    "sha256": "94ba019a4bef54a6781b390b6f9554c04a4dbdfd7f7a63dee1170aaa86400f61"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/probe_events.json",
+    "bytes": 9219,
+    "sha256": "a4df39ecc6b4917fd7cfb8d5894c1d43a1ad9e1fc15d88142d8e9dd68b9ae705"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1535,
+    "sha256": "aad43a0a3dc577a785e6c9f1076ee315058bb544e26fa4ae893d57a87e91197f"
+  },
+  {
+    "file": "results/B0_T300_A40_R2_dwell_1.6s/timeline.csv",
+    "bytes": 582436,
+    "sha256": "30be305ed99f36b1dae46ac31e9c6715133fb41d6ce545d83c6275a5c352fcf5"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2583,
+    "sha256": "94e45771aaefc9a5cf0e17ab36430f01761389b57beab92ec3a61c8dc6c6f731"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "b3784063c64788f156b092010fd5221491ece8967952014a05e89e24af7fdd99"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "ebf53387f6f1314346cc2346115ce2deefeac6f7e450377996d5b66caf3046ef"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1490,
+    "sha256": "72c8945d888d863ce6e676334663a5e21bfc5d1bea0eefef93d594b31ccdfae1"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/probe_events.json",
+    "bytes": 4017,
+    "sha256": "02747fe2cc86e116de0db0a0f3aa4045797037b5b4a59f1fc2d60d14771c7412"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "8337876baac56eaab4fd0748d3dca776363a2e06767acd2a9278aec1313e84bf"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_0.8s/timeline.csv",
+    "bytes": 383463,
+    "sha256": "127caceed75af03ce5584f39e3e283d37d18fcd4f087f01bb05faa99345cc48b"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2592,
+    "sha256": "6c989ff3a832d6e5c360b4d40e7e065ba94db9b4268642b9ed55fcf2f6468105"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "3c517b8775b9b74903b5b717a4d204077cb787ac98b832f916571cdca5344241"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "024e17b2e32365394b96ea1230f159be525bfe44ac7c2201337c988580c98c24"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1775,
+    "sha256": "0f86d641ab55523b703a39856b0f5082b9752428c12887cca235bedf59bcefc8"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/probe_events.json",
+    "bytes": 12381,
+    "sha256": "2a63c4d27a6f31aba3db98aa83b09538504103a8ab62c764861390237b68649e"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "22aed2b0ad047706d3e8f3b54f704049f398675263f5670f195a579e53677a69"
+  },
+  {
+    "file": "results/B0_T300_A70_R0_dwell_1.6s/timeline.csv",
+    "bytes": 580305,
+    "sha256": "8b9ccac08a64bf679b5548cfba5da4ec7e5e5648c65dd4f62e8b8214d404ed85"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2542,
+    "sha256": "b44b7b53fd376cc3be3d4f3b539eeacea9127cc8676a5572ab965880ca7fcde0"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "053af6a92c53a4f86b673a6c28b65f33fb4eb9d6630282986c8a634623e3209c"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "a48569945ed164a33301b02877cf46b8c407e5dc4f978ce214177e7d4aebc577"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1492,
+    "sha256": "0fe8e5bea43708d6002ded32c9053ba5c64bcad2156f5c4848a034daf2152ba9"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/probe_events.json",
+    "bytes": 3494,
+    "sha256": "ca5b675a15e2de1fc5294bb49755dc3cc198336ad010dab1eba10788463b633d"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "8337876baac56eaab4fd0748d3dca776363a2e06767acd2a9278aec1313e84bf"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_0.8s/timeline.csv",
+    "bytes": 383594,
+    "sha256": "4ae60fa8e6c27b54122a2db051351e052c1903ac975f42c19b67e7cc728d57d9"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2558,
+    "sha256": "31633560f01d68e9e21d9546ef6b826efd0fcb8449f680ab8163a6b1d0d02533"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "6b4b3a59a03d7a2d0814042a319d8f0db46ebcd26434f29dcacec48351d18682"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "12694cf3150583e8c2f0c030f5b040a9586ee34e53cef94fa8b0d65bbaac282a"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1774,
+    "sha256": "7d4f48ab64472a617153855f672f943d343f0110841b8d51e6a4cf963b290d64"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/probe_events.json",
+    "bytes": 10299,
+    "sha256": "511e849ac8c51b323518f8f4153de3a08e3dc414ab8db98603b7336e2f6a8f8b"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "106767b4386f5d58892a5656900514c6819f646c158b2e6b40ad2114894592dd"
+  },
+  {
+    "file": "results/B0_T300_A70_R1_dwell_1.6s/timeline.csv",
+    "bytes": 580504,
+    "sha256": "88e313a4b418d78a33786def37136567a0b1d1b48d062ec777a5f41435ef37f9"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2542,
+    "sha256": "b44b7b53fd376cc3be3d4f3b539eeacea9127cc8676a5572ab965880ca7fcde0"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "c9f76d33eecab2bca03f7ccf7c0326a0759e68b8eeed78164d56975d62025448"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "b53e7571ae2d74cb1b811622ad53ff88a29edabb490b08e8d0b97baea2db59db"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1492,
+    "sha256": "0fe8e5bea43708d6002ded32c9053ba5c64bcad2156f5c4848a034daf2152ba9"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/probe_events.json",
+    "bytes": 3494,
+    "sha256": "ca5b675a15e2de1fc5294bb49755dc3cc198336ad010dab1eba10788463b633d"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "8337876baac56eaab4fd0748d3dca776363a2e06767acd2a9278aec1313e84bf"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_0.8s/timeline.csv",
+    "bytes": 383594,
+    "sha256": "5a48689a45a24b9d7254bc21cf058a762e31311613b161c2874318667f3fc3d5"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2547,
+    "sha256": "615258ceb2c1de657ae3d3ce87148740d56163ee29f5ad7bccf8953e231ed8e1"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "d29912867204317f027c808e46d045906cd6604531359d59666a7f0744989e96"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "42a58a2c0c05f7b4f028b2380b2605f9d8c72aae5134b0416b050447ccf87e6a"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1777,
+    "sha256": "433f88c4f622fc1828d41bcd2a486ae0684b0934cb85c6c3b859ae52dbea034d"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/probe_events.json",
+    "bytes": 9778,
+    "sha256": "c39d9a13ac8b042289203f71671f455535f0f0167aa3b2fb4b643462cbef53a4"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B0_T300_A70_R2_dwell_1.6s/timeline.csv",
+    "bytes": 580469,
+    "sha256": "0183704214827d8059b8d98a04151e2c7a63ed9ec6f88d625252c7a9004d4e7e"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2597,
+    "sha256": "c1638227185221f8f99c63b81e2f1cfde44103833b3146eebeb8df10e4371111"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "33459643731535cdeb1e5a4898b42a556f7442c0a30dfe9ae795e1773d844ab7"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "ac78e1bf1fe322c3540f1f505edf76c489422e81ddbac233281f0024bb90dd77"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1524,
+    "sha256": "b87e8c650e626bd98b1fbc4ab28d4c086cb1d46dc7bb5deaec861c930a872465"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/probe_events.json",
+    "bytes": 3893,
+    "sha256": "76ba57afe6efee77ba5fc10c68c4b8ab467ab019a0f09be9eb0d2e34af6b32f5"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "e4d985af709f0baa04723ed82a27f3a90fbbf4f7abb3fa1efb1d53b879ad0749"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_0.8s/timeline.csv",
+    "bytes": 383372,
+    "sha256": "81ecb25ac654c749cbc706dde4605bcb17c3a8b14a9ca489301208add44b82f9"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2593,
+    "sha256": "7c5197a8844695bbac42546b117a0fa473a4da4d206bf28186c6b22401c79491"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "79a1d044bd48d4c9a31ddd119c92cac42737de6dfaa25c8d6e10028fe6f077fd"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "4b62aa37339fe99b163d780065e165c45135ec7764905a5ca9723fe9ff925a71"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1764,
+    "sha256": "31dd44cd56e88f45a13e9a016c3c2eff7cc3e029fbcd22ab59976f802cfe1851"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/probe_events.json",
+    "bytes": 12915,
+    "sha256": "ace6f97fcf697b7852a7b98b14eeb1a644437fcea5ffd69d6f0581dd158ac412"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "1091d1bfde2377eba741dcaa2c59e2436ce2059359a08b9666ffb0a5f4ef3469"
+  },
+  {
+    "file": "results/B0_T300_A90_R0_dwell_1.6s/timeline.csv",
+    "bytes": 581426,
+    "sha256": "ad125fff1e4b4b807ef6a509ed531fdffad5f57d10fb4d6236535ba01e6abd56"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2601,
+    "sha256": "5b24c6366c3c08425ae3743c2bdf1e7d2de24df0731aed79003e6e909a58cdaa"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "358051c666d21fd796720b461329cab7a4d26713b093978b78612cc0b4e875c7"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "982036cac75d2618f9deb7455ac2cf5f06c108698f4cdee1052cc3f6ca4d0b47"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1519,
+    "sha256": "938536ff6eba61dd2951b75d3f06a3678ad5357807367ed6bf4cb1ab6987048e"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/probe_events.json",
+    "bytes": 3893,
+    "sha256": "56ce9b4abfe6ac731229e593c3a99bd0d669fa222431c28efa609cf7c7074c1d"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "e4d985af709f0baa04723ed82a27f3a90fbbf4f7abb3fa1efb1d53b879ad0749"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_0.8s/timeline.csv",
+    "bytes": 383339,
+    "sha256": "1c2ac7eacf05b2bb7840341dd6e9b2743ed86d5bb9ba4b920b6011278349a682"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2647,
+    "sha256": "4a57148cd0a8ed243e0bd2c7555fdcdb35365827d80b5c38e165274a157c4305"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "af7ba598099a3ef02ccb18521bccb195397bc6f3998704942509f41b4cc980c5"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "11a5d5d641cc60cc29eed3729e4d8a90586962d85d3afb9337b04850cf9d7eb5"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1782,
+    "sha256": "b0b3714cee2f85027399cf505d142da3368762357d6e14ad669f5dab6ce36086"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/probe_events.json",
+    "bytes": 12914,
+    "sha256": "d2f5cb93c93ddd36940e5449f60d1c0925bd9bfe4bfe15dab5f616e1799f3498"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "95e136e6c72f96a81c283129b07522fb9ccf747b33c14984a67d1be76833e280"
+  },
+  {
+    "file": "results/B0_T300_A90_R1_dwell_1.6s/timeline.csv",
+    "bytes": 581474,
+    "sha256": "3dd82b481f9598b2d1df964c52bbc5cbcb1e884094efa3bc08edb3a42903b47c"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2613,
+    "sha256": "4d94e5d9edf005a79058b182b9bb0c4aef7c796181bf5d40f18e2d03cd232705"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "172ef99f6aa9a46955f1224317b1fb7384fb886bac682436ffe7c6c3d16f416d"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "2d7e84d4c397c7f8cee9ea2fac4bb1f2602504950fe8f7f8b15fd45e65d8466d"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1501,
+    "sha256": "ce1ae25b62c840cef8a4454d0ef5c85c01486a9b38be431fb21dc25a1567767e"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/probe_events.json",
+    "bytes": 3717,
+    "sha256": "336d09aaba22345ca48ccc118ca5dbf8aa74134e9650d740457d6f571abd34ab"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "d3406498eda86a3b3e48f1caa74c24d64dd7ca1bb22f21625e2f6f6908f7b14d"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_0.8s/timeline.csv",
+    "bytes": 383215,
+    "sha256": "246eba0e08944253d06b87fec7256b13448c1126f6c75d335d2130eef4dbbf37"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2639,
+    "sha256": "66f59ad0d22ea9fd7c6cf5dcd8de88a1bf49de50f76a3a2769efc83da5296c73"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "33790cf1e65c3eae8b43102b6c1a0818409bdc6f58d9691b953f82cca042d941"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "c0fe5eccd6fb1f78153b139e4922247fd87c96bcfc4aefca52ecebe94166bb42"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1781,
+    "sha256": "4a4bbe84ac2de4fe81be51e5d11797a19d4ef29332a57c3074a4c1d1c9b23eeb"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/probe_events.json",
+    "bytes": 12743,
+    "sha256": "dcecd528e7c272613f605a839d07738bf432bd3a9ec128bc31b8a362ffb103b9"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1536,
+    "sha256": "77adfec2652e914d67d090756d69e548db6c6a9264ba1fa04e530b4e85859529"
+  },
+  {
+    "file": "results/B0_T300_A90_R2_dwell_1.6s/timeline.csv",
+    "bytes": 580098,
+    "sha256": "a37c817417c30e589af824a5bafe7b7fe1a77553ddc9b877eea722b02df1ad17"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2546,
+    "sha256": "816bd26a82ed582bffaacf9cd47f75bd255d42b68fcc06778d59c751f688610f"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "187fe2a7a50a8d7017b646a3639b0ee7def87c745e272e4c2840cf8598e5066f"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "47bc5381e8f28e18ae13228cd0dd5b931078eab4063792370d58a6936fec9e4f"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1523,
+    "sha256": "d7370ed02faf9eddd0089dc554038108a6dea4db7c5f137b12328f048d9c05c0"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/probe_events.json",
+    "bytes": 2529,
+    "sha256": "a0fa78163910db0c1d72307d0ea78af85d4a8714b9627077bb0dd5315fdc1372"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "f47bb4bab735ca439bbca85458da552058422a01d0d72d293c301167b7c75be8"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_0.8s/timeline.csv",
+    "bytes": 384670,
+    "sha256": "d851ad03e6400a2b079c7cf37e465a98871a6c18e7281b4faf1053f9e44ac161"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2722,
+    "sha256": "6375b6c3851c54a2ef7ea39239c9e564cd4df8bf1e4bbcc7dcab88704be00628"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "97f9fb310ba1769ef234e127fa9daa8575f8e0db43202e78560e373b0778bb17"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "eab489a02066e567e00d598117e0fdccc656947344c6a9f99a7a56fb7f82d293"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1636,
+    "sha256": "a3d468c0f666767152d0ad2f93814b2baee2abbfa6033cba73eb73e79062ba3b"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/probe_events.json",
+    "bytes": 9191,
+    "sha256": "4f93f2d0e081c57b322c9761909fe10d6902ab09b99104e7d320c7c84dbd6f52"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1535,
+    "sha256": "aad43a0a3dc577a785e6c9f1076ee315058bb544e26fa4ae893d57a87e91197f"
+  },
+  {
+    "file": "results/B0_T500_A40_R0_dwell_1.6s/timeline.csv",
+    "bytes": 582431,
+    "sha256": "6f8b3c5249e6812bc547f5c0e558230298bf3cbb60493ca8e3fe506f4ac68322"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2544,
+    "sha256": "4e327fe0784dfa7d5619fde93463f049d365ee009afd385df17a905590d9f2c3"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "b6cd9e2b86b0431dfcdbc175c2a4dccce938718f581707f16c74045f307a864c"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "6dc5901eadcf3be80e53a9df0a23539d20b133bd88051dfc2242825c92e29e0c"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1536,
+    "sha256": "92e315a91802d5cd25c21651fe6a9331f91fab59d94a8d6749e2627bbe8e363c"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/probe_events.json",
+    "bytes": 1513,
+    "sha256": "8e880326627c440909854f2afbf4be70732e6ca0cbb33365b5154734fe1940c3"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "d3ee6ec7c18e846088d86d3fb5b505cbb41b5186fd5b98075bdb6d0bd8d76de3"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_0.8s/timeline.csv",
+    "bytes": 383658,
+    "sha256": "91da0d70d0a10a62b681cc3b643e8dc131f589367a0ff3cc08fd10ddc62ac079"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2649,
+    "sha256": "ea0fa272b08f1cf3ce1e580a9c882032936f04766d526d04200d82f2ae766db0"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "612a2f090c0eb618ca69d211a40c378026d54222c536aef0c78abbf61552862b"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "2b73357167ffbf2b121d444dbd1f487439f4d5a1dfa80455d58c597aad7d1008"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1658,
+    "sha256": "ba3339fb140c87d8c294efceedb3130b99a5ca38cb128e190756c1289713319a"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/probe_events.json",
+    "bytes": 5669,
+    "sha256": "f63473ce82f6d0ec8993729855eed202e0947384f6d7d20b0c065ebfceea1d6f"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "22943fcea5211daf603b0e340bab1a50b21fb481beadd68e81a041c676e20fdc"
+  },
+  {
+    "file": "results/B0_T500_A40_R1_dwell_1.6s/timeline.csv",
+    "bytes": 581870,
+    "sha256": "f68514e4647f3ae275c811109493c5223057f51eead349ebc6ffbd65b5ed84f5"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2544,
+    "sha256": "4e327fe0784dfa7d5619fde93463f049d365ee009afd385df17a905590d9f2c3"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "61c02335fb0250f72685bc1fa68d68f82c5be44d9a9d77edda6e42de0d8b8b2e"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "8c03ea9a2fae640ac8049277e53051abd676f32641e3767127a2058c74824a3d"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1536,
+    "sha256": "92e315a91802d5cd25c21651fe6a9331f91fab59d94a8d6749e2627bbe8e363c"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/probe_events.json",
+    "bytes": 1513,
+    "sha256": "8e880326627c440909854f2afbf4be70732e6ca0cbb33365b5154734fe1940c3"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "d3ee6ec7c18e846088d86d3fb5b505cbb41b5186fd5b98075bdb6d0bd8d76de3"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_0.8s/timeline.csv",
+    "bytes": 383658,
+    "sha256": "35234749d72d0cc9aea9a30068ddbcd5c0a501b182cbd6f66a730a99c41d39f9"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2649,
+    "sha256": "ea0fa272b08f1cf3ce1e580a9c882032936f04766d526d04200d82f2ae766db0"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "63351d4c7e5ff7025f240f3fc9df6a37b6199bb621fcf129bedba959bd7c26ff"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "94f33daa6096b894816af136e55ad7a30dac150f5642eb1ec4369e7c580633e7"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1658,
+    "sha256": "ba3339fb140c87d8c294efceedb3130b99a5ca38cb128e190756c1289713319a"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/probe_events.json",
+    "bytes": 5669,
+    "sha256": "f63473ce82f6d0ec8993729855eed202e0947384f6d7d20b0c065ebfceea1d6f"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "22943fcea5211daf603b0e340bab1a50b21fb481beadd68e81a041c676e20fdc"
+  },
+  {
+    "file": "results/B0_T500_A40_R2_dwell_1.6s/timeline.csv",
+    "bytes": 581870,
+    "sha256": "a23953404aebf53fa9f9aa17b8fa9da7e6d26d3fc8efb58d92e9c8fb6aa6ba97"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2545,
+    "sha256": "c53beeb000c21ed10df1df68f450a067f1134fec1d1ea4cf0c5243e9daeab6d7"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "91275eb6eaf62bbcf72e861da3086c952d2f78a7e8080c295d84e951fb779f21"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "69f89e7175c0640f14bd790e59e37798967d92efd60d24fe7e890b306baf01ff"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1496,
+    "sha256": "ca7eba8397f6c8fc83194053d409b1f8cea2750ecbe0b01ffe610105fb902aae"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/probe_events.json",
+    "bytes": 2959,
+    "sha256": "795e29121e26954525e3ca1ba3fdc7de9153c378ee54726d54178def7545039e"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "8337876baac56eaab4fd0748d3dca776363a2e06767acd2a9278aec1313e84bf"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_0.8s/timeline.csv",
+    "bytes": 383669,
+    "sha256": "def8af7828bc784539fa460b73937ea5b9a6076293a526a3beb693a5a313bc73"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2601,
+    "sha256": "37e7779c72573cbdf7d4635f978eecd97567daf55a6a1c5542798e90a4d82993"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "2320dd1cc3f3bb7d3384979e770cfc95ce1de92dbddd499e2c8ca58e7522a67d"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "edc60fbfe76e723cedfff9e8433e37cc6c0bc10df44d8f39e04e574d21733dc0"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1693,
+    "sha256": "cc7fa3438b99d0d77fe89bfb6ab6580fb28662b67d6b6503c98e57a9959df542"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/probe_events.json",
+    "bytes": 9244,
+    "sha256": "6284aae650e62170f2e8a65250f87ecb0090fa90c92c98d849787cce60fcc22f"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b5c53f1b6601d562ce08d08cd4c6b399f4add10cc0d350c0e494728251b6298e"
+  },
+  {
+    "file": "results/B0_T500_A70_R0_dwell_1.6s/timeline.csv",
+    "bytes": 580476,
+    "sha256": "74bcffaac43b7e68437bff5d12e4f5c1e992c232fe91d4a3c6b3c598f2774ef6"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2569,
+    "sha256": "4d2f2cc12954714e962519ed4cf7f5d762ed1b904a0a026abd2d3fb955f0bfb6"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "56b67a2a8b864f23e41c951259a30fd5ce6fe529255c5e7619d99bd91da968a3"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "d3c76d01f4177c636c54c064cd84635607502c016219d18f38c64c767ca096ae"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1559,
+    "sha256": "25eda5acd14cb9a93b63c72eda4ef90144289c69865c27d8c76e21310e05993a"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/probe_events.json",
+    "bytes": 1474,
+    "sha256": "75af5011d0db3c1da25d9d6ba9cf2ddd8c840380d840d5863b2e9a1ae83aaa6d"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "5cbf3cfda51125e1faf3f2c97d977e2b3f692599ba1ba10eec173b680fe6f84e"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_0.8s/timeline.csv",
+    "bytes": 382722,
+    "sha256": "094c8d883d98fa8e4fcddbde6081a997ac0947ca5d733ad20dcf2846d29811e6"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2534,
+    "sha256": "768de7a3927f1f0a29672ef60d7d70096fe2a9b12a6820c3be4a70df0fd59928"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "5da9a89bf52303d310b1d51192bfb6c83f5fe5b68ba4b9fbaade49d4b2184497"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "df486d58d945e637d756136104861e11bea88bef0124bf1d80379e324080ae1a"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1544,
+    "sha256": "44e6e1e56b6b5c6383181e16703eb77c1a63619ed0f6ae58a3012c08c4af548f"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/probe_events.json",
+    "bytes": 7105,
+    "sha256": "177048380db0aac0948e822158b42bf4d44875a10abc092d51dcf9b2e35ca6a5"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "bf9ea1c0fc1594503e2b3419c6458ac01f959d6956ec2b7721e8c67fbe160167"
+  },
+  {
+    "file": "results/B0_T500_A70_R1_dwell_1.6s/timeline.csv",
+    "bytes": 580655,
+    "sha256": "94fad063b27eb71a9b69d1a0b58bd0e04c95aac950cb177c9a2cac0077231b84"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2569,
+    "sha256": "4d2f2cc12954714e962519ed4cf7f5d762ed1b904a0a026abd2d3fb955f0bfb6"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "d7ed5a4e0b57837400468def0cf82aa7d8f9b091ab21e118e52c5ef5f6a5db45"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "448df200688daa1719f9c7ad2939701acac83a4c583cb53a3fff50983116d116"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1559,
+    "sha256": "25eda5acd14cb9a93b63c72eda4ef90144289c69865c27d8c76e21310e05993a"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/probe_events.json",
+    "bytes": 1474,
+    "sha256": "75af5011d0db3c1da25d9d6ba9cf2ddd8c840380d840d5863b2e9a1ae83aaa6d"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "5cbf3cfda51125e1faf3f2c97d977e2b3f692599ba1ba10eec173b680fe6f84e"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_0.8s/timeline.csv",
+    "bytes": 382722,
+    "sha256": "9acfbdc0be9c8af5949afa1bd6c775c34cb85bdaadc243153e4248e17b56149e"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2534,
+    "sha256": "768de7a3927f1f0a29672ef60d7d70096fe2a9b12a6820c3be4a70df0fd59928"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "a3460785475ab60908da70524799ba186f36a65614c18421278aa1b0a6291b99"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "94ac8df067ada2674785c5258c53c6286215fc048954918c042403576610ab11"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1544,
+    "sha256": "44e6e1e56b6b5c6383181e16703eb77c1a63619ed0f6ae58a3012c08c4af548f"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/probe_events.json",
+    "bytes": 7105,
+    "sha256": "177048380db0aac0948e822158b42bf4d44875a10abc092d51dcf9b2e35ca6a5"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "bf9ea1c0fc1594503e2b3419c6458ac01f959d6956ec2b7721e8c67fbe160167"
+  },
+  {
+    "file": "results/B0_T500_A70_R2_dwell_1.6s/timeline.csv",
+    "bytes": 580655,
+    "sha256": "c08643560ae52c94f7dc89fb90fd793f2636f2effd89ac9b6770d6aab580b486"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2571,
+    "sha256": "09a6477c8a1ac665da96f1fc8d952f600878e586c7c858983b91c5ca4c5a5fec"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "ba162577ac720527a67ad70c271b7b038b4f25ea6d6be82d243ff808093379c3"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "e5654556ed376015ab5eff33a34e4e5c3b19e1d88300251f14daa641bded129a"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1524,
+    "sha256": "b87e8c650e626bd98b1fbc4ab28d4c086cb1d46dc7bb5deaec861c930a872465"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/probe_events.json",
+    "bytes": 2835,
+    "sha256": "10982856168bc95d688fc17983b4a0262bfe520cd553feb8ed6d8230237a2787"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "e4d985af709f0baa04723ed82a27f3a90fbbf4f7abb3fa1efb1d53b879ad0749"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_0.8s/timeline.csv",
+    "bytes": 383408,
+    "sha256": "5ab49b4ba1b271ce3b7280d47c44af15fe9d2e20c037ea191ad541579855837f"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2575,
+    "sha256": "dc7bf5435c6aa5e2fd6d5cf47fe93c70bcd11b4892383db0ac45832f48ad35fc"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "291d84268c54f07012da615109090a4827da784b6c18a5128ca6db346873afdb"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "d2264a628e72a04209bb9e87a61f0566b2f6ce0075026847083fff3a12035651"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1778,
+    "sha256": "8e3caacd63b550db69cf71aceeb2d4911807ed67ac89425c4df54b32729fea88"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/probe_events.json",
+    "bytes": 9271,
+    "sha256": "ff667afaee7d07051fb034bbc983129ad36c4dd798d0d48eb3fc672fa46e4c75"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B0_T500_A90_R0_dwell_1.6s/timeline.csv",
+    "bytes": 580284,
+    "sha256": "ca6af92bc5776d31a13f1519e390d3e05466947a873593c6d4de9ccc6d3bda7f"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2569,
+    "sha256": "814162b0c159cf23d1e11b2730d9f5f99b0c679ea05cfda18d1f91092cf8d606"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "e77732ed47f3e2144f9998756f1d5fa2607e33e7810abe59084c163caba18fdc"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "c7d88ceef9f32586f853974ee9e109033ea879476ec42e410c523472de13453a"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1582,
+    "sha256": "bbbadee757cd2ffec6c80b52908b897c7dd96a68e4766e1cbb6c9403fc452dc9"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/probe_events.json",
+    "bytes": 1487,
+    "sha256": "2140ce40d4d1d731a0c7d6c8aec7401e8320ebc848c4ac31d37ce89b8f00bff1"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "5cbf3cfda51125e1faf3f2c97d977e2b3f692599ba1ba10eec173b680fe6f84e"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_0.8s/timeline.csv",
+    "bytes": 382942,
+    "sha256": "d28653e554c1df8864d9fbfc7492d4ea37db5edea673725f2f20c71bcf515b43"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2603,
+    "sha256": "d8a330454ceffa7eb2bc76ea5e1a2396fd56b497b4c98abe0ba5c35669995a69"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "8abc8e42553677c24adc22fb6d0e9a9b61f51960985bfd0348ae0b9b5b0cab0e"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "c95ad56ffa0c4d7a0ecb46243ae8b90469511077a836fe726984c8b7651b7d8a"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1602,
+    "sha256": "e4a325cd1410482a4504d1915f9e25091098ca4b75f902f4546d9caf5376ba6f"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/probe_events.json",
+    "bytes": 8766,
+    "sha256": "43bf2a3e0f2b57b298be794e0d05110340c57944c7dca5af75c9822f4ca24dce"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "c951ab2dbea865163aa2ab0d454594f2679ea0b37f33fc0f4aa2318292f47935"
+  },
+  {
+    "file": "results/B0_T500_A90_R1_dwell_1.6s/timeline.csv",
+    "bytes": 580305,
+    "sha256": "f6db7d8c3f56ed8295b84ec4d744ec000d17ac8bd3eac877ec2627036919f917"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2569,
+    "sha256": "814162b0c159cf23d1e11b2730d9f5f99b0c679ea05cfda18d1f91092cf8d606"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "62d72879f81634b5c98ea39e0fe8a7e6f844485b0af56d97ba8acd7a081ae7e7"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/config.json",
+    "bytes": 1508,
+    "sha256": "1da90ee3f9f2539e169393436cd05ce610d8fd2f2e0b55abb70a816c26f8692d"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1582,
+    "sha256": "bbbadee757cd2ffec6c80b52908b897c7dd96a68e4766e1cbb6c9403fc452dc9"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/probe_events.json",
+    "bytes": 1487,
+    "sha256": "2140ce40d4d1d731a0c7d6c8aec7401e8320ebc848c4ac31d37ce89b8f00bff1"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "5cbf3cfda51125e1faf3f2c97d977e2b3f692599ba1ba10eec173b680fe6f84e"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_0.8s/timeline.csv",
+    "bytes": 382942,
+    "sha256": "cdde9dab61a50f443c783d25f5fb87014214290ad71c1f9950de99ad5bb560a9"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2576,
+    "sha256": "6f5f46d3182d6ce3ce55c090a9fee4acc1e32393b6bc7777917fad4bdfd67d7f"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "478a9a229aa065319de819977794f50a66cbaf01414953bbbe9b0716a8e79cb1"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/config.json",
+    "bytes": 1507,
+    "sha256": "fab1f0c2aa9356df4a4a0cccff325b83d753872d38296dd245935f6f6e26df28"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1697,
+    "sha256": "f02ec13d2bb7ad4890e733d1d4b9eaeec93f0eb9f91655c90386e096206b6460"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/probe_events.json",
+    "bytes": 8253,
+    "sha256": "d861eecaff0b0bea3f241f23c72d4c03a21314683f6e69b26cbab67c3c686be5"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B0_T500_A90_R2_dwell_1.6s/timeline.csv",
+    "bytes": 580396,
+    "sha256": "9a026d7aad64602550f53a8c14b4728201f29f70ed632cbd1e9dc83f368466f6"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2336,
+    "sha256": "6271d39bcd4a1134729abeb7290ee65333856c3829dbb5a8e2ae8e2d7b1b00ff"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/audit.json",
+    "bytes": 338,
+    "sha256": "622caf806ae4a59cf8232b50bb81b9d8972540975b8d54881440848fd1ba37ff"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "c36208071961879f8acece0004cacb4541db194d00a26f1c1a3291d91c9a526b"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1434,
+    "sha256": "b017af09a5025376f597bd37e2199b80669996a29dfec1ab8ca7f2f7574faf89"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/probe_events.json",
+    "bytes": 6793,
+    "sha256": "8714d25c151e2da831484c70efcab767096081b7df9006c57b3aefcca979c0cd"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/scan_events.json",
+    "bytes": 770,
+    "sha256": "8087f0512f33833190b432df59f8f2f12d9afa0aa95a2cb2eda5c4ce2e1e4e61"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_0.8s/timeline.csv",
+    "bytes": 304251,
+    "sha256": "930e2469019252b300ee8c72b09fb749cbdceb638e1ab111255d04d890c6b8e8"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2378,
+    "sha256": "dc97b4eddb3ad07e8484d3b5a4fedb72df4ccb4192540281d105154760f73960"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/audit.json",
+    "bytes": 338,
+    "sha256": "e6056e13f66cf092ce0634090ca50beb2a858e5a673f0a265c9eeec2c488dff9"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "5f5a6308d8fc25ee36710b8b85ecb78e1c75770d62b05bf732ab21cab4ea699f"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1414,
+    "sha256": "124d620bce3a0a9a9c8dc9d235e2d81312a273ea192e67aead23789163ad2d2d"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/probe_events.json",
+    "bytes": 15920,
+    "sha256": "31c8c03e7fc621ed1e9339b5380cb70b67ba1e5ae6424cb8ea814db4b796c38e"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1030,
+    "sha256": "b05e47e859e41882c83f67802847df78002e010614719e923f472f0c92a4ab1d"
+  },
+  {
+    "file": "results/B1_T100_A40_R0_dwell_1.6s/timeline.csv",
+    "bytes": 542228,
+    "sha256": "34d483d86ac6325de5d69379ad52c61a4b31f725abfcafdfadacc7174c441453"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2326,
+    "sha256": "69acbec92be97a87d4bc7bb912d9e46f1ce11218cadba60821601545b869f0ef"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "438ab0c8aaf5e6529cf341e7269b238c8a1994b77d62eea5599c9a390df262a4"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "1479fc41633a1feb5ec6f41c72d966b95071e71469920df38bb50be72af0d4c9"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1465,
+    "sha256": "72be81fcf3c1dd7a5c291a72e2141dbe283b1a57380295a930a610f9380e182e"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/probe_events.json",
+    "bytes": 3358,
+    "sha256": "f0607f4dc9993d73dbaa4bfd2a62922b31c2ad1095f90ad44d12e7e6a5072b76"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1282,
+    "sha256": "7bd60159ef7c171fc83801f2f1ce2d427b70b588826250588d5eabf9f460e35b"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_0.8s/timeline.csv",
+    "bytes": 366034,
+    "sha256": "82cfa807403962ab28de0d2c9c8d0cd73fab2c0e540e9015eb95f10da9bf3e03"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2550,
+    "sha256": "a0088722543e01abc0255d2a1d8393719b49bd8376c1803ad7b5fd11802d43ec"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "3afd428964783688800755ac198bfb1b36d01babf82301ff255f86de7f40fe81"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "f7bbbb33a6defda870be88a42e64ccb7d039563ac6afa7a0c690ea6ee7c06305"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1422,
+    "sha256": "1925f87eebd48af653a9b3eab3ab7ca2fb94b7f4fe66eed06dba438a543e5da5"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/probe_events.json",
+    "bytes": 10808,
+    "sha256": "01c7cd4e135218a7725c4042105f3db07226b2e60cba018e730041e75cf0f56e"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1280,
+    "sha256": "e2430501a127e4d996fc100a88b67e78ae03de6d45b867fa878d1f8dcfd83007"
+  },
+  {
+    "file": "results/B1_T100_A40_R1_dwell_1.6s/timeline.csv",
+    "bytes": 570386,
+    "sha256": "3f1b520973cd7f2f05cbcabab1a57ac39dc6208db607a512ddd6ee83bb4ec081"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2382,
+    "sha256": "8c3fafc46501c8282e701cf128923acae130a313de62ce1322d31fa49afd3a95"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "b18a7e51602f414198dc1ae138210b5f5e2132c8ce204e56cdaf3edf93af3314"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "055630bf92e038a1ea60825d855261c79eed551370c10e718a61320aa878b7a8"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1503,
+    "sha256": "dd32f276d18f6a5793a4af1e8a8460538507c0741874a4c2fc79e35c6c708469"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/probe_events.json",
+    "bytes": 2507,
+    "sha256": "c73c791c66f7f3cdcbdc1fd80de3bfdda039e5fa855e6c6ca6ca2a47e8d5b359"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1026,
+    "sha256": "7c2317d6688c37c76b0991b5005ecc7aeed1ea577de9b4a8eefd2a193c48493a"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_0.8s/timeline.csv",
+    "bytes": 336340,
+    "sha256": "f836a11f4cef0fcc8b3ff1d0a4a6cd7924eb28e6ed9ab7edb6eb468cbbbad69a"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2737,
+    "sha256": "90e523607abdc232e58c599a6cc22a8bfd981e3f86d058ebea7fb1b1358f0a95"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "b34f547c67dbf415520acc7820bbf451d28e7208d4ff7552e49b9180294d6aa8"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "955e50bb57d71204023974c5b2f79c70ccd35b8fb5597bc3c2daaa2f9424e875"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1507,
+    "sha256": "9c7d1827165bb3a0d5fe21a289f1441274652d11ca065ae08e885256295ae476"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/probe_events.json",
+    "bytes": 9172,
+    "sha256": "e7b8a9644d36ffa53c0d9ae5625415b68e3e6934f6aec71ae901ba2f8991b0a2"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1535,
+    "sha256": "157fc0091a6cf42c130e4f428a8ff9488bf20da0f10b0a935b4330afaee2ad7c"
+  },
+  {
+    "file": "results/B1_T100_A40_R2_dwell_1.6s/timeline.csv",
+    "bytes": 605145,
+    "sha256": "decae59c701adfb71d1da6b4a17a699eb0916f472c57cac0264308fcd05ab27d"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2283,
+    "sha256": "5e043d2e124c5e44a7426987b12ff8178cb3c26a01c6a6716f7a782c0ad91ce0"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "aa5e70600f2041ad9d2255b3e0838d53252d4f2fa39606f7bd7e81991b7d455e"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "b9e85e0818f5972922ea07713c5754f889871f757d6ccd4c238bed3f0ff6b457"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1429,
+    "sha256": "27e3fdebf8de20a81da8409565daa34bea100c1c19ba01f8eaf6e938f1c1b1fa"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/probe_events.json",
+    "bytes": 7457,
+    "sha256": "53eba7f90c92fa1b7b6a3a13caa24d8b63cdb7ce1c844fad9aeb7ab766a7cbea"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1029,
+    "sha256": "7a880e78af3342d07ed1e4f15ecd124448f3d454b4857633254d6f9a2e1cb433"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_0.8s/timeline.csv",
+    "bytes": 333885,
+    "sha256": "48c0447b94959f06a4ee586900921301982192da2ca34774204d958c9203292a"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2614,
+    "sha256": "d2720423d9e6373aaa74e96273de3402f6382231eca0deb13c097686052f1472"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "f91bef70de182d0037d93935ad0737b850b850cecbaca5b1d1b2a34a29747144"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "5e7ce891111a9914eac1194fb0853afa3b8387e8386b272e363402cbaad4b7a9"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1528,
+    "sha256": "c4f0d1d4af1990b8087d8ba64f62c07bf64363f6ce5f9b45fdc2aab5e5da3548"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/probe_events.json",
+    "bytes": 18186,
+    "sha256": "96566e3b54ded9bca7c1b58bcfc564ee7d31552ab61d33255548ce6fb3023afc"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1540,
+    "sha256": "d2b9182b03c65002b623172dd830bc93af91140b3c56113889cc8bb1bb6adda1"
+  },
+  {
+    "file": "results/B1_T100_A70_R0_dwell_1.6s/timeline.csv",
+    "bytes": 603507,
+    "sha256": "eef421894bc4cfca873e822cb6c935470a73ce103a75d81c38695e23c17e4045"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2318,
+    "sha256": "9f0a6013cbdaeab66a361716d41b5b324b2751c92ded28123e58d7fd9eafb4d7"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "86d1dc5809e0be72288133fdbe595689a958b460fe1570c7db36821ced6ea903"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "815f6fd3b9da83620b31cfcc28e0eed3c16054eeb29e5c0cf7905d22ab52ee93"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1426,
+    "sha256": "363ba360f91f38852ee332a07ac8d14698bd37a75eb03d3c188c760ea3fb7c7b"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/probe_events.json",
+    "bytes": 4626,
+    "sha256": "bbaa9565974619ee491905e1eec682275ec9e0c09210a6278bd49b2eb10b28fe"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1280,
+    "sha256": "5d90096fbb215397ffd469fd855cb6a24a832ab105f85528979d0cc95e9e0845"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_0.8s/timeline.csv",
+    "bytes": 364830,
+    "sha256": "8c61f8fdbfff8dba4c4e63508bc50872ece20bfe705e28ee06db14449f120246"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2575,
+    "sha256": "54bd8d5fe8c94197c77e55bafb208f2f19c967fec0ec1d9387cce8a519db7a72"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "4cb2b23735e6d56ac0182067319ac9b8cc5360bc67f17b433b77a8e283340373"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "2c7f1f50ec4cee8fa68b9bb4f16e2caf07087c574f3f02cab1cca1359015df95"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1466,
+    "sha256": "ff430a47c3f3954a1911b368d2cb5c2dd81ddd8e451ed53731a11436da86375e"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/probe_events.json",
+    "bytes": 14267,
+    "sha256": "ea76699f25b8eb18bcb554f43914cbd615b78eb0f0a14961d8ab61cfda1a4c63"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1534,
+    "sha256": "59dc6d9901149de5bed9619d6ff89809437c7fe26e267360df70ba4945216ad0"
+  },
+  {
+    "file": "results/B1_T100_A70_R1_dwell_1.6s/timeline.csv",
+    "bytes": 600629,
+    "sha256": "cdad88798b77e598e84faa58828355f7247a1dd95d79ed1be615abe05a22b422"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2483,
+    "sha256": "4829d7052c8153be252ee235cf30d5936ab1c4a09ae510ef43a6ace7448affb0"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "91a0d57e143e24b461eda2a3aa7c874ce64769b7f37e96142e77bebea5535cbe"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "09e0b9312ee32f1c557ba0be04ea9e6bff80367ab0a8898c647e76116db236ab"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1507,
+    "sha256": "5362262e69bc9f7d74c698b018095a58f685564dfe517c7c0db37edd7ace0a4a"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/probe_events.json",
+    "bytes": 3208,
+    "sha256": "2972bce7a39118efbf59bc80348f4d0655398abd3ed1bba1270c7f1e7948cce4"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "851db23092fe8beaec4ad8590928eeb2a5f33d03e88a294f68f4e0158a019a02"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_0.8s/timeline.csv",
+    "bytes": 399337,
+    "sha256": "05aafd28ce65ff95007b2a87ce64268bb77604c04faad4a76d561e0dea8fdbce"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2623,
+    "sha256": "bde4aa38b23cc0fae4a15a4d1b1a9eecc0eb0fcf922a0bb1421252da5e8c2a99"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "e658f5918909ce0a265e8ee341bf8ca311fae53c28e29ba05352a7a4a4a00a32"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "9635687240ff920b7398c521d8b01538009316c1c7416aef010562d10232f99c"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1496,
+    "sha256": "c965344e14e5bd3fb1756343cd0c00b0d174f068ce5e91868ef38145be5b69b9"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/probe_events.json",
+    "bytes": 10651,
+    "sha256": "d8b17c99e5431d5a9938f599dd3024477d0504403605aa9ab2fcbad20f1e6d71"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B1_T100_A70_R2_dwell_1.6s/timeline.csv",
+    "bytes": 602419,
+    "sha256": "b62d0637481cd3818e87a1af07a144bd1f64ae4534df6d533686f67f79884d38"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2307,
+    "sha256": "32b787753c45bc96177205df274ae753b961a810ad3c34020006b12c530d86cf"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "fbc256ecb8d063ec371d45d40e238f137623d8af67ed9eb6a65ead3cf4b1200a"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "6494dcc1bfa9899c7d8309df590feebe1894046fca521af7aa439228ef6be19f"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1411,
+    "sha256": "e9fcc112c01549780c1fc1eb750fe8a6d4d0e32f691bbdb065cc876b2ea3115a"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/probe_events.json",
+    "bytes": 7665,
+    "sha256": "df6b0477b2d682d9c656623f00204fe3f6e927b6c71259b61cee8a387e239497"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1539,
+    "sha256": "84e5e61ed9d1d05e986f911ccc8d4bb7c09e92811c600fd570ec3d84978a5894"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_0.8s/timeline.csv",
+    "bytes": 397877,
+    "sha256": "46bab9df586b9e14928bdc20f66ae0905d3f46e83469410776f32462e8664fbc"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2466,
+    "sha256": "31e9916a5ce107c9fc33f5af1c1942b6f3c61716bef54f90d7a08e93e0668e88"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "e9b3a2a7bcc0e79afe508a2caf7c84fa1d9090112b0135b32bd5fe4ba7dbec63"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "3c3716dc1f65774689247a848a5f432f835923dbaa0a284c70fe7a40b5bd4586"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1441,
+    "sha256": "846b76a3719522be60b23bd0dc92ff7901af5aab13d7d8ef0c2694955cf320e5"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/probe_events.json",
+    "bytes": 27599,
+    "sha256": "89fb8a56ba2671646d9be91bf8c600fa59b1e8e3b7a464c9f8910f4e4b4bf563"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1283,
+    "sha256": "4993a1322bd96efd2740ba74e216209c8e26dbcb073743d3123f224b86cc8298"
+  },
+  {
+    "file": "results/B1_T100_A90_R0_dwell_1.6s/timeline.csv",
+    "bytes": 567013,
+    "sha256": "2d91c6f3e14eee3b3d89f1411bac20743a35b6abbe36ae4bc6ae1ffb8ad7aa7f"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2336,
+    "sha256": "2fc4293914a223ae09ba9253b0b1612876da53c0ddcc09265b9983704a040bf8"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "d751771b5e96182585a2419b907973230bd99055dcf7ac9692d8ffa57c3a7652"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "f857bb26e2b6c182a0cddc3c4010845ed8719b78f770494ce3e55e5815c02fb1"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1406,
+    "sha256": "6108aabe18549a400a480e1e811570b53cbc8a0c9493af55779601206c40c3dc"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/probe_events.json",
+    "bytes": 6270,
+    "sha256": "cd8692d7de525325298ebe2a0cf24c41bf42842ef7008cd7072a0251f3aa7e09"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1282,
+    "sha256": "a4a291634a904644b062ddd9094d91b30d0831cf201c208339fb64fb9debb7c9"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_0.8s/timeline.csv",
+    "bytes": 364453,
+    "sha256": "4715de2b3f948b57edab5db6c951138119b43e2fdd3aed2e48164184e676ef34"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2506,
+    "sha256": "90e17edac94caf2506f64f6d6ea2b8db730d0c1f2328de4338c95fb146bbfe6b"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "1958adcbc9661a46d8105aa3f4a85e885f54c34722dfabfb66e21d3c8744339f"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "c763e26017923d01f11ce55790e6a8ae32a9affc0786882fb456da1e3be36ffa"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1498,
+    "sha256": "19407778274d69792f921704d57f2294e49d8829b0544ffe2dd942633c809675"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/probe_events.json",
+    "bytes": 18828,
+    "sha256": "b3df10dc5c96fc419c940e4dc75ec62cd8edbb4f6a77c1e9cafc5500dafd4e08"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1536,
+    "sha256": "0537550d7f4f5d6d00136d65fca536797813475762ed82ab886f8582a732c3c4"
+  },
+  {
+    "file": "results/B1_T100_A90_R1_dwell_1.6s/timeline.csv",
+    "bytes": 598866,
+    "sha256": "ed0658fce78ca82a100c34cc78242dd5125a5d8efaa32e0a0b8b30651acd3cd0"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2474,
+    "sha256": "4c9e0366d5268da37a3e2946376c9436e2fbb0bb3ec22dca3e4ef28a72485942"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "ccb9ebf57d0f273cfc0c49f34111e45db2ef5b7e68b0e6a86ff1a9a7bbb94163"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "af21863109ed352ed0a24b245f05794db5274188b707647c1e814ee7bd33d019"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1447,
+    "sha256": "6284dea0ed519a42c3f93b4044b413807cd9bd85265d5ff1bf0883fa24d9abf1"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/probe_events.json",
+    "bytes": 3709,
+    "sha256": "53e8c2fa76c6c124f923f70e278ef8fc2d05fef1a6563ccba04ab575f89bbe14"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "3feb8147ebf0a691119616446c0b48b3710ad098ccee3f1e91fa8ca2a2b09cfc"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_0.8s/timeline.csv",
+    "bytes": 398476,
+    "sha256": "700d796fa8ad5897dbd2f41e156d0581b2c3cc928c8222c5335745a856547df9"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2639,
+    "sha256": "4a81366d4b862e4a7ad44f935ce946436b74763a6f8500e0cac58a1aa9adc242"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "9632c9d941cbaa3f2e57ef2aa83796f6a185bf763dc7af59074a61e6d340a12c"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "b80cb6842478f76f1a8cf67e4c75c26d627a85c9d22fa0d205021a21f0ae6181"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1708,
+    "sha256": "25f8c6368c1adb1805bc5669a7f6bf0a51cfd7a860dd63daef50bb5afe4ed26c"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/probe_events.json",
+    "bytes": 14055,
+    "sha256": "3d3c3a57401acad7f9e48c44ae10ad8da0b371e9f3ceff260a8f0707b9ce3849"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "d7a08542ef30ccf7be276bca71958af97e594734dbefefc0131fc15c3092dbd8"
+  },
+  {
+    "file": "results/B1_T100_A90_R2_dwell_1.6s/timeline.csv",
+    "bytes": 603446,
+    "sha256": "43ef4990342e4a2c5fe49530914cc16e4dae109879d6fa20d21c2174415cbcc7"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2365,
+    "sha256": "3d2e9aadbd30589380bf7ba488c41fd1d73f02b1f7b55ed02a4b05239baba072"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "178b0675f31ab4dd8cafee574cad81b3d8c33fbb1c7fb52caceb4a499f7c4883"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "e259d561980ad0782c5ee90bb976f609f3d5dbfda1956eb4e7ec739e16fd49a2"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1464,
+    "sha256": "fb01417c15c39daa2e0678fd8bb27e1cb5de91ad61cb48d15f728c607d3f92c3"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/probe_events.json",
+    "bytes": 5356,
+    "sha256": "c819efa725d5da9cc245114ed4a969d742868d15e15c0b3463dc31d2141241d2"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1029,
+    "sha256": "66306028f3a142ff42b43a33d5d0b5524fa3d41c410243c7b2e3a57821377446"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_0.8s/timeline.csv",
+    "bytes": 335531,
+    "sha256": "82fda9cff93b04afe728bdf9f84c8010e93e109ff0f360ca32a2d7518027cb3b"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2536,
+    "sha256": "9b2807425e99ea3a19f69e97168625cecba323725d14a440eca0889a89ddaa77"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "b19e755685b7477fd01acf03b1955ec9f3f7590a171c0d7f4578145c5ae2d2d3"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "4e10087516bba821fbf69bc97d5aad52e9da55b73ea265cd9a5e92d30d0942f8"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1580,
+    "sha256": "962a313a5b10ec136e0ed3a849fb5f8deab50d5c0596b42ad226151df50b606f"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/probe_events.json",
+    "bytes": 13847,
+    "sha256": "9973edb156eab305aec840081ce186c5cd8e8e327010ec7eb682c2e3b0d5165e"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1030,
+    "sha256": "b9e3a2e66e0fe2817d71648b535432ce9cb6c821c884d355160f8054a8fcbcfe"
+  },
+  {
+    "file": "results/B1_T300_A40_R0_dwell_1.6s/timeline.csv",
+    "bytes": 544024,
+    "sha256": "9f6de1cd44a35f679256d94ee8af632f8911f23151ba9a6455f31ef84b01d60a"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2420,
+    "sha256": "912a4a74218e10730b1dc23c09c116fb8e3d0b971134d07621e6201e276d613d"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "e31c34ea2a20ef5d968172b8cf2916fbac5c5ed6ead091beaca0a51c211ebf64"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "81321e0891ae74386bceea97b4bdab1114c23d4c54266b2f0a1497fdea964893"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1481,
+    "sha256": "55536fc371f293dab4758ea72b5d93768a49ae9d45a2ad3a7868a6fe9bd4b602"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/probe_events.json",
+    "bytes": 3025,
+    "sha256": "8fad6aaf7db5fe1825e9f9656b0690bf2adc8c15765f9d45baf08fb52cd074f4"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1026,
+    "sha256": "7c2317d6688c37c76b0991b5005ecc7aeed1ea577de9b4a8eefd2a193c48493a"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_0.8s/timeline.csv",
+    "bytes": 335818,
+    "sha256": "c3ca8cdf498b433da37303d786e81ac6e45d7a73962ffcc95562a2ca3bb7c72b"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2576,
+    "sha256": "17e16a80f4d48660c81ac1af1b595127349ae8c97df329f32e0bf288ccd74b83"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "abbcc63353b63d46a44c74095e9284cb9f40a4b5ed2917ee7561203b19e95a5b"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "09cf5daa8b8ba472b924fce8481d5109641c8f05525a82a5647440028f76e164"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1624,
+    "sha256": "0b416b0aec39e326da8deef9a721774b9edda4d4899df4ecd4034d4eabbfa60c"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/probe_events.json",
+    "bytes": 8680,
+    "sha256": "e47e6f365f530cb95d88c52b959dfccd0c9ff411f1b4bffad5da9bd07efc1a3f"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1284,
+    "sha256": "89391f6cc1a471cd72a237737a7fae733f659ab4ae70338cd9ecbc5735c56b11"
+  },
+  {
+    "file": "results/B1_T300_A40_R1_dwell_1.6s/timeline.csv",
+    "bytes": 579386,
+    "sha256": "c7e15c642da5e11273b4f11554234a3929dadd37f2da70c026817c466d99e550"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2417,
+    "sha256": "0184c2f1fca56fb14e1a5c61576b433c35c014d37e526df5d7ebb9222ae89d48"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "5d5df9714c5ba54bca97a0753024ee56e2e9d8b78fe41d2c4f25328f1bd6bbec"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "19f188ac9d3a77d257834ff858d7cde685710ff7cc61d7b3ec12adea24eca859"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1502,
+    "sha256": "aad6d22e7f08ebcdea4d34d99c20f75acbdee6567b0fc7e832170888f5b98b0a"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/probe_events.json",
+    "bytes": 2506,
+    "sha256": "3313171e98b740b9a8b75f6f94d802844f6485bc00e24586423f2934802017c2"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1026,
+    "sha256": "7c2317d6688c37c76b0991b5005ecc7aeed1ea577de9b4a8eefd2a193c48493a"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_0.8s/timeline.csv",
+    "bytes": 336121,
+    "sha256": "f01685b8c51722e86243e5bb8282f7ca1ef72ebc2a69fe5935ed80fbf06749df"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2560,
+    "sha256": "7651792ca02c2bb95a73a10ed3e188f648d7e9311ca70fadd1637ef25557fbf8"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "853182b7c7d4b7eae33cf870fb385ecd7e65ab7b6da171b44c890c1ebd35e907"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "8dc37ea0f88cec2f8e435745151959d58e9fd59601bd12f0443f38295000e0a3"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1567,
+    "sha256": "f4c57cfb27e8155f3d04c6509dafe34a91a94f86e0bb1579ab612d7b47d54ae1"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/probe_events.json",
+    "bytes": 8570,
+    "sha256": "30155cc1b3f065d3c2418f6c39e7a5e54f39ec44ea31531a094cddbc849f8e81"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1282,
+    "sha256": "b70416351ae1aa4b3191360671ca64a262d67aff76531bea9c6e813fc86263c8"
+  },
+  {
+    "file": "results/B1_T300_A40_R2_dwell_1.6s/timeline.csv",
+    "bytes": 577284,
+    "sha256": "599dda04ea23371634128d72eaa6f148b25806dbbd2ad2ae3d066a4b8618e4ff"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2301,
+    "sha256": "c2764a9560cb1104f1b6c3d48fb98857f164ba686c2ffff55eee458f1b0e6715"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "2ea5dd6d4903603850feed6f785a31790657579d2b4bf95053f90f87420800c2"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "02ac0211a280e776a821c9ed999ff1d89efa0ab7022a354aa326da7106764d5b"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1426,
+    "sha256": "9c3b62f0b9305a35a14b17c7b5cfc2662e9d127bf5d68d5c963494b7d9865fcc"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/probe_events.json",
+    "bytes": 4117,
+    "sha256": "14a5e08aca07a5390104567b1b8fa2dc8c39ba2862a0e300792ec6f85756f867"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1280,
+    "sha256": "5d90096fbb215397ffd469fd855cb6a24a832ab105f85528979d0cc95e9e0845"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_0.8s/timeline.csv",
+    "bytes": 364921,
+    "sha256": "c12847e61e3e41a586aa4a54bd451e9717fca5dd4e575079068cfe047ca5ea6d"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2613,
+    "sha256": "40c5753e918c9ff7b7c6913eb354c443d7e1386bdf111befa0b124f6badf94e1"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "91e54ae98a14bb0b4185d8cd18c18cfa26dce81c73483fd9edd69f50ffeb7782"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "102b2c5dab5d5b35ef2a8d3a0465ea26c6193d2c23b7b4dacf5bf416e7364632"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1459,
+    "sha256": "d201e07a246db88742c73ddc4b2887788e588fca93cf8d9da9105736ad725960"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/probe_events.json",
+    "bytes": 12383,
+    "sha256": "ba91312a5a4777757d427447a8d4a80d00616e5e8b10e1f893e8852b9cd9666d"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "551b8d2c84fb7aec52e58a8d7c37c7e3126ce73d56edc479b35704a63ddfed6e"
+  },
+  {
+    "file": "results/B1_T300_A70_R0_dwell_1.6s/timeline.csv",
+    "bytes": 600077,
+    "sha256": "1c809ba0571545e04c8babb6304b3af81629de19fa21c4fc50b84820e34eea7d"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2398,
+    "sha256": "378480dacd887278770b1c5af1f03539213c788cde3aac66054cf9800f02349d"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "dc096688e70f180d2b86376f0caaa513114dc9041925d9b1468c822e18cc280a"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "d8428e41236283d577c19dbf67deb26bbf9bf0a0779adb3ac98534e7ce31a5c3"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1469,
+    "sha256": "2b037817b94a1279a4cfa5d4e91088b9ffd5ecf2a9bb9432e132dd31a7cf079f"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/probe_events.json",
+    "bytes": 2554,
+    "sha256": "17e7d923601f6ece65e985a3dd4fc754f1ec901b6b22a1974c80c82201dff633"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "a559c108fc0fb7aaa2ed733272b6210111a1d171c5fe588bf1595d0221425c06"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_0.8s/timeline.csv",
+    "bytes": 399210,
+    "sha256": "16007b8a909b0cb962fdb8b3f1fe8f2fcd744c908b47bae13e349084153d99b9"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2690,
+    "sha256": "01b89b8bc094e15418248aaca419722e296f75aa84afb4afb43a239c1d7a4dcd"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "76bfbf45187a1bb124f79007d8052cb1729bef992cb4a5de768246e6b6674aba"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "08b3e0a5fb06bdf5c87118d609cc8adf7ee9ed7a84b1d8e6eb3f582a635d195f"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1552,
+    "sha256": "4cbb96e01fd1622b573f50f6c69c38199d9a648aed20fcbeec2a0057feee4521"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/probe_events.json",
+    "bytes": 9818,
+    "sha256": "2b589f7795163ce735edf076a0e1e38625bbb397deb20ee27c6f4abfb1be5a37"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "72ebdfd9752ef60562fb95271bf5675a37a2ef9b5528e0d7e5c78922f0ecebc0"
+  },
+  {
+    "file": "results/B1_T300_A70_R1_dwell_1.6s/timeline.csv",
+    "bytes": 602370,
+    "sha256": "6e3027535d0bca8a93083e53cb7f51c71d8151d1d42fa174bda322069a2d4e6c"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2398,
+    "sha256": "378480dacd887278770b1c5af1f03539213c788cde3aac66054cf9800f02349d"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "f7a576988128b500c4afb8adf718096dd729eeb92e78d0bb993577efbff9c3d8"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "294c2c02a8a3313e844ef3f154463c936c6bdfeff8a6a27557732d67d996e16d"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1469,
+    "sha256": "2b037817b94a1279a4cfa5d4e91088b9ffd5ecf2a9bb9432e132dd31a7cf079f"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/probe_events.json",
+    "bytes": 2554,
+    "sha256": "17e7d923601f6ece65e985a3dd4fc754f1ec901b6b22a1974c80c82201dff633"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "a559c108fc0fb7aaa2ed733272b6210111a1d171c5fe588bf1595d0221425c06"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_0.8s/timeline.csv",
+    "bytes": 399210,
+    "sha256": "261073f9a349af4350daa921998b8875843785aeff0b27999392b459f3fd7b4c"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2690,
+    "sha256": "01b89b8bc094e15418248aaca419722e296f75aa84afb4afb43a239c1d7a4dcd"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "b04a9526ae36674cc172171e6ec6adc3e31f2a8576dca797f9d91ab409880984"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "32627318a895ee8aaf8c98bf27efc1816952a22e8f903f5f91fc0b11e70f3d13"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1552,
+    "sha256": "4cbb96e01fd1622b573f50f6c69c38199d9a648aed20fcbeec2a0057feee4521"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/probe_events.json",
+    "bytes": 9818,
+    "sha256": "2b589f7795163ce735edf076a0e1e38625bbb397deb20ee27c6f4abfb1be5a37"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "72ebdfd9752ef60562fb95271bf5675a37a2ef9b5528e0d7e5c78922f0ecebc0"
+  },
+  {
+    "file": "results/B1_T300_A70_R2_dwell_1.6s/timeline.csv",
+    "bytes": 602370,
+    "sha256": "79c0cbc15254e96c54cf0575fb083e910721346a71ab9d1e2791f8d35b0c7594"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2486,
+    "sha256": "57648b389fece0055aa80b8cb54e3f2a94596d27285f11cb2d1c2e1f2cbb6cbb"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "100a489f63b2ff9a4177a24d974a07bffea899f6f3f5224b74976c16369c5608"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "a78b80f61b2035cffff1600e8d181a4623ded858621d8a6004b04923f2a676c3"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1448,
+    "sha256": "7e1e88864d5b81226e93982574790200dc0ab1961d61298eb3ca871a1ca48df6"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/probe_events.json",
+    "bytes": 3721,
+    "sha256": "5e8ace73142a3095bf765b65a1db9d2926535d61e7cd32da557afd1abc40e0bd"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "3feb8147ebf0a691119616446c0b48b3710ad098ccee3f1e91fa8ca2a2b09cfc"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_0.8s/timeline.csv",
+    "bytes": 398404,
+    "sha256": "969e8b7200117275772ced99a8c31066fed26bf107b07462de7b287fd3969cc9"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2549,
+    "sha256": "9fc9fc14577cb05c89bde130fc85f9fe6a11ee19af2dc4759592455c4323055a"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "70f2e734608970c24874457ad2623efce253f80c90e9db062f181b684904e0ed"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "f71800773c8e09e6a30d6c668a6940e547f302b43c35cd5a37d240db12f00950"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1601,
+    "sha256": "271423d5be29c5566901fc6d6f9e0590104d69fc3bf8ec5b85a34c3e900298f8"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/probe_events.json",
+    "bytes": 12345,
+    "sha256": "d35a56f4280d400e94a117d8ad88695fa65244f0d0aebc77483970f8dffebe8d"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1536,
+    "sha256": "8059904d77f98b7bd506713a630e1885761989addea653d4ad66de5038cac6aa"
+  },
+  {
+    "file": "results/B1_T300_A90_R0_dwell_1.6s/timeline.csv",
+    "bytes": 601123,
+    "sha256": "a0cb0782527d07af9f89820664ab50f34690dc1292a487929db9c7cf409893e4"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2458,
+    "sha256": "c400f17c188f7803ef073437bf90da476adb98a0d7b9054d1749300aa13197dc"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "1e02702ae162bbac17c973b30bdc5fc65b49dd334db0945f762eda0aaba53fd0"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "5f027c6b47175d4bc6e400f1a180d839f37f1d6c5028bca68c9bc4ae7cfe3791"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1468,
+    "sha256": "744ed5f36c4ac665933978819403ac4b32161e8afb9f4547823dd73ab45ebab9"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/probe_events.json",
+    "bytes": 3185,
+    "sha256": "e410e3fb603d141a1da7f8bea86e7c86d8093f1a0439468fe72c34169053d488"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "3feb8147ebf0a691119616446c0b48b3710ad098ccee3f1e91fa8ca2a2b09cfc"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_0.8s/timeline.csv",
+    "bytes": 398572,
+    "sha256": "4f933d95b4b54a7d1f3bf92aa5eb43e372683bb0b69d3757eda16ec2af87375c"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2561,
+    "sha256": "4b4b06d8eb95befe7b5ac0f5dce550e2c14a7679576de21b1536c1cae8be0ba6"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "e6bd74540082de39deb3cdf7387caaaf01ac58ece9d0e57151477797b8af79c2"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "32c8668d96d4e69f459d89e57e81342cd6005d26682c99072088bcd91e4b1c20"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1598,
+    "sha256": "41236cd143f8f8ff5c3b04a790ebd61f9be7435d0515272a1fd1d839b95d2c1c"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/probe_events.json",
+    "bytes": 10279,
+    "sha256": "aacb646b587a69d995a6bedb209a5fb443494fdc4b4260c5109819d0686a05e2"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "1bde8079bc989c540172f6d758c5f0712b6ceb390859bb7d94a864f3662edf96"
+  },
+  {
+    "file": "results/B1_T300_A90_R1_dwell_1.6s/timeline.csv",
+    "bytes": 600881,
+    "sha256": "b8e8ed9244e710dc7a93b38b9bae172ac66b9f83694c3c50d8aa8f0096d1f2c9"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2458,
+    "sha256": "c400f17c188f7803ef073437bf90da476adb98a0d7b9054d1749300aa13197dc"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "b0164c92881dc0aed5f8fb7f67751de63ada27854c464afcd29560033b86ac51"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "737cb7f7be1388339bbb667b4460e6e9cb47bd045c4c6fadb3c33ae597784ce2"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1468,
+    "sha256": "744ed5f36c4ac665933978819403ac4b32161e8afb9f4547823dd73ab45ebab9"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/probe_events.json",
+    "bytes": 3185,
+    "sha256": "e410e3fb603d141a1da7f8bea86e7c86d8093f1a0439468fe72c34169053d488"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "3feb8147ebf0a691119616446c0b48b3710ad098ccee3f1e91fa8ca2a2b09cfc"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_0.8s/timeline.csv",
+    "bytes": 398572,
+    "sha256": "b872e9cee7d218556bc58b349f5964a0a91b0372d2adbccd59660791baed846b"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2561,
+    "sha256": "4b4b06d8eb95befe7b5ac0f5dce550e2c14a7679576de21b1536c1cae8be0ba6"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "a1414ae79521aefbcd04af91a7b2d6a9b38b5b12734b9475abc76781ec288d61"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "3decc5f2391df42f0f3b6e92871f9f6a3019e41a22fa8af75d9e46a111af63f3"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1598,
+    "sha256": "41236cd143f8f8ff5c3b04a790ebd61f9be7435d0515272a1fd1d839b95d2c1c"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/probe_events.json",
+    "bytes": 10279,
+    "sha256": "aacb646b587a69d995a6bedb209a5fb443494fdc4b4260c5109819d0686a05e2"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "1bde8079bc989c540172f6d758c5f0712b6ceb390859bb7d94a864f3662edf96"
+  },
+  {
+    "file": "results/B1_T300_A90_R2_dwell_1.6s/timeline.csv",
+    "bytes": 600881,
+    "sha256": "a6b33ed6e6ab5665bd7fabac85fbdb985a84ecbba2923c727cd5833c2db6bb16"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2461,
+    "sha256": "b0ea07f7d591db5875ab28240ce1063fa56a9d9812d2c26a9a0d2aaa39499bf7"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "8f45412752d602084bb737623839ad9bba9fb4ad9767300f3f7c06411e3498da"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "5aa038a4a3bee347276f50edcb993ed628d407a4e77e9885dc7253695d83b1b2"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1508,
+    "sha256": "0a8a70bce8edadfe26bea81f03c3b7391af7bea8f01050554fe9c21318a6d96c"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/probe_events.json",
+    "bytes": 3845,
+    "sha256": "59e15c07cdbe2efa3bf6f3504dfcaecf1316d1969f2d8ff81a8c5386641f28ba"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1026,
+    "sha256": "2a8ae0f4431057cd90f0d1ae3a59ba0277e7217465062cc6451f579d7ca12090"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_0.8s/timeline.csv",
+    "bytes": 336464,
+    "sha256": "4992d920097ad68eee232117c79183999acc94baad1c9f042ebc3aab6fe18ecb"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2658,
+    "sha256": "bc77830a709fad83231c2ec6d88223ea08cb92052ee8a7afb673822779978bdd"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "7a5ed16c6b15530e7905a06b2805f6b81300af945943e588bb1f009a71aa972c"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "03f80f21edfef54af71958950d8861a563afdedb2384860c23cb502feb4c5045"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1661,
+    "sha256": "5ed49867d4e7c448ff8719452f319895510a2df0e3eb9de38d468d957593c1ff"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/probe_events.json",
+    "bytes": 9179,
+    "sha256": "2c99ad76e17b1c6b404b8af9af43341154be25d9904a353e100631a8429030e8"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1284,
+    "sha256": "fe315dbef14e1f099a9dbc3aabbe66435f5d45c8ae2b97c346075c6917f587e8"
+  },
+  {
+    "file": "results/B1_T500_A40_R0_dwell_1.6s/timeline.csv",
+    "bytes": 579695,
+    "sha256": "af035603512d034a364a6cb398b3a2c00fdaa79ca27ea07f3d00bd910294fe11"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2473,
+    "sha256": "b2ea5e49c8b8676b603399b8e4faf6c425003e54e91675397f7533b99236a0dc"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "ab26480aee9f57580101f5dcb7de2752df65b6ab3e450dbf782a3b9c97befd9d"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "7d603d6e32b6e0b3fa9fcaaf55b90ade2f69c47d35c61641eab549e83ceb5124"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1506,
+    "sha256": "b138c1f04e8d765bae75e18581de21bc39baf41bb8bb241cdc395b5a2056a013"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/probe_events.json",
+    "bytes": 950,
+    "sha256": "7d485b45b9b424f54abafdbdf76e494c9a4cd990e26aafde47f34f57b7222716"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "0a8c2d00b5fe2077389f45b40e41a5031ddc53d8ddd7ab7712750edb4586b7f2"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_0.8s/timeline.csv",
+    "bytes": 397677,
+    "sha256": "e8b58f1ef774e8159631234da1ce466b70d97849909865e7c2fac899ca990130"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2568,
+    "sha256": "df9665ccb754d21d402d2db2c1db318e41d5858f4011b1c5c542a5892d9a7eb9"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "49adeb1cd09f51cf70b7c357fd0ef660d659880303bd2470335d76fd9c27a9e1"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "4162340a4f986b972d90e983c8a35b09088f69dc0153ff08fdc021bc4c3a8293"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1578,
+    "sha256": "d935c4e58863096d142ec1a03124c6167598365c0a0029f8bcc4c853d667d7bb"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/probe_events.json",
+    "bytes": 5103,
+    "sha256": "46ca76dc7cefc42ee8f3bc656a4a311c8f353a31222fc0f3607d17b466d77f66"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B1_T500_A40_R1_dwell_1.6s/timeline.csv",
+    "bytes": 602611,
+    "sha256": "5079bdb66b9a9713e18e54f88db72f637293f46312e5087b31a1acb1c3306d6f"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2473,
+    "sha256": "b2ea5e49c8b8676b603399b8e4faf6c425003e54e91675397f7533b99236a0dc"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "b78afba611d3c93d3957313ef7b20627f994643bb216b05fb4cbe97831f3770e"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "637fbd1eaecb0ddacd7101c76556b7146c2f11ba26fc50582bef202faa44f0d3"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1506,
+    "sha256": "b138c1f04e8d765bae75e18581de21bc39baf41bb8bb241cdc395b5a2056a013"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/probe_events.json",
+    "bytes": 950,
+    "sha256": "7d485b45b9b424f54abafdbdf76e494c9a4cd990e26aafde47f34f57b7222716"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "0a8c2d00b5fe2077389f45b40e41a5031ddc53d8ddd7ab7712750edb4586b7f2"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_0.8s/timeline.csv",
+    "bytes": 397677,
+    "sha256": "78e8ae6033f48448da38e3108a27577003f6d37a9832704e3423afbef422f049"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2568,
+    "sha256": "df9665ccb754d21d402d2db2c1db318e41d5858f4011b1c5c542a5892d9a7eb9"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "b7fc853dcda53c048201647302a434fb1b1c674d2e4bc81dbcc70942c93e4b2b"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "eba0ef38babcb21e8edbcaacb893919829f31caf3a31caa2f04e28aeb14dba12"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1578,
+    "sha256": "d935c4e58863096d142ec1a03124c6167598365c0a0029f8bcc4c853d667d7bb"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/probe_events.json",
+    "bytes": 5103,
+    "sha256": "46ca76dc7cefc42ee8f3bc656a4a311c8f353a31222fc0f3607d17b466d77f66"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B1_T500_A40_R2_dwell_1.6s/timeline.csv",
+    "bytes": 602611,
+    "sha256": "2d38550b2074c2cbb6a11202a9a809b2cbb939026fd16459568de63952cfe1a8"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2481,
+    "sha256": "27646a8287dbc4ca2d0c3c4ed5b3183a34529ee8af77de1208248b7ba4ac6d4d"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "b4d943ea3069a05c82549308dd6e353a1b7859afa0310e926d23f393a6e27382"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "40485313cf7b2361b02d20157434cbb9b4d69395e0dfb69f6595987de8054ccf"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1511,
+    "sha256": "1c6a73561357c0c627a6d7fafacfccc31f93762c3098de2500c11a3180a72a7c"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/probe_events.json",
+    "bytes": 2670,
+    "sha256": "732c53300f43e455c88d2c8f3125799fc05ee6bdead0d3b2437b9313dad5ed69"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "851db23092fe8beaec4ad8590928eeb2a5f33d03e88a294f68f4e0158a019a02"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_0.8s/timeline.csv",
+    "bytes": 399271,
+    "sha256": "3503d451ab61df590f9ed0aa23e2867a7efe679679d0f9f0e4417c2dd6ee1e8e"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2745,
+    "sha256": "72f45613cf24d93e593c3eda9799d1a825dc3dbcea45810544eda0a04eceb71d"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "d510c9baa628106e9cf704616550560ea7fdda62b96a660658cb1ed4f38c09d6"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "72fcbe3ee7cb3c99b5907d5b5d68fd1babefa5ea49574927008c632d081f5252"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1588,
+    "sha256": "65c061dc1b727b605a163dbbeae0d3693354c6880db13d58db7cd925861d120e"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/probe_events.json",
+    "bytes": 9222,
+    "sha256": "7506ae2c064ff169ceaffcc1f02ff5fe7bc7803e098358a5cf8599f1fa2a695b"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "8e35e5358e795ba8565ce6386d5d6c84129da8d73b9fe2187c8c71cd4fe17ec5"
+  },
+  {
+    "file": "results/B1_T500_A70_R0_dwell_1.6s/timeline.csv",
+    "bytes": 602389,
+    "sha256": "8a1aed364eecdc36cb1865046fd6cc1f7135f92ff0378ece8b8120fa417afeca"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2544,
+    "sha256": "b7ff7288a18274aaf95f559ce9db45e30fef4949906987fabcc75dcca5e0a477"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "2f7b4bbdb12b30240178699865a1ad3bc26137de0afb4ac2a4797a09759523f5"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "f7ce70c3e88b1b9547bd49f064b5175734392ef16217c3966a830514545cd2a9"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1500,
+    "sha256": "1257f5d8d80c765ce5bfdd81eaa1e16554d49f3bbf655e978b76d9e7900d3200"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/probe_events.json",
+    "bytes": 1515,
+    "sha256": "08d8924465ef8257ec5f76c343ae96f5ede3acb8d5cf884727e4d5eaa04d0468"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "28d906320470353ce5018a4da262ee762e23e00d78d4724fac7ce7e68146d6d9"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_0.8s/timeline.csv",
+    "bytes": 397914,
+    "sha256": "4dfab9257b132bb0ecb20be5c4343d1ac2134112ec506a19159df7b856795092"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2628,
+    "sha256": "158d5400d18fee8941e59ea63c66e6676d1e3dd453a221d04e0f3e40d68d5b9c"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "4bd452e502b6a550aaccc14f9364a58840fea008044d598519be12f55f95ef32"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "d2749d959807c2b24d2085c09537db42bc2e039dc0ad34b2ee3305e93c6bbcd4"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1588,
+    "sha256": "ee66678cffa589d91aaeb805092723a84bdac6acdc4945eb8ebb96f0d0668719"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/probe_events.json",
+    "bytes": 5668,
+    "sha256": "5a6b30996a1daaaa96efc635035e43508a78a73b79dae6d74678ad98de3baec4"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B1_T500_A70_R1_dwell_1.6s/timeline.csv",
+    "bytes": 601429,
+    "sha256": "5efd4b985e539aee8d7c06c5b5e434c91c1cbcef2f7798d86f7f4e05b4a6efb4"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2544,
+    "sha256": "b7ff7288a18274aaf95f559ce9db45e30fef4949906987fabcc75dcca5e0a477"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "111841feeaa46bf44dc5f3e472fd0576488c87d3c71fc327be7c64d75711cfca"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "5e89fdf99230f923f2ca3a4c09be49dad6df6670bdacdcb3226ef4ea2618702d"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1500,
+    "sha256": "1257f5d8d80c765ce5bfdd81eaa1e16554d49f3bbf655e978b76d9e7900d3200"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/probe_events.json",
+    "bytes": 1515,
+    "sha256": "08d8924465ef8257ec5f76c343ae96f5ede3acb8d5cf884727e4d5eaa04d0468"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "28d906320470353ce5018a4da262ee762e23e00d78d4724fac7ce7e68146d6d9"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_0.8s/timeline.csv",
+    "bytes": 397914,
+    "sha256": "6d33024df1f3647ce520129735a17a0de231a5649015ba15706771b7c448fdbf"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2628,
+    "sha256": "158d5400d18fee8941e59ea63c66e6676d1e3dd453a221d04e0f3e40d68d5b9c"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "1f8a039bb0fa82e37d50bb47e841b989f59366d5d2772a43d499965ee1ccf33f"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "7c8cd4f752f5484e842b807646ea56ca15e382d503bdc7e2175c7775f09bd2a4"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1588,
+    "sha256": "ee66678cffa589d91aaeb805092723a84bdac6acdc4945eb8ebb96f0d0668719"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/probe_events.json",
+    "bytes": 5668,
+    "sha256": "5a6b30996a1daaaa96efc635035e43508a78a73b79dae6d74678ad98de3baec4"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B1_T500_A70_R2_dwell_1.6s/timeline.csv",
+    "bytes": 601429,
+    "sha256": "9f6589ddf32e39f32ca8608db6b2e5f68fb06944eeac93bd8767652f6b77a835"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2461,
+    "sha256": "b1d1383569ffae81ba18987be42c276e4cf2cda151a0d7b11167e5eaf3655afc"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "5577fe0bf6108c16aa024220352887f345771f6c93538096faf48dc12ff19180"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "c1f0b358f4af8c38af5e4e151923536a6e81d848ccdab3890f746fa02ecf2664"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1452,
+    "sha256": "14b0127a514fdfbfae0b91d288010ce1b552e2a911fc9f12358ac0644305b3e1"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/probe_events.json",
+    "bytes": 2664,
+    "sha256": "b85b553ef4d4a546642ab1bc995553ee538cbf088954ae99a6ec9f9cf6546a86"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "3feb8147ebf0a691119616446c0b48b3710ad098ccee3f1e91fa8ca2a2b09cfc"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_0.8s/timeline.csv",
+    "bytes": 398278,
+    "sha256": "d68fb789e0a19c003d4f6216840a2cfe2fe9d32e2c67a1a521df782c721c4651"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2586,
+    "sha256": "f3df21582742c6ef655e91f96782cbec4b2181bd3306777734ec225f641b840d"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "3ee733f6740c35ccdc93a8b17ecb320f6da711c0ec317e9555e1f314449ac39b"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "9d4dcae09c4d534cb0cad67387822d7f49f0b9ef25c1aef6b3e4816865430ff1"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1579,
+    "sha256": "f74d9865aa16804f4a05974c60c622a883b9b2e172579dc79b14effa7bb0064a"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/probe_events.json",
+    "bytes": 9240,
+    "sha256": "17130a38b6cd80dcac6089794027bb9b24b7f743902116e71cc5616a8df33ca9"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "b2784453f729a1aaf3729bf3e199f9e7ad31887700d4e8003781616f66ff5d58"
+  },
+  {
+    "file": "results/B1_T500_A90_R0_dwell_1.6s/timeline.csv",
+    "bytes": 600790,
+    "sha256": "9e413e895bf7da0961a3376735e322853f0764119e85caaf1accf667318648d5"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2449,
+    "sha256": "7e288df83b0fb2e410325c8c14aff34d933995826efedde9b9a807e13e8ed662"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "d19db80680decc822245a5ac5ee27cb0e4f42e7f0d378f3e0c6dcbb5246b1f71"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "0d57d7bb4b8f0f12110d68058d24d22fbf3bde5ac3f2dabb8942e15ff5d3714b"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1492,
+    "sha256": "bdf7fcdb3a212ad29864da1d41207d8cbf0dbc5e043dd4819e76d817ffbcd799"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/probe_events.json",
+    "bytes": 1484,
+    "sha256": "1dc250074c8e9710b72ce351f6493fa60138f232cbe01fa79ebabc5fa19baf88"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "0a8c2d00b5fe2077389f45b40e41a5031ddc53d8ddd7ab7712750edb4586b7f2"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_0.8s/timeline.csv",
+    "bytes": 397610,
+    "sha256": "a28324485a20a04fdbb3cf1b4079767dea66f78419b75274763bbc98e927758c"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2532,
+    "sha256": "d663ee66b3941c0515832740dac398993009be07e7d80a112dbc8385748c629c"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "6b3f43bb047b4cadc6ad1f9b4c6a6d9ad11399b9ed177f982c0fc34131009755"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "08be56b17c405e4d3912b14a049e334a9435b1a141a38d527f0c7273d1ba14a0"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1525,
+    "sha256": "8f0136188d746e41352b46b4d83849797e940cef740f7767b68e4c6feca75fee"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/probe_events.json",
+    "bytes": 6663,
+    "sha256": "2518e5a37f3b7a0dbc767b2cc0c0f8673c3477306db4999fc00442d013a2974f"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "9eaca10cfefebcf8fefa8a15b6e2f02e9dcabdcc166613a5772e8d987c7220bd"
+  },
+  {
+    "file": "results/B1_T500_A90_R1_dwell_1.6s/timeline.csv",
+    "bytes": 600972,
+    "sha256": "5e9f315172d9ebfecc49e52201647cd9d07a5a8a8f2dbc790cc06b3a8c0a1bad"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/acceptance_and_energy.csv",
+    "bytes": 2449,
+    "sha256": "7e288df83b0fb2e410325c8c14aff34d933995826efedde9b9a807e13e8ed662"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/audit.json",
+    "bytes": 157,
+    "sha256": "58f6c220f3b260f3fd456b534fbd03285d8c1e9527c894bf6749262a6e480153"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/config.json",
+    "bytes": 1507,
+    "sha256": "ff5642764ec3d5aa34a58a2bfb3399be592235315a85df4123c4de772bb8b974"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/original_per_segment_metrics.csv",
+    "bytes": 1492,
+    "sha256": "bdf7fcdb3a212ad29864da1d41207d8cbf0dbc5e043dd4819e76d817ffbcd799"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/probe_events.json",
+    "bytes": 1484,
+    "sha256": "1dc250074c8e9710b72ce351f6493fa60138f232cbe01fa79ebabc5fa19baf88"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/scan_events.json",
+    "bytes": 1538,
+    "sha256": "0a8c2d00b5fe2077389f45b40e41a5031ddc53d8ddd7ab7712750edb4586b7f2"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_0.8s/timeline.csv",
+    "bytes": 397610,
+    "sha256": "9317bd8f70cf5442fee64ad9b2d1a0a4bbdb4d1c68360223e9e68bd4a9e79982"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/acceptance_and_energy.csv",
+    "bytes": 2532,
+    "sha256": "d663ee66b3941c0515832740dac398993009be07e7d80a112dbc8385748c629c"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/audit.json",
+    "bytes": 157,
+    "sha256": "ad7632123df1b571a26500d994199303815b5140e936929713817cdc9ff3f151"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/config.json",
+    "bytes": 1506,
+    "sha256": "761c3410e44ce928dbadbf2e552af78381d9a40cff1840f687cc171ff047b00f"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/original_per_segment_metrics.csv",
+    "bytes": 1525,
+    "sha256": "8f0136188d746e41352b46b4d83849797e940cef740f7767b68e4c6feca75fee"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/probe_events.json",
+    "bytes": 6663,
+    "sha256": "2518e5a37f3b7a0dbc767b2cc0c0f8673c3477306db4999fc00442d013a2974f"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/scan_events.json",
+    "bytes": 1537,
+    "sha256": "9eaca10cfefebcf8fefa8a15b6e2f02e9dcabdcc166613a5772e8d987c7220bd"
+  },
+  {
+    "file": "results/B1_T500_A90_R2_dwell_1.6s/timeline.csv",
+    "bytes": 600972,
+    "sha256": "178aef9f5071b30cb619af13a677c2b4270a539d5252247fbb97740008a1ac7b"
+  },
+  {
+    "file": "results/run_audit.json",
+    "bytes": 20952,
+    "sha256": "7e3ca4680273fcee5e9ab45c254b578c4557896295e1df56cc3d997e1582b448"
+  },
+  {
+    "file": "results/summary.csv",
+    "bytes": 32686,
+    "sha256": "b3b447e2d6ae01f782318f5c81295ce0d3ea155b107b40ab92ad39310f3e72db"
+  },
+  {
+    "file": "run_study.py",
+    "bytes": 15310,
+    "sha256": "6d5b322cf5f10abb0760df161dc2a178825211f1aad50bb7e853078749ccf77f"
+  },
+  {
+    "file": "validate_and_recover.py",
+    "bytes": 10899,
+    "sha256": "9a4b0bba28fce526fc153ac93d5e84e835e184aaabcbf0225d79cf1b5791fd5f"
+  },
+  {
+    "file": "verify_portability.py",
+    "bytes": 1376,
+    "sha256": "11a46d39807c34d7033660b12b99a61c68651db4dc3f6bf06bf82a42b9ce69ec"
+  }
+]

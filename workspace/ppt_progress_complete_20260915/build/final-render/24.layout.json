@@ -1,0 +1,794 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/m1wvqtk3",
+    "id": "m1wvqtk3",
+    "slide": 24,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b6d432pc",
+      "id": "8",
+      "name": "title-20",
+      "bbox": [
+        80,
+        38,
+        1130,
+        58
+      ],
+      "geometry": "rect",
+      "text": "备份：低、中、高组合的已保存LTspice静态交叉验证",
+      "textPreview": "备份：低、中、高组合的已保存LTspice静态交叉验证",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备份：低、中、高组合的已保存LTspice静态交叉验证"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备份：低、中、高组合的已保存LTspice静态交叉验证",
+          "resolvedTextStyle": {
+            "fontSize": 32,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备份：低、中、高组合的已保存LTspice静态交叉验证",
+              "fontSize": 32,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1gbmxs7a",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0f2lon6p",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ra9kryp8",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        1100,
+        20
+      ],
+      "geometry": "rect",
+      "text": "历史LTspice批处理输出    复阻抗相对误差以Python值为分母    本次未新运行LTspice",
+      "textPreview": "历史LTspice批处理输出    复阻抗相对误差以Python值为分母    本次未新运行LTspice",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "历史LTspice批处理输出    复阻抗相对误差以Python值为分母    本次未新运行LTspice"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "历史LTspice批处理输出    复阻抗相对误差以Python值为分母    本次未新运行LTspice",
+          "resolvedTextStyle": {
+            "fontSize": 11.51,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "历史LTspice批处理输出    复阻抗相对误差以Python值为分母    本次未新运行LTspice",
+              "fontSize": 11.51,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/qp03yt8n",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "24",
+      "textPreview": "24",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "24"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "24",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "24",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/fqxgv6l0",
+      "id": "9",
+      "name": "表格 14",
+      "bbox": [
+        92,
+        142,
+        1090,
+        420
+      ],
+      "text": "组合场景 | 已保存LTspice/Python静态对照\n低 | 2001点，最大复Zin相对误差 0.01461%，通过5%阈值\n中 | 2001点，最大复Zin相对误差 0.00751%，通过5%阈值\n高 | 2001点，最大复Zin相对误差 0.00295%，通过5%阈值\n运行证据 | .cir / .raw / .log / SHA-256\n验收线 | 误差 < 5%\n结论边界 | 实现一致，不等于真实器件参数正确",
+      "textPreview": "组合场景 | 已保存LTspice/Python静态对照 | 低 | 2001点，最大复Zin相对误差 0.01461%，通过5%阈值 | 中 | 2001点，最大复Zin相对误差 0.00751%，通过5%阈值 | 高 | 2001点，最大复Zin相对误差 0.00295...",
+      "rows": 7,
+      "cols": 2,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            92,
+            142,
+            266.44,
+            60
+          ],
+          "text": "组合场景",
+          "textPreview": "组合场景",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "组合场景",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "组合场景",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            358.44,
+            142,
+            823.56,
+            60
+          ],
+          "text": "已保存LTspice/Python静态对照",
+          "textPreview": "已保存LTspice/Python静态对照",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "已保存LTspice/Python静态对照",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "已保存LTspice/Python静态对照",
+                  "fontSize": 22,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            92,
+            202,
+            266.44,
+            60
+          ],
+          "text": "低",
+          "textPreview": "低",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "低",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "低",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            358.44,
+            202,
+            823.56,
+            60
+          ],
+          "text": "2001点，最大复Zin相对误差 0.01461%，通过5%阈值",
+          "textPreview": "2001点，最大复Zin相对误差 0.01461%，通过5%阈值",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2001点，最大复Zin相对误差 0.01461%，通过5%阈值",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2001点，最大复Zin相对误差 0.01461%，通过5%阈值",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            92,
+            262,
+            266.44,
+            60
+          ],
+          "text": "中",
+          "textPreview": "中",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "中",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "中",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            358.44,
+            262,
+            823.56,
+            60
+          ],
+          "text": "2001点，最大复Zin相对误差 0.00751%，通过5%阈值",
+          "textPreview": "2001点，最大复Zin相对误差 0.00751%，通过5%阈值",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2001点，最大复Zin相对误差 0.00751%，通过5%阈值",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2001点，最大复Zin相对误差 0.00751%，通过5%阈值",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            92,
+            322,
+            266.44,
+            60
+          ],
+          "text": "高",
+          "textPreview": "高",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "高",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "高",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            358.44,
+            322,
+            823.56,
+            60
+          ],
+          "text": "2001点，最大复Zin相对误差 0.00295%，通过5%阈值",
+          "textPreview": "2001点，最大复Zin相对误差 0.00295%，通过5%阈值",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2001点，最大复Zin相对误差 0.00295%，通过5%阈值",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2001点，最大复Zin相对误差 0.00295%，通过5%阈值",
+                  "fontSize": 21,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 5,
+          "column": 1,
+          "bbox": [
+            92,
+            382,
+            266.44,
+            60
+          ],
+          "text": "运行证据",
+          "textPreview": "运行证据",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "运行证据",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "运行证据",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 5,
+          "column": 2,
+          "bbox": [
+            358.44,
+            382,
+            823.56,
+            60
+          ],
+          "text": ".cir / .raw / .log / SHA-256",
+          "textPreview": ".cir / .raw / .log / SHA-256",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": ".cir / .raw / .log / SHA-256",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": ".cir / .raw / .log / SHA-256",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 6,
+          "column": 1,
+          "bbox": [
+            92,
+            442,
+            266.44,
+            60
+          ],
+          "text": "验收线",
+          "textPreview": "验收线",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "验收线",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "验收线",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 6,
+          "column": 2,
+          "bbox": [
+            358.44,
+            442,
+            823.56,
+            60
+          ],
+          "text": "误差 < 5%",
+          "textPreview": "误差 < 5%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "误差 < 5%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "误差 < 5%",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 7,
+          "column": 1,
+          "bbox": [
+            92,
+            502,
+            266.44,
+            60
+          ],
+          "text": "结论边界",
+          "textPreview": "结论边界",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "结论边界",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "结论边界",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 7,
+          "column": 2,
+          "bbox": [
+            358.44,
+            502,
+            823.56,
+            60
+          ],
+          "text": "实现一致，不等于真实器件参数正确",
+          "textPreview": "实现一致，不等于真实器件参数正确",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "实现一致，不等于真实器件参数正确",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "实现一致，不等于真实器件参数正确",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/sb2lk36t",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        118,
+        589,
+        1078,
+        66
+      ],
+      "geometry": "rect",
+      "text": "同一配置下两条求解路径吻合；不能排除共同模型假设错误，也不代表闭环验收。",
+      "textPreview": "同一配置下两条求解路径吻合；不能排除共同模型假设错误，也不代表闭环验收。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "同一配置下两条求解路径吻合；不能排除共同模型假设错误，也不代表闭环验收。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "同一配置下两条求解路径吻合；不能排除共同模型假设错误，也不代表闭环验收。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#B84040",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "同一配置下两条求解路径吻合；不能排除共同模型假设错误，也不代表闭环验收。",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#B84040",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

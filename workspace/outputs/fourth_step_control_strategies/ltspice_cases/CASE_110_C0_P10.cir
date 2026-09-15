@@ -1,0 +1,20 @@
+* Fourth-step control strategy RAW table: SINGLE::CASE_110_C0_P10
+* AC sweep: 0.84-0.96 MHz, 0.1 kHz step
+V1 src 0 AC 5.3526618424
+Rsrc src n_s 50
+Rlesr n_s n_l 7.05331533028
+Lmatch n_l n_in 0.00012473
+Cmatch n_in 0 2.4796e-10
+Cstatic n_in 0 1.65e-12
+Rmot n_in n_m1 10000
+Lmot n_m1 n_m2 0.1
+Cmot n_m2 0 3.1272e-13
+.ac lin 1201 840000 960000
+.options meascplxfmt=cartesian
+.meas ac P_0p9 FIND re(V(n_in)*conj(I(Rmot))) AT=900000
+.meas ac Itrans_peak_0p9 FIND mag(I(Rmot)+I(Cstatic))*sqrt(2) AT=900000
+.meas ac Vpp_0p9 FIND mag(V(n_in))*2*sqrt(2) AT=900000
+.meas ac Phase_0p9 FIND ph(V(n_s)/I(Rlesr)) AT=900000
+.meas ac Gamma_0p9 FIND mag((V(n_s)/I(Rlesr)-50)/(V(n_s)/I(Rlesr)+50)) AT=900000
+.meas ac Pmax MAX re(V(n_in)*conj(I(Rmot)))
+.end

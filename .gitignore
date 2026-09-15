@@ -1,0 +1,12 @@
+# Keep credentials, local environments, new runs and large binary files out of commits.
+.venv/
+__pycache__/
+node_modules/
+working*/
+.env
+secrets.toml
+*.raw
+*.zip
+*.part???
+*.tiff
+*.log.tmp

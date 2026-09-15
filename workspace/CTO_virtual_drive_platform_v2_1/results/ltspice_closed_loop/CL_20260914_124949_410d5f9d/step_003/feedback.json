@@ -1,0 +1,29 @@
+{
+  "iteration": 3,
+  "time_s": 0.004,
+  "command": {
+    "frequency_hz": 900500.0,
+    "amplitude": 0.4
+  },
+  "measurement": {
+    "vpp": 48.76680374145508,
+    "irms_A": 0.00137752918792307,
+    "p_port_W": 0.022175198976587592,
+    "phase_port_deg": 21.031942621999946,
+    "p_rm_W": 0.022103343633016238,
+    "max_window_vpp": 48.76680374145508,
+    "max_window_irms_A": 0.0019252141796128885,
+    "tail_window_s": 0.0002,
+    "protection_window_s": 5e-05,
+    "raw_points": 3500056
+  },
+  "next_command": {
+    "frequency_hz": 900000.0,
+    "amplitude": 0.4
+  },
+  "state": "TRACK",
+  "reason": "RAW测得归一化端口功率下降：反转搜索方向",
+  "frequency_saturated": false,
+  "raw_sha256": "f5d893a66dc9cc96ce7f1b95d27bae722d2f89ee4137804d842e28e4acdd6a9b",
+  "wall_seconds": 23.672767299984116
+}

@@ -1,0 +1,11 @@
+Core conclusion: For maximum-power selection, a ±20 kHz window can exclude the drifting optimum, while wider windows reduce frequency error at the cost of scan time; ±50 kHz with 1 kHz steps is the selected offline trade-off.
+Figure archetype: quantitative grid.
+Target output: PowerPoint-ready 16:9-compatible PNG plus editable SVG and PDF.
+Backend: Python only.
+Final size: 14.0 × 4.8 inches; PNG at 300 dpi.
+Panel map: left = worst total frequency error; right = scan-time proxy.
+Evidence hierarchy: left panel establishes adequacy of the scan window; right panel quantifies scan cost.
+Source data: existing window/step aggregate CSV, criterion=max_power.
+Image-integrity notes: values are read from the CSV and only rounded for cell labels; no values are manually altered.
+Reviewer risk: dark cells require adaptive white text; x-axis step labels and metric scope must remain visible.
+

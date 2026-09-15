@@ -1,0 +1,55 @@
+{
+  "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat/ppt_control_progress_20260914/output/CTO组会汇报_仅第15页更新_2026-09-15.pptx",
+  "source_sha256": "9bb68d8eeeb4d14d5e8dd73e1aeba0c06f8f6910172528a0b028e98664e869a7",
+  "source_slides": 28,
+  "final_slides": 32,
+  "added": 4,
+  "changeLog": [
+    {
+      "key": "platform",
+      "new_page": 3,
+      "old_page": null,
+      "slide_part": "ppt/slides/supplement_platform.xml"
+    },
+    {
+      "key": "replay",
+      "new_page": 17,
+      "old_page": null,
+      "slide_part": "ppt/slides/supplement_replay.xml"
+    },
+    {
+      "key": "feedback",
+      "new_page": 18,
+      "old_page": null,
+      "slide_part": "ppt/slides/supplement_feedback.xml"
+    },
+    {
+      "key": "completion",
+      "new_page": 21,
+      "old_page": 18,
+      "slide_part": "ppt/slides/slide18.xml"
+    },
+    {
+      "key": "ablation",
+      "new_page": 26,
+      "old_page": null,
+      "slide_part": "ppt/slides/supplement_ablation.xml"
+    },
+    {
+      "key": "gui",
+      "new_page": 29,
+      "old_page": 25,
+      "slide_part": "ppt/slides/slide25.xml"
+    },
+    {
+      "key": "evidence",
+      "new_page": 31,
+      "old_page": 27,
+      "slide_part": "ppt/slides/slide27.xml"
+    }
+  ],
+  "new_simulation": false,
+  "screenshot": "Real browser viewport 2026-09-15 and existing LTspice GUI 2026-09-12",
+  "source_preserved": true,
+  "authoring": "Artifact Tool plus OOXML transplant to preserve unrelated evidence"
+}

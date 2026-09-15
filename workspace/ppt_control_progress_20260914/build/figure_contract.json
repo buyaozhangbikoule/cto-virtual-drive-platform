@@ -1,0 +1,47 @@
+{
+  "claim": "Three control prototypes exist, but the displayed trials do not support a unified ranking.",
+  "panels": {
+    "left": "Fixed and periodic frequency/power from the same historical run, retain every intersecting record including scan and protection.",
+    "right": "Independent historical Kphi=5 trial, model input-phase error and power. Frequency is frozen throughout the displayed fs-5% segment."
+  },
+  "archetype": "quantitative grid with separate provenance frames",
+  "backend": "Python/matplotlib, user-established workflow",
+  "new_simulation": false,
+  "source_data": [
+    {
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\stage4_control_timeline.csv",
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\phase_ablation\\phase_timeline_selected_gain.csv",
+      "sha256": "b170bc930dfbdcd07a58b9f3b2d37f7121f9cd9d3cd0239ebe8034ec079f8085"
+    },
+    {
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\phase_ablation\\phase_ablation_audit.json",
+      "sha256": "b07dba8aa30050d0ee31717a58c6ba6a00a479ce57ecf8efa8812e32f4e45672"
+    }
+  ],
+  "source_deck": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_full_audit_20260911\\output\\CTO组会汇报_全28页图文核查版_2026-09-11.pptx",
+    "sha256": "b6b757ea391f94cd620a35821c87219f2918d07d6a9db1ba19f0aa76d0453192"
+  },
+  "statistics": "Deterministic historical model records, no biological or hardware replicates, no uncertainty or significance claims.",
+  "processing": "Window 2.2 <= t < 3.2 s. Display zero-order holds with original durations for main timeline and 20 ms for historical phase samples. No smoothing, rescaling, offset, or removal of scan/protection records.",
+  "risks": [
+    "Different runs and schedules of protection/probes cannot be ranked together.",
+    "Phase is model arg(Zin), including during zero amplitude; it is not a measured phase during shutdown.",
+    "Gain 5 results alone do not prove small phase error and low power.",
+    "Power is electrical dissipation in Rm, not acoustic power.",
+    "At 2.2 s the prior segment is Rm+50%, not baseline."
+  ],
+  "verified_values": {
+    "periodic_adoption_s": 2.977000000000011,
+    "periodic_frequency_MHz": 0.8548,
+    "periodic_tail_power_mW": 140.23038267556052,
+    "qualifying_samples": 6,
+    "required_samples": 10,
+    "phase_error_fs_deg": 41.11850489879734,
+    "phase_fs_frequency_frozen_all": true,
+    "phase_fs_tail_power_mW": 0.04274016882190457
+  }
+}

@@ -1,0 +1,8 @@
+﻿state_index,case_id,first_control_capture_pct_evaluation_only,trigger_observed,trigger_source,trigger_delay_ms,scan_started,scan_start_delay_ms,event_rows_in_segment,scan_points_in_segment,detector_reason,note
+1,CASE_C0_P30,100.0,0,NONE,,0,,0,0,,schedule and optimum fields are used here for post-run scoring only
+2,CASE_RM_P50,100.0,1,OBSERVABLE_2_OF_4,40.000000000000924,1,60.00000000000094,1,53,COMPLEX_Z_CHANGE+PHASE_CHANGE,schedule and optimum fields are used here for post-run scoring only
+3,CASE_FS_M5,0.0,1,HARD_LIMIT_EVENT,19.50000000000429,1,439.50000000000466,2,53,,schedule and optimum fields are used here for post-run scoring only
+4,CASE_LMATCH_P10,0.0,1,HARD_LIMIT_EVENT,19.00000000000812,1,439.00000000000847,2,53,,schedule and optimum fields are used here for post-run scoring only
+5,CASE_QL_20,91.70594360219502,1,OBSERVABLE_2_OF_4,178.50000000000853,1,198.50000000000813,1,53,POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE,schedule and optimum fields are used here for post-run scoring only
+6,CASE_COMBINED_HIGH,0.036364781642542414,1,OBSERVABLE_2_OF_4,57.99999999999805,1,77.99999999999763,1,53,POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE,schedule and optimum fields are used here for post-run scoring only
+7,CASE_000_BASELINE,0.024321438359613808,1,OBSERVABLE_2_OF_4,57.499999999985896,1,77.49999999998548,1,53,POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE+REFLECTION_RISE,schedule and optimum fields are used here for post-run scoring only

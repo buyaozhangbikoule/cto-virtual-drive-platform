@@ -1,0 +1,546 @@
+[
+  {
+    "without_C": "E02_000",
+    "with_C": "E05_C",
+    "dwell_s": 0.8,
+    "control_samples_identical": true,
+    "rows_without_C": 1710,
+    "rows_with_C": 1710,
+    "differing_action_rows": 21,
+    "differences": [
+      {
+        "row": 1661,
+        "time_s": "5.830999999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898500.0",
+            "899500.0"
+          ]
+        }
+      },
+      {
+        "row": 1662,
+        "time_s": "5.832499999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898600.0",
+            "899600.0"
+          ]
+        }
+      },
+      {
+        "row": 1663,
+        "time_s": "5.833999999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898700.0",
+            "899700.0"
+          ]
+        }
+      },
+      {
+        "row": 1664,
+        "time_s": "5.8354999999999775",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898800.0",
+            "899800.0"
+          ]
+        }
+      },
+      {
+        "row": 1665,
+        "time_s": "5.8369999999999775",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898900.0",
+            "899900.0"
+          ]
+        }
+      },
+      {
+        "row": 1666,
+        "time_s": "5.838499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899000.0",
+            "900000.0"
+          ]
+        }
+      },
+      {
+        "row": 1667,
+        "time_s": "5.839999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899100.0",
+            "900100.0"
+          ]
+        }
+      },
+      {
+        "row": 1668,
+        "time_s": "5.841499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899200.0",
+            "900200.0"
+          ]
+        }
+      },
+      {
+        "row": 1669,
+        "time_s": "5.842999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899300.0",
+            "900300.0"
+          ]
+        }
+      },
+      {
+        "row": 1670,
+        "time_s": "5.844499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899400.0",
+            "900400.0"
+          ]
+        }
+      },
+      {
+        "row": 1671,
+        "time_s": "5.845999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899500.0",
+            "900500.0"
+          ]
+        }
+      },
+      {
+        "row": 1672,
+        "time_s": "5.847499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899600.0",
+            "900600.0"
+          ]
+        }
+      },
+      {
+        "row": 1673,
+        "time_s": "5.848999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899700.0",
+            "900700.0"
+          ]
+        }
+      },
+      {
+        "row": 1674,
+        "time_s": "5.850499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899800.0",
+            "900800.0"
+          ]
+        }
+      },
+      {
+        "row": 1675,
+        "time_s": "5.851999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899900.0",
+            "900900.0"
+          ]
+        }
+      },
+      {
+        "row": 1676,
+        "time_s": "5.853499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900000.0",
+            "901000.0"
+          ]
+        }
+      },
+      {
+        "row": 1677,
+        "time_s": "5.854999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900100.0",
+            "901100.0"
+          ]
+        }
+      },
+      {
+        "row": 1678,
+        "time_s": "5.856499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900200.0",
+            "901200.0"
+          ]
+        }
+      },
+      {
+        "row": 1679,
+        "time_s": "5.857999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900300.0",
+            "901300.0"
+          ]
+        }
+      },
+      {
+        "row": 1680,
+        "time_s": "5.859499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900400.0",
+            "901400.0"
+          ]
+        }
+      },
+      {
+        "row": 1681,
+        "time_s": "5.8609999999999784",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900500.0",
+            "901500.0"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "without_C": "E03_A",
+    "with_C": "E07_AC",
+    "dwell_s": 0.8,
+    "control_samples_identical": true,
+    "rows_without_C": 1526,
+    "rows_with_C": 1526,
+    "differing_action_rows": 21,
+    "differences": [
+      {
+        "row": 1476,
+        "time_s": "5.823499999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898500.0",
+            "899500.0"
+          ]
+        }
+      },
+      {
+        "row": 1477,
+        "time_s": "5.824999999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898600.0",
+            "899600.0"
+          ]
+        }
+      },
+      {
+        "row": 1478,
+        "time_s": "5.826499999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898700.0",
+            "899700.0"
+          ]
+        }
+      },
+      {
+        "row": 1479,
+        "time_s": "5.827999999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898800.0",
+            "899800.0"
+          ]
+        }
+      },
+      {
+        "row": 1480,
+        "time_s": "5.829499999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "898900.0",
+            "899900.0"
+          ]
+        }
+      },
+      {
+        "row": 1481,
+        "time_s": "5.830999999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899000.0",
+            "900000.0"
+          ]
+        }
+      },
+      {
+        "row": 1482,
+        "time_s": "5.832499999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899100.0",
+            "900100.0"
+          ]
+        }
+      },
+      {
+        "row": 1483,
+        "time_s": "5.833999999999977",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899200.0",
+            "900200.0"
+          ]
+        }
+      },
+      {
+        "row": 1484,
+        "time_s": "5.8354999999999775",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899300.0",
+            "900300.0"
+          ]
+        }
+      },
+      {
+        "row": 1485,
+        "time_s": "5.8369999999999775",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899400.0",
+            "900400.0"
+          ]
+        }
+      },
+      {
+        "row": 1486,
+        "time_s": "5.838499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899500.0",
+            "900500.0"
+          ]
+        }
+      },
+      {
+        "row": 1487,
+        "time_s": "5.839999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899600.0",
+            "900600.0"
+          ]
+        }
+      },
+      {
+        "row": 1488,
+        "time_s": "5.841499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899700.0",
+            "900700.0"
+          ]
+        }
+      },
+      {
+        "row": 1489,
+        "time_s": "5.842999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899800.0",
+            "900800.0"
+          ]
+        }
+      },
+      {
+        "row": 1490,
+        "time_s": "5.844499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "899900.0",
+            "900900.0"
+          ]
+        }
+      },
+      {
+        "row": 1491,
+        "time_s": "5.845999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900000.0",
+            "901000.0"
+          ]
+        }
+      },
+      {
+        "row": 1492,
+        "time_s": "5.847499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900100.0",
+            "901100.0"
+          ]
+        }
+      },
+      {
+        "row": 1493,
+        "time_s": "5.848999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900200.0",
+            "901200.0"
+          ]
+        }
+      },
+      {
+        "row": 1494,
+        "time_s": "5.850499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900300.0",
+            "901300.0"
+          ]
+        }
+      },
+      {
+        "row": 1495,
+        "time_s": "5.851999999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900400.0",
+            "901400.0"
+          ]
+        }
+      },
+      {
+        "row": 1496,
+        "time_s": "5.853499999999978",
+        "action": "SCAN_ULTRAFINE",
+        "fields": {
+          "frequency_Hz": [
+            "900500.0",
+            "901500.0"
+          ]
+        }
+      }
+    ]
+  },
+  {
+    "without_C": "E04_B",
+    "with_C": "E08_BC",
+    "dwell_s": 0.8,
+    "control_samples_identical": true,
+    "rows_without_C": 1660,
+    "rows_with_C": 1660,
+    "differing_action_rows": 0,
+    "differences": []
+  },
+  {
+    "without_C": "E06_AB",
+    "with_C": "E09_ABC",
+    "dwell_s": 0.8,
+    "control_samples_identical": true,
+    "rows_without_C": 1482,
+    "rows_with_C": 1482,
+    "differing_action_rows": 0,
+    "differences": []
+  },
+  {
+    "without_C": "E02_000",
+    "with_C": "E05_C",
+    "dwell_s": 1.6,
+    "control_samples_identical": true,
+    "rows_without_C": 3269,
+    "rows_with_C": 3269,
+    "differing_action_rows": 0,
+    "differences": []
+  },
+  {
+    "without_C": "E03_A",
+    "with_C": "E07_AC",
+    "dwell_s": 1.6,
+    "control_samples_identical": true,
+    "rows_without_C": 2715,
+    "rows_with_C": 2715,
+    "differing_action_rows": 0,
+    "differences": []
+  },
+  {
+    "without_C": "E04_B",
+    "with_C": "E08_BC",
+    "dwell_s": 1.6,
+    "control_samples_identical": true,
+    "rows_without_C": 3169,
+    "rows_with_C": 3169,
+    "differing_action_rows": 0,
+    "differences": []
+  },
+  {
+    "without_C": "E06_AB",
+    "with_C": "E09_ABC",
+    "dwell_s": 1.6,
+    "control_samples_identical": true,
+    "rows_without_C": 2653,
+    "rows_with_C": 2653,
+    "differing_action_rows": 0,
+    "differences": []
+  }
+]

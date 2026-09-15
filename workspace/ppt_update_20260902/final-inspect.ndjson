@@ -1,0 +1,421 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"CTO超声换能器虚拟阻抗建模","textShapes":5}
+{"kind":"shape","id":"sh/fu94fe98","slide":1,"name":"矩形 7","bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"矩形 1","text":"CTO超声换能器虚拟阻抗建模\n与自适应驱动控制","textPreview":"CTO超声换能器虚拟阻抗建模 | 与自适应驱动控制","textChars":23,"textLines":2,"bbox":[92,160,820,150]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"矩形 2","text":"第一月：BVD建模、阻抗匹配、扰动分析与控制原型","textPreview":"第一月：BVD建模、阻抗匹配、扰动分析与控制原型","textChars":24,"textLines":1,"bbox":[96,332,920,42]}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"name":"矩形 3","bbox":[96,405,160,5]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"矩形 4","text":"第一月工作汇报（补充审计版）  |  2026.09","textPreview":"第一月工作汇报（补充审计版）  |  2026.09","textChars":26,"textLines":1,"bbox":[96,445,500,32]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"name":"矩形 5","text":"端口电学模型与准稳态控制，不涉及治疗效果结论","textPreview":"端口电学模型与准稳态控制，不涉及治疗效果结论","textChars":22,"textLines":1,"bbox":[96,612,840,32]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"name":"矩形 6","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"开场只做边界定义：本月完成的是端口电学模型、匹配、扰动扫描和控制原型，不是CTO治疗效果验证。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\03_Codex任务说明_修订版_v2_1.md"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textShapes":11}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"name":"title-2","text":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textPreview":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textChars":27,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/9072xkry","slide":2,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"矩形 4","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"name":"箭头: 右 5","bbox":[244,264,70,34]}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"箭头: 右 6","bbox":[464,264,70,34]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"箭头: 右 7","bbox":[684,264,70,34]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"箭头: 右 8","bbox":[904,264,70,34]}
+{"kind":"shape","id":"sh/ove9o7yd","slide":2,"name":"矩形: 圆角 9","bbox":[86,235,160,92]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"矩形 10","text":"假设BVD\n模型","textPreview":"假设BVD | 模型","textChars":8,"textLines":2,"bbox":[96,243,140,76]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"矩形: 圆角 11","bbox":[306,235,160,92]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"矩形 12","text":"L型匹配","textPreview":"L型匹配","textChars":4,"textLines":1,"bbox":[316,243,140,76]}
+{"kind":"shape","id":"sh/wjy9sry9","slide":2,"name":"矩形: 圆角 13","bbox":[526,235,160,92]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"矩形 14","text":"参数扰动","textPreview":"参数扰动","textChars":4,"textLines":1,"bbox":[536,243,140,76]}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"矩形: 圆角 15","bbox":[746,235,160,92]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"name":"矩形 16","text":"阻抗与功率","textPreview":"阻抗与功率","textChars":5,"textLines":1,"bbox":[756,243,140,76]}
+{"kind":"shape","id":"sh/cnupgny5","slide":2,"name":"矩形: 圆角 17","bbox":[966,235,190,92]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"矩形 18","text":"选频与保护","textPreview":"选频与保护","textChars":5,"textLines":1,"bbox":[976,243,170,76]}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"name":"矩形 19","text":"小信号线性等效电路","textPreview":"小信号线性等效电路","textChars":9,"textLines":1,"bbox":[108,410,300,40]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"name":"矩形 20","text":"参数为假设基线或扫描变量","textPreview":"参数为假设基线或扫描变量","textChars":12,"textLines":1,"bbox":[450,410,360,40]}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"name":"矩形 21","text":"不计算声压、温升、空化或临床效果","textPreview":"不计算声压、温升、空化或临床效果","textChars":16,"textLines":1,"bbox":[824,410,380,48]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"这页回答项目在解决什么：负载或参数变化导致电学最优点移动，固定频率可能失配。随后引出参数必须先自洽。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\03_Codex任务说明_修订版_v2_1.md"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textShapes":17}
+{"kind":"textbox","id":"sh/03ix43e5","slide":3,"name":"title-3","text":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textPreview":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textChars":31,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"矩形 4","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"矩形 5","bbox":[72,130,520,470]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"矩形 6","text":"旧参数的数量级冲突","textPreview":"旧参数的数量级冲突","textChars":9,"textLines":1,"bbox":[96,154,440,32]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"矩形 7","text":"V_RMS = 100/(2√2) = 35.36 V","textPreview":"V_RMS = 100/(2√2) = 35.36 V","textChars":27,"textLines":1,"bbox":[104,220,430,44]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"矩形 8","text":"若串联谐振时 Rm = 100 Ω","textPreview":"若串联谐振时 Rm = 100 Ω","textChars":17,"textLines":1,"bbox":[104,286,430,44]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"矩形 9","text":"I_RMS ≈ 353.6 mA","textPreview":"I_RMS ≈ 353.6 mA","textChars":16,"textLines":1,"bbox":[124,358,380,44]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"矩形 10","text":"P ≈ 12.5 W","textPreview":"P ≈ 12.5 W","textChars":10,"textLines":1,"bbox":[124,414,380,44]}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"name":"矩形 11","text":"与约5 mA、0.17 W目标明显冲突","textPreview":"与约5 mA、0.17 W目标明显冲突","textChars":19,"textLines":1,"bbox":[104,510,430,52]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"矩形 12","bbox":[620,130,588,470]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"name":"矩形 13","text":"v2.1假设基线","textPreview":"v2.1假设基线","textChars":8,"textLines":1,"bbox":[650,154,500,32]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"name":"矩形 14","text":"C₀ = 6.858 pF","textPreview":"C₀ = 6.858 pF","textChars":13,"textLines":1,"bbox":[668,230,220,44]}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"name":"矩形 15","text":"Rₘ = 7.353 kΩ","textPreview":"Rₘ = 7.353 kΩ","textChars":13,"textLines":1,"bbox":[913,230,220,44]}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"name":"矩形 16","text":"Qₘ = 800","textPreview":"Qₘ = 800","textChars":8,"textLines":1,"bbox":[668,312,220,44]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"矩形 17","text":"Lₘ = 1.040 H","textPreview":"Lₘ = 1.040 H","textChars":12,"textLines":1,"bbox":[913,312,220,44]}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"name":"矩形 18","text":"Cₘ = 0.0301 pF","textPreview":"Cₘ = 0.0301 pF","textChars":14,"textLines":1,"bbox":[668,394,220,44]}
+{"kind":"textbox","id":"sh/e10f2twf","slide":3,"name":"矩形 19","text":"fₛ = 0.9 MHz","textPreview":"fₛ = 0.9 MHz","textChars":12,"textLines":1,"bbox":[913,394,220,44]}
+{"kind":"textbox","id":"sh/f29gbyx0","slide":3,"name":"矩形 20","text":"数量级自洽的虚拟模型，非实测辨识参数","textPreview":"数量级自洽的虚拟模型，非实测辨识参数","textChars":18,"textLines":1,"bbox":[650,506,520,50]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"教授最可能追问参数来源。先主动展示旧参数冲突，再强调v2.1只解决数学自洽，不代表器件真实性。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\v2_1_活动基线参数.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\03_Codex任务说明_修订版_v2_1.md"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"10 Hz网格下，Python与LTspice结果数值一致","textShapes":10}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"title-4","text":"10 Hz网格下，Python与LTspice结果数值一致","textPreview":"10 Hz网格下，Python与LTspice结果数值一致","textChars":29,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"矩形 4","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/sna103ap","slide":4,"name":"矩形 6","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"name":"矩形 8","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"name":"矩形 10","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"矩形 14","text":"0.5–1.5 MHz","textPreview":"0.5–1.5 MHz","textChars":11,"textLines":1,"bbox":[936,136,220,44]}
+{"kind":"textbox","id":"sh/v6tsv2xo","slide":4,"name":"矩形 16","text":"100001点｜Δf=10 Hz","textPreview":"100001点｜Δf=10 Hz","textChars":16,"textLines":1,"bbox":[936,178,220,26]}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"name":"矩形 18","text":"1.36×10⁻⁷","textPreview":"1.36×10⁻⁷","textChars":9,"textLines":1,"bbox":[936,236,220,44]}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"name":"矩形 20","text":"最大|Z|相对误差","textPreview":"最大|Z|相对误差","textChars":9,"textLines":1,"bbox":[936,278,220,28]}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"name":"矩形 22","text":"< 10 Hz","textPreview":"< 10 Hz","textChars":7,"textLines":1,"bbox":[936,334,220,44]}
+{"kind":"textbox","id":"sh/gv29g7q5","slide":4,"name":"矩形 24","text":"峰位差（网格分辨率内）","textPreview":"峰位差（网格分辨率内）","textChars":11,"textLines":1,"bbox":[936,376,220,28]}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"name":"矩形 26","text":"LTspice：.cir→.raw\nPython：解析模型\n同网格逐点比较\n实现一致 ≠ 参数真实","textPreview":"LTspice：.cir→.raw | Python：解析模型 | 同网格逐点比较 | 实现一致 ≠ 参数真实","textChars":49,"textLines":4,"bbox":[912,448,282,142]}
+{"kind":"image","id":"im/q9876pkv","slide":4,"name":"图片 12","bbox":[72,122,820,520]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":""}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"同一源条件下，L型匹配将运动支路有功功率代理提高约32.8倍","textShapes":6}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"name":"title-5","text":"同一源条件下，L型匹配将运动支路有功功率代理提高约32.8倍","textPreview":"同一源条件下，L型匹配将运动支路有功功率代理提高约32.8倍","textChars":30,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/dgbulwnm","slide":5,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"矩形 4","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"矩形: 圆角 7","bbox":[880.06,269.5,318,150]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"name":"矩形 8","text":"Lmatch ≈ 106.726 μH\nCmatch ≈ 283.599 pF\n设计中心：0.9 MHz","textPreview":"Lmatch ≈ 106.726 μH | Cmatch ≈ 283.599 pF | 设计中心：0.9 MHz","textChars":52,"textLines":3,"bbox":[906.06,291.5,270,95]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"name":"矩形 9","text":"P_Rm × 32.8","textPreview":"P_Rm × 32.8","textChars":11,"textLines":1,"bbox":[914.06,427.5,250,40]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"矩形 10","text":"电学功率传递改善，不等于电声效率提高32.8倍","textPreview":"电学功率传递改善，不等于电声效率提高32.8倍","textChars":23,"textLines":1,"bbox":[475.53,484.75,760,28]}
+{"kind":"image","id":"im/srmx0vmd","slide":5,"name":"图片 19","bbox":[72,124,725,500]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"强调比较使用同一Thevenin源，不在每个网络后重新校准端电压。32.8倍只描述P_Rm代理，不应称为效率。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\03_匹配网络\\stage2_匹配前后特征汇总.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\03_匹配网络\\stage2_LTspice_解析交叉验证.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\stage2_02_匹配前后功率与反射_RAW.png"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textShapes":6}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"name":"title-5","text":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textPreview":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textChars":30,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/yhg7epsj","slide":6,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"矩形 4","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"name":"矩形: 圆角 7","bbox":[818,126,390,418]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"name":"矩形 8","text":"0.9 MHz固定频点\n同一1 Vrms Thevenin源｜Rs=50 Ω","textPreview":"0.9 MHz固定频点 | 同一1 Vrms Thevenin源｜Rs=50 Ω","textChars":38,"textLines":2,"bbox":[838,142,350,58]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"name":"矩形 9","text":"有损：56.70 Ω ∠−1.08°","textPreview":"有损：56.70 Ω ∠−1.08°","textChars":18,"textLines":1,"bbox":[840,494,340,34]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"name":"矩形 10","text":"理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页","textPreview":"理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页","textChars":55,"textLines":1,"bbox":[100,634,1080,28]}
+{"kind":"chart","id":"ch/a1ojqds7","slide":6,"name":"Chart","chartType":"scatter","title":"匹配后输入阻抗幅值（匹配前量级见右表）","bbox":[72,126,720,224]}
+{"kind":"chart","id":"ch/lsz25sru","slide":6,"name":"Chart","chartType":"scatter","title":"输入阻抗相位","bbox":[72,366,720,242]}
+{"kind":"table","id":"tb/rmh0zal0","slide":6,"name":"表格 26","rows":5,"cols":4,"preview":"指标 | 匹配前 | 理想匹配 | 有损匹配","bbox":[830,207,366,270]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"讲述顺序：先看右表的0.9 MHz固定频点，再看左上匹配后|Zin|局部曲线，最后看左下相位变化。\n比较条件：同一个1 Vrms RMS戴维南源和50 Ω源阻抗；换能器BVD参数相同。\n0.9 MHz结果：匹配前Zin=6800.001−j1939.072 Ω；理想匹配Zin≈50−j0 Ω；有损匹配Zin=56.686−j1.067 Ω。\n理想网络同时接近50 Ω和0°。有损网络由于电感Q=100、电容Q=1000，并且优化目标是最大化P_Rm而不是强制Γ=0，因此保留小量失配。\n左上图不画匹配前曲线，是因为匹配前|Z|在局部窗口内约6.8 kΩ至96.8 kΩ，若与0–65 Ω的匹配后曲线共用线性坐标，匹配后曲线将不可读；匹配前数值已保留在右表。\n结论边界：结果来自假设BVD参数和线性AC模型，不是实测换能器参数。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_LTspice逐频数据.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_匹配前后特征汇总.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_匹配设计参数.json"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textShapes":6}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"name":"title-6","text":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textPreview":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textChars":23,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"矩形 4","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"name":"矩形 6","text":"控制含义","textPreview":"控制含义","textChars":4,"textLines":1,"bbox":[966,152,220,34]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"name":"矩形 7","text":"1  先捕获峰位漂移\n\n2  再处理峰高损失\n\n3  按峰宽选择步长","textPreview":"1  先捕获峰位漂移 |  | 2  再处理峰高损失 |  | 3  按峰宽选择步长","textChars":34,"textLines":5,"bbox":[966,210,220,220]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"矩形: 圆角 8","bbox":[966,468,218,86]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"name":"矩形 9","text":"最大峰位变化\n−45.2 kHz","textPreview":"最大峰位变化 | −45.2 kHz","textChars":16,"textLines":2,"bbox":[986,482,178,60]}
+{"kind":"table","id":"tb/25snm1gr","slide":7,"name":"表格 17","rows":7,"cols":4,"preview":"最高档扰动 | 峰位变化 | 峰高变化 | 峰宽变化","bbox":[72,142,850,440]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"这页不是念完整扫描表，而是回答谁控制峰位、峰高和峰宽。重点指出fs漂移决定控制器的捕获范围。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\04_扰动与Qm\\stage3_trend_table.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\04_扰动与Qm\\stage3_scenario_registry_and_summary.csv"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"机械支路电容 Cm 增大使功率峰下移并降低峰高","textShapes":8}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"title-12","text":"机械支路电容 Cm 增大使功率峰下移并降低峰高","textPreview":"机械支路电容 Cm 增大使功率峰下移并降低峰高","textChars":23,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/18byd4zy","slide":8,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"name":"矩形 4","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"cm-summary-title","text":"关键结论","textPreview":"关键结论","textChars":4,"textLines":1,"bbox":[842,132,320,42]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"cm-shift-callout","text":"峰位总移   −78.6 kHz","textPreview":"峰位总移   −78.6 kHz","textChars":16,"textLines":1,"bbox":[846,205,316,64]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"name":"cm-height-callout","text":"峰高变化   −43.3%","textPreview":"峰高变化   −43.3%","textChars":13,"textLines":1,"bbox":[846,301,316,64]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"name":"cm-limit-callout","text":"未保护扫频   Vpp > 160 V","textPreview":"未保护扫频   Vpp > 160 V","textChars":19,"textLines":1,"bbox":[846,397,316,64]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"name":"cm-boundary-note","text":"Cm-only是原始元件单因素；\n派生 fs、Qm 会同时变化。","textPreview":"Cm-only是原始元件单因素； | 派生 fs、Qm 会同时变化。","textChars":32,"textLines":2,"bbox":[842,520,324,82]}
+{"kind":"image","id":"im/0rmpoj2t","slide":8,"name":"","bbox":[94.23,112,701.54,548]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"这页补齐机械支路电容Cm-only正式扫描。峰位由0.9000 MHz移至0.8214 MHz，方向和数量级与1/√Cm一致；峰高由170.0 mW降至96.4 mW。\n功率峰点未超过假设硬限，但a=1全频未保护扫描存在Vpp超过160 V的区间，因此不能把离线扫频曲线当成受保护控制时序。\n[Sources]\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/figures/stage3_disturbance/cm_only/stage3_07_cm_only_power_and_electrical_limits.png\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_summary.csv"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textShapes":11}
+{"kind":"textbox","id":"sh/0ru1ozyp","slide":9,"name":"title-7","text":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textPreview":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textChars":25,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1cfmhgne","slide":9,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0b65obm9","slide":9,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"矩形 4","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/ofq5svm5","slide":9,"name":"矩形 6","text":"FWHM","textPreview":"FWHM","textChars":4,"textLines":1,"bbox":[920,156,230,36]}
+{"kind":"shape","id":"sh/bih4na5w","slide":9,"name":"矩形: 圆角 7","bbox":[890,220,280,62]}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"name":"矩形 8","text":"Qm=500","textPreview":"Qm=500","textChars":6,"textLines":1,"bbox":[906,230,120,40]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"name":"矩形 9","text":"3.451 kHz","textPreview":"3.451 kHz","textChars":9,"textLines":1,"bbox":[1026,230,126,40]}
+{"kind":"shape","id":"sh/p0ji9kf2","slide":9,"name":"矩形: 圆角 10","bbox":[890,318,280,62]}
+{"kind":"textbox","id":"sh/2xsjepgb","slide":9,"name":"矩形 11","text":"Qm=800","textPreview":"Qm=800","textChars":6,"textLines":1,"bbox":[906,328,120,40]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"name":"矩形 12","text":"2.144 kHz","textPreview":"2.144 kHz","textChars":9,"textLines":1,"bbox":[1026,328,126,40]}
+{"kind":"shape","id":"sh/cnu1kzyd","slide":9,"name":"矩形: 圆角 13","bbox":[890,416,280,62]}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"name":"矩形 14","text":"Qm=1000","textPreview":"Qm=1000","textChars":7,"textLines":1,"bbox":[906,426,120,40]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"name":"矩形 15","text":"1.713 kHz","textPreview":"1.713 kHz","textChars":9,"textLines":1,"bbox":[1026,426,126,40]}
+{"kind":"textbox","id":"sh/bml0buxs","slide":9,"name":"矩形 16","text":"高Q不自动代表系统更好；\n它意味着更严格的频率分辨率。","textPreview":"高Q不自动代表系统更好； | 它意味着更严格的频率分辨率。","textChars":27,"textLines":2,"bbox":[914,538,250,70]}
+{"kind":"image","id":"im/yho7mlc7","slide":9,"name":"图片 24","bbox":[80,112,717,550]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"三组保持fs、Rm和C0固定，并重新推导Lm/Cm。峰高约0.17 W保持不变，峰宽随Qm增加而缩小。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\04_扰动与Qm\\stage3_Qm_500_800_1000_summary.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\stage3_03_Qm_sensitivity.png"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textShapes":9}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"title-8","text":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textPreview":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textChars":26,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"矩形 4","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"name":"矩形 7","text":"基准场景","textPreview":"基准场景","textChars":4,"textLines":1,"bbox":[90,132,180,28]}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"name":"矩形 8","text":"fs −5%场景","textPreview":"fs −5%场景","textChars":8,"textLines":1,"bbox":[90,367,180,28]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"矩形: 圆角 9","bbox":[980,220,220,162]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"name":"矩形 10","text":"最大功率\n0.8550 MHz\n\n最小相位\n0.9045 MHz","textPreview":"最大功率 | 0.8550 MHz |  | 最小相位 | 0.9045 MHz","textChars":32,"textLines":5,"bbox":[1000,236,180,132]}
+{"kind":"shape","id":"sh/q5gb21kb","slide":10,"name":"矩形: 圆角 11","bbox":[980,420,220,92]}
+{"kind":"textbox","id":"sh/r6pcv6lw","slide":10,"name":"矩形 12","text":"频率差\n约49.5 kHz","textPreview":"频率差 | 约49.5 kHz","textChars":13,"textLines":2,"bbox":[1000,435,180,64]}
+{"kind":"textbox","id":"sh/0bit8b2d","slide":10,"name":"矩形 13","text":"相位可作为观测量，但目标应来自受约束最大功率点","textPreview":"相位可作为观测量，但目标应来自受约束最大功率点","textChars":23,"textLines":1,"bbox":[970,548,240,64]}
+{"kind":"textbox","id":"sh/kzu5c32t","slide":10,"name":"文本框 6","text":"最大功率点 ≈ 最小反射点","textPreview":"最大功率点 ≈ 最小反射点","textChars":13,"textLines":1,"bbox":[250,210.61,640,38.78]}
+{"kind":"image","id":"im/tg7ixo36","slide":10,"name":"图片 22","bbox":[90.17,150,843.65,205]}
+{"kind":"image","id":"im/sfeh4j2l","slide":10,"name":"图片 23","bbox":[98.13,385,827.74,205]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"先看基准场景，再看fs-5%的反例。最大功率点与最小相位点相差49.5 kHz，说明零相位不能直接作为功率最大化目标。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\05_选频准则\\stage3_initial_three_criteria.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\stage3_selection_01_criteria_examples.png"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textShapes":6}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"name":"title-9","text":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textPreview":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textChars":23,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/wbih4b6d","slide":11,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"name":"矩形 4","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/o7ih0r6h","slide":11,"name":"矩形: 圆角 6","bbox":[814,522,360,92]}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"name":"矩形 7","text":"推荐离线组合\n±50 kHz、1 kHz步长\n101点，152ms代理时间","textPreview":"推荐离线组合 | ±50 kHz、1 kHz步长 | 101点，152ms代理时间","textChars":37,"textLines":3,"bbox":[838,534,312,70]}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"name":"矩形 8","text":"大扰动：宽窗口粗扫","textPreview":"大扰动：宽窗口粗扫","textChars":9,"textLines":1,"bbox":[86,540,310,32]}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"name":"矩形 9","text":"接近峰值：缩窗并细化至0.1–1 kHz","textPreview":"接近峰值：缩窗并细化至0.1–1 kHz","textChars":20,"textLines":1,"bbox":[86,582,610,32]}
+{"kind":"image","id":"im/dsn6xw32","slide":11,"name":"图片 5","bbox":[86,134.88,1034.29,361.06]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"±20 kHz会漏掉部分漂移峰；±50 kHz可覆盖当前28场景。扫描时间按1.5 ms/点估算，只是准稳态代理。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\05_选频准则\\stage3_window_step_aggregate.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\05_选频准则\\stage3_selection_report.md"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textShapes":9}
+{"kind":"textbox","id":"sh/gj25cry9","slide":12,"name":"title-10","text":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textPreview":"保护状态机先调幅并冻结频率，稳定后才恢复追踪","textChars":22,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1gbm9s3a","slide":12,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0f2lgnmp","slide":12,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"name":"矩形 4","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"name":"箭头: 右 5","bbox":[156,210,32,22]}
+{"kind":"shape","id":"sh/sb2lcnmd","slide":12,"name":"箭头: 右 6","bbox":[156,310,32,22]}
+{"kind":"shape","id":"sh/b6d4f2lc","slide":12,"name":"箭头: 右 7","bbox":[156,410,32,22]}
+{"kind":"shape","id":"sh/a543mx4r","slide":12,"name":"箭头: 右 8","bbox":[156,510,32,22]}
+{"kind":"shape","id":"sh/wvupgz6t","slide":12,"name":"矩形: 圆角 9","bbox":[82,158,145,62]}
+{"kind":"textbox","id":"sh/xw3q94ne","slide":12,"name":"矩形 10","text":"NORMAL","textPreview":"NORMAL","textChars":6,"textLines":1,"bbox":[92,166,125,46]}
+{"kind":"shape","id":"sh/atc7epon","slide":12,"name":"矩形: 圆角 11","bbox":[82,258,145,62]}
+{"kind":"textbox","id":"sh/bulo7u58","slide":12,"name":"矩形 12","text":"FOLDBACK","textPreview":"FOLDBACK","textChars":8,"textLines":1,"bbox":[92,266,125,46]}
+{"kind":"shape","id":"sh/orapcf6h","slide":12,"name":"矩形: 圆角 13","bbox":[82,358,145,62]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"name":"矩形 14","text":"HOLD","textPreview":"HOLD","textChars":4,"textLines":1,"bbox":[92,366,125,46]}
+{"kind":"shape","id":"sh/mps7a5or","slide":12,"name":"矩形: 圆角 15","bbox":[82,458,145,62]}
+{"kind":"textbox","id":"sh/nq1o3a5w","slide":12,"name":"矩形 16","text":"RAMP UP","textPreview":"RAMP UP","textChars":7,"textLines":1,"bbox":[92,466,125,46]}
+{"kind":"textbox","id":"sh/0nap8f6l","slide":12,"name":"矩形 17","text":"硬触发：HARD TRIP","textPreview":"硬触发：HARD TRIP","textChars":13,"textLines":1,"bbox":[66,554,190,46]}
+{"kind":"textbox","id":"sh/hkbm5wzu","slide":12,"name":"矩形 19","text":"软触发：130 Vpp / 5.5 mA RMS    硬上限：160 Vpp / 6 mA RMS","textPreview":"软触发：130 Vpp / 5.5 mA RMS    硬上限：160 Vpp / 6 mA RMS","textChars":50,"textLines":1,"bbox":[340,640,790,28]}
+{"kind":"image","id":"im/kfa90j6t","slide":12,"name":"图片 40","bbox":[268,124,930,515]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"围绕约2.4 s真实触发窗口讲解。任何非NORMAL状态都先调幅并冻结频率，预测裁剪保证实际硬越限次数为0。阈值是仿真假设。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_control_timeline.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_5_control_report.md\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\stage4_02_protection_state_machine.png"}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"控制已从“找峰值”升级为带频率、幅度与保护约束的问题","textShapes":10}
+{"kind":"textbox","id":"sh/7mdg3als","slide":13,"name":"title-14","text":"控制已从“找峰值”升级为带频率、幅度与保护约束的问题","textPreview":"控制已从“找峰值”升级为带频率、幅度与保护约束的问题","textChars":26,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/q50nydsj","slide":13,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/bq9orito","slide":13,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"name":"矩形 4","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/21gnuts7","slide":13,"name":"矩形 5","bbox":[438,150,2,430]}
+{"kind":"shape","id":"sh/32ponyts","slide":13,"name":"矩形 6","bbox":[850,150,2,430]}
+{"kind":"textbox","id":"sh/gzy5s3a1","slide":13,"name":"矩形 7","text":"已接入约束","textPreview":"已接入约束","textChars":5,"textLines":1,"bbox":[82,160,320,38]}
+{"kind":"textbox","id":"sh/1076lobm","slide":13,"name":"矩形 8","text":"0.8–1.0 MHz硬边界\n130/160 Vpp软/硬限\n5.5/6.0 mA RMS软/硬限\n幅度0–1与foldback","textPreview":"0.8–1.0 MHz硬边界 | 130/160 Vpp软/硬限 | 5.5/6.0 mA RMS软/硬限 | 幅度0–1与foldback","textChars":64,"textLines":4,"bbox":[92,230,300,250]}
+{"kind":"textbox","id":"sh/hcfy9k3u","slide":13,"name":"矩形 9","text":"保存结果审计","textPreview":"保存结果审计","textChars":6,"textLines":1,"bbox":[474,160,340,38]}
+{"kind":"textbox","id":"sh/gb6x0zm9","slide":13,"name":"矩形 10","text":"1795条控制时序\n峰值Vpp = 130 V\n峰值电流 = 5.124 mA\n实际硬越限 = 0","textPreview":"1795条控制时序 | 峰值Vpp = 130 V | 峰值电流 = 5.124 mA | 实际硬越限 = 0","textChars":49,"textLines":4,"bbox":[492,230,304,250]}
+{"kind":"textbox","id":"sh/vaxg7ulo","slide":13,"name":"矩形 11","text":"仍有缺口","textPreview":"仍有缺口","textChars":4,"textLines":1,"bbox":[888,160,280,38]}
+{"kind":"textbox","id":"sh/u9ofyp43","slide":13,"name":"矩形 12","text":"反射代理仅参与检测\n没有独立反射硬限\n没有壁面声压代理\n不是硬件安全验证","textPreview":"反射代理仅参与检测 | 没有独立反射硬限 | 没有壁面声压代理 | 不是硬件安全验证","textChars":36,"textLines":4,"bbox":[892,230,272,250]}
+{"kind":"shape","id":"sh/t8fy5k3i","slide":13,"name":"矩形: 圆角 13","bbox":[104,550,1070,64]}
+{"kind":"textbox","id":"sh/876xwfmx","slide":13,"name":"矩形 14","text":"当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制","textPreview":"当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制","textChars":41,"textLines":1,"bbox":[140,565,1000,36]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"这页回答控制是否仍是单纯找峰值。频率、幅度、软硬电压电流限制和保护状态都进入保存时序；三种策略实际硬越限均为0。\n反射代理目前只用于异常投票和重捕获触发，没有独立硬工作上限，因此仍是明确限制。\n[Sources]\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/constrained_control_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/plan_control_coupling_audit.json"}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"峰值由0.9000 MHz移至0.8548 MHz，自适应策略成功定位新峰值","textShapes":10}
+{"kind":"textbox","id":"sh/kre1k3y9","slide":14,"name":"title-11","text":"峰值由0.9000 MHz移至0.8548 MHz，自适应策略成功定位新峰值","textPreview":"峰值由0.9000 MHz移至0.8548 MHz，自适应策略成功定位新峰值","textChars":38,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xc7eds76","slide":14,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/wbydknq1","slide":14,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/jepwf2pc","slide":14,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"name":"矩形 4","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"name":"矩形 6","text":"定位结果与验收边界","textPreview":"定位结果与验收边界","textChars":9,"textLines":1,"bbox":[920,120,280,32]}
+{"kind":"textbox","id":"sh/zi5c3y98","slide":14,"name":"矩形 7","text":"基准峰值  0.9000 MHz｜170.0 mW\nfs−5%峰值  0.8548 MHz｜140.2 mW\n峰位变化  −45.2 kHz","textPreview":"基准峰值  0.9000 MHz｜170.0 mW | fs−5%峰值  0.8548 MHz｜140.2 mW | 峰位变化  −45.2 kHz","textChars":70,"textLines":3,"bbox":[920,156,288,112]}
+{"kind":"textbox","id":"sh/ehwvat8n","slide":14,"name":"矩形 8","text":"周期扫频：通过稳态验收","textPreview":"周期扫频：通过稳态验收","textChars":11,"textLines":1,"bbox":[920,292,280,30]}
+{"kind":"textbox","id":"sh/c3e1gjyd","slide":14,"name":"矩形 9","text":"稳定锁定0.8548 MHz；捕获率100%\n约96.5 ms满足连续10样本判据","textPreview":"稳定锁定0.8548 MHz；捕获率100% | 约96.5 ms满足连续10样本判据","textChars":41,"textLines":2,"bbox":[920,325,288,72]}
+{"kind":"textbox","id":"sh/x4ni9ofy","slide":14,"name":"矩形 10","text":"P&O：到达峰位但未通过验收","textPreview":"P&O：到达峰位但未通过验收","textChars":14,"textLines":1,"bbox":[920,420,280,30]}
+{"kind":"textbox","id":"sh/a1wze9g7","slide":14,"name":"矩形 11","text":"到达0.8548 MHz、捕获率100%\n但周期性参考/试探使其未满足\n连续10个控制样本保持窗口","textPreview":"到达0.8548 MHz、捕获率100% | 但周期性参考/试探使其未满足 | 连续10个控制样本保持窗口","textChars":49,"textLines":3,"bbox":[920,453,288,88]}
+{"kind":"textbox","id":"sh/b2507exs","slide":14,"name":"矩形 12","text":"ηP＝P当前 / P安全最大,当前场景\n100%表示找到该场景自身安全峰值\n不等于恢复基准绝对功率170.0 mW","textPreview":"ηP＝P当前 / P安全最大,当前场景 | 100%表示找到该场景自身安全峰值 | 不等于恢复基准绝对功率170.0 mW","textChars":57,"textLines":3,"bbox":[920,568,288,82]}
+{"kind":"image","id":"im/qpsv2lkb","slide":14,"name":"图片 5","bbox":[92.8,110,771.43,540]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"本页左侧三联图由Python/Matplotlib直接读取项目CSV生成，并以300 dpi PNG嵌入PPT；没有使用PowerPoint原生图表重绘，也没有人为平移数据。\na图：CASE_000_BASELINE与CASE_FS_M5的离线安全功率扫描，峰值分别为0.9000 MHz/170.0 mW与0.8548 MHz/140.2 mW。\nb图：捕获率按当前扰动场景自身的安全最大功率归一化。100%不等于恢复基准绝对功率。\nc图：仅绘制CONTROL样本；扫描/试探导致的时间间隔不插值、不连线。fs−5%窗口严格截断在3.200 s之前，避免混入下一扰动场景。\n周期扫频在2.4965 s到达峰值并通过稳态验收；P&O在2.4985 s首次到达同一峰位，但未通过连续稳态验收。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\active_stage3_5\\stage3_disturbance\\stage3_frequency_response_all_cases.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_control_timeline.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage5_per_segment_metrics.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_edit_slide11_python_20260828\\figure\\slide11_python_charts.png"}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"按98%功率连续10样本验收，周期扫频在当前参数下最稳健","textShapes":4}
+{"kind":"textbox","id":"sh/wrm9kvep","slide":15,"name":"title-12","text":"按98%功率连续10样本验收，周期扫频在当前参数下最稳健","textPreview":"按98%功率连续10样本验收，周期扫频在当前参数下最稳健","textChars":28,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/547mhg3m","slide":15,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/k3y5ov21","slide":15,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/76p4jqls","slide":15,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/65gnqlk7","slide":15,"name":"矩形 4","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/na5476l8","slide":15,"name":"矩形: 圆角 7","bbox":[72,506,1118,112]}
+{"kind":"textbox","id":"sh/m9c3e1kn","slide":15,"name":"矩形 8","text":"0%只表示尾段达到离线参考点；P&O的800 ms包含7段未收敛惩罚。\n结果排序只对当前线性模型、扰动时窗、驻留时间和控制参数成立。","textPreview":"0%只表示尾段达到离线参考点；P&O的800 ms包含7段未收敛惩罚。 | 结果排序只对当前线性模型、扰动时窗、驻留时间和控制参数成立。","textChars":66,"textLines":2,"bbox":[100,530,1060,68]}
+{"kind":"chart","id":"ch/ut43ylo3","slide":15,"name":"Chart","chartType":"bar","bbox":[770,160,420,320]}
+{"kind":"table","id":"tb/6hkfq1c3","slide":15,"name":"表格 17","rows":4,"cols":5,"preview":"策略 | 稳态误差 | 恢复时间 | 未收敛段 | 硬越限","bbox":[72,170,650,290]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"这页给出正式验收结论。固定频率稳态误差高；周期扫频在所有扰动段满足验收；P&O尾段可到最优，但7段未满足连续10样本确认。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage5_integrated_strategy_table.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage5_per_segment_metrics.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_5_control_report.md"}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"电—声接口已标准化：COMSOL未运行，但输入合同已就绪","textShapes":11}
+{"kind":"textbox","id":"sh/9c7i1o7u","slide":16,"name":"title-21","text":"电—声接口已标准化：COMSOL未运行，但输入合同已就绪","textPreview":"电—声接口已标准化：COMSOL未运行，但输入合同已就绪","textChars":28,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/8z2h8bq1","slide":16,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/9kby1g7m","slide":16,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ytkf2h8j","slide":16,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"name":"矩形 4","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/kv2h4rqp","slide":16,"name":"箭头: 右 5","bbox":[260,270,54,28]}
+{"kind":"shape","id":"sh/lwbyxwra","slide":16,"name":"箭头: 右 6","bbox":[486,270,54,28]}
+{"kind":"shape","id":"sh/ip4zel83","slide":16,"name":"箭头: 右 7","bbox":[712,270,54,28]}
+{"kind":"shape","id":"sh/3qdg7qpo","slide":16,"name":"箭头: 右 8","bbox":[938,270,54,28]}
+{"kind":"shape","id":"sh/fm1gzq5o","slide":16,"name":"矩形: 圆角 9","bbox":[82,220,180,120]}
+{"kind":"textbox","id":"sh/e1sf65o3","slide":16,"name":"矩形 10","text":"电学场景\n参数CSV","textPreview":"电学场景 | 参数CSV","textChars":10,"textLines":2,"bbox":[92,228,160,104]}
+{"kind":"shape","id":"sh/1ojy10ne","slide":16,"name":"矩形: 圆角 11","bbox":[314,220,180,120]}
+{"kind":"textbox","id":"sh/gnax8v6t","slide":16,"name":"矩形 12","text":"安全工作点\nf, Vport∠θ","textPreview":"安全工作点 | f, Vport∠θ","textChars":16,"textLines":2,"bbox":[324,228,160,104]}
+{"kind":"shape","id":"sh/nqlg3a5k","slide":16,"name":"矩形: 圆角 13","bbox":[540,220,180,120]}
+{"kind":"textbox","id":"sh/2pcfa5oz","slide":16,"name":"矩形 14","text":"复端口激励\nVrms exp(+jωt)","textPreview":"复端口激励 | Vrms exp(+jωt)","textChars":20,"textLines":2,"bbox":[550,228,160,104]}
+{"kind":"shape","id":"sh/ps3y5knq","slide":16,"name":"矩形: 圆角 15","bbox":[766,220,180,120]}
+{"kind":"textbox","id":"sh/oruhcf65","slide":16,"name":"矩形 16","text":"声学查找表\nηacoustic(f)","textPreview":"声学查找表 | ηacoustic(f)","textChars":18,"textLines":2,"bbox":[776,228,160,104]}
+{"kind":"shape","id":"sh/bulg7u5g","slide":16,"name":"矩形: 圆角 17","bbox":[992,220,180,120]}
+{"kind":"textbox","id":"sh/atczepob","slide":16,"name":"矩形 18","text":"相对声压代理\ntarget / wall","textPreview":"相对声压代理 | target / wall","textChars":20,"textLines":2,"bbox":[1002,228,160,104]}
+{"kind":"textbox","id":"sh/mpgj6t8j","slide":16,"name":"矩形 19","text":"EA_IF_V1.0｜基准+低/中/高组合4条记录｜接口审计 PASS","textPreview":"EA_IF_V1.0｜基准+低/中/高组合4条记录｜接口审计 PASS","textChars":35,"textLines":1,"bbox":[250,420,780,40]}
+{"kind":"textbox","id":"sh/7qp0zepo","slide":16,"name":"矩形 20","text":"声学字段：NOT_AVAILABLE（未运行COMSOL）","textPreview":"声学字段：NOT_AVAILABLE（未运行COMSOL）","textChars":29,"textLines":1,"bbox":[388,486,510,40]}
+{"kind":"textbox","id":"sh/8by18jq9","slide":16,"name":"矩形 21","text":"接口一致不等于声场结果；复端口电压作为FEM激励","textPreview":"接口一致不等于声场结果；复端口电压作为FEM激励","textChars":24,"textLines":1,"bbox":[266,560,760,44]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"电—声接口已经完成字段定义和4条代表性电学工作点导出。COMSOL未运行，因此相对声学效率、靶区和壁面压力代理保持空值。\n复端口电压按RMS、exp(+jωt)约定作为FEM激励；预测电流只用于交叉校核。\n[Sources]\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/interfaces/electro_acoustic_v1/electro_acoustic_interface_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv"}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textShapes":10}
+{"kind":"textbox","id":"sh/14rqpgne","slide":17,"name":"title-13","text":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textPreview":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textChars":30,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1c7e50ni","slide":17,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/gbedwfmx","slide":17,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/rm5czq50","slide":17,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/6lwvql4v","slide":17,"name":"矩形 4","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/t8ne10n6","slide":17,"name":"箭头: 右 5","bbox":[236,232,48,28]}
+{"kind":"shape","id":"sh/snedsvml","slide":17,"name":"箭头: 右 6","bbox":[526,232,48,28]}
+{"kind":"shape","id":"sh/jilcvq54","slide":17,"name":"矩形: 圆角 7","bbox":[82,178,220,130]}
+{"kind":"textbox","id":"sh/ihcvml4j","slide":17,"name":"矩形 8","text":"文献直接事实\n\n纤维化、钙化、\n结构异质性","textPreview":"文献直接事实 |  | 纤维化、钙化、 | 结构异质性","textChars":21,"textLines":4,"bbox":[92,186,200,114]}
+{"kind":"shape","id":"sh/4by9or6l","slide":17,"name":"矩形: 圆角 9","bbox":[350,178,220,130]}
+{"kind":"textbox","id":"sh/pc7qhwn6","slide":17,"name":"矩形 10","text":"工程建模假设\n\nfs、Rm、匹配状态\n可能变化","textPreview":"工程建模假设 |  | fs、Rm、匹配状态 | 可能变化","textChars":23,"textLines":4,"bbox":[360,186,200,114]}
+{"kind":"shape","id":"sh/29grm1of","slide":17,"name":"矩形: 圆角 11","bbox":[618,178,220,130]}
+{"kind":"textbox","id":"sh/3ap8fm50","slide":17,"name":"矩形 12","text":"待验证\n\n病变类型到BVD参数\n的定量映射","textPreview":"待验证 |  | 病变类型到BVD参数 | 的定量映射","textChars":21,"textLines":4,"bbox":[628,186,200,114]}
+{"kind":"shape","id":"sh/gnepkr69","slide":17,"name":"矩形 13","bbox":[892,152,286,390]}
+{"kind":"textbox","id":"sh/honqdwnu","slide":17,"name":"矩形 14","text":"当前能力边界","textPreview":"当前能力边界","textChars":6,"textLines":1,"bbox":[918,178,235,34]}
+{"kind":"textbox","id":"sh/ulw7ihoj","slide":17,"name":"矩形 15","text":"已完成\n端口电学模型\n准稳态控制原型\n\n未完成\n结构模态与声场\n热效应与空化\n临床效果","textPreview":"已完成 | 端口电学模型 | 准稳态控制原型 |  | 未完成 | 结构模态与声场 | 热效应与空化 | 临床效果","textChars":43,"textLines":8,"bbox":[932,232,208,260]}
+{"kind":"textbox","id":"sh/fm58bm54","slide":17,"name":"矩形 16","text":"文献层、工程假设层、待验证层必须分开","textPreview":"文献层、工程假设层、待验证层必须分开","textChars":18,"textLines":1,"bbox":[118,394,680,50]}
+{"kind":"textbox","id":"sh/0ji9wb6t","slide":17,"name":"矩形 17","text":"当前模型只讨论特定BVD与扰动范围内的电学稳定性","textPreview":"当前模型只讨论特定BVD与扰动范围内的电学稳定性","textChars":24,"textLines":1,"bbox":[118,474,680,50]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"文献可以支持CTO结构异质性及负载变化的物理背景，但不能直接给出病变类型到fs、Rm、C0的定量换算。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\08_结构声场未完成说明\\literature_axisymmetric_reproduction_spec.md\n- 本项目文献补齐目录中的CTO、治疗超声和前视超声资料；具体DOI需在最终汇报备注中逐条核对。"}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"电学与带约束控制已闭环，剩余缺口是实测和结构声场","textShapes":10}
+{"kind":"textbox","id":"sh/to72pw76","slide":18,"name":"title-14","text":"电学与带约束控制已闭环，剩余缺口是实测和结构声场","textPreview":"电学与带约束控制已闭环，剩余缺口是实测和结构声场","textChars":24,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/wrelszu9","slide":18,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/hsn2l4bu","slide":18,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/itw3upcf","slide":18,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/je5knut0","slide":18,"name":"矩形 4","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/4felwzu5","slide":18,"name":"矩形 5","bbox":[438,150,2,430]}
+{"kind":"shape","id":"sh/5gnmp4bq","slide":18,"name":"矩形 6","bbox":[850,150,2,430]}
+{"kind":"textbox","id":"sh/6hw3y9sb","slide":18,"name":"矩形 7","text":"本月已完成","textPreview":"本月已完成","textChars":5,"textLines":1,"bbox":[82,160,320,38]}
+{"kind":"textbox","id":"sh/rip4retw","slide":18,"name":"矩形 8","text":"v2.1匹配网络与双线验证\nC0/Rm/fs/Rs/匹配/ESR/Lm/Cm扫描\n低/中/高组合LTspice验证\n选频、保护、P&O与相位消融\n电—声接口EA_IF_V1.0","textPreview":"v2.1匹配网络与双线验证 | C0/Rm/fs/Rs/匹配/ESR/Lm/Cm扫描 | 低/中/高组合LTspice验证 | 选频、保护、P&O与相位消融 | 电—声接口EA_IF_V1.0","textChars":88,"textLines":5,"bbox":[92,230,300,250]}
+{"kind":"textbox","id":"sh/fapkr6pw","slide":18,"name":"矩形 9","text":"仍未证明","textPreview":"仍未证明","textChars":4,"textLines":1,"bbox":[474,160,340,38]}
+{"kind":"textbox","id":"sh/upg3i18r","slide":18,"name":"矩形 10","text":"假设参数代表实物\nP_Rm等于声功率\n准稳态时间等于硬件响应\n反射代理等于实测反射功率\n任何治疗或临床安全结论","textPreview":"假设参数代表实物 | P_Rm等于声功率 | 准稳态时间等于硬件响应 | 反射代理等于实测反射功率 | 任何治疗或临床安全结论","textChars":55,"textLines":5,"bbox":[492,230,304,250]}
+{"kind":"textbox","id":"sh/1cr2tg72","slide":18,"name":"矩形 11","text":"下一阶段","textPreview":"下一阶段","textChars":4,"textLines":1,"bbox":[888,160,280,38]}
+{"kind":"textbox","id":"sh/gbylkbqh","slide":18,"name":"矩形 12","text":"实测阻抗并拟合BVD\n电压/电流/功率标定\n设定独立反射约束\n运行结构声场与网格收敛\n水听器声场验证","textPreview":"实测阻抗并拟合BVD | 电压/电流/功率标定 | 设定独立反射约束 | 运行结构声场与网格收敛 | 水听器声场验证","textChars":50,"textLines":5,"bbox":[892,230,272,250]}
+{"kind":"shape","id":"sh/7mpknmp0","slide":18,"name":"矩形: 圆角 13","bbox":[104,550,1070,64]}
+{"kind":"textbox","id":"sh/6lg3e18f","slide":18,"name":"矩形 14","text":"当前结论仅适用于特定假设BVD、v2.1匹配网络和设定扰动范围","textPreview":"当前结论仅适用于特定假设BVD、v2.1匹配网络和设定扰动范围","textChars":31,"textLines":1,"bbox":[140,565,1000,36]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":"收尾时明确：计划逐条审核为8项完成、1项部分完成、1项因无COMSOL输入未开始。\n已完成的是电学模型、匹配、扰动、选频、保护、相位消融和接口合同；未完成的是实物参数验证、独立反射硬限以及结构声场结果。\n[Sources]\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/plan_control_coupling_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"}
+{"kind":"slide","id":"sl/nid43ytk","slide":19,"title":"备份：v2.1参数均有明确来源类别","textShapes":3}
+{"kind":"textbox","id":"sh/wj2psvat","slide":19,"name":"title-15","text":"备份：v2.1参数均有明确来源类别","textPreview":"备份：v2.1参数均有明确来源类别","textChars":17,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/9gb6xgbi","slide":19,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/8v2pobax","slide":19,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/vitozqt8","slide":19,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/ahk7qls3","slide":19,"name":"矩形 4","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"table","id":"tb/mdonq9s7","slide":19,"name":"表格 13","rows":10,"cols":4,"preview":"参数 | 数值 | 单位 | 来源类别","bbox":[130,140,1020,485]}
+{"kind":"notes","id":"nt/nid43ytk","slide":19,"text":"答疑时用这页回答参数从哪里来。所有数值分成用户约束、假设基线和扫描变量，不能称为实测。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\v2_1_活动基线参数.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\v2_1_Qm敏感性参数.csv"}
+{"kind":"slide","id":"sl/zyxsni5k","slide":20,"title":"备份：单因素与组合扰动均有编号和复现参数","textShapes":7}
+{"kind":"textbox","id":"sh/rid4nuhs","slide":20,"name":"title-16","text":"备份：单因素与组合扰动均有编号和复现参数","textPreview":"备份：单因素与组合扰动均有编号和复现参数","textChars":20,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/qpwjmh8n","slide":20,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/rq50vmp8","slide":20,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/4nu1krqh","slide":20,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/po3itc72","slide":20,"name":"矩形 4","text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/2lczih8r","slide":20,"name":"矩形 5","text":"单因素最高档","textPreview":"单因素最高档","textChars":6,"textLines":1,"bbox":[88,140,500,34]}
+{"kind":"textbox","id":"sh/gjuhg7ql","slide":20,"name":"矩形 7","text":"统一扰动序列","textPreview":"统一扰动序列","textChars":6,"textLines":1,"bbox":[596,140,560,34]}
+{"kind":"textbox","id":"sh/hk3ipcr6","slide":20,"name":"矩形 8","text":"Baseline → C₀+30% → Rₘ+50% → fₛ−5%\n→ Lmatch+10% → QL=20 → Combined High → Baseline","textPreview":"Baseline → C₀+30% → Rₘ+50% → fₛ−5% | → Lmatch+10% → QL=20 → Combined High → Baseline","textChars":82,"textLines":2,"bbox":[596,196,570,100]}
+{"kind":"shape","id":"sh/dkfmp4zy","slide":20,"name":"矩形: 圆角 9","bbox":[596,336,570,188]}
+{"kind":"textbox","id":"sh/cj65wzyd","slide":20,"name":"矩形 10","text":"0.9 MHz固定点基线\n|Z| ≈ 7.071 kΩ   相位 ≈ −15.916°\nP_Rm ≈ 0.170 W   I_RMS ≈ 5.000 mA\nVport ≈ 100 Vpp","textPreview":"0.9 MHz固定点基线 | |Z| ≈ 7.071 kΩ   相位 ≈ −15.916° | P_Rm ≈ 0.170 W   I_RMS ≈ 5.000 mA | Vport ≈ 100 Vpp","textChars":93,"textLines":4,"bbox":[628,360,505,140]}
+{"kind":"table","id":"tb/50jexsb6","slide":20,"name":"表格 19","rows":7,"cols":2,"preview":"因子 | 最高档","bbox":[88,188,420,360]}
+{"kind":"notes","id":"nt/zyxsni5k","slide":20,"text":"用于回答扰动为何这样选、各场景是否可复现，以及基准0.9 MHz各指标。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\04_扰动与Qm\\stage3_scenario_registry_and_summary.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_control_timeline.csv"}
+{"kind":"slide","id":"sl/m1wvqtk3","slide":21,"title":"备份：低中高组合均通过LTspice/Python交叉验证","textShapes":4}
+{"kind":"textbox","id":"sh/b6d432pc","slide":21,"name":"title-20","text":"备份：低中高组合均通过LTspice/Python交叉验证","textPreview":"备份：低中高组合均通过LTspice/Python交叉验证","textChars":29,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1gbmxs7a","slide":21,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0f2lon6p","slide":21,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ra9kryp8","slide":21,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/qp03yt8n","slide":21,"name":"矩形 4","text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/sb2lk36t","slide":21,"name":"矩形 6","text":"三档误差均远低于5%验收线；这排除了主要实现差异，但不能验证假设参数是真实器件参数。","textPreview":"三档误差均远低于5%验收线；这排除了主要实现差异，但不能验证假设参数是真实器件参数。","textChars":42,"textLines":1,"bbox":[118,596,1040,42]}
+{"kind":"table","id":"tb/fqxgv6l0","slide":21,"name":"表格 14","rows":7,"cols":2,"preview":"组合场景 | 真实LTspice/Python交叉验证","bbox":[92,142,1090,420]}
+{"kind":"notes","id":"nt/m1wvqtk3","slide":21,"text":"此前只有高组合完成交叉验证；现在低、中、高组合均已有真实LTspice批处理输出和Python对照。\n最大输入阻抗相对误差分别约0.01461%、0.00751%和0.00295%。\n[Sources]\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_LTspice_cross_validation.csv"}
+{"kind":"slide","id":"sl/5onypobq","slide":22,"title":"备份：三种选频准则优化的是不同目标函数","textShapes":4}
+{"kind":"textbox","id":"sh/p43q1sva","slide":22,"name":"title-17","text":"备份：三种选频准则优化的是不同目标函数","textPreview":"备份：三种选频准则优化的是不同目标函数","textChars":19,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/6987itcr","slide":22,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/7a18rydc","slide":22,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/k7qpgjul","slide":22,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/58zqpov6","slide":22,"name":"矩形 4","text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/jmh8nyd0","slide":22,"name":"矩形: 圆角 6","bbox":[148,480,970,100]}
+{"kind":"textbox","id":"sh/43u9snu5","slide":22,"name":"矩形 7","text":"典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。","textPreview":"典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。","textChars":56,"textLines":1,"bbox":[176,510,914,44]}
+{"kind":"table","id":"tb/uxwnupw3","slide":22,"name":"表格 15","rows":4,"cols":4,"preview":"准则 | 定义 | 优点 | 主要风险","bbox":[86,154,1100,270]}
+{"kind":"notes","id":"nt/5onypobq","slide":22,"text":"用于回答为什么主控制目标选择最大功率，而相位和反射只作为对照。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\05_选频准则\\stage3_initial_three_criteria.csv"}
+{"kind":"slide","id":"sl/c7uhcr6t","slide":23,"title":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textShapes":7}
+{"kind":"textbox","id":"sh/69gry94v","slide":23,"name":"title-18","text":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textPreview":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textChars":26,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/90vqdczq","slide":23,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/8zm9k7y5","slide":23,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/v2d8fmhw","slide":23,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/a14rmhgb","slide":23,"name":"矩形 4","text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/w3m9o7yh","slide":23,"name":"矩形 6","text":"φ = arg(Vport / Iport)","textPreview":"φ = arg(Vport / Iport)","textChars":22,"textLines":1,"bbox":[880,158,280,40]}
+{"kind":"textbox","id":"sh/jqd8jmhs","slide":23,"name":"矩形 7","text":"目标相位\n−1.0782°","textPreview":"目标相位 | −1.0782°","textChars":13,"textLines":2,"bbox":[900,230,240,70]}
+{"kind":"textbox","id":"sh/ip4rqhgn","slide":23,"name":"矩形 8","text":"方向由局部 dφ/df 决定","textPreview":"方向由局部 dφ/df 决定","textChars":14,"textLines":1,"bbox":[870,340,300,42]}
+{"kind":"shape","id":"sh/sby90zm1","slide":23,"name":"矩形: 圆角 9","bbox":[850,420,340,130]}
+{"kind":"textbox","id":"sh/tc7at436","slide":23,"name":"矩形 10","text":"50与100 Hz/°各出现1个错误锁定段\n|eφ|小，但 P_Rm < 0.95 P*","textPreview":"50与100 Hz/°各出现1个错误锁定段 | |eφ|小，但 P_Rm < 0.95 P*","textChars":44,"textLines":2,"bbox":[872,448,296,74]}
+{"kind":"image","id":"im/gz650b6h","slide":23,"name":"图片 18","bbox":[129.54,132,644.91,500]}
+{"kind":"notes","id":"nt/c7uhcr6t","slide":23,"text":"相位目标不是0度，而是基准受约束最大功率点的相位。局部相位曲线斜率决定更新方向。高增益仍可能错误锁定。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\phase_gain_sweep_summary.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\phase_ablation_selected_gain.png"}
+{"kind":"slide","id":"sl/7qto7e10","slide":24,"title":"备份：相位闭环仅作计划书补充消融，不替代P&O排名","textShapes":4}
+{"kind":"textbox","id":"sh/8veh8ril","slide":24,"name":"title-12","text":"备份：相位闭环仅作计划书补充消融，不替代P&O排名","textPreview":"备份：相位闭环仅作计划书补充消融，不替代P&O排名","textChars":25,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1sfqxsv6","slide":24,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0r6p4nul","slide":24,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/nux8zidc","slide":24,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/2to76dcr","slide":24,"name":"矩形 4","text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/3ydonyd8","slide":24,"name":"矩形: 圆角 7","bbox":[72,506,1118,112]}
+{"kind":"textbox","id":"sh/ix47utcn","slide":24,"name":"矩形 8","text":"正式排名第三策略仍为扫描辅助P&O；相位K5不替代P&O结论。\n在fs漂移与高组合场景中，相位目标可能对应较低功率工作点。","textPreview":"正式排名第三策略仍为扫描辅助P&O；相位K5不替代P&O结论。 | 在fs漂移与高组合场景中，相位目标可能对应较低功率工作点。","textChars":61,"textLines":2,"bbox":[100,530,1060,68]}
+{"kind":"chart","id":"ch/ehsbatoz","slide":24,"name":"Chart","chartType":"bar","bbox":[770,160,420,320]}
+{"kind":"table","id":"tb/q9wn25cv","slide":24,"name":"表格 17","rows":4,"cols":5,"preview":"策略 | 稳态误差 | 惩罚恢复时间 | 峰值电流 | 实际硬越限","bbox":[72,170,650,290]}
+{"kind":"notes","id":"nt/7qto7e10","slide":24,"text":"这页按计划书原始三策略口径给出固定、周期扫频和相位闭环的补充比较。正式综合排名仍使用固定、周期扫频和扫描辅助P&O。\n相位闭环在当前代表时间表中平均稳态误差较高，因此只保留为消融，不能把零相位当成最大功率的通用替代。\n[Sources]\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/plan_fixed_periodic_phase_integrated.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/scan_vs_phase_scenario_comparison.csv"}
+{"kind":"slide","id":"sl/69wfm9o7","slide":25,"title":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textShapes":5}
+{"kind":"textbox","id":"sh/h0jalgra","slide":25,"name":"title-19","text":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textPreview":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textChars":33,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xg7axgf2","slide":25,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cfyt4beh","slide":25,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/napsr6x0","slide":25,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/29wby1wf","slide":25,"name":"矩形 4","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/fm5snmx4","slide":25,"name":"矩形: 圆角 7","bbox":[830,352,350,198]}
+{"kind":"textbox","id":"sh/elwbu1wj","slide":25,"name":"矩形 8","text":"证据层级\nGUI截图：运行痕迹\nRAW文件：数值输出\n解析误差：交叉验证\nSHA-256：文件追溯","textPreview":"证据层级 | GUI截图：运行痕迹 | RAW文件：数值输出 | 解析误差：交叉验证 | SHA-256：文件追溯","textChars":49,"textLines":5,"bbox":[860,374,290,150]}
+{"kind":"textbox","id":"sh/wza9cbqp","slide":25,"name":"矩形 9","text":"GUI截图本身不是数值正确性的证明","textPreview":"GUI截图本身不是数值正确性的证明","textChars":17,"textLines":1,"bbox":[330,585,620,34]}
+{"kind":"image","id":"im/987its3y","slide":25,"name":"图片 18","bbox":[72,147.23,720,385.55]}
+{"kind":"image","id":"im/87y1knmd","slide":25,"name":"图片 19","bbox":[830,147.41,350,161.18]}
+{"kind":"notes","id":"nt/69wfm9o7","slide":25,"text":"用于回应‘是否真的运行LTspice’。截图证明运行痕迹，RAW解析与误差CSV才证明结果一致，哈希用于追溯。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\02_LTspice真实运行\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\SHA256_文件清单.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\LTspice_GUI_waveform_mag_phase.png"}
+{"kind":"slide","id":"sl/l0bepsfm","slide":26,"title":"备份：控制器比较采用统一且可复现的指标定义","textShapes":4}
+{"kind":"textbox","id":"sh/kbil0r2p","slide":26,"name":"title-20","text":"备份：控制器比较采用统一且可复现的指标定义","textPreview":"备份：控制器比较采用统一且可复现的指标定义","textChars":21,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/uhk36lk7","slide":26,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/vitkzqlc","slide":26,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/8fil4b21","slide":26,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/tgr2xg3m","slide":26,"name":"矩形 4","text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/7e9kv6lg","slide":26,"name":"矩形 6","text":"130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。","textPreview":"130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。","textChars":50,"textLines":1,"bbox":[118,596,1040,42]}
+{"kind":"table","id":"tb/s3698rmp","slide":26,"name":"表格 14","rows":7,"cols":2,"preview":"指标 | 本次定义","bbox":[92,142,1090,420]}
+{"kind":"notes","id":"nt/l0bepsfm","slide":26,"text":"用于回答恢复时间、稳态误差和错误锁定如何定义。强调所有策略用相同定义。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\01_项目口径与参数\\03_Codex任务说明_修订版_v2_1.md\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\06_控制与保护\\stage4_5_control_report.md"}
+{"kind":"slide","id":"sl/4vyxknqp","slide":27,"title":"备份：每张图都能追溯到参数、脚本和原始输出","textShapes":11}
+{"kind":"textbox","id":"sh/dkb2x0bq","slide":27,"name":"title-21","text":"备份：每张图都能追溯到参数、脚本和原始输出","textPreview":"备份：每张图都能追溯到参数、脚本和原始输出","textChars":21,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/kn694nmx","slide":27,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/lofadsni","slide":27,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/mpor6x43","slide":27,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/7qxsfi5o","slide":27,"name":"矩形 4","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/8r698nm9","slide":27,"name":"箭头: 右 5","bbox":[260,270,54,28]}
+{"kind":"shape","id":"sh/9sfahsnu","slide":27,"name":"箭头: 右 6","bbox":[486,270,54,28]}
+{"kind":"shape","id":"sh/utobax4f","slide":27,"name":"箭头: 右 7","bbox":[712,270,54,28]}
+{"kind":"shape","id":"sh/vuxsj250","slide":27,"name":"箭头: 右 8","bbox":[938,270,54,28]}
+{"kind":"shape","id":"sh/ju5gv294","slide":27,"name":"矩形: 圆角 9","bbox":[82,220,180,120]}
+{"kind":"textbox","id":"sh/ytwfmx8j","slide":27,"name":"矩形 10","text":"参数CSV\n场景注册表","textPreview":"参数CSV | 场景注册表","textChars":11,"textLines":2,"bbox":[92,228,160,104]}
+{"kind":"shape","id":"sh/lw7yxcra","slide":27,"name":"矩形: 圆角 11","bbox":[314,220,180,120]}
+{"kind":"textbox","id":"sh/kvyxo7qp","slide":27,"name":"矩形 12","text":"Python脚本\nLTspice .cir","textPreview":"Python脚本 | LTspice .cir","textChars":21,"textLines":2,"bbox":[324,228,160,104]}
+{"kind":"shape","id":"sh/bq5gr298","slide":27,"name":"矩形: 圆角 13","bbox":[540,220,180,120]}
+{"kind":"textbox","id":"sh/apwfix8n","slide":27,"name":"矩形 14","text":".raw / .log\n控制时序CSV","textPreview":".raw / .log | 控制时序CSV","textChars":19,"textLines":2,"bbox":[550,228,160,104]}
+{"kind":"shape","id":"sh/xsnytcry","slide":27,"name":"矩形: 圆角 15","bbox":[766,220,180,120]}
+{"kind":"textbox","id":"sh/wrexk7qt","slide":27,"name":"矩形 16","text":"汇总CSV\n指标表","textPreview":"汇总CSV | 指标表","textChars":9,"textLines":2,"bbox":[776,228,160,104]}
+{"kind":"shape","id":"sh/vmpg3m9c","slide":27,"name":"矩形: 圆角 17","bbox":[992,220,180,120]}
+{"kind":"textbox","id":"sh/ulgzuh8r","slide":27,"name":"矩形 18","text":"PNG/PDF/SVG\nPPT图表","textPreview":"PNG/PDF/SVG | PPT图表","textChars":17,"textLines":2,"bbox":[1002,228,160,104]}
+{"kind":"textbox","id":"sh/qhkj2lsz","slide":27,"name":"矩形 19","text":"README_汇报工作痕迹索引.md","textPreview":"README_汇报工作痕迹索引.md","textChars":18,"textLines":1,"bbox":[250,420,780,40]}
+{"kind":"textbox","id":"sh/rit0vqtk","slide":27,"name":"矩形 20","text":"SHA256_文件清单.csv","textPreview":"SHA256_文件清单.csv","textChars":15,"textLines":1,"bbox":[388,486,510,40]}
+{"kind":"textbox","id":"sh/sj214va5","slide":27,"name":"矩形 21","text":"图表不是孤立截图，而是可重新运行的产物","textPreview":"图表不是孤立截图，而是可重新运行的产物","textChars":19,"textLines":1,"bbox":[266,560,760,44]}
+{"kind":"notes","id":"nt/4vyxknqp","slide":27,"text":"用于回答复现性和文件组织。展示从参数到图表的完整链条。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\README_汇报工作痕迹索引.md\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\SHA256_文件清单.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\09_复现脚本"}
+{"kind":"slide","id":"sl/3mdove10","slide":28,"title":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textShapes":8}
+{"kind":"textbox","id":"sh/ytsne5wf","slide":28,"name":"title-22","text":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textPreview":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textChars":28,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/q9cz6xkv","slide":28,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/ralgf21g","slide":28,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/0zehcr2x","slide":28,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/10nylwji","slide":28,"name":"矩形 4","text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/exwzahkr","slide":28,"name":"矩形 5","text":"建模输入","textPreview":"建模输入","textChars":4,"textLines":1,"bbox":[124,150,430,38]}
+{"kind":"textbox","id":"sh/zy5gjm1c","slide":28,"name":"矩形 6","text":"• 几何尺寸与完整模型树\n\n• 压电材料矩阵与极化方向\n\n• 电极、机械、耦合面和PML\n\n• 粗/中/细三档网格\n\n• 模态频率与关键模态形状","textPreview":"• 几何尺寸与完整模型树 |  | • 压电材料矩阵与极化方向 |  | • 电极、机械、耦合面和PML |  | • 粗/中/细三档网格 |  | • 模态频率与关键模态形状","textChars":72,"textLines":9,"bbox":[116,214,450,340]}
+{"kind":"shape","id":"sh/o3ehgr29","slide":28,"name":"矩形 7","bbox":[630,142,2,440]}
+{"kind":"textbox","id":"sh/947ipwje","slide":28,"name":"矩形 8","text":"必须保留的结果证据","textPreview":"必须保留的结果证据","textChars":9,"textLines":1,"bbox":[700,150,430,38]}
+{"kind":"textbox","id":"sh/lg3690fq","slide":28,"name":"矩形 9","text":"• 端口阻抗/导纳曲线\n\n• 位移幅值与相位\n\n• 声压云图与轴向曲线\n\n• 网格收敛表\n\n• Solver Log正常结束页面","textPreview":"• 端口阻抗/导纳曲线 |  | • 位移幅值与相位 |  | • 声压云图与轴向曲线 |  | • 网格收敛表 |  | • Solver Log正常结束页面","textChars":64,"textLines":9,"bbox":[692,214,460,340]}
+{"kind":"shape","id":"sh/kfu5gfe5","slide":28,"name":"矩形: 圆角 10","bbox":[164,590,950,50]}
+{"kind":"textbox","id":"sh/je1o7ax0","slide":28,"name":"矩形 11","text":"当前没有真实ANSYS/COMSOL截图，不得生成伪造云图填充汇报","textPreview":"当前没有真实ANSYS/COMSOL截图，不得生成伪造云图填充汇报","textChars":33,"textLines":1,"bbox":[198,600,880,32]}
+{"kind":"notes","id":"nt/3mdove10","slide":28,"text":"这页用于坦诚说明结构声场尚未完成，并列出下一阶段需要自己从ANSYS/COMSOL截图保存的证据。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\08_结构声场未完成说明\\GUI_evidence_capture_checklist.md\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\08_结构声场未完成说明\\solver_input_requirements.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\08_结构声场未完成说明\\README_ANSYS_COMSOL_BLOCKED.md"}

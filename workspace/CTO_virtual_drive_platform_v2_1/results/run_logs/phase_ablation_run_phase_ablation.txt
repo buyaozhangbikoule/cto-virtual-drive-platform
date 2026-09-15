@@ -1,0 +1,30 @@
+COMMAND: C:\Users\24739\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe run_phase_ablation.py
+CWD: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\active_stage3_5
+RETURN_CODE: 0
+
+STDOUT:
+{
+  "status": "PASS",
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "role": "fourth ablation only; excluded from formal three-strategy ranking",
+  "phase_definition": "arg(Zin)=arg(Vinput/Isource), positive inductive",
+  "target_phase_deg": -1.0782096368565852,
+  "target_source": "baseline constrained maximum-P_Rm frequency",
+  "control_law": "df=clip(Kphi*(phi_target-phi)*sign(dphi/df),+-500 Hz)",
+  "selected_gain_Hz_per_deg": 5.0,
+  "selected_summary": {
+    "gain_Hz_per_deg": 5.0,
+    "mean_steady_power_error_pct": 39.90651296860581,
+    "mean_abs_phase_error_deg": 20.216431349128488,
+    "max_frequency_pp_kHz": 0.2679976356922416,
+    "frequency_saturation_ms": 0.0,
+    "wrong_phase_lock_segments": 0,
+    "actual_hard_violations": 0
+  },
+  "wrong_phase_lock_seen_in_gain_sweep": true,
+  "scope": "quasi-steady hypothetical electrical model; no hardware or acoustic claim"
+}
+
+
+STDERR:
+

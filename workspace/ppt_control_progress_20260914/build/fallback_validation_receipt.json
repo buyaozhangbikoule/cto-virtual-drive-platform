@@ -1,0 +1,243 @@
+{
+  "single": {
+    "candidate_sha256": "48718f6ae70fe486d58bd505f18c958798b084b54073b979993c3023b131c38b",
+    "reports": {
+      "integrity": {
+        "exit_code": 0,
+        "result": {
+          "chart_count": 0,
+          "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+          "finding_count": 0,
+          "findings": [],
+          "notes_parts_skipped": 1,
+          "relationship_part_count": 7,
+          "slide_count": 1,
+          "status": "pass"
+        },
+        "stderr": ""
+      },
+      "layout": {
+        "exit_code": 0,
+        "result": {
+          "finding_count": 0,
+          "findings": [],
+          "font_policy": {
+            "checked_text_script_count": 30,
+            "native_font_rendering_verified": false,
+            "observed_font_families": [
+              "Calibri"
+            ],
+            "observed_font_use_counts": {
+              "Calibri": 30
+            },
+            "passed": true,
+            "performed": true
+          },
+          "slide_count": 1,
+          "slide_size_in": [
+            13.3333,
+            7.5
+          ],
+          "warning_count": 0,
+          "warnings": []
+        },
+        "stderr": ""
+      },
+      "chart_discovery": {
+        "exit_code": 0,
+        "result": {
+          "chart_count": 0,
+          "chart_counts": {},
+          "chart_owner_slide_parts": {},
+          "chart_owner_slides": [],
+          "package_sha256": "48718f6ae70fe486d58bd505f18c958798b084b54073b979993c3023b131c38b",
+          "schema_version": "owner-private.actual-native-chart-discovery.v1",
+          "slide_count": 1,
+          "source_attachments_accessed": false,
+          "source_required_chart_owners_inferred": false
+        },
+        "stderr": ""
+      },
+      "chart_titles": {
+        "exit_code": 0,
+        "result": {
+          "checks": [],
+          "finding_count": 0,
+          "findings": [],
+          "native_chart_count": 0,
+          "native_powerpoint_verified": false,
+          "passed": true,
+          "presentation_sha256": "48718f6ae70fe486d58bd505f18c958798b084b54073b979993c3023b131c38b",
+          "schema_version": "presentation-native-chart-titles.v1",
+          "slide_count": 1,
+          "source_text_emitted": false,
+          "unresolved_linked_title_count": 0
+        },
+        "stderr": ""
+      },
+      "table_arithmetic": {
+        "exit_code": 0,
+        "result": {
+          "checked_column_count": 0,
+          "checks": [],
+          "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+          "eligible_table_count": 0,
+          "finding_count": 0,
+          "findings": [],
+          "native_table_count": 0,
+          "passed": true,
+          "schema_version": "presentation-native-table-arithmetic.v1",
+          "skipped_tables": [],
+          "slide_count": 1,
+          "warning_count": 0,
+          "warnings": []
+        },
+        "stderr": ""
+      }
+    },
+    "method": "Unmodified bundled validators called via runpy because Node subprocess launch returned EPERM. Artifact Tool authoring/rendering, no PowerPoint GUI claim.",
+    "output": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_progress_20260914\\output\\第15页_控制方法与阶段性结果_2026-09-15.pptx",
+    "sha256": "48718f6ae70fe486d58bd505f18c958798b084b54073b979993c3023b131c38b"
+  },
+  "full": {
+    "candidate_sha256": "9bb68d8eeeb4d14d5e8dd73e1aeba0c06f8f6910172528a0b028e98664e869a7",
+    "reports": {
+      "integrity": {
+        "exit_code": 0,
+        "result": {
+          "chart_count": 0,
+          "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+          "finding_count": 0,
+          "findings": [],
+          "notes_parts_skipped": 28,
+          "relationship_part_count": 61,
+          "slide_count": 28,
+          "status": "pass"
+        },
+        "stderr": ""
+      },
+      "layout": {
+        "exit_code": 0,
+        "result": {
+          "finding_count": 0,
+          "findings": [],
+          "font_policy": {
+            "checked_text_script_count": 701,
+            "native_font_rendering_verified": false,
+            "observed_font_families": [
+              "Calibri"
+            ],
+            "observed_font_use_counts": {
+              "Calibri": 701
+            },
+            "passed": true,
+            "performed": true
+          },
+          "slide_count": 28,
+          "slide_size_in": [
+            13.3333,
+            7.5
+          ],
+          "warning_count": 0,
+          "warnings": []
+        },
+        "stderr": ""
+      },
+      "chart_discovery": {
+        "exit_code": 0,
+        "result": {
+          "chart_count": 0,
+          "chart_counts": {},
+          "chart_owner_slide_parts": {},
+          "chart_owner_slides": [],
+          "package_sha256": "9bb68d8eeeb4d14d5e8dd73e1aeba0c06f8f6910172528a0b028e98664e869a7",
+          "schema_version": "owner-private.actual-native-chart-discovery.v1",
+          "slide_count": 28,
+          "source_attachments_accessed": false,
+          "source_required_chart_owners_inferred": false
+        },
+        "stderr": ""
+      },
+      "chart_titles": {
+        "exit_code": 0,
+        "result": {
+          "checks": [],
+          "finding_count": 0,
+          "findings": [],
+          "native_chart_count": 0,
+          "native_powerpoint_verified": false,
+          "passed": true,
+          "presentation_sha256": "9bb68d8eeeb4d14d5e8dd73e1aeba0c06f8f6910172528a0b028e98664e869a7",
+          "schema_version": "presentation-native-chart-titles.v1",
+          "slide_count": 28,
+          "source_text_emitted": false,
+          "unresolved_linked_title_count": 0
+        },
+        "stderr": ""
+      },
+      "table_arithmetic": {
+        "exit_code": 0,
+        "result": {
+          "checked_column_count": 0,
+          "checks": [],
+          "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+          "eligible_table_count": 0,
+          "finding_count": 0,
+          "findings": [],
+          "native_table_count": 8,
+          "passed": true,
+          "schema_version": "presentation-native-table-arithmetic.v1",
+          "skipped_tables": [
+            {
+              "reason": "no_unambiguous_bottom_total",
+              "slide": 6,
+              "table": 1
+            },
+            {
+              "reason": "no_numeric_amounts",
+              "slide": 7,
+              "table": 1
+            },
+            {
+              "reason": "no_unambiguous_bottom_total",
+              "slide": 19,
+              "table": 1
+            },
+            {
+              "reason": "no_unambiguous_bottom_total",
+              "slide": 20,
+              "table": 1
+            },
+            {
+              "reason": "no_numeric_amounts",
+              "slide": 21,
+              "table": 1
+            },
+            {
+              "reason": "no_numeric_amounts",
+              "slide": 22,
+              "table": 1
+            },
+            {
+              "reason": "no_unambiguous_bottom_total",
+              "slide": 24,
+              "table": 1
+            },
+            {
+              "reason": "no_numeric_amounts",
+              "slide": 26,
+              "table": 1
+            }
+          ],
+          "slide_count": 28,
+          "warning_count": 0,
+          "warnings": []
+        },
+        "stderr": ""
+      }
+    },
+    "method": "Unmodified bundled validators called via runpy because Node subprocess launch returned EPERM. Artifact Tool authoring/rendering, no PowerPoint GUI claim.",
+    "output": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_progress_20260914\\output\\CTO组会汇报_仅第15页更新_2026-09-15.pptx",
+    "sha256": "9bb68d8eeeb4d14d5e8dd73e1aeba0c06f8f6910172528a0b028e98664e869a7"
+  }
+}

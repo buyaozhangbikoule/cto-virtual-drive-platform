@@ -1,0 +1,681 @@
+{
+  "runs": [
+    {
+      "name": "B0_T100_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "a8836dcc211eb5d65cffb89feee13b7ea7519c68a85710f379c2f871b7b2a875",
+      "previous_round_exact_reproduction": {
+        "matched": true,
+        "reference": "frozen/reference/E02_000_dwell_0.8s/timeline.csv",
+        "rows": 520,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "name": "B0_T100_A40_R1",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "6e655ba4e664d430581f05b6528e7656b29934a85c37f01f9b2b12e8e218ce53"
+    },
+    {
+      "name": "B0_T100_A40_R2",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "526935359c084e6d5616010c8e53e5ce39c5f59d6cef043b031096f88977c3e4"
+    },
+    {
+      "name": "B0_T100_A70_R0",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "e65a4b9fb74f0ba899bb85f2ba266ccfcbf67dac344d4be3ce0673885f3e2984"
+    },
+    {
+      "name": "B0_T100_A70_R1",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "2fbd688b2f5d3916f3a042c59c2a032566cf8ba1885525757d8f39687b21fe7c"
+    },
+    {
+      "name": "B0_T100_A70_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "2df6e566a0ae34788d118d5d82f9668e48e34aa015b216d643fdcb1573600cab"
+    },
+    {
+      "name": "B0_T100_A90_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "6670a51ee4515c511f3366984023b325dc68a6c6be00d1fb18c60c3b6c523aa6"
+    },
+    {
+      "name": "B0_T100_A90_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "72bada0863ade2a8dfc2a654f43602899c6587118adfff9536fc9565fd3b2432"
+    },
+    {
+      "name": "B0_T100_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "16c75c1a9ae46305e3a1154d3b6b137d4531a426826016e12c737784168bdd57"
+    },
+    {
+      "name": "B0_T300_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "2953aabb44162f01b16ca62ac093bd010366229bd5287abda2cfbc4da13a8acf"
+    },
+    {
+      "name": "B0_T300_A40_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "81402604717ed232b446924f539b5bce208da42cf35afcf7dd328deffe2ce08f"
+    },
+    {
+      "name": "B0_T300_A40_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "da002e720ff49d24975501b54d2c75a3e9e89b80610d04f8a0818818c391a9bd"
+    },
+    {
+      "name": "B0_T300_A70_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "127caceed75af03ce5584f39e3e283d37d18fcd4f087f01bb05faa99345cc48b"
+    },
+    {
+      "name": "B0_T300_A70_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "4ae60fa8e6c27b54122a2db051351e052c1903ac975f42c19b67e7cc728d57d9"
+    },
+    {
+      "name": "B0_T300_A70_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "5a48689a45a24b9d7254bc21cf058a762e31311613b161c2874318667f3fc3d5"
+    },
+    {
+      "name": "B0_T300_A90_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "81ecb25ac654c749cbc706dde4605bcb17c3a8b14a9ca489301208add44b82f9"
+    },
+    {
+      "name": "B0_T300_A90_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "1c2ac7eacf05b2bb7840341dd6e9b2743ed86d5bb9ba4b920b6011278349a682"
+    },
+    {
+      "name": "B0_T300_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "246eba0e08944253d06b87fec7256b13448c1126f6c75d335d2130eef4dbbf37"
+    },
+    {
+      "name": "B0_T500_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "d851ad03e6400a2b079c7cf37e465a98871a6c18e7281b4faf1053f9e44ac161"
+    },
+    {
+      "name": "B0_T500_A40_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "91da0d70d0a10a62b681cc3b643e8dc131f589367a0ff3cc08fd10ddc62ac079"
+    },
+    {
+      "name": "B0_T500_A40_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "35234749d72d0cc9aea9a30068ddbcd5c0a501b182cbd6f66a730a99c41d39f9"
+    },
+    {
+      "name": "B0_T500_A70_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "def8af7828bc784539fa460b73937ea5b9a6076293a526a3beb693a5a313bc73"
+    },
+    {
+      "name": "B0_T500_A70_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "094c8d883d98fa8e4fcddbde6081a997ac0947ca5d733ad20dcf2846d29811e6"
+    },
+    {
+      "name": "B0_T500_A70_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "9acfbdc0be9c8af5949afa1bd6c775c34cb85bdaadc243153e4248e17b56149e"
+    },
+    {
+      "name": "B0_T500_A90_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "5ab49b4ba1b271ce3b7280d47c44af15fe9d2e20c037ea191ad541579855837f"
+    },
+    {
+      "name": "B0_T500_A90_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "d28653e554c1df8864d9fbfc7492d4ea37db5edea673725f2f20c71bcf515b43"
+    },
+    {
+      "name": "B0_T500_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "cdde9dab61a50f443c783d25f5fb87014214290ad71c1f9950de99ad5bb560a9"
+    },
+    {
+      "name": "B1_T100_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 470,
+      "timeline_sha256": "930e2469019252b300ee8c72b09fb749cbdceb638e1ab111255d04d890c6b8e8",
+      "previous_round_exact_reproduction": {
+        "matched": true,
+        "reference": "frozen/reference/E04_B_dwell_0.8s/timeline.csv",
+        "rows": 470,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "name": "B1_T100_A40_R1",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "82cfa807403962ab28de0d2c9c8d0cd73fab2c0e540e9015eb95f10da9bf3e03"
+    },
+    {
+      "name": "B1_T100_A40_R2",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "f836a11f4cef0fcc8b3ff1d0a4a6cd7924eb28e6ed9ab7edb6eb468cbbbad69a"
+    },
+    {
+      "name": "B1_T100_A70_R0",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "48c0447b94959f06a4ee586900921301982192da2ca34774204d958c9203292a"
+    },
+    {
+      "name": "B1_T100_A70_R1",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "8c61f8fdbfff8dba4c4e63508bc50872ece20bfe705e28ee06db14449f120246"
+    },
+    {
+      "name": "B1_T100_A70_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "05aafd28ce65ff95007b2a87ce64268bb77604c04faad4a76d561e0dea8fdbce"
+    },
+    {
+      "name": "B1_T100_A90_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "46bab9df586b9e14928bdc20f66ae0905d3f46e83469410776f32462e8664fbc"
+    },
+    {
+      "name": "B1_T100_A90_R1",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "4715de2b3f948b57edab5db6c951138119b43e2fdd3aed2e48164184e676ef34"
+    },
+    {
+      "name": "B1_T100_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "700d796fa8ad5897dbd2f41e156d0581b2c3cc928c8222c5335745a856547df9"
+    },
+    {
+      "name": "B1_T300_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "82fda9cff93b04afe728bdf9f84c8010e93e109ff0f360ca32a2d7518027cb3b"
+    },
+    {
+      "name": "B1_T300_A40_R1",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "c3ca8cdf498b433da37303d786e81ac6e45d7a73962ffcc95562a2ca3bb7c72b"
+    },
+    {
+      "name": "B1_T300_A40_R2",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "f01685b8c51722e86243e5bb8282f7ca1ef72ebc2a69fe5935ed80fbf06749df"
+    },
+    {
+      "name": "B1_T300_A70_R0",
+      "dwell_s": 0.8,
+      "rows": 570,
+      "timeline_sha256": "c12847e61e3e41a586aa4a54bd451e9717fca5dd4e575079068cfe047ca5ea6d"
+    },
+    {
+      "name": "B1_T300_A70_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "16007b8a909b0cb962fdb8b3f1fe8f2fcd744c908b47bae13e349084153d99b9"
+    },
+    {
+      "name": "B1_T300_A70_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "261073f9a349af4350daa921998b8875843785aeff0b27999392b459f3fd7b4c"
+    },
+    {
+      "name": "B1_T300_A90_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "969e8b7200117275772ced99a8c31066fed26bf107b07462de7b287fd3969cc9"
+    },
+    {
+      "name": "B1_T300_A90_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "4f933d95b4b54a7d1f3bf92aa5eb43e372683bb0b69d3757eda16ec2af87375c"
+    },
+    {
+      "name": "B1_T300_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "b872e9cee7d218556bc58b349f5964a0a91b0372d2adbccd59660791baed846b"
+    },
+    {
+      "name": "B1_T500_A40_R0",
+      "dwell_s": 0.8,
+      "rows": 520,
+      "timeline_sha256": "4992d920097ad68eee232117c79183999acc94baad1c9f042ebc3aab6fe18ecb"
+    },
+    {
+      "name": "B1_T500_A40_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "e8b58f1ef774e8159631234da1ce466b70d97849909865e7c2fac899ca990130"
+    },
+    {
+      "name": "B1_T500_A40_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "78e8ae6033f48448da38e3108a27577003f6d37a9832704e3423afbef422f049"
+    },
+    {
+      "name": "B1_T500_A70_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "3503d451ab61df590f9ed0aa23e2867a7efe679679d0f9f0e4417c2dd6ee1e8e"
+    },
+    {
+      "name": "B1_T500_A70_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "4dfab9257b132bb0ecb20be5c4343d1ac2134112ec506a19159df7b856795092"
+    },
+    {
+      "name": "B1_T500_A70_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "6d33024df1f3647ce520129735a17a0de231a5649015ba15706771b7c448fdbf"
+    },
+    {
+      "name": "B1_T500_A90_R0",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "d68fb789e0a19c003d4f6216840a2cfe2fe9d32e2c67a1a521df782c721c4651"
+    },
+    {
+      "name": "B1_T500_A90_R1",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "a28324485a20a04fdbb3cf1b4079767dea66f78419b75274763bbc98e927758c"
+    },
+    {
+      "name": "B1_T500_A90_R2",
+      "dwell_s": 0.8,
+      "rows": 620,
+      "timeline_sha256": "9317bd8f70cf5442fee64ad9b2d1a0a4bbdb4d1c68360223e9e68bd4a9e79982"
+    },
+    {
+      "name": "B0_T100_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "670a11cedddeb72c72fc31146cab904a58c1552c998e02f890c5af5bc7791fe0",
+      "previous_round_exact_reproduction": {
+        "matched": true,
+        "reference": "frozen/reference/E02_000_dwell_1.6s/timeline.csv",
+        "rows": 940,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "name": "B0_T100_A40_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "15087d19b46809c8e7b5810d2261859be85db12140bc7b4afdbaf88389c87c44"
+    },
+    {
+      "name": "B0_T100_A40_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "c4e0fc47c9df5a547e85b81ab8cc6af42a93eb93f4b521c08b6b31a53f2e9f0e"
+    },
+    {
+      "name": "B0_T100_A70_R0",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "223b2cd66ef4f3037149cdd328357e0b9480af70d2cb876e12da34dc4a314f75"
+    },
+    {
+      "name": "B0_T100_A70_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "4078576b89f79f9bfdc28a18bc50278497b9da58da9ac898ad22f64351a32177"
+    },
+    {
+      "name": "B0_T100_A70_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "cebda53f61c1f383760f08cc746b82b27680fe171c12f935f9a0c6f174880c06"
+    },
+    {
+      "name": "B0_T100_A90_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "9b5f2884673e36e15ae98ed8b580f8ba1b4bd91c0669583042710aa7c2cf9949"
+    },
+    {
+      "name": "B0_T100_A90_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "d5df26b41de845b59effd029de0d36fddbfb01b5a3e9b33cde416131bdbe02b9"
+    },
+    {
+      "name": "B0_T100_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "2d6e8fb06c41ec62fb86c1332e80eb16e7ecc0547b2b5fe45c31c4e58100e8cc"
+    },
+    {
+      "name": "B0_T300_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "e5b5ae23d9227adde5856835d96b90829d6bed5839bd9ec7acde77b9f3669408"
+    },
+    {
+      "name": "B0_T300_A40_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "90829df676ff2a1c5bbe273be5638aea9265cdc329f828aa6869ef0b6f77abad"
+    },
+    {
+      "name": "B0_T300_A40_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "30be305ed99f36b1dae46ac31e9c6715133fb41d6ce545d83c6275a5c352fcf5"
+    },
+    {
+      "name": "B0_T300_A70_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "8b9ccac08a64bf679b5548cfba5da4ec7e5e5648c65dd4f62e8b8214d404ed85"
+    },
+    {
+      "name": "B0_T300_A70_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "88e313a4b418d78a33786def37136567a0b1d1b48d062ec777a5f41435ef37f9"
+    },
+    {
+      "name": "B0_T300_A70_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "0183704214827d8059b8d98a04151e2c7a63ed9ec6f88d625252c7a9004d4e7e"
+    },
+    {
+      "name": "B0_T300_A90_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "ad125fff1e4b4b807ef6a509ed531fdffad5f57d10fb4d6236535ba01e6abd56"
+    },
+    {
+      "name": "B0_T300_A90_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "3dd82b481f9598b2d1df964c52bbc5cbcb1e884094efa3bc08edb3a42903b47c"
+    },
+    {
+      "name": "B0_T300_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "a37c817417c30e589af824a5bafe7b7fe1a77553ddc9b877eea722b02df1ad17"
+    },
+    {
+      "name": "B0_T500_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "6f8b3c5249e6812bc547f5c0e558230298bf3cbb60493ca8e3fe506f4ac68322"
+    },
+    {
+      "name": "B0_T500_A40_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "f68514e4647f3ae275c811109493c5223057f51eead349ebc6ffbd65b5ed84f5"
+    },
+    {
+      "name": "B0_T500_A40_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "a23953404aebf53fa9f9aa17b8fa9da7e6d26d3fc8efb58d92e9c8fb6aa6ba97"
+    },
+    {
+      "name": "B0_T500_A70_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "74bcffaac43b7e68437bff5d12e4f5c1e992c232fe91d4a3c6b3c598f2774ef6"
+    },
+    {
+      "name": "B0_T500_A70_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "94fad063b27eb71a9b69d1a0b58bd0e04c95aac950cb177c9a2cac0077231b84"
+    },
+    {
+      "name": "B0_T500_A70_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "c08643560ae52c94f7dc89fb90fd793f2636f2effd89ac9b6770d6aab580b486"
+    },
+    {
+      "name": "B0_T500_A90_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "ca6af92bc5776d31a13f1519e390d3e05466947a873593c6d4de9ccc6d3bda7f"
+    },
+    {
+      "name": "B0_T500_A90_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "f6db7d8c3f56ed8295b84ec4d744ec000d17ac8bd3eac877ec2627036919f917"
+    },
+    {
+      "name": "B0_T500_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "9a026d7aad64602550f53a8c14b4728201f29f70ed632cbd1e9dc83f368466f6"
+    },
+    {
+      "name": "B1_T100_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 840,
+      "timeline_sha256": "34d483d86ac6325de5d69379ad52c61a4b31f725abfcafdfadacc7174c441453",
+      "previous_round_exact_reproduction": {
+        "matched": true,
+        "reference": "frozen/reference/E04_B_dwell_1.6s/timeline.csv",
+        "rows": 840,
+        "mismatch_count": 0
+      }
+    },
+    {
+      "name": "B1_T100_A40_R1",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "3f1b520973cd7f2f05cbcabab1a57ac39dc6208db607a512ddd6ee83bb4ec081"
+    },
+    {
+      "name": "B1_T100_A40_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "decae59c701adfb71d1da6b4a17a699eb0916f472c57cac0264308fcd05ab27d"
+    },
+    {
+      "name": "B1_T100_A70_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "eef421894bc4cfca873e822cb6c935470a73ce103a75d81c38695e23c17e4045"
+    },
+    {
+      "name": "B1_T100_A70_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "cdad88798b77e598e84faa58828355f7247a1dd95d79ed1be615abe05a22b422"
+    },
+    {
+      "name": "B1_T100_A70_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "b62d0637481cd3818e87a1af07a144bd1f64ae4534df6d533686f67f79884d38"
+    },
+    {
+      "name": "B1_T100_A90_R0",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "2d91c6f3e14eee3b3d89f1411bac20743a35b6abbe36ae4bc6ae1ffb8ad7aa7f"
+    },
+    {
+      "name": "B1_T100_A90_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "ed0658fce78ca82a100c34cc78242dd5125a5d8efaa32e0a0b8b30651acd3cd0"
+    },
+    {
+      "name": "B1_T100_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "43ef4990342e4a2c5fe49530914cc16e4dae109879d6fa20d21c2174415cbcc7"
+    },
+    {
+      "name": "B1_T300_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 840,
+      "timeline_sha256": "9f6de1cd44a35f679256d94ee8af632f8911f23151ba9a6455f31ef84b01d60a"
+    },
+    {
+      "name": "B1_T300_A40_R1",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "c7e15c642da5e11273b4f11554234a3929dadd37f2da70c026817c466d99e550"
+    },
+    {
+      "name": "B1_T300_A40_R2",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "599dda04ea23371634128d72eaa6f148b25806dbbd2ad2ae3d066a4b8618e4ff"
+    },
+    {
+      "name": "B1_T300_A70_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "1c809ba0571545e04c8babb6304b3af81629de19fa21c4fc50b84820e34eea7d"
+    },
+    {
+      "name": "B1_T300_A70_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "6e3027535d0bca8a93083e53cb7f51c71d8151d1d42fa174bda322069a2d4e6c"
+    },
+    {
+      "name": "B1_T300_A70_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "79c0cbc15254e96c54cf0575fb083e910721346a71ab9d1e2791f8d35b0c7594"
+    },
+    {
+      "name": "B1_T300_A90_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "a0cb0782527d07af9f89820664ab50f34690dc1292a487929db9c7cf409893e4"
+    },
+    {
+      "name": "B1_T300_A90_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "b8e8ed9244e710dc7a93b38b9bae172ac66b9f83694c3c50d8aa8f0096d1f2c9"
+    },
+    {
+      "name": "B1_T300_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "a6b33ed6e6ab5665bd7fabac85fbdb985a84ecbba2923c727cd5833c2db6bb16"
+    },
+    {
+      "name": "B1_T500_A40_R0",
+      "dwell_s": 1.6,
+      "rows": 890,
+      "timeline_sha256": "af035603512d034a364a6cb398b3a2c00fdaa79ca27ea07f3d00bd910294fe11"
+    },
+    {
+      "name": "B1_T500_A40_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "5079bdb66b9a9713e18e54f88db72f637293f46312e5087b31a1acb1c3306d6f"
+    },
+    {
+      "name": "B1_T500_A40_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "2d38550b2074c2cbb6a11202a9a809b2cbb939026fd16459568de63952cfe1a8"
+    },
+    {
+      "name": "B1_T500_A70_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "8a1aed364eecdc36cb1865046fd6cc1f7135f92ff0378ece8b8120fa417afeca"
+    },
+    {
+      "name": "B1_T500_A70_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "5efd4b985e539aee8d7c06c5b5e434c91c1cbcef2f7798d86f7f4e05b4a6efb4"
+    },
+    {
+      "name": "B1_T500_A70_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "9f6589ddf32e39f32ca8608db6b2e5f68fb06944eeac93bd8767652f6b77a835"
+    },
+    {
+      "name": "B1_T500_A90_R0",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "9e413e895bf7da0961a3376735e322853f0764119e85caaf1accf667318648d5"
+    },
+    {
+      "name": "B1_T500_A90_R1",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "5e9f315172d9ebfecc49e52201647cd9d07a5a8a8f2dbc790cc06b3a8c0a1bad"
+    },
+    {
+      "name": "B1_T500_A90_R2",
+      "dwell_s": 1.6,
+      "rows": 940,
+      "timeline_sha256": "178aef9f5071b30cb619af13a677c2b4270a539d5252247fbb97740008a1ac7b"
+    }
+  ],
+  "elapsed_wall_s": 95.3335580000421,
+  "script_sha256": "6d5b322cf5f10abb0760df161dc2a178825211f1aad50bb7e853078749ccf77f",
+  "new_LTspice_runs": false,
+  "known_model_guard": true,
+  "noise_and_hardware_delays_modelled": false
+}

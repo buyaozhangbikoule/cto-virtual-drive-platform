@@ -1,0 +1,71 @@
+{
+  "elapsed_wall_s": 13.249550200009253,
+  "runs": [
+    {
+      "variant": "E00",
+      "dwell_s": 0.8,
+      "rows": 1795,
+      "timeline_sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0",
+      "all_sampled_points_within_hard_limits": true,
+      "sampling_gap_safety_proven": false
+    },
+    {
+      "variant": "E01",
+      "dwell_s": 0.8,
+      "rows": 1660,
+      "timeline_sha256": "240a735c66c083edb04b87bfc74a1892b4305c550606e6dc445bb4eca6450555",
+      "all_sampled_points_within_hard_limits": true,
+      "sampling_gap_safety_proven": false,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true,
+      "frequency_change_without_amplitude_increase": true,
+      "max_power_balance_error_W": 1.6653345369377348e-16
+    },
+    {
+      "variant": "E02",
+      "dwell_s": 0.8,
+      "rows": 1710,
+      "timeline_sha256": "fef6696ffa10441de310266673daa2571e6b5528c62524aca33fae80e8379e70",
+      "all_sampled_points_within_hard_limits": true,
+      "sampling_gap_safety_proven": false,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true,
+      "frequency_change_without_amplitude_increase": true,
+      "max_power_balance_error_W": 2.220446049250313e-16
+    },
+    {
+      "variant": "E00",
+      "dwell_s": 1.6,
+      "rows": 3245,
+      "timeline_sha256": "a9783a2e8dbd79be4fab7e80b2499b9ebf21686ad71efca3357e8d3610b81b75",
+      "all_sampled_points_within_hard_limits": true,
+      "sampling_gap_safety_proven": false
+    },
+    {
+      "variant": "E01",
+      "dwell_s": 1.6,
+      "rows": 3219,
+      "timeline_sha256": "54fdcde5009107bd0b8fea2dade96ac4634fcb0b0292f902c56eae19b1c5ad96",
+      "all_sampled_points_within_hard_limits": true,
+      "sampling_gap_safety_proven": false,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true,
+      "frequency_change_without_amplitude_increase": true,
+      "max_power_balance_error_W": 2.7755575615628914e-16
+    },
+    {
+      "variant": "E02",
+      "dwell_s": 1.6,
+      "rows": 3269,
+      "timeline_sha256": "0132e6b39ebb461ce228d9a93cc8017038c44c8be6ddd12ee965191a7b8e2db1",
+      "all_sampled_points_within_hard_limits": true,
+      "sampling_gap_safety_proven": false,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true,
+      "frequency_change_without_amplitude_increase": true,
+      "max_power_balance_error_W": 2.7755575615628914e-16
+    }
+  ],
+  "script_sha256": "90609c1627808e902708c6552330a86b65ba1cd3569c37e3b5423400aad23167",
+  "original_inputs_unchanged": true
+}

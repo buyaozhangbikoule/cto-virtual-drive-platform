@@ -1,0 +1,61 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "周期性局部扫频: time monotonic",
+      "passed": true,
+      "detail": "rows=24872, t=0.000000..47.999000s"
+    },
+    {
+      "check": "周期性局部扫频: command bounds",
+      "passed": true,
+      "detail": "f=840000.0..960000.0Hz, a=0.500..1.000"
+    },
+    {
+      "check": "周期性局部扫频: all disturbance states covered",
+      "passed": true,
+      "detail": "states=25"
+    },
+    {
+      "check": "固定频率固定幅度: time monotonic",
+      "passed": true,
+      "detail": "rows=24000, t=0.000000..47.998000s"
+    },
+    {
+      "check": "固定频率固定幅度: command bounds",
+      "passed": true,
+      "detail": "f=900000.0..900000.0Hz, a=0.000..1.000"
+    },
+    {
+      "check": "固定频率固定幅度: all disturbance states covered",
+      "passed": true,
+      "detail": "states=25"
+    },
+    {
+      "check": "校准相位离散跟踪: time monotonic",
+      "passed": true,
+      "detail": "rows=24505, t=0.000000..47.998500s"
+    },
+    {
+      "check": "校准相位离散跟踪: command bounds",
+      "passed": true,
+      "detail": "f=840000.0..960000.0Hz, a=0.500..1.000"
+    },
+    {
+      "check": "校准相位离散跟踪: all disturbance states covered",
+      "passed": true,
+      "detail": "states=25"
+    },
+    {
+      "check": "hard trip enforces at least 100 ms zero amplitude",
+      "passed": true,
+      "detail": "固定频率固定幅度@15.002s hold=100.0ms"
+    },
+    {
+      "check": "LTspice RAW inventory complete",
+      "passed": true,
+      "detail": "raw_files=24"
+    }
+  ],
+  "raw_inventory_count": 24
+}

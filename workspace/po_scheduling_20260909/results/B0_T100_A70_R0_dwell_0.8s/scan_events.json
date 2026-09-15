@@ -1,0 +1,38 @@
+[
+  {
+    "start_s": 2.5000000000000018,
+    "end_s": 2.601000000000005,
+    "duration_ms": 101.00000000000308,
+    "reason": "SOFT_LIMIT_EVENT",
+    "path": "FULL_SCAN",
+    "selected_Hz": 854800.0,
+    "selected_score_W": 0.1402303826755605
+  },
+  {
+    "start_s": 3.3610000000000055,
+    "end_s": 3.4620000000000086,
+    "duration_ms": 101.00000000000308,
+    "reason": "HARD_LIMIT_EVENT",
+    "path": "FULL_SCAN",
+    "selected_Hz": 900300.0,
+    "selected_score_W": 0.14483388736834862
+  },
+  {
+    "start_s": 4.062000000000007,
+    "end_s": 4.16300000000001,
+    "duration_ms": 101.00000000000264,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FULL_SCAN",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.11305365910985793
+  },
+  {
+    "start_s": 5.322999999999985,
+    "end_s": 5.423999999999988,
+    "duration_ms": 101.00000000000264,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FULL_SCAN",
+    "selected_Hz": 854900.0,
+    "selected_score_W": 0.0725426263390658
+  }
+]

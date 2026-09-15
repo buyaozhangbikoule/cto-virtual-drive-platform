@@ -1,0 +1,27 @@
+{
+  "captured_at": "2026-08-15T23:39:02.2726383+08:00",
+  "version": "26.0.2.1",
+  "evidence_scope": "2026-08-15 baseline GUI evidence; not a screenshot of all current simulations",
+  "files": [
+    {
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/CASE_000_BASELINE_GUI.cir",
+      "expected": "56b03c14a94116899a81eb451135cebdf2ffe11f705e801d7d58cbd12110da53",
+      "actual": "56b03c14a94116899a81eb451135cebdf2ffe11f705e801d7d58cbd12110da53",
+      "match": true
+    },
+    {
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/CASE_000_BASELINE_GUI.raw",
+      "expected": "422eebaab9f6058808d0345aaac882ab595e1f909e576c0255a8cbb3b657e985",
+      "actual": "422eebaab9f6058808d0345aaac882ab595e1f909e576c0255a8cbb3b657e985",
+      "match": true
+    },
+    {
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/ltspice_gui_evidence/CASE_000_BASELINE_GUI.log",
+      "expected": "609a11ff02c149cf14357f3cf7b54cbbb5bc5134a3f7ef0679da69b21a9808db",
+      "actual": "609a11ff02c149cf14357f3cf7b54cbbb5bc5134a3f7ef0679da69b21a9808db",
+      "match": true
+    }
+  ],
+  "all_match": true,
+  "new_GUI_capture": false
+}

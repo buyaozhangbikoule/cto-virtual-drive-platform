@@ -1,0 +1,15 @@
+* CASE_RM_P50; MODEL_V2_1_HYPOTHETICAL; AC RMS-equivalent source
+Vdrive n_src 0 AC 6.217360894531728
+Rsource n_src n_in 50
+Rlesr n_in n_l 6.0352028830488136
+Lmatch n_l n_port 0.00010672581904440851
+Cmatch n_port n_c 2.8359878734546773e-10
+Rcesr n_c 0 0.62355282726312977
+C0 n_port 0 6.8580641051984092e-12
+Rm n_port n_m1 11029.411764705877
+Lm n_m1 n_m2 1.0402283862215378
+Cm n_m2 0 3.006260036180247e-14
+.ac lin 2001 800000 1000000
+.options plotwinsize=0
+.save V(n_src) V(n_in) V(n_port) I(Rsource) I(Rm) I(C0) I(Rlesr) I(Rcesr)
+.end

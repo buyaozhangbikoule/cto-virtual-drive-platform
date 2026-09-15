@@ -1,0 +1,1385 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/vaxsvy10",
+    "id": "vaxsvy10",
+    "slide": 24,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wrm9kvep",
+      "id": "10",
+      "name": "title-12",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "扩展比较：尾段误差为零，仍存在全过程电能损失",
+      "textPreview": "扩展比较：尾段误差为零，仍存在全过程电能损失",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "扩展比较：尾段误差为零，仍存在全过程电能损失"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "扩展比较：尾段误差为零，仍存在全过程电能损失",
+          "resolvedTextStyle": {
+            "fontSize": 34,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "扩展比较：尾段误差为零，仍存在全过程电能损失",
+              "fontSize": 34,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/547mhg3m",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/k3y5ov21",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/76p4jqls",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        1065,
+        20
+      ],
+      "geometry": "rect",
+      "text": "扩展方法比较，非实测    旧批次 a734eca013；与第23页后续无PI候选分开评价",
+      "textPreview": "扩展方法比较，非实测    旧批次 a734eca013；与第23页后续无PI候选分开评价",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "扩展方法比较，非实测    旧批次 a734eca013；与第23页后续无PI候选分开评价"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "扩展方法比较，非实测    旧批次 a734eca013；与第23页后续无PI候选分开评价",
+          "resolvedTextStyle": {
+            "fontSize": 11.51,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "扩展方法比较，非实测    旧批次 a734eca013；与第23页后续无PI候选分开评价",
+              "fontSize": 11.51,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/65gnqlk7",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "24",
+      "textPreview": "24",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "24"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "24",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "24",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/yh8rmt0f",
+      "id": "20",
+      "name": "表格 17",
+      "bbox": [
+        72,
+        170,
+        650,
+        290
+      ],
+      "text": "策略 | 尾段误差* | 累积电能\n(J) | 相对最优\n电能 | 未通过段\n(共7段)\n固定频率\n＋共同保护 | 30.14% | 0.588 | 75.8% | 3\n周期扫频 | 0.00% | 0.474 | 61.1% | 2\n扫描辅助P&O | 0.00% | 0.525 | 67.7% | 3",
+      "textPreview": "策略 | 尾段误差* | 累积电能 | (J) | 相对最优 | 电能 | 未通过段 | (共7段) | 固定频率 | ＋共同保护 | 30.14% | 0.588 | 75.8% | 3 | 周期扫频 | 0.00% | 0.474 | 61.1% | 2 | 扫描辅助P...",
+      "rows": 4,
+      "cols": 5,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            72,
+            170,
+            183.96,
+            72.5
+          ],
+          "text": "策略",
+          "textPreview": "策略",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "策略",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "策略",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            255.96,
+            170,
+            122.64,
+            72.5
+          ],
+          "text": "尾段误差*",
+          "textPreview": "尾段误差*",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "尾段误差*",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "尾段误差*",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            378.6,
+            170,
+            134.91,
+            72.5
+          ],
+          "text": "累积电能\n(J)",
+          "textPreview": "累积电能 | (J)",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "累积电能",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "累积电能",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "(J)",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "(J)",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            513.51,
+            170,
+            110.38,
+            72.5
+          ],
+          "text": "相对最优\n电能",
+          "textPreview": "相对最优 | 电能",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "相对最优",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "相对最优",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "电能",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "电能",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 1,
+          "column": 5,
+          "bbox": [
+            623.89,
+            170,
+            98.11,
+            72.5
+          ],
+          "text": "未通过段\n(共7段)",
+          "textPreview": "未通过段 | (共7段)",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "未通过段",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "未通过段",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "(共7段)",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "(共7段)",
+                  "fontSize": 19,
+                  "typeface": "Calibri",
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            72,
+            242.5,
+            183.96,
+            72.5
+          ],
+          "text": "固定频率\n＋共同保护",
+          "textPreview": "固定频率 | ＋共同保护",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "固定频率",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "固定频率",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            },
+            {
+              "index": 2,
+              "text": "＋共同保护",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "＋共同保护",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            255.96,
+            242.5,
+            122.64,
+            72.5
+          ],
+          "text": "30.14%",
+          "textPreview": "30.14%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "30.14%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "30.14%",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            378.6,
+            242.5,
+            134.91,
+            72.5
+          ],
+          "text": "0.588",
+          "textPreview": "0.588",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.588",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.588",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            513.51,
+            242.5,
+            110.38,
+            72.5
+          ],
+          "text": "75.8%",
+          "textPreview": "75.8%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "75.8%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "75.8%",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 2,
+          "column": 5,
+          "bbox": [
+            623.89,
+            242.5,
+            98.11,
+            72.5
+          ],
+          "text": "3",
+          "textPreview": "3",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "3",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "3",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            72,
+            315,
+            183.96,
+            72.5
+          ],
+          "text": "周期扫频",
+          "textPreview": "周期扫频",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "周期扫频",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "周期扫频",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            255.96,
+            315,
+            122.64,
+            72.5
+          ],
+          "text": "0.00%",
+          "textPreview": "0.00%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.00%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.00%",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            378.6,
+            315,
+            134.91,
+            72.5
+          ],
+          "text": "0.474",
+          "textPreview": "0.474",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.474",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.474",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            513.51,
+            315,
+            110.38,
+            72.5
+          ],
+          "text": "61.1%",
+          "textPreview": "61.1%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "61.1%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "61.1%",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 3,
+          "column": 5,
+          "bbox": [
+            623.89,
+            315,
+            98.11,
+            72.5
+          ],
+          "text": "2",
+          "textPreview": "2",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "2",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "2",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            72,
+            387.5,
+            183.96,
+            72.5
+          ],
+          "text": "扫描辅助P&O",
+          "textPreview": "扫描辅助P&O",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "扫描辅助P&O",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "扫描辅助P&O",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 17,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            255.96,
+            387.5,
+            122.64,
+            72.5
+          ],
+          "text": "0.00%",
+          "textPreview": "0.00%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.00%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.00%",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 18,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            378.6,
+            387.5,
+            134.91,
+            72.5
+          ],
+          "text": "0.525",
+          "textPreview": "0.525",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "0.525",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "0.525",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 19,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            513.51,
+            387.5,
+            110.38,
+            72.5
+          ],
+          "text": "67.7%",
+          "textPreview": "67.7%",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "67.7%",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "67.7%",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 20,
+          "row": 4,
+          "column": 5,
+          "bbox": [
+            623.89,
+            387.5,
+            98.11,
+            72.5
+          ],
+          "text": "3",
+          "textPreview": "3",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "3",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "3",
+                  "fontSize": 20,
+                  "typeface": "Calibri",
+                  "color": "#17324D"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/na5476l8",
+      "id": "8",
+      "name": "矩形: 圆角 7",
+      "bbox": [
+        72,
+        506,
+        1118,
+        112
+      ],
+      "geometry": "roundRect",
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/m9c3e1kn",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        72,
+        532,
+        1136,
+        91
+      ],
+      "geometry": "rect",
+      "text": "0%仅描述筛选后的尾段样本，不代表全程无损失或连续验收通过。\n当前短扰动段下，扫描、试探和保护恢复的时间成本不可忽略。\n本结果不能证明周期扫频总体最优，也不能外推固定频率普遍更好。",
+      "textPreview": "0%仅描述筛选后的尾段样本，不代表全程无损失或连续验收通过。 | 当前短扰动段下，扫描、试探和保护恢复的时间成本不可忽略。 | 本结果不能证明周期扫频总体最优，也不能外推固定频率普遍更好。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "0%仅描述筛选后的尾段样本，不代表全程无损失或连续验收通过。"
+          },
+          {
+            "index": 2,
+            "text": "当前短扰动段下，扫描、试探和保护恢复的时间成本不可忽略。"
+          },
+          {
+            "index": 3,
+            "text": "本结果不能证明周期扫频总体最优，也不能外推固定频率普遍更好。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "0%仅描述筛选后的尾段样本，不代表全程无损失或连续验收通过。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "0%仅描述筛选后的尾段样本，不代表全程无损失或连续验收通过。",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "当前短扰动段下，扫描、试探和保护恢复的时间成本不可忽略。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "当前短扰动段下，扫描、试探和保护恢复的时间成本不可忽略。",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "本结果不能证明周期扫频总体最优，也不能外推固定频率普遍更好。",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本结果不能证明周期扫频总体最优，也不能外推固定频率普遍更好。",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vqdsrqx4",
+      "id": "13",
+      "name": "comparison-window",
+      "bbox": [
+        72,
+        112,
+        1136,
+        35
+      ],
+      "geometry": "rect",
+      "text": "同一旧批次，0.8–6.4 s，共7个0.8 s扰动段，三种策略均接入共同保护",
+      "textPreview": "同一旧批次，0.8–6.4 s，共7个0.8 s扰动段，三种策略均接入共同保护",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "同一旧批次，0.8–6.4 s，共7个0.8 s扰动段，三种策略均接入共同保护"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "同一旧批次，0.8–6.4 s，共7个0.8 s扰动段，三种策略均接入共同保护",
+          "resolvedTextStyle": {
+            "fontSize": 21,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "同一旧批次，0.8–6.4 s，共7个0.8 s扰动段，三种策略均接入共同保护",
+              "fontSize": 21,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/3ypo7mtw",
+      "id": "21",
+      "name": "图片 29",
+      "bbox": [
+        765,
+        173,
+        442.99,
+        337.52
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image10.png",
+        "contentType": "image/png",
+        "byteLength": 79244
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image10.png",
+        "contentType": "image/png",
+        "byteLength": 79244
+      }
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/judsvqxg",
+      "id": "17",
+      "name": "energy-title",
+      "bbox": [
+        819,
+        162,
+        380,
+        29
+      ],
+      "geometry": "rect",
+      "text": "全过程电能捕获率",
+      "textPreview": "全过程电能捕获率",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "全过程电能捕获率"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "全过程电能捕获率",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "全过程电能捕获率",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/0z29cbyh",
+      "id": "18",
+      "name": "energy-definition",
+      "bbox": [
+        72,
+        476,
+        650,
+        44
+      ],
+      "geometry": "rect",
+      "text": "采样保持积分：E_Rm = Σ P_Rm,k · Δt_k    共同安全最优电能 = 0.77568 J",
+      "textPreview": "采样保持积分：E_Rm = Σ P_Rm,k · Δt_k    共同安全最优电能 = 0.77568 J",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "采样保持积分：E_Rm = Σ P_Rm,k · Δt_k    共同安全最优电能 = 0.77568 J"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "采样保持积分：E_Rm = Σ P_Rm,k · Δt_k    共同安全最优电能 = 0.77568 J",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "采样保持积分：E_Rm = Σ P_Rm,k · Δt_k    共同安全最优电能 = 0.77568 J",
+              "fontSize": 17,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/l0bqlgf2",
+      "id": "19",
+      "name": "energy-method",
+      "bbox": [
+        72,
+        640,
+        1136,
+        27
+      ],
+      "geometry": "rect",
+      "text": "已有离散数据复算，包含扫描、试探和保护记录，非新仿真、非声学效率。",
+      "textPreview": "已有离散数据复算，包含扫描、试探和保护记录，非新仿真、非声学效率。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "已有离散数据复算，包含扫描、试探和保护记录，非新仿真、非声学效率。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "已有离散数据复算，包含扫描、试探和保护记录，非新仿真、非声学效率。",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#5F6B76"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "已有离散数据复算，包含扫描、试探和保护记录，非新仿真、非声学效率。",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

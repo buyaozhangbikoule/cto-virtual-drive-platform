@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "same_source_condition": "1 Vrms RMS-equivalent Thevenin source and 50 ohm Rs in all three netlists",
+  "active_model": "MODEL_V2_1_HYPOTHETICAL",
+  "active_topology": "Rs -> series (R_L_ESR + Lmatch) -> port; shunt (Cmatch + R_C_ESR) across BVD port",
+  "ideal_L_uH": 106.85910332792834,
+  "ideal_C_pF": 283.79869694676984,
+  "active_L_uH": 106.72581904440851,
+  "active_C_pF": 283.5987873454677,
+  "active_RL_ESR_ohm": 6.035202883048814,
+  "active_RC_ESR_ohm": 0.6235528272631298,
+  "p_rm_improvement_active_vs_before_at_f0": 32.77825898952937,
+  "gamma_before_at_f0": 0.98649190765781,
+  "gamma_ideal_at_f0": 6.79999954813388e-08,
+  "gamma_active_at_f0": 0.06345866384179635,
+  "calibration": {
+    "source_class": "DERIVED_VALUE; based on active matched baseline and AC RMS-equivalent convention",
+    "source_Vrms_for_a1": 6.217360894531728,
+    "source_Vpp_for_a1": 17.585352198429778,
+    "transducer_Vpp": 100.0,
+    "transducer_Irms_A": 0.004999999371135925,
+    "P_Rm_W": 0.16999995376000945,
+    "P_port_W": 0.16999997688000312,
+    "Q_port_var": -0.04847679857414197,
+    "S_port_VA": 0.1767766730629342,
+    "P_source_W": 0.36229446915646774,
+    "P_Rs_W": 0.16979491711465097,
+    "P_L_ESR_W": 0.020494935465947547,
+    "P_C_ESR_W": 0.0020046396958661675,
+    "eta_elec": 0.4692314352902524,
+    "rule": "freeze this source amplitude for stage3-5; protection may reduce but strategies may not increase it"
+  },
+  "cross_validation": [
+    {
+      "scenario": "BEFORE",
+      "points": 20001,
+      "max_zin_relative_error": 1.359978951563176e-07,
+      "max_vport_relative_error": 9.185519641695946e-10,
+      "max_iport_relative_error": 1.3591459334128658e-07,
+      "max_prm_full_scale_error": 2.7016284457598486e-07,
+      "max_phase_abs_error_deg": 6.711254375976637e-06,
+      "max_power_balance_abs_error_W": 1.8246924912874996e-11,
+      "status": "PASS"
+    },
+    {
+      "scenario": "IDEAL",
+      "points": 20001,
+      "max_zin_relative_error": 1.3599998184045217e-07,
+      "max_vport_relative_error": 6.799999518483361e-08,
+      "max_iport_relative_error": 1.2558710339556476e-07,
+      "max_prm_full_scale_error": 1.3599998575225544e-07,
+      "max_phase_abs_error_deg": 5.32515243768818e-06,
+      "max_power_balance_abs_error_W": 6.799999070772333e-10,
+      "status": "PASS"
+    },
+    {
+      "scenario": "ACTIVE_LOSSY",
+      "points": 20001,
+      "max_zin_relative_error": 1.200828786831155e-07,
+      "max_vport_relative_error": 6.375033628693371e-08,
+      "max_iport_relative_error": 1.2660405541359113e-07,
+      "max_prm_full_scale_error": 1.4449936652598086e-07,
+      "max_phase_abs_error_deg": 4.525633132109537e-06,
+      "max_power_balance_abs_error_W": 5.981024130824464e-10,
+      "status": "PASS"
+    }
+  ]
+}

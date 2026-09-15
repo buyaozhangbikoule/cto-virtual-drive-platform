@@ -1,0 +1,438 @@
+{
+  "model_scope": "assumed virtual electrical BVD model; no measured transducer parameters",
+  "source_voltage_rms_fixed": 5.352661842400933,
+  "baseline_target_voltage_vpp_at_0p9MHz": 100.0,
+  "voltage_hard_limit_vpp": 160.0,
+  "current_nominal_a_peak": 0.005,
+  "current_soft_a_peak": 0.0055,
+  "current_hard_a_peak": 0.008,
+  "current_measurement": "mag(I(Rmot)+I(Cstatic))*sqrt(2)",
+  "source_current_policy": "record separately; do not apply the 5 mA constraint",
+  "active_power": "re(V(n_in)*conj(I(Rmot)))",
+  "signed_phase": "Cartesian phase of V(n_s)/I(Rlesr)",
+  "frequency_start_hz": 800000.0,
+  "frequency_stop_hz": 1000000.0,
+  "frequency_points": 4001,
+  "scenarios": [
+    {
+      "case_id": "CASE_000_BASELINE",
+      "label_zh": "基准：无扰动",
+      "complexity": "baseline",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "基准",
+      "level": "基准"
+    },
+    {
+      "case_id": "CASE_110_C0_P10",
+      "label_zh": "C0：+10%",
+      "complexity": "+10%",
+      "bvd": {
+        "c0": 1.6500000000000002e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "C0",
+      "level": "+10%"
+    },
+    {
+      "case_id": "CASE_120_C0_P20",
+      "label_zh": "C0：+20%",
+      "complexity": "+20%",
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "C0",
+      "level": "+20%"
+    },
+    {
+      "case_id": "CASE_130_C0_P30",
+      "label_zh": "C0：+30%",
+      "complexity": "+30%",
+      "bvd": {
+        "c0": 1.95e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "C0",
+      "level": "+30%"
+    },
+    {
+      "case_id": "CASE_210_RM_P15",
+      "label_zh": "Rm：+15%",
+      "complexity": "+15%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 11500.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Rm",
+      "level": "+15%"
+    },
+    {
+      "case_id": "CASE_220_RM_P30",
+      "label_zh": "Rm：+30%",
+      "complexity": "+30%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Rm",
+      "level": "+30%"
+    },
+    {
+      "case_id": "CASE_230_RM_P50",
+      "label_zh": "Rm：+50%",
+      "complexity": "+50%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 15000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Rm",
+      "level": "+50%"
+    },
+    {
+      "case_id": "CASE_310_FS_M1",
+      "label_zh": "fs：-1%（仅改变Cm）",
+      "complexity": "-1%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1906917926722576e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "fs",
+      "level": "-1%（仅改变Cm）"
+    },
+    {
+      "case_id": "CASE_320_FS_M3",
+      "label_zh": "fs：-3%（仅改变Cm）",
+      "complexity": "-3%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.3236231544245717e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "fs",
+      "level": "-3%（仅改变Cm）"
+    },
+    {
+      "case_id": "CASE_330_FS_M5",
+      "label_zh": "fs：-5%（仅改变Cm）",
+      "complexity": "-5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.465038255953551e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "fs",
+      "level": "-5%（仅改变Cm）"
+    },
+    {
+      "case_id": "CASE_410_RS_P5",
+      "label_zh": "Rs：+5%",
+      "complexity": "+5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 52.5,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Rs",
+      "level": "+5%"
+    },
+    {
+      "case_id": "CASE_420_RS_P10",
+      "label_zh": "Rs：+10%",
+      "complexity": "+10%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 55.00000000000001,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Rs",
+      "level": "+10%"
+    },
+    {
+      "case_id": "CASE_430_RS_P20",
+      "label_zh": "Rs：+20%",
+      "complexity": "+20%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 60.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Rs",
+      "level": "+20%"
+    },
+    {
+      "case_id": "CASE_510_LS_P2",
+      "label_zh": "Ls：+2%",
+      "complexity": "+2%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012722460000000002,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Ls",
+      "level": "+2%"
+    },
+    {
+      "case_id": "CASE_520_LS_P5",
+      "label_zh": "Ls：+5%",
+      "complexity": "+5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.0001309665,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Ls",
+      "level": "+5%"
+    },
+    {
+      "case_id": "CASE_530_LS_P10",
+      "label_zh": "Ls：+10%",
+      "complexity": "+10%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00013720300000000002,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Ls",
+      "level": "+10%"
+    },
+    {
+      "case_id": "CASE_610_CP_M2",
+      "label_zh": "Cp：-2%",
+      "complexity": "-2%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.430008e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Cp",
+      "level": "-2%"
+    },
+    {
+      "case_id": "CASE_620_CP_M5",
+      "label_zh": "Cp：-5%",
+      "complexity": "-5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.35562e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Cp",
+      "level": "-5%"
+    },
+    {
+      "case_id": "CASE_630_CP_M10",
+      "label_zh": "Cp：-10%",
+      "complexity": "-10%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.23164e-10,
+        "q_inductor": 100.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "Cp",
+      "level": "-10%"
+    },
+    {
+      "case_id": "CASE_720_Q50",
+      "label_zh": "电感Q：Q=50",
+      "complexity": "Q=50",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 50.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "电感Q",
+      "level": "Q=50"
+    },
+    {
+      "case_id": "CASE_730_Q20",
+      "label_zh": "电感Q：Q=20",
+      "complexity": "Q=20",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 20.0
+      },
+      "description": "除标明参数外，其余BVD、源阻抗和匹配网络参数保持基准值",
+      "factor": "电感Q",
+      "level": "Q=20"
+    }
+  ]
+}

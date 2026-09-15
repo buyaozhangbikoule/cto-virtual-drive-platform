@@ -1,0 +1,12 @@
+{
+  "variant": "E01",
+  "dwell_s": 0.8,
+  "rows": 1660,
+  "timeline_sha256": "240a735c66c083edb04b87bfc74a1892b4305c550606e6dc445bb4eca6450555",
+  "all_sampled_points_within_hard_limits": true,
+  "sampling_gap_safety_proven": false,
+  "all_actions_guarded": true,
+  "amplitude_state_consistent": true,
+  "frequency_change_without_amplitude_increase": true,
+  "max_power_balance_error_W": 1.6653345369377348e-16
+}

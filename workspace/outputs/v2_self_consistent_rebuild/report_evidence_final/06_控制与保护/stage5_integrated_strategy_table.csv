@@ -1,0 +1,4 @@
+﻿strategy,steady_error_pct,mean_recovery_time_ms_penalized,unsettled_segments,power_stability_cv_pct,peak_current_mA_RMS,peak_voltage_vpp,soft_limit_triggers,hard_trip_triggers,actual_hard_violations,frequency_saturation_ms,locked_frequency_min_MHz,locked_frequency_max_MHz,max_power_overshoot_pct,oscillating_segments,wrong_phase_lock_segments,scan_points,scan_time_s
+FIXED_0P9,30.14473442397421,345.7142857142817,3,6.0791251997897906e-15,5.1241662511780515,130.0,1,1,0,0.0,0.9,0.9,0.0,0,0,0,0.0
+PERIODIC_SCAN,0.0,95.50000000000776,0,5.470608405926987e-15,5.1241662511780515,118.51861536060713,0,0,0,0.0,0.8548,0.9003,0.0,0,0,848,1.272
+P_AND_O,0.0,800.0,7,0.0,5.1241662511780515,118.51861536060713,0,0,0,0.0,0.8548,0.9003,0.0,0,0,371,0.5565

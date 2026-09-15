@@ -1,0 +1,1080 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/6lsnupw7",
+    "id": "6lsnupw7",
+    "slide": 23,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kre1k3y9",
+      "id": "14",
+      "name": "title-11",
+      "bbox": [
+        72,
+        26,
+        1136,
+        67
+      ],
+      "geometry": "rect",
+      "text": "时序修正已使部分版本通过谐振漂移段的连续稳态验收，\n但全过程能量损失及采样间隙越限尚未解决",
+      "textPreview": "时序修正已使部分版本通过谐振漂移段的连续稳态验收， | 但全过程能量损失及采样间隙越限尚未解决",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 2,
+        "lines": [
+          {
+            "index": 1,
+            "text": "时序修正已使部分版本通过谐振漂移段的连续稳态验收，"
+          },
+          {
+            "index": 2,
+            "text": "但全过程能量损失及采样间隙越限尚未解决"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "时序修正已使部分版本通过谐振漂移段的连续稳态验收，",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "时序修正已使部分版本通过谐振漂移段的连续稳态验收，",
+              "fontSize": 30,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "但全过程能量损失及采样间隙越限尚未解决",
+          "resolvedTextStyle": {
+            "fontSize": 30,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "但全过程能量损失及采样间隙越限尚未解决",
+              "fontSize": 30,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xc7eds76",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wbydknq1",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/jepwf2pc",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        1065,
+        20
+      ],
+      "geometry": "rect",
+      "text": "扩展P&O试验，非实测    第三轮 cdde9dab61；第12/24页为旧批次，不能拼成同一运行",
+      "textPreview": "扩展P&O试验，非实测    第三轮 cdde9dab61；第12/24页为旧批次，不能拼成同一运行",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "扩展P&O试验，非实测    第三轮 cdde9dab61；第12/24页为旧批次，不能拼成同一运行"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "扩展P&O试验，非实测    第三轮 cdde9dab61；第12/24页为旧批次，不能拼成同一运行",
+          "resolvedTextStyle": {
+            "fontSize": 11.51,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "扩展P&O试验，非实测    第三轮 cdde9dab61；第12/24页为旧批次，不能拼成同一运行",
+              "fontSize": 11.51,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/idgvmx8r",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "23",
+      "textPreview": "23",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "23"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "23",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "23",
+              "fontSize": 12,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/kfidonqx",
+      "id": "7",
+      "name": "矩形 6",
+      "bbox": [
+        901,
+        125,
+        306,
+        31
+      ],
+      "geometry": "rect",
+      "text": "后续实验：固定无PI候选",
+      "textPreview": "后续实验：固定无PI候选",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "后续实验：固定无PI候选"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "后续实验：固定无PI候选",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "后续实验：固定无PI候选",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/zi5c3y98",
+      "id": "8",
+      "name": "矩形 7",
+      "bbox": [
+        901,
+        164,
+        306,
+        74
+      ],
+      "geometry": "rect",
+      "text": "P&O等待500 ms，试探幅度≤0.9\n恢复门槛R2，重扫幅度仍≤0.4\n本段：fs−5%，2.4–3.2 s",
+      "textPreview": "P&O等待500 ms，试探幅度≤0.9 | 恢复门槛R2，重扫幅度仍≤0.4 | 本段：fs−5%，2.4–3.2 s",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "P&O等待500 ms，试探幅度≤0.9"
+          },
+          {
+            "index": 2,
+            "text": "恢复门槛R2，重扫幅度仍≤0.4"
+          },
+          {
+            "index": 3,
+            "text": "本段：fs−5%，2.4–3.2 s"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "P&O等待500 ms，试探幅度≤0.9",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "P&O等待500 ms，试探幅度≤0.9",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "恢复门槛R2，重扫幅度仍≤0.4",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "恢复门槛R2，重扫幅度仍≤0.4",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "本段：fs−5%，2.4–3.2 s",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本段：fs−5%，2.4–3.2 s",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ehwvat8n",
+      "id": "9",
+      "name": "矩形 8",
+      "bbox": [
+        901,
+        258,
+        306,
+        30
+      ],
+      "geometry": "rect",
+      "text": "本段连续稳态：通过",
+      "textPreview": "本段连续稳态：通过",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本段连续稳态：通过"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本段连续稳态：通过",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "typeface": "Calibri",
+            "color": "#2F73B7",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本段连续稳态：通过",
+              "fontSize": 23,
+              "typeface": "Calibri",
+              "color": "#2F73B7",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 9,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/c3e1gjyd",
+      "id": "10",
+      "name": "矩形 9",
+      "bbox": [
+        901,
+        300,
+        306,
+        94
+      ],
+      "geometry": "rect",
+      "text": "首次合格：2.962 s\n验收确认：3.142 s（延迟742 ms）\n连续合格12个，门槛10个\n尾段频率：0.8548 MHz",
+      "textPreview": "首次合格：2.962 s | 验收确认：3.142 s（延迟742 ms） | 连续合格12个，门槛10个 | 尾段频率：0.8548 MHz",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "首次合格：2.962 s"
+          },
+          {
+            "index": 2,
+            "text": "验收确认：3.142 s（延迟742 ms）"
+          },
+          {
+            "index": 3,
+            "text": "连续合格12个，门槛10个"
+          },
+          {
+            "index": 4,
+            "text": "尾段频率：0.8548 MHz"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "首次合格：2.962 s",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#2F73B7",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "首次合格：2.962 s",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#2F73B7"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "验收确认：3.142 s（延迟742 ms）",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#2F73B7",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "验收确认：3.142 s（延迟742 ms）",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#2F73B7"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "连续合格12个，门槛10个",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#2F73B7",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "连续合格12个，门槛10个",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#2F73B7"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "尾段频率：0.8548 MHz",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#2F73B7",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "尾段频率：0.8548 MHz",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#2F73B7"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 10,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/x4ni9ofy",
+      "id": "11",
+      "name": "矩形 10",
+      "bbox": [
+        901,
+        410,
+        306,
+        30
+      ],
+      "geometry": "rect",
+      "text": "能量损失与硬限：未解决",
+      "textPreview": "能量损失与硬限：未解决",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "能量损失与硬限：未解决"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "能量损失与硬限：未解决",
+          "resolvedTextStyle": {
+            "fontSize": 22,
+            "typeface": "Calibri",
+            "color": "#C84444",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "能量损失与硬限：未解决",
+              "fontSize": 22,
+              "typeface": "Calibri",
+              "color": "#C84444",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 11,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/a1wze9g7",
+      "id": "12",
+      "name": "矩形 11",
+      "bbox": [
+        901,
+        452,
+        306,
+        75
+      ],
+      "geometry": "rect",
+      "text": "本段能量捕获率：45.4%\n间隙重放峰值：188.2 Vpp\n高于160 Vpp累计约1.0 ms",
+      "textPreview": "本段能量捕获率：45.4% | 间隙重放峰值：188.2 Vpp | 高于160 Vpp累计约1.0 ms",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 3,
+        "lines": [
+          {
+            "index": 1,
+            "text": "本段能量捕获率：45.4%"
+          },
+          {
+            "index": 2,
+            "text": "间隙重放峰值：188.2 Vpp"
+          },
+          {
+            "index": 3,
+            "text": "高于160 Vpp累计约1.0 ms"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本段能量捕获率：45.4%",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#C84444",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本段能量捕获率：45.4%",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#C84444"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "间隙重放峰值：188.2 Vpp",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#C84444",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "间隙重放峰值：188.2 Vpp",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#C84444"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "高于160 Vpp累计约1.0 ms",
+          "resolvedTextStyle": {
+            "fontSize": 18,
+            "typeface": "Calibri",
+            "color": "#C84444",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "高于160 Vpp累计约1.0 ms",
+              "fontSize": 18,
+              "typeface": "Calibri",
+              "color": "#C84444"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 12,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/b2507exs",
+      "id": "13",
+      "name": "矩形 12",
+      "bbox": [
+        901,
+        558,
+        306,
+        94
+      ],
+      "geometry": "rect",
+      "text": "验收冻结：0.8 s/段，功率≥98%\nNORMAL且频率未冻结，连续10样本\n保留异常检测及原保护保持时间\n硬边界：160 Vpp / 6 mA RMS",
+      "textPreview": "验收冻结：0.8 s/段，功率≥98% | NORMAL且频率未冻结，连续10样本 | 保留异常检测及原保护保持时间 | 硬边界：160 Vpp / 6 mA RMS",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "textLayout": {
+        "lineCount": 4,
+        "lines": [
+          {
+            "index": 1,
+            "text": "验收冻结：0.8 s/段，功率≥98%"
+          },
+          {
+            "index": 2,
+            "text": "NORMAL且频率未冻结，连续10样本"
+          },
+          {
+            "index": 3,
+            "text": "保留异常检测及原保护保持时间"
+          },
+          {
+            "index": 4,
+            "text": "硬边界：160 Vpp / 6 mA RMS"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "验收冻结：0.8 s/段，功率≥98%",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "验收冻结：0.8 s/段，功率≥98%",
+              "fontSize": 17,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "NORMAL且频率未冻结，连续10样本",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "NORMAL且频率未冻结，连续10样本",
+              "fontSize": 17,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "保留异常检测及原保护保持时间",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "保留异常检测及原保护保持时间",
+              "fontSize": 17,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "硬边界：160 Vpp / 6 mA RMS",
+          "resolvedTextStyle": {
+            "fontSize": 17,
+            "typeface": "Calibri",
+            "color": "#17324D",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "硬边界：160 Vpp / 6 mA RMS",
+              "fontSize": 17,
+              "typeface": "Calibri",
+              "color": "#17324D"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "aid": "im/qpsv2lkb",
+      "id": "15",
+      "name": "图片 5",
+      "bbox": [
+        72,
+        132,
+        810,
+        524.12
+      ],
+      "contentType": "image/png",
+      "asset": {
+        "assetId": "/ppt/media/image9.png",
+        "contentType": "image/png",
+        "byteLength": 254970
+      },
+      "fillImage": {
+        "assetId": "/ppt/media/image9.png",
+        "contentType": "image/png",
+        "byteLength": 254970
+      }
+    }
+  ],
+  "composeRuns": []
+}

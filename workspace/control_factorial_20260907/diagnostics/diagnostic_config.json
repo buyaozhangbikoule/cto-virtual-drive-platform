@@ -1,0 +1,85 @@
+{
+  "stress_design": "post-hoc: original registered maxima did not bind soft limits",
+  "not_used_to_tune_gains": true,
+  "main_sequence_scores_not_replaced": true,
+  "static_phase_reference_deg": -1.0782096368565852,
+  "stress_sequence": [
+    {
+      "state_index": 0,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 0.0,
+      "end_s": 1.6
+    },
+    {
+      "state_index": 1,
+      "case_id": "STRESS_RM_M30",
+      "start_s": 1.6,
+      "end_s": 3.2
+    },
+    {
+      "state_index": 2,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 3.2,
+      "end_s": 4.800000000000001
+    },
+    {
+      "state_index": 3,
+      "case_id": "STRESS_RM_M50",
+      "start_s": 4.800000000000001,
+      "end_s": 6.4
+    },
+    {
+      "state_index": 4,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 6.4,
+      "end_s": 8.0
+    }
+  ],
+  "stress_parameters": {
+    "STRESS_RM_M30": {
+      "case_id": "STRESS_RM_M30",
+      "family": "EXPLORATORY_BINDING_CURRENT",
+      "factor": "Rm",
+      "level": "-30%",
+      "description": "Post-hoc diagnostic for binding current; raw Rm only changes, derived Qm changes; not part of main score",
+      "bvd": {
+        "c0": 6.858064105198409e-12,
+        "rm": 5147.05882352941,
+        "lm": 1.0402283862215378,
+        "cm": 3.006260036180247e-14,
+        "qm": 800.0,
+        "fs": 900000.0
+      },
+      "matching": {
+        "l_h": 0.00010672581904440851,
+        "c_f": 2.8359878734546773e-10,
+        "ql": 100.0,
+        "qc": 1000.0
+      },
+      "rs": 50.0
+    },
+    "STRESS_RM_M50": {
+      "case_id": "STRESS_RM_M50",
+      "family": "EXPLORATORY_BINDING_CURRENT",
+      "factor": "Rm",
+      "level": "-50%",
+      "description": "Post-hoc diagnostic for binding current; raw Rm only changes, derived Qm changes; not part of main score",
+      "bvd": {
+        "c0": 6.858064105198409e-12,
+        "rm": 3676.470588235293,
+        "lm": 1.0402283862215378,
+        "cm": 3.006260036180247e-14,
+        "qm": 800.0,
+        "fs": 900000.0
+      },
+      "matching": {
+        "l_h": 0.00010672581904440851,
+        "c_f": 2.8359878734546773e-10,
+        "ql": 100.0,
+        "qc": 1000.0
+      },
+      "rs": 50.0
+    }
+  },
+  "parameter_source": "SCAN_VARIABLES_ON_HYPOTHETICAL_BASELINE"
+}

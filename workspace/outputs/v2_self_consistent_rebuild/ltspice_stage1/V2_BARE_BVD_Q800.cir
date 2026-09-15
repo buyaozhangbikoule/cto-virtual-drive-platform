@@ -1,0 +1,10 @@
+* V2 bare BVD baseline -- all values are hypothetical, not measured
+* fs=0.9MHz, Rm=10kohm, Qm=800, C0 derived from 100Vpp/5mArms/0.125W
+Vdrive n 0 AC 1
+C0 n 0 17.68388256576615p
+Rm n nm1 10k
+Lm nm1 nm2 1.4147106052612914
+Cm nm2 0 0.0221048532072077p
+.ac lin 100001 500k 1.5Meg
+.save V(n) I(Vdrive) I(Rm) I(C0)
+.end

@@ -1,0 +1,6 @@
+Error: package-integrity validator did not pass
+spawnSync C:\Users\24739\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe EPERM
+    at processFailure (file:///C:/Users/24739/.codex/plugins/cache/openai-primary-runtime/presentations/26.909.12148/skills/presentations/container_tools/artifact_tool_utils.mjs:483:17)
+    at executeValidator (file:///C:/Users/24739/.codex/plugins/cache/openai-primary-runtime/presentations/26.909.12148/skills/presentations/container_tools/artifact_tool_utils.mjs:510:11)
+    at finalizePresentation (file:///C:/Users/24739/.codex/plugins/cache/openai-primary-runtime/presentations/26.909.12148/skills/presentations/container_tools/artifact_tool_utils.mjs:905:25)
+    at async file:///C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_progress_20260914/build/finalize.mjs:11:11

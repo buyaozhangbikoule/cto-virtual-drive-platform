@@ -1,0 +1,857 @@
+{
+  "schema": "openai.presentation.layout/v4",
+  "unit": "px",
+  "slide": {
+    "aid": "sl/noxpsw",
+    "id": "noxpsw",
+    "slide": 22,
+    "layoutId": "/ppt/slideLayouts/slideLayout1.xml",
+    "layoutName": "Title Slide",
+    "layoutType": "title",
+    "masterLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+    "masterLayoutName": "Master",
+    "backgroundColor": "#F7F8FA",
+    "frame": {
+      "left": 0,
+      "top": 0,
+      "width": 1280,
+      "height": 720
+    }
+  },
+  "theme": {
+    "colorSchemeName": "ChatGPT",
+    "colors": {
+      "accent1": "#156082",
+      "accent2": "#E97132",
+      "accent3": "#196B24",
+      "accent4": "#0F9ED5",
+      "accent5": "#A02B93",
+      "accent6": "#4EA72E",
+      "dk1": "#000000",
+      "lt1": "#FFFFFF",
+      "dk2": "#0E2841",
+      "lt2": "#E8E8E8",
+      "hlink": "#467886",
+      "folHlink": "#96607D"
+    },
+    "fontScheme": {
+      "name": "Office",
+      "majorFont": {
+        "latinTypeface": "Calibri Light",
+        "eastAsianTypeface": "Calibri Light",
+        "complexScriptTypeface": "Calibri Light"
+      },
+      "minorFont": {
+        "latinTypeface": "Calibri",
+        "eastAsianTypeface": "Calibri",
+        "complexScriptTypeface": "Calibri"
+      }
+    },
+    "typefaces": [
+      "Calibri",
+      "Calibri Light"
+    ]
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "/ppt/slideLayouts/slideLayout1.xml",
+      "name": "Title Slide",
+      "type": "title",
+      "parentLayoutId": "/ppt/slideMasters/slideMaster1.xml",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "/ppt/slideMasters/slideMaster1.xml",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/1cba5g3a",
+      "id": "9",
+      "name": "title-17",
+      "bbox": [
+        72,
+        36,
+        1136,
+        54
+      ],
+      "geometry": "rect",
+      "text": "备份：三种选频准则优化的是不同目标函数",
+      "textPreview": "备份：三种选频准则优化的是不同目标函数",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 2,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "middle",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "备份：三种选频准则优化的是不同目标函数"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "备份：三种选频准则优化的是不同目标函数",
+          "resolvedTextStyle": {
+            "fontSize": 36,
+            "color": "#17324D",
+            "bold": true,
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "备份：三种选频准则优化的是不同目标函数",
+              "fontSize": 36,
+              "color": "#17324D",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 2,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/ih0rmh4b",
+      "id": "2",
+      "name": "矩形 1",
+      "bbox": [
+        72,
+        96,
+        1136,
+        3
+      ],
+      "geometry": "rect",
+      "fillColor": "#17324D",
+      "lineColor": "#17324D",
+      "lineWidth": 0
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/j29svmlw",
+      "id": "3",
+      "name": "矩形 2",
+      "bbox": [
+        72,
+        682,
+        1136,
+        1
+      ],
+      "geometry": "rect",
+      "fillColor": "#D9E0E6",
+      "lineColor": "#D9E0E6",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/wfy9k7m5",
+      "id": "4",
+      "name": "矩形 3",
+      "bbox": [
+        72,
+        688,
+        720,
+        20
+      ],
+      "geometry": "rect",
+      "text": "Electrical model only — structural/acoustic validation pending",
+      "textPreview": "Electrical model only — structural/acoustic validation pending",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "Electrical model only — structural/acoustic validation pending"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Electrical model only — structural/acoustic validation pending",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "left"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Electrical model only — structural/acoustic validation pending",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 5,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/xg7atc3q",
+      "id": "5",
+      "name": "矩形 4",
+      "bbox": [
+        1160,
+        688,
+        48,
+        20
+      ],
+      "geometry": "rect",
+      "text": "17",
+      "textPreview": "17",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "17"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "17",
+          "resolvedTextStyle": {
+            "fontSize": 12,
+            "color": "#5F6B76",
+            "alignment": "right"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "17",
+              "fontSize": 12,
+              "color": "#5F6B76"
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    },
+    {
+      "order": 6,
+      "kind": "table",
+      "scope": "slide",
+      "aid": "tb/298v294z",
+      "id": "10",
+      "name": "表格 15",
+      "bbox": [
+        86,
+        154,
+        1100,
+        270
+      ],
+      "text": "准则 | 定义 | 优点 | 主要风险\n最大功率 | max P_Rm | 直接对齐控制目标 | 需功率估计\n最小相位 | min |arg(V/I)| | 观测简单 | 可能锁到低功率零相位点\n最小反射 | min Γ代理 | 适合匹配评价 | 不一定等于运动支路功率最大",
+      "textPreview": "准则 | 定义 | 优点 | 主要风险 | 最大功率 | max P_Rm | 直接对齐控制目标 | 需功率估计 | 最小相位 | min |arg(V/I)| | 观测简单 | 可能锁到低功率零相位点 | 最小反射 | min Γ代理 | 适合匹配评价 | 不一定等于运动...",
+      "rows": 4,
+      "cols": 4,
+      "cells": [
+        {
+          "index": 1,
+          "row": 1,
+          "column": 1,
+          "bbox": [
+            86,
+            154,
+            207.55,
+            67.5
+          ],
+          "text": "准则",
+          "textPreview": "准则",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "准则",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "准则",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 2,
+          "row": 1,
+          "column": 2,
+          "bbox": [
+            293.55,
+            154,
+            249.06,
+            67.5
+          ],
+          "text": "定义",
+          "textPreview": "定义",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "定义",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "定义",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 3,
+          "row": 1,
+          "column": 3,
+          "bbox": [
+            542.6,
+            154,
+            269.81,
+            67.5
+          ],
+          "text": "优点",
+          "textPreview": "优点",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "优点",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "优点",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 4,
+          "row": 1,
+          "column": 4,
+          "bbox": [
+            812.42,
+            154,
+            373.58,
+            67.5
+          ],
+          "text": "主要风险",
+          "textPreview": "主要风险",
+          "fillColor": "#17324D",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "主要风险",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "主要风险",
+                  "fontSize": 18,
+                  "color": "#FFFFFF",
+                  "bold": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 5,
+          "row": 2,
+          "column": 1,
+          "bbox": [
+            86,
+            221.5,
+            207.55,
+            67.5
+          ],
+          "text": "最大功率",
+          "textPreview": "最大功率",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "最大功率",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "最大功率",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 6,
+          "row": 2,
+          "column": 2,
+          "bbox": [
+            293.55,
+            221.5,
+            249.06,
+            67.5
+          ],
+          "text": "max P_Rm",
+          "textPreview": "max P_Rm",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "max P_Rm",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "max P_Rm",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 7,
+          "row": 2,
+          "column": 3,
+          "bbox": [
+            542.6,
+            221.5,
+            269.81,
+            67.5
+          ],
+          "text": "直接对齐控制目标",
+          "textPreview": "直接对齐控制目标",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "直接对齐控制目标",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "直接对齐控制目标",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 8,
+          "row": 2,
+          "column": 4,
+          "bbox": [
+            812.42,
+            221.5,
+            373.58,
+            67.5
+          ],
+          "text": "需功率估计",
+          "textPreview": "需功率估计",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "需功率估计",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "需功率估计",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 9,
+          "row": 3,
+          "column": 1,
+          "bbox": [
+            86,
+            289,
+            207.55,
+            67.5
+          ],
+          "text": "最小相位",
+          "textPreview": "最小相位",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "最小相位",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "最小相位",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 10,
+          "row": 3,
+          "column": 2,
+          "bbox": [
+            293.55,
+            289,
+            249.06,
+            67.5
+          ],
+          "text": "min |arg(V/I)|",
+          "textPreview": "min |arg(V/I)|",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "min |arg(V/I)|",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "min |arg(V/I)|",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 11,
+          "row": 3,
+          "column": 3,
+          "bbox": [
+            542.6,
+            289,
+            269.81,
+            67.5
+          ],
+          "text": "观测简单",
+          "textPreview": "观测简单",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "观测简单",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "观测简单",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 12,
+          "row": 3,
+          "column": 4,
+          "bbox": [
+            812.42,
+            289,
+            373.58,
+            67.5
+          ],
+          "text": "可能锁到低功率零相位点",
+          "textPreview": "可能锁到低功率零相位点",
+          "fillColor": "#F1F4F6",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "可能锁到低功率零相位点",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "可能锁到低功率零相位点",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 13,
+          "row": 4,
+          "column": 1,
+          "bbox": [
+            86,
+            356.5,
+            207.55,
+            67.5
+          ],
+          "text": "最小反射",
+          "textPreview": "最小反射",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "最小反射",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "最小反射",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 14,
+          "row": 4,
+          "column": 2,
+          "bbox": [
+            293.55,
+            356.5,
+            249.06,
+            67.5
+          ],
+          "text": "min Γ代理",
+          "textPreview": "min Γ代理",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "min Γ代理",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "min Γ代理",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 15,
+          "row": 4,
+          "column": 3,
+          "bbox": [
+            542.6,
+            356.5,
+            269.81,
+            67.5
+          ],
+          "text": "适合匹配评价",
+          "textPreview": "适合匹配评价",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "适合匹配评价",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "适合匹配评价",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "index": 16,
+          "row": 4,
+          "column": 4,
+          "bbox": [
+            812.42,
+            356.5,
+            373.58,
+            67.5
+          ],
+          "text": "不一定等于运动支路功率最大",
+          "textPreview": "不一定等于运动支路功率最大",
+          "fillColor": "#FFFFFF",
+          "paragraphs": [
+            {
+              "index": 1,
+              "text": "不一定等于运动支路功率最大",
+              "runs": [
+                {
+                  "index": 1,
+                  "text": "不一定等于运动支路功率最大",
+                  "fontSize": 18,
+                  "color": "#1F2933"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/vepsrmlk",
+      "id": "7",
+      "name": "矩形: 圆角 6",
+      "bbox": [
+        148,
+        480,
+        970,
+        100
+      ],
+      "geometry": "roundRect",
+      "fillColor": "#FFF4DD",
+      "lineColor": "#E69F00",
+      "lineWidth": 1
+    },
+    {
+      "order": 8,
+      "kind": "shape",
+      "scope": "slide",
+      "aid": "sh/gb2twbmp",
+      "id": "8",
+      "name": "矩形 7",
+      "bbox": [
+        176,
+        510,
+        914,
+        44
+      ],
+      "geometry": "rect",
+      "text": "典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。",
+      "textPreview": "典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。",
+      "resolvedFontSize": 24,
+      "resolvedTextStyle": {
+        "anchor": 1,
+        "fontSize": 24,
+        "typeface": "Calibri",
+        "color": "tx1",
+        "alignment": "left",
+        "verticalAlignment": "top",
+        "insets": {
+          "top": 4.8,
+          "right": 9.6,
+          "bottom": 4.8,
+          "left": 9.6
+        }
+      },
+      "textLayout": {
+        "lineCount": 1,
+        "lines": [
+          {
+            "index": 1,
+            "text": "典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。"
+          }
+        ]
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。",
+          "resolvedTextStyle": {
+            "fontSize": 23,
+            "color": "#E69F00",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。",
+              "fontSize": 23,
+              "color": "#E69F00",
+              "bold": true
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ],
+      "lineWidth": 0
+    }
+  ],
+  "composeRuns": []
+}

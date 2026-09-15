@@ -1,0 +1,24 @@
+{
+  "captured_at": "2026-09-15T15:03:39.804462+08:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "executable": "C:\\Users\\24739\\AppData\\Local\\Microsoft\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "direct_dependencies": {
+    "numpy": "2.2.4",
+    "scipy": "1.17.1",
+    "matplotlib": "3.10.9",
+    "pandas": "3.0.5",
+    "streamlit": "1.62.0",
+    "pillow": "11.1.0"
+  },
+  "license_transfer": false,
+  "new_solver_runs_for_handoff": false,
+  "not_included": [
+    "Python and Node runtimes",
+    "LTspice executable",
+    "ANSYS/COMSOL",
+    "accounts/licenses",
+    "caches and nested duplicate ZIPs"
+  ],
+  "privacy": "Historical absolute paths retained for internal handoff; no secret credentials intentionally included."
+}

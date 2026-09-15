@@ -1,0 +1,21 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textShapes":11}
+{"kind":"textbox","id":"sh/f2d0b6lc","slide":7,"name":"title-7","text":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textPreview":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textChars":25,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"text":"FWHM","textPreview":"FWHM","textChars":4,"textLines":1,"bbox":[920,156,230,36]}
+{"kind":"shape","id":"sh/eh0ba1sr","slide":7,"bbox":[890,220,280,62]}
+{"kind":"textbox","id":"sh/fi9c369c","slide":7,"text":"Qm=500","textPreview":"Qm=500","textChars":6,"textLines":1,"bbox":[906,230,120,40]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"text":"3.451 kHz","textPreview":"3.451 kHz","textChars":9,"textLines":1,"bbox":[1026,230,126,40]}
+{"kind":"shape","id":"sh/a9ojq5kz","slide":7,"bbox":[890,318,280,62]}
+{"kind":"textbox","id":"sh/xcz2l03q","slide":7,"text":"Qm=800","textPreview":"Qm=800","textChars":6,"textLines":1,"bbox":[906,328,120,40]}
+{"kind":"textbox","id":"sh/cbq1sv25","slide":7,"text":"2.144 kHz","textPreview":"2.144 kHz","textChars":9,"textLines":1,"bbox":[1026,328,126,40]}
+{"kind":"shape","id":"sh/n6x0fqlo","slide":7,"bbox":[890,416,280,62]}
+{"kind":"textbox","id":"sh/25ojml43","slide":7,"text":"Qm=1000","textPreview":"Qm=1000","textChars":7,"textLines":1,"bbox":[906,426,120,40]}
+{"kind":"textbox","id":"sh/p8fih03e","slide":7,"text":"1.713 kHz","textPreview":"1.713 kHz","textChars":9,"textLines":1,"bbox":[1026,426,126,40]}
+{"kind":"textbox","id":"sh/o761ov2t","slide":7,"text":"高Q不自动代表系统更好；\n它意味着更严格的频率分辨率。","textPreview":"高Q不自动代表系统更好； | 它意味着更严格的频率分辨率。","textChars":27,"textLines":2,"bbox":[914,538,250,70]}
+{"kind":"image","id":"im/tsze1szm","slide":7,"name":"","bbox":[72,130,800,500]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"三组保持fs、Rm和C0固定，并重新推导Lm/Cm。峰高约0.17 W保持不变，峰宽随Qm增加而缩小。\n\n[Sources]\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\04_扰动与Qm\\stage3_Qm_500_800_1000_summary.csv\n- C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\report_evidence_final\\07_汇报截图\\stage3_03_Qm_sensitivity.png"}

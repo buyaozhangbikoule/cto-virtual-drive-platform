@@ -1,0 +1,345 @@
+[
+  {
+    "count": 28,
+    "candidate": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_acceptance_update_20260909\\build\\candidate-full.pptx",
+    "integrity": {
+      "code": 0,
+      "result": {
+        "chart_count": 4,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 28,
+        "relationship_part_count": 61,
+        "slide_count": 28,
+        "status": "pass"
+      },
+      "stderr": ""
+    },
+    "geometry": {
+      "code": 0,
+      "result": {
+        "finding_count": 0,
+        "findings": [],
+        "font_policy": {
+          "checked_text_script_count": 705,
+          "native_font_rendering_verified": false,
+          "observed_font_families": [
+            "Calibri"
+          ],
+          "observed_font_use_counts": {
+            "Calibri": 705
+          },
+          "passed": true,
+          "performed": true
+        },
+        "slide_count": 28,
+        "slide_size_in": [
+          13.3333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    },
+    "chart_titles": {
+      "code": 0,
+      "result": {
+        "checks": [
+          {
+            "chart": 1,
+            "slide": 6,
+            "status": "present"
+          },
+          {
+            "chart": 2,
+            "slide": 6,
+            "status": "present"
+          },
+          {
+            "chart": 1,
+            "slide": 15,
+            "status": "present"
+          },
+          {
+            "chart": 1,
+            "slide": 24,
+            "status": "absent"
+          }
+        ],
+        "finding_count": 0,
+        "findings": [],
+        "native_chart_count": 4,
+        "native_powerpoint_verified": false,
+        "passed": true,
+        "presentation_sha256": "d1666be42fb7df375e210b9477500c2463a949a7fb1165f4086ab261c76d4869",
+        "schema_version": "presentation-native-chart-titles.v1",
+        "slide_count": 28,
+        "source_text_emitted": false,
+        "unresolved_linked_title_count": 0
+      },
+      "stderr": ""
+    },
+    "tables": {
+      "code": 0,
+      "result": {
+        "checked_column_count": 0,
+        "checks": [],
+        "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+        "eligible_table_count": 0,
+        "finding_count": 0,
+        "findings": [],
+        "native_table_count": 9,
+        "passed": true,
+        "schema_version": "presentation-native-table-arithmetic.v1",
+        "skipped_tables": [
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 6,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 7,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 15,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 19,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 20,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 21,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 22,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 24,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 26,
+            "table": 1
+          }
+        ],
+        "slide_count": 28,
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    },
+    "charts": {
+      "code": 0,
+      "result": {
+        "claim_boundary": "OOXML/workbook structural validation only; source provenance and native PowerPoint opening remain separate checks.",
+        "expected_quantitative_chart_slides": [
+          6,
+          15,
+          24
+        ],
+        "failed_slide_count": 0,
+        "failed_slides": [],
+        "formal_human_reviewed": false,
+        "native_application_open_verified": false,
+        "package_sha256": "d1666be42fb7df375e210b9477500c2463a949a7fb1165f4086ab261c76d4869",
+        "passed": true,
+        "required_embedded_workbook_slides": [],
+        "results": [
+          {
+            "approved_source_figure_exception": false,
+            "charts": [
+              {
+                "editability_evidence": "powerpoint_native_literal",
+                "embedded_workbook_count": 0,
+                "embedded_workbook_sheet_count": 0,
+                "literal_numeric_point_count": 1604,
+                "native_chart_types": [
+                  "scatterChart"
+                ],
+                "numeric_cache_point_count": 0,
+                "series_formula_count": 0,
+                "workbook_numeric_cell_count": 0
+              },
+              {
+                "editability_evidence": "powerpoint_native_literal",
+                "embedded_workbook_count": 0,
+                "embedded_workbook_sheet_count": 0,
+                "literal_numeric_point_count": 2405,
+                "native_chart_types": [
+                  "scatterChart"
+                ],
+                "numeric_cache_point_count": 0,
+                "series_formula_count": 0,
+                "workbook_numeric_cell_count": 0
+              }
+            ],
+            "failure_codes": [],
+            "native_chart_count": 2,
+            "raster_picture_count": 0,
+            "required_native_chart_count": 1,
+            "slide_number": 6,
+            "status": "passed"
+          },
+          {
+            "approved_source_figure_exception": false,
+            "charts": [
+              {
+                "editability_evidence": "powerpoint_native_literal",
+                "embedded_workbook_count": 0,
+                "embedded_workbook_sheet_count": 0,
+                "literal_numeric_point_count": 3,
+                "native_chart_types": [
+                  "barChart"
+                ],
+                "numeric_cache_point_count": 0,
+                "series_formula_count": 0,
+                "workbook_numeric_cell_count": 0
+              }
+            ],
+            "failure_codes": [],
+            "native_chart_count": 1,
+            "raster_picture_count": 0,
+            "required_native_chart_count": 1,
+            "slide_number": 15,
+            "status": "passed"
+          },
+          {
+            "approved_source_figure_exception": false,
+            "charts": [
+              {
+                "editability_evidence": "powerpoint_native_literal",
+                "embedded_workbook_count": 0,
+                "embedded_workbook_sheet_count": 0,
+                "literal_numeric_point_count": 3,
+                "native_chart_types": [
+                  "barChart"
+                ],
+                "numeric_cache_point_count": 0,
+                "series_formula_count": 0,
+                "workbook_numeric_cell_count": 0
+              }
+            ],
+            "failure_codes": [],
+            "native_chart_count": 1,
+            "raster_picture_count": 0,
+            "required_native_chart_count": 1,
+            "slide_number": 24,
+            "status": "passed"
+          }
+        ],
+        "schema_version": "owner-private.quantitative-chart-native-gate.v1",
+        "slide_count": 28,
+        "source_attachments_accessed": false,
+        "target_application": "powerpoint",
+        "validated_slide_count": 3
+      },
+      "stderr": ""
+    },
+    "only_target_parts_changed": [
+      "ppt/slides/slide14.xml",
+      "ppt/notesSlides/notesSlide14.xml",
+      "ppt/slides/_rels/slide14.xml.rels"
+    ],
+    "sha256": "d1666be42fb7df375e210b9477500c2463a949a7fb1165f4086ab261c76d4869"
+  },
+  {
+    "count": 1,
+    "candidate": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_acceptance_update_20260909\\build\\candidate-single.pptx",
+    "integrity": {
+      "code": 0,
+      "result": {
+        "chart_count": 0,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 1,
+        "relationship_part_count": 7,
+        "slide_count": 1,
+        "status": "pass"
+      },
+      "stderr": ""
+    },
+    "geometry": {
+      "code": 0,
+      "result": {
+        "finding_count": 0,
+        "findings": [],
+        "font_policy": {
+          "checked_text_script_count": 36,
+          "native_font_rendering_verified": false,
+          "observed_font_families": [
+            "Calibri"
+          ],
+          "observed_font_use_counts": {
+            "Calibri": 36
+          },
+          "passed": true,
+          "performed": true
+        },
+        "slide_count": 1,
+        "slide_size_in": [
+          13.3333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    },
+    "chart_titles": {
+      "code": 0,
+      "result": {
+        "checks": [],
+        "finding_count": 0,
+        "findings": [],
+        "native_chart_count": 0,
+        "native_powerpoint_verified": false,
+        "passed": true,
+        "presentation_sha256": "c5cbaec5546c9fb2727a45dd01c4a366511e3caf22c4ec42ba3b3cb0583aa21f",
+        "schema_version": "presentation-native-chart-titles.v1",
+        "slide_count": 1,
+        "source_text_emitted": false,
+        "unresolved_linked_title_count": 0
+      },
+      "stderr": ""
+    },
+    "tables": {
+      "code": 0,
+      "result": {
+        "checked_column_count": 0,
+        "checks": [],
+        "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+        "eligible_table_count": 0,
+        "finding_count": 0,
+        "findings": [],
+        "native_table_count": 0,
+        "passed": true,
+        "schema_version": "presentation-native-table-arithmetic.v1",
+        "skipped_tables": [],
+        "slide_count": 1,
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    },
+    "sha256": "c5cbaec5546c9fb2727a45dd01c4a366511e3caf22c4ec42ba3b3cb0583aa21f"
+  }
+]

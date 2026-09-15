@@ -1,0 +1,425 @@
+{"kind":"layout","layoutId":"/ppt/slideMasters/slideMaster1.xml","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"/ppt/slideLayouts/slideLayout1.xml","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/y90nupkv","slide":1,"title":"CTO超声换能器虚拟阻抗建模","textShapes":5}
+{"kind":"shape","id":"sh/fu94fe98","slide":1,"name":"矩形 7","bbox":[0,0,18,720]}
+{"kind":"textbox","id":"sh/547294r6","slide":1,"name":"矩形 1","text":"CTO超声换能器虚拟阻抗建模\n与自适应驱动控制","textPreview":"CTO超声换能器虚拟阻抗建模 | 与自适应驱动控制","textChars":23,"textLines":2,"bbox":[92,160,820,150]}
+{"kind":"textbox","id":"sh/k3yl0zql","slide":1,"name":"矩形 2","text":"第一月：BVD建模、阻抗匹配、扰动分析与控制原型","textPreview":"第一月：BVD建模、阻抗匹配、扰动分析与控制原型","textChars":24,"textLines":1,"bbox":[96,332,920,42]}
+{"kind":"shape","id":"sh/7qp4be9c","slide":1,"name":"矩形 3","bbox":[96,405,160,5]}
+{"kind":"textbox","id":"sh/65g3298r","slide":1,"name":"矩形 4","text":"第一月工作汇报（补充审计版）  |  2026.09","textPreview":"第一月工作汇报（补充审计版）  |  2026.09","textChars":26,"textLines":1,"bbox":[96,445,500,32]}
+{"kind":"textbox","id":"sh/ts7md4r2","slide":1,"name":"矩形 5","text":"端口电学模型与准稳态控制，不涉及治疗效果结论","textPreview":"端口电学模型与准稳态控制，不涉及治疗效果结论","textChars":22,"textLines":1,"bbox":[96,612,840,32]}
+{"kind":"textbox","id":"sh/sryl4zqx","slide":1,"name":"矩形 6","text":"1","textPreview":"1","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"notes","id":"nt/y90nupkv","slide":1,"text":"【建议时长】20 秒\n\n【本页结论】本月完成的是假设BVD模型下的电学建模、匹配、扰动与带约束控制验证，不是实物或临床验证。\n\n【逐字讲稿】各位老师好，我汇报的题目是CTO超声换能器虚拟阻抗建模与自适应驱动控制。第一月工作的核心不是宣称已经得到真实换能器性能，而是建立一条可复现、可审计的虚拟电学链路：从BVD等效电路、L型匹配、参数扰动，到选频、保护和控制策略比较。全篇数值均按文献参考值、假设基线值或扫描变量分类；结构声场、实物换能器和临床结论不在本月证据范围内。\n\n【看图顺序】先报题目，再主动声明模型边界，最后给出本月主线。\n\n【口径与限制】“CTO”只是应用背景；当前结论仅属于特定小信号线性电学模型。\n\n【教授可能追问】你现在做的是器械设计、软件平台，还是理论模型？\n\n【建议回答】当前是可调参数的虚拟电学仿真与控制原型平台。它能生成可复现数据和控制比较，但尚不是完整功放、结构声场模型或临床器械。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO超声换能器虚拟阻抗建模与自适应驱动控制_第一月计划书.docx"}
+{"kind":"slide","id":"sl/hwbqtkby","slide":2,"title":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textShapes":11}
+{"kind":"textbox","id":"sh/65kfmpor","slide":2,"name":"title-2","text":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textPreview":"固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点","textChars":27,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/9072xkry","slide":2,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/ozy1ofad","slide":2,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/b29kza94","slide":2,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/a10jqpsj","slide":2,"name":"矩形 4","text":"2","textPreview":"2","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/x4r21kru","slide":2,"name":"箭头: 右 5","bbox":[244,264,70,34]}
+{"kind":"shape","id":"sh/w3i1sfa9","slide":2,"name":"箭头: 右 6","bbox":[464,264,70,34]}
+{"kind":"shape","id":"sh/r65knqtk","slide":2,"name":"箭头: 右 7","bbox":[684,264,70,34]}
+{"kind":"shape","id":"sh/q5wjelsz","slide":2,"name":"箭头: 右 8","bbox":[904,264,70,34]}
+{"kind":"shape","id":"sh/ove9o7yd","slide":2,"name":"矩形: 圆角 9","bbox":[86,235,160,92]}
+{"kind":"textbox","id":"sh/9wnqhczy","slide":2,"name":"矩形 10","text":"假设BVD\n模型","textPreview":"假设BVD | 模型","textChars":8,"textLines":2,"bbox":[96,243,140,76]}
+{"kind":"shape","id":"sh/mtwrmxg7","slide":2,"name":"矩形: 圆角 11","bbox":[306,235,160,92]}
+{"kind":"textbox","id":"sh/nu58f2hs","slide":2,"name":"矩形 12","text":"L型匹配","textPreview":"L型匹配","textChars":4,"textLines":1,"bbox":[316,243,140,76]}
+{"kind":"shape","id":"sh/wjy9sry9","slide":2,"name":"矩形: 圆角 13","bbox":[526,235,160,92]}
+{"kind":"textbox","id":"sh/xk7qlczu","slide":2,"name":"矩形 14","text":"参数扰动","textPreview":"参数扰动","textChars":4,"textLines":1,"bbox":[536,243,140,76]}
+{"kind":"shape","id":"sh/ahwrqhgj","slide":2,"name":"矩形: 圆角 15","bbox":[746,235,160,92]}
+{"kind":"textbox","id":"sh/bip8jmho","slide":2,"name":"矩形 16","text":"阻抗与功率","textPreview":"阻抗与功率","textChars":5,"textLines":1,"bbox":[756,243,140,76]}
+{"kind":"shape","id":"sh/cnupgny5","slide":2,"name":"矩形: 圆角 17","bbox":[966,235,190,92]}
+{"kind":"textbox","id":"sh/do3q9szq","slide":2,"name":"矩形 18","text":"选频与保护","textPreview":"选频与保护","textChars":5,"textLines":1,"bbox":[976,243,170,76]}
+{"kind":"textbox","id":"sh/t8byxkn2","slide":2,"name":"矩形 19","text":"小信号线性等效电路","textPreview":"小信号线性等效电路","textChars":9,"textLines":1,"bbox":[108,410,300,40]}
+{"kind":"textbox","id":"sh/s72xofmh","slide":2,"name":"矩形 20","text":"参数为假设基线或扫描变量","textPreview":"参数为假设基线或扫描变量","textChars":12,"textLines":1,"bbox":[450,410,360,40]}
+{"kind":"textbox","id":"sh/76twva5c","slide":2,"name":"矩形 21","text":"不计算声压、温升、空化或临床效果","textPreview":"不计算声压、温升、空化或临床效果","textChars":16,"textLines":1,"bbox":[824,410,380,48]}
+{"kind":"notes","id":"nt/hwbqtkby","slide":2,"text":"【建议时长】35秒\n\n【本页结论】研究问题是负载等效参数漂移后，如何重新找到受约束的高功率工作点。\n\n【逐字讲稿】项目从一个具体问题出发：换能器等效谐振频率、静态电容或机械损耗变化后，固定0.9 MHz可能偏离当前场景的安全功率峰。为此我把问题拆成五段：BVD给出负载频响；L型网络完成基线窄带匹配；扰动模块改变单一或组合参数；虚拟测量计算阻抗、相位和功率；控制器在0.8到1.0 MHz内选频，并由保护状态机限制幅度。这里优化目标是当前场景的电学有功功率代理，同时满足电压和电流约束。\n\n【看图顺序】沿流程箭头从左到右讲；强调“先模型、后扰动、再控制”。\n\n【口径与限制】最大化的是模型内电学功率代理，不是声功率或治疗效果。\n\n【教授可能追问】为什么不直接用相位等于零作为谐振点？\n\n【建议回答】因为匹配网络改变了测量端口，而且最小相位、最小反射和最大功率对应不同目标函数；后续扫频结果显示它们不总是重合。\n\n【模糊推测】真实负载变化可能表现为BVD参数漂移；具体病变或介质变化与各BVD参数的定量映射尚无实测标定。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"}
+{"kind":"slide","id":"sl/ofy9wn61","slide":3,"title":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textShapes":17}
+{"kind":"textbox","id":"sh/03ix43e5","slide":3,"name":"title-3","text":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textPreview":"旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振","textChars":31,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/cza94vmx","slide":3,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/d0jax03i","slide":3,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/298ryl4v","slide":3,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/3ah8rqlg","slide":3,"name":"矩形 4","text":"3","textPreview":"3","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/obq90bml","slide":3,"name":"矩形 5","bbox":[72,130,520,470]}
+{"kind":"textbox","id":"sh/pcjqtg36","slide":3,"name":"矩形 6","text":"旧参数的数量级冲突","textPreview":"旧参数的数量级冲突","textChars":9,"textLines":1,"bbox":[96,154,440,32]}
+{"kind":"textbox","id":"sh/m5cra54z","slide":3,"name":"矩形 7","text":"V_RMS = 100/(2√2) = 35.36 V","textPreview":"V_RMS = 100/(2√2) = 35.36 V","textChars":27,"textLines":1,"bbox":[104,220,430,44]}
+{"kind":"textbox","id":"sh/n6ls3alk","slide":3,"name":"矩形 8","text":"若串联谐振时 Rm = 100 Ω","textPreview":"若串联谐振时 Rm = 100 Ω","textChars":17,"textLines":1,"bbox":[104,286,430,44]}
+{"kind":"textbox","id":"sh/n2l4fq98","slide":3,"name":"矩形 9","text":"I_RMS ≈ 353.6 mA","textPreview":"I_RMS ≈ 353.6 mA","textChars":16,"textLines":1,"bbox":[124,358,380,44]}
+{"kind":"textbox","id":"sh/m1c3mlsn","slide":3,"name":"矩形 10","text":"P ≈ 12.5 W","textPreview":"P ≈ 12.5 W","textChars":10,"textLines":1,"bbox":[124,414,380,44]}
+{"kind":"textbox","id":"sh/943mhgre","slide":3,"name":"矩形 11","text":"与约5 mA、0.17 W目标明显冲突","textPreview":"与约5 mA、0.17 W目标明显冲突","textChars":19,"textLines":1,"bbox":[104,510,430,52]}
+{"kind":"shape","id":"sh/83ulovat","slide":3,"name":"矩形 12","bbox":[620,130,588,470]}
+{"kind":"textbox","id":"sh/v6l4jq94","slide":3,"name":"矩形 13","text":"v2.1假设基线","textPreview":"v2.1假设基线","textChars":8,"textLines":1,"bbox":[650,154,500,32]}
+{"kind":"textbox","id":"sh/a5c3ql8z","slide":3,"name":"矩形 14","text":"C₀ = 6.858 pF","textPreview":"C₀ = 6.858 pF","textChars":13,"textLines":1,"bbox":[668,230,220,44]}
+{"kind":"textbox","id":"sh/x8nml0ra","slide":3,"name":"矩形 15","text":"Rₘ = 7.353 kΩ","textPreview":"Rₘ = 7.353 kΩ","textChars":13,"textLines":1,"bbox":[913,230,220,44]}
+{"kind":"textbox","id":"sh/w7ulsvqp","slide":3,"name":"矩形 16","text":"Qₘ = 800","textPreview":"Qₘ = 800","textChars":8,"textLines":1,"bbox":[668,312,220,44]}
+{"kind":"textbox","id":"sh/ja54na9g","slide":3,"name":"矩形 17","text":"Lₘ = 1.040 H","textPreview":"Lₘ = 1.040 H","textChars":12,"textLines":1,"bbox":[913,312,220,44]}
+{"kind":"textbox","id":"sh/i9w3u58v","slide":3,"name":"矩形 18","text":"Cₘ = 0.0301 pF","textPreview":"Cₘ = 0.0301 pF","textChars":14,"textLines":1,"bbox":[668,394,220,44]}
+{"kind":"textbox","id":"sh/e10f2twf","slide":3,"name":"矩形 19","text":"fₛ = 0.9 MHz","textPreview":"fₛ = 0.9 MHz","textChars":12,"textLines":1,"bbox":[913,394,220,44]}
+{"kind":"textbox","id":"sh/f29gbyx0","slide":3,"name":"矩形 20","text":"数量级自洽的虚拟模型，非实测辨识参数","textPreview":"数量级自洽的虚拟模型，非实测辨识参数","textChars":18,"textLines":1,"bbox":[650,506,520,50]}
+{"kind":"notes","id":"nt/ofy9wn61","slide":3,"text":"【建议时长】55秒\n\n【本页结论】先消除旧参数的物理冲突，再把v2.1参数明确降格为假设基线。\n\n【逐字讲稿】这一页是模型自洽性审计。100 Vpp正弦电压对应35.36 V RMS。如果换能器在0.9 MHz正好处于串联谐振且运动支路电阻只有100欧姆，那么电流约353.6 mA RMS、耗散约12.5 W，这与约5 mA和0.1到0.17 W完全冲突。因此不能同时保留这些条件。v2.1采用反向约束：在100 Vpp、约5 mA的假设工作点附近令端口阻抗约7.07 kΩ，并得到Rm约7.353 kΩ等一组假设参数。它们只用于验证流程和控制逻辑，不能写成真实器件参数。\n\n【看图顺序】先读左侧三行换算，再指出矛盾，最后读右侧v2.1假设基线。\n\n【口径与限制】功率上限0.1768 VA来自视在功率；实际有功功率还要乘功率因数。\n\n【教授可能追问】为什么把Rm设到千欧量级，是否符合真实换能器？\n\n【建议回答】它是满足本次电压、电流量级约束的数学假设，不声称符合真实器件。下一阶段必须用阻抗分析仪数据拟合BVD参数。\n\n【模糊推测】无；本页是单位换算和模型内代数一致性。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage1/stage1_resonance_summary.csv"}
+{"kind":"slide","id":"sl/jyx0ra1s","slide":4,"title":"10 Hz网格下，Python与LTspice结果数值一致","textShapes":10}
+{"kind":"textbox","id":"sh/0ba143al","slide":4,"name":"title-4","text":"10 Hz网格下，Python与LTspice结果数值一致","textPreview":"10 Hz网格下，Python与LTspice结果数值一致","textChars":29,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/ql8jytsj","slide":4,"name":"矩形 4","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/sna103ap","slide":4,"name":"矩形 6","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ih8ju9sn","slide":4,"name":"矩形 8","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/5cva1cfq","slide":4,"name":"矩形 10","text":"4","textPreview":"4","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/x8vaxsfe","slide":4,"name":"矩形 14","text":"0.5–1.5 MHz","textPreview":"0.5–1.5 MHz","textChars":11,"textLines":1,"bbox":[936,136,220,44]}
+{"kind":"textbox","id":"sh/v6tsv2xo","slide":4,"name":"矩形 16","text":"100001点｜Δf=10 Hz","textPreview":"100001点｜Δf=10 Hz","textChars":16,"textLines":1,"bbox":[936,178,220,26]}
+{"kind":"textbox","id":"sh/h4fa9wfy","slide":4,"name":"矩形 18","text":"1.36×10⁻⁷","textPreview":"1.36×10⁻⁷","textChars":9,"textLines":1,"bbox":[936,236,220,44]}
+{"kind":"textbox","id":"sh/oz29krqh","slide":4,"name":"矩形 20","text":"最大|Z|相对误差","textPreview":"最大|Z|相对误差","textChars":9,"textLines":1,"bbox":[936,278,220,28]}
+{"kind":"textbox","id":"sh/2xkrih8b","slide":4,"name":"矩形 22","text":"< 10 Hz","textPreview":"< 10 Hz","textChars":7,"textLines":1,"bbox":[936,334,220,44]}
+{"kind":"textbox","id":"sh/gv29g7q5","slide":4,"name":"矩形 24","text":"峰位差（网格分辨率内）","textPreview":"峰位差（网格分辨率内）","textChars":11,"textLines":1,"bbox":[936,376,220,28]}
+{"kind":"textbox","id":"sh/et0reh8f","slide":4,"name":"矩形 26","text":"LTspice：.cir→.raw\nPython：解析模型\n同网格逐点比较\n实现一致 ≠ 参数真实","textPreview":"LTspice：.cir→.raw | Python：解析模型 | 同网格逐点比较 | 实现一致 ≠ 参数真实","textChars":49,"textLines":4,"bbox":[912,448,282,142]}
+{"kind":"image","id":"im/q9876pkv","slide":4,"name":"图片 12","bbox":[72,122,820,520]}
+{"kind":"notes","id":"nt/jyx0ra1s","slide":4,"text":"【建议时长】40秒\n\n【本页结论】解析模型与LTspice网表在同一拓扑和参数下实现一致。\n\n【逐字讲稿】阶段一先做裸BVD验证，频率范围0.5到1.5 MHz，共100001个点，对应10 Hz网格。Python按复阻抗公式直接计算，LTspice用AC小信号网表求解。两条曲线在图上重合，最大阻抗幅值相对误差约1.36乘10的负7次方，峰位差小于一个10 Hz网格。这个结果证明两套实现对同一电路的计算一致；它只验证代码和网表，没有验证假设参数代表真实换能器。\n\n【看图顺序】先说明扫描设置，再看曲线重合，最后读误差框和结论边界。\n\n【口径与限制】峰位差“小于10 Hz”受离散网格限制，不能解读为器件频率精度。\n\n【教授可能追问】为什么误差这么小，是否存在同源公式自证？\n\n【建议回答】Python与LTspice是独立求解路径，但拓扑与参数来自同一配置。极小误差说明实现一致，仍需实测数据做外部有效性验证。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_STAGE1_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage1/stage1_resonance_summary.csv"}
+{"kind":"slide","id":"sl/i107q5of","slide":5,"title":"同一源条件下，L型匹配使0.9 MHz的有功功率达到约32.8倍","textShapes":8}
+{"kind":"textbox","id":"sh/ahkvi1cb","slide":5,"name":"title-5","text":"同一源条件下，L型匹配使0.9 MHz的有功功率达到约32.8倍","textPreview":"同一源条件下，L型匹配使0.9 MHz的有功功率达到约32.8倍","textChars":32,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/dgbulwnm","slide":5,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cf2tcr61","slide":5,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/z2tcnm5s","slide":5,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/yhkbe1o7","slide":5,"name":"矩形 4","text":"5","textPreview":"5","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/n6dcr65o","slide":5,"name":"矩形: 圆角 7","bbox":[850,175,350,125]}
+{"kind":"textbox","id":"sh/m5kbi1oj","slide":5,"name":"矩形 8","text":"Lmatch ≈ 106.726 μH\nCmatch ≈ 283.599 pF\n设计中心：0.9 MHz","textPreview":"Lmatch ≈ 106.726 μH | Cmatch ≈ 283.599 pF | 设计中心：0.9 MHz","textChars":52,"textLines":3,"bbox":[860,186,330,103]}
+{"kind":"textbox","id":"sh/w32dkbuh","slide":5,"name":"矩形 9","text":"0.9000 MHz\n未匹配 5.186 mW\n有损匹配 170.0 mW\n比值约32.8倍","textPreview":"0.9000 MHz | 未匹配 5.186 mW | 有损匹配 170.0 mW | 比值约32.8倍","textChars":46,"textLines":4,"bbox":[850,321,350,140]}
+{"kind":"textbox","id":"sh/x4vedgvm","slide":5,"name":"矩形 10","text":"结果限于假设BVD电学模型\n32.8倍不代表电声效率增益","textPreview":"结果限于假设BVD电学模型 | 32.8倍不代表电声效率增益","textChars":28,"textLines":2,"bbox":[850,588,350,63]}
+{"kind":"textbox","id":"sh/k7mxovud","slide":5,"name":"source-condition-corrected","text":"冻结戴维南源：6.217 V RMS，Rs = 50 Ω，全部曲线使用相同源参数","textPreview":"冻结戴维南源：6.217 V RMS，Rs = 50 Ω，全部曲线使用相同源参数","textChars":40,"textLines":1,"bbox":[72,110,1136,34]}
+{"kind":"textbox","id":"sh/58vehgvy","slide":5,"name":"port-operating-point","text":"有损匹配工作点\n换能器端约100 Vpp\n电流约5 mA RMS","textPreview":"有损匹配工作点 | 换能器端约100 Vpp | 电流约5 mA RMS","textChars":32,"textLines":3,"bbox":[850,477,350,88]}
+{"kind":"image","id":"im/5ove5g3m","slide":5,"name":"图片 19","bbox":[72,155,738,494.46]}
+{"kind":"notes","id":"nt/i107q5of","slide":5,"text":"【建议时长】约60秒\n\n【本页结论】在0.9000 MHz、同一校准戴维南源和50 Ω源阻抗条件下，v2.1有损L型匹配使P_Rm达到未匹配时的约32.8倍。\n\n【逐字讲稿】这一页比较匹配网络本身带来的变化。全部曲线使用同一个冻结戴维南源，源电压约6.217 V RMS，源阻抗50欧姆。这里的6.217 V是理想源的有效值，100 Vpp则是加入有损匹配后在0.9 MHz得到的换能器端电压，二者测量位置和单位都不同。上图灰色虚线表示未匹配，橙色实线表示v2.1有损匹配，蓝色点线是理想无额外寄生损耗的匹配参考。在相同的0.9000 MHz处，P_Rm从5.186毫瓦提高到170.0毫瓦，约为原来的32.8倍。下图显示匹配网络输入端的反射代理，其定义使用50欧姆实参考阻抗。当前曲线来自已保存的LTspice频域结果，按线性模型的源幅度平方关系换算到统一的校准源条件。P_Rm表示BVD机械支路电阻的有功耗散，不能直接等同于声功率。\n\n【看图顺序】先读源条件。上图在0.9000 MHz比较未匹配与有损匹配的功率。再看下图输入反射代理。最后区分源电压和换能器端电压。\n\n【数值口径】计算使用Vs=6.217360894531728 V RMS，Rs=50 Ω，显示时将Vs取为6.217。已保存的1 V RMS源数据统一乘Vs²=38.65557649285237得到当前功率。未匹配5.186363126 mW，有损匹配169.999953760 mW，比值32.778258990。归一化的0.134168562 mW和4.397811886 mW仅用于换算说明，不与当前工作点交叉比较。\n\n【电压位置】本页100 Vpp、约5 mA RMS仅描述有损匹配在0.9000 MHz的换能器端工作点，不表示全频段端电压恒定，也不是戴维南源电压。全部曲线冻结同一源参数，没有逐频调整源幅度。\n\n【反射代理】Gamma=abs((Zin-50)/(Zin+50))，Zin为源电阻之后、匹配网络输入端阻抗。线性模型下该代理不随整体源幅度缩放而变化。它不是反射功率的瓦特值。\n\n【参数与限制】Lmatch约106.726 μH，Cmatch约283.599 pF，实际有损网络另含ESR。此处使用假设BVD模型参数，非实测。32.8倍是该工作点的P_Rm比值，不能解释为电声效率增益或临床效应。\n\n【教授可能追问】为什么1 V RMS仿真结果能换算到约6.217 V RMS？\n\n【建议回答】当前电路为线性AC模型，全部电压和电流相量随源幅度成比例，复功率随源幅度平方变化。对所有电路统一使用同一个幅度系数，阻抗、相位和反射代理不变。170 mW对应校准后的源条件，不能标成1 V RMS源条件的直接结果。\n\n【模糊推测】本页不对P_Rm与实际声功率的关系作定量推测。该关系尚需机电声耦合模型和实验标定验证。\n\n[Sources]\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage2/stage2_audit.json\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_匹配前后特征汇总.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv"}
+{"kind":"slide","id":"sl/x8f69ofe","slide":6,"title":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textShapes":6}
+{"kind":"textbox","id":"sh/v2tcn650","slide":6,"name":"title-5","text":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textPreview":"0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配","textChars":30,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/yhg7epsj","slide":6,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/zi98nu94","slide":6,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/87ipkzal","slide":6,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/98rqt4r6","slide":6,"name":"矩形 4","text":"6","textPreview":"6","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/oryp8fah","slide":6,"name":"矩形: 圆角 7","bbox":[818,126,390,418]}
+{"kind":"textbox","id":"sh/pc76hkr2","slide":6,"name":"矩形 8","text":"0.9 MHz固定频点\n同一1 Vrms Thevenin源｜Rs=50 Ω","textPreview":"0.9 MHz固定频点 | 同一1 Vrms Thevenin源｜Rs=50 Ω","textChars":38,"textLines":2,"bbox":[838,142,350,58]}
+{"kind":"textbox","id":"sh/h4bupgn6","slide":6,"name":"矩形 9","text":"有损：56.70 Ω ∠−1.08°","textPreview":"有损：56.70 Ω ∠−1.08°","textChars":18,"textLines":1,"bbox":[840,494,340,34]}
+{"kind":"textbox","id":"sh/w32twb6l","slide":6,"name":"矩形 10","text":"理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页","textPreview":"理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页","textChars":55,"textLines":1,"bbox":[100,634,1080,28]}
+{"kind":"chart","id":"ch/a1ojqds7","slide":6,"name":"Chart","chartType":"scatter","title":"匹配后输入阻抗幅值（匹配前量级见右表）","bbox":[72,126,720,224]}
+{"kind":"chart","id":"ch/lsz25sru","slide":6,"name":"Chart","chartType":"scatter","title":"输入阻抗相位","bbox":[72,366,720,242]}
+{"kind":"table","id":"tb/rmh0zal0","slide":6,"name":"表格 26","rows":5,"cols":4,"preview":"指标 | 匹配前 | 理想匹配 | 有损匹配","bbox":[830,207,366,270]}
+{"kind":"notes","id":"nt/x8f69ofe","slide":6,"text":"【建议时长】55秒\n\n【本页结论】匹配指标必须明确测点：本页讨论戴维南源看到的匹配网络输入阻抗Zin。\n\n【逐字讲稿】这一页专门统一阻抗和相位测点。匹配前，源看到的网络输入阻抗约为6800减j1939欧姆。理想匹配在0.9 MHz附近接近50欧姆；加入电感损耗后得到56.686减j1.067欧姆，也就是56.70欧姆、相位约负1.08度。这里的相位是匹配网络输入相位arg Zin，不是换能器BVD端口相位。两者中间隔着匹配网络，所以数值可以明显不同。后面的相位控制消融也使用arg Zin，并以基准安全功率峰处的负1.0782度为目标。\n\n【看图顺序】先指出测点位置，再比较匹配前、理想匹配和有损匹配三个复阻抗。\n\n【口径与限制】50欧姆是本次假设的戴维南源阻抗，待真实驱动链路确认。\n\n【教授可能追问】为什么换能器端口相位约负16度，而这里接近零？\n\n【建议回答】匹配电感和电容补偿了负载的虚部；源侧Zin相位接近零不意味着换能器自身端口阻抗相位也接近零。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage2/stage2_matching_summary.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/model_v2_1.py"}
+{"kind":"slide","id":"sl/gnmp4jqx","slide":7,"title":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textShapes":6}
+{"kind":"textbox","id":"sh/a9ojq5kz","slide":7,"name":"title-6","text":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textPreview":"fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽","textChars":23,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/cb2tkvap","slide":7,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/dcbud0ra","slide":7,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ydkbm5sv","slide":7,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/zedcfa9g","slide":7,"name":"矩形 4","text":"7","textPreview":"7","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/l0vuh0rm","slide":7,"name":"矩形 6","text":"控制含义","textPreview":"控制含义","textChars":4,"textLines":1,"bbox":[966,152,220,34]}
+{"kind":"textbox","id":"sh/eh0ba1sr","slide":7,"name":"矩形 7","text":"1  先捕获峰位漂移\n\n2  再处理峰高损失\n\n3  按峰宽选择步长","textPreview":"1  先捕获峰位漂移 |  | 2  再处理峰高损失 |  | 3  按峰宽选择步长","textChars":34,"textLines":5,"bbox":[966,210,220,220]}
+{"kind":"shape","id":"sh/fi9c369c","slide":7,"name":"矩形: 圆角 8","bbox":[966,468,218,86]}
+{"kind":"textbox","id":"sh/baxkjqlk","slide":7,"name":"矩形 9","text":"最大峰位变化\n−45.2 kHz","textPreview":"最大峰位变化 | −45.2 kHz","textChars":16,"textLines":2,"bbox":[986,482,178,60]}
+{"kind":"table","id":"tb/25snm1gr","slide":7,"name":"表格 17","rows":7,"cols":4,"preview":"最高档扰动 | 峰位变化 | 峰高变化 | 峰宽变化","bbox":[72,142,850,440]}
+{"kind":"notes","id":"nt/gnmp4jqx","slide":7,"text":"【建议时长】55秒\n\n【本页结论】单因素扫描把“谁引起峰移、谁改变峰形”从组合失配中分离出来。\n\n【逐字讲稿】这张三层柱图分别给出峰值频率偏移、峰高变化和半高宽变化。最明显的峰位变化来自串联谐振频率下降：fs减5%使安全功率峰约下移45.2 kHz。Rm增加50%时峰位基本不变，但峰高下降约6.36%、半高宽增加约26.5%。匹配电感和电感Q变化主要改变峰高与峰宽，并可能造成小量峰移。C0在本次范围内对功率峰影响很小，所以柱几乎贴近零；这不是没有计算，而是曲线高度重合。\n\n【看图顺序】从上到下：峰位、峰高、峰宽；每层只点出影响最大的两个因素。\n\n【口径与限制】所有百分比都相对于v2.1基线，并在同一冻结源和匹配网络下计算。\n\n【教授可能追问】为什么图里有的因素没有明显柱形？\n\n【建议回答】数值接近零或被纵轴量程压缩。精确值在趋势表和场景CSV中，不能把视觉上看不见误认为没有仿真。\n\n【模糊推测】真实器件中C0影响可能更强，取决于其实际量级、匹配拓扑和寄生参数；本页不能外推。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_trend_table.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv"}
+{"kind":"slide","id":"sl/fu1gfa1s","slide":8,"title":"机械支路电容 Cm 增大使功率峰下移并降低峰高","textShapes":8}
+{"kind":"textbox","id":"sh/o7ydoret","slide":8,"name":"title-12","text":"机械支路电容 Cm 增大使功率峰下移并降低峰高","textPreview":"机械支路电容 Cm 增大使功率峰下移并降低峰高","textChars":23,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/18byd4zy","slide":8,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/g72x4zyd","slide":8,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ri9g7uhw","slide":8,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/6h0fypgb","slide":8,"name":"矩形 4","text":"8","textPreview":"8","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/m5gvmhwn","slide":8,"name":"cm-summary-title","text":"关键结论","textPreview":"关键结论","textChars":4,"textLines":1,"bbox":[842,132,320,42]}
+{"kind":"textbox","id":"sh/n6pwfmd8","slide":8,"name":"cm-shift-callout","text":"峰位总移   −78.6 kHz","textPreview":"峰位总移   −78.6 kHz","textChars":16,"textLines":1,"bbox":[846,205,316,64]}
+{"kind":"textbox","id":"sh/0jydkreh","slide":8,"name":"cm-height-callout","text":"峰高变化   −43.3%","textPreview":"峰高变化   −43.3%","textChars":13,"textLines":1,"bbox":[846,301,316,64]}
+{"kind":"textbox","id":"sh/1k7edwv2","slide":8,"name":"cm-limit-callout","text":"未保护扫频   Vpp > 160 V","textPreview":"未保护扫频   Vpp > 160 V","textChars":19,"textLines":1,"bbox":[846,397,316,64]}
+{"kind":"textbox","id":"sh/ehgvihwr","slide":8,"name":"cm-boundary-note","text":"Cm-only是原始元件单因素；\n派生 fs、Qm 会同时变化。","textPreview":"Cm-only是原始元件单因素； | 派生 fs、Qm 会同时变化。","textChars":32,"textLines":2,"bbox":[842,520,324,82]}
+{"kind":"image","id":"im/0rmpoj2t","slide":8,"name":"","bbox":[94.23,112,701.54,548]}
+{"kind":"notes","id":"nt/fu1gfa1s","slide":8,"text":"【建议时长】55秒\n\n【本页结论】Cm-only正式扫描显示峰位按1/√Cm规律下移，但派生fs与Qm会同步变化。\n\n【逐字讲稿】这里补齐机械支路电容Cm的独立元件扫描。基线峰为0.9000 MHz、170.0 mW；Cm增加5%、10%和20%后，峰位分别约为0.8781、0.8579和0.8214 MHz，峰高分别约164.3、144.3和96.4 mW。总峰移约负78.6 kHz，峰高下降约43.3%。方向与串联谐振频率反比于Cm平方根一致。需要特别说明：这是原始元件层面的Cm-only；因为Lm和Rm被冻结，派生的fs和Qm并不保持不变。未保护的全频a=1扫描还存在Vpp超过160 V的区间，所以安全控制不能直接照搬离线曲线。\n\n【看图顺序】先沿不同颜色找峰位置，再读右侧峰移和峰高摘要，最后说明下方电压电流限制。\n\n【口径与限制】峰值频率按0.1 kHz扫描分辨率保留4位MHz；更高小数不代表更高测量精度。\n\n【教授可能追问】Cm-only为什么不等于只改变谐振频率？\n\n【建议回答】元件只改Cm，但fs=1/(2π√LmCm)、Qm=ωsLm/Rm，因此派生量会变化。若要纯fs扰动，应按约束联合重算Lm和Cm。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_summary.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/figures/stage3_disturbance/cm_only/stage3_07_cm_only_power_and_electrical_limits.png"}
+{"kind":"slide","id":"sl/udsvah03","slide":9,"title":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textShapes":11}
+{"kind":"textbox","id":"sh/0ru1ozyp","slide":9,"name":"title-7","text":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textPreview":"Qm越高，功率峰越窄，选频步长和频率抖动要求越严格","textChars":25,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1cfmhgne","slide":9,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0b65obm9","slide":9,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/nex4jq5k","slide":9,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/mdonql4z","slide":9,"name":"矩形 4","text":"9","textPreview":"9","textChars":1,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/ofq5svm5","slide":9,"name":"矩形 6","text":"FWHM","textPreview":"FWHM","textChars":4,"textLines":1,"bbox":[920,156,230,36]}
+{"kind":"shape","id":"sh/bih4na5w","slide":9,"name":"矩形: 圆角 7","bbox":[890,220,280,62]}
+{"kind":"textbox","id":"sh/ah8nu54b","slide":9,"name":"矩形 8","text":"Qm=500","textPreview":"Qm=500","textChars":6,"textLines":1,"bbox":[906,230,120,40]}
+{"kind":"textbox","id":"sh/oza1gfyh","slide":9,"name":"矩形 9","text":"3.451 kHz","textPreview":"3.451 kHz","textChars":9,"textLines":1,"bbox":[1026,230,126,40]}
+{"kind":"shape","id":"sh/p0ji9kf2","slide":9,"name":"矩形: 圆角 10","bbox":[890,318,280,62]}
+{"kind":"textbox","id":"sh/2xsjepgb","slide":9,"name":"矩形 11","text":"Qm=800","textPreview":"Qm=800","textChars":6,"textLines":1,"bbox":[906,328,120,40]}
+{"kind":"textbox","id":"sh/3y107axw","slide":9,"name":"矩形 12","text":"2.144 kHz","textPreview":"2.144 kHz","textChars":9,"textLines":1,"bbox":[1026,328,126,40]}
+{"kind":"shape","id":"sh/cnu1kzyd","slide":9,"name":"矩形: 圆角 13","bbox":[890,416,280,62]}
+{"kind":"textbox","id":"sh/do3id4fy","slide":9,"name":"矩形 14","text":"Qm=1000","textPreview":"Qm=1000","textChars":7,"textLines":1,"bbox":[906,426,120,40]}
+{"kind":"textbox","id":"sh/qlcjipgn","slide":9,"name":"矩形 15","text":"1.713 kHz","textPreview":"1.713 kHz","textChars":9,"textLines":1,"bbox":[1026,426,126,40]}
+{"kind":"textbox","id":"sh/bml0buxs","slide":9,"name":"矩形 16","text":"高Q不自动代表系统更好；\n它意味着更严格的频率分辨率。","textPreview":"高Q不自动代表系统更好； | 它意味着更严格的频率分辨率。","textChars":27,"textLines":2,"bbox":[914,538,250,70]}
+{"kind":"image","id":"im/yho7mlc7","slide":9,"name":"图片 24","bbox":[80,112,717,550]}
+{"kind":"notes","id":"nt/udsvah03","slide":9,"text":"【建议时长】45秒\n\n【本页结论】高Qm提高频率选择性，但并不自动代表系统整体更优。\n\n【逐字讲稿】Qm敏感性采用500、800、1000三档，并保持fs、Rm和C0不变，通过重新计算Lm和Cm实现。三档峰高都约为170 mW，但半高宽从3.451 kHz缩小到2.144和1.713 kHz。也就是说，高Qm使功率峰更尖，对扫频步长、频率噪声和控制驻留时间提出更严格要求。这里不能把高Q简单解释为系统更好，因为窄峰可能降低扰动后的捕获鲁棒性。\n\n【看图顺序】先看上方功率峰变窄，再看下方阻抗细节，最后读右侧FWHM数值。\n\n【口径与限制】三档是敏感性变体，不是三个实测器件。\n\n【教授可能追问】为什么峰高基本不变、峰宽却变化？\n\n【建议回答】本扫描固定了基准峰处的关键阻性量和谐振频率，Qm主要改变频率选择性，因此峰宽变化更明显。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_Qm_500_800_1000_summary.csv"}
+{"kind":"slide","id":"sl/m90b6t0r","slide":10,"title":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textShapes":9}
+{"kind":"textbox","id":"sh/1cru1g3y","slide":10,"name":"title-8","text":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textPreview":"零相位不保证最大功率，相位闭环不能无条件以0°为目标","textChars":26,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xc3mho32","slide":10,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cbu58j2h","slide":10,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/zelojyl8","slide":10,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/ydcnatkn","slide":10,"name":"矩形 4","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/725onyl4","slide":10,"name":"矩形 7","text":"基准场景","textPreview":"基准场景","textChars":4,"textLines":1,"bbox":[90,132,180,28]}
+{"kind":"textbox","id":"sh/m1cnetkj","slide":10,"name":"矩形 8","text":"fs −5%场景","textPreview":"fs −5%场景","textChars":8,"textLines":1,"bbox":[90,367,180,28]}
+{"kind":"shape","id":"sh/s7yt4b21","slide":10,"name":"矩形: 圆角 9","bbox":[980,220,220,162]}
+{"kind":"textbox","id":"sh/d87uxg3m","slide":10,"name":"矩形 10","text":"最大功率\n0.8550 MHz\n\n最小相位\n0.9045 MHz","textPreview":"最大功率 | 0.8550 MHz |  | 最小相位 | 0.9045 MHz","textChars":32,"textLines":5,"bbox":[1000,236,180,132]}
+{"kind":"shape","id":"sh/q5gb21kb","slide":10,"name":"矩形: 圆角 11","bbox":[980,420,220,92]}
+{"kind":"textbox","id":"sh/r6pcv6lw","slide":10,"name":"矩形 12","text":"频率差\n约49.5 kHz","textPreview":"频率差 | 约49.5 kHz","textChars":13,"textLines":2,"bbox":[1000,435,180,64]}
+{"kind":"textbox","id":"sh/0bit8b2d","slide":10,"name":"矩形 13","text":"相位可作为观测量，但目标应来自受约束最大功率点","textPreview":"相位可作为观测量，但目标应来自受约束最大功率点","textChars":23,"textLines":1,"bbox":[970,548,240,64]}
+{"kind":"textbox","id":"sh/kzu5c32t","slide":10,"name":"文本框 6","text":"最大功率点 ≈ 最小反射点","textPreview":"最大功率点 ≈ 最小反射点","textChars":13,"textLines":1,"bbox":[250,210.61,640,38.78]}
+{"kind":"image","id":"im/tg7ixo36","slide":10,"name":"图片 22","bbox":[90.17,150,843.65,205]}
+{"kind":"image","id":"im/sfeh4j2l","slide":10,"name":"图片 23","bbox":[98.13,385,827.74,205]}
+{"kind":"notes","id":"nt/m90b6t0r","slide":10,"text":"【建议时长】60秒\n\n【本页结论】最大功率、最小绝对相位和最小反射代理是三个不同优化问题。\n\n【逐字讲稿】在每个场景中我先做0.84到0.96 MHz的离线局部扫频，并分别寻找三个特征点。基准场景下，最大功率和最小反射都在约0.900 MHz，而最小绝对输入相位在约0.907 MHz。fs减5%场景在0.5 kHz网格上，最大功率为0.8550 MHz，但最小相位仍在0.9045 MHz，相差49.5 kHz。这里0.8550是粗网格选点；更高分辨率复算得到0.8548 MHz，两者不矛盾。因此相位闭环若以0度为目标，可能锁到低功率点。\n\n【看图顺序】先看基准三点是否重合，再看扰动场景三点分离，最后读49.5 kHz差值。\n\n【口径与限制】图中的相位是匹配网络输入相位；反射量是50欧姆参考下的代理值，不是方向耦合器实测反射功率。\n\n【教授可能追问】既然相位不可靠，为什么还保留相位控制？\n\n【建议回答】它作为计划书要求的消融对照，用基准最大功率点相位作目标并加入局部斜率符号；正式推荐策略仍是直接以功率为目标的扫描辅助P&O。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_three_criteria_all_scenarios.csv"}
+{"kind":"slide","id":"sl/jetc3ut0","slide":11,"title":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textShapes":6}
+{"kind":"textbox","id":"sh/9gza9sze","slide":11,"name":"title-9","text":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textPreview":"窗口决定能否捕获漂移峰，步长决定精度与扫描代价","textChars":23,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xcryxg7y","slide":11,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/wbih4b6d","slide":11,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/n69grmpw","slide":11,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/250zy18b","slide":11,"name":"矩形 4","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/o7ih0r6h","slide":11,"name":"矩形: 圆角 6","bbox":[814,522,360,92]}
+{"kind":"textbox","id":"sh/72t03qp0","slide":11,"name":"矩形 7","text":"推荐离线组合\n±50 kHz、1 kHz步长\n101点，152ms代理时间","textPreview":"推荐离线组合 | ±50 kHz、1 kHz步长 | 101点，152ms代理时间","textChars":37,"textLines":3,"bbox":[838,534,312,70]}
+{"kind":"textbox","id":"sh/61kzalof","slide":11,"name":"矩形 8","text":"大扰动：宽窗口粗扫","textPreview":"大扰动：宽窗口粗扫","textChars":9,"textLines":1,"bbox":[86,540,310,32]}
+{"kind":"textbox","id":"sh/ofqtgnyt","slide":11,"name":"矩形 9","text":"接近峰值：缩窗并细化至0.1–1 kHz","textPreview":"接近峰值：缩窗并细化至0.1–1 kHz","textChars":20,"textLines":1,"bbox":[86,582,610,32]}
+{"kind":"image","id":"im/dsn6xw32","slide":11,"name":"图片 5","bbox":[86,134.88,1034.29,361.06]}
+{"kind":"notes","id":"nt/jetc3ut0","slide":11,"text":"【建议时长】50秒\n\n【本页结论】采用宽窗口粗捕获、窄窗口细化，比固定单一网格更合理。\n\n【逐字讲稿】我比较了0.1、0.5、1和2 kHz步长，以及正负20、50和100 kHz窗口。窗口太窄时，真实峰落在窗外，步长再细也没有意义；窗口扩大后，点数和代理扫描时间增加。图中的时间按每点1.5 ms驻留计算，是算法比较用假设，不是硬件测得。当前代表性设置推荐正负50 kHz、1 kHz步长，共101点、约152 ms代理时间；但汇总表显示它并不能保证覆盖所有极端场景，正负100 kHz才覆盖本次完整场景集。因此控制器采用异常后较宽粗扫，再在候选峰附近缩窗细化。\n\n【看图顺序】先看窗口是否漏峰，再看步长带来的误差，最后看扫描点数与时间。\n\n【口径与限制】1.5 ms每点是【假设控制参数】，真实扫描时间要由测量稳定时间和硬件通信延迟决定。\n\n【教授可能追问】为什么最终不是直接用0.1 kHz、正负100 kHz？\n\n【建议回答】那样精度高但点数和时间开销大。分级扫描先保证捕获，再局部细化，能在覆盖率与代价之间折中。\n\n【模糊推测】真实硬件的最优驻留时间可能显著不同，需用测量噪声和响应时间重新整定。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_aggregate.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_tradeoff.csv"}
+{"kind":"slide","id":"sl/8f2psfyx","slide":12,"title":"fs−5%扰动下的电压、电流与保护调幅","textShapes":10}
+{"kind":"textbox","id":"sh/gj25cry9","slide":12,"name":"title-10","text":"fs−5%扰动下的电压、电流与保护调幅","textPreview":"fs−5%扰动下的电压、电流与保护调幅","textChars":19,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1gbm9s3a","slide":12,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0f2lgnmp","slide":12,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ra943il8","slide":12,"name":"矩形 3","text":"假设BVD电学模型，非实测数据    控制时序版本 a734eca013","textPreview":"假设BVD电学模型，非实测数据    控制时序版本 a734eca013","textChars":36,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/q903ad4n","slide":12,"name":"矩形 4","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/dcbm583y","slide":12,"name":"箭头: 右 5","bbox":[151,222,25,16]}
+{"kind":"shape","id":"sh/sb2lcnmd","slide":12,"name":"箭头: 右 6","bbox":[151,322,25,16]}
+{"kind":"shape","id":"sh/b6d4f2lc","slide":12,"name":"箭头: 右 7","bbox":[151,422,25,16]}
+{"kind":"shape","id":"sh/a543mx4r","slide":12,"name":"箭头: 右 8","bbox":[151,522,25,16]}
+{"kind":"shape","id":"sh/wvupgz6t","slide":12,"name":"矩形: 圆角 9","bbox":[82,158,145,62]}
+{"kind":"textbox","id":"sh/xw3q94ne","slide":12,"name":"矩形 10","text":"硬停机\nHARD_TRIP","textPreview":"硬停机 | HARD_TRIP","textChars":13,"textLines":2,"bbox":[92,166,125,46]}
+{"kind":"shape","id":"sh/atc7epon","slide":12,"name":"矩形: 圆角 11","bbox":[82,258,145,62]}
+{"kind":"textbox","id":"sh/bulo7u58","slide":12,"name":"矩形 12","text":"恢复保持\nHOLD","textPreview":"恢复保持 | HOLD","textChars":9,"textLines":2,"bbox":[92,266,125,46]}
+{"kind":"shape","id":"sh/orapcf6h","slide":12,"name":"矩形: 圆角 13","bbox":[82,358,145,62]}
+{"kind":"textbox","id":"sh/9sj65kn2","slide":12,"name":"矩形 14","text":"幅度渐升\nRAMP_UP","textPreview":"幅度渐升 | RAMP_UP","textChars":12,"textLines":2,"bbox":[92,366,125,46]}
+{"kind":"shape","id":"sh/mps7a5or","slide":12,"name":"矩形: 圆角 15","bbox":[82,458,145,62]}
+{"kind":"textbox","id":"sh/nq1o3a5w","slide":12,"name":"矩形 16","text":"软限幅\nFOLDBACK","textPreview":"软限幅 | FOLDBACK","textChars":12,"textLines":2,"bbox":[92,466,125,46]}
+{"kind":"textbox","id":"sh/0nap8f6l","slide":12,"name":"矩形 17","text":"限幅稳定后低幅重扫\n选频后再渐升幅度","textPreview":"限幅稳定后低幅重扫 | 选频后再渐升幅度","textChars":18,"textLines":2,"bbox":[69,561,182,62]}
+{"kind":"textbox","id":"sh/hkbm5wzu","slide":12,"name":"矩形 19","text":"软阈值：130 Vpp / 5.5 mA RMS    硬边界：160 Vpp / 6 mA RMS","textPreview":"软阈值：130 Vpp / 5.5 mA RMS    硬边界：160 Vpp / 6 mA RMS","textChars":50,"textLines":1,"bbox":[272,639,932,29]}
+{"kind":"textbox","id":"sh/uh0na1g3","slide":12,"name":"state-diagram-label","text":"保护过程示意","textPreview":"保护过程示意","textChars":6,"textLines":1,"bbox":[75,122,160,30]}
+{"kind":"image","id":"im/ap8rupob","slide":12,"name":"图片 40","bbox":[265,125.01,943,506.28]}
+{"kind":"notes","id":"nt/8f2psfyx","slide":12,"text":"【建议时长】约65秒\n\n【本页结论】fs−5%扰动后，三种策略均先发生保护动作。两种自适应策略随后低幅重扫并在新频率渐升幅度。\n\n【逐字讲稿】本页与后两页使用同一份保存的控制数据，重点看2.4到3.2秒的fs减5%扰动段。图中灰、蓝、红分别是固定频率、周期扫频和扫描辅助P&O。上、中、下三图分别是换能器端电压、端口电流和源幅度命令a。扰动后，保护逻辑判断原驱动幅度不再满足模型约束，进入硬停机，幅度命令归零。之后是低幅保持和渐升。固定频率策略停留在0.9 MHz，最终受软限幅约束。两种自适应策略在软限幅稳定后，以a等于0.40顺序扫描，再在选中的新频率恢复幅度。扫描期间的电压、电流变化全部保留，不能把这些变化都解释为负载再次漂移。\n\n【状态说明】左侧是本段保护过程的简化示意，不是完整状态转移图。HARD_TRIP硬保持约60 ms，RECOVERY_HOLD约100 ms，RAMP_UP每个控制步增加0.05幅度命令。SOFT_FOLDBACK稳定100 ms后允许低幅扫描。NORMAL表示控制器正常工作，不等于已通过连续稳态验收。\n\n【频率冻结口径】普通跟踪在硬停机、恢复保持和初始调幅过程中暂停。保护稳定后可以进行低幅扫描，因此不能说整段保护期间频率始终不变。\n\n【读图提示】控制记录按time_s和duration_s作采样保持绘图，包含CONTROL、SCAN和P&O参考/试探样本。淡色带标出本扰动段两次扫描的时间区间。不是示波器捕获的连续波形，也不重建采样间瞬态。\n\n【电压、电流边界】电压160 Vpp为用户给定的仿真硬边界。电流6 mA RMS硬限以及130 Vpp、5.5 mA RMS软限均为假设控制阈值。幅度a是戴维南源相对冻结基线的比例，不是端口电压本身。\n\n【教授可能追问】为什么存在HARD_TRIP记录，但图中没有超过160 Vpp或6 mA？\n\n【建议回答】模型先评估当前幅度在扰动后的可允许范围，再保存保护处理后的输出。因此保护触发次数与保存样本硬越限次数是不同指标。图中没有越限，不能证明真实系统在采样和执行延迟期间没有过冲。\n\n【模糊推测】本页没有对真实硬件保护速度或安全性作推测。阈值和时序常数是仿真假设。\n\n【数据来源】三页读取同一份已保存控制时序及其逐段、综合验收表。控制时序SHA256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0。\n\n【研究边界】假设BVD线性电学模型，离散准稳态仿真。无实测换能器、硬件闭环或声场安全性证明。\n\n[Sources]\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_per_segment_metrics.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_5_audit.json\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py"}
+{"kind":"slide","id":"sl/hgzapcr6","slide":13,"title":"控制已从“找峰值”升级为带频率、幅度与保护约束的问题","textShapes":10}
+{"kind":"textbox","id":"sh/7mdg3als","slide":13,"name":"title-14","text":"控制已从“找峰值”升级为带频率、幅度与保护约束的问题","textPreview":"控制已从“找峰值”升级为带频率、幅度与保护约束的问题","textChars":26,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/q50nydsj","slide":13,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/bq9orito","slide":13,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/o3i5w3ad","slide":13,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/p4r6p8by","slide":13,"name":"矩形 4","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/21gnuts7","slide":13,"name":"矩形 5","bbox":[438,150,2,430]}
+{"kind":"shape","id":"sh/32ponyts","slide":13,"name":"矩形 6","bbox":[850,150,2,430]}
+{"kind":"textbox","id":"sh/gzy5s3a1","slide":13,"name":"矩形 7","text":"已接入约束","textPreview":"已接入约束","textChars":5,"textLines":1,"bbox":[82,160,320,38]}
+{"kind":"textbox","id":"sh/1076lobm","slide":13,"name":"矩形 8","text":"0.8–1.0 MHz硬边界\n130/160 Vpp软/硬限\n5.5/6.0 mA RMS软/硬限\n幅度0–1与foldback","textPreview":"0.8–1.0 MHz硬边界 | 130/160 Vpp软/硬限 | 5.5/6.0 mA RMS软/硬限 | 幅度0–1与foldback","textChars":64,"textLines":4,"bbox":[92,230,300,250]}
+{"kind":"textbox","id":"sh/hcfy9k3u","slide":13,"name":"矩形 9","text":"保存结果审计","textPreview":"保存结果审计","textChars":6,"textLines":1,"bbox":[474,160,340,38]}
+{"kind":"textbox","id":"sh/gb6x0zm9","slide":13,"name":"矩形 10","text":"1795条控制时序\n峰值Vpp = 130 V\n峰值电流 = 5.124 mA\n实际硬越限 = 0","textPreview":"1795条控制时序 | 峰值Vpp = 130 V | 峰值电流 = 5.124 mA | 实际硬越限 = 0","textChars":49,"textLines":4,"bbox":[492,230,304,250]}
+{"kind":"textbox","id":"sh/vaxg7ulo","slide":13,"name":"矩形 11","text":"仍有缺口","textPreview":"仍有缺口","textChars":4,"textLines":1,"bbox":[888,160,280,38]}
+{"kind":"textbox","id":"sh/u9ofyp43","slide":13,"name":"矩形 12","text":"反射代理仅参与检测\n没有独立反射硬限\n没有壁面声压代理\n不是硬件安全验证","textPreview":"反射代理仅参与检测 | 没有独立反射硬限 | 没有壁面声压代理 | 不是硬件安全验证","textChars":36,"textLines":4,"bbox":[892,230,272,250]}
+{"kind":"shape","id":"sh/t8fy5k3i","slide":13,"name":"矩形: 圆角 13","bbox":[104,550,1070,64]}
+{"kind":"textbox","id":"sh/876xwfmx","slide":13,"name":"矩形 14","text":"当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制","textPreview":"当前是带约束的电学准稳态控制，不是无约束离线argmax，也不是完整功放或声场控制","textChars":41,"textLines":1,"bbox":[140,565,1000,36]}
+{"kind":"notes","id":"nt/hgzapcr6","slide":13,"text":"【建议时长】45秒\n\n【本页结论】保存的控制时序证明约束已真正进入算法，但反射独立上限和声学约束仍缺失。\n\n【逐字讲稿】为了检验控制是否只是离线argmax，我审计了1795条保存时序。频率始终受0.8到1.0 MHz硬边界限制，幅度命令在0到1之间，并接入130/160 Vpp与5.5/6 mA软硬阈值。全序列峰值电压为130 Vpp、峰值电流为5.124 mA，实际硬越限为零。需要坦白的是，反射代理目前只参与异常投票和重捕获触发，没有独立反射硬上限；壁面声压代理也尚不可用。因此这已经是带电学约束的控制，但还不是完整多物理场安全控制。\n\n【看图顺序】左列讲已接入约束，中列读审计数字，右列主动讲缺口。\n\n【口径与限制】“实际硬越限为零”指这批仿真时序，不等于实物硬件安全。\n\n【教授可能追问】反射功率异常升高的问题是否已经解决？\n\n【建议回答】目前解决到检测层：计算并监测反射代理，用于触发重捕获；尚未定义经实测标定的独立硬上限，这是下一阶段缺口。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/constrained_control_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/plan_control_coupling_audit.json"}
+{"kind":"slide","id":"sl/6lsnupw7","slide":14,"title":"时序修正已使部分版本通过谐振漂移段的连续稳态验收，","textShapes":10}
+{"kind":"textbox","id":"sh/kre1k3y9","slide":14,"name":"title-11","text":"时序修正已使部分版本通过谐振漂移段的连续稳态验收，\n但全过程能量损失及采样间隙越限尚未解决","textPreview":"时序修正已使部分版本通过谐振漂移段的连续稳态验收， | 但全过程能量损失及采样间隙越限尚未解决","textChars":45,"textLines":2,"bbox":[72,26,1136,67]}
+{"kind":"shape","id":"sh/xc7eds76","slide":14,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/wbydknq1","slide":14,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/jepwf2pc","slide":14,"name":"矩形 3","text":"假设BVD电学模型，非实测    第三轮时序 cdde9dab61    第12/15页仍为旧批次对照","textPreview":"假设BVD电学模型，非实测    第三轮时序 cdde9dab61    第12/15页仍为旧批次对照","textChars":51,"textLines":1,"bbox":[72,688,1070,20]}
+{"kind":"textbox","id":"sh/idgvmx8r","slide":14,"name":"矩形 4","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/kfidonqx","slide":14,"name":"矩形 6","text":"后续实验：固定无PI候选","textPreview":"后续实验：固定无PI候选","textChars":12,"textLines":1,"bbox":[901,125,306,31]}
+{"kind":"textbox","id":"sh/zi5c3y98","slide":14,"name":"矩形 7","text":"P&O等待500 ms，试探幅度≤0.9\n恢复门槛R2，重扫幅度仍≤0.4\n本段：fs−5%，2.4–3.2 s","textPreview":"P&O等待500 ms，试探幅度≤0.9 | 恢复门槛R2，重扫幅度仍≤0.4 | 本段：fs−5%，2.4–3.2 s","textChars":56,"textLines":3,"bbox":[901,164,306,74]}
+{"kind":"textbox","id":"sh/ehwvat8n","slide":14,"name":"矩形 8","text":"本段连续稳态：通过","textPreview":"本段连续稳态：通过","textChars":9,"textLines":1,"bbox":[901,258,306,30]}
+{"kind":"textbox","id":"sh/c3e1gjyd","slide":14,"name":"矩形 9","text":"首次合格：2.962 s\n验收确认：3.142 s（延迟742 ms）\n连续合格12个，门槛10个\n尾段频率：0.8548 MHz","textPreview":"首次合格：2.962 s | 验收确认：3.142 s（延迟742 ms） | 连续合格12个，门槛10个 | 尾段频率：0.8548 MHz","textChars":65,"textLines":4,"bbox":[901,300,306,94]}
+{"kind":"textbox","id":"sh/x4ni9ofy","slide":14,"name":"矩形 10","text":"能量损失与硬限：未解决","textPreview":"能量损失与硬限：未解决","textChars":11,"textLines":1,"bbox":[901,410,306,30]}
+{"kind":"textbox","id":"sh/a1wze9g7","slide":14,"name":"矩形 11","text":"本段能量捕获率：45.4%\n间隙重放峰值：188.2 Vpp\n高于160 Vpp累计约1.0 ms","textPreview":"本段能量捕获率：45.4% | 间隙重放峰值：188.2 Vpp | 高于160 Vpp累计约1.0 ms","textChars":49,"textLines":3,"bbox":[901,452,306,75]}
+{"kind":"textbox","id":"sh/b2507exs","slide":14,"name":"矩形 12","text":"验收冻结：0.8 s/段，功率≥98%\nNORMAL且频率未冻结，连续10样本\n保留异常检测及原保护保持时间\n硬边界：160 Vpp / 6 mA RMS","textPreview":"验收冻结：0.8 s/段，功率≥98% | NORMAL且频率未冻结，连续10样本 | 保留异常检测及原保护保持时间 | 硬边界：160 Vpp / 6 mA RMS","textChars":77,"textLines":4,"bbox":[901,558,306,94]}
+{"kind":"image","id":"im/qpsv2lkb","slide":14,"name":"图片 5","bbox":[72,132,810,524.12]}
+{"kind":"notes","id":"nt/6lsnupw7","slide":14,"text":"【建议讲解时间】约90秒\n\n【版本关系】本页更新为第三轮固定无PI候选的后续实验。完整版中的第12、15页仍保留此前同一次运行的历史对照，不能与本页拼成同一次运行的综合成绩。\n\n【讲稿】前面的版本已经找到了新的功率峰，但没有留下足够的连续合格样本。本页展示时序修正后的一个简单候选，采用扫描辅助P&O，不加独立PI。等待参数为500毫秒，P&O试探幅度上限0.9，重捕获扫描仍为0.4。图中保留全部保护、扫描和恢复动作。fs降低5%后，控制器在2.962秒出现首次合格NORMAL样本，在3.142秒确认第10个合格样本，本段最长连续12个，所以这一次满足原稳态窗口标准。\n\n【讲稿续】但本段能量捕获率只有45.4%，因为前面的保护、搜索和恢复占用了输出时间。下面的电压图把负载切换发生在采样之间时，旧指令继续保持的区间也算进来，重放峰值188.2 Vpp，超过160 Vpp约1毫秒。这个结果说明稳态窗口通过了，但电学能量损失和硬限问题还没有解决。下一步固定这个候选，分别处理恢复余量与采样间隙风险，不继续叠加更多算法。\n\n【冻结条件】本段保持2.4至3.2秒，即0.8秒。门槛保持功率捕获率至少98%，CONTROL、NORMAL、频率未冻结、连续10个合格样本，相邻CONTROL间隔不超过30毫秒。硬限160 Vpp/6 mA RMS、异常检测与原保护保持时间不修改。6 mA RMS为本项目假设硬限，160 Vpp来自用户要求。\n\n【指标定义】742毫秒是3.142减2.4，是第10个样本的确认延迟。10个20毫秒等间隔样本的首末跨度为180毫秒。本段最长连续12个，不表示全程保持高功率。\n\n【能量定义】本段能量捕获率为实际P_Rm在整个0.8秒区间的积分，除以本段安全最优P_Rm乘0.8秒。分母约140.2 mW，尾段100%不代表恢复到基准170.0 mW。积分包含所有保护、扫描、试探与恢复，也包含重放越限区间，不能称为完全安全的收益或源到负载效率。\n\n【候选】B0_T500_A90_R2，第三轮0.8秒/段。T500是等待参数，不是实际两次试探起点间隔。R2是在原调度条件外，要求恢复后的正常等待和10个稳定样本，不读取离线最佳功率作为触发答案。该候选全序列稳态7/7不是全序列硬安全通过。\n\n【真实性与限制】本次只读取已经保存的数据、重建保持指令及更新PPT，没有重新运行控制器或LTspice。图为假设线性BVD离散准稳态结果，不是示波器、LTspice瞬态或实测器件波形。模型重放不能预测真实储能振铃，当前保护还利用准确模型预估。\n\n【模糊推测内容】下一轮通过安全裕量或恢复时序调整能否消除越限、提高能量尚未验证，本页没有把这些计划写成已实现结果。\n\n【数据出处】时序SHA256：cdde9dab61a50f443c783d25f5fb87014214290ad71c1f9950de99ad5bb560a9。\n\nC:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\po_scheduling_20260909\\results\\B0_T500_A90_R2_dwell_0.8s\\timeline.csv\n\nC:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\po_scheduling_20260909\\results\\B0_T500_A90_R2_dwell_0.8s\\config.json\n\nC:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\po_scheduling_20260909\\results\\B0_T500_A90_R2_dwell_0.8s\\acceptance_and_energy.csv"}
+{"kind":"slide","id":"sl/vaxsvy10","slide":15,"title":"同一扰动序列下，尾段误差与连续稳态验收结果","textShapes":5}
+{"kind":"textbox","id":"sh/wrm9kvep","slide":15,"name":"title-12","text":"同一扰动序列下，尾段误差与连续稳态验收结果","textPreview":"同一扰动序列下，尾段误差与连续稳态验收结果","textChars":21,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/547mhg3m","slide":15,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/k3y5ov21","slide":15,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/76p4jqls","slide":15,"name":"矩形 3","text":"假设BVD电学模型，非实测数据    控制时序版本 a734eca013","textPreview":"假设BVD电学模型，非实测数据    控制时序版本 a734eca013","textChars":36,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/65gnqlk7","slide":15,"name":"矩形 4","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/na5476l8","slide":15,"name":"矩形: 圆角 7","bbox":[72,506,1118,112]}
+{"kind":"textbox","id":"sh/m9c3e1kn","slide":15,"name":"矩形 8","text":"尾段误差0%仅描述所选样本，不代表全程功率无损失或连续验收通过。\n恢复指标：成功段取合格序列起点延迟，未通过段计800 ms，再求均值。","textPreview":"尾段误差0%仅描述所选样本，不代表全程功率无损失或连续验收通过。 | 恢复指标：成功段取合格序列起点延迟，未通过段计800 ms，再求均值。","textChars":68,"textLines":2,"bbox":[93,526,1060,81]}
+{"kind":"textbox","id":"sh/vqdsrqx4","slide":15,"name":"comparison-window","text":"评价初始基准之后的7段，每段0.8 s，三种策略均接入共同保护","textPreview":"评价初始基准之后的7段，每段0.8 s，三种策略均接入共同保护","textChars":31,"textLines":1,"bbox":[72,112,1136,35]}
+{"kind":"chart","id":"ch/pkfmdk7q","slide":15,"name":"Chart","chartType":"bar","title":"恢复指标（含未通过惩罚，ms）","bbox":[770,160,420,320]}
+{"kind":"table","id":"tb/v6tg3qtk","slide":15,"name":"表格 17","rows":4,"cols":5,"preview":"策略 | 尾段误差* | 恢复指标* (ms) | 未通过段 (共7段) | 保护后 硬越限","bbox":[72,170,650,290]}
+{"kind":"notes","id":"nt/vaxsvy10","slide":15,"text":"【建议时长】约70秒\n\n【本页结论】两种自适应策略的所选尾段误差为0%，但仍各有未通过连续稳态验收的扰动段，不能仅凭尾段误差作总体优劣判断。\n\n【逐字讲稿】这一页与前两页使用同一份控制运行数据。综合评价包含初始基准之后的7个时间段，每段0.8秒。固定频率的平均尾段功率误差为30.14%，3段未通过。周期扫频和扫描辅助P&O的平均尾段误差均为0%，但分别有2段和3段未通过。这里特别需要区分：尾段误差取选定样本的平均值，连续稳态验收还要求NORMAL状态下连续10个样本达到98%。右侧恢复指标包含未通过惩罚，未通过段计800毫秒，再与其他段取平均，所以345.7、409.0和458.9毫秒不能读成每段都已经成功恢复。当前这些指标不足以支持某个策略总体最优的结论。\n\n【统计窗口】尾段功率优先选本段最后25%时间内的NORMAL且频率未冻结CONTROL样本。如果没有，依次退回本段最后5个NORMAL样本，再退回最后5个CONTROL样本。原始CSV字段仍名为steady_error_pct，本页用“尾段误差”避免将其误解为连续验收已经通过。\n\n【恢复指标口径】对通过的段，当前代码记录合格连续序列起点相对扰动起点的延迟，而不是第10个样本的确认时刻。对未通过的段记800 ms。之后对初始基准后的7段取平均。此项是含惩罚的综合指标，不是全部场景的实测恢复时间。\n\n【安全口径】表中零越限指保存的保护处理后准稳态样本，没有包括采样间瞬态。三策略均接入同一保护逻辑，固定策略指固定频率和固定名义幅度，不表示幅度在保护期间保持不变。\n\n【教授可能追问】为什么周期扫频有2段未通过，尾段误差还能为0？\n\n【建议回答】fs−5%段末已有达到场景峰值的样本，因样本数不足10个而未通过。另一个未通过段为匹配电感+10%。尾段均值不会自动检查连续样本数，也不体现扫描和降幅过程的电能损失。\n\n【进一步评价边界】若要对总体效果排名，还应同时评价全时段功率损失、扫描成本和不同扰动驻留时间。本页不以最短柱或零尾段误差单独判定最优。\n\n【模糊推测】真实噪声、不同驻留时间或控制参数整定可能改变结果，当前尚未验证。\n\n【数据来源】三页读取同一份已保存控制时序及其逐段、综合验收表。控制时序SHA256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0。\n\n【研究边界】假设BVD线性电学模型，离散准稳态仿真。无实测换能器、硬件闭环或声场安全性证明。\n\n[Sources]\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_per_segment_metrics.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_5_audit.json\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py"}
+{"kind":"slide","id":"sl/gny5sjyp","slide":16,"title":"电—声接口已标准化：COMSOL未运行，但输入合同已就绪","textShapes":11}
+{"kind":"textbox","id":"sh/9c7i1o7u","slide":16,"name":"title-21","text":"电—声接口已标准化：COMSOL未运行，但输入合同已就绪","textPreview":"电—声接口已标准化：COMSOL未运行，但输入合同已就绪","textChars":28,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/8z2h8bq1","slide":16,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/9kby1g7m","slide":16,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ytkf2h8j","slide":16,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/zutgvm94","slide":16,"name":"矩形 4","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/kv2h4rqp","slide":16,"name":"箭头: 右 5","bbox":[260,270,54,28]}
+{"kind":"shape","id":"sh/lwbyxwra","slide":16,"name":"箭头: 右 6","bbox":[486,270,54,28]}
+{"kind":"shape","id":"sh/ip4zel83","slide":16,"name":"箭头: 右 7","bbox":[712,270,54,28]}
+{"kind":"shape","id":"sh/3qdg7qpo","slide":16,"name":"箭头: 右 8","bbox":[938,270,54,28]}
+{"kind":"shape","id":"sh/fm1gzq5o","slide":16,"name":"矩形: 圆角 9","bbox":[82,220,180,120]}
+{"kind":"textbox","id":"sh/e1sf65o3","slide":16,"name":"矩形 10","text":"电学场景\n参数CSV","textPreview":"电学场景 | 参数CSV","textChars":10,"textLines":2,"bbox":[92,228,160,104]}
+{"kind":"shape","id":"sh/1ojy10ne","slide":16,"name":"矩形: 圆角 11","bbox":[314,220,180,120]}
+{"kind":"textbox","id":"sh/gnax8v6t","slide":16,"name":"矩形 12","text":"安全工作点\nf, Vport∠θ","textPreview":"安全工作点 | f, Vport∠θ","textChars":16,"textLines":2,"bbox":[324,228,160,104]}
+{"kind":"shape","id":"sh/nqlg3a5k","slide":16,"name":"矩形: 圆角 13","bbox":[540,220,180,120]}
+{"kind":"textbox","id":"sh/2pcfa5oz","slide":16,"name":"矩形 14","text":"复端口激励\nVrms exp(+jωt)","textPreview":"复端口激励 | Vrms exp(+jωt)","textChars":20,"textLines":2,"bbox":[550,228,160,104]}
+{"kind":"shape","id":"sh/ps3y5knq","slide":16,"name":"矩形: 圆角 15","bbox":[766,220,180,120]}
+{"kind":"textbox","id":"sh/oruhcf65","slide":16,"name":"矩形 16","text":"声学查找表\nηacoustic(f)","textPreview":"声学查找表 | ηacoustic(f)","textChars":18,"textLines":2,"bbox":[776,228,160,104]}
+{"kind":"shape","id":"sh/bulg7u5g","slide":16,"name":"矩形: 圆角 17","bbox":[992,220,180,120]}
+{"kind":"textbox","id":"sh/atczepob","slide":16,"name":"矩形 18","text":"相对声压代理\ntarget / wall","textPreview":"相对声压代理 | target / wall","textChars":20,"textLines":2,"bbox":[1002,228,160,104]}
+{"kind":"textbox","id":"sh/mpgj6t8j","slide":16,"name":"矩形 19","text":"EA_IF_V1.0｜基准+低/中/高组合4条记录｜接口审计 PASS","textPreview":"EA_IF_V1.0｜基准+低/中/高组合4条记录｜接口审计 PASS","textChars":35,"textLines":1,"bbox":[250,420,780,40]}
+{"kind":"textbox","id":"sh/7qp0zepo","slide":16,"name":"矩形 20","text":"声学字段：NOT_AVAILABLE（未运行COMSOL）","textPreview":"声学字段：NOT_AVAILABLE（未运行COMSOL）","textChars":29,"textLines":1,"bbox":[388,486,510,40]}
+{"kind":"textbox","id":"sh/8by18jq9","slide":16,"name":"矩形 21","text":"接口一致不等于声场结果；复端口电压作为FEM激励","textPreview":"接口一致不等于声场结果；复端口电压作为FEM激励","textChars":24,"textLines":1,"bbox":[266,560,760,44]}
+{"kind":"notes","id":"nt/gny5sjyp","slide":16,"text":"【建议时长】45秒\n\n【本页结论】已完成电路到FEM的数据字段和相量约定，声学结果仍明确为空。\n\n【逐字讲稿】本月没有运行COMSOL，因此这里不展示声压云图，而是先定义可复现接口。平台从电学场景导出安全工作点、频率以及复端口电压，统一采用RMS和exp正jωt相量约定；预测电流仅作接口校核。EA_IF_V1.0目前包含基准和低中高组合4条记录，字段审计通过。相对声学效率、靶区声压代理和壁面声压代理全部标为NOT_AVAILABLE。接口PASS只表示字段、单位和内部关系一致，不表示已经得到声场结果。\n\n【看图顺序】按左到右数据流讲，读出相量约定，再强调两个NOT_AVAILABLE框。\n\n【口径与限制】FEM输入最终还要与COMSOL/ANSYS中的电极边界、材料极化和谐波约定逐项对齐。\n\n【教授可能追问】既然没有COMSOL，这一页的价值是什么？\n\n【建议回答】先固定接口能避免后续电学量、峰值/RMS和相位符号混乱，并使声场团队可直接读取同一场景工作点。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/interfaces/electro_acoustic_v1/electro_acoustic_interface_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv"}
+{"kind":"slide","id":"sl/14bup87q","slide":17,"title":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textShapes":10}
+{"kind":"textbox","id":"sh/14rqpgne","slide":17,"name":"title-13","text":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textPreview":"文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射","textChars":30,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1c7e50ni","slide":17,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/gbedwfmx","slide":17,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/rm5czq50","slide":17,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/6lwvql4v","slide":17,"name":"矩形 4","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/t8ne10n6","slide":17,"name":"箭头: 右 5","bbox":[236,232,48,28]}
+{"kind":"shape","id":"sh/snedsvml","slide":17,"name":"箭头: 右 6","bbox":[526,232,48,28]}
+{"kind":"shape","id":"sh/jilcvq54","slide":17,"name":"矩形: 圆角 7","bbox":[82,178,220,130]}
+{"kind":"textbox","id":"sh/ihcvml4j","slide":17,"name":"矩形 8","text":"文献直接事实\n\n纤维化、钙化、\n结构异质性","textPreview":"文献直接事实 |  | 纤维化、钙化、 | 结构异质性","textChars":21,"textLines":4,"bbox":[92,186,200,114]}
+{"kind":"shape","id":"sh/4by9or6l","slide":17,"name":"矩形: 圆角 9","bbox":[350,178,220,130]}
+{"kind":"textbox","id":"sh/pc7qhwn6","slide":17,"name":"矩形 10","text":"工程建模假设\n\nfs、Rm、匹配状态\n可能变化","textPreview":"工程建模假设 |  | fs、Rm、匹配状态 | 可能变化","textChars":23,"textLines":4,"bbox":[360,186,200,114]}
+{"kind":"shape","id":"sh/29grm1of","slide":17,"name":"矩形: 圆角 11","bbox":[618,178,220,130]}
+{"kind":"textbox","id":"sh/3ap8fm50","slide":17,"name":"矩形 12","text":"待验证\n\n病变类型到BVD参数\n的定量映射","textPreview":"待验证 |  | 病变类型到BVD参数 | 的定量映射","textChars":21,"textLines":4,"bbox":[628,186,200,114]}
+{"kind":"shape","id":"sh/gnepkr69","slide":17,"name":"矩形 13","bbox":[892,152,286,390]}
+{"kind":"textbox","id":"sh/honqdwnu","slide":17,"name":"矩形 14","text":"当前能力边界","textPreview":"当前能力边界","textChars":6,"textLines":1,"bbox":[918,178,235,34]}
+{"kind":"textbox","id":"sh/ulw7ihoj","slide":17,"name":"矩形 15","text":"已完成\n端口电学模型\n准稳态控制原型\n\n未完成\n结构模态与声场\n热效应与空化\n临床效果","textPreview":"已完成 | 端口电学模型 | 准稳态控制原型 |  | 未完成 | 结构模态与声场 | 热效应与空化 | 临床效果","textChars":43,"textLines":8,"bbox":[932,232,208,260]}
+{"kind":"textbox","id":"sh/fm58bm54","slide":17,"name":"矩形 16","text":"文献层、工程假设层、待验证层必须分开","textPreview":"文献层、工程假设层、待验证层必须分开","textChars":18,"textLines":1,"bbox":[118,394,680,50]}
+{"kind":"textbox","id":"sh/0ji9wb6t","slide":17,"name":"矩形 17","text":"当前模型只讨论特定BVD与扰动范围内的电学稳定性","textPreview":"当前模型只讨论特定BVD与扰动范围内的电学稳定性","textChars":24,"textLines":1,"bbox":[118,474,680,50]}
+{"kind":"notes","id":"nt/14bup87q","slide":17,"text":"【建议时长】40秒\n\n【本页结论】文献用于证明研究问题合理，不用于伪造未测的器件参数。\n\n【逐字讲稿】文献部分只承担边界性论证：组织或负载的非均匀性、纤维化和钙化可能改变声传播和换能器负载状态；工程上可以把这种变化抽象成谐振频率、损耗和匹配条件的扰动，用于鲁棒性测试。但目前没有证据把某一种病变直接换算成C0增加多少或Rm增加多少。因此PPT把直接文献事实、工程建模假设和待验证关系分开，不做病变到BVD的一一映射。\n\n【看图顺序】按“文献支持—工程抽象—尚不能证明”三层讲。\n\n【口径与限制】不要在口头汇报中说“钙化导致Rm增加50%”之类定量句子。\n\n【教授可能追问】扰动幅度的医学依据是什么？\n\n【建议回答】当前幅度是扫描变量，用于覆盖控制器压力测试范围，不是从病变分级直接换算。真实映射需负载实验和阻抗测量。\n\n【模糊推测】病变或介质变化可能通过机电负载改变等效BVD参数；具体方向和幅度尚待实验。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/前视超声治疗.pdf\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/High intensity focused ultrasound  Physical principles and devices.pdf\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"}
+{"kind":"slide","id":"sl/y5wne50z","slide":18,"title":"电学与带约束控制已闭环，剩余缺口是实测和结构声场","textShapes":10}
+{"kind":"textbox","id":"sh/to72pw76","slide":18,"name":"title-14","text":"电学与带约束控制已闭环，剩余缺口是实测和结构声场","textPreview":"电学与带约束控制已闭环，剩余缺口是实测和结构声场","textChars":24,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/wrelszu9","slide":18,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/hsn2l4bu","slide":18,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/itw3upcf","slide":18,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/je5knut0","slide":18,"name":"矩形 4","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/4felwzu5","slide":18,"name":"矩形 5","bbox":[438,150,2,430]}
+{"kind":"shape","id":"sh/5gnmp4bq","slide":18,"name":"矩形 6","bbox":[850,150,2,430]}
+{"kind":"textbox","id":"sh/6hw3y9sb","slide":18,"name":"矩形 7","text":"本月已完成","textPreview":"本月已完成","textChars":5,"textLines":1,"bbox":[82,160,320,38]}
+{"kind":"textbox","id":"sh/rip4retw","slide":18,"name":"矩形 8","text":"v2.1匹配网络与双线验证\nC0/Rm/fs/Rs/匹配/ESR/Lm/Cm扫描\n低/中/高组合LTspice验证\n选频、保护、P&O与相位消融\n电—声接口EA_IF_V1.0","textPreview":"v2.1匹配网络与双线验证 | C0/Rm/fs/Rs/匹配/ESR/Lm/Cm扫描 | 低/中/高组合LTspice验证 | 选频、保护、P&O与相位消融 | 电—声接口EA_IF_V1.0","textChars":88,"textLines":5,"bbox":[92,230,300,250]}
+{"kind":"textbox","id":"sh/fapkr6pw","slide":18,"name":"矩形 9","text":"仍未证明","textPreview":"仍未证明","textChars":4,"textLines":1,"bbox":[474,160,340,38]}
+{"kind":"textbox","id":"sh/upg3i18r","slide":18,"name":"矩形 10","text":"假设参数代表实物\nP_Rm等于声功率\n准稳态时间等于硬件响应\n反射代理等于实测反射功率\n任何治疗或临床安全结论","textPreview":"假设参数代表实物 | P_Rm等于声功率 | 准稳态时间等于硬件响应 | 反射代理等于实测反射功率 | 任何治疗或临床安全结论","textChars":55,"textLines":5,"bbox":[492,230,304,250]}
+{"kind":"textbox","id":"sh/1cr2tg72","slide":18,"name":"矩形 11","text":"下一阶段","textPreview":"下一阶段","textChars":4,"textLines":1,"bbox":[888,160,280,38]}
+{"kind":"textbox","id":"sh/gbylkbqh","slide":18,"name":"矩形 12","text":"实测阻抗并拟合BVD\n电压/电流/功率标定\n设定独立反射约束\n运行结构声场与网格收敛\n水听器声场验证","textPreview":"实测阻抗并拟合BVD | 电压/电流/功率标定 | 设定独立反射约束 | 运行结构声场与网格收敛 | 水听器声场验证","textChars":50,"textLines":5,"bbox":[892,230,272,250]}
+{"kind":"shape","id":"sh/7mpknmp0","slide":18,"name":"矩形: 圆角 13","bbox":[104,550,1070,64]}
+{"kind":"textbox","id":"sh/6lg3e18f","slide":18,"name":"矩形 14","text":"当前结论仅适用于特定假设BVD、v2.1匹配网络和设定扰动范围","textPreview":"当前结论仅适用于特定假设BVD、v2.1匹配网络和设定扰动范围","textChars":31,"textLines":1,"bbox":[140,565,1000,36]}
+{"kind":"notes","id":"nt/y5wne50z","slide":18,"text":"【建议时长】45秒\n\n【本页结论】本月完成可复现电学闭环；下一阶段用实测和多物理场验证外部有效性。\n\n【逐字讲稿】总结本月：已经完成v2.1匹配网络、Python与LTspice交叉验证，C0、Rm、fs、Rs、匹配参数、ESR、Lm和Cm扫描，低中高组合验证，三种选频准则、保护状态机、扫描辅助P&O以及相位闭环消融，并建立电声接口。尚未证明的是假设参数代表实物、P_Rm等于声功率、准稳态时间等于硬件响应、反射代理等于实测反射功率，以及任何临床或治疗结论。下一阶段优先测阻抗并拟合BVD，再做电压电流功率标定、独立反射约束和结构声场网格收敛。\n\n【看图顺序】左列完成项，中列未证明，右列下一步；最后重复结论边界。\n\n【口径与限制】“闭环”指模型—数据—控制—审计闭环，不是临床闭环。\n\n【教授可能追问】如果下个月只能做一件事，优先级是什么？\n\n【建议回答】优先获得真实复阻抗曲线并拟合BVD，因为它决定匹配网络、扰动范围和控制器评价是否具有外部意义。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/plan_control_coupling_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"}
+{"kind":"slide","id":"sl/nid43ytk","slide":19,"title":"备份：v2.1参数均有明确来源类别","textShapes":3}
+{"kind":"textbox","id":"sh/wj2psvat","slide":19,"name":"title-15","text":"备份：v2.1参数均有明确来源类别","textPreview":"备份：v2.1参数均有明确来源类别","textChars":17,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/9gb6xgbi","slide":19,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/8v2pobax","slide":19,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/vitozqt8","slide":19,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/ahk7qls3","slide":19,"name":"矩形 4","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"table","id":"tb/mdonq9s7","slide":19,"name":"表格 13","rows":10,"cols":4,"preview":"参数 | 数值 | 单位 | 来源类别","bbox":[130,140,1020,485]}
+{"kind":"notes","id":"nt/nid43ytk","slide":19,"text":"【建议时长】答疑30秒\n\n【本页结论】参数来源被强制分为文献参考、假设基线和扫描变量。\n\n【逐字讲稿】如果老师追问参数来源，我展示这张登记表。每一个电路数值都标注来源类别。v2.1的BVD和匹配值是为模型自洽而设的假设基线；扰动比例和控制阈值是扫描变量或假设控制参数；文献只用于说明建模框架和现象背景。没有实测来源的数值不会写成真实器件参数。\n\n【看图顺序】按来源类别列解释，不逐项念完整表格。\n\n【口径与限制】“已登记”不等于“已验证”。\n\n【教授可能追问】哪些参数最需要实测？\n\n【建议回答】优先是复阻抗随频率曲线、源等效阻抗和允许电流；它们决定BVD拟合、匹配和保护阈值。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/config.yaml\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/README.md"}
+{"kind":"slide","id":"sl/zyxsni5k","slide":20,"title":"备份：单因素与组合扰动均有编号和复现参数","textShapes":7}
+{"kind":"textbox","id":"sh/rid4nuhs","slide":20,"name":"title-16","text":"备份：单因素与组合扰动均有编号和复现参数","textPreview":"备份：单因素与组合扰动均有编号和复现参数","textChars":20,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/qpwjmh8n","slide":20,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/rq50vmp8","slide":20,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/4nu1krqh","slide":20,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/po3itc72","slide":20,"name":"矩形 4","text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/2lczih8r","slide":20,"name":"矩形 5","text":"单因素最高档","textPreview":"单因素最高档","textChars":6,"textLines":1,"bbox":[88,140,500,34]}
+{"kind":"textbox","id":"sh/gjuhg7ql","slide":20,"name":"矩形 7","text":"统一扰动序列","textPreview":"统一扰动序列","textChars":6,"textLines":1,"bbox":[596,140,560,34]}
+{"kind":"textbox","id":"sh/hk3ipcr6","slide":20,"name":"矩形 8","text":"Baseline → C₀+30% → Rₘ+50% → fₛ−5%\n→ Lmatch+10% → QL=20 → Combined High → Baseline","textPreview":"Baseline → C₀+30% → Rₘ+50% → fₛ−5% | → Lmatch+10% → QL=20 → Combined High → Baseline","textChars":82,"textLines":2,"bbox":[596,196,570,100]}
+{"kind":"shape","id":"sh/dkfmp4zy","slide":20,"name":"矩形: 圆角 9","bbox":[596,336,570,188]}
+{"kind":"textbox","id":"sh/cj65wzyd","slide":20,"name":"矩形 10","text":"0.9 MHz换能器端口基线（匹配网络后端，非Zin）\n|Zport| ≈ 7.071 kΩ   相位 ≈ −15.916°\nP_Rm ≈ 0.170 W   I_RMS ≈ 5.000 mA\nVport ≈ 100 Vpp","textPreview":"0.9 MHz换能器端口基线（匹配网络后端，非Zin） | |Zport| ≈ 7.071 kΩ   相位 ≈ −15.916° | P_Rm ≈ 0.170 W   I_RMS ≈ 5.000 mA | Vport ≈ 100 Vpp","textChars":112,"textLines":4,"bbox":[628,360,505,140]}
+{"kind":"table","id":"tb/50jexsb6","slide":20,"name":"表格 19","rows":7,"cols":2,"preview":"因子 | 最高档","bbox":[88,188,420,360]}
+{"kind":"notes","id":"nt/zyxsni5k","slide":20,"text":"【建议时长】答疑40秒\n\n【本页结论】单因素用于归因，组合扰动用于压力测试；统一时间序列保证策略公平比较。\n\n【逐字讲稿】左侧是各单因素最高档，右侧是所有策略共同经历的绝对时间扰动序列。单因素扫描回答峰位、峰高和峰宽分别由谁主导；组合场景检验多参数同时失配时控制器能否恢复。右下角基线明确是匹配网络后端的换能器端口量：约7.071 kΩ、相位负15.916度、P_Rm约0.170 W、电流约5 mA RMS、端口约100 Vpp。它不是源侧Zin；源侧Zin见第6页。\n\n【看图顺序】先左侧单因素，再右上统一序列，最后核对右下测点口径。\n\n【口径与限制】组合扰动等级是人为压力测试组合，不代表临床低中高等级。\n\n【教授可能追问】为什么组合扰动不能替代单因素？\n\n【建议回答】组合只能说明系统失配，无法归因。先做单因素才能解释组合结果，并据此设计检测阈值和扫频范围。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv"}
+{"kind":"slide","id":"sl/m1wvqtk3","slide":21,"title":"备份：低中高组合均通过LTspice/Python交叉验证","textShapes":4}
+{"kind":"textbox","id":"sh/b6d432pc","slide":21,"name":"title-20","text":"备份：低中高组合均通过LTspice/Python交叉验证","textPreview":"备份：低中高组合均通过LTspice/Python交叉验证","textChars":29,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1gbmxs7a","slide":21,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0f2lon6p","slide":21,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/ra9kryp8","slide":21,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/qp03yt8n","slide":21,"name":"矩形 4","text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/sb2lk36t","slide":21,"name":"矩形 6","text":"三档误差均远低于5%验收线；这排除了主要实现差异，但不能验证假设参数是真实器件参数。","textPreview":"三档误差均远低于5%验收线；这排除了主要实现差异，但不能验证假设参数是真实器件参数。","textChars":42,"textLines":1,"bbox":[118,596,1040,42]}
+{"kind":"table","id":"tb/fqxgv6l0","slide":21,"name":"表格 14","rows":7,"cols":2,"preview":"组合场景 | 真实LTspice/Python交叉验证","bbox":[92,142,1090,420]}
+{"kind":"notes","id":"nt/m1wvqtk3","slide":21,"text":"【建议时长】答疑30秒\n\n【本页结论】三档组合场景均有真实LTspice批处理证据，最大Zin误差远低于5%。\n\n【逐字讲稿】低、中、高组合分别在2001个频点进行LTspice与Python对照，最大输入阻抗相对误差约0.01461%、0.00751%和0.00295%，均低于5%验收线。每档保留cir、raw、log和SHA-256。这里能够排除主要代码实现错误，但仍不能验证假设电路参数的真实性。\n\n【看图顺序】读三行误差和PASS，再指向运行证据行。\n\n【口径与限制】误差百分数是数值实现一致性，不是模型预测误差。\n\n【教授可能追问】有没有只展示图片、没有原始仿真的风险？\n\n【建议回答】三档都保留LTspice的RAW和Log，并用哈希登记；PNG只是后处理展示。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_LTspice_cross_validation.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_audit.json"}
+{"kind":"slide","id":"sl/5onypobq","slide":22,"title":"备份：三种选频准则优化的是不同目标函数","textShapes":4}
+{"kind":"textbox","id":"sh/p43q1sva","slide":22,"name":"title-17","text":"备份：三种选频准则优化的是不同目标函数","textPreview":"备份：三种选频准则优化的是不同目标函数","textChars":19,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/6987itcr","slide":22,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/7a18rydc","slide":22,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/k7qpgjul","slide":22,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/58zqpov6","slide":22,"name":"矩形 4","text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/jmh8nyd0","slide":22,"name":"矩形: 圆角 6","bbox":[148,480,970,100]}
+{"kind":"textbox","id":"sh/43u9snu5","slide":22,"name":"矩形 7","text":"典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。","textPreview":"典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。","textChars":56,"textLines":1,"bbox":[176,510,914,44]}
+{"kind":"table","id":"tb/uxwnupw3","slide":22,"name":"表格 15","rows":4,"cols":4,"preview":"准则 | 定义 | 优点 | 主要风险","bbox":[86,154,1100,270]}
+{"kind":"notes","id":"nt/5onypobq","slide":22,"text":"【建议时长】答疑35秒\n\n【本页结论】特征点名称必须连同测点、目标函数和参考阻抗一起报告。\n\n【逐字讲稿】最大功率频率定义为受电压电流约束下P_Rm最大的频点；最小相位频率定义为匹配网络输入相位绝对值最小；最小反射频率定义为相对50欧姆参考阻抗的Gamma代理最小。三者数学目标不同，只有在特定场景中可能重合。因此后续报告不能笼统写“谐振频率”，而要说清是串联谐振、反谐振、相位零点、最小阻抗点还是安全功率峰。\n\n【看图顺序】逐行讲三个argmin/argmax定义，最后总结命名规范。\n\n【口径与限制】反射代理基于简化50欧姆参考，不等于完整功放的实测反射。\n\n【教授可能追问】项目最终以哪个频率作为控制目标？\n\n【建议回答】正式控制目标是当前场景受约束的最大P_Rm频率；相位和反射主要用于状态监测、异常触发和对照。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv"}
+{"kind":"slide","id":"sl/c7uhcr6t","slide":23,"title":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textShapes":7}
+{"kind":"textbox","id":"sh/69gry94v","slide":23,"name":"title-18","text":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textPreview":"备份：相位闭环已作为消融保留，但不能替代最大功率准则","textChars":26,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/90vqdczq","slide":23,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/8zm9k7y5","slide":23,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/v2d8fmhw","slide":23,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/a14rmhgb","slide":23,"name":"矩形 4","text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/w3m9o7yh","slide":23,"name":"矩形 6","text":"φin = arg(Zin) = arg(Vinput / Isource)","textPreview":"φin = arg(Zin) = arg(Vinput / Isource)","textChars":38,"textLines":1,"bbox":[880,158,280,40]}
+{"kind":"textbox","id":"sh/jqd8jmhs","slide":23,"name":"矩形 7","text":"目标相位\n−1.0782°","textPreview":"目标相位 | −1.0782°","textChars":13,"textLines":2,"bbox":[900,230,240,70]}
+{"kind":"textbox","id":"sh/ip4rqhgn","slide":23,"name":"矩形 8","text":"方向由局部 dφ/df 决定","textPreview":"方向由局部 dφ/df 决定","textChars":14,"textLines":1,"bbox":[870,340,300,42]}
+{"kind":"shape","id":"sh/sby90zm1","slide":23,"name":"矩形: 圆角 9","bbox":[850,420,340,130]}
+{"kind":"textbox","id":"sh/tc7at436","slide":23,"name":"矩形 10","text":"50与100 Hz/°各出现1个错误锁定段\n|eφ|小，但 P_Rm < 0.95 P*","textPreview":"50与100 Hz/°各出现1个错误锁定段 | |eφ|小，但 P_Rm < 0.95 P*","textChars":44,"textLines":2,"bbox":[872,448,296,74]}
+{"kind":"image","id":"im/gz650b6h","slide":23,"name":"图片 18","bbox":[129.54,132,644.91,500]}
+{"kind":"notes","id":"nt/c7uhcr6t","slide":23,"text":"【建议时长】答疑50秒\n\n【本页结论】相位控制目标是基准安全功率峰处的arg Zin，并用局部斜率决定频率更新方向。\n\n【逐字讲稿】这里修正两个常见问题。第一，相位变量是匹配网络输入相位phi_in等于arg Zin，也就是arg(V_input/I_source)，不是换能器端口Vport/Iport。第二，目标不是零度，而是基准受约束最大功率点处的负1.0782度。更新量还乘局部dphi/df的符号，因为相位曲线在不同频段斜率可能不同。增益5 Hz每度较平稳；50和100 Hz每度各出现1个错误锁定段，即相位误差已小但P_Rm仍低于0.95P星。\n\n【看图顺序】先读相位定义和测点，再看目标值，最后看增益消融与错误锁定提示。\n\n【口径与限制】相位目标来自假设基线场景，负载大幅变化后未必仍对应最大功率。\n\n【教授可能追问】为什么需要sign(dphi/df)？\n\n【建议回答】同一相位误差在正斜率和负斜率区间需要相反的频率修正方向；不乘斜率符号可能把频率推离目标。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_gain_sweep_summary.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_ablation_audit.json"}
+{"kind":"slide","id":"sl/7qto7e10","slide":24,"title":"备份：相位闭环仅作计划书补充消融，不替代P&O排名","textShapes":4}
+{"kind":"textbox","id":"sh/8veh8ril","slide":24,"name":"title-12","text":"备份：相位闭环仅作计划书补充消融，不替代P&O排名","textPreview":"备份：相位闭环仅作计划书补充消融，不替代P&O排名","textChars":25,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/1sfqxsv6","slide":24,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/0r6p4nul","slide":24,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/nux8zidc","slide":24,"name":"矩形 3","text":"Hypothetical BVD model — non-measured parameters","textPreview":"Hypothetical BVD model — non-measured parameters","textChars":48,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/2to76dcr","slide":24,"name":"矩形 4","text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/3ydonyd8","slide":24,"name":"矩形: 圆角 7","bbox":[72,506,1118,112]}
+{"kind":"textbox","id":"sh/ix47utcn","slide":24,"name":"矩形 8","text":"正式排名第三策略仍为扫描辅助P&O；相位K5不替代P&O结论。\n在fs漂移与高组合场景中，相位目标可能对应较低功率工作点。","textPreview":"正式排名第三策略仍为扫描辅助P&O；相位K5不替代P&O结论。 | 在fs漂移与高组合场景中，相位目标可能对应较低功率工作点。","textChars":61,"textLines":2,"bbox":[100,530,1060,68]}
+{"kind":"chart","id":"ch/ehsbatoz","slide":24,"name":"Chart","chartType":"bar","bbox":[770,160,420,320]}
+{"kind":"table","id":"tb/q9wn25cv","slide":24,"name":"表格 17","rows":4,"cols":5,"preview":"策略 | 稳态误差 | 惩罚恢复时间 | 峰值电流 | 实际硬越限","bbox":[72,170,650,290]}
+{"kind":"notes","id":"nt/7qto7e10","slide":24,"text":"【建议时长】答疑40秒\n\n【本页结论】按计划书口径补齐相位闭环，但当前K5结果弱于周期扫频。\n\n【逐字讲稿】若按计划书原始三策略口径比较固定、周期扫频和相位闭环，固定策略稳态误差30.14%，周期扫频为0，相位K5为39.91%；三者峰值电流均为5.124 mA，实际硬越限为零。相位K5的惩罚恢复时间374.3 ms，但稳态误差较大，因此不能因为时间数字较短就认为更优。正式策略排名仍采用固定、周期扫频和扫描辅助P&O；相位闭环是补充消融。\n\n【看图顺序】先看误差列，再看恢复时间，最后强调正式排名与消融的区别。\n\n【口径与限制】相位K5没有经过面向每个扰动的重新目标整定。\n\n【教授可能追问】为何不把相位闭环作为第三种正式策略？\n\n【建议回答】当前结果证明固定相位目标在峰位漂移场景可能错误锁定。直接以功率为目标的P&O与项目目标更一致，所以相位闭环只作为机制对照。\n\n【模糊推测】若使用在线相位目标重标定或联合功率判据，相位控制表现可能改善；当前尚未验证。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/plan_fixed_periodic_phase_integrated.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/scan_vs_phase_scenario_comparison.csv"}
+{"kind":"slide","id":"sl/69wfm9o7","slide":25,"title":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textShapes":5}
+{"kind":"textbox","id":"sh/h0jalgra","slide":25,"name":"title-19","text":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textPreview":"备份：LTspice GUI、RAW、Log与哈希共同构成运行证据","textChars":33,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/xg7axgf2","slide":25,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/cfyt4beh","slide":25,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/napsr6x0","slide":25,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/29wby1wf","slide":25,"name":"矩形 4","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/fm5snmx4","slide":25,"name":"矩形: 圆角 7","bbox":[830,352,350,198]}
+{"kind":"textbox","id":"sh/elwbu1wj","slide":25,"name":"矩形 8","text":"证据层级\nGUI截图：运行痕迹\nRAW文件：数值输出\n解析误差：交叉验证\nSHA-256：文件追溯","textPreview":"证据层级 | GUI截图：运行痕迹 | RAW文件：数值输出 | 解析误差：交叉验证 | SHA-256：文件追溯","textChars":49,"textLines":5,"bbox":[860,374,290,150]}
+{"kind":"textbox","id":"sh/wza9cbqp","slide":25,"name":"矩形 9","text":"GUI截图本身不是数值正确性的证明","textPreview":"GUI截图本身不是数值正确性的证明","textChars":17,"textLines":1,"bbox":[330,585,620,34]}
+{"kind":"image","id":"im/987its3y","slide":25,"name":"图片 18","bbox":[72,147.23,720,385.55]}
+{"kind":"image","id":"im/87y1knmd","slide":25,"name":"图片 19","bbox":[830,147.41,350,161.18]}
+{"kind":"notes","id":"nt/69wfm9o7","slide":25,"text":"【建议时长】答疑30秒\n\n【本页结论】可复现证据以网表、RAW、Log和哈希为主，GUI截图是辅助审计材料。\n\n【逐字讲稿】真实运行痕迹分四层：cir或net记录电路与扫描命令；raw保存仿真数值；log或Error Log证明求解器完成；SHA-256证明交付文件未被替换。LTspice GUI截图用于汇报时直观展示软件版本、打开的网表、波形窗口和Error Log，但不能替代RAW和脚本。当前批处理证据已经保存；若需要带软件界面的截图，需要在本机LTspice中打开对应cir和raw后人工截取。\n\n【看图顺序】按证据等级从原始文件到GUI截图讲。\n\n【口径与限制】Python重绘的PNG不能声称是LTspice GUI截图。\n\n【教授可能追问】如何证明不是虚构曲线？\n\n【建议回答】提交可运行网表、原始RAW、Log、解析脚本、逐点误差表和文件哈希，并现场任选场景复跑。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/SHA256_文件清单.csv"}
+{"kind":"slide","id":"sl/l0bepsfm","slide":26,"title":"备份：控制器比较采用统一且可复现的指标定义","textShapes":4}
+{"kind":"textbox","id":"sh/kbil0r2p","slide":26,"name":"title-20","text":"备份：控制器比较采用统一且可复现的指标定义","textPreview":"备份：控制器比较采用统一且可复现的指标定义","textChars":21,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/uhk36lk7","slide":26,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/vitkzqlc","slide":26,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/8fil4b21","slide":26,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/tgr2xg3m","slide":26,"name":"矩形 4","text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/7e9kv6lg","slide":26,"name":"矩形 6","text":"130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。","textPreview":"130 Vpp/5.5 mA为软触发；160 Vpp/6 mA为硬限。均为本次仿真假设，待实测确认。","textChars":50,"textLines":1,"bbox":[118,596,1040,42]}
+{"kind":"table","id":"tb/s3698rmp","slide":26,"name":"表格 14","rows":7,"cols":2,"preview":"指标 | 本次定义","bbox":[92,142,1090,420]}
+{"kind":"notes","id":"nt/l0bepsfm","slide":26,"text":"【建议时长】答疑45秒\n\n【本页结论】所有策略使用同一安全功率参考、稳态窗口和恢复判据。\n\n【逐字讲稿】P星定义为每个扰动场景高分辨率离线扫频得到的安全最大P_Rm。稳态误差取该段最后25%且状态为NORMAL的样本平均；恢复要求P_Rm达到0.98P星并连续保持10个NORMAL样本。过冲按相对P星的正偏差计算；频率饱和统计控制频率是否触及0.8或1.0 MHz；错误相位锁定定义为相位误差已达标但功率低于0.95P星。这些口径写入代码和表格，避免策略间更换评价标准。\n\n【看图顺序】先定义P星，再讲稳态误差和恢复，最后讲饱和与错误锁定。\n\n【口径与限制】98%、10样本和尾段25%都是【假设验收阈值】，不是行业标准。\n\n【教授可能追问】未收敛段如何计入平均恢复时间？\n\n【建议回答】采用预先定义的惩罚恢复时间，并同时单列未收敛段数量，避免丢弃失败段后人为美化平均值。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv"}
+{"kind":"slide","id":"sl/4vyxknqp","slide":27,"title":"备份：每张图都能追溯到参数、脚本和原始输出","textShapes":11}
+{"kind":"textbox","id":"sh/dkb2x0bq","slide":27,"name":"title-21","text":"备份：每张图都能追溯到参数、脚本和原始输出","textPreview":"备份：每张图都能追溯到参数、脚本和原始输出","textChars":21,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/kn694nmx","slide":27,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/lofadsni","slide":27,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/mpor6x43","slide":27,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/7qxsfi5o","slide":27,"name":"矩形 4","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"shape","id":"sh/8r698nm9","slide":27,"name":"箭头: 右 5","bbox":[260,270,54,28]}
+{"kind":"shape","id":"sh/9sfahsnu","slide":27,"name":"箭头: 右 6","bbox":[486,270,54,28]}
+{"kind":"shape","id":"sh/utobax4f","slide":27,"name":"箭头: 右 7","bbox":[712,270,54,28]}
+{"kind":"shape","id":"sh/vuxsj250","slide":27,"name":"箭头: 右 8","bbox":[938,270,54,28]}
+{"kind":"shape","id":"sh/ju5gv294","slide":27,"name":"矩形: 圆角 9","bbox":[82,220,180,120]}
+{"kind":"textbox","id":"sh/ytwfmx8j","slide":27,"name":"矩形 10","text":"参数CSV\n场景注册表","textPreview":"参数CSV | 场景注册表","textChars":11,"textLines":2,"bbox":[92,228,160,104]}
+{"kind":"shape","id":"sh/lw7yxcra","slide":27,"name":"矩形: 圆角 11","bbox":[314,220,180,120]}
+{"kind":"textbox","id":"sh/kvyxo7qp","slide":27,"name":"矩形 12","text":"Python脚本\nLTspice .cir","textPreview":"Python脚本 | LTspice .cir","textChars":21,"textLines":2,"bbox":[324,228,160,104]}
+{"kind":"shape","id":"sh/bq5gr298","slide":27,"name":"矩形: 圆角 13","bbox":[540,220,180,120]}
+{"kind":"textbox","id":"sh/apwfix8n","slide":27,"name":"矩形 14","text":".raw / .log\n控制时序CSV","textPreview":".raw / .log | 控制时序CSV","textChars":19,"textLines":2,"bbox":[550,228,160,104]}
+{"kind":"shape","id":"sh/xsnytcry","slide":27,"name":"矩形: 圆角 15","bbox":[766,220,180,120]}
+{"kind":"textbox","id":"sh/wrexk7qt","slide":27,"name":"矩形 16","text":"汇总CSV\n指标表","textPreview":"汇总CSV | 指标表","textChars":9,"textLines":2,"bbox":[776,228,160,104]}
+{"kind":"shape","id":"sh/vmpg3m9c","slide":27,"name":"矩形: 圆角 17","bbox":[992,220,180,120]}
+{"kind":"textbox","id":"sh/ulgzuh8r","slide":27,"name":"矩形 18","text":"PNG/PDF/SVG\nPPT图表","textPreview":"PNG/PDF/SVG | PPT图表","textChars":17,"textLines":2,"bbox":[1002,228,160,104]}
+{"kind":"textbox","id":"sh/qhkj2lsz","slide":27,"name":"矩形 19","text":"README_汇报工作痕迹索引.md","textPreview":"README_汇报工作痕迹索引.md","textChars":18,"textLines":1,"bbox":[250,420,780,40]}
+{"kind":"textbox","id":"sh/rit0vqtk","slide":27,"name":"矩形 20","text":"SHA256_文件清单.csv","textPreview":"SHA256_文件清单.csv","textChars":15,"textLines":1,"bbox":[388,486,510,40]}
+{"kind":"textbox","id":"sh/sj214va5","slide":27,"name":"矩形 21","text":"图表不是孤立截图，而是可重新运行的产物","textPreview":"图表不是孤立截图，而是可重新运行的产物","textChars":19,"textLines":1,"bbox":[266,560,760,44]}
+{"kind":"notes","id":"nt/4vyxknqp","slide":27,"text":"【建议时长】答疑30秒\n\n【本页结论】平台采用配置—脚本—数据—图片—审计的单向复现链。\n\n【逐字讲稿】所有任务从统一config.yaml读取假设参数和扫描设置，通过run_all.py调用各阶段脚本，输出独立CSV、JSON、PNG和LTspice证据。README说明运行方法，哈希清单登记关键文件。网页只是读取这些结果进行交互展示，不改变正式基准数据；改变侧栏变量时产生的是临时交互场景，不能冒充已登记的正式扫描。\n\n【看图顺序】按流程框从配置到审计讲，最后解释网页与正式结果的关系。\n\n【口径与限制】若修改配置或代码，必须重新运行并更新审计与哈希，不能只替换图片。\n\n【教授可能追问】网页滑块是否会自动改变正式图？\n\n【建议回答】交互页面的即时曲线会随当前变量变化；正式单因素图和汇总表来自已登记场景，只有重新运行流程才更新。\n\n【模糊推测】无。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/run_all.py\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/README.md\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/SHA256_文件清单.csv"}
+{"kind":"slide","id":"sl/3mdove10","slide":28,"title":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textShapes":8}
+{"kind":"textbox","id":"sh/ytsne5wf","slide":28,"name":"title-22","text":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textPreview":"备份：结构—声场结果尚未完成，当前只能给出输入与验收清单","textChars":28,"textLines":1,"bbox":[72,36,1136,54]}
+{"kind":"shape","id":"sh/q9cz6xkv","slide":28,"name":"矩形 1","bbox":[72,96,1136,3]}
+{"kind":"shape","id":"sh/ralgf21g","slide":28,"name":"矩形 2","bbox":[72,682,1136,1]}
+{"kind":"textbox","id":"sh/0zehcr2x","slide":28,"name":"矩形 3","text":"Electrical model only — structural/acoustic validation pending","textPreview":"Electrical model only — structural/acoustic validation pending","textChars":62,"textLines":1,"bbox":[72,688,720,20]}
+{"kind":"textbox","id":"sh/10nylwji","slide":28,"name":"矩形 4","text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1160,688,48,20]}
+{"kind":"textbox","id":"sh/exwzahkr","slide":28,"name":"矩形 5","text":"建模输入","textPreview":"建模输入","textChars":4,"textLines":1,"bbox":[124,150,430,38]}
+{"kind":"textbox","id":"sh/zy5gjm1c","slide":28,"name":"矩形 6","text":"• 几何尺寸与完整模型树\n\n• 压电材料矩阵与极化方向\n\n• 电极、机械、耦合面和PML\n\n• 粗/中/细三档网格\n\n• 模态频率与关键模态形状","textPreview":"• 几何尺寸与完整模型树 |  | • 压电材料矩阵与极化方向 |  | • 电极、机械、耦合面和PML |  | • 粗/中/细三档网格 |  | • 模态频率与关键模态形状","textChars":72,"textLines":9,"bbox":[116,214,450,340]}
+{"kind":"shape","id":"sh/o3ehgr29","slide":28,"name":"矩形 7","bbox":[630,142,2,440]}
+{"kind":"textbox","id":"sh/947ipwje","slide":28,"name":"矩形 8","text":"必须保留的结果证据","textPreview":"必须保留的结果证据","textChars":9,"textLines":1,"bbox":[700,150,430,38]}
+{"kind":"textbox","id":"sh/lg3690fq","slide":28,"name":"矩形 9","text":"• 端口阻抗/导纳曲线\n\n• 位移幅值与相位\n\n• 声压云图与轴向曲线\n\n• 网格收敛表\n\n• Solver Log正常结束页面","textPreview":"• 端口阻抗/导纳曲线 |  | • 位移幅值与相位 |  | • 声压云图与轴向曲线 |  | • 网格收敛表 |  | • Solver Log正常结束页面","textChars":64,"textLines":9,"bbox":[692,214,460,340]}
+{"kind":"shape","id":"sh/kfu5gfe5","slide":28,"name":"矩形: 圆角 10","bbox":[164,590,950,50]}
+{"kind":"textbox","id":"sh/je1o7ax0","slide":28,"name":"矩形 11","text":"当前没有真实ANSYS/COMSOL截图，不得生成伪造云图填充汇报","textPreview":"当前没有真实ANSYS/COMSOL截图，不得生成伪造云图填充汇报","textChars":33,"textLines":1,"bbox":[198,600,880,32]}
+{"kind":"notes","id":"nt/3mdove10","slide":28,"text":"【建议时长】答疑35秒\n\n【本页结论】ANSYS/COMSOL部分尚未完成，不能用示意图代替真实求解结果。\n\n【逐字讲稿】结构声场部分当前只能给出需要建立和留痕的清单：软件版本与许可证、完整模型树、几何尺寸、压电材料矩阵与极化方向、电极和机械边界、耦合面与PML、粗中细三档网格、模态列表和关键模态、端口阻抗或导纳、位移幅相、声压云图与轴向曲线、网格收敛表以及Solver Log正常结束页面。只有这些内容真实运行后，才能把电学接口工作点代入并讨论相对声学效率。\n\n【看图顺序】按建模、网格、求解、结果、收敛和日志六类快速讲。\n\n【口径与限制】本页不包含任何真实ANSYS/COMSOL结果；汇报时不得说“已完成声场验证”。\n\n【教授可能追问】为什么没有声压图？\n\n【建议回答】当前没有可信的几何、材料矩阵和边界条件，也没有完成求解。先保留接口和验收清单，比放置不可追溯的示意云图更严谨。\n\n【模糊推测】后续声场峰值可能与电学P_Rm峰不完全重合；必须由耦合模型或查找表验证。\n\n[Sources]\n\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv\n- C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md"}

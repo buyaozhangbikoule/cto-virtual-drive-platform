@@ -1,0 +1,21 @@
+{
+  "model": "MODEL_V2_1_HYPOTHETICAL",
+  "case_id": "UI_TEST",
+  "description": "bridge validation",
+  "amplitude_command": 1.0,
+  "source_Vrms_RMS_equivalent": 6.217360894531728,
+  "frequency_start_Hz": 800000.0,
+  "frequency_stop_Hz": 1000000.0,
+  "frequency_points": 401,
+  "Rs_ohm": 50.0,
+  "C0_F": 6.858064105198409e-12,
+  "Rm_ohm": 7352.941176470586,
+  "Lm_H": 1.0402283862215378,
+  "Cm_F": 3.006260036180247e-14,
+  "derived_fs_Hz": 900000.0,
+  "derived_Qm": 800.0,
+  "Lmatch_H": 0.00010672581904440851,
+  "Cmatch_F": 2.8359878734546773e-10,
+  "inductor_Q": 100.0,
+  "capacitor_Q": 1000.0
+}

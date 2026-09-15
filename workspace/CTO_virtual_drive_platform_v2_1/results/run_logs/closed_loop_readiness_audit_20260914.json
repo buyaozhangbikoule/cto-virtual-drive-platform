@@ -1,0 +1,80 @@
+{
+  "checked_at": "2026-09-14T15:55:27.391382+08:00",
+  "source_session": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\ltspice_closed_loop\\CL_20260914_124949_410d5f9d",
+  "new_simulation": false,
+  "browser_screenshot_test": false,
+  "evidence_checks": [
+    {
+      "iteration": 1,
+      "hashes": {
+        "cir": true,
+        "raw": true,
+        "log": true,
+        "parent_feedback": true
+      },
+      "solver_return_zero": true,
+      "full_prefix_matches": true,
+      "command_matches_parent": true,
+      "decision_reproduced": true
+    },
+    {
+      "iteration": 2,
+      "hashes": {
+        "cir": true,
+        "raw": true,
+        "log": true,
+        "parent_feedback": true
+      },
+      "solver_return_zero": true,
+      "full_prefix_matches": true,
+      "command_matches_parent": true,
+      "decision_reproduced": true
+    },
+    {
+      "iteration": 3,
+      "hashes": {
+        "cir": true,
+        "raw": true,
+        "log": true,
+        "parent_feedback": true
+      },
+      "solver_return_zero": true,
+      "full_prefix_matches": true,
+      "command_matches_parent": true,
+      "decision_reproduced": true
+    },
+    {
+      "iteration": 4,
+      "hashes": {
+        "cir": true,
+        "raw": true,
+        "log": true,
+        "parent_feedback": true
+      },
+      "solver_return_zero": true,
+      "full_prefix_matches": true,
+      "command_matches_parent": true,
+      "decision_reproduced": true
+    },
+    {
+      "iteration": 5,
+      "hashes": {
+        "cir": true,
+        "raw": true,
+        "log": true,
+        "parent_feedback": true
+      },
+      "solver_return_zero": true,
+      "full_prefix_matches": true,
+      "command_matches_parent": true,
+      "decision_reproduced": true
+    }
+  ],
+  "empty_page_errors": [],
+  "loaded_page_errors": [],
+  "example_button_loads_expected_session": true,
+  "decision_source_matches_run": true,
+  "scope": "现有五轮真实RAW文件完整性、指令因果链、决策复算与页面脚本渲染；不是新的LTspice运行或控制性能验收",
+  "passed": true,
+  "environment_note": "本机Windows Store Python在测试退出清理临时目录时提示WinError 5；页面及证据检查已完成且无页面异常。此项是测试环境清理警告，不是新仿真结果。"
+}

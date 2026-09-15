@@ -1,0 +1,31 @@
+Core conclusion:
+The fs−5% disturbance moves the safe-power peak from 0.9000 MHz to 0.8548 MHz; periodic scan passes the steady-state criterion, while P&O only reaches the same peak within this window.
+
+Figure archetype: quantitative grid
+Target output: 16:9 professor group-meeting slide
+Backend: Python / Matplotlib only
+Final figure size: 11.0 × 7.25 in; PNG 3300 × 2175 px at 300 dpi, plus SVG and PDF
+
+Panel map:
+- a: Offline safe-power sweep proving the peak-frequency shift.
+- b: Scenario-normalized safe-power capture ratio during the same disturbance window.
+- c: CONTROL-sample frequency trajectory; scan/probe intervals are deliberately not connected.
+
+Evidence hierarchy:
+- Hero evidence: exact offline peak locations and heights.
+- Validation evidence: periodic-scan acceptance time and P&O first-arrival time.
+- Interpretation control: 100% capture is normalized to the current scenario, not the baseline absolute power.
+
+Source data needed:
+- Stage-3 frequency-response CSV.
+- Stage-4 control-timeline CSV.
+
+Image-integrity notes:
+- No manual movement or vertical offset of data.
+- Lines are computed directly from CSV values.
+- Gaps longer than one control interval are shown as gaps, not interpolated.
+
+Reviewer risk:
+- Do not equate 100% capture with baseline-power restoration.
+- Do not describe P&O as having passed the continuous steady-state acceptance window.
+- Do not mix the next disturbance state after 3.200 s into the fs−5% window.

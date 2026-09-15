@@ -1,0 +1,28 @@
+{
+  "command": [
+    "D:\\LTspice.exe",
+    "-b",
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\PO_FS_M5_REPLAY_DT2NS.cir"
+  ],
+  "started_at": "2026-09-11T20:01:23.413590+08:00",
+  "finished_at": "2026-09-11T20:12:54.968959+08:00",
+  "elapsed_seconds": 691.5555246000004,
+  "return_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "cir": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\PO_FS_M5_REPLAY_DT2NS.cir",
+    "bytes": 6730,
+    "sha256": "081c171af5f2522398fea47e7a71d9a47ff1f700f06b627fc0acb5a5b9d29d88"
+  },
+  "log": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\PO_FS_M5_REPLAY_DT2NS.log",
+    "bytes": 808,
+    "sha256": "9a4c6db7cec2a34ab019e8f762c781c444c40b3c2740062244204b293729b7f2"
+  },
+  "raw": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\PO_FS_M5_REPLAY_DT2NS.raw",
+    "bytes": 3136015370,
+    "sha256": "aacc5b49f002f3d5636968686499275533e614d7f9f71cc69ea619aeb1422288"
+  }
+}

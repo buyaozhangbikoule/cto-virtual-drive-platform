@@ -1,0 +1,8 @@
+Source deck: source.pptx
+Slide count: 22, widescreen 1280 x 720.
+Visual system: light gray background, navy one-line takeaway titles, thin navy divider, small gray model-scope footer, page number at lower right.
+Typography: imported deck uses Calibri/Calibri Light plus theme fonts; preserve inherited text styling on edited objects.
+Reusable pattern: slide 11 is a large evidence image on the left plus a narrow explanatory rail on the right.
+Insertion contract: preserve every slide one-to-one. On slide 11 only, reuse the inherited title, footer, page number, right-rail text objects, and timeline image. Reposition/crop the timeline image and add one bounded native chart above it because no inherited chart slot exists.
+Master/layout policy: no master, layout, theme, footer, or page-number edits. Only slide-local edits on slide 11.
+

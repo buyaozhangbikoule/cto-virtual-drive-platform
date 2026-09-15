@@ -1,0 +1,60 @@
+{
+  "exit_code": 0,
+  "result": {
+    "checked_column_count": 0,
+    "checks": [],
+    "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+    "eligible_table_count": 0,
+    "finding_count": 0,
+    "findings": [],
+    "native_table_count": 8,
+    "passed": true,
+    "schema_version": "presentation-native-table-arithmetic.v1",
+    "skipped_tables": [
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 6,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 7,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 19,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 20,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 21,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 22,
+        "table": 1
+      },
+      {
+        "reason": "no_unambiguous_bottom_total",
+        "slide": 24,
+        "table": 1
+      },
+      {
+        "reason": "no_numeric_amounts",
+        "slide": 26,
+        "table": 1
+      }
+    ],
+    "slide_count": 28,
+    "warning_count": 0,
+    "warnings": []
+  },
+  "stderr": ""
+}

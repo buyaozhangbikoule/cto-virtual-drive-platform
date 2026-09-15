@@ -1,0 +1,18 @@
+{
+  "claim": "Recovery-first scan improves a local acceptance window, not overall dominance or continuous-time safety",
+  "archetype": "quantitative grid",
+  "backend": "Python matplotlib",
+  "formats": [
+    "PNG",
+    "SVG",
+    "PDF"
+  ],
+  "replicates": "one deterministic run per registered configuration; no statistical inference",
+  "data": "results_r1 timelines and summary; newly generated LTspice RAW comparisons",
+  "integrity": "all action samples retained; explicit recorded-duration hold rendering; no smoothing, value offsets, or hidden scans",
+  "normalization": "current scenario soft-constrained optimum, or its duration integral, never acoustic efficiency",
+  "tests": "independent_tests.json",
+  "editable_text": true,
+  "controller_LTspice_transient_validated": false,
+  "native_GUI_screenshot": false
+}

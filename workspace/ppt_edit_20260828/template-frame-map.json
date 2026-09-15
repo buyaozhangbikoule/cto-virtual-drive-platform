@@ -1,0 +1,39 @@
+{
+  "outputSlides": [
+    {"outputSlide":1,"sourceSlide":1,"narrativeRole":"preserve-only slide 1","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":2,"sourceSlide":2,"narrativeRole":"preserve-only slide 2","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":3,"sourceSlide":3,"narrativeRole":"preserve-only slide 3","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":4,"sourceSlide":4,"narrativeRole":"preserve-only slide 4","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":5,"sourceSlide":5,"narrativeRole":"preserve-only slide 5","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":6,"sourceSlide":6,"narrativeRole":"preserve-only slide 6","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":7,"sourceSlide":7,"narrativeRole":"preserve-only slide 7","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":8,"sourceSlide":8,"narrativeRole":"preserve-only slide 8","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":9,"sourceSlide":9,"narrativeRole":"preserve-only slide 9","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":10,"sourceSlide":10,"narrativeRole":"preserve-only slide 10","reuseMode":"duplicate-slide","editTargets":[]},
+    {
+      "outputSlide":11,
+      "sourceSlide":11,
+      "narrativeRole":"directly prove peak-frequency shift, then show controller tracking",
+      "reuseMode":"duplicate-slide",
+      "editTargets":[
+        {"action":"rewrite","sourceElementId":"sh/0b6tc3yx"},
+        {"action":"rewrite-and-reposition","sourceElementId":"im/21cnihkf"},
+        {"action":"rewrite-and-reposition","sourceElementIds":["sh/o7ih0r6h","sh/72t03qp0","sh/61kzalof","sh/ofqtgnyt","sh/9gza9sze","sh/mdobedg3","sh/nehs7iho"]},
+        {"action":"rewrite","sourceElementId":"nt/jetc3ut0"},
+        {"action":"add","newPrimitiveAllowed":true,"mustNotOverlapInherited":true,"zone":{"left":72,"top":106,"width":720,"height":220},"reason":"Add an editable local P(f) sweep chart from the verified simulation CSV; the inherited slide has no chart slot."}
+      ]
+    },
+    {"outputSlide":12,"sourceSlide":12,"narrativeRole":"preserve-only slide 12","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":13,"sourceSlide":13,"narrativeRole":"preserve-only slide 13","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":14,"sourceSlide":14,"narrativeRole":"preserve-only slide 14","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":15,"sourceSlide":15,"narrativeRole":"preserve-only slide 15","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":16,"sourceSlide":16,"narrativeRole":"preserve-only slide 16","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":17,"sourceSlide":17,"narrativeRole":"preserve-only slide 17","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":18,"sourceSlide":18,"narrativeRole":"preserve-only slide 18","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":19,"sourceSlide":19,"narrativeRole":"preserve-only slide 19","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":20,"sourceSlide":20,"narrativeRole":"preserve-only slide 20","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":21,"sourceSlide":21,"narrativeRole":"preserve-only slide 21","reuseMode":"duplicate-slide","editTargets":[]},
+    {"outputSlide":22,"sourceSlide":22,"narrativeRole":"preserve-only slide 22","reuseMode":"duplicate-slide","editTargets":[]}
+  ],
+  "omittedSourceSlides": []
+}

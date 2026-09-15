@@ -1,0 +1,74 @@
+{
+  "setup": {
+    "pi": true,
+    "interval_s": 0.1,
+    "probe_cap": 0.4,
+    "recovery_gate": "R2"
+  },
+  "dwell_s": 1.6,
+  "schedule": [
+    {
+      "state_index": 0,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 0.0,
+      "end_s": 1.6
+    },
+    {
+      "state_index": 1,
+      "case_id": "CASE_C0_P30",
+      "start_s": 1.6,
+      "end_s": 3.2
+    },
+    {
+      "state_index": 2,
+      "case_id": "CASE_RM_P50",
+      "start_s": 3.2,
+      "end_s": 4.800000000000001
+    },
+    {
+      "state_index": 3,
+      "case_id": "CASE_FS_M5",
+      "start_s": 4.800000000000001,
+      "end_s": 6.4
+    },
+    {
+      "state_index": 4,
+      "case_id": "CASE_LMATCH_P10",
+      "start_s": 6.4,
+      "end_s": 8.0
+    },
+    {
+      "state_index": 5,
+      "case_id": "CASE_QL_20",
+      "start_s": 8.0,
+      "end_s": 9.600000000000001
+    },
+    {
+      "state_index": 6,
+      "case_id": "CASE_COMBINED_HIGH",
+      "start_s": 9.600000000000001,
+      "end_s": 11.200000000000001
+    },
+    {
+      "state_index": 7,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 11.200000000000001,
+      "end_s": 12.8
+    }
+  ],
+  "scan_cap": 0.4,
+  "limits": [
+    130,
+    0.0055,
+    160,
+    0.006
+  ],
+  "control_dt_s": 0.02,
+  "hard_hold_s": 0.06,
+  "recovery_hold_s": 0.1,
+  "soft_hold_s": 0.1,
+  "ramp_step": 0.05,
+  "PI_Kp": 0.6,
+  "PI_Ki_per_s": 0.8,
+  "acceptance_unchanged": "98%,10 CONTROL NORMAL unfrozen samples"
+}

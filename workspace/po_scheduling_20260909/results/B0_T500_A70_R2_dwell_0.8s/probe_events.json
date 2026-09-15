@@ -1,0 +1,50 @@
+[
+  {
+    "start_s": 0.0,
+    "completed": true,
+    "return_end_s": 0.06,
+    "first_normal_s": 0.16,
+    "gate_normal_since_s": null,
+    "gate_stable_count": 0,
+    "gate_episode_started": false,
+    "reason": "ROUTINE_P_AND_O",
+    "reference_amplitude": 0.7,
+    "probe_amplitude": 0.7,
+    "return_amplitude": 0.7,
+    "selected_Hz": 900000.0,
+    "configured_next_due_s": 0.56,
+    "recovery_to_normal_ms": 100.0
+  },
+  {
+    "start_s": 0.6600000000000003,
+    "completed": true,
+    "return_end_s": 0.7200000000000003,
+    "first_normal_s": 0.8200000000000004,
+    "gate_normal_since_s": 0.16,
+    "gate_stable_count": 25,
+    "gate_episode_started": true,
+    "reason": "ROUTINE_P_AND_O",
+    "reference_amplitude": 0.7,
+    "probe_amplitude": 0.7,
+    "return_amplitude": 0.7,
+    "selected_Hz": 900000.0,
+    "configured_next_due_s": 1.2200000000000002,
+    "recovery_to_normal_ms": 100.00000000000009
+  },
+  {
+    "start_s": 1.3200000000000007,
+    "completed": true,
+    "return_end_s": 1.3800000000000008,
+    "first_normal_s": 1.4800000000000009,
+    "gate_normal_since_s": 0.8200000000000004,
+    "gate_stable_count": 25,
+    "gate_episode_started": true,
+    "reason": "ROUTINE_P_AND_O",
+    "reference_amplitude": 0.7,
+    "probe_amplitude": 0.7,
+    "return_amplitude": 0.7,
+    "selected_Hz": 900000.0,
+    "configured_next_due_s": 1.8800000000000008,
+    "recovery_to_normal_ms": 100.00000000000009
+  }
+]

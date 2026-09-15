@@ -1,0 +1,29 @@
+{
+  "commands": [
+    {
+      "frequency_hz": 899000.0,
+      "amplitude": 0.4
+    },
+    {
+      "frequency_hz": 899500.0,
+      "amplitude": 0.4
+    },
+    {
+      "frequency_hz": 900000.0,
+      "amplitude": 0.4
+    },
+    {
+      "frequency_hz": 900500.0,
+      "amplitude": 0.4
+    },
+    {
+      "frequency_hz": 900000.0,
+      "amplitude": 0.4
+    }
+  ],
+  "parent_feedback_sha256": "7eabbc873525bcfc4487a2c8c7619ca2ef9357d416feb4ab2a29a1fcabee20f0",
+  "save_interval_s": [
+    0.007,
+    0.008
+  ]
+}

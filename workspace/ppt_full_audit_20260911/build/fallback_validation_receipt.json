@@ -1,0 +1,163 @@
+{
+  "mode": "Fallback: unchanged bundled validators called with runpy, due Node spawnSync EPERM. Not a successful run of finalizePresentation.",
+  "new_simulation": false,
+  "PowerPoint_GUI_verified": false,
+  "candidate_sha256": "b6b757ea391f94cd620a35821c87219f2918d07d6a9db1ba19f0aa76d0453192",
+  "source_sha256": "91ef28cc9a284a6bc3880639e1bf2b795386d1a100ca6ae44ee58a3fd0c4bbc0",
+  "reports": {
+    "reference_fonts": {
+      "exit_code": 0,
+      "result": {
+        "font_families": [
+          "Calibri"
+        ],
+        "native_rendering_verified": false,
+        "normalized_font_families": [
+          "calibri"
+        ],
+        "reference_type": "pptx"
+      },
+      "stderr": ""
+    },
+    "integrity": {
+      "exit_code": 0,
+      "result": {
+        "chart_count": 0,
+        "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
+        "finding_count": 0,
+        "findings": [],
+        "notes_parts_skipped": 28,
+        "relationship_part_count": 61,
+        "slide_count": 28,
+        "status": "pass"
+      },
+      "stderr": ""
+    },
+    "layout": {
+      "exit_code": 0,
+      "result": {
+        "finding_count": 0,
+        "findings": [],
+        "font_policy": {
+          "checked_text_script_count": 705,
+          "native_font_rendering_verified": false,
+          "observed_font_families": [
+            "Calibri"
+          ],
+          "observed_font_use_counts": {
+            "Calibri": 705
+          },
+          "passed": true,
+          "performed": true
+        },
+        "slide_count": 28,
+        "slide_size_in": [
+          13.3333,
+          7.5
+        ],
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    },
+    "chart_discovery": {
+      "exit_code": 0,
+      "result": {
+        "chart_count": 0,
+        "chart_counts": {},
+        "chart_owner_slide_parts": {},
+        "chart_owner_slides": [],
+        "package_sha256": "b6b757ea391f94cd620a35821c87219f2918d07d6a9db1ba19f0aa76d0453192",
+        "schema_version": "owner-private.actual-native-chart-discovery.v1",
+        "slide_count": 28,
+        "source_attachments_accessed": false,
+        "source_required_chart_owners_inferred": false
+      },
+      "stderr": ""
+    },
+    "chart_titles": {
+      "exit_code": 0,
+      "result": {
+        "checks": [],
+        "finding_count": 0,
+        "findings": [],
+        "native_chart_count": 0,
+        "native_powerpoint_verified": false,
+        "passed": true,
+        "presentation_sha256": "b6b757ea391f94cd620a35821c87219f2918d07d6a9db1ba19f0aa76d0453192",
+        "schema_version": "presentation-native-chart-titles.v1",
+        "slide_count": 28,
+        "source_text_emitted": false,
+        "unresolved_linked_title_count": 0
+      },
+      "stderr": ""
+    },
+    "table_arithmetic": {
+      "exit_code": 0,
+      "result": {
+        "checked_column_count": 0,
+        "checks": [],
+        "claim_boundary": "Displayed-value arithmetic with rounding tolerance; not source-data verification.",
+        "eligible_table_count": 0,
+        "finding_count": 0,
+        "findings": [],
+        "native_table_count": 9,
+        "passed": true,
+        "schema_version": "presentation-native-table-arithmetic.v1",
+        "skipped_tables": [
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 6,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 7,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 15,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 19,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 20,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 21,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 22,
+            "table": 1
+          },
+          {
+            "reason": "no_unambiguous_bottom_total",
+            "slide": 24,
+            "table": 1
+          },
+          {
+            "reason": "no_numeric_amounts",
+            "slide": 26,
+            "table": 1
+          }
+        ],
+        "slide_count": 28,
+        "warning_count": 0,
+        "warnings": []
+      },
+      "stderr": ""
+    }
+  },
+  "final_path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_full_audit_20260911\\output\\CTO组会汇报_全28页图文核查版_2026-09-11.pptx",
+  "final_sha256": "b6b757ea391f94cd620a35821c87219f2918d07d6a9db1ba19f0aa76d0453192"
+}

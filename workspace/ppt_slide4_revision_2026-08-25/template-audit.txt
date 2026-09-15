@@ -1,0 +1,7 @@
+Source deck: CTO超声换能器第一月教授组会汇报_2026-08-24_图像完整修正版.pptx
+Source inventory: 22 slides inspected through artifact-tool; slide 4 selected.
+Selected pattern: technical evidence slide with title rule, large left chart, three right-side metrics, footer, and speaker notes.
+Typography/layout: preserve imported title, metric, footer, and evidence-image styles. Main chart remains unchanged.
+Inherited placeholders: no empty visible placeholders detected on slide 4 through artifact-tool inspection.
+Starter-deck note: the bundled inspection/starter helper could not complete because Windows lacks the `unzip` executable. The equivalent contract is implemented directly with artifact-tool: import source PPTX, retain source slide 4 only, edit inherited objects by stable IDs, render, inspect, and export.
+

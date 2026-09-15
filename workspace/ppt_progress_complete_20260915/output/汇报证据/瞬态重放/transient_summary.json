@@ -1,0 +1,19 @@
+{
+  "scope": "OPEN_LOOP_HISTORICAL_COMMAND_REPLAY",
+  "raw_sha256": "aacc5b49f002f3d5636968686499275533e614d7f9f71cc69ea619aeb1422288",
+  "raw_points": 112000514,
+  "window_seconds": 5e-05,
+  "windowing": "non-overlapping, exact boundary interpolation; peak-to-peak and time-integrated RMS",
+  "maximum_50us_vpp_V": 129.9938507080078,
+  "time_of_max_vpp_original_s": 2.838025,
+  "maximum_50us_irms_mA": 4.92962705724217,
+  "time_of_max_irms_original_s": 3.0480250000000004,
+  "windows_vpp_above_160": 0,
+  "windows_irms_above_6mA": 0,
+  "maximum_absolute_instantaneous_voltage_V": 64.9969253540039,
+  "maximum_absolute_instantaneous_current_mA": 6.958670448511839,
+  "motional_energy_J": 0.015978443194785148,
+  "hard_limit_interpretation": "160 Vpp/6 mA RMS are sinusoidal design limits. 50-us transient windows are an explicit analysis convention, not a hardware detector. Instantaneous current is not compared to an RMS limit.",
+  "no_closed_loop_feedback": true,
+  "no_hardware_safety_claim": true
+}

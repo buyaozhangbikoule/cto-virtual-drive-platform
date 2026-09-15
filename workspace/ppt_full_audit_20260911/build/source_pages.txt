@@ -1,0 +1,780 @@
+PAGE 1 (ppt/slides/slide1.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+矩形 7 [sp] 
+矩形 1 [sp] CTO超声换能器虚拟阻抗建模
+与自适应驱动控制
+矩形 2 [sp] 第一月：BVD建模、阻抗匹配、扰动分析与控制原型
+矩形 3 [sp] 
+矩形 4 [sp] 第一月工作汇报（补充审计版）  |  2026.09
+矩形 5 [sp] 端口电学模型与准稳态控制，不涉及治疗效果结论
+矩形 6 [sp] 1
+
+PAGE 2 (ppt/slides/slide2.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-2 [sp] 固定0.9 MHz未必能在阻抗漂移后维持最佳电学工作点
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 2
+箭头: 右 5 [sp] 
+箭头: 右 6 [sp] 
+箭头: 右 7 [sp] 
+箭头: 右 8 [sp] 
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 假设BVD
+模型
+矩形: 圆角 11 [sp] 
+矩形 12 [sp] L型匹配
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] 参数扰动
+矩形: 圆角 15 [sp] 
+矩形 16 [sp] 阻抗与功率
+矩形: 圆角 17 [sp] 
+矩形 18 [sp] 选频与保护
+矩形 19 [sp] 小信号线性等效电路
+矩形 20 [sp] 参数为假设基线或扫描变量
+矩形 21 [sp] 不计算声压、温升、空化或临床效果
+
+PAGE 3 (ppt/slides/slide3.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-3 [sp] 旧参数无法同时满足100 Vpp、5 mA与100 Ω串联谐振
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 3
+矩形 5 [sp] 
+矩形 6 [sp] 旧参数的数量级冲突
+矩形 7 [sp] V_RMS = 100/(2√2) = 35.36 V
+矩形 8 [sp] 若串联谐振时 Rm = 100 Ω
+矩形 9 [sp] I_RMS ≈ 353.6 mA
+矩形 10 [sp] P ≈ 12.5 W
+矩形 11 [sp] 与约5 mA、0.17 W目标明显冲突
+矩形 12 [sp] 
+矩形 13 [sp] v2.1假设基线
+矩形 14 [sp] C₀ = 6.858 pF
+矩形 15 [sp] Rₘ = 7.353 kΩ
+矩形 16 [sp] Qₘ = 800
+矩形 17 [sp] Lₘ = 1.040 H
+矩形 18 [sp] Cₘ = 0.0301 pF
+矩形 19 [sp] fₛ = 0.9 MHz
+矩形 20 [sp] 数量级自洽的虚拟模型，非实测辨识参数
+
+PAGE 4 (ppt/slides/slide4.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-4 [sp] 10 Hz网格下，Python与LTspice结果数值一致
+矩形 4 [sp] 
+矩形 6 [sp] 
+矩形 8 [sp] Hypothetical BVD model — non-measured parameters
+矩形 10 [sp] 4
+图片 12 [pic] 
+矩形 14 [sp] 0.5–1.5 MHz
+矩形 16 [sp] 100001点｜Δf=10 Hz
+矩形 18 [sp] 1.36×10⁻⁷
+矩形 20 [sp] 最大|Z|相对误差
+矩形 22 [sp] < 10 Hz
+矩形 24 [sp] 峰位差（网格分辨率内）
+矩形 26 [sp] LTspice：.cir→.raw
+Python：解析模型
+同网格逐点比较
+实现一致 ≠ 参数真实
+
+PAGE 5 (ppt/slides/slide5.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-5 [sp] 同一源条件下，L型匹配使0.9 MHz的有功功率达到约32.8倍
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 5
+图片 19 [pic] 
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] Lmatch ≈ 106.726 μH
+Cmatch ≈ 283.599 pF
+设计中心：0.9 MHz
+矩形 9 [sp] 0.9000 MHz
+未匹配 5.186 mW
+有损匹配 170.0 mW
+比值约32.8倍
+矩形 10 [sp] 结果限于假设BVD电学模型
+32.8倍不代表电声效率增益
+source-condition-corrected [sp] 冻结戴维南源：6.217 V RMS，Rs = 50 Ω，全部曲线使用相同源参数
+port-operating-point [sp] 有损匹配工作点
+换能器端约100 Vpp
+电流约5 mA RMS
+
+PAGE 6 (ppt/slides/slide6.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-5 [sp] 0.9 MHz处：理想匹配接近50 Ω，有损匹配保留小量失配
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 6
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] 0.9 MHz固定频点
+同一1 Vrms Thevenin源｜Rs=50 Ω
+矩形 9 [sp] 有损：56.70 Ω ∠−1.08°
+矩形 10 [sp] 理想匹配≈50 Ω纯电阻；考虑ESR后为56.686−j1.067 Ω｜完整0.8–1.0 MHz曲线见备份页
+Chart [graphicFrame] 
+Chart [graphicFrame] 
+表格 26 [graphicFrame] 指标
+匹配前
+理想匹配
+有损匹配
+|Z| / Ω
+7071.1
+50.000
+56.696
+ReZ / Ω
+6800.0
+50.000
+56.686
+ImZ / Ω
+−1939.1
+≈0
+−1.067
+相位 / °
+−15.916
+≈0
+−1.078
+
+PAGE 7 (ppt/slides/slide7.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-6 [sp] fs主导峰位，Rm与匹配损耗主要改变峰高和峰宽
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 7
+表格 17 [graphicFrame] 最高档扰动
+峰位变化
+峰高变化
+峰宽变化
+C₀ +30%
+0.0 kHz
+−0.15%
+−0.16%
+Rₘ +50%
+0.0 kHz
+−6.36%
++26.50%
+fₛ −5%
+−45.2 kHz
+−17.51%
+−29.85%
+Rₛ +20%
+0.0 kHz
+−16.40%
+−7.24%
+Lmatch +10%
++0.3 kHz
+−14.80%
+−23.56%
+电感Q = 20
+0.0 kHz
+−33.50%
+−14.30%
+矩形 6 [sp] 控制含义
+矩形 7 [sp] 1  先捕获峰位漂移
+2  再处理峰高损失
+3  按峰宽选择步长
+矩形: 圆角 8 [sp] 
+矩形 9 [sp] 最大峰位变化
+−45.2 kHz
+
+PAGE 8 (ppt/slides/slide8.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-12 [sp] 机械支路电容 Cm 增大使功率峰下移并降低峰高
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 8
+图片 22 [pic] 
+cm-summary-title [sp] 关键结论
+cm-shift-callout [sp] 峰位总移   −78.6 kHz
+cm-height-callout [sp] 峰高变化   −43.3%
+cm-limit-callout [sp] 未保护扫频   Vpp > 160 V
+cm-boundary-note [sp] Cm-only是原始元件单因素；
+派生 fs、Qm 会同时变化。
+
+PAGE 9 (ppt/slides/slide9.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-7 [sp] Qm越高，功率峰越窄，选频步长和频率抖动要求越严格
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 9
+图片 24 [pic] 
+矩形 6 [sp] FWHM
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] Qm=500
+矩形 9 [sp] 3.451 kHz
+矩形: 圆角 10 [sp] 
+矩形 11 [sp] Qm=800
+矩形 12 [sp] 2.144 kHz
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] Qm=1000
+矩形 15 [sp] 1.713 kHz
+矩形 16 [sp] 高Q不自动代表系统更好；
+它意味着更严格的频率分辨率。
+
+PAGE 10 (ppt/slides/slide10.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-8 [sp] 零相位不保证最大功率，相位闭环不能无条件以0°为目标
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 10
+图片 22 [pic] 
+图片 23 [pic] 
+矩形 7 [sp] 基准场景
+矩形 8 [sp] fs −5%场景
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 最大功率
+0.8550 MHz
+最小相位
+0.9045 MHz
+矩形: 圆角 11 [sp] 
+矩形 12 [sp] 频率差
+约49.5 kHz
+矩形 13 [sp] 相位可作为观测量，但目标应来自受约束最大功率点
+文本框 6 [sp] 基准场景：最大功率点 ≈ 最小反射点
+criteria-shared-frequency-axis [sp] 两图共同扫频范围：0.84–0.96 MHz（线性轴）；步长0.5 kHz
+
+PAGE 11 (ppt/slides/slide11.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-9 [sp] 窗口决定能否捕获漂移峰，步长决定精度与扫描代价
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 11
+矩形: 圆角 6 [sp] 
+矩形 7 [sp] 推荐离线组合
+±50 kHz、1 kHz步长
+101点，152ms代理时间
+矩形 8 [sp] 大扰动：宽窗口粗扫
+矩形 9 [sp] 接近峰值：缩窗并细化至0.1–1 kHz
+图片 5 [pic] 
+
+PAGE 12 (ppt/slides/slide12.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-10 [sp] 历史保护示例：保存样本受限，不代表采样间隙无越限
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 假设BVD模型，非实测    历史固定／扫频／P&O示例 a734eca013；非正式三策略验收表
+矩形 4 [sp] 12
+箭头: 右 5 [sp] 
+箭头: 右 6 [sp] 
+箭头: 右 7 [sp] 
+箭头: 右 8 [sp] 
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 硬停机
+HARD_TRIP
+矩形: 圆角 11 [sp] 
+矩形 12 [sp] 恢复保持
+HOLD
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] 幅度渐升
+RAMP_UP
+矩形: 圆角 15 [sp] 
+矩形 16 [sp] 软限幅
+FOLDBACK
+矩形 17 [sp] 历史主线时序
+后续修正见扩展页
+图片 40 [pic] 
+矩形 19 [sp] 软阈值：130 Vpp / 5.5 mA RMS    硬边界：160 Vpp / 6 mA RMS
+state-diagram-label [sp] 保护过程示意
+
+PAGE 13 (ppt/slides/slide13.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-14 [sp] 已接入电压、电流保护，但完整约束验收尚未闭合
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 假设BVD电学模型    旧主线与E01/E02实验分支分开审计；未声称硬件安全
+矩形 4 [sp] 13
+矩形 5 [sp] 
+矩形 6 [sp] 
+矩形 7 [sp] 已接入约束
+矩形 8 [sp] 0.8–1.0 MHz硬边界
+130/160 Vpp软/硬限
+5.5/6.0 mA RMS软/硬限
+幅度0–1与foldback
+矩形 9 [sp] 历史保存样本审计
+矩形 10 [sp] 1795条记录
+峰值Vpp = 130 V
+峰值电流 = 5.124 mA
+保存样本硬越限 = 0
+矩形 11 [sp] 仍有缺口
+矩形 12 [sp] 功率相对上限待定义
+反射代理未设独立上限
+逐点保护待正式集成
+采样间隙风险未解决
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] 保护后准稳态样本受限 ≠ 延迟、保持区间和实际瞬态绝不越限
+
+PAGE 14 (ppt/slides/slide23.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-18 [sp] 计划策略三：相位闭环已实现，但固定相位不保证功率最优
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 假设BVD模型；历史相位增益试验    固定目标不随扰动场景重新标定；统一验收仍待完成
+矩形 4 [sp] 14
+图片 18 [pic] 
+矩形 6 [sp] 测点：匹配网络输入端
+φin = arg(Zin)
+矩形 7 [sp] 基准功率峰相位
+目标 −1.0782°
+矩形 8 [sp] 历史增益5 / 50 / 100 Hz/°
+方向由局部dφ/df决定
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 50、100 Hz/°各有1段
+相位误差小但功率较低
+P_Rm < 0.95 P*
+phase-plot-scope [sp] 左图：K=5 Hz/°历史时序；右侧错误锁定计数来自全增益表。
+
+PAGE 15 (ppt/slides/slide24.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-12 [sp] 正文三策略恢复计划书组合，统一验收仍是未完成项
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 计划书正式组合：固定频率／周期扫频／相位闭环    本次未运行新的统一闭环验收
+矩形 4 [sp] 15
+表格 17 [graphicFrame] 计划书策略
+已有控制实现
+已有时序证据
+统一正式指标
+本次状态
+固定频率
+0.9 MHz
+共同保护
+代表扰动段
+待同口径重评
+不作新排名
+周期扫频
+离散局部寻峰
+共同保护
+代表扰动段
+待同口径重评
+不作新排名
+相位误差闭环
+输入相位跟踪
+增益试验
+历史补充表
+窗口／判据待统一
+不作新排名
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] 必须统一：源与模型、扰动日程、状态资格、功率参考、连续验收及扫描时间成本。
+相位闭环表现不佳也是结果；扫描辅助P&O作为第四种扩展方法，不替代计划策略。
+formal-status-subtitle [sp] 已有相位表明确标注 NOT_FORMAL_RANKING；本页仅报告实现进展，正式排名待补齐。
+coverage-note [sp] 覆盖缺口：34个静态登记场景，旧主控制序列仅含其中7个不同场景。
+
+PAGE 16 (ppt/slides/slide16.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-21 [sp] 电—声接口已标准化：COMSOL未运行，但输入合同已就绪
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 16
+箭头: 右 5 [sp] 
+箭头: 右 6 [sp] 
+箭头: 右 7 [sp] 
+箭头: 右 8 [sp] 
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 电学场景
+参数CSV
+矩形: 圆角 11 [sp] 
+矩形 12 [sp] 安全工作点
+f, Vport∠θ
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] 复端口激励
+Vrms exp(+jωt)
+矩形: 圆角 15 [sp] 
+矩形 16 [sp] 声学查找表
+ηacoustic(f)
+矩形: 圆角 17 [sp] 
+矩形 18 [sp] 相对声压代理
+target / wall
+矩形 19 [sp] EA_IF_V1.0｜基准+低/中/高组合4条记录｜接口审计 PASS
+矩形 20 [sp] 声学字段：NOT_AVAILABLE（未运行COMSOL）
+矩形 21 [sp] 接口一致不等于声场结果；复端口电压作为FEM激励
+
+PAGE 17 (ppt/slides/slide17.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-13 [sp] 文献支持负载影响电学状态，但尚不能建立病变到BVD的一一映射
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Hypothetical BVD model — non-measured parameters
+矩形 4 [sp] 17
+箭头: 右 5 [sp] 
+箭头: 右 6 [sp] 
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] 文献直接事实
+纤维化、钙化、
+结构异质性
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 工程建模假设
+fs、Rm、匹配状态
+可能变化
+矩形: 圆角 11 [sp] 
+矩形 12 [sp] 待验证
+病变类型到BVD参数
+的定量映射
+矩形 13 [sp] 
+矩形 14 [sp] 当前能力边界
+矩形 15 [sp] 已完成
+端口电学模型
+准稳态控制原型
+未完成
+结构模态与声场
+热效应与空化
+临床效果
+矩形 16 [sp] 文献层、工程假设层、待验证层必须分开
+矩形 17 [sp] 当前模型只讨论特定BVD与扰动范围内的电学稳定性
+
+PAGE 18 (ppt/slides/slide18.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-14 [sp] 电学建模与控制原型已有证据，计划书验收尚未全部完成
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 假设BVD电学模型    不能把静态扫描齐全、实验分支通过或接口PASS等同于全部验收完成
+矩形 4 [sp] 18
+矩形 5 [sp] 
+矩形 6 [sp] 
+矩形 7 [sp] 已有证据
+矩形 8 [sp] v2.1匹配与双线核对
+34个场景静态登记
+低／中／高组合静态验证
+选频、保护与控制原型
+电—声接口EA_IF_V1.0
+矩形 9 [sp] 本月仍需补齐
+矩形 10 [sp] 固定／扫频／相位统一验收
+完整单因素与组合闭环
+逐点保护正式集成
+功率与反射验收合同
+采样间隙与全程电能评估
+矩形 11 [sp] 后续外部验证
+矩形 12 [sp] 实测阻抗与BVD辨识
+电压／电流／功率标定
+结构声场与网格收敛
+水听器声场验证
+不作治疗或安全外推
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] 当前结论仅适用于特定假设BVD、v2.1匹配网络和设定扰动范围
+
+PAGE 19 (ppt/slides/slide19.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-15 [sp] 备份：用户工作要求与假设模型／控制参数分别登记
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 19
+表格 13 [graphicFrame] 参数
+数值
+单位
+来源类别
+目标频段
+0.8–1.0
+MHz
+用户约束
+初始频率
+0.9
+MHz
+用户约束
+端口电压
+100 / 160上限
+Vpp
+用户约束
+电流目标／硬限
+约5 / 6
+mA RMS
+用户量级；RMS与6为假设
+C₀
+6.858
+pF
+假设基线
+Rₘ
+7.353
+kΩ
+假设基线
+Qₘ
+800
+—
+假设基线
+Lₘ / Cₘ
+1.040 / 0.0301
+H / pF
+按假设fs、Qm、Rm反推
+戴维南源Rs
+50
+Ω
+假设源阻抗，非完整功放
+threshold-classification [sp] 130 Vpp / 5.5 mA为假设软阈值；160 Vpp是用户给定边界，不是实测器件额定值。
+
+PAGE 20 (ppt/slides/slide20.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-16 [sp] 备份：Rm派生Qm已修正；静态覆盖不等于闭环覆盖
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 本次只修正派生字段与描述，非新LTspice仿真    完整同口径闭环覆盖仍待补齐
+矩形 4 [sp] 20
+矩形 5 [sp] 单因素最高档
+表格 19 [graphicFrame] 因子
+最高档
+C₀
++30%
+Rₘ
++50%
+fₛ
+−5%
+Rₛ
++20%
+Lmatch
++10%
+电感Q
+20
+矩形 7 [sp] 历史代表性控制序列
+矩形 8 [sp] Baseline → C₀+30% → Rₘ+50% → fₛ−5%
+→ Lmatch+10% → QL=20 → Combined High → Baseline
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 0.9 MHz换能器端口基线（匹配网络后端，非Zin）
+|Zport| ≈ 7.071 kΩ   相位 ≈ −15.916°
+P_Rm ≈ 0.170 W   I_RMS ≈ 5.000 mA
+Vport ≈ 100 Vpp
+rm-qm-correction [sp] Rm-only：+15% / +30% / +50% → Qm = 695.7 / 615.4 / 533.3
+Lm、Cm未改；34场景×2001频点回归，电学响应数组修正前后完全一致。
+
+PAGE 21 (ppt/slides/slide21.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-20 [sp] 备份：低中高组合均通过LTspice/Python交叉验证
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 21
+表格 14 [graphicFrame] 组合场景
+真实LTspice/Python交叉验证
+低
+2001点｜最大|Zin|相对误差 0.01461%｜PASS
+中
+2001点｜最大|Zin|相对误差 0.00751%｜PASS
+高
+2001点｜最大|Zin|相对误差 0.00295%｜PASS
+运行证据
+.cir / .raw / .log / SHA-256
+验收线
+误差 < 5%
+结论边界
+实现一致，不等于真实器件参数正确
+矩形 6 [sp] 三档误差均远低于5%验收线；这排除了主要实现差异，但不能验证假设参数是真实器件参数。
+
+PAGE 22 (ppt/slides/slide22.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-17 [sp] 备份：三种选频准则优化的是不同目标函数
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 22
+表格 15 [graphicFrame] 准则
+定义
+优点
+主要风险
+最大功率
+max P_Rm
+直接对齐控制目标
+需功率估计
+最小相位
+min |arg Zin|
+观测简单
+可能锁到低功率零相位点
+最小反射
+min Γ代理
+适合匹配评价
+不一定等于运动支路功率最大
+矩形: 圆角 6 [sp] 
+矩形 7 [sp] 典型反例：fs−5%时，最大功率点0.8550 MHz，最小绝对相位点0.9045 MHz，差49.5 kHz。
+
+PAGE 23 (ppt/slides/slide14.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-11 [sp] 时序修正已使部分版本通过谐振漂移段的连续稳态验收，
+但全过程能量损失及采样间隙越限尚未解决
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 扩展P&O试验，非实测    第三轮 cdde9dab61；第12/24页为旧批次，不能拼成同一运行
+矩形 4 [sp] 23
+矩形 6 [sp] 后续实验：固定无PI候选
+矩形 7 [sp] P&O等待500 ms，试探幅度≤0.9
+恢复门槛R2，重扫幅度仍≤0.4
+本段：fs−5%，2.4–3.2 s
+矩形 8 [sp] 本段连续稳态：通过
+矩形 9 [sp] 首次合格：2.962 s
+验收确认：3.142 s（延迟742 ms）
+连续合格12个，门槛10个
+尾段频率：0.8548 MHz
+矩形 10 [sp] 能量损失与硬限：未解决
+矩形 11 [sp] 本段能量捕获率：45.4%
+间隙重放峰值：188.2 Vpp
+高于160 Vpp累计约1.0 ms
+矩形 12 [sp] 验收冻结：0.8 s/段，功率≥98%
+NORMAL且频率未冻结，连续10样本
+保留异常检测及原保护保持时间
+硬边界：160 Vpp / 6 mA RMS
+图片 5 [pic] 
+
+PAGE 24 (ppt/slides/slide15.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-12 [sp] 扩展比较：尾段误差为零，仍存在全过程电能损失
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] 扩展方法比较，非实测    旧批次 a734eca013；与第23页后续无PI候选分开评价
+矩形 4 [sp] 24
+表格 17 [graphicFrame] 策略
+尾段误差*
+累积电能
+(J)
+相对最优
+电能
+未通过段
+(共7段)
+固定频率
+＋共同保护
+30.14%
+0.588
+75.8%
+3
+周期扫频
+0.00%
+0.474
+61.1%
+2
+扫描辅助P&O
+0.00%
+0.525
+67.7%
+3
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] 0%仅描述筛选后的尾段样本，不代表全程无损失或连续验收通过。
+当前短扰动段下，扫描、试探和保护恢复的时间成本不可忽略。
+本结果不能证明周期扫频总体最优，也不能外推固定频率普遍更好。
+comparison-window [sp] 同一旧批次，0.8–6.4 s，共7个0.8 s扰动段，三种策略均接入共同保护
+图片 29 [pic] 
+energy-title [sp] 全过程电能捕获率
+energy-definition [sp] 采样保持积分：E_Rm = Σ P_Rm,k · Δt_k    共同安全最优电能 = 0.77568 J
+energy-method [sp] 已有离散数据复算，包含扫描、试探和保护记录，非新仿真、非声学效率。
+
+PAGE 25 (ppt/slides/slide25.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-19 [sp] 备份：已有真实历史GUI证据，须标明日期与覆盖场景
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] GUI副本cir/raw/log与当时记录哈希一致；本次没有重新运行或截取LTspice界面
+矩形 4 [sp] 25
+图片 18 [pic] 
+图片 19 [pic] 
+矩形: 圆角 7 [sp] 
+矩形 8 [sp] 证据层级
+GUI截图：运行痕迹
+RAW文件：数值输出
+解析误差：交叉验证
+SHA-256：文件追溯
+矩形 9 [sp] 历史基准：2026-08-15｜LTspice 26.0.2.1；非全部当前场景截图
+
+PAGE 26 (ppt/slides/slide26.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-20 [sp] 备份：正式比较需冻结以下口径，尚未统一重跑
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 26
+表格 14 [graphicFrame] 指标
+拟统一的正式口径（不是新仿真结果）
+安全最优P*
+同场景、同幅度权限与约束；仅作离线评价参考
+稳态窗口
+98%以上、NORMAL且频率未冻结、连续10控制样本
+恢复与缺失
+报告序列起点及第10样本确认；未通过单列，稳态记NA
+全程电能
+相同时间区间积分，计入扫描、试探与保护降幅
+安全与饱和
+分开报告保存样本、保持区间；电压／电流／频率边界
+功率／反射合同
+明确上限对象、参考分母、阈值及无可行点处置
+矩形 6 [sp] 不降低98%门槛、不延长原0.8 s扰动段、不取消异常检测、不提高160 Vpp边界。
+独立PI不是必需项；无积分控制时，“积分饱和”标为不适用。
+
+PAGE 27 (ppt/slides/slide27.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-21 [sp] 备份：修复引用并保留版本证据，不覆盖历史运行
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 27
+箭头: 右 5 [sp] 
+箭头: 右 6 [sp] 
+箭头: 右 7 [sp] 
+箭头: 右 8 [sp] 
+矩形: 圆角 9 [sp] 
+矩形 10 [sp] 参数CSV
+场景注册表
+矩形: 圆角 11 [sp] 
+矩形 12 [sp] Python脚本
+LTspice .cir
+矩形: 圆角 13 [sp] 
+矩形 14 [sp] .raw / .log
+控制时序CSV
+矩形: 圆角 15 [sp] 
+矩形 16 [sp] 汇总CSV
+指标表
+矩形: 圆角 17 [sp] 
+矩形 18 [sp] PNG/PDF/SVG
+PPT图表
+矩形 19 [sp] 10处失效引用已定位支撑材料；涉及9页
+矩形 20 [sp] 新修订清单与历史 evidence_manifest.csv 分开
+矩形 21 [sp] 旧清单154项：151一致，0丢失，3项修改；旧哈希不代表新文件
+
+PAGE 28 (ppt/slides/slide28.xml)
+ [nvGrpSpPr] 
+ [grpSpPr] 
+title-22 [sp] 备份：结构—声场结果尚未完成，当前只能给出输入与验收清单
+矩形 1 [sp] 
+矩形 2 [sp] 
+矩形 3 [sp] Electrical model only — structural/acoustic validation pending
+矩形 4 [sp] 28
+矩形 5 [sp] 建模输入
+矩形 6 [sp] • 几何尺寸与完整模型树
+• 压电材料矩阵与极化方向
+• 电极、机械、耦合面和PML
+• 粗/中/细三档网格
+• 模态频率与关键模态形状
+矩形 7 [sp] 
+矩形 8 [sp] 必须保留的结果证据
+矩形 9 [sp] • 端口阻抗/导纳曲线
+• 位移幅值与相位
+• 声压云图与轴向曲线
+• 网格收敛表
+• Solver Log正常结束页面
+矩形: 圆角 10 [sp] 
+矩形 11 [sp] 当前没有真实ANSYS/COMSOL截图，不得生成伪造云图填充汇报

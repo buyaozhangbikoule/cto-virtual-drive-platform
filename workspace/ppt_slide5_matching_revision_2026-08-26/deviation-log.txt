@@ -1,0 +1,9 @@
+Output slide 1 (source slide 5):
+- Replaced the original composite figures with two enlarged native scatter charts over 0.88–0.92 MHz.
+- The |Zin| chart intentionally shows only ideal and lossy matched networks because the unmatched 7 kΩ–97 kΩ scale would make both matched curves unreadable; the unmatched value remains in the right-side numeric table.
+- The phase chart retains unmatched, ideal, and lossy scenarios.
+- Added a vertical 0.9 MHz design-center series to both charts.
+- Added a native 0.9 MHz table using exact values from stage2_匹配前后特征汇总.csv.
+- Reworded the title and conclusion to avoid claiming that the lossy network is exactly 50 Ω or exactly zero phase.
+- Preserved source title/footer/page-number styling and notes provenance.
+

@@ -1,0 +1,6 @@
+Slide 11 only:
+- Replaced the original/native PowerPoint chart composition with one high-resolution Python-generated figure.
+- Preserved the inherited title, separator lines, footer, page number, right-hand interpretation column, master, layout, theme, and all other slides.
+- Shortened panel titles inside the Python figure to preserve projector readability.
+- Restricted the time window to [2.200, 3.200) s because 3.200 s begins the next disturbance state.
+- CONTROL samples are plotted without interpolating across scan/probe gaps.

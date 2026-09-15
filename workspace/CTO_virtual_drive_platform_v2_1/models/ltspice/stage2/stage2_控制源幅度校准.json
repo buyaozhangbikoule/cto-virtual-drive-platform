@@ -1,0 +1,17 @@
+{
+  "source_class": "DERIVED_VALUE; based on active matched baseline and AC RMS-equivalent convention",
+  "source_Vrms_for_a1": 6.217360894531728,
+  "source_Vpp_for_a1": 17.585352198429778,
+  "transducer_Vpp": 100.0,
+  "transducer_Irms_A": 0.004999999371135925,
+  "P_Rm_W": 0.16999995376000945,
+  "P_port_W": 0.16999997688000312,
+  "Q_port_var": -0.04847679857414197,
+  "S_port_VA": 0.1767766730629342,
+  "P_source_W": 0.36229446915646774,
+  "P_Rs_W": 0.16979491711465097,
+  "P_L_ESR_W": 0.020494935465947547,
+  "P_C_ESR_W": 0.0020046396958661675,
+  "eta_elec": 0.4692314352902524,
+  "rule": "freeze this source amplitude for stage3-5; protection may reduce but strategies may not increase it"
+}

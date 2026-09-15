@@ -1,0 +1,32 @@
+【建议时长】约65秒
+
+【本页结论】在fs减5%的扰动段，模型执行硬触发、保持及幅度恢复。扫描也占用时间并暂时降低驱动幅度。
+
+【逐字讲稿】本页和后两页使用同一份保存的控制时序。图中2.400秒开始进入fs减5%的场景，三种策略经历相同的绝对时间扰动。三幅曲线分别是换能器端电压、电流和幅度命令。模型判断当前驱动在新负载下超过允许范围后，进入HARD_TRIP并将幅度置零，然后进入RECOVERY_HOLD，再逐步恢复幅度。在硬保持、恢复保持和幅度渐升阶段，控制器冻结调频。固定频率策略恢复后仍停在0.9 MHz，并受到软限幅约束。两种自适应策略还要执行低幅扫描，随后在新峰位继续恢复幅度。因此电压或电流下降可能来自保护，也可能来自扫描，不能只凭曲线形状判断保护状态。
+
+【看图顺序】先看2.400秒的扰动线，再对齐电压、电流及幅度的置零段。随后看保持、渐升和低幅扫描。左侧仅示意硬触发路径，恢复过程中还可能进入SOFT_FOLDBACK分支。
+
+【记录与时序】控制采样步长20 ms，扫描点驻留1.5 ms。控制时序采用离散准稳态模型，图上折线按记录duration_s保持值绘制，不是瞬态振荡或真实LTspice瞬态波形。固定、周期扫频、P&O在本段首次硬触发记录分别约为2.4000、2.4175、2.4195秒，差异与各策略当时的采样/扫描时序有关。
+
+【保护边界】电压160 Vpp为用户给定仿真边界，电流6 mA RMS为假设硬限。130 Vpp及5.5 mA RMS为假设软触发阈值。本图显示保护处理后的保存样本。未观察到保存样本的硬越限，不证明实物系统在传感、执行延迟和电气瞬态下绝不越限。
+
+【实现限制】允许幅度由当前线性模型计算。低幅扫描点尚未逐点复用与普通控制样本完全相同的保护状态更新流程，现有结果不能作为任意扩展场景的硬件安全保证。
+
+【教授可能追问】为什么幅度下降后还有扫描？
+
+【建议回答】保护优先恢复到允许范围，随后才允许低幅重捕获。扫描使用a=0.4，所以在图中也会出现幅度降低。不能将这些区间全部归因于foldback。
+
+【模糊推测】将本页结果推广到真实功放或换能器安全性属于未验证推断，本页不作该结论。
+
+[Sources]
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_per_segment_metrics.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json
+
+控制时序快照 SHA-256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0
+三页使用同一份控制时序及其复算一致的汇总结果。离线功率曲线的安全最优值与该时序的参考值逐场景核对一致。

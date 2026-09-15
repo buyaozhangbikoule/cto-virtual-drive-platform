@@ -1,0 +1,28 @@
+{
+  "command": [
+    "D:\\LTspice.exe",
+    "-b",
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_CHECK_1NS.cir"
+  ],
+  "started_at": "2026-09-11T20:03:22.817517+08:00",
+  "finished_at": "2026-09-11T20:03:37.128086+08:00",
+  "elapsed_seconds": 14.310956699991948,
+  "return_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "cir": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_CHECK_1NS.cir",
+    "bytes": 902,
+    "sha256": "cb36cf9af7fbd38558094f13cf04811b7c0f6768afcbd87f55971ab9bb6db2ae"
+  },
+  "log": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_CHECK_1NS.log",
+    "bytes": 802,
+    "sha256": "d932d2b5e3e2455ad7d147ed062ac9b53bb1114eb5dd57ffbfae01696ff0c4f9"
+  },
+  "raw": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_CHECK_1NS.raw",
+    "bytes": 84001784,
+    "sha256": "0079522bc6191d77f2714b839342859c08c4652331218e5c0d5209e501d66e46"
+  }
+}

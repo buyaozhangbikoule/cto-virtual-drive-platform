@@ -1,0 +1,76 @@
+{
+  "rows": [
+    {
+      "strategy": "FIXED_0P9",
+      "name": "固定频率＋共同保护",
+      "energy_J": 0.5877697523202916,
+      "reference_J": 0.7756773429633621,
+      "capture_pct": 75.7750316742272,
+      "steady_error_pct": 30.14473442397421,
+      "unsettled_segments": 3,
+      "recovery_ms": 345.7142857142817,
+      "sampled_hard_violations": 0,
+      "duration_s": 5.599999999999952
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "name": "周期扫频",
+      "energy_J": 0.4740801111675976,
+      "reference_J": 0.7756773429633621,
+      "capture_pct": 61.11821048639164,
+      "steady_error_pct": 0.0,
+      "unsettled_segments": 2,
+      "recovery_ms": 409.0000000000009,
+      "sampled_hard_violations": 0,
+      "duration_s": 5.6000000000000005
+    },
+    {
+      "strategy": "P_AND_O",
+      "name": "扫描辅助P&O",
+      "energy_J": 0.5253195565559375,
+      "reference_J": 0.7756773429633621,
+      "capture_pct": 67.72397844560354,
+      "steady_error_pct": 0.0,
+      "unsettled_segments": 3,
+      "recovery_ms": 458.85714285714323,
+      "sampled_hard_violations": 0,
+      "duration_s": 5.6
+    }
+  ],
+  "reference_J": 0.7756773429633621,
+  "source_dir": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data",
+  "sources": [
+    {
+      "file": "stage4_control_timeline.csv",
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "file": "stage5_integrated_strategy_table.csv",
+      "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+    },
+    {
+      "file": "stage5_per_segment_metrics.csv",
+      "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+    }
+  ],
+  "interval_s": [
+    0.8,
+    6.4
+  ],
+  "controller_rerun": false,
+  "LTspice_rerun": false,
+  "method": "Each recorded p_rm_W is held for its recorded duration_s, clipped to [0.8,6.4). All actions retained. Shared denominator: sum of seven scheduled safe-power references times 0.8 s.",
+  "limitation": "Does not recompute physical responses during unrecorded intersample disturbance changes. Not acoustic efficiency or hard-safety proof.",
+  "figure_contract": {
+    "conclusion": "Zero selected-tail error coexists with substantial full-interval energy deficit.",
+    "archetype": "quantitative grid",
+    "backend": "Python",
+    "statistics": "Deterministic single saved run per strategy. No inferential statistics.",
+    "formats": [
+      "PNG",
+      "SVG",
+      "PDF"
+    ],
+    "image_integrity": "No crop, no data shifts, linear 0–100% axis."
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "command": [
+    "D:\\LTspice.exe",
+    "-b",
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\DIST_PEAK_CHECK_1NS.cir"
+  ],
+  "started_at": "2026-09-11T20:03:45.432037+08:00",
+  "finished_at": "2026-09-11T20:03:59.909525+08:00",
+  "elapsed_seconds": 14.477727200006484,
+  "return_code": 0,
+  "stdout": "",
+  "stderr": "",
+  "cir": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\DIST_PEAK_CHECK_1NS.cir",
+    "bytes": 906,
+    "sha256": "f938c75a673ef05c74934e601257b5a9f2d2cf8897b1794531179888c2f1dad8"
+  },
+  "log": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\DIST_PEAK_CHECK_1NS.log",
+    "bytes": 805,
+    "sha256": "77c33753326fe4ba79cae15f0fd7a967e884da735085b100b27537c1e24e1309"
+  },
+  "raw": {
+    "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\DIST_PEAK_CHECK_1NS.raw",
+    "bytes": 84001786,
+    "sha256": "b54e807a8e946f03ca430c8a8f91f3430a116ceaf3f9bbc03e0d6cf88cd72d74"
+  }
+}

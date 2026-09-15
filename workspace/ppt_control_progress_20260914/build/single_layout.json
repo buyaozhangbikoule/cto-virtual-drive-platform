@@ -1,0 +1,27 @@
+{
+  "exit_code": 0,
+  "result": {
+    "finding_count": 0,
+    "findings": [],
+    "font_policy": {
+      "checked_text_script_count": 30,
+      "native_font_rendering_verified": false,
+      "observed_font_families": [
+        "Calibri"
+      ],
+      "observed_font_use_counts": {
+        "Calibri": 30
+      },
+      "passed": true,
+      "performed": true
+    },
+    "slide_count": 1,
+    "slide_size_in": [
+      13.3333,
+      7.5
+    ],
+    "warning_count": 0,
+    "warnings": []
+  },
+  "stderr": ""
+}

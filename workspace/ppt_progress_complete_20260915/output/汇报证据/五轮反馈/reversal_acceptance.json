@@ -1,0 +1,16 @@
+{
+  "real_ltspice": true,
+  "iterations": 5,
+  "causal_chain_passed": true,
+  "executed_reversals": [
+    {
+      "decision_iteration": 4,
+      "executed_iteration": 5,
+      "previous_power_W": 0.027187386991416467,
+      "current_power_W": 0.022175198976587592,
+      "measured_power_declined": true
+    }
+  ],
+  "feedback_reversal_passed": true,
+  "scope": "固定负载低幅五轮接口检查；不是全局寻优、动态扰动、连续稳态或硬保护验收"
+}

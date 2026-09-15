@@ -1,0 +1,32 @@
+【建议时长】约80秒
+
+【本页结论】两种自适应策略均到达0.8548 MHz附近的新峰位，但在2.400至3.200秒窗口内均未满足连续稳态验收。
+
+【逐字讲稿】先看上图离线安全功率曲线。基准峰位为0.9000 MHz、170.0 mW，fs减5%后的峰位为0.8548 MHz、140.2 mW，峰位下降45.2 kHz。中图显示当前保存时序的功率捕获率，包含保护、扫描和恢复阶段的数据。捕获率的分母是当前场景自身的安全最大功率，所以100%对应这个扰动场景约140.2 mW的峰值，并不表示恢复到了基准170.0 mW。下图只显示CONTROL样本的频率，在扫描区间断线。周期扫频和扫描辅助P&O都到达了新峰位，但这与通过连续稳态验收不同。判据要求连续10个合格控制样本。在本段结束前，周期扫频只有6个，P&O只有9个，因此两者均未通过。
+
+【严格判据】CONTROL样本必须处于NORMAL，frequency_frozen=0，安全功率捕获率不低于98%。相邻控制样本时间间隔还需不超过30 ms。RAMP_UP中达到98%的样本不计为合格，扫描或试探造成的间隔也可能打断连续计数。
+
+【本段数据】周期扫频首次在新峰位形成CONTROL记录的时刻为2.9770秒，此时仍在RAMP_UP。首个合格NORMAL样本为3.0970秒，本段最长连续合格序列为6个。P&O对应时刻为2.9190秒与3.0390秒，最长连续序列为9个。两者尾段捕获率均为100%，settled均为0，recovery_time_ms均为空。首次到达峰位、首次满足功率阈值和完成连续验收是三个不同事件。
+
+【原因边界】保护保持、恢复渐升和扫描已经占用了当前0.8秒扰动窗口，剩余时间不足以获得10个连续合格样本。不能仅将本段P&O未通过验收归因于周期性试探。
+
+【教授可能追问】P&O只差一个样本，能否算已经稳定？
+
+【建议回答】按事先设定的10样本判据，9个仍未通过。这是当前窗口内证据不足，不等同于证明系统发散或永远不能收敛。若要考察更长扰动驻留时间，应作为单独新实验，保留当前未通过结果。
+
+【模糊推测】延长窗口后可能通过，但当前记录未验证该推断。不能补画第10个样本。
+
+[Sources]
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_per_segment_metrics.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv
+
+C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json
+
+控制时序快照 SHA-256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0
+三页使用同一份控制时序及其复算一致的汇总结果。离线功率曲线的安全最优值与该时序的参考值逐场景核对一致。
+
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\active_stage3_5\stage3_disturbance\stage3_frequency_response_all_cases.csv

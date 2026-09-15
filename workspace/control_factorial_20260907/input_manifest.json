@@ -1,0 +1,82 @@
+[
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\run_experiments.py",
+    "frozen": "frozen/round1.py",
+    "sha256": "90609c1627808e902708c6552330a86b65ba1cd3569c37e3b5423400aad23167"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\read_raw_reference.py",
+    "frozen": "frozen/snapshot/read_raw_reference.py",
+    "sha256": "633206b6db661791627620c56b22b30f42e945b5339dfa75382f9d9843ca6f34"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\active_stage3_5\\model_v2_1.py",
+    "frozen": "frozen/snapshot/active_stage3_5/model_v2_1.py",
+    "sha256": "2561ec5dd2bd8d321cb2bf02b46b0a55c7275b9dbbbc3b85cec9498e9dca7aae"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\active_stage3_5\\run_stage4_5_control.py",
+    "frozen": "frozen/snapshot/active_stage3_5/run_stage4_5_control.py",
+    "sha256": "240b203d43ead0988695845df9eaef493a4daf1ba95fb747eaa6a3c4612bf6f0"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\history\\stage4_5_audit.json",
+    "frozen": "frozen/snapshot/history/stage4_5_audit.json",
+    "sha256": "df4a814bae6e63a39fa9a010a6f61b6918cf0e842c0658bec6b94ee65ad575ca"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\history\\stage4_control_timeline.csv",
+    "frozen": "frozen/snapshot/history/stage4_control_timeline.csv",
+    "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\history\\stage5_integrated_strategy_table.csv",
+    "frozen": "frozen/snapshot/history/stage5_integrated_strategy_table.csv",
+    "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\history\\stage5_per_segment_metrics.csv",
+    "frozen": "frozen/snapshot/history/stage5_per_segment_metrics.csv",
+    "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\stage2_matching\\stage2_匹配设计参数.json",
+    "frozen": "frozen/snapshot/stage2_matching/stage2_匹配设计参数.json",
+    "sha256": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\snapshot\\stage2_matching\\stage2_控制源幅度校准.json",
+    "frozen": "frozen/snapshot/stage2_matching/stage2_控制源幅度校准.json",
+    "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\results_r1\\E02_dwell_0.8s\\timeline.csv",
+    "frozen": "frozen/reference/E02_dwell_0.8s/timeline.csv",
+    "sha256": "fef6696ffa10441de310266673daa2571e6b5528c62524aca33fae80e8379e70"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\results_r1\\E02_dwell_0.8s\\config.json",
+    "frozen": "frozen/reference/E02_dwell_0.8s/config.json",
+    "sha256": "7b8fe8cef2c2324c0fff667ff9addaf217ef92826d3d9977e1254b4b775f9cfa"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\results_r1\\E02_dwell_0.8s\\acceptance_and_energy.csv",
+    "frozen": "frozen/reference/E02_dwell_0.8s/acceptance_and_energy.csv",
+    "sha256": "69cd8ff984cd158ffee16bf72004f9401c233ad78a9f119b48850dc7fd7a7a95"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\results_r1\\E02_dwell_1.6s\\timeline.csv",
+    "frozen": "frozen/reference/E02_dwell_1.6s/timeline.csv",
+    "sha256": "0132e6b39ebb461ce228d9a93cc8017038c44c8be6ddd12ee965191a7b8e2db1"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\results_r1\\E02_dwell_1.6s\\config.json",
+    "frozen": "frozen/reference/E02_dwell_1.6s/config.json",
+    "sha256": "5628c1ee47ba2a04ff594fca8b56bbb541912223989befb1aa9bd8a474981c65"
+  },
+  {
+    "original": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_20260907\\results_r1\\E02_dwell_1.6s\\acceptance_and_energy.csv",
+    "frozen": "frozen/reference/E02_dwell_1.6s/acceptance_and_energy.csv",
+    "sha256": "e1b0f099d659f153e8662b7c6e53aecca1c871fe85baebd74211e38383249064"
+  }
+]

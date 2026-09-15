@@ -1,0 +1,248 @@
+{
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "model_status": "ACTIVE_INCOMPLETE",
+  "generated_at_local": "2026-08-14T18:18:12.387325+08:00",
+  "scope": "small-signal linear BVD electrical simulation and quasi-steady control preparation; no measured, acoustic, COMSOL or clinical data",
+  "completed_stages": [
+    "stage1_bare_BVD",
+    "stage2_matching"
+  ],
+  "software": {
+    "python": "3.12.10",
+    "numpy": "2.2.4",
+    "matplotlib": "3.10.9",
+    "ltspice": "LTspice 26.0.2 for Windows",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "commands": [
+    "python freeze_parameters_v2_1.py",
+    "D:\\LTspice.exe -b V2_1_BARE_BVD_Q800.cir",
+    "python analyze_v2_1_stage1.py",
+    "python stage2_matching/design_stage2.py",
+    "D:\\LTspice.exe -b stage2_matching/V2_1_MATCH_BEFORE.cir",
+    "D:\\LTspice.exe -b stage2_matching/V2_1_MATCH_IDEAL.cir",
+    "D:\\LTspice.exe -b stage2_matching/V2_1_MATCH_ACTIVE_LOSSY.cir",
+    "python stage2_matching/analyze_stage2_ltspice.py",
+    "python audit_current_project_v2_1.py"
+  ],
+  "units": {
+    "frequency": "Hz internally; kHz/MHz for reporting",
+    "voltage": "phasor RMS in AC RAW; report Vrms and Vpp=2*sqrt(2)*Vrms",
+    "current": "phasor RMS magnitude; report Arms and Apeak=sqrt(2)*Arms",
+    "phase": "arg(Vport/Iport), degrees; positive inductive, negative capacitive",
+    "complex_power": "S=V_rms*conj(I_rms); P=Re(S), Q=Im(S)"
+  },
+  "files": [
+    {
+      "path": "03_Codex任务说明_修订版_v2_1.md",
+      "bytes": 14096,
+      "sha256": "5b43f33e51584d77a26d0463f4271b7398bdaad6b144d17ce67bb2ab90f3c74c"
+    },
+    {
+      "path": "freeze_parameters_v2_1.py",
+      "bytes": 2190,
+      "sha256": "60c5cb7ab8481ea879727aafb5f7439d58f53376b1b79aed7649467a8e9bf448"
+    },
+    {
+      "path": "v2_1_活动参数清单.json",
+      "bytes": 1448,
+      "sha256": "675c8738a59faae670f2577e0d1f4c401b23ee8874413481870d30701e3275fb"
+    },
+    {
+      "path": "v2_1_活动基线参数.csv",
+      "bytes": 409,
+      "sha256": "31a34ce9f267956bd1030fccc7eb2324efbd58b6776342111f5fc14457b82687"
+    },
+    {
+      "path": "v2_1_Qm敏感性参数.csv",
+      "bytes": 444,
+      "sha256": "f8be9008e5e46c6b92df17d979931c2aa4cdb8bb8b32c29244cb4664a4a9052a"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_BARE_BVD_Q800.cir",
+      "bytes": 348,
+      "sha256": "d319f9762e9150181938e85677a052a8a7a3e095ea5ee397ace0fb243c456204"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_BARE_BVD_Q800.raw",
+      "bytes": 8001022,
+      "sha256": "e0c76daa97830e713f1c12030481a7833b9db45e624626f37e75bbf3a5af7baf"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_BARE_BVD_Q800.log",
+      "bytes": 509,
+      "sha256": "5a5476023c2656227420f3e49c08fb7c5fc9f369547b9bfd9eaef4fc4b293022"
+    },
+    {
+      "path": "ltspice_stage1/analyze_v2_1_stage1.py",
+      "bytes": 4961,
+      "sha256": "3bab76131ca3f8ebef621f99b7e8fc152fb615a939195e4cfecadf820e83bbfc"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_STAGE1_audit.json",
+      "bytes": 575,
+      "sha256": "33c32d2225e1bb66085d7b36447bff9943926ae2c9c1106569213aacd2276d42"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_STAGE1_LTspice_解析交叉验证.csv",
+      "bytes": 478,
+      "sha256": "0bf4573ab547e6971c400bc2b9af6798d7b47d8954c57073fa20cce859f5f825"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_STAGE1_LTspice_RAW交叉验证.png",
+      "bytes": 143207,
+      "sha256": "976d9da1add2cad1dbd73aedf8418e555cd9c22a34d1ad92ef70191655060eb8"
+    },
+    {
+      "path": "ltspice_stage1/V2_1_STAGE1_谐振区放大_RAW证据.png",
+      "bytes": 154869,
+      "sha256": "6d4efb9712dc45c552ba7e34daa0d244b5b90ab0afedbd1103abb6c4d479061e"
+    },
+    {
+      "path": "stage2_matching/analyze_stage2_ltspice.py",
+      "bytes": 19880,
+      "sha256": "9288ef3bbb4d87f305d8ee057490d082a30747b47601f38cffff605d6cc0b0cf"
+    },
+    {
+      "path": "stage2_matching/design_stage2.py",
+      "bytes": 12242,
+      "sha256": "ea1a29b115b734b1627d81d4f3cdfe7f61875b529904821d5bbc8813408e6942"
+    },
+    {
+      "path": "stage2_matching/stage2_01_匹配前后输入阻抗_RAW.png",
+      "bytes": 166221,
+      "sha256": "421c06578a477aeeca6c369671ce76ec9884a349af2939b058dd38a67ad99039"
+    },
+    {
+      "path": "stage2_matching/stage2_02_匹配前后功率与反射_RAW.png",
+      "bytes": 140096,
+      "sha256": "df386db13081abb3a00d0e9f7dc44d1229764cd3e20b3a9ea9d97d857576d110"
+    },
+    {
+      "path": "stage2_matching/stage2_03_活动匹配_LTspice_Python交叉验证.png",
+      "bytes": 169441,
+      "sha256": "13d944641518369d18fc4e4508117f249bd49e46691e96bf453d034f5df0b99c"
+    },
+    {
+      "path": "stage2_matching/stage2_04_校准功率分配_RAW.png",
+      "bytes": 79327,
+      "sha256": "74e3941d27611fac42fa39c36ae50d36ef834d1f25890276fcaceb0b3a45e651"
+    },
+    {
+      "path": "stage2_matching/stage2_audit.json",
+      "bytes": 2849,
+      "sha256": "4397db9766e9167055464ce2f67054166f47566878ce632ee5dfdf002fd8da1b"
+    },
+    {
+      "path": "stage2_matching/stage2_LTspice_RAW文件哈希.csv",
+      "bytes": 964,
+      "sha256": "7badd9ab8d8c3e250844c5a5b8e4e4265635771acada73cee3e7b8b95c7a0426"
+    },
+    {
+      "path": "stage2_matching/stage2_LTspice_解析交叉验证.csv",
+      "bytes": 644,
+      "sha256": "5624ea1254008b863b155bf183de70411cfd510cddd96f6983c5da38752fc392"
+    },
+    {
+      "path": "stage2_matching/stage2_LTspice逐频数据.csv",
+      "bytes": 19680598,
+      "sha256": "f0171bb1f3126e19c2c5389d7c66927c18ef799ad86d5fd76c8458acf720ab70"
+    },
+    {
+      "path": "stage2_matching/stage2_匹配前后特征汇总.csv",
+      "bytes": 1390,
+      "sha256": "a897bbb228e1b76eefbab03ef3345420fbc12548b29fceb08e794514a0e1d78c"
+    },
+    {
+      "path": "stage2_matching/stage2_匹配网络正式报告.md",
+      "bytes": 2995,
+      "sha256": "530e57dd177d29d32e2c0d437ad3bb3f6eb4803cd145121c9fd15e059fa27fbf"
+    },
+    {
+      "path": "stage2_matching/stage2_匹配设计参数.json",
+      "bytes": 1557,
+      "sha256": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202"
+    },
+    {
+      "path": "stage2_matching/stage2_控制源幅度校准.json",
+      "bytes": 711,
+      "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4"
+    },
+    {
+      "path": "stage2_matching/stage2_解析特征汇总.csv",
+      "bytes": 893,
+      "sha256": "4e293fc5240a6024e4ce4cf2dad43c1d8f05953a0a1102400ca2f1b8e3ba5832"
+    },
+    {
+      "path": "stage2_matching/stage2_解析逐频数据.csv",
+      "bytes": 21900147,
+      "sha256": "14e4d9349f59647be3cb9f4ec74ab6479bf30c4c634d749088be5968c9376e9e"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_ACTIVE_LOSSY.cir",
+      "bytes": 618,
+      "sha256": "22fc935cac628a2fe3bb3bb91ffc226ff38f82a683fe9659f99184dc782797f7"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_ACTIVE_LOSSY.log",
+      "bytes": 543,
+      "sha256": "5e547cebb3e458bf0cf83274b18c8d95f849e2381391f463617fa6f449dd2f96"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_ACTIVE_LOSSY.op.raw",
+      "bytes": 1378,
+      "sha256": "399113c0014258fe1724d19e104a5a6ccc5f600123408e2488f9eb958fe63d8c"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_ACTIVE_LOSSY.raw",
+      "bytes": 3841546,
+      "sha256": "2cc831cb6291384ee17d69817474d424a839296959664f195df412b896d18aa4"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_BEFORE.cir",
+      "bytes": 360,
+      "sha256": "60e3677bef742fa7a73df23cfedc8169cf1f6cdd25a53c4eb94e6e04648762ab"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_BEFORE.log",
+      "bytes": 531,
+      "sha256": "f77b59369c2d5e65d983dadc4ed64c368f9869868bbf64eabea742a75e03d58f"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_BEFORE.op.raw",
+      "bytes": 1032,
+      "sha256": "1a7c889a21c31cfeeda6c8ddf958ab18281a5461bca29749279782588891ab5a"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_BEFORE.raw",
+      "bytes": 2241190,
+      "sha256": "6520dfbab34b7d88441f7fb503b487d3ba6821f892e0a3a9bc6519ceb6b95e2c"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_IDEAL.cir",
+      "bytes": 471,
+      "sha256": "f33654cf2ce249efb3cc1659b0fe944ee2d81d27a53b5e4be1f2bedbc03fd444"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_IDEAL.log",
+      "bytes": 529,
+      "sha256": "f6a0bd87e201a8d4f372d720987bad66bed06f3f5adab92fdec10d204f4215aa"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_IDEAL.op.raw",
+      "bytes": 1244,
+      "sha256": "4fad69162a1ad1ed8932da5260a7b92f900604a3d783cfaae4a60100ddfc28d6"
+    },
+    {
+      "path": "stage2_matching/V2_1_MATCH_IDEAL.raw",
+      "bytes": 3201388,
+      "sha256": "2d7cf4fab58e7e5f8865d289545afe6ed89708bc885c0312b020d92d78584c3d"
+    }
+  ],
+  "pending_stages": [
+    "stage3_disturbance",
+    "stage3_selection",
+    "stage4_control",
+    "stage5_summary"
+  ]
+}

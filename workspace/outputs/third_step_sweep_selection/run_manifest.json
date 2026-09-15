@@ -1,0 +1,508 @@
+{
+  "model_scope": "assumed virtual electrical BVD model; no measured transducer parameters",
+  "scenario_count": 24,
+  "initial_sweep": {
+    "start_hz": 840000.0,
+    "stop_hz": 960000.0,
+    "step_hz": 500.0
+  },
+  "step_sizes_hz": [
+    100.0,
+    500.0,
+    1000.0,
+    2000.0
+  ],
+  "window_halfwidths_hz": [
+    20000.0,
+    50000.0,
+    100000.0
+  ],
+  "reference_step_hz": 10.0,
+  "source_voltage_rms": 5.3526618424009325,
+  "active_power": "re(V(n_in)*conj(I(Rmot)))",
+  "phase": "signed Cartesian phase of V(n_s)/I(Rlesr)",
+  "reflection_proxy": "abs((Zin-Rs)/(Zin+Rs))",
+  "elapsed_seconds": 0.18033609999110922,
+  "scenarios": [
+    {
+      "scenario_key": "SINGLE::CASE_000_BASELINE",
+      "scenario_family": "基准",
+      "case_id": "CASE_000_BASELINE",
+      "factor": "基准",
+      "level": "基准",
+      "display_scenario": "基准",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_110_C0_P10",
+      "scenario_family": "单因素",
+      "case_id": "CASE_110_C0_P10",
+      "factor": "C0",
+      "level": "+10%",
+      "display_scenario": "单因素-C0-+10%",
+      "bvd": {
+        "c0": 1.6500000000000002e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_120_C0_P20",
+      "scenario_family": "单因素",
+      "case_id": "CASE_120_C0_P20",
+      "factor": "C0",
+      "level": "+20%",
+      "display_scenario": "单因素-C0-+20%",
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_130_C0_P30",
+      "scenario_family": "单因素",
+      "case_id": "CASE_130_C0_P30",
+      "factor": "C0",
+      "level": "+30%",
+      "display_scenario": "单因素-C0-+30%",
+      "bvd": {
+        "c0": 1.95e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_210_RM_P15",
+      "scenario_family": "单因素",
+      "case_id": "CASE_210_RM_P15",
+      "factor": "Rm",
+      "level": "+15%",
+      "display_scenario": "单因素-Rm-+15%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 11500.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_220_RM_P30",
+      "scenario_family": "单因素",
+      "case_id": "CASE_220_RM_P30",
+      "factor": "Rm",
+      "level": "+30%",
+      "display_scenario": "单因素-Rm-+30%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_230_RM_P50",
+      "scenario_family": "单因素",
+      "case_id": "CASE_230_RM_P50",
+      "factor": "Rm",
+      "level": "+50%",
+      "display_scenario": "单因素-Rm-+50%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 15000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_310_FS_M1",
+      "scenario_family": "单因素",
+      "case_id": "CASE_310_FS_M1",
+      "factor": "fs/Cm",
+      "level": "-1%",
+      "display_scenario": "单因素-fs/Cm--1%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1906917926722576e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_320_FS_M3",
+      "scenario_family": "单因素",
+      "case_id": "CASE_320_FS_M3",
+      "factor": "fs/Cm",
+      "level": "-3%",
+      "display_scenario": "单因素-fs/Cm--3%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.3236231544245717e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_330_FS_M5",
+      "scenario_family": "单因素",
+      "case_id": "CASE_330_FS_M5",
+      "factor": "fs/Cm",
+      "level": "-5%",
+      "display_scenario": "单因素-fs/Cm--5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.465038255953551e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_410_RS_P5",
+      "scenario_family": "单因素",
+      "case_id": "CASE_410_RS_P5",
+      "factor": "Rs",
+      "level": "+5%",
+      "display_scenario": "单因素-Rs-+5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 52.5,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_420_RS_P10",
+      "scenario_family": "单因素",
+      "case_id": "CASE_420_RS_P10",
+      "factor": "Rs",
+      "level": "+10%",
+      "display_scenario": "单因素-Rs-+10%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 55.00000000000001,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_430_RS_P20",
+      "scenario_family": "单因素",
+      "case_id": "CASE_430_RS_P20",
+      "factor": "Rs",
+      "level": "+20%",
+      "display_scenario": "单因素-Rs-+20%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 60.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_510_LS_P2",
+      "scenario_family": "单因素",
+      "case_id": "CASE_510_LS_P2",
+      "factor": "Ls",
+      "level": "+2%",
+      "display_scenario": "单因素-Ls-+2%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012722460000000002,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_520_LS_P5",
+      "scenario_family": "单因素",
+      "case_id": "CASE_520_LS_P5",
+      "factor": "Ls",
+      "level": "+5%",
+      "display_scenario": "单因素-Ls-+5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.0001309665,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_530_LS_P10",
+      "scenario_family": "单因素",
+      "case_id": "CASE_530_LS_P10",
+      "factor": "Ls",
+      "level": "+10%",
+      "display_scenario": "单因素-Ls-+10%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00013720300000000002,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_610_CP_M2",
+      "scenario_family": "单因素",
+      "case_id": "CASE_610_CP_M2",
+      "factor": "Cp",
+      "level": "-2%",
+      "display_scenario": "单因素-Cp--2%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.430008e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_620_CP_M5",
+      "scenario_family": "单因素",
+      "case_id": "CASE_620_CP_M5",
+      "factor": "Cp",
+      "level": "-5%",
+      "display_scenario": "单因素-Cp--5%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.35562e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_630_CP_M10",
+      "scenario_family": "单因素",
+      "case_id": "CASE_630_CP_M10",
+      "factor": "Cp",
+      "level": "-10%",
+      "display_scenario": "单因素-Cp--10%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.23164e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_720_Q50",
+      "scenario_family": "单因素",
+      "case_id": "CASE_720_Q50",
+      "factor": "电感Q",
+      "level": "Q=50",
+      "display_scenario": "单因素-电感Q-Q=50",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 50.0
+      }
+    },
+    {
+      "scenario_key": "SINGLE::CASE_730_Q20",
+      "scenario_family": "单因素",
+      "case_id": "CASE_730_Q20",
+      "factor": "电感Q",
+      "level": "Q=20",
+      "display_scenario": "单因素-电感Q-Q=20",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 20.0
+      }
+    },
+    {
+      "scenario_key": "COMBO::CASE_400_COMBINED_LOW",
+      "scenario_family": "组合扰动",
+      "case_id": "CASE_400_COMBINED_LOW",
+      "factor": "低复杂度",
+      "level": "Rm +15%",
+      "display_scenario": "组合扰动-低复杂度-Rm +15%",
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 11500.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "COMBO::CASE_401_COMBINED_MEDIUM",
+      "scenario_family": "组合扰动",
+      "case_id": "CASE_401_COMBINED_MEDIUM",
+      "factor": "中复杂度",
+      "level": "C0 +20%, Rm +30%",
+      "display_scenario": "组合扰动-中复杂度-C0 +20%, Rm +30%",
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    {
+      "scenario_key": "COMBO::CASE_402_COMBINED_HIGH",
+      "scenario_family": "组合扰动",
+      "case_id": "CASE_402_COMBINED_HIGH",
+      "factor": "高复杂度",
+      "level": "fs -3%, C0/Rm/Rs/Ls/Cp/Q叠加",
+      "display_scenario": "组合扰动-高复杂度-fs -3%, C0/Rm/Rs/Ls/Cp/Q叠加",
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.3236231544245717e-13
+      },
+      "rs": 60.0,
+      "matching": {
+        "ls": 0.0001309665,
+        "cp": 2.35562e-10,
+        "q_inductor": 20.0
+      }
+    }
+  ]
+}

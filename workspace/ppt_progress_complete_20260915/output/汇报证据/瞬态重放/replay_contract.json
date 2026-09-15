@@ -1,0 +1,29 @@
+{
+  "kind": "OPEN_LOOP_HISTORICAL_COMMAND_REPLAY",
+  "strategy": "P_AND_O",
+  "scenario": "CASE_FS_M5 fixed for entire run",
+  "original_time_range_s": [
+    2.838,
+    3.059
+  ],
+  "warmup_s": 0.003,
+  "simulation_stop_s": 0.2240000000000002,
+  "source_phase": "continuous integral of held frequency",
+  "command_edge_s": 1e-09,
+  "max_step_ns": 2,
+  "source_sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0",
+  "source_file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data\\stage4_control_timeline.csv",
+  "sample_rows": 61,
+  "no_time_compression": true,
+  "limitations": [
+    "Only one strategy excerpt, not all three curves",
+    "No live feedback from LTspice to Python controller",
+    "No load switch at original 2.4 s",
+    "No amplifier or hardware model",
+    "Command-edge time is numerical assumption"
+  ],
+  "tail_command": {
+    "frequency_Hz": 854800.0,
+    "amplitude": 1.0
+  }
+}

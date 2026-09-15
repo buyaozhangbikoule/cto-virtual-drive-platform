@@ -1,0 +1,10 @@
+* V2.1 active bare BVD baseline -- hypothetical, not measured
+* Chosen after rejecting the 0.125W preliminary baseline as poorly observable in |Z|/phase
+Vdrive n 0 AC 1
+C0 n 0 6.858064105198409p
+Rm n nm1 7352.941176470586
+Lm nm1 nm2 1.0402283862215377
+Cm nm2 0 0.030062600361803386p
+.ac lin 100001 500k 1.5Meg
+.save V(n) I(Vdrive) I(Rm) I(C0)
+.end

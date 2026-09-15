@@ -1,0 +1,227 @@
+{
+  "phase_current": [
+    {
+      "case_id": "CASE_000_BASELINE",
+      "capture_min": 0.0,
+      "capture_max": 1.0,
+      "max_W": 0.1699999783248985,
+      "max_amp": 1.0
+    },
+    {
+      "case_id": "CASE_C0_P30",
+      "capture_min": 1.0,
+      "capture_max": 1.001168839777286,
+      "max_W": 0.169939039712493,
+      "max_amp": 1.0
+    },
+    {
+      "case_id": "CASE_COMBINED_HIGH",
+      "capture_min": 0.0003420080064816,
+      "capture_max": 0.0003635442040121,
+      "max_W": 2.6372451349387936e-05,
+      "max_amp": 1.0
+    },
+    {
+      "case_id": "CASE_FS_M5",
+      "capture_min": 0.0,
+      "capture_max": 0.0003047853682378,
+      "max_W": 4.274016882190457e-05,
+      "max_amp": 0.6908326604375808
+    },
+    {
+      "case_id": "CASE_LMATCH_P10",
+      "capture_min": 0.4608061235466761,
+      "capture_max": 0.9940571483593496,
+      "max_W": 0.1439731610631799,
+      "max_amp": 1.0
+    },
+    {
+      "case_id": "CASE_QL_20",
+      "capture_min": 0.8430981063143651,
+      "capture_max": 1.000628932075235,
+      "max_W": 0.1131247621822948,
+      "max_amp": 1.0
+    },
+    {
+      "case_id": "CASE_RM_P50",
+      "capture_min": 0.9974225970518856,
+      "capture_max": 0.999976469909626,
+      "max_W": 0.1591917589013348,
+      "max_amp": 1.0
+    }
+  ],
+  "old_columns": [
+    "strategy",
+    "time_s",
+    "duration_s",
+    "action",
+    "state_index",
+    "case_id",
+    "frequency_Hz",
+    "frequency_MHz",
+    "amplitude_command",
+    "protection_state",
+    "frequency_frozen",
+    "hard_trip_trigger",
+    "soft_limit_trigger",
+    "scan_reason",
+    "p_rm_W",
+    "p_port_W",
+    "p_source_W",
+    "normalized_port_power_W",
+    "zin_real_ohm",
+    "zin_imag_ohm",
+    "zin_abs_ohm",
+    "phase_deg",
+    "gamma",
+    "vport_vpp",
+    "iport_irms_A",
+    "detector_state",
+    "detector_reference_ready",
+    "detector_vote_count",
+    "detector_consecutive_count",
+    "detector_trigger",
+    "detector_cooldown_active",
+    "detector_d_power",
+    "detector_d_z",
+    "detector_d_phase_deg",
+    "detector_gamma_threshold",
+    "detector_reason",
+    "actual_voltage_hard_violation",
+    "actual_current_hard_violation",
+    "optimal_safe_frequency_Hz",
+    "optimal_safe_power_W",
+    "safe_power_capture_ratio",
+    "frequency_error_kHz",
+    "frequency_saturated"
+  ],
+  "old_counts": {
+    "FIXED_0P9": 320,
+    "PERIODIC_SCAN": 860,
+    "P_AND_O": 615
+  },
+  "phase_sha256": "b170bc930dfbdcd07a58b9f3b2d37f7121f9cd9d3cd0239ebe8034ec079f8085",
+  "registry_cases": 34,
+  "registry_families": {
+    "baseline": 1,
+    "combined": 3,
+    "single_factor": 30
+  },
+  "trend_columns": [
+    "parameter_change",
+    "case_id",
+    "peak_shift_kHz",
+    "peak_height_change_pct",
+    "peak_width_change_pct",
+    "主要影响峰位",
+    "主要影响峰高",
+    "主要影响峰宽"
+  ],
+  "selection_fs5": [
+    {
+      "case_id": "CASE_FS_M5",
+      "family": "single_factor",
+      "factor": "fs",
+      "level": "-5%",
+      "scan_start_Hz": 840000.0,
+      "scan_stop_Hz": 960000.0,
+      "step_Hz": 500.0,
+      "points": 241,
+      "scan_time_proxy_ms": 361.5,
+      "max_power_frequency_Hz": 855000.0,
+      "max_power_p_rm_W": 0.1300587397826597,
+      "max_power_phase_deg": -45.24941908156671,
+      "max_power_abs_phase_deg": 45.24941908156671,
+      "max_power_gamma": 0.4966476160601746,
+      "max_power_zin_real_ohm": 62.0528853797528,
+      "max_power_zin_imag_ohm": -62.59550621502956,
+      "max_power_zin_abs_ohm": 88.14055810050526,
+      "max_power_vport_vpp": 87.46721731518808,
+      "max_power_iport_irms_A": 0.0043572986285786,
+      "min_abs_phase_frequency_Hz": 904500.0,
+      "min_abs_phase_p_rm_W": 7.422143157929939e-05,
+      "min_abs_phase_phase_deg": 1.5755129602127127,
+      "min_abs_phase_abs_phase_deg": 1.5755129602127127,
+      "min_abs_phase_gamma": 0.7656360030735285,
+      "min_abs_phase_zin_real_ohm": 6.636905241669627,
+      "min_abs_phase_zin_imag_ohm": 0.1825468930250053,
+      "min_abs_phase_zin_abs_ohm": 6.639415226889704,
+      "min_abs_phase_vport_vpp": 188.2680926966785,
+      "min_abs_phase_iport_irms_A": 0.0024938460075121,
+      "min_reflection_frequency_Hz": 854500.0,
+      "min_reflection_p_rm_W": 0.1219720000905992,
+      "min_reflection_phase_deg": -49.886008749987006,
+      "min_reflection_abs_phase_deg": 49.886008749987006,
+      "min_reflection_gamma": 0.4657613507936302,
+      "min_reflection_zin_real_ohm": 33.89946040597855,
+      "min_reflection_zin_imag_ohm": -40.236957107359785,
+      "min_reflection_zin_abs_ohm": 52.61355465159162,
+      "min_reflection_vport_vpp": 116.01696428101016,
+      "min_reflection_iport_irms_A": 0.0052226566948237,
+      "power_vs_phase_frequency_delta_kHz": -49.5,
+      "power_vs_reflection_frequency_delta_kHz": 0.5
+    }
+  ],
+  "trend_selected": [
+    {
+      "parameter_change": "C0: +30%",
+      "case_id": "CASE_C0_P30",
+      "peak_shift_kHz": 0.0,
+      "peak_height_change_pct": -0.1525519161428401,
+      "peak_width_change_pct": -0.1585060887017042,
+      "主要影响峰位": "较小",
+      "主要影响峰高": "较小",
+      "主要影响峰宽": "较小"
+    },
+    {
+      "parameter_change": "Rm: +50%",
+      "case_id": "CASE_RM_P50",
+      "peak_shift_kHz": 0.0,
+      "peak_height_change_pct": -6.355573480309418,
+      "peak_width_change_pct": 26.497535342123047,
+      "主要影响峰位": "较小",
+      "主要影响峰高": "中等",
+      "主要影响峰宽": "明显"
+    },
+    {
+      "parameter_change": "fs: -5%",
+      "case_id": "CASE_FS_M5",
+      "peak_shift_kHz": -45.2,
+      "peak_height_change_pct": -17.511529085282184,
+      "peak_width_change_pct": -29.847212849314563,
+      "主要影响峰位": "明显",
+      "主要影响峰高": "明显",
+      "主要影响峰宽": "明显"
+    },
+    {
+      "parameter_change": "Rs: +20%",
+      "case_id": "CASE_RS_P20",
+      "peak_shift_kHz": 0.0,
+      "peak_height_change_pct": -16.40420765788031,
+      "peak_width_change_pct": -7.239580819644376,
+      "主要影响峰位": "较小",
+      "主要影响峰高": "明显",
+      "主要影响峰宽": "中等"
+    },
+    {
+      "parameter_change": "Lmatch: +10%",
+      "case_id": "CASE_LMATCH_P10",
+      "peak_shift_kHz": 0.3,
+      "peak_height_change_pct": -14.803584803083467,
+      "peak_width_change_pct": -23.557513260837798,
+      "主要影响峰位": "较小",
+      "主要影响峰高": "明显",
+      "主要影响峰宽": "明显"
+    },
+    {
+      "parameter_change": "inductor_Q: Q=20",
+      "case_id": "CASE_QL_20",
+      "peak_shift_kHz": 0.0,
+      "peak_height_change_pct": -33.497839103371284,
+      "peak_width_change_pct": -14.296638698866836,
+      "主要影响峰位": "较小",
+      "主要影响峰高": "明显",
+      "主要影响峰宽": "中等"
+    }
+  ]
+}

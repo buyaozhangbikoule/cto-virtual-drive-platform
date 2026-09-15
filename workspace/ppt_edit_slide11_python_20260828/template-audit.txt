@@ -1,0 +1,10 @@
+Source deck: source_deck.pptx
+Slide count: 22
+Canvas: 1280 x 720 px, 16:9.
+Visual system: off-white background, dark navy takeaway titles, navy horizontal rule, muted gray footer, teal/blue/red analytical accents.
+Typography: inherited Microsoft YaHei / theme Chinese sans-serif; slide title remains a single line in the existing title box.
+Structure: every output slide maps to the same-numbered source slide. Slides 1-10 and 12-22 are preserve-only. Slide 11 is the only edited slide.
+Slide 11 reusable pattern: title + analytical evidence area + right-side interpretation column + footer.
+Inherited placeholders: no visible empty title/body placeholders on slide 11; footer and page number are retained.
+Insertion contract for slide 11: replace the large timeline raster with editable native charts in the same analytical zone; reuse and rewrite the existing right-side text boxes; preserve title rule and footer chrome.
+

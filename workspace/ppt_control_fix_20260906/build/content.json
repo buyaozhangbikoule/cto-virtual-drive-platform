@@ -1,0 +1,39 @@
+{
+  "version": "a734eca013",
+  "notes": {
+    "12": "【建议时长】约65秒\n\n【本页结论】fs−5%扰动后，三种策略均先发生保护动作。两种自适应策略随后低幅重扫并在新频率渐升幅度。\n\n【逐字讲稿】本页与后两页使用同一份保存的控制数据，重点看2.4到3.2秒的fs减5%扰动段。图中灰、蓝、红分别是固定频率、周期扫频和扫描辅助P&O。上、中、下三图分别是换能器端电压、端口电流和源幅度命令a。扰动后，保护逻辑判断原驱动幅度不再满足模型约束，进入硬停机，幅度命令归零。之后是低幅保持和渐升。固定频率策略停留在0.9 MHz，最终受软限幅约束。两种自适应策略在软限幅稳定后，以a等于0.40顺序扫描，再在选中的新频率恢复幅度。扫描期间的电压、电流变化全部保留，不能把这些变化都解释为负载再次漂移。\n\n【状态说明】左侧是本段保护过程的简化示意，不是完整状态转移图。HARD_TRIP硬保持约60 ms，RECOVERY_HOLD约100 ms，RAMP_UP每个控制步增加0.05幅度命令。SOFT_FOLDBACK稳定100 ms后允许低幅扫描。NORMAL表示控制器正常工作，不等于已通过连续稳态验收。\n\n【频率冻结口径】普通跟踪在硬停机、恢复保持和初始调幅过程中暂停。保护稳定后可以进行低幅扫描，因此不能说整段保护期间频率始终不变。\n\n【读图提示】控制记录按time_s和duration_s作采样保持绘图，包含CONTROL、SCAN和P&O参考/试探样本。淡色带标出本扰动段两次扫描的时间区间。不是示波器捕获的连续波形，也不重建采样间瞬态。\n\n【电压、电流边界】电压160 Vpp为用户给定的仿真硬边界。电流6 mA RMS硬限以及130 Vpp、5.5 mA RMS软限均为假设控制阈值。幅度a是戴维南源相对冻结基线的比例，不是端口电压本身。\n\n【教授可能追问】为什么存在HARD_TRIP记录，但图中没有超过160 Vpp或6 mA？\n\n【建议回答】模型先评估当前幅度在扰动后的可允许范围，再保存保护处理后的输出。因此保护触发次数与保存样本硬越限次数是不同指标。图中没有越限，不能证明真实系统在采样和执行延迟期间没有过冲。\n\n【模糊推测】本页没有对真实硬件保护速度或安全性作推测。阈值和时序常数是仿真假设。\n\n【数据来源】三页读取同一份已保存控制时序及其逐段、综合验收表。控制时序SHA256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0。\n\n【研究边界】假设BVD线性电学模型，离散准稳态仿真。无实测换能器、硬件闭环或声场安全性证明。\n\n[Sources]\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_per_segment_metrics.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_5_audit.json\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py",
+    "14": "【建议时长】约80秒\n\n【本页结论】两种自适应策略均到达0.8548 MHz新峰位，但在2.4–3.2 s扰动段内都未满足连续10个合格控制样本的稳态验收。\n\n【逐字讲稿】先看上图的离线安全功率曲线。基准峰位在0.9000 MHz，约170.0毫瓦。fs降低5%后，峰位移到0.8548 MHz，约140.2毫瓦，频率下移45.2千赫。中图和下图来自同一份当前控制时序，包含保护、扫描和幅度恢复，不再省略选频过程。P&O在2.9190秒首次以控制动作使用0.8548 MHz，周期扫频对应时刻为2.9770秒，此时两者还在渐升幅度。P&O从3.0390秒开始出现合格NORMAL样本，周期扫频从3.0970秒开始。到3.2秒切换下一扰动时，两者分别只有9个和6个连续合格样本，均不足10个。因此可以说到达了峰位和场景内峰值，不能说本段已经通过稳态验收，也没有可报告的本段验收恢复时间。\n\n【验收定义】只统计action=CONTROL、protection_state=NORMAL、frequency_frozen=0、功率捕获率至少98%的记录。相邻CONTROL记录间隔不得超过控制周期的1.5倍，即30 ms。连续10个合格样本才判通过。20 ms控制周期下，10个等间隔样本的首末跨度通常为180 ms。\n\n【本段重新计数】周期扫频：首次控制采用新峰位2.9770 s，首次合格NORMAL样本3.0970 s，最多连续6个，settled=0。P&O：首次控制采用新峰位2.9190 s，首次合格NORMAL样本3.0390 s，最多连续9个，settled=0。\n\n【为什么100%仍未通过】功率捕获率分母是当前场景自身的安全最优P_Rm。尾段100%表示选定的尾段样本达到约140.2 mW，不表示恢复基准170.0 mW，也不表示此前保护和扫描阶段没有功率损失。点值、尾段均值和连续验收是三个不同概念。\n\n【本段未通过的依据】保护保持、幅度渐升和扫描消耗了扰动段内的可用时间。达到合格NORMAL状态后，直到段结束仍不足10个样本。本段记录中不能继续使用旧版“P&O持续周期试探导致未通过”的解释。\n\n【教授可能追问】是否已经证明这两个控制器不能收敛？\n\n【建议回答】没有。这里证明的是它们未在给定0.8 s扰动段内满足既定验收。是否延长驻留时间后通过，需要另做实验，当前不能提前宣称通过。\n\n【模糊推测】延长扰动驻留时间可能改变验收结果，本次尚未做延长窗口实验，不作为已验证结论。\n\n【数据来源】三页读取同一份已保存控制时序及其逐段、综合验收表。控制时序SHA256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0。\n\n【研究边界】假设BVD线性电学模型，离散准稳态仿真。无实测换能器、硬件闭环或声场安全性证明。\n\n[Sources]\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_per_segment_metrics.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_5_audit.json\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/offline_safe_power_reference.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/control_revision_audit.json",
+    "15": "【建议时长】约70秒\n\n【本页结论】两种自适应策略的所选尾段误差为0%，但仍各有未通过连续稳态验收的扰动段，不能仅凭尾段误差作总体优劣判断。\n\n【逐字讲稿】这一页与前两页使用同一份控制运行数据。综合评价包含初始基准之后的7个时间段，每段0.8秒。固定频率的平均尾段功率误差为30.14%，3段未通过。周期扫频和扫描辅助P&O的平均尾段误差均为0%，但分别有2段和3段未通过。这里特别需要区分：尾段误差取选定样本的平均值，连续稳态验收还要求NORMAL状态下连续10个样本达到98%。右侧恢复指标包含未通过惩罚，未通过段计800毫秒，再与其他段取平均，所以345.7、409.0和458.9毫秒不能读成每段都已经成功恢复。当前这些指标不足以支持某个策略总体最优的结论。\n\n【统计窗口】尾段功率优先选本段最后25%时间内的NORMAL且频率未冻结CONTROL样本。如果没有，依次退回本段最后5个NORMAL样本，再退回最后5个CONTROL样本。原始CSV字段仍名为steady_error_pct，本页用“尾段误差”避免将其误解为连续验收已经通过。\n\n【恢复指标口径】对通过的段，当前代码记录合格连续序列起点相对扰动起点的延迟，而不是第10个样本的确认时刻。对未通过的段记800 ms。之后对初始基准后的7段取平均。此项是含惩罚的综合指标，不是全部场景的实测恢复时间。\n\n【安全口径】表中零越限指保存的保护处理后准稳态样本，没有包括采样间瞬态。三策略均接入同一保护逻辑，固定策略指固定频率和固定名义幅度，不表示幅度在保护期间保持不变。\n\n【教授可能追问】为什么周期扫频有2段未通过，尾段误差还能为0？\n\n【建议回答】fs−5%段末已有达到场景峰值的样本，因样本数不足10个而未通过。另一个未通过段为匹配电感+10%。尾段均值不会自动检查连续样本数，也不体现扫描和降幅过程的电能损失。\n\n【进一步评价边界】若要对总体效果排名，还应同时评价全时段功率损失、扫描成本和不同扰动驻留时间。本页不以最短柱或零尾段误差单独判定最优。\n\n【模糊推测】真实噪声、不同驻留时间或控制参数整定可能改变结果，当前尚未验证。\n\n【数据来源】三页读取同一份已保存控制时序及其逐段、综合验收表。控制时序SHA256：a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0。\n\n【研究边界】假设BVD线性电学模型，离散准稳态仿真。无实测换能器、硬件闭环或声场安全性证明。\n\n[Sources]\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_per_segment_metrics.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_5_audit.json\n\nC:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py"
+  },
+  "values": [
+    [
+      "策略",
+      "尾段误差*",
+      "恢复指标*\n(ms)",
+      "未通过段\n(共7段)",
+      "保护后\n硬越限"
+    ],
+    [
+      "固定0.9 MHz",
+      "30.14%",
+      "345.7",
+      "3",
+      "0"
+    ],
+    [
+      "周期扫频",
+      "0.00%",
+      "409.0",
+      "2",
+      "0"
+    ],
+    [
+      "扫描辅助P&O",
+      "0.00%",
+      "458.9",
+      "3",
+      "0"
+    ]
+  ],
+  "source": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_slide5_fix_20260906/output/CTO第一月组会汇报_第5页修订_2026-09-06.pptx"
+}

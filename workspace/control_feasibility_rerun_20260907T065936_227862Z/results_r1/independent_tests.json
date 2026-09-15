@@ -1,0 +1,338 @@
+{
+  "status": "PASS",
+  "check_count": 82,
+  "checks": [
+    {
+      "check": "history_reproduced_exactly",
+      "pass": true,
+      "rows": 1795,
+      "fields": 43
+    },
+    {
+      "check": "E00_dwell_0.8s:limits_and_acceptance_frozen",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_0.8s:FIXED_0P9:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_0.8s:PERIODIC_SCAN:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_0.8s:P_AND_O:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_1.6s:limits_and_acceptance_frozen",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_1.6s:FIXED_0P9:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_1.6s:PERIODIC_SCAN:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E00_dwell_1.6s:P_AND_O:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:limits_and_acceptance_frozen",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:FIXED_0P9:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:FIXED_0P9:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:FIXED_0P9:hard_hold_60ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:FIXED_0P9:recovery_hold_100ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:FIXED_0P9:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:hard_hold_60ms@2.404000000000005",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:recovery_hold_100ms@2.404000000000005",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:hard_hold_60ms@3.2050000000000085",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:recovery_hold_100ms@3.2050000000000085",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:PERIODIC_SCAN:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:hard_hold_60ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:recovery_hold_100ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:hard_hold_60ms@3.2010000000000054",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:recovery_hold_100ms@3.2010000000000054",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_0.8s:P_AND_O:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:limits_and_acceptance_frozen",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:FIXED_0P9:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:FIXED_0P9:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:FIXED_0P9:hard_hold_60ms@4.799999999999986",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:FIXED_0P9:recovery_hold_100ms@4.799999999999986",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:FIXED_0P9:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:hard_hold_60ms@4.8080000000000025",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:recovery_hold_100ms@4.8080000000000025",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:hard_hold_60ms@6.409999999999978",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:recovery_hold_100ms@6.409999999999978",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:PERIODIC_SCAN:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:P_AND_O:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:P_AND_O:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E01_dwell_1.6s:P_AND_O:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:limits_and_acceptance_frozen",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:FIXED_0P9:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:FIXED_0P9:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:FIXED_0P9:hard_hold_60ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:FIXED_0P9:recovery_hold_100ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:FIXED_0P9:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:PERIODIC_SCAN:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:PERIODIC_SCAN:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:PERIODIC_SCAN:hard_hold_60ms@2.404000000000005",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:PERIODIC_SCAN:recovery_hold_100ms@2.404000000000005",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:PERIODIC_SCAN:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:hard_hold_60ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:recovery_hold_100ms@2.4000000000000017",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:hard_hold_60ms@3.2010000000000054",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:recovery_hold_100ms@3.2010000000000054",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_0.8s:P_AND_O:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:limits_and_acceptance_frozen",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:FIXED_0P9:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:FIXED_0P9:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:FIXED_0P9:hard_hold_60ms@4.799999999999986",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:FIXED_0P9:recovery_hold_100ms@4.799999999999986",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:FIXED_0P9:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:PERIODIC_SCAN:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:PERIODIC_SCAN:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:PERIODIC_SCAN:hard_hold_60ms@4.8080000000000025",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:PERIODIC_SCAN:recovery_hold_100ms@4.8080000000000025",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:PERIODIC_SCAN:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:P_AND_O:continuous_action_coverage",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:P_AND_O:guard_call_per_action",
+      "pass": true
+    },
+    {
+      "check": "E02_dwell_1.6s:P_AND_O:rise_rate_respected",
+      "pass": true
+    },
+    {
+      "check": "registered_model_point_safety",
+      "pass": true,
+      "cases": 136,
+      "scope": "model-preview only"
+    },
+    {
+      "check": "E02:PERIODIC_SCAN:evaluation_optimum_not_used_by_controller",
+      "pass": true
+    },
+    {
+      "check": "E02:P_AND_O:evaluation_optimum_not_used_by_controller",
+      "pass": true
+    },
+    {
+      "check": "plant_boundary_roundoff_not_a_whole_sample_delay",
+      "pass": true
+    },
+    {
+      "check": "formal_inputs_untouched",
+      "pass": true
+    }
+  ]
+}

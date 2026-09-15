@@ -1,0 +1,24 @@
+{
+  "measurement_window_s": [
+    0.2230000000000002,
+    0.2240000000000002
+  ],
+  "frequency_Hz": 854800.0,
+  "amplitude": 1.0,
+  "LTspice_transient": {
+    "vport_vpp": 96.54730987548828,
+    "iport_irms_A": 0.004920939273401525,
+    "p_rm_W": 0.13934009058808525
+  },
+  "Python_steady_state": {
+    "vport_vpp": 96.9772777202958,
+    "iport_irms_A": 0.004953087083814075,
+    "p_rm_W": 0.14023038267556054
+  },
+  "relative_error_percent": {
+    "vport_vpp": 0.4433696788722456,
+    "iport_irms_A": 0.6490459357680867,
+    "p_rm_W": 0.6348781701145942
+  },
+  "raw_points": 112000514
+}

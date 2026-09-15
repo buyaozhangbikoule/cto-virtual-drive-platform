@@ -1,0 +1,16 @@
+{
+  "audit_utc": "2026-09-09T00:23:21.434501+00:00",
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "numpy": "2.2.4",
+  "matplotlib": "3.10.9",
+  "scipy": "1.17.1",
+  "matrix_executions": 2,
+  "matrix_runs_per_execution": 108,
+  "portable_smoke_runs": 4,
+  "unique_isolated_recovery_runs": 24,
+  "recovery_executions": 2,
+  "new_LTspice_runs": 0,
+  "prior_AC_audit_sha256": "eb398d48297e7970eeb62df80fc6c2cbfd5deac166590d90e0a2abe0a3534458",
+  "description": "Current scheduler: Python quasi-steady only; prior AC audit is historical evidence"
+}

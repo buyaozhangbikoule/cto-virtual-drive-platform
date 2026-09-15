@@ -1,0 +1,28 @@
+{
+  "source_csv": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_LTspice逐频数据.csv",
+  "source_csv_sha256": "f0171bb1f3126e19c2c5389d7c66927c18ef799ad86d5fd76c8458acf720ab70",
+  "audit_json": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\evidence\\ltspice\\stage2\\stage2_audit.json",
+  "audit_json_sha256": "4397db9766e9167055464ce2f67054166f47566878ce632ee5dfdf002fd8da1b",
+  "source_Vrms": 6.217360894531728,
+  "Rs_ohm": 50,
+  "power_scaling_factor_from_1Vrms": 38.65557649285237,
+  "method": "Saved LTspice frequency samples, power multiplied by Vs^2 under the linear AC model; Gamma unchanged.",
+  "frequency_comparison_Hz": 900000,
+  "at_f0": {
+    "BEFORE": {
+      "p_rm_mW": 5.186363126068224,
+      "gamma": 0.98649190765781
+    },
+    "IDEAL": {
+      "p_rm_mW": 193.2778561784725,
+      "gamma": 6.79999954813388e-08
+    },
+    "ACTIVE_LOSSY": {
+      "p_rm_mW": 169.99995376000945,
+      "gamma": 0.06345866384179635
+    }
+  },
+  "active_to_before_ratio": 32.77825898952938,
+  "simulation_rerun": false,
+  "data_class": "Hypothetical linear BVD simulation, not measured"
+}

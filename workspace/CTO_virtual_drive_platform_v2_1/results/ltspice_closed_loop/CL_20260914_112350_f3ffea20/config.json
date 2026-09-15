@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "mode": "OFFLINE_CAUSAL_LTSPICE_FEEDBACK",
+  "plant": {
+    "case": {
+      "case_id": "CASE_000_BASELINE",
+      "family": "baseline",
+      "factor": "baseline",
+      "level": "baseline",
+      "description": "Only the named scan variable changes; all others remain frozen.",
+      "bvd": {
+        "c0": 6.858064105198409e-12,
+        "rm": 7352.941176470586,
+        "lm": 1.0402283862215378,
+        "cm": 3.006260036180247e-14,
+        "qm": 800.0,
+        "fs": 900000.0
+      },
+      "matching": {
+        "l_h": 0.00010672581904440851,
+        "c_f": 2.8359878734546773e-10,
+        "ql": 100.0,
+        "qc": 1000.0
+      },
+      "rs": 50.0
+    },
+    "source_vrms": 6.217360894531728,
+    "reference_hz": 900000.0,
+    "registry_sha256": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23",
+    "source_type": "假设基线值 / 扫描变量；非实测"
+  },
+  "executable": "D:\\LTspice.exe",
+  "period_s": 0.001,
+  "tail_window_s": 0.0002,
+  "protection_window_s": 5e-05,
+  "warmup_s": 0.003,
+  "max_step_s": 2e-09,
+  "command_edge_s": 1e-09,
+  "step_hz": 500.0,
+  "amplitude_target": 0.4,
+  "amplitude_increment": 0.05,
+  "hold_steps": 2,
+  "power_deadband": 0.002,
+  "max_steps": 3,
+  "limits": {
+    "f_min": 800000.0,
+    "f_max": 1000000.0,
+    "v_soft": 130.0,
+    "v_hard": 160.0,
+    "i_soft": 0.0055,
+    "i_hard": 0.006
+  },
+  "state_continuity": "full-prefix recomputation from the same zero operating point",
+  "controller_source_sha256": "3255383ac77820190dbb62b320eb63b4491edb7e731dc1208dc3dcaf2882e6f9",
+  "assumptions": "所有新增控制参数为假设值；离线、固定负载、非原20ms正式验收",
+  "limitations": [
+    "No real-time hardware",
+    "No dynamic load switch",
+    "No intersample safety guarantee",
+    "Local power search is not guaranteed to find global optimum",
+    "No formal three-strategy ranking"
+  ]
+}

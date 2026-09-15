@@ -1,0 +1,22 @@
+{
+  "interface_version": "EA_IF_V1.0",
+  "coupling_type": "file-based one-way excitation plus optional FEM-result return",
+  "electrical_model_scope": "hypothetical small-signal BVD plus lossy L-match, discrete quasi-steady",
+  "finite_element_status": "NOT_RUN",
+  "recommended_excitation": "Apply frequency_Hz and complex terminal voltage Vport only. Do not impose both voltage and predicted current.",
+  "phasor_translation": "Export uses RMS-equivalent exp(+j*omega*t). If the FEM solver uses the opposite time convention, conjugate the exported phasors and verify the terminal-current sign with one baseline case.",
+  "validation_loop": "Compare FEM terminal current/impedance with iport/zport using the same record_id.",
+  "forbidden_substitutions": [
+    "Do not treat p_rm_W as radiated acoustic power.",
+    "Do not treat reflection_proxy_gamma as measured reflected RF power.",
+    "Do not convert electrical results into pressure without a solved and verified piezoelectric-structural-acoustic model.",
+    "Do not report these values as measured device parameters or clinical safety limits."
+  ],
+  "required_fem_evidence": [
+    "solver name/version and model identifier",
+    "geometry/material/electrode/polarization/boundary-condition record",
+    "mesh identifier and convergence metric",
+    "normal solver completion log",
+    "terminal current/impedance, displacement and pressure outputs"
+  ]
+}

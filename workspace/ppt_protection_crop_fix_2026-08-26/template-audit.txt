@@ -1,0 +1,5 @@
+Source deck contains 22 slides. Slide 10 uses the existing title-and-evidence layout with a left protection-state column and a right raster chart.
+Issue confirmed: image object im/8jmtobq9 has a symmetric top/bottom crop of 11.987%, which removes the x-axis and lower amplitude subplot boundary.
+Correction: preserve the source raster and slide design, remove only the redundant chart-title margin at the top, retain the complete lower x-axis, and resize/recenter the image frame at its effective source aspect ratio.
+All other slides, masters, layouts, typography, notes, page chrome, and slide numbers are preserved.
+The bundled template-inspection helper could not complete because the Windows runtime has no unzip executable; artifact-tool import, inspect, resolve, render, and export are used directly.

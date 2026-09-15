@@ -1,0 +1,588 @@
+{
+  "scope": "LTspice AC RAW plant + Python event-driven controller; virtual BVD model; no measured or COMSOL data",
+  "ltspice_version": "26.0.2.1",
+  "source_raw_directory": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\outputs\\fourth_step_control_strategies\\ltspice_cases",
+  "parameters": {
+    "frequency_hz": [
+      840000.0,
+      960000.0
+    ],
+    "control_dt_s": 0.002,
+    "scan_point_dt_s": 0.0015,
+    "probe_amplitude": 0.5,
+    "voltage_soft_vpp": 150.0,
+    "voltage_hard_vpp": 160.0,
+    "current_soft_peak_a": 0.0055,
+    "current_hard_peak_a": 0.008,
+    "hard_hold_s": 0.1,
+    "recovery_hold_s": 0.02,
+    "phase_alpha": 0.25,
+    "phase_deadband_deg": 0.5,
+    "phase_max_step_hz": 2000.0
+  },
+  "schedule": [
+    {
+      "state_index": 0,
+      "case_id": "CASE_000_BASELINE",
+      "family": "基准",
+      "factor": "基准",
+      "level": "无扰动",
+      "start_s": 0.0,
+      "end_s": 1.0
+    },
+    {
+      "state_index": 1,
+      "case_id": "CASE_110_C0_P10",
+      "family": "单因素",
+      "factor": "C0",
+      "level": "+10%",
+      "start_s": 1.0,
+      "end_s": 3.0
+    },
+    {
+      "state_index": 2,
+      "case_id": "CASE_120_C0_P20",
+      "family": "单因素",
+      "factor": "C0",
+      "level": "+20%",
+      "start_s": 3.0,
+      "end_s": 5.0
+    },
+    {
+      "state_index": 3,
+      "case_id": "CASE_130_C0_P30",
+      "family": "单因素",
+      "factor": "C0",
+      "level": "+30%",
+      "start_s": 5.0,
+      "end_s": 7.0
+    },
+    {
+      "state_index": 4,
+      "case_id": "CASE_210_RM_P15",
+      "family": "单因素",
+      "factor": "Rm",
+      "level": "+15%",
+      "start_s": 7.0,
+      "end_s": 9.0
+    },
+    {
+      "state_index": 5,
+      "case_id": "CASE_220_RM_P30",
+      "family": "单因素",
+      "factor": "Rm",
+      "level": "+30%",
+      "start_s": 9.0,
+      "end_s": 11.0
+    },
+    {
+      "state_index": 6,
+      "case_id": "CASE_230_RM_P50",
+      "family": "单因素",
+      "factor": "Rm",
+      "level": "+50%",
+      "start_s": 11.0,
+      "end_s": 13.0
+    },
+    {
+      "state_index": 7,
+      "case_id": "CASE_310_FS_M1",
+      "family": "单因素",
+      "factor": "fs/Cm",
+      "level": "-1%",
+      "start_s": 13.0,
+      "end_s": 15.0
+    },
+    {
+      "state_index": 8,
+      "case_id": "CASE_320_FS_M3",
+      "family": "单因素",
+      "factor": "fs/Cm",
+      "level": "-3%",
+      "start_s": 15.0,
+      "end_s": 17.0
+    },
+    {
+      "state_index": 9,
+      "case_id": "CASE_330_FS_M5",
+      "family": "单因素",
+      "factor": "fs/Cm",
+      "level": "-5%",
+      "start_s": 17.0,
+      "end_s": 19.0
+    },
+    {
+      "state_index": 10,
+      "case_id": "CASE_410_RS_P5",
+      "family": "单因素",
+      "factor": "Rs",
+      "level": "+5%",
+      "start_s": 19.0,
+      "end_s": 21.0
+    },
+    {
+      "state_index": 11,
+      "case_id": "CASE_420_RS_P10",
+      "family": "单因素",
+      "factor": "Rs",
+      "level": "+10%",
+      "start_s": 21.0,
+      "end_s": 23.0
+    },
+    {
+      "state_index": 12,
+      "case_id": "CASE_430_RS_P20",
+      "family": "单因素",
+      "factor": "Rs",
+      "level": "+20%",
+      "start_s": 23.0,
+      "end_s": 25.0
+    },
+    {
+      "state_index": 13,
+      "case_id": "CASE_510_LS_P2",
+      "family": "单因素",
+      "factor": "Ls",
+      "level": "+2%",
+      "start_s": 25.0,
+      "end_s": 27.0
+    },
+    {
+      "state_index": 14,
+      "case_id": "CASE_520_LS_P5",
+      "family": "单因素",
+      "factor": "Ls",
+      "level": "+5%",
+      "start_s": 27.0,
+      "end_s": 29.0
+    },
+    {
+      "state_index": 15,
+      "case_id": "CASE_530_LS_P10",
+      "family": "单因素",
+      "factor": "Ls",
+      "level": "+10%",
+      "start_s": 29.0,
+      "end_s": 31.0
+    },
+    {
+      "state_index": 16,
+      "case_id": "CASE_610_CP_M2",
+      "family": "单因素",
+      "factor": "Cp",
+      "level": "-2%",
+      "start_s": 31.0,
+      "end_s": 33.0
+    },
+    {
+      "state_index": 17,
+      "case_id": "CASE_620_CP_M5",
+      "family": "单因素",
+      "factor": "Cp",
+      "level": "-5%",
+      "start_s": 33.0,
+      "end_s": 35.0
+    },
+    {
+      "state_index": 18,
+      "case_id": "CASE_630_CP_M10",
+      "family": "单因素",
+      "factor": "Cp",
+      "level": "-10%",
+      "start_s": 35.0,
+      "end_s": 37.0
+    },
+    {
+      "state_index": 19,
+      "case_id": "CASE_720_Q50",
+      "family": "单因素",
+      "factor": "电感Q",
+      "level": "Q=50",
+      "start_s": 37.0,
+      "end_s": 39.0
+    },
+    {
+      "state_index": 20,
+      "case_id": "CASE_730_Q20",
+      "family": "单因素",
+      "factor": "电感Q",
+      "level": "Q=20",
+      "start_s": 39.0,
+      "end_s": 41.0
+    },
+    {
+      "state_index": 21,
+      "case_id": "CASE_400_COMBINED_LOW",
+      "family": "组合",
+      "factor": "低",
+      "level": "Rm+15%",
+      "start_s": 41.0,
+      "end_s": 43.0
+    },
+    {
+      "state_index": 22,
+      "case_id": "CASE_401_COMBINED_MEDIUM",
+      "family": "组合",
+      "factor": "中",
+      "level": "C0+20%, Rm+30%",
+      "start_s": 43.0,
+      "end_s": 45.0
+    },
+    {
+      "state_index": 23,
+      "case_id": "CASE_402_COMBINED_HIGH",
+      "family": "组合",
+      "factor": "高",
+      "level": "多参数叠加",
+      "start_s": 45.0,
+      "end_s": 47.0
+    },
+    {
+      "state_index": 24,
+      "case_id": "CASE_000_BASELINE",
+      "family": "恢复",
+      "factor": "基准",
+      "level": "扰动后恢复",
+      "start_s": 47.0,
+      "end_s": 48.0
+    }
+  ],
+  "scenarios": {
+    "CASE_000_BASELINE": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_110_C0_P10": {
+      "bvd": {
+        "c0": 1.6500000000000002e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_120_C0_P20": {
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_130_C0_P30": {
+      "bvd": {
+        "c0": 1.95e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_210_RM_P15": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 11500.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_220_RM_P30": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_230_RM_P50": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 15000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_310_FS_M1": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1906917926722576e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_320_FS_M3": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.3236231544245717e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_330_FS_M5": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.465038255953551e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_410_RS_P5": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 52.5,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_420_RS_P10": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 55.00000000000001,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_430_RS_P20": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 60.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_510_LS_P2": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012722460000000002,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_520_LS_P5": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.0001309665,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_530_LS_P10": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00013720300000000002,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_610_CP_M2": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.430008e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_620_CP_M5": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.35562e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_630_CP_M10": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.23164e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_720_Q50": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 50.0
+      }
+    },
+    "CASE_730_Q20": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 10000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 20.0
+      }
+    },
+    "CASE_400_COMBINED_LOW": {
+      "bvd": {
+        "c0": 1.5e-12,
+        "rm": 11500.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_401_COMBINED_MEDIUM": {
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.1272e-13
+      },
+      "rs": 50.0,
+      "matching": {
+        "ls": 0.00012473,
+        "cp": 2.4796e-10,
+        "q_inductor": 100.0
+      }
+    },
+    "CASE_402_COMBINED_HIGH": {
+      "bvd": {
+        "c0": 1.8e-12,
+        "rm": 13000.0,
+        "lm": 0.1,
+        "cm": 3.3236231544245717e-13
+      },
+      "rs": 60.0,
+      "matching": {
+        "ls": 0.0001309665,
+        "cp": 2.35562e-10,
+        "q_inductor": 20.0
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "outputSlides": [
+    {
+      "outputSlide": 1,
+      "sourceSlide": 4,
+      "narrativeRole": "Python与LTspice数值实现交叉验证",
+      "reuseMode": "retain-source-slide",
+      "editTargets": [
+        {"sourceElementId":"sh/x8vaxsfe","action":"rewrite","reason":"标题明确验证条件与边界"},
+        {"sourceElementId":"sh/sna103ap","action":"rewrite","reason":"显示扫描范围"},
+        {"sourceElementId":"sh/3ihk3et8","action":"rewrite","reason":"补充点数与步长"},
+        {"sourceElementId":"sh/5cva1cfq","action":"rewrite","reason":"避免用0%过度表述峰位一致性"},
+        {"sourceElementId":"sh/i94r6xgz","action":"rewrite","reason":"说明峰位差受网格分辨率限制"},
+        {"sourceElementId":"im/sbm5cbix","action":"delete","reason":"正文中的Error Log截图不可读，证据路径保留在备注"},
+        {"sourceElementId":"sh/w72947yt","action":"rewrite-and-reposition","reason":"用可读文字说明实现链路和结论边界"},
+        {"sourceElementId":"nt/jyx0ra1s","action":"rewrite","reason":"补充验证口径与讲述提示"}
+      ]
+    }
+  ],
+  "omittedSourceSlides": [
+    {"sourceSlides":"1-3,5-22","reason":"用户只需要可复制粘贴的独立第4页"}
+  ]
+}
+

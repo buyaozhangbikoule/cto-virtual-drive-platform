@@ -1,0 +1,4 @@
+﻿strategy,steady_error_pct,mean_recovery_time_ms,unsettled_states,power_stability_cv_pct,peak_current_ma,peak_voltage_vpp,soft_limit_episodes,hard_trip_episodes,frequency_saturation_ms,locked_frequency_range_mhz,max_power_overshoot_pct,oscillating_states,wrong_phase_lock_states,scan_points,scan_time_s
+固定频率固定幅度,11.74468551740491,481.60000000003595,6,3.172011302193714e-14,5.029286936076638,171.4869150468907,3,1,0.0,0.900000–0.900000,0.0,0,0,0,0.0
+周期性局部扫频,10.154416073249262,221.0000000003275,0,20.024659259770143,5.086968879797954,155.6786613525966,1,0,0.0,0.852600–0.903100,0.0,0,0,3486,5.229
+校准相位离散跟踪,2.887429365457574,95.28000000024875,0,5.557928093883795,5.084391803461273,152.59471033850127,1,0,0.0,0.852600–0.903149,0.0,0,0,2019,3.0285

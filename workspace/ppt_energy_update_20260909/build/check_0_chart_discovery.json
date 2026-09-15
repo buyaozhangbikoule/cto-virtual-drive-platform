@@ -1,0 +1,24 @@
+{
+  "code": 0,
+  "result": {
+    "chart_count": 3,
+    "chart_counts": {
+      "24": 1,
+      "6": 2
+    },
+    "chart_owner_slide_parts": {
+      "24": "ppt/slides/slide24.xml",
+      "6": "ppt/slides/slide6.xml"
+    },
+    "chart_owner_slides": [
+      6,
+      24
+    ],
+    "package_sha256": "db6dd567ffb85b08c9d0b34403e96a232663ccb3241e532dc73c9471d44509ff",
+    "schema_version": "owner-private.actual-native-chart-discovery.v1",
+    "slide_count": 28,
+    "source_attachments_accessed": false,
+    "source_required_chart_owners_inferred": false
+  },
+  "stderr": ""
+}

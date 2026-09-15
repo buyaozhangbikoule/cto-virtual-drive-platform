@@ -1,0 +1,142 @@
+[
+  {
+    "start_s": 0.0,
+    "end_s": 0.04250000000000002,
+    "duration_ms": 42.500000000000014,
+    "reason": "PERIODIC_TIMER",
+    "path": "LOCAL_POWER_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.16999997832489852,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 0.5425000000000002,
+    "end_s": 0.5849999999999994,
+    "duration_ms": 42.499999999999204,
+    "reason": "PERIODIC_TIMER",
+    "path": "LOCAL_POWER_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.16999997832489852,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 1.0849999999999997,
+    "end_s": 1.1275000000000006,
+    "duration_ms": 42.50000000000087,
+    "reason": "PERIODIC_TIMER",
+    "path": "LOCAL_POWER_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.16974064010052137,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 1.627500000000001,
+    "end_s": 1.670000000000002,
+    "duration_ms": 42.50000000000087,
+    "reason": "PERIODIC_TIMER",
+    "path": "LOCAL_POWER_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.1591955047859494,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 2.170000000000002,
+    "end_s": 2.212500000000003,
+    "duration_ms": 42.50000000000087,
+    "reason": "PERIODIC_TIMER",
+    "path": "LOCAL_POWER_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.1591955047859494,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 2.7125000000000035,
+    "end_s": 2.8180000000000067,
+    "duration_ms": 105.50000000000325,
+    "reason": "PERIODIC_TIMER",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 854800.0,
+    "selected_score_W": 0.14023038267556054,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 3.378000000000007,
+    "end_s": 3.4835000000000105,
+    "duration_ms": 105.50000000000325,
+    "reason": "PERIODIC_TIMER",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 900300.0,
+    "selected_score_W": 0.14483388736834862,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 3.983500000000011,
+    "end_s": 4.089000000000014,
+    "duration_ms": 105.50000000000281,
+    "reason": "PERIODIC_TIMER",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.11305365910985793,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 4.609000000000003,
+    "end_s": 4.651500000000003,
+    "duration_ms": 42.500000000000426,
+    "reason": "PERIODIC_TIMER",
+    "path": "LOCAL_POWER_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.11305365910985793,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 5.171499999999992,
+    "end_s": 5.276999999999995,
+    "duration_ms": 105.50000000000281,
+    "reason": "PERIODIC_TIMER",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 854900.0,
+    "selected_score_W": 0.0725426263390658,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 5.796999999999984,
+    "end_s": 5.9024999999999865,
+    "duration_ms": 105.50000000000281,
+    "reason": "PERIODIC_TIMER",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.16999997832489852,
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "start_s": 2.5000000000000018,
+    "end_s": 2.605500000000005,
+    "duration_ms": 105.50000000000325,
+    "reason": "SOFT_LIMIT_EVENT",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 854800.0,
+    "selected_score_W": 0.1402303826755605,
+    "strategy": "P_AND_O"
+  },
+  {
+    "start_s": 3.3655000000000057,
+    "end_s": 3.471000000000009,
+    "duration_ms": 105.50000000000325,
+    "reason": "HARD_LIMIT_EVENT",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 900300.0,
+    "selected_score_W": 0.14483388736834862,
+    "strategy": "P_AND_O"
+  },
+  {
+    "start_s": 4.091000000000007,
+    "end_s": 4.19650000000001,
+    "duration_ms": 105.50000000000281,
+    "reason": "OBSERVABLE_2_OF_4",
+    "path": "FALLBACK_NO_LOCAL_BRACKET",
+    "selected_Hz": 900000.0,
+    "selected_score_W": 0.11305365910985793,
+    "strategy": "P_AND_O"
+  }
+]

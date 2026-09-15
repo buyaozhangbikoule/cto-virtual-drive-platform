@@ -1,0 +1,27 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\24739\Documents\Codex\2026-08-03\w\outputs\single_factor_disturbance_results\ltspice_cases\CASE_520_LS_P5.cir
+Start Time: Mon Aug 10 15:01:33 2026
+Options:meascplxfmt=cartesian
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+.OP point found by inspection.
+.OP point found by inspection.
+Total elapsed time: 0.661 seconds.
+
+Files loaded:
+C:\Users\24739\Documents\Codex\2026-08-03\w\outputs\single_factor_disturbance_results\ltspice_cases\CASE_520_LS_P5.cir
+
+zin_mag_fixed: mag(V(n_s)/I(Rlesr)) =(67.3683485508,0) at 900000
+zin_real_fixed: re(V(n_s)/I(Rlesr)) =(57.4080981956,0) at 900000
+zin_imag_fixed: im(V(n_s)/I(Rlesr)) =(35.2534345564,0) at 900000
+phase_fixed: ph(V(n_s)/I(Rlesr)) =(31.5534490221,0) at 900000
+vpp_fixed: mag(V(n_in))*2*sqrt(2) =(94.7002384769,0) at 900000
+itrans_peak_fixed: mag(I(Rmot)+I(Cstatic))*sqrt(2) =(0.00475199346011,0) at 900000
+imot_peak_fixed: mag(I(Rmot))*sqrt(2) =(0.0047350114435,0) at 900000
+isource_peak_fixed: mag(I(Rlesr))*sqrt(2) =(0.0669624293297,0) at 900000
+p_fixed: re(V(n_in)*conj(I(Rmot))) =(0.11210167806,0) at 900000
+gamma_fixed: mag((V(n_s)/I(Rlesr)-50)/(V(n_s)/I(Rlesr)+50)) =(0.318662504866,0) at 900000
+pmax: MAX(re(V(n_in)*conj(I(Rmot))))=(0.117519022088,0) FROM 800000 TO 1000000

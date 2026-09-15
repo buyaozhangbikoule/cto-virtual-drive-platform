@@ -1,0 +1,109 @@
+{
+  "pass": true,
+  "output_directory": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\control_feasibility_rerun_20260907T065936_227862Z",
+  "checked_csv_count": 20,
+  "checks": [
+    {
+      "file": "results_r1/E00_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "ca8da912270c78058c5c4c996c6f472accc9801277c04a8a8a6995f006efe459"
+    },
+    {
+      "file": "results_r1/E00_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+    },
+    {
+      "file": "results_r1/E00_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "file": "results_r1/E00_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "1b00dc773b8dbe5228759d6be9f5ef679a630db53eb991f1798f6495092c7f87"
+    },
+    {
+      "file": "results_r1/E00_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "df66b866eb9b7c48eb2972cebffc6f2d2bdd59e48d6953c8fc321fef4e1834e5"
+    },
+    {
+      "file": "results_r1/E00_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "a9783a2e8dbd79be4fab7e80b2499b9ebf21686ad71efca3357e8d3610b81b75"
+    },
+    {
+      "file": "results_r1/E01_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "867024cc91ab1fd15259fddc6c97391fb33c771f9e2be28521c5d0adef3548bb"
+    },
+    {
+      "file": "results_r1/E01_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "3c68cd125895055b69a863c31ff749eab5e68deaf17cd59d8fd67d91516059a9"
+    },
+    {
+      "file": "results_r1/E01_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "240a735c66c083edb04b87bfc74a1892b4305c550606e6dc445bb4eca6450555"
+    },
+    {
+      "file": "results_r1/E01_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "40340c56ddf4b84231c700ba309ea26cd7d632f143e15deabd14480d636ef189"
+    },
+    {
+      "file": "results_r1/E01_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "5bb4afce0d5070788bc44f605d18e47637a951b21580ae465343212b615d0495"
+    },
+    {
+      "file": "results_r1/E01_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "54fdcde5009107bd0b8fea2dade96ac4634fcb0b0292f902c56eae19b1c5ad96"
+    },
+    {
+      "file": "results_r1/E02_dwell_0.8s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "69cd8ff984cd158ffee16bf72004f9401c233ad78a9f119b48850dc7fd7a7a95"
+    },
+    {
+      "file": "results_r1/E02_dwell_0.8s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "f81207fa15264d16c9c46676f1bcf60255340c96fa18277313e6412da8716c97"
+    },
+    {
+      "file": "results_r1/E02_dwell_0.8s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "fef6696ffa10441de310266673daa2571e6b5528c62524aca33fae80e8379e70"
+    },
+    {
+      "file": "results_r1/E02_dwell_1.6s/acceptance_and_energy.csv",
+      "identical_bytes": true,
+      "sha256": "e1b0f099d659f153e8662b7c6e53aecca1c871fe85baebd74211e38383249064"
+    },
+    {
+      "file": "results_r1/E02_dwell_1.6s/per_segment_metrics.csv",
+      "identical_bytes": true,
+      "sha256": "c9d8a13ce1b23af5ab50827b7466266534b14eb6a1e1f6c150644f1fe8dc5dd9"
+    },
+    {
+      "file": "results_r1/E02_dwell_1.6s/timeline.csv",
+      "identical_bytes": true,
+      "sha256": "0132e6b39ebb461ce228d9a93cc8017038c44c8be6ddd12ee965191a7b8e2db1"
+    },
+    {
+      "file": "results_r1/parameter_registry.csv",
+      "identical_bytes": true,
+      "sha256": "763b78b0ea4c080ddb49f7ce5ff59fb64c1405a6f5f69d9b6d5e19463421cb84"
+    },
+    {
+      "file": "results_r1/summary.csv",
+      "identical_bytes": true,
+      "sha256": "ac70089272705106674d3a67a63be5cb89a72de803dcfd37a13d96ccead58d86"
+    }
+  ],
+  "original_evidence_overwritten": false,
+  "LTspice_rerun": false
+}

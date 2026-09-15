@@ -1,0 +1,83 @@
+[
+  {
+    "scenario": "CASE_000_BASELINE",
+    "max_step_ns": 1,
+    "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\BASELINE_CHECK_1NS.cir",
+    "measurement_window_s": [
+      0.0028,
+      0.003
+    ],
+    "frequency_Hz": 900000,
+    "amplitude": 1,
+    "LTspice_transient": {
+      "vport_vpp": 100.20880126953125,
+      "iport_irms_A": 0.004983920471939237,
+      "p_rm_W": 0.16917297912127488
+    },
+    "Python_steady_state": {
+      "vport_vpp": 99.99999362496995,
+      "iport_irms_A": 0.004999999681248331,
+      "p_rm_W": 0.16999997832489855
+    },
+    "relative_error_percent": {
+      "vport_vpp": 0.20880765787285502,
+      "iport_irms_A": 0.3215842066829792,
+      "p_rm_W": 0.486470181803867
+    },
+    "raw_points": 3000029
+  },
+  {
+    "scenario": "CASE_FS_M5",
+    "max_step_ns": 2,
+    "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\DIST_PEAK_CHECK_2NS.cir",
+    "measurement_window_s": [
+      0.0028,
+      0.003
+    ],
+    "frequency_Hz": 854800,
+    "amplitude": 1,
+    "LTspice_transient": {
+      "vport_vpp": 96.5455436706543,
+      "iport_irms_A": 0.004920205059895567,
+      "p_rm_W": 0.13928484348326112
+    },
+    "Python_steady_state": {
+      "vport_vpp": 96.9772777202958,
+      "iport_irms_A": 0.004953087083814075,
+      "p_rm_W": 0.14023038267556054
+    },
+    "relative_error_percent": {
+      "vport_vpp": 0.4451909352278617,
+      "iport_irms_A": 0.6638692872160655,
+      "p_rm_W": 0.6742755558808091
+    },
+    "raw_points": 1500036
+  },
+  {
+    "scenario": "CASE_FS_M5",
+    "max_step_ns": 1,
+    "file": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ltspice_transient_replay_20260911_continue\\DIST_PEAK_CHECK_1NS.cir",
+    "measurement_window_s": [
+      0.0028,
+      0.003
+    ],
+    "frequency_Hz": 854800,
+    "amplitude": 1,
+    "LTspice_transient": {
+      "vport_vpp": 96.9185791015625,
+      "iport_irms_A": 0.004934253927977893,
+      "p_rm_W": 0.139333061026327
+    },
+    "Python_steady_state": {
+      "vport_vpp": 96.9772777202958,
+      "iport_irms_A": 0.004953087083814075,
+      "p_rm_W": 0.14023038267556054
+    },
+    "relative_error_percent": {
+      "vport_vpp": 0.06052821868500215,
+      "iport_irms_A": 0.38023066256447824,
+      "p_rm_W": 0.6398910365306452
+    },
+    "raw_points": 3000029
+  }
+]

@@ -1,0 +1,360 @@
+{
+  "source": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_energy_update_20260909\\output\\CTO组会汇报_第14与15页评价更新_2026-09-09.pptx",
+  "source_sha256": "74477a293c3e8d561ca4b4f7439cbce3437072e08bdc9852d1bab78ce1484d5f",
+  "references": [
+    {
+      "original_slide": 1,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO超声换能器虚拟阻抗建模与自适应驱动控制_第一月计划书.docx",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 2,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md",
+      "exists": true,
+      "sha256": "8ec5fc8880d3d2b959a1002e42440ac3cce66a3160a97431b4907f4528f5036e"
+    },
+    {
+      "original_slide": 3,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage1/stage1_resonance_summary.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 4,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage1/V2_1_STAGE1_audit.json",
+      "exists": true,
+      "sha256": "5345356de2d5cd2c1932d34cab422aed698af3e6b467de3952d724b9f0a9e51c"
+    },
+    {
+      "original_slide": 4,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage1/stage1_resonance_summary.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 5,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/evidence/ltspice/stage2/stage2_audit.json",
+      "exists": true,
+      "sha256": "4397db9766e9167055464ce2f67054166f47566878ce632ee5dfdf002fd8da1b"
+    },
+    {
+      "original_slide": 5,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_匹配前后特征汇总.csv",
+      "exists": true,
+      "sha256": "a897bbb228e1b76eefbab03ef3345420fbc12548b29fceb08e794514a0e1d78c"
+    },
+    {
+      "original_slide": 5,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/stage2_matching/stage2_LTspice逐频数据.csv",
+      "exists": true,
+      "sha256": "f0171bb1f3126e19c2c5389d7c66927c18ef799ad86d5fd76c8458acf720ab70"
+    },
+    {
+      "original_slide": 6,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage2/stage2_matching_summary.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 6,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/outputs/v2_self_consistent_rebuild/active_stage3_5/model_v2_1.py",
+      "exists": true,
+      "sha256": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23"
+    },
+    {
+      "original_slide": 7,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_trend_table.csv",
+      "exists": true,
+      "sha256": "87f928c51b0bd7f43034dbd3f4c0fcb7f04ed3e21d07813e149b5acc34ecae4c"
+    },
+    {
+      "original_slide": 7,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv",
+      "exists": true,
+      "sha256": "207d07fceb3463ca76f286dc29273252b5f36fc7145d3ef0e4c7ea616a3862eb"
+    },
+    {
+      "original_slide": 8,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_cm_only_power_safety_summary.csv",
+      "exists": true,
+      "sha256": "36b1d421e7803ac13e4b44f8c612549b10dea28f015b71155fecba4539044401"
+    },
+    {
+      "original_slide": 8,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/figures/stage3_disturbance/cm_only/stage3_07_cm_only_power_and_electrical_limits.png",
+      "exists": true,
+      "sha256": "f3513ec4b63dddf36fa9fac43b76a01b5d26c1d1227475a7956772c38abb43b2"
+    },
+    {
+      "original_slide": 9,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_Qm_500_800_1000_summary.csv",
+      "exists": true,
+      "sha256": "c7d4b320f948d7442406238e5ab55e080aff18eb2218a591c823952e6b2ea553"
+    },
+    {
+      "original_slide": 10,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv",
+      "exists": true,
+      "sha256": "4268d0022a8375d121d0b8b07af55d808d0b435ddc409bbc2d1a9d35deb41e5e"
+    },
+    {
+      "original_slide": 10,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_three_criteria_all_scenarios.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 11,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_aggregate.csv",
+      "exists": true,
+      "sha256": "6482c6813bd774c3b5ae0068fb53a2893822b1910b8b60aea8047b6f126a408a"
+    },
+    {
+      "original_slide": 11,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_window_step_tradeoff.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 12,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_control_timeline.csv",
+      "exists": true,
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "original_slide": 12,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_per_segment_metrics.csv",
+      "exists": true,
+      "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+    },
+    {
+      "original_slide": 12,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage5_integrated_strategy_table.csv",
+      "exists": true,
+      "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+    },
+    {
+      "original_slide": 12,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/stage4_5_audit.json",
+      "exists": true,
+      "sha256": "df4a814bae6e63a39fa9a010a6f61b6918cf0e842c0658bec6b94ee65ad575ca"
+    },
+    {
+      "original_slide": 12,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/ppt_control_fix_20260906/build/data/run_stage4_5_control.py",
+      "exists": true,
+      "sha256": "240b203d43ead0988695845df9eaef493a4daf1ba95fb747eaa6a3c4612bf6f0"
+    },
+    {
+      "original_slide": 13,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/constrained_control_audit.json",
+      "exists": true,
+      "sha256": "b6744517f7eb2f7c9e8e548eeca408ef45a554cba4f04fd7338931deacc2e6d3"
+    },
+    {
+      "original_slide": 13,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/plan_control_coupling_audit.json",
+      "exists": true,
+      "sha256": "a83df4da209c8ee2869c0f6c8488c5374051330017c02660c1370ed238d5beec"
+    },
+    {
+      "original_slide": 14,
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\po_scheduling_20260909\\results\\B0_T500_A90_R2_dwell_0.8s\\timeline.csv",
+      "exists": true,
+      "sha256": "cdde9dab61a50f443c783d25f5fb87014214290ad71c1f9950de99ad5bb560a9"
+    },
+    {
+      "original_slide": 14,
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\po_scheduling_20260909\\results\\B0_T500_A90_R2_dwell_0.8s\\config.json",
+      "exists": true,
+      "sha256": "1da90ee3f9f2539e169393436cd05ce610d8fd2f2e0b55abb70a816c26f8692d"
+    },
+    {
+      "original_slide": 14,
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\po_scheduling_20260909\\results\\B0_T500_A90_R2_dwell_0.8s\\acceptance_and_energy.csv",
+      "exists": true,
+      "sha256": "814162b0c159cf23d1e11b2730d9f5f99b0c679ea05cfda18d1f91092cf8d606"
+    },
+    {
+      "original_slide": 15,
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data/stage4_control_timeline.csv",
+      "exists": true,
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "original_slide": 15,
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data/stage5_integrated_strategy_table.csv",
+      "exists": true,
+      "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+    },
+    {
+      "original_slide": 15,
+      "path": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\ppt_control_fix_20260906\\build\\data/stage5_per_segment_metrics.csv",
+      "exists": true,
+      "sha256": "8ff0000b1a5df21e1ca1d7edd5eb382fc9e61bd3c39c67238f1e19be7436f2e4"
+    },
+    {
+      "original_slide": 16,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/interfaces/electro_acoustic_v1/electro_acoustic_interface_audit.json",
+      "exists": true,
+      "sha256": "2d3f98faafbd4ea82987aeb65b0dd1eaae4d3a31f1a71eee3daadec1f49addd5"
+    },
+    {
+      "original_slide": 16,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv",
+      "exists": true,
+      "sha256": "eabe564754708a47c16e96e7a02eff075101965d09c8e6e43444a5a6234d6688"
+    },
+    {
+      "original_slide": 17,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/前视超声治疗.pdf",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 17,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/High intensity focused ultrasound  Physical principles and devices.pdf",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 17,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md",
+      "exists": true,
+      "sha256": "8ec5fc8880d3d2b959a1002e42440ac3cce66a3160a97431b4907f4528f5036e"
+    },
+    {
+      "original_slide": 18,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/plan_control_coupling_audit.json",
+      "exists": true,
+      "sha256": "a83df4da209c8ee2869c0f6c8488c5374051330017c02660c1370ed238d5beec"
+    },
+    {
+      "original_slide": 18,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md",
+      "exists": true,
+      "sha256": "8ec5fc8880d3d2b959a1002e42440ac3cce66a3160a97431b4907f4528f5036e"
+    },
+    {
+      "original_slide": 19,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/README.md",
+      "exists": true,
+      "sha256": "147b7ca22d465a3c00554ef242b566d3224c79178d6265bac855865698c2cc87"
+    },
+    {
+      "original_slide": 20,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_scenario_registry_and_summary.csv",
+      "exists": true,
+      "sha256": "207d07fceb3463ca76f286dc29273252b5f36fc7145d3ef0e4c7ea616a3862eb"
+    },
+    {
+      "original_slide": 20,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_control_timeline.csv",
+      "exists": true,
+      "sha256": "a734eca013d415f7a875c2785068745cd80ad811d7284e893bbcd1e974c5f0a0"
+    },
+    {
+      "original_slide": 21,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_LTspice_cross_validation.csv",
+      "exists": true,
+      "sha256": "068d2c4794894b706cdb8d67859cc0dcc3d068a0acf5bb2c87c9824d10800596"
+    },
+    {
+      "original_slide": 21,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_disturbance/stage3_audit.json",
+      "exists": true,
+      "sha256": "d9c36eaf806d5f80b2b36855c9fc4279f1c0b710ec0456aa61e44b309b5effa7"
+    },
+    {
+      "original_slide": 22,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_initial_three_criteria.csv",
+      "exists": true,
+      "sha256": "4268d0022a8375d121d0b8b07af55d808d0b435ddc409bbc2d1a9d35deb41e5e"
+    },
+    {
+      "original_slide": 23,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_gain_sweep_summary.csv",
+      "exists": true,
+      "sha256": "c75a7efa97b7f3c4e38c3248b5110a0631e5d60df10543445cf4849177c1ee36"
+    },
+    {
+      "original_slide": 23,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/phase_ablation/phase_ablation_audit.json",
+      "exists": true,
+      "sha256": "b07dba8aa30050d0ee31717a58c6ba6a00a479ce57ecf8efa8812e32f4e45672"
+    },
+    {
+      "original_slide": 24,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/plan_fixed_periodic_phase_integrated.csv",
+      "exists": true,
+      "sha256": "c04c5a3347f9641b06c4837548b6074c84903fcb9283a3c469f805eb9b650231"
+    },
+    {
+      "original_slide": 24,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/audits/scan_vs_phase_scenario_comparison.csv",
+      "exists": true,
+      "sha256": "329ff30bfa35e2f79453155c1b56751f4f0b11e010c3b9952617e56f0a98a076"
+    },
+    {
+      "original_slide": 25,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/SHA256_文件清单.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 26,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage4_5_audit.json",
+      "exists": true,
+      "sha256": "df4a814bae6e63a39fa9a010a6f61b6918cf0e842c0658bec6b94ee65ad575ca"
+    },
+    {
+      "original_slide": 26,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/results/tables/stage4_5/stage5_integrated_strategy_table.csv",
+      "exists": true,
+      "sha256": "1daf082bbc1d2c8757415a277c4f7954e26d1f0561d6c949b73ac315b880bb58"
+    },
+    {
+      "original_slide": 27,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/run_all.py",
+      "exists": true,
+      "sha256": "4777c7e55ab9e71b88e74ffaef6edafa6845b15204b18c8dac8c6182fb1d1f84"
+    },
+    {
+      "original_slide": 27,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/README.md",
+      "exists": true,
+      "sha256": "147b7ca22d465a3c00554ef242b566d3224c79178d6265bac855865698c2cc87"
+    },
+    {
+      "original_slide": 27,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/SHA256_文件清单.csv",
+      "exists": false,
+      "sha256": null
+    },
+    {
+      "original_slide": 28,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/interfaces/electro_acoustic_v1/interface_field_dictionary.csv",
+      "exists": true,
+      "sha256": "eabe564754708a47c16e96e7a02eff075101965d09c8e6e43444a5a6234d6688"
+    },
+    {
+      "original_slide": 28,
+      "path": "C:/Users/24739/Documents/Codex/2026-08-10/new-chat/CTO_virtual_drive_platform_v2_1/docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md",
+      "exists": true,
+      "sha256": "8ec5fc8880d3d2b959a1002e42440ac3cce66a3160a97431b4907f4528f5036e"
+    }
+  ],
+  "missing_count": 10,
+  "missing_slides": [
+    1,
+    3,
+    4,
+    6,
+    10,
+    11,
+    17,
+    25,
+    27
+  ]
+}

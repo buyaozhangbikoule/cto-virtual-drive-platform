@@ -1,0 +1,28 @@
+{
+  "code": 0,
+  "result": {
+    "checks": [
+      {
+        "chart": 1,
+        "slide": 6,
+        "status": "present"
+      },
+      {
+        "chart": 2,
+        "slide": 6,
+        "status": "present"
+      }
+    ],
+    "finding_count": 0,
+    "findings": [],
+    "native_chart_count": 2,
+    "native_powerpoint_verified": false,
+    "passed": true,
+    "presentation_sha256": "91ef28cc9a284a6bc3880639e1bf2b795386d1a100ca6ae44ee58a3fd0c4bbc0",
+    "schema_version": "presentation-native-chart-titles.v1",
+    "slide_count": 28,
+    "source_text_emitted": false,
+    "unresolved_linked_title_count": 0
+  },
+  "stderr": ""
+}

@@ -1,0 +1,46 @@
+{
+  "generated_at_utc": "2026-09-01T09:58:18.416329+00:00",
+  "status": "PASS",
+  "interface_version": "EA_IF_V1.0",
+  "electrical_record_count": 4,
+  "finite_element_solver_was_run": false,
+  "schema_validation": [
+    {
+      "record_id": "EA_V1_CASE_000_BASELINE_SAFE_POWER_PEAK",
+      "vpp_identity_error_V": 0.0,
+      "zport_identity_error_ohm": 0.0,
+      "pport_identity_error_W": 0.0,
+      "hard_constraint_check": true,
+      "status": "PASS"
+    },
+    {
+      "record_id": "EA_V1_CASE_COMBINED_LOW_SAFE_POWER_PEAK",
+      "vpp_identity_error_V": 2.842170943040401e-14,
+      "zport_identity_error_ohm": 0.0,
+      "pport_identity_error_W": 0.0,
+      "hard_constraint_check": true,
+      "status": "PASS"
+    },
+    {
+      "record_id": "EA_V1_CASE_COMBINED_MEDIUM_SAFE_POWER_PEAK",
+      "vpp_identity_error_V": 0.0,
+      "zport_identity_error_ohm": 0.0,
+      "pport_identity_error_W": 0.0,
+      "hard_constraint_check": true,
+      "status": "PASS"
+    },
+    {
+      "record_id": "EA_V1_CASE_COMBINED_HIGH_SAFE_POWER_PEAK",
+      "vpp_identity_error_V": 1.4210854715202004e-14,
+      "zport_identity_error_ohm": 0.0,
+      "pport_identity_error_W": 0.0,
+      "hard_constraint_check": true,
+      "status": "PASS"
+    }
+  ],
+  "input_hashes": {
+    "model_v2_1.py": "2561ec5dd2bd8d321cb2bf02b46b0a55c7275b9dbbbc3b85cec9498e9dca7aae",
+    "stage3_scenario_registry_and_summary.csv": "26ccc7c6bd94a86dfaafae2cc3fdad9f9a3b2c112c69306e024f1e43228368f3"
+  },
+  "important_interpretation": "PASS means the electrical export is internally consistent and ready as an FEM input contract; it is not an acoustic-solver result."
+}

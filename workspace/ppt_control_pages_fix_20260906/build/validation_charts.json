@@ -1,0 +1,107 @@
+{
+  "exit_code": 0,
+  "result": {
+    "claim_boundary": "OOXML/workbook structural validation only; source provenance and native PowerPoint opening remain separate checks.",
+    "expected_quantitative_chart_slides": [
+      6,
+      15,
+      24
+    ],
+    "failed_slide_count": 0,
+    "failed_slides": [],
+    "formal_human_reviewed": false,
+    "native_application_open_verified": false,
+    "package_sha256": "5ce9f1da54d33acd01f79dafb7b3fc4487a6ffdc81e546c64d1e361f59594bf8",
+    "passed": true,
+    "required_embedded_workbook_slides": [],
+    "results": [
+      {
+        "approved_source_figure_exception": false,
+        "charts": [
+          {
+            "editability_evidence": "powerpoint_native_literal",
+            "embedded_workbook_count": 0,
+            "embedded_workbook_sheet_count": 0,
+            "literal_numeric_point_count": 1604,
+            "native_chart_types": [
+              "scatterChart"
+            ],
+            "numeric_cache_point_count": 0,
+            "series_formula_count": 0,
+            "workbook_numeric_cell_count": 0
+          },
+          {
+            "editability_evidence": "powerpoint_native_literal",
+            "embedded_workbook_count": 0,
+            "embedded_workbook_sheet_count": 0,
+            "literal_numeric_point_count": 2405,
+            "native_chart_types": [
+              "scatterChart"
+            ],
+            "numeric_cache_point_count": 0,
+            "series_formula_count": 0,
+            "workbook_numeric_cell_count": 0
+          }
+        ],
+        "failure_codes": [],
+        "native_chart_count": 2,
+        "raster_picture_count": 0,
+        "required_native_chart_count": 1,
+        "slide_number": 6,
+        "status": "passed"
+      },
+      {
+        "approved_source_figure_exception": false,
+        "charts": [
+          {
+            "editability_evidence": "powerpoint_native_literal",
+            "embedded_workbook_count": 0,
+            "embedded_workbook_sheet_count": 0,
+            "literal_numeric_point_count": 3,
+            "native_chart_types": [
+              "barChart"
+            ],
+            "numeric_cache_point_count": 0,
+            "series_formula_count": 0,
+            "workbook_numeric_cell_count": 0
+          }
+        ],
+        "failure_codes": [],
+        "native_chart_count": 1,
+        "raster_picture_count": 0,
+        "required_native_chart_count": 1,
+        "slide_number": 15,
+        "status": "passed"
+      },
+      {
+        "approved_source_figure_exception": false,
+        "charts": [
+          {
+            "editability_evidence": "powerpoint_native_literal",
+            "embedded_workbook_count": 0,
+            "embedded_workbook_sheet_count": 0,
+            "literal_numeric_point_count": 3,
+            "native_chart_types": [
+              "barChart"
+            ],
+            "numeric_cache_point_count": 0,
+            "series_formula_count": 0,
+            "workbook_numeric_cell_count": 0
+          }
+        ],
+        "failure_codes": [],
+        "native_chart_count": 1,
+        "raster_picture_count": 0,
+        "required_native_chart_count": 1,
+        "slide_number": 24,
+        "status": "passed"
+      }
+    ],
+    "schema_version": "owner-private.quantitative-chart-native-gate.v1",
+    "slide_count": 28,
+    "source_attachments_accessed": false,
+    "target_application": "powerpoint",
+    "validated_slide_count": 3
+  },
+  "stderr": ""
+}

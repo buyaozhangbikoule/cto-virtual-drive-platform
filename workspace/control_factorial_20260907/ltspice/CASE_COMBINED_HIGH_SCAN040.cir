@@ -1,0 +1,15 @@
+* Hypothetical model; AC RMS-equivalent source; not a controller transient
+Vdrive src 0 AC 2.4869443578126913
+Rsource src vin 60
+Rlesr vin nl 33.193615856768474
+Lmatch nl port 0.00011739840094884937
+Cmatch port nc 2.5523890861092097e-10
+Rcesr nc 0 0.69283647473681076
+C0 port 0 8.9154833367579324e-12
+Rm port nm1 11029.411764705877
+Lm nm1 nm2 1.6424658729813753
+Cm nm2 0 2.1096561657405244e-14
+.ac lin 2001 800000 1000000
+.options plotwinsize=0
+.save V(vin) V(port) I(Rsource) I(Rm) I(C0)
+.end

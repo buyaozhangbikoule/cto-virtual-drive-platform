@@ -1,0 +1,272 @@
+[
+  {
+    "time_s": 0.024500000000000004,
+    "reference_deg": null,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 0.5670000000000001,
+    "reference_deg": -1.0782096368565852,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 1.1095,
+    "reference_deg": -1.0782096368565852,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 1.6520000000000012,
+    "reference_deg": -0.6509721430541213,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 2.1945000000000023,
+    "reference_deg": 3.197021737182365,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 2.7370000000000037,
+    "reference_deg": 3.197021737182365,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 3.279500000000005,
+    "reference_deg": 1.5930287410200386,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 3.8220000000000063,
+    "reference_deg": -4.835584983043558,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 4.384499999999999,
+    "reference_deg": -4.835584983043558,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 4.986999999999988,
+    "reference_deg": -4.8355849830435575,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 5.612499999999979,
+    "reference_deg": -41.42656417373125,
+    "center_Hz": 854800.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 6.174999999999969,
+    "reference_deg": -41.42656417373126,
+    "center_Hz": 854800.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 6.737499999999958,
+    "reference_deg": -41.42656417373125,
+    "center_Hz": 854800.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 7.36299999999995,
+    "reference_deg": 36.73892727746398,
+    "center_Hz": 900300.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 7.925499999999939,
+    "reference_deg": 36.73892727746398,
+    "center_Hz": 900300.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 8.487999999999928,
+    "reference_deg": -18.049998962536613,
+    "center_Hz": 900300.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 9.11349999999992,
+    "reference_deg": -0.7562221784011868,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 9.67599999999991,
+    "reference_deg": -1.6951325910388533,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 10.301499999999901,
+    "reference_deg": -39.79081012605078,
+    "center_Hz": 854900.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 10.86399999999989,
+    "reference_deg": -39.79081012605078,
+    "center_Hz": 854900.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 11.42649999999988,
+    "reference_deg": -80.21114061037824,
+    "center_Hz": 854900.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 12.051999999999872,
+    "reference_deg": -1.0782096368565852,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 12.614499999999861,
+    "reference_deg": -1.0782096368565852,
+    "center_Hz": 900000.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "LOCAL_POWER_BRACKET",
+    "strategy": "PERIODIC_SCAN"
+  },
+  {
+    "time_s": 7.464499999999929,
+    "reference_deg": null,
+    "center_Hz": 899500.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "P_AND_O"
+  },
+  {
+    "time_s": 8.12999999999992,
+    "reference_deg": 26.61686148297584,
+    "center_Hz": 900300.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "P_AND_O"
+  },
+  {
+    "time_s": 10.655499999999872,
+    "reference_deg": -0.7562221784011868,
+    "center_Hz": 899800.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "P_AND_O"
+  },
+  {
+    "time_s": 11.320999999999863,
+    "reference_deg": -43.92216863860064,
+    "center_Hz": 854900.0,
+    "slope_deg_per_Hz": null,
+    "candidate_Hz": null,
+    "phase_candidate_used": false,
+    "outcome": "FALLBACK_NO_LOCAL_BRACKET",
+    "strategy": "P_AND_O"
+  }
+]

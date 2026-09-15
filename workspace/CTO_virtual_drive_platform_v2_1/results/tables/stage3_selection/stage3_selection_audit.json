@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "scenario_count": 34,
+  "initial_scan": {
+    "start_Hz": 840000.0,
+    "stop_Hz": 960000.0,
+    "step_Hz": 500.0
+  },
+  "reference_step_Hz": 10.0,
+  "tested_steps_Hz": [
+    100.0,
+    500.0,
+    1000.0,
+    2000.0
+  ],
+  "tested_half_windows_Hz": [
+    20000.0,
+    50000.0,
+    100000.0
+  ],
+  "scan_point_time_proxy_s": 0.0015,
+  "scope": "offline quasi-steady electrical selection study; scan time is a declared proxy, not hardware timing"
+}

@@ -1,0 +1,7 @@
+Source deck: CTO超声换能器第一月教授组会汇报_2026-08-24.pptx
+Slides: 22
+Edit scope: slide 7 only.
+Preserved: slide order, typography, colors, titles, FWHM callouts, speaker notes, page chrome, and all other slides.
+Issue confirmed: image object im/tsze1szm used a symmetric top/bottom crop of 11.277%, which removed the lower impedance subplot axis and curve extent.
+Correction: retain the original Python-generated raster, remove only the non-data chart-title margin at the top, keep the entire lower boundary and x-axis, and resize the frame to the cropped source aspect ratio.
+Template inspection helper could not complete because the bundled Windows environment has no unzip executable. Artifact-tool import, inspect, resolve, render, and export remain available and are used directly.

@@ -1,0 +1,191 @@
+{
+  "script_sha256": "e2bdc84f1c4766199d68fdef4430b3f754223bd88377ea65b055c343c34e4699",
+  "runs": [
+    {
+      "name": "E02_000",
+      "dwell_s": 0.8,
+      "rows": 1710,
+      "timeline_sha256": "2e7dff47e57bc0bb675bcafcf77414078ef26ced6d9fe7c024520191b1f1dd36",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true,
+      "E02_exact_reproduction": true
+    },
+    {
+      "name": "E03_A",
+      "dwell_s": 0.8,
+      "rows": 1526,
+      "timeline_sha256": "84231e10a1c0ab9a5dd2e17905428f379bbbd33f9f7e2e953c31c85431668866",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E04_B",
+      "dwell_s": 0.8,
+      "rows": 1660,
+      "timeline_sha256": "084ffbcb7845208e1c2bfeeed3b35238c580129e3e5036acea4178c115b4bd7d",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E05_C",
+      "dwell_s": 0.8,
+      "rows": 1710,
+      "timeline_sha256": "badbcb5e6fb532deff12e0a1197c9e3839797acd0dd58c9a60c6bec9d50dbfa2",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E06_AB",
+      "dwell_s": 0.8,
+      "rows": 1498,
+      "timeline_sha256": "92b564512f4cf0776c9580092d67bb9e8fc2b209a47b32f6a7a8688b5e10c283",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E07_AC",
+      "dwell_s": 0.8,
+      "rows": 1526,
+      "timeline_sha256": "efdff8b72bcf56a8340d1fe222463a2abea551df564357e194411c8218cb33c9",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E08_BC",
+      "dwell_s": 0.8,
+      "rows": 1660,
+      "timeline_sha256": "b55b806c7e29a64023db1c668385058e61da84a1013a89fa64214cdb30d76adb",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E09_ABC",
+      "dwell_s": 0.8,
+      "rows": 1498,
+      "timeline_sha256": "ff3ee999760149c94373aaf862d503e4b15468d3c4fae8bf97adc60c2ff5077a",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "D01_LOCAL",
+      "dwell_s": 0.8,
+      "rows": 1518,
+      "timeline_sha256": "344e0dfc17523a6e80512a15622b4af18a6075fc485ac4e833d06d67dd253175",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "D02_LOCAL_BC",
+      "dwell_s": 0.8,
+      "rows": 1466,
+      "timeline_sha256": "661594f9e8682254fad7475a9c3d6563261868dc34d270e1dbc4567d7329ecfb",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E02_000",
+      "dwell_s": 1.6,
+      "rows": 3269,
+      "timeline_sha256": "fd83c64c5af1194b8ca41b60705d4ae78d658ef98eb59bba1b4fc395c2725748",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true,
+      "E02_exact_reproduction": true
+    },
+    {
+      "name": "E03_A",
+      "dwell_s": 1.6,
+      "rows": 2715,
+      "timeline_sha256": "bb6020c73aa72aa18e52a62fde03d82204d4598aad514a81b24ad068f03f4e7a",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E04_B",
+      "dwell_s": 1.6,
+      "rows": 3169,
+      "timeline_sha256": "88bc9288944cc9a009f8402e4c56b519c17ba0b308a4297bc25a860372f07e25",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E05_C",
+      "dwell_s": 1.6,
+      "rows": 3269,
+      "timeline_sha256": "940c563bd9c2858130de29b75e203320e2817521e18484660f93cd40a2988450",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E06_AB",
+      "dwell_s": 1.6,
+      "rows": 2653,
+      "timeline_sha256": "e2a8c840a3c24a0c91dc571aea2ef4c939056ba3ce425cd3f67cf156bc223775",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E07_AC",
+      "dwell_s": 1.6,
+      "rows": 2715,
+      "timeline_sha256": "73401a32d8fc2c375d9cca9001040a532e3af6aa475ddceb3b27ed2dd21f4870",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E08_BC",
+      "dwell_s": 1.6,
+      "rows": 3169,
+      "timeline_sha256": "9b464bb5b4b398b5d250a811e2781be79343e06ed303db2ee3caec8b78ae6c27",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "E09_ABC",
+      "dwell_s": 1.6,
+      "rows": 2653,
+      "timeline_sha256": "c2c976f6f2079a72a73c4d68b113fb986a52b714e07bb496ac7701cb1c62a042",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "D01_LOCAL",
+      "dwell_s": 1.6,
+      "rows": 2673,
+      "timeline_sha256": "339cebd4c73d039b730f7554687eaebf26c0f96b1d6ceb6cb744b7e9d9113c43",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    },
+    {
+      "name": "D02_LOCAL_BC",
+      "dwell_s": 1.6,
+      "rows": 2645,
+      "timeline_sha256": "81d691c2a002a9a32991a52da161b0c117bceb69b616248b8299358d2b138c02",
+      "pointwise_hard_violations": 0,
+      "all_actions_guarded": true,
+      "amplitude_state_consistent": true
+    }
+  ],
+  "elapsed_wall_s": 49.66508299999987,
+  "hypothetical_model": true,
+  "noise_or_physical_delay_modelled": false,
+  "controller_LTspice_transient_validated": false
+}
