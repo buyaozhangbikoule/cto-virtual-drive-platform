@@ -6,16 +6,20 @@
 
 **优先下载 [2026-09-15交接Release](https://github.com/buyaozhangbikoule/cto-virtual-drive-platform/releases/tag/handoff-2026-09-15)**，而不只是点击绿色按钮“Download ZIP”。Git源代码归档不包含大型RAW、TIFF及部分构建检查文件。
 
-1. 下载 `project_handoff_main.zip`。
-2. 下载 `project_handoff_raw.zip.part001`、`.part002`、`.part003`。
-3. 同目录保存 `restore_raw_archive.py` 和 `RELEASE_ASSETS.json`，执行：
+为适应不稳定的上传连接，两个原始ZIP均拆成每块不超过16 MiB的附件：主包27块、RAW包148块。不是175个独立ZIP；分块不会改变原始文件内容。
+
+1. 使用有此私有仓库访问权限的账号登录GitHub CLI，然后批量下载全部附件：
 
    ```powershell
-   python restore_raw_archive.py
+   gh auth login
+   gh release download handoff-2026-09-15 --repo buyaozhangbikoule/cto-virtual-drive-platform --dir handoff_download --skip-existing
+   python handoff_download/restore_handoff_archives.py
    ```
 
-4. 合并脚本逐块及整包校验SHA256。将主包与生成的 `project_handoff_raw.zip` 解压到同一个父目录，得到 `CTO_Handoff_20260915/`。
-5. 阅读其中的 `00_先读_项目交接说明.md`，按说明安装依赖并用 `handoff.py prepare` 建立工作副本。
+   命令用法见 [GitHub CLI官方文档](https://cli.github.com/manual/gh_release_download)。没有GitHub CLI也可在Release页面逐项下载，但必须保存所有分块、`ARCHIVE_MANIFEST.json` 和 `restore_handoff_archives.py` 到同一目录。不要将账号密码或令牌发给聊天助手。
+2. 合并脚本逐块及整包校验SHA256，输出 `project_handoff_main.zip` 和 `project_handoff_raw.zip`。若已有同名文件且校验一致则跳过，不覆盖不一致的文件。
+3. 将两个ZIP解压到同一个父目录，得到 `CTO_Handoff_20260915/`。
+4. 阅读其中的 `00_先读_项目交接说明.md`，按说明安装依赖并用 `handoff.py prepare` 建立工作副本。
 
 原始主包SHA256：`085bbf0c937de70e65e37289f226e4259645038ec798ca0dc28a641213c38775`。
 原始RAW包SHA256：`739b1ca924b20c638b7fcf04e7019f9417e845b77cd68bee4b29e427620b2a24`。
