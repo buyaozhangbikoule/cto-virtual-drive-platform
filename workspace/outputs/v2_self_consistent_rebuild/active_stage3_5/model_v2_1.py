@@ -20,10 +20,17 @@ ROOT = HERE.parent
 F0 = 0.9e6
 F_MIN = 0.8e6
 F_MAX = 1.0e6
-VPP_SOFT = 130.0
-VPP_HARD = 160.0
-IRMS_SOFT = 5.5e-3
-IRMS_HARD = 6.0e-3
+_limits = json.loads((Path(__file__).resolve().parent / "drive_limits.json").read_text(encoding="utf-8"))
+VPP_SOFT = float(_limits["transducer_limits"]["VPP_SOFT"]["value"])
+VPP_HARD = float(_limits["transducer_limits"]["VPP_HARD"]["value"])
+IRMS_SOFT = float(_limits["transducer_limits"]["IRMS_SOFT"]["value"])
+IRMS_HARD = float(_limits["transducer_limits"]["IRMS_HARD"]["value"])
+# Largest amplitude the amplifier can deliver, in units of SOURCE_A1_VRMS.  This
+# used to be an unnamed np.ones_like() inside allowed_amplitude, which silently
+# turned the stage 2 normalisation into a drive ceiling: at 1.0 the source cap
+# binds first everywhere, so the V/I compliance limits never engage.  Declaring
+# it makes the drive mode a visible, auditable choice.
+SOURCE_MAX_AMPLITUDE = float(_limits["source_capability"]["max_amplitude"]["value"])
 
 
 @dataclass(frozen=True)
@@ -195,23 +202,42 @@ def allowed_amplitude(
     scenario: Scenario,
     *,
     use_soft_limits: bool,
+    source_max: float | None = None,
 ) -> np.ndarray:
+    """Largest drive amplitude allowed by the amplifier and the V/I compliance limits.
+
+    `source_max` defaults to the declared SOURCE_MAX_AMPLITUDE so that existing
+    batches reproduce exactly.  Pass a larger value to run the PUSH_TO_LIMIT
+    drive mode, in which the transducer V/I limits, not the frozen stage 2
+    calibration, decide the operating point.  The V/I limits are themselves
+    bounded (see drive_limits.json), so no artificial ceiling is needed.
+    """
+    cap = SOURCE_MAX_AMPLITUDE if source_max is None else float(source_max)
+    if not (cap > 0) or math.isnan(cap):
+        raise ValueError(f"source_max must be positive, got {cap!r}")
     unit = response(frequency_hz, scenario, amplitude=1.0)
     v_limit = VPP_SOFT if use_soft_limits else VPP_HARD
     i_limit = IRMS_SOFT if use_soft_limits else IRMS_HARD
     with np.errstate(divide="ignore", invalid="ignore"):
         a = np.minimum.reduce(
             [
-                np.ones_like(unit["vport_vpp"]),
+                np.full_like(unit["vport_vpp"], cap),
                 v_limit / np.maximum(unit["vport_vpp"], 1e-30),
                 i_limit / np.maximum(unit["iport_irms_A"], 1e-30),
             ]
         )
-    return np.clip(a, 0.0, 1.0)
+    return np.clip(a, 0.0, cap)
 
 
-def safe_power(frequency_hz: np.ndarray | float, scenario: Scenario) -> np.ndarray:
-    a = allowed_amplitude(frequency_hz, scenario, use_soft_limits=True)
+def safe_power(
+    frequency_hz: np.ndarray | float,
+    scenario: Scenario,
+    *,
+    source_max: float | None = None,
+) -> np.ndarray:
+    a = allowed_amplitude(
+        frequency_hz, scenario, use_soft_limits=True, source_max=source_max
+    )
     unit = response(frequency_hz, scenario, amplitude=1.0)
     return unit["p_rm_W"] * a**2
 

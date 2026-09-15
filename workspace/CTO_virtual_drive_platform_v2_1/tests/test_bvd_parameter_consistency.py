@@ -172,3 +172,74 @@ def test_active_model_matches_ltspice_raw(model):
     z_in_model = model.response(freq, model.scenario_map()["CASE_000_BASELINE"], 1.0)["z_in"]
     rel = np.max(np.abs(z_in_raw - z_in_model) / np.abs(z_in_model))
     assert rel < 1e-3, f"活动模型与 LTspice RAW 的 z_in 最大相对误差 {rel:.3e}"
+
+
+# --------------------------------------------------------------------------
+# 驱动限值登记表与驱动口径
+# --------------------------------------------------------------------------
+
+@pytest.fixture(scope="module")
+def limits() -> dict:
+    return json.loads((ACTIVE / "drive_limits.json").read_text(encoding="utf-8"))
+
+
+def test_model_reads_drive_limits_from_registry(model, limits):
+    """V/I 限值与功放能力上限必须来自登记表,不能回到代码硬编码。"""
+    t = limits["transducer_limits"]
+    assert model.VPP_SOFT == t["VPP_SOFT"]["value"]
+    assert model.VPP_HARD == t["VPP_HARD"]["value"]
+    assert model.IRMS_SOFT == t["IRMS_SOFT"]["value"]
+    assert model.IRMS_HARD == t["IRMS_HARD"]["value"]
+    assert model.SOURCE_MAX_AMPLITUDE == limits["source_capability"]["max_amplitude"]["value"]
+
+
+def test_default_drive_mode_is_frozen_a1(model):
+    """默认口径必须是 FROZEN_A1，否则历史批次不可复现。"""
+    assert model.SOURCE_MAX_AMPLITUDE == 1.0
+
+
+def test_frozen_a1_is_source_bound_everywhere(model):
+    """记录现状：默认口径下 V/I 保护从不触发，34/34 由源幅度绑定。
+
+    这不是「应该如此」，而是把审核发现第 1 节的事实钉住：一旦有人改了
+    max_amplitude 却没有同步更新报告口径，这个用例会失败并提醒他。
+    """
+    f = np.linspace(model.F_MIN, model.F_MAX, 20001)
+    source_bound = 0
+    for s in model.all_scenarios():
+        a = model.allowed_amplitude(f, s, use_soft_limits=True)
+        if float(a[int(np.argmax(model.safe_power(f, s)))]) >= model.SOURCE_MAX_AMPLITUDE - 1e-12:
+            source_bound += 1
+    assert source_bound == len(model.all_scenarios()), (
+        "默认口径下应当全部由源幅度绑定；若此处变化，说明驱动口径已改，"
+        "docs/04_代码审核_2026-09-15.md 第 1 节的结论需要同步更新。"
+    )
+
+
+def test_push_to_limit_engages_vi_protection(model):
+    """PUSH_TO_LIMIT 口径下，V/I 约束必须真正成为绑定约束。"""
+    f = np.linspace(model.F_MIN, model.F_MAX, 20001)
+    cap = 2.5
+    vi_bound = 0
+    for s in model.all_scenarios():
+        a = model.allowed_amplitude(f, s, use_soft_limits=True, source_max=cap)
+        if float(a[int(np.argmax(model.safe_power(f, s, source_max=cap)))]) < cap - 1e-12:
+            vi_bound += 1
+    assert vi_bound == len(model.all_scenarios())
+
+
+def test_push_to_limit_never_exceeds_compliance(model):
+    """推到上限后仍不得越界：这正是「零越界」指标真正被检验的地方。"""
+    f = np.linspace(model.F_MIN, model.F_MAX, 20001)
+    for s in model.all_scenarios():
+        a = model.allowed_amplitude(f, s, use_soft_limits=False, source_max=2.5)
+        r = model.response(f, s, 1.0)
+        assert np.max(r["vport_vpp"] * a) <= model.VPP_HARD * (1 + 1e-12)
+        assert np.max(r["iport_irms_A"] * a) <= model.IRMS_HARD * (1 + 1e-12)
+
+
+def test_source_max_must_be_positive(model):
+    s = model.scenario_map()["CASE_000_BASELINE"]
+    for bad in (0.0, -1.0):
+        with pytest.raises(ValueError):
+            model.allowed_amplitude(0.9e6, s, use_soft_limits=True, source_max=bad)

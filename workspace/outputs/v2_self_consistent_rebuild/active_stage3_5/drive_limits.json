@@ -1,0 +1,41 @@
+{
+  "registry_id": "DRIVE_LIMIT_REGISTRY_V2_1",
+  "created": "2026-09-15",
+  "purpose": "驱动侧限值登记表。换能器端耐受上限与功放能力上限原本硬编码在 model_v2_1.py 中,现移入本表,与 bvd_parameters.json 一起构成完整的参数登记(计划书第三章「参数原则」)。",
+  "declaration": "本表所有数值均为「假设基线值」,不是器件耐受实测数据,也不是任何功放的铭牌指标。",
+
+  "transducer_limits": {
+    "VPP_SOFT": {
+      "value": 130.0, "unit": "Vpp", "class": "ASSUMED_BASELINE",
+      "note": "软压限,控制器正常运行时的上限。介于导师给定的 100 Vpp 标称与 160 Vpp 硬上限之间。"
+    },
+    "VPP_HARD": {
+      "value": 160.0, "unit": "Vpp", "class": "SUPERVISOR_GIVEN",
+      "note": "换能器端电压硬上限,导师给定。保护跳闸包络,不是运行目标。"
+    },
+    "IRMS_SOFT": {
+      "value": 0.0055, "unit": "A_rms", "class": "ASSUMED_BASELINE",
+      "note": "软流限 = 5.5 mA,标称 5 mA 的 1.1 倍。"
+    },
+    "IRMS_HARD": {
+      "value": 0.0060, "unit": "A_rms", "class": "ASSUMED_BASELINE",
+      "note": "硬流限 = 6.0 mA,标称的 1.2 倍。待器件耐受数据确认;交接文档曾假设 1.6 倍(8 mA),两套数字不得混用。"
+    }
+  },
+
+  "source_capability": {
+    "max_amplitude": {
+      "value": 1.0,
+      "class": "ASSUMED_BASELINE",
+      "note": "功放可输出的最大幅度,以 stage2 校准幅度 SOURCE_A1_VRMS (6.2174 Vrms) 为 1.0 单位。此前以 np.ones_like 的形式隐含写死在 allowed_amplitude 里。"
+    },
+    "drive_mode_guidance": {
+      "FROZEN_A1": "max_amplitude = 1.0。冻结 stage2 校准幅度,回答「现有功放下能做到什么」。历史批次全部在此口径下产生,改动此值会使它们不可复现。",
+      "PUSH_TO_LIMIT": "max_amplitude >= 1.2。把幅度推到换能器 V/I 耐受约束刚好触发,回答「器件耐受允许做到什么」,即计划书「最大有功功率」目标所问的问题。",
+      "bounding_note": "V/I 约束本身是有界的:34 场景全带、软硬两套限值下,允许幅度的绝对上界为 3.285(约 20.4 Vrms 源电压)。因此 PUSH_TO_LIMIT 不需要人为兜底,max_amplitude 取 2.5 以上即等价于无源限。",
+      "observed_binding": "max_amplitude=1.0 时 34/34 场景由源幅度绑定,V/I 保护从不触发;=1.2 时 10/34 转为 V/I 绑定;>=1.6 时 32/34;>=2.5 时 34/34。"
+    }
+  },
+
+  "known_consequence_of_1_0": "在 max_amplitude = 1.0 下,V/I 保护状态机与「零越界」验收指标被平凡满足(从未被触发,因而从未被验证),且标称点有功功率停在 170.0 mW,而同一套软限值下可达 252.5 mW。详见 docs/04_代码审核_2026-09-15.md 第 1 节。"
+}
