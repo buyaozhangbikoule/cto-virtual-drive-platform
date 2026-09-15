@@ -293,3 +293,33 @@ def test_max_power_criterion_is_the_constrained_optimum(model):
         assert abs(best_constrained - best_power) <= 1.0, (
             f"{s.case_id}: 约束内最优 {best_constrained} != 最大功率点 {best_power}"
         )
+
+
+def test_selection_report_scenario_count_is_not_hardcoded():
+    """报告里的场景数必须由数据算出。
+
+    活动登记表从 28 个场景扩到 34 个后，write_report() 里硬编码的 "28" 没有
+    跟着更新，导致报告与同一脚本写出的 audit JSON（scenario_count）互相矛盾。
+    这类「数字写死在字符串里」的错误不会被任何数值检查发现。
+
+    注意：`report_evidence_final/` 与 `archived_sources/` 下的 28 是 28 场景
+    时期的正确记录，不在本用例范围内，也不应被改。
+    """
+    src = (REBUILD / "active_stage3_5" / "run_stage3_selection.py").read_text(encoding="utf-8")
+    assert "以全部28个活动场景" not in src
+    assert "len(initial)}个活动场景" in src
+
+
+def test_live_selection_reports_agree_with_scenario_count(model):
+    """活动批次的报告与实际场景数一致（历史证据批次除外）。"""
+    n = len(model.all_scenarios())
+    live = [
+        REBUILD / "active_stage3_5" / "stage3_selection" / "stage3_selection_report.md",
+        REPO / "workspace" / "CTO_virtual_drive_platform_v2_1" / "results" / "tables"
+        / "stage3_selection" / "stage3_selection_report.md",
+    ]
+    for path in live:
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        assert f"以全部{n}个活动场景" in text, f"{path.name} 的场景数与登记表({n})不一致"

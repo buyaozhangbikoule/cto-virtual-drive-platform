@@ -222,7 +222,10 @@ def write_report(initial: list[dict], aggregate: list[dict]) -> None:
     ]
     if recommended:
         lines.append(
-            f"以全部28个活动场景、全局10 Hz参考网格为验收基准，满足窗口不漏掉最大功率点且离散误差不超过0.5 kHz的最快组合为："
+            # 场景数由数据算出，不写死：活动登记表从 28 扩到 34 个场景后，
+            # 这里的硬编码 28 没有跟着更新，导致报告与 audit JSON 的 scenario_count 互相矛盾。
+            f"以全部{len(initial)}个活动场景、全局10 Hz参考网格为验收基准，"
+            f"满足窗口不漏掉最大功率点且离散误差不超过0.5 kHz的最快组合为："
             f"±{recommended['window_halfwidth_kHz']:.0f} kHz窗口、{recommended['step_kHz']:.1f} kHz步长，"
             f"{recommended['points']}点，扫描时间代理约{recommended['scan_time_proxy_ms']:.1f} ms。"
         )
