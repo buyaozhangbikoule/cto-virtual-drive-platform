@@ -1,0 +1,43 @@
+{
+  "status": "PASS",
+  "batch": "plan_gap_closure_20260915",
+  "model_source_class": "ASSUMED_BASELINE; 与 active_stage3_5 同一模型，未改动任何参数",
+  "drive_mode": "FROZEN_A1 (SOURCE_MAX_AMPLITUDE=1.0)",
+  "gap1_selection_constraints": {
+    "max_power": {
+      "exceeds_V_hard": 0,
+      "exceeds_V_soft": 0,
+      "exceeds_I_hard": 0,
+      "max_vport_vpp": 119.60004680578541,
+      "mean_deliverable_p_rm_mW": 143.90614582893878
+    },
+    "min_abs_phase": {
+      "exceeds_V_hard": 30,
+      "exceeds_V_soft": 32,
+      "exceeds_I_hard": 0,
+      "max_vport_vpp": 198.0182461534863,
+      "mean_deliverable_p_rm_mW": 6.631987767360321
+    },
+    "min_reflection": {
+      "exceeds_V_hard": 2,
+      "exceeds_V_soft": 2,
+      "exceeds_I_hard": 0,
+      "max_vport_vpp": 188.32274666537035,
+      "mean_deliverable_p_rm_mW": 137.809717251575
+    }
+  },
+  "gap3_resonance": {
+    "scenarios_with_resolvable_fp": 34,
+    "fp_minus_fs_range_Hz": [
+      1470.5,
+      3626.5
+    ],
+    "max_abs_fp_drift_Hz": 78622.0
+  },
+  "gap4_voltage_vs_power": {
+    "scenarios_where_peaks_differ": 34,
+    "scenarios_where_voltage_peak_exceeds_hard_limit": 31,
+    "min_power_ratio_at_voltage_peak": 0.0002318827502294262
+  },
+  "note": "本批次不重跑也不覆盖 active_stage3_5 下的历史结果；仅新增派生表。"
+}
