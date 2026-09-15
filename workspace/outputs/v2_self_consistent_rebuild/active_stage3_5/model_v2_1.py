@@ -70,12 +70,50 @@ _design = json.loads(
 _cal = json.loads(
     (ROOT / "stage2_matching" / "stage2_控制源幅度校准.json").read_text(encoding="utf-8")
 )
+# Qm used to be hardcoded here.  It now lives in the parameter registry so that
+# the registry covers every BVD parameter, not just the ones stage 2 happened
+# to write out.  See bvd_parameters.json for the provenance of each value.
+_registry = json.loads((HERE / "bvd_parameters.json").read_text(encoding="utf-8"))
+BASE_QM = float(_registry["bvd_parameters"]["Qm"]["value"])
+
+
+def _assert_bvd_consistent(bvd: "BVD", design_bvd: dict, tol: float) -> None:
+    """Fail loudly if the Qm-derived Lm/Cm drift from the stage 2 design JSON.
+
+    Lm exists in three places: derived from Qm here, stored in the stage 2
+    design JSON, and written literally into the stage 2 LTspice netlist.  They
+    agree today only because one run of design_stage2.py produced all three at
+    Qm=800; nothing enforced it.  Changing Qm without regenerating the netlist
+    silently invalidates the Python/LTspice cross-validation, so refuse to load
+    rather than continue with a model that no longer matches its own evidence.
+    The netlist half of the same invariant is covered by
+    tests/test_bvd_parameter_consistency.py.
+    """
+    for name, derived in (("Lm_H", bvd.lm), ("Cm_F", bvd.cm)):
+        stored = float(design_bvd[name])
+        if stored == 0 or not math.isfinite(stored):
+            raise ValueError(f"stage2 design JSON has an unusable {name}: {stored!r}")
+        rel = abs(derived - stored) / abs(stored)
+        if rel > tol:
+            raise ValueError(
+                f"BVD parameter registry is inconsistent with the stage 2 design JSON: "
+                f"{name} derived from Qm={bvd.qm} is {derived!r}, but the design JSON "
+                f"stores {stored!r} (relative difference {rel:.3e} > {tol:.0e}).\n"
+                f"Qm was most likely changed without regenerating "
+                f"stage2_matching/*.cir and the stage 2 design JSON. Regenerate them "
+                f"with design_stage2.py at the new Qm, or restore Qm in "
+                f"bvd_parameters.json, then re-run the consistency tests."
+            )
+
 
 BASE_BVD = bvd_from_fs_qm(
     c0=float(_design["bvd"]["C0_F"]),
     rm=float(_design["bvd"]["Rm_ohm"]),
     fs=float(_design["bvd"]["fs_Hz"]),
-    qm=800.0,
+    qm=BASE_QM,
+)
+_assert_bvd_consistent(
+    BASE_BVD, _design["bvd"], float(_registry["consistency_check"]["tolerance_rel"])
 )
 BASE_MATCH = Matching(
     l_h=float(_design["design"]["l_active_H"]),

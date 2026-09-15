@@ -1,0 +1,58 @@
+{
+  "registry_id": "BVD_PARAMETER_REGISTRY_V2_1",
+  "created": "2026-09-15",
+  "purpose": "活动 BVD 模型的参数登记表。按计划书第三章「参数原则」,BVD 的每一个参数都必须在此登记并标注来源与类别,不得只存在于代码里。",
+  "declaration": "本表所有数值均为「假设基线值」,由工作点反推或由优化器求得,不是阻抗分析仪实测的器件参数。实测后必须整体替换并重跑一致性检查。",
+
+  "bvd_parameters": {
+    "Qm": {
+      "value": 800.0,
+      "class": "ASSUMED_BASELINE",
+      "origin": "REGISTRY",
+      "note": "机械品质因数。2026-09-15 之前硬编码在 model_v2_1.py 中,现移入本表。这是唯一在本表直接取值的 BVD 参数。Qm 是本课题最大的未知量,也是第一扫描变量;改动此值会改变 Lm/Cm,并使 Python 模型偏离 stage2 的 LTspice 网表 —— 必须同步重新生成网表并重跑 tests/test_bvd_parameter_consistency.py。"
+    },
+    "C0_F": {
+      "class": "ASSUMED_BASELINE",
+      "origin": "stage2_design_reference.bvd.C0_F",
+      "note": "静态并联电容。与 Rm 共同反推自 |Z(0.9 MHz)| = 7.071 kΩ 工作点。"
+    },
+    "Rm_ohm": {
+      "class": "ASSUMED_BASELINE",
+      "origin": "stage2_design_reference.bvd.Rm_ohm",
+      "note": "机械支路等效损耗电阻。"
+    },
+    "fs_Hz": {
+      "class": "ASSUMED_BASELINE",
+      "origin": "stage2_design_reference.bvd.fs_Hz",
+      "note": "串联谐振频率,导师给定的标称工作频率。"
+    },
+    "Lm_H": {
+      "class": "DERIVED",
+      "origin": "由 Qm、Rm_ohm、fs_Hz 推导:Lm = Qm * Rm / (2*pi*fs)",
+      "note": "不从 JSON 读取。stage2_design_reference 中存有同名字段,仅作为交叉校验基准,见 consistency_check。"
+    },
+    "Cm_F": {
+      "class": "DERIVED",
+      "origin": "由 Lm_H、fs_Hz 推导:Cm = 1 / ((2*pi*fs)^2 * Lm)",
+      "note": "不从 JSON 读取。同上,仅作交叉校验。"
+    }
+  },
+
+  "stage2_design_reference": {
+    "path": "../stage2_matching/stage2_匹配设计参数.json",
+    "sha256": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202",
+    "role": "历史设计产物,由 design_stage2.py 在 Qm=800 下一次性生成。受 FILE_MANIFEST.json 的 sha256 覆盖,不得修改。C0/Rm/fs 与匹配网络参数由模型从此文件读取。"
+  },
+  "stage2_calibration_reference": {
+    "path": "../stage2_matching/stage2_控制源幅度校准.json",
+    "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4",
+    "role": "冻结的戴维南源幅度。同受清单覆盖,不得修改。"
+  },
+
+  "consistency_check": {
+    "rule": "由本表 Qm 推导出的 Lm/Cm,必须与 stage2_design_reference 中存储的 Lm_H/Cm_F 在相对误差 tolerance_rel 内一致;超限即抛 ValueError,不得静默继续。",
+    "tolerance_rel": 1e-12,
+    "rationale": "Lm 在三处各存一份:本表(经 Qm 推导)、stage2 设计 JSON、stage2 LTspice 网表字面值。三者今天一致仅因同源生成,此前没有任何机制保证。本检查把 Python 与设计 JSON 钉死,网表一致性由 tests/test_bvd_parameter_consistency.py 覆盖。",
+    "enforced_by": "model_v2_1._assert_bvd_consistent()"
+  }
+}
