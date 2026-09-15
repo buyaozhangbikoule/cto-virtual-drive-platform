@@ -11,7 +11,10 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-from model_v2_1 import F0, F_MIN, F_MAX, all_scenarios, response
+from model_v2_1 import (
+    F0, F_MIN, F_MAX, IRMS_HARD, IRMS_SOFT, VPP_HARD, VPP_SOFT,
+    all_scenarios, response,
+)
 
 
 HERE = Path(__file__).resolve().parent
@@ -56,6 +59,17 @@ def selected(freq: np.ndarray, q: dict[str, np.ndarray]) -> dict[str, dict]:
             "gamma": float(q["gamma"][i]), "zin_real_ohm": float(z.real),
             "zin_imag_ohm": float(z.imag), "zin_abs_ohm": float(abs(z)),
             "vport_vpp": float(q["vport_vpp"][i]), "iport_irms_A": float(q["iport_irms_A"][i]),
+            # 计划书第 3 周：「设定电压、电流和功率的相对上限，作为控制器不得越过的
+            # 模型内部约束。」在 amplitude=1 下评估选出的工作点是否越限。
+            # 不加这几列时，最小相位准则会在 30/34 场景选出越过 160 Vpp 硬上限的点，
+            # 且该点功率往往不足峰值的 1%，而表面上看不出任何异常。
+            "exceeds_V_soft": int(q["vport_vpp"][i] > VPP_SOFT),
+            "exceeds_V_hard": int(q["vport_vpp"][i] > VPP_HARD),
+            "exceeds_I_soft": int(q["iport_irms_A"][i] > IRMS_SOFT),
+            "exceeds_I_hard": int(q["iport_irms_A"][i] > IRMS_HARD),
+            "admissible_at_a1": int(
+                q["vport_vpp"][i] <= VPP_HARD and q["iport_irms_A"][i] <= IRMS_HARD
+            ),
         }
     return result
 

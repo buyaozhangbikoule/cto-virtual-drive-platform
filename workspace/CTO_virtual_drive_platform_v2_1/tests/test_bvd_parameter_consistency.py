@@ -243,3 +243,53 @@ def test_source_max_must_be_positive(model):
     for bad in (0.0, -1.0):
         with pytest.raises(ValueError):
             model.allowed_amplitude(0.9e6, s, use_soft_limits=True, source_max=bad)
+
+
+# --------------------------------------------------------------------------
+# 选频研究的约束口径（计划书第 3 周）
+# --------------------------------------------------------------------------
+
+def test_selection_study_applies_vi_constraints():
+    """选频脚本必须标注选出的工作点是否越过 V/I 上限。
+
+    计划书第 3 周：「设定电压、电流和功率的相对上限，作为控制器不得越过的
+    模型内部约束。」不加这几列时，最小相位准则会在 30/34 场景选出越过
+    160 Vpp 硬上限的点，且功率往往不足峰值的 1%，表面上看不出异常。
+    """
+    src = (REBUILD / "active_stage3_5" / "run_stage3_selection.py").read_text(encoding="utf-8")
+    for field in ("exceeds_V_hard", "exceeds_V_soft", "exceeds_I_hard",
+                  "exceeds_I_soft", "admissible_at_a1"):
+        assert field in src, f"run_stage3_selection.py 缺少约束列 {field}"
+
+
+def test_closed_loop_selects_by_power_not_phase(model):
+    """闭环控制器按端口有功功率选点，不按相位或反射代理。
+
+    这是「最小相位准则会选出越界点」在运行期不构成安全问题的原因，
+    也是必须守住的性质：若有人把 local_scan 改成按相位选点，
+    就会把 docs/05 第 3 节量化的越界风险引入闭环。
+    """
+    src = (REBUILD / "active_stage3_5" / "run_stage4_5_control.py").read_text(encoding="utf-8")
+    assert src.count('measured.append((row["normalized_port_power_W"]') == 3, (
+        "local_scan 的三级扫描应全部按端口有功功率选点"
+    )
+    assert "min_abs_phase" not in src and "argmin(np.abs(q[\"phase_deg\"]))" not in src
+
+
+def test_max_power_criterion_is_the_constrained_optimum(model):
+    """最大功率准则本身就是约束下的最优解（34/34 场景）。
+
+    这条是 docs/05 第 6 节可直接写进报告的结论，固化以防回归。
+    """
+    f = np.arange(0.84e6, 0.96e6 + 1, 0.5e3)
+    for s in model.all_scenarios():
+        q = model.response(f, s, 1.0)
+        a = model.allowed_amplitude(f, s, use_soft_limits=True)
+        deliverable = q["p_rm_W"] * a**2
+        ok = (q["vport_vpp"] <= model.VPP_HARD) & (q["iport_irms_A"] <= model.IRMS_HARD)
+        assert ok.any(), f"{s.case_id}: 无任何合规频点"
+        best_constrained = float(f[int(np.argmax(np.where(ok, deliverable, -np.inf)))])
+        best_power = float(f[int(np.argmax(q["p_rm_W"]))])
+        assert abs(best_constrained - best_power) <= 1.0, (
+            f"{s.case_id}: 约束内最优 {best_constrained} != 最大功率点 {best_power}"
+        )
