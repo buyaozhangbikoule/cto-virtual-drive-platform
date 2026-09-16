@@ -594,17 +594,26 @@ def test_manifest_mismatches_are_all_recorded():
 
     manifest = {e["path"]: e for e in
                 json.loads((REPO / "FILE_MANIFEST.json").read_text(encoding="utf-8"))}
-    recorded = {c["file"] for c in
+    recorded = {c["file"]: c for c in
                 json.loads((REPO / "POST_HANDOFF_CHANGES.json").read_text(encoding="utf-8"))["changes"]}
-    unrecorded = []
+    unrecorded, stale = [], []
     for path, entry in manifest.items():
         f = REPO / path
         if not f.is_file():
             continue  # 未纳入 Git 树的 Release 文件，README 已说明
-        if f.stat().st_size != entry["bytes"] or \
-                hashlib.sha256(f.read_bytes()).hexdigest() != entry["sha256"]:
-            if path not in recorded:
+        digest = hashlib.sha256(f.read_bytes()).hexdigest()
+        if f.stat().st_size != entry["bytes"] or digest != entry["sha256"]:
+            c = recorded.get(path)
+            if c is None:
                 unrecorded.append(path)
+            elif c["after_sha256"] != digest:
+                # 登记过但又被改了一次，after_sha256 已过期。只检查「是否登记」
+                # 不够：第二次改动会被静默放过，记录随之失去核对价值。
+                stale.append(f"{path}\n      记录 after_sha256={c['after_sha256'][:12]}… "
+                             f"实际={digest[:12]}…")
     assert not unrecorded, (
         "以下文件与 FILE_MANIFEST 失配但未登记到 POST_HANDOFF_CHANGES.json：\n  "
         + "\n  ".join(unrecorded))
+    assert not stale, (
+        "以下文件已登记，但 POST_HANDOFF_CHANGES.json 里的 after_sha256 与当前内容不符，"
+        "说明登记后又改过一次而未更新记录：\n  " + "\n  ".join(stale))

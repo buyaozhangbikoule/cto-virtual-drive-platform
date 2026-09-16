@@ -1,0 +1,109 @@
+{
+  "batch": "disturbance_v3_20260916",
+  "scan_point_dt_s": 0.0015,
+  "design_basis": {
+    "fwhm_median_Hz": 74467.98690554418,
+    "fwhm_min_Hz": 37657.8538208009,
+    "max_fs_offset_Hz": 69703.25665977853,
+    "required_coarse_halfwidth_Hz": 69703.25665977853,
+    "sufficient_step_Hz": 9414.463455200224
+  },
+  "ladders": [
+    {
+      "ladder": "v2_1_原样搬运",
+      "stages": "±50k/5k -> ±5k/1k -> ±1k/0.1k",
+      "points_per_sweep": 53,
+      "time_proxy_ms": 79.5,
+      "capture_min": 0.870003705811107,
+      "capture_mean": 0.9935045016473733,
+      "capture_p10": 0.9999983647750974,
+      "cases_below_90pct": 1,
+      "cases_below_99pct": 2,
+      "worst_case": "CASE_LM_P20"
+    },
+    {
+      "ladder": "v2_1_加宽粗扫",
+      "stages": "±100k/5k -> ±5k/1k -> ±1k/0.1k",
+      "points_per_sweep": 73,
+      "time_proxy_ms": 109.5,
+      "capture_min": 0.9999949257759843,
+      "capture_mean": 0.9999993224919653,
+      "capture_p10": 0.9999988282026512,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 0,
+      "worst_case": "CASE_QM_42P19"
+    },
+    {
+      "ladder": "v3_两级_80k20k",
+      "stages": "±80k/20k -> ±20k/5k",
+      "points_per_sweep": 18,
+      "time_proxy_ms": 27.0,
+      "capture_min": 0.996223264518506,
+      "capture_mean": 0.9988948715444614,
+      "capture_p10": 0.9971889819615712,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 0,
+      "worst_case": "CASE_FS_M1"
+    },
+    {
+      "ladder": "v3_两级_80k16k",
+      "stages": "±80k/16k -> ±16k/4k",
+      "points_per_sweep": 20,
+      "time_proxy_ms": 30.0,
+      "capture_min": 0.996926843283103,
+      "capture_mean": 0.9994728405066436,
+      "capture_p10": 0.9983932574551767,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 0,
+      "worst_case": "CASE_COMBINED_MEDIUM"
+    },
+    {
+      "ladder": "v3_两级_100k25k",
+      "stages": "±100k/25k -> ±25k/6k",
+      "points_per_sweep": 18,
+      "time_proxy_ms": 27.0,
+      "capture_min": 0.9947631034535805,
+      "capture_mean": 0.9982611486904818,
+      "capture_p10": 0.9967789280469745,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 0,
+      "worst_case": "CASE_RS_P10"
+    },
+    {
+      "ladder": "v3_单级_80k10k",
+      "stages": "±80k/10k",
+      "points_per_sweep": 17,
+      "time_proxy_ms": 25.500000000000004,
+      "capture_min": 0.9876547580809157,
+      "capture_mean": 0.9976087569303409,
+      "capture_p10": 0.9915261465388284,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 2,
+      "worst_case": "CASE_COMBINED_HIGH"
+    },
+    {
+      "ladder": "v3_单级_100k10k",
+      "stages": "±100k/10k",
+      "points_per_sweep": 21,
+      "time_proxy_ms": 31.5,
+      "capture_min": 0.9876547580809157,
+      "capture_mean": 0.9976087569303409,
+      "capture_p10": 0.9915261465388284,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 2,
+      "worst_case": "CASE_COMBINED_HIGH"
+    },
+    {
+      "ladder": "v3_三级_100k25k6k",
+      "stages": "±100k/25k -> ±25k/6k -> ±6k/1.5k",
+      "points_per_sweep": 27,
+      "time_proxy_ms": 40.5,
+      "capture_min": 0.9994114448160342,
+      "capture_mean": 0.9998808688021661,
+      "capture_p10": 0.9996699004341947,
+      "cases_below_90pct": 0,
+      "cases_below_99pct": 0,
+      "worst_case": "CASE_QM_42P19"
+    }
+  ]
+}

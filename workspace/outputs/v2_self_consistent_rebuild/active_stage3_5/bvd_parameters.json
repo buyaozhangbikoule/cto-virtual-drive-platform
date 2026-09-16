@@ -3,7 +3,6 @@
   "created": "2026-09-15",
   "purpose": "活动 BVD 模型的参数登记表。按计划书第三章「参数原则」,BVD 的每一个参数都必须在此登记并标注来源与类别,不得只存在于代码里。",
   "declaration": "本表所有数值均为「假设基线值」,由工作点反推或由优化器求得,不是阻抗分析仪实测的器件参数。实测后必须整体替换并重跑一致性检查。",
-
   "bvd_parameters": {
     "Qm": {
       "value": 800.0,
@@ -37,7 +36,6 @@
       "note": "不从 JSON 读取。同上,仅作交叉校验。"
     }
   },
-
   "stage2_design_reference": {
     "path": "../stage2_matching/stage2_匹配设计参数.json",
     "sha256": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202",
@@ -48,11 +46,11 @@
     "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4",
     "role": "冻结的戴维南源幅度。同受清单覆盖,不得修改。"
   },
-
   "consistency_check": {
     "rule": "由本表 Qm 推导出的 Lm/Cm,必须与 stage2_design_reference 中存储的 Lm_H/Cm_F 在相对误差 tolerance_rel 内一致;超限即抛 ValueError,不得静默继续。",
     "tolerance_rel": 1e-12,
     "rationale": "Lm 在三处各存一份:本表(经 Qm 推导)、stage2 设计 JSON、stage2 LTspice 网表字面值。三者今天一致仅因同源生成,此前没有任何机制保证。本检查把 Python 与设计 JSON 钉死,网表一致性由 tests/test_bvd_parameter_consistency.py 覆盖。",
     "enforced_by": "model_v2_1._assert_bvd_consistent()"
-  }
+  },
+  "superseded_notice_2026_09_16": "2026-09-16 起，本表描述的是【v2.1 基线】，该基线锚在 |Z(0.9 MHz)| = 7.071 kΩ 上，而该工作点由 100 Vpp ÷ 5 mA 反推、导师澄清后已失效。本表保留原样是为了让 v2.1 的历史批次继续逐位复现，不得据此开展新设计。新基线见 workspace/operating_point_v3_20260916/ 与 workspace/disturbance_v3_20260916/。 具体到本表：Qm = 800 是 v2.1 的假设值。v3 由材料损耗（PZT-5H 典型 65）与辐射损耗（平面波近似 31.2）并联正向推导出 Qm ≈ 21，浸入血液的 PZT-5H 上 800 物理不可达。"
 }

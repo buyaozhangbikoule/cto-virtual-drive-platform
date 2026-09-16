@@ -1,0 +1,89 @@
+{
+  "registry_id": "DISTURBANCE_REGISTRY_V3",
+  "created": "2026-09-16",
+  "supersedes": "active_stage3_5 的 34 场景扰动表（锚在 |Z(fs)| = 7.071 kΩ 上，该工作点已失效）",
+  "upstream": "workspace/operating_point_v3_20260916/operating_point.json",
+  "declaration": "材料常数为公开典型值，几何为设计选择，声学与损耗为假设基线。没有一个数来自本项目的阻抗分析仪实测。实测后整表替换。",
+
+  "operating": {
+    "f0_Hz": {"value": 800000.0, "class": "SUPERVISOR_GIVEN",
+              "note": "0.8 MHz 为合适振动条件，且同为长度模三次谐波。"},
+    "f_scan_min_Hz": {"value": 650000.0, "class": "DESIGN_CHOICE",
+                      "note": "下沿须容纳 Lm/Cm +20% 场景的 fs = 730.3 kHz 及其半功率左肩。v2.1 的 0.8-1.0 MHz 窗在新基线下会把最偏的场景整体截掉。"},
+    "f_scan_max_Hz": {"value": 950000.0, "class": "DESIGN_CHOICE",
+                      "note": "上沿须容纳并联谐振 fp = f0*sqrt(1+Cm/C0) ≈ 868 kHz 及其右肩。"}
+  },
+
+  "driver": {
+    "type": {"value": "50_ohm_RF_power_amplifier", "class": "SUPERVISOR_CONFIRMED"},
+    "source_impedance_ohm": {"value": 50.0, "class": "SUPERVISOR_CONFIRMED"}
+  },
+
+  "baseline": {
+    "geometry": {"value": "hollow_cylinder_31_mode", "class": "DESIGN_CHOICE",
+                 "note": "径向极化空心圆柱、内外表面电极、沿长度振动。取自 reference/前视超声治疗.pdf。"},
+    "material": {"value": "PZT-5H", "class": "DESIGN_CHOICE"},
+    "od_mm": {"value": 1.35, "class": "DESIGN_CHOICE"},
+    "id_mm": {"value": 0.73, "class": "DESIGN_CHOICE"},
+    "harmonic": {"value": 3, "class": "SUPERVISOR_GIVEN"}
+  },
+
+  "materials": {
+    "_class": "公开典型值，非本项目实测。31 模常数用于空心圆柱。",
+    "PZT-5H": {"epsilon_r": 3400, "k31": 0.39, "N31_Hz_m": 1500, "Qm_material": 65},
+    "PZT-5A": {"epsilon_r": 1800, "k31": 0.34, "N31_Hz_m": 1400, "Qm_material": 75},
+    "PZT-4":  {"epsilon_r": 1300, "k31": 0.33, "N31_Hz_m": 1650, "Qm_material": 500},
+    "PZT-8":  {"epsilon_r": 1000, "k31": 0.30, "N31_Hz_m": 1700, "Qm_material": 1000}
+  },
+
+  "acoustic": {
+    "Z_piezo_MRayl": {"value": 33.0, "class": "ASSUMED_BASELINE"},
+    "Z_blood_MRayl": {"value": 1.66, "class": "ASSUMED_BASELINE"},
+    "c_blood_m_s": {"value": 1540.0, "class": "ASSUMED_BASELINE"},
+    "Q_radiation_formula": "pi * Z_piezo / (2 * Z_blood)"
+  },
+
+  "matching": {
+    "topology": {"value": "SHUNT_C_AT_SOURCE", "class": "DERIVED",
+                 "note": "由负载实部与源阻抗的大小关系自动选定，不是人为指定。空心圆柱在谐振点实部 < 50 Ω，需升阻，故并联 C 跨在 50 Ω 侧。v2.1 的 SHUNT_C_AT_LOAD 在此负载上物理不可行——并联 C 只改虚部，输入实部上限为 1/Re(Y_load)，恒小于 50 Ω。"},
+    "inductor_Q_at_f0": {"value": 100.0, "class": "ASSUMED_BASELINE",
+                         "note": "与 v2.1 stage2 相同，保证两版对照公平。"},
+    "capacitor_Q_at_f0": {"value": 1000.0, "class": "ASSUMED_BASELINE",
+                          "note": "同上。"},
+    "esr_model": "由 f0 处声明的 Q 导出的固定串联电阻"
+  },
+
+  "drive_limits": {
+    "_principle": "v2.1 用 100 Vpp / 5 mA 这一【对】数作为约束，两者相除即 7.07 kΩ，把模型锁死在一个不存在的阻抗上。v3 只保留可跨几何迁移的量：功率。电压上限改由电场强度与壁厚导出，电流上限取自文献器件实测，三者都标注出处。",
+    "P_PORT_SOFT_W": {"value": 0.1768, "class": "DERIVED_FROM_SUPERVISOR_VI",
+                      "note": "100 Vpp (=35.36 Vrms) x 5 mA = 176.8 mW。导师原始意图的功率等价物。a1 = 1.0 即标定在此工作点。"},
+    "P_PORT_HARD_W": {"value": 1.0, "class": "OBSERVED_REFERENCE",
+                      "note": "文献器件 20 Vpp 驱动、匹配到 50 Ω，即约 1 W 电学峰值功率（占空比 9.1% 下平均 91 mW）。作为硬上限的依据比任意乘 2 更有出处。"},
+    "VPP_SOFT": {"value": 100.0, "class": "SUPERVISOR_RECOMMENDED",
+                 "note": "导师推荐值。在本几何下远未触及场强限，不构成实际约束。"},
+    "VPP_HARD": {"value": 155.0, "class": "DERIVED",
+                 "note": "由场强限导出：壁厚 (1.35-0.73)/2 = 0.31 mm，取 PZT-5H 连续交流驱动场强限 250 V/mm（ASSUMED_BASELINE），得幅值 77.5 V，即 155 Vpp。【这一条必须随几何重算】：33 模实心柱的电极间距是长度 5.6 mm，同样场强下容许电压高 18 倍，v2.1 的 160 Vpp 不能原样搬过来。",
+                 "E_limit_V_per_mm": 250.0, "wall_mm": 0.31},
+    "IRMS_SOFT": {"value": 0.10, "class": "DESIGN_CHOICE",
+                  "note": "取文献器件电流的 0.7 倍作为软限。"},
+    "IRMS_HARD": {"value": 0.141, "class": "OBSERVED_REFERENCE",
+                  "note": "文献器件 20 Vpp / 匹配 50 Ω 对应 141 mA。这是【观测到的可用驱动】，不是器件破坏阈值——不可当作安全额定值引用。",
+                  "supersedes": "5 mA。该值是在假定负载 7.07 kΩ 时与 100 Vpp 配对给出的；在 29 Ω 负载上 5 mA 仅对应 0.4 mW，比导师意图低 440 倍，照搬会使整个设计无意义。"},
+    "GAMMA_SOFT": {"value": 0.333, "class": "ASSUMED_BASELINE",
+                   "note": "驻波比 2:1。典型 50 Ω 射频功放在此之上开始折返输出或告警。这是【功放侧】的约束，v2.1 完全没有——因为 v2.1 的负载离 50 Ω 有 142 倍，匹配网络必须存在且必然被设计好，Γ 从不是自由变量。"},
+    "GAMMA_HARD": {"value": 0.5, "class": "ASSUMED_BASELINE",
+                   "note": "驻波比 3:1。多数功放的保护跳闸点量级。"},
+    "gamma_is_a_flag_not_a_cap": "Γ 不按幅度平方缩放，不能写成 allowed_amplitude 里的一条上限；把它建成幅度上限等于虚构某一型功放的折返曲线。因此只作可行性标志输出。",
+    "source_max_amplitude": {"value": 4.0, "class": "DESIGN_CHOICE",
+                             "note": "功放能力上限，单位为 a1。设在 4.0（= 16 倍功率余量）使 V/I/P 限值而非功放成为约束者，从而让限幅逻辑可被观测。E&I A150 为 150 W 级，实际余量远大于此。"}
+  },
+
+  "scenario_changes_vs_v2_1": {
+    "Qm_levels": {
+      "was": [500, 800, 1000],
+      "now": "基线 Qm 的 0.5x / 1x / 2x",
+      "why": "基线 Qm 由材料损耗（典型 65）与辐射损耗（平面波近似 31.2）并联导出，约 21。500/800/1000 在浸入血液的 PZT-5H 上物理不可达——辐射损耗单独就把 Qm 压到 31 以下。0.5x/2x 区间覆盖「换硬性材料」与「空气背衬台架测试」两端。"
+    },
+    "unchanged": "其余 31 个场景的因子与百分比档位与 v2.1 完全一致，以便逐格对照。"
+  }
+}

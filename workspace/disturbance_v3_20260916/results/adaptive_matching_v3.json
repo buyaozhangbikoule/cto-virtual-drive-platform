@@ -1,0 +1,141 @@
+{
+  "batch": "disturbance_v3_20260916",
+  "power_target_W": 0.1768,
+  "strategies": {
+    "A": "固定匹配 + 固定频率 f0",
+    "B": "固定匹配 + 频率跟踪（现有四种策略的共同能力上限）",
+    "C": "自适应匹配 + 频率跟踪（文献器件做法）"
+  },
+  "gamma": {
+    "A": {
+      "min": 0.003156123751130596,
+      "mean": 0.23541338181604943,
+      "max": 0.9027850010504199
+    },
+    "B": {
+      "min": 0.004397241413297243,
+      "mean": 0.033550939354867235,
+      "max": 0.2028568312156034
+    },
+    "C": {
+      "min": 0.004361861010922954,
+      "mean": 0.006793815348645183,
+      "max": 0.025751770988190033
+    }
+  },
+  "exceeding_gamma_hard": {
+    "A": [
+      "CASE_FS_M3",
+      "CASE_FS_M5",
+      "CASE_LM_P10",
+      "CASE_LM_P20",
+      "CASE_CM_P10",
+      "CASE_CM_P20",
+      "CASE_COMBINED_MEDIUM",
+      "CASE_COMBINED_HIGH"
+    ],
+    "B": [],
+    "C": []
+  },
+  "exceeding_gamma_soft_count": {
+    "A": 10,
+    "B": 0,
+    "C": 0
+  },
+  "drive_voltage_vpp": {
+    "A": {
+      "min": 6.5553975276770755,
+      "mean": 9.416024264909593,
+      "max": 28.42127120676936
+    },
+    "B": {
+      "min": 6.555448776315449,
+      "mean": 6.73834642073259,
+      "max": 8.17185889982845
+    },
+    "C": {
+      "min": 6.555602500613977,
+      "mean": 6.741636446762959,
+      "max": 8.237835213415922
+    }
+  },
+  "source_power_W": {
+    "A": {
+      "min": 0.3096799503334618,
+      "mean": 0.46466430391350555,
+      "max": 1.822220332965807
+    },
+    "B": {
+      "min": 0.35255804037042054,
+      "mean": 0.3624733296030149,
+      "max": 0.41573732376709477
+    },
+    "C": {
+      "min": 0.35615176023438305,
+      "mean": 0.3584535440790157,
+      "max": 0.3715000954441816
+    }
+  },
+  "component_retune_range": {
+    "L_change_pct": {
+      "min": -4.293838502284631,
+      "mean": 1.68754145704118,
+      "max": 27.015854922883943
+    },
+    "C_change_pct": {
+      "min": -40.983907612894676,
+      "mean": -5.145115232213514,
+      "max": 5.170261197390191
+    }
+  },
+  "reference_paper_tolerance": {
+    "criterion": "reference/前视超声治疗.pdf 的匹配容差：|Z| = 50 Ω±3 Ω 且相位 0°±5°",
+    "cases_meeting": {
+      "A": 17,
+      "B": 26,
+      "C": 30
+    },
+    "failing_cases": {
+      "A": [
+        "CASE_C0_P30",
+        "CASE_RM_P15",
+        "CASE_RM_P30",
+        "CASE_RM_P50",
+        "CASE_FS_M1",
+        "CASE_FS_M3",
+        "CASE_FS_M5",
+        "CASE_LM_P5",
+        "CASE_LM_P10",
+        "CASE_LM_P20",
+        "CASE_CM_P5",
+        "CASE_CM_P10",
+        "CASE_CM_P20",
+        "CASE_LMATCH_P10",
+        "CASE_COMBINED_LOW",
+        "CASE_COMBINED_MEDIUM",
+        "CASE_COMBINED_HIGH"
+      ],
+      "B": [
+        "CASE_RM_P15",
+        "CASE_RM_P30",
+        "CASE_RM_P50",
+        "CASE_RS_P10",
+        "CASE_RS_P20",
+        "CASE_COMBINED_LOW",
+        "CASE_COMBINED_MEDIUM",
+        "CASE_COMBINED_HIGH"
+      ],
+      "C": [
+        "CASE_RS_P10",
+        "CASE_RS_P20",
+        "CASE_COMBINED_MEDIUM",
+        "CASE_COMBINED_HIGH"
+      ]
+    },
+    "interpretation": {
+      "B_failures_are_all_resistance_drift": "B 的 8 个未达标场景没有一个是频率漂移，全部是【电阻】漂移：Rm +15/30/50%（相位误差至 -21.5°）、Rs +10/20%、以及三个同时含 Rm 与 Rs 分量的 combined 场景。相对地，纯 fs/Lm/Cm 漂移的 9 个场景 B 全部达标——频率跟踪把它们完全修好了。原理上如此：挪频率挪不动负载电阻。这是自适应匹配唯一真正不可替代的地方。",
+      "C_failures_are_all_Rs_drift": "C 的 4 个未达标场景全部是 Rs 漂移（55 Ω 与 60 Ω，相位近 0°）。此时匹配网络正确地匹配到了【漂移后的源阻抗】，Γ 仅 0.005-0.026，是完美匹配；不达标的是「50 Ω±3 Ω」这把绝对尺子本身——它默认源就是 50 Ω。当 Rs 本身是扫描变量时，只有 Γ 这个判据仍然成立。"
+    }
+  },
+  "median_source_power_saving_B_to_C_pct": -0.23510922291393177
+}

@@ -1,0 +1,63 @@
+{
+  "batch": "disturbance_v3_20260916",
+  "scenario_count": 34,
+  "frequency_window_Hz": [
+    650000.0,
+    950000.0
+  ],
+  "frequency_step_Hz": 100.0,
+  "max_power_balance_error_W": 4.440892098500626e-16,
+  "baseline": {
+    "C0_pF": 1730.5180633813586,
+    "Cm_pF": 310.42787762743797,
+    "Lm_uH": 127.49688482485035,
+    "Rm_ohm": 30.382661726438577,
+    "Qm": 21.093255374543386,
+    "fs_Hz": 800000.0,
+    "z_bvd_at_f0_ohm": [
+      28.39908941996381,
+      -7.505441179740244
+    ],
+    "match_topology": "SHUNT_C_AT_SOURCE",
+    "Lmatch_uH": 6.4205664630708705,
+    "Cmatch_nF": 3.470115756461984,
+    "source_a1_Vrms": 5.982825452664479
+  },
+  "fs_spread": {
+    "max_abs_offset_from_f0_Hz": 69703.25665977853,
+    "worst_cases": "CASE_LM_P20"
+  },
+  "fwhm": {
+    "min_Hz": 37658.15010444657,
+    "median_Hz": 74468.04780635028,
+    "max_Hz": 145485.40522219194,
+    "out_of_window_cases": []
+  },
+  "binding_soft_limit_histogram": {
+    "P": 34
+  },
+  "vswr": {
+    "soft_threshold_gamma": 0.333,
+    "hard_threshold_gamma": 0.5,
+    "cases_within_soft": 24,
+    "cases_within_hard": 26,
+    "cases_exceeding_hard": [
+      "CASE_FS_M3",
+      "CASE_FS_M5",
+      "CASE_LM_P10",
+      "CASE_LM_P20",
+      "CASE_CM_P10",
+      "CASE_CM_P20",
+      "CASE_COMBINED_MEDIUM",
+      "CASE_COMBINED_HIGH"
+    ],
+    "worst": "CASE_LM_P20",
+    "worst_gamma": 0.9027850010504199,
+    "note": "在固定频率 f0 = 800 kHz、固定匹配网络下评估。超限场景全部是 fs 发生漂移的那些——说明在 50 Ω 功放下，失谐的代价首先落在功放（反射），而不是换能器（过压过流）。"
+  },
+  "match_quality": {
+    "cases_within_50ohm_pm3": 18,
+    "cases_within_phase_pm5deg": 19,
+    "note": "判据取自 reference/前视超声治疗.pdf 的匹配容差 50 Ω±3 Ω、0°±5°；在 f0 = 800 kHz 固定频率上评估，不做重新调谐。"
+  }
+}
