@@ -16,6 +16,29 @@
     "PZT-4 厚度模": 0.11647393303939943,
     "厚度模常见下限": 0.1641165770951332
   },
+  "radiation_limited_qm": {
+    "PZT-8": 31.1,
+    "PZT-4": 30.0,
+    "PZT-5A": 22.0
+  },
+  "geometric_c0_pF_range": [
+    2.5,
+    7.0
+  ],
+  "reconciled": {
+    "Qm": [
+      22,
+      32
+    ],
+    "k_eff": [
+      0.31,
+      0.37
+    ],
+    "C0_pF": [
+      5,
+      7
+    ]
+  },
   "open_question": "0.9 MHz 的 100 Vpp / 5 mA 是否就在串联谐振点上？需向导师确认。",
   "class": "ASSUMED_BASELINE 推论；材料 k_eff 取自公开常见值，非本项目实测。"
 }
