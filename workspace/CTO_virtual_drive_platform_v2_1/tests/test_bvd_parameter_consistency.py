@@ -532,3 +532,52 @@ def test_amplitude_never_exceeds_declared_source_cap(model):
             a = model.allowed_amplitude(f, s, use_soft_limits=soft)
             assert np.all(a >= 0.0)
             assert np.all(a <= model.SOURCE_MAX_AMPLITUDE + 1e-12)
+
+
+# --------------------------------------------------------------------------
+# 相位闭环作为正式策略
+# --------------------------------------------------------------------------
+
+def test_phase_lock_is_a_formal_strategy():
+    """计划书第 4 周点名要求对比「固定频率、周期扫频和相位闭环」。
+
+    此前正式表里第三种是 P&O，相位闭环只作为消融实验存在。
+    """
+    src = (ACTIVE / "run_stage4_5_control.py").read_text(encoding="utf-8")
+    assert '"PHASE_LOCK"' in src
+    assert "STRATEGIES = [" in src
+    line = next(l for l in src.splitlines() if l.startswith("STRATEGIES = ["))
+    for name in ("FIXED_0P9", "PERIODIC_SCAN", "PHASE_LOCK"):
+        assert name in line, f"正式策略表缺少 {name}"
+
+
+def test_phase_controller_params_from_registry(scan_registry):
+    """相位控制器与防护的参数必须来自登记表，不得写死。"""
+    ph = scan_registry["phase_controller"]
+    for k in ("gain_Hz_per_deg", "probe_Hz", "deadband_deg", "max_update_Hz"):
+        assert isinstance(ph[k]["value"], (int, float))
+    g = ph["false_lock_guard"]
+    for k in ("probe_Hz", "ratio_threshold", "cooldown_s", "min_dwell_s"):
+        assert isinstance(g[k]["value"], (int, float))
+    src = (ACTIVE / "run_stage4_5_control.py").read_text(encoding="utf-8")
+    for name in ("PHASE_GAIN_HZ_PER_DEG", "GUARD_PROBE_HZ", "GUARD_RATIO"):
+        assert name in src
+
+
+def test_false_lock_guard_recalibrates_setpoint():
+    """防护必须两步齐全：探测判伪锁 + 重扫后重新标定相位设定点。
+
+    只重扫不重标定是无效的——功率峰处相位并非 0（标称点 −0.99°），
+    控制器会立刻被拉回伪锁点。这一点在 gap-closure 批次里实测验证过。
+    """
+    src = (ACTIVE / "run_stage4_5_control.py").read_text(encoding="utf-8")
+    assert "PHASE_FALSE_LOCK_GUARD" in src, "缺少伪锁定判定分支"
+    assert "phase_target_deg = float(" in src, "重捕获后必须重新标定相位设定点"
+    assert "GUARD_RATIO" in src and "p_port_W" in src, "防护必须基于可观测的端口有功功率"
+
+
+def test_disturbance_table_records_parallel_resonance():
+    """扰动汇总表必须成对记录串联与并联谐振（计划书第四章、第六章）。"""
+    src = (ACTIVE / "run_stage3_disturbance.py").read_text(encoding="utf-8")
+    for col in ("fp_Hz", "zin_abs_max_ohm", "fp_minus_fs_Hz", "zbvd_abs_max_ohm"):
+        assert f'"{col}"' in src, f"扰动汇总表缺少 {col} 列"

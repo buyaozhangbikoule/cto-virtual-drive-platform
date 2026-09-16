@@ -81,6 +81,13 @@ def scenario_summary(s: Scenario, q: dict[str, np.ndarray]) -> dict:
     safe = safe_power(FREQ, s)
     safe_idx = int(np.argmax(safe))
     zmin = int(np.argmin(np.abs(q["z_in"])))
+    zmax = int(np.argmax(np.abs(q["z_in"])))
+    # 并联谐振（反谐振）。计划书第四章要求「既要观察串联谐振，也要观察并联谐振特征；
+    # 不能只以阻抗最低作为唯一工作点判据」，第六章把「串联/并联谐振点的漂移」列为
+    # 分析指标。此前本表只记录 zin_abs_min，缺了并联侧。
+    zb = np.abs(q["z_bvd"])
+    fs_meas = int(np.argmin(zb))
+    fp_meas = int(np.argmax(zb))
     zero_f, zero_status = phase_zero(FREQ, q["phase_deg"])
     fixed = point_metrics(F0, s)
     hard_a = allowed_amplitude(F0, s, use_soft_limits=False)[0]
@@ -97,6 +104,13 @@ def scenario_summary(s: Scenario, q: dict[str, np.ndarray]) -> dict:
         "safe_power_peak_Hz": float(FREQ[safe_idx]), "safe_power_peak_W": float(safe[safe_idx]),
         "safe_amplitude_at_peak": float(allowed_amplitude(FREQ[safe_idx], s, use_soft_limits=True)[0]),
         "zin_abs_min_Hz": float(FREQ[zmin]), "zin_abs_min_ohm": float(abs(q["z_in"][zmin])),
+        "zin_abs_max_Hz": float(FREQ[zmax]), "zin_abs_max_ohm": float(abs(q["z_in"][zmax])),
+        "fs_measured_Hz": float(FREQ[fs_meas]), "zbvd_abs_min_ohm": float(zb[fs_meas]),
+        "fp_Hz": float(FREQ[fp_meas]), "zbvd_abs_max_ohm": float(zb[fp_meas]),
+        "fp_minus_fs_Hz": float(FREQ[fp_meas] - FREQ[fs_meas]),
+        "fp_theory_Hz": float(s.bvd.fs * math.sqrt(1 + s.bvd.cm / s.bvd.c0)),
+        "cm_over_c0": float(s.bvd.cm / s.bvd.c0),
+        "k_eff_percent": float(math.sqrt((s.bvd.cm / s.bvd.c0) / (1 + s.bvd.cm / s.bvd.c0)) * 100),
         "phase_zero_or_min_Hz": zero_f, "phase_feature_status": zero_status,
         "source_a1_Vrms": SOURCE_A1_VRMS,
         "soft_allowed_amplitude_at_0p9": float(soft_a),

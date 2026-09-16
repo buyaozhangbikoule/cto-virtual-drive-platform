@@ -3,7 +3,6 @@
   "created": "2026-09-16",
   "purpose": "控制器三级扫描阶梯的参数登记表。这 6 个数原本硬编码在 run_stage4_5_control.local_scan() 里，现移入本表，与 bvd_parameters.json（换能器）、drive_limits.json（驱动限值）共同构成完整参数登记。",
   "declaration": "本表数值为控制器设计选择，不是器件参数，也不是硬件实时性指标。扫描时间为「点数 x scan_point_dt_s」的假设代理。",
-
   "ladder": {
     "coarse": {
       "halfwidth_Hz": 50000.0,
@@ -24,24 +23,69 @@
       "note": "终扫级。Qm=800 下峰很尖，需要 0.1 kHz 才能满足高捕获率判据。"
     }
   },
-
   "known_coverage_gap": {
     "required_halfwidth_Hz": 78416.2,
     "required_by": "登记表中所有场景相对 0.9 MHz 的最大 fs 偏移",
-    "uncovered_scenarios_at_current_coarse": ["CASE_LM_P20", "CASE_CM_P20"],
-    "measured_capture_at_current_coarse": {"CASE_LM_P20": 0.0010, "CASE_CM_P20": 0.0014},
+    "uncovered_scenarios_at_current_coarse": [
+      "CASE_LM_P20",
+      "CASE_CM_P20"
+    ],
+    "measured_capture_at_current_coarse": {
+      "CASE_LM_P20": 0.001,
+      "CASE_CM_P20": 0.0014
+    },
     "note": "Lm 或 Cm 单独 +20% 使 fs = f0/sqrt(1.2)，下移 78.4 kHz，超出 ±50 kHz 捕获级。这两个场景不在闭环调度表中，现有批次不会暴露。项目自己的 stage3_window_step_all_cases.csv 用 window_excludes_global_optimum 列独立标出了同样这两个场景。",
     "evidence": "docs/04 第 2 节；docs/05；tools/audit_2026-09-15/audit_checks.py 的 C1/C2"
   },
-
   "widening_tradeoff": {
     "measured_2026-09-16": "把 coarse.halfwidth_Hz 改为 100000 后：34/34 场景捕获率均 >=90%（当前为 32/34）；单次三级扫描点数 53 -> 73，时间代理 79.5 -> 109.5 ms（1.38x）；闭环 7 段日程上 PERIODIC_SCAN 稳态捕获 0.9951 -> 0.9973、全程能量 -5.7%，P_AND_O 稳态捕获 0.8529 -> 0.8854、全程能量 +4.3%、硬跳闸 2 -> 1。",
     "caveat": "上述能量差异有相当部分来自扫描落点与 0.8 s 扰动切换时刻的相位对齐（拉长扫描周期后结果非单调），在只有 7 段的日程上不构成稳健性质。稳健的只有两条：单次扫描 +30 ms，以及覆盖从 32/34 变为 34/34。",
     "recommendation": "建议改为 100000（与 stage3_selection 报告的 ±100 kHz 推荐窗口一致）。默认值暂留 50000 以保证历史批次逐位复现；切换前请重跑闭环并另开批次目录。"
   },
-
   "timing": {
     "scan_point_dt_s": 0.0015,
     "note": "与 run_stage4_5_control.SCAN_POINT_DT 一致，为假设代理值，不是硬件实测。"
+  },
+  "phase_controller": {
+    "purpose": "相位误差离散频率跟踪（计划书第 4 周点名要求的第三种策略）及其伪锁定防护。",
+    "gain_Hz_per_deg": {
+      "value": 5.0,
+      "class": "DESIGN_CHOICE",
+      "note": "与 run_phase_ablation.py 的 SELECTED_GAIN 一致。"
+    },
+    "probe_Hz": {
+      "value": 100.0,
+      "class": "DESIGN_CHOICE",
+      "note": "求局部 dphase/df 的探测半宽。"
+    },
+    "deadband_deg": {
+      "value": 0.1,
+      "class": "DESIGN_CHOICE"
+    },
+    "max_update_Hz": {
+      "value": 500.0,
+      "class": "DESIGN_CHOICE",
+      "note": "每控制步的频率更新限幅。相位跟踪因此是局部跟踪器而非捕获机制，追不上扰动切换的数十 kHz 跳变，必须配重捕获。"
+    },
+    "false_lock_guard": {
+      "probe_Hz": {
+        "value": 500.0,
+        "class": "DESIGN_CHOICE"
+      },
+      "ratio_threshold": {
+        "value": 1.02,
+        "class": "DESIGN_CHOICE"
+      },
+      "cooldown_s": {
+        "value": 0.4,
+        "class": "DESIGN_CHOICE"
+      },
+      "min_dwell_s": {
+        "value": 0.05,
+        "class": "DESIGN_CHOICE"
+      },
+      "rationale": "sign(slope) 符号校正使 phase(f)=target 的每一个解都成为稳定吸引子。基线带内有 3 个解，功率分别为峰值的 5.86%/100%/1.13%，且无防护时16 个初值中 15 个锁到 <50% 功率、全部按 |相位|<=5 度判为合格。防护两步缺一不可：收敛后用端口功率做 +/-probe_Hz 探测判伪锁定；重扫后把新工作点的相位标定为新设定点——只重扫不重标定无效，因为功率峰处相位并非 0。仅使用可观测量，不用场景身份或 oracle。",
+      "validated": "workspace/plan_gap_closure_20260915/：无防护 15/16 失败，有防护 0/16，最低捕获 99.81%。"
+    }
   }
 }

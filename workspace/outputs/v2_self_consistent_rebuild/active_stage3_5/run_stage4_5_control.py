@@ -64,7 +64,21 @@ REACQUIRE_COOLDOWN = 0.40
 RECOVERY_CAPTURE_THRESHOLD = 0.98
 RECOVERY_CONSECUTIVE_SAMPLES = 10
 FINE_REFERENCE = np.arange(F_MIN, F_MAX + 0.1, 100.0)
-STRATEGIES = ["FIXED_0P9", "PERIODIC_SCAN", "P_AND_O"]
+_phase = _scan["phase_controller"]
+PHASE_GAIN_HZ_PER_DEG = float(_phase["gain_Hz_per_deg"]["value"])
+PHASE_PROBE_HZ = float(_phase["probe_Hz"]["value"])
+PHASE_DEADBAND_DEG = float(_phase["deadband_deg"]["value"])
+PHASE_MAX_UPDATE_HZ = float(_phase["max_update_Hz"]["value"])
+_guard = _phase["false_lock_guard"]
+GUARD_PROBE_HZ = float(_guard["probe_Hz"]["value"])
+GUARD_RATIO = float(_guard["ratio_threshold"]["value"])
+GUARD_COOLDOWN_S = float(_guard["cooldown_s"]["value"])
+GUARD_MIN_DWELL_S = float(_guard["min_dwell_s"]["value"])
+
+# PHASE_LOCK 是计划书第 4 周点名要求的第三种策略。它与 P_AND_O 共用同一套重捕获
+# 机制（ObservableDisturbanceDetector + local_scan），因此两者的差别只在稳态频率
+# 更新律上，而不在获取机制上。
+STRATEGIES = ["FIXED_0P9", "PERIODIC_SCAN", "P_AND_O", "PHASE_LOCK"]
 
 plt.rcParams['font.family'] = 'sans-serif'
 plt.rcParams['font.sans-serif'] = ['Arial', 'DejaVu Sans', 'Liberation Sans']
@@ -425,6 +439,9 @@ def simulate(strategy: str, scenarios: dict, optima: dict) -> list[dict]:
     po_dir = 1.0; po_step = P_AND_O_INITIAL_STEP; po_next_update = 0.0
     po_need_reacquire = False
     po_reacquire_reason = ""
+    phase_target_deg = 0.0
+    phase_converged_since: float | None = None
+    phase_guard_until = 0.0
 
     while t < TOTAL_TIME - 1e-12:
         seg = schedule_at(t); case_id = seg["case_id"]; scenario = scenarios[case_id]; optimum = optima[case_id]
@@ -445,6 +462,22 @@ def simulate(strategy: str, scenarios: dict, optima: dict) -> list[dict]:
             po_step = P_AND_O_INITIAL_STEP
             detector.after_scan(t)
             po_next_update = t + REACQUIRE_COOLDOWN + REFERENCE_STABLE_SAMPLES * CONTROL_DT
+            continue
+
+        if strategy == "PHASE_LOCK" and po_need_reacquire and protection.tracking_allowed(t):
+            frequency, t, completed = local_scan(
+                t, strategy, frequency, po_reacquire_reason or "OBSERVABLE_REACQUIRE",
+                rows, protection, scenarios, optima)
+            po_need_reacquire = False
+            po_reacquire_reason = ""
+            detector.after_scan(t)
+            # 关键：重捕获落在功率峰上，把该点相位标定为新设定点。只重扫而不重标定
+            # 是无效的——功率峰处相位并非 0，控制器会立刻被拉回伪锁点。
+            seg_g = schedule_at(t)
+            phase_target_deg = float(
+                response(np.array([frequency]), scenarios[seg_g["case_id"]], 1.0)["phase_deg"][0])
+            phase_converged_since = None
+            phase_guard_until = t + GUARD_COOLDOWN_S
             continue
 
         # P&O changes frequency only at reduced amplitude.  This explicitly
@@ -479,7 +512,8 @@ def simulate(strategy: str, scenarios: dict, optima: dict) -> list[dict]:
         amplitude, pstate, hard_trigger, soft_trigger, frozen = protection.apply(t, frequency, scenario, 1.0)
         row = measure(t, CONTROL_DT, strategy, "CONTROL", frequency, amplitude, pstate,
                       hard_trigger, soft_trigger, frozen, seg, scenario, optimum)
-        row.update(detector.observe(row, t, allow_trigger=strategy == "P_AND_O"))
+        row.update(detector.observe(
+            row, t, allow_trigger=strategy in ("P_AND_O", "PHASE_LOCK")))
         rows.append(row)
 
         if strategy == "FIXED_0P9":
@@ -495,6 +529,43 @@ def simulate(strategy: str, scenarios: dict, optima: dict) -> list[dict]:
                 po_reacquire_reason = "OBSERVABLE_2_OF_4"
                 po_step = P_AND_O_INITIAL_STEP
                 po_next_update = math.inf
+        elif strategy == "PHASE_LOCK":
+            error = phase_target_deg - row["phase_deg"]
+            if hard_trigger or soft_trigger:
+                po_need_reacquire = True
+                po_reacquire_reason = "HARD_LIMIT_EVENT" if hard_trigger else "SOFT_LIMIT_EVENT"
+            elif row["detector_trigger"]:
+                po_need_reacquire = True
+                po_reacquire_reason = "OBSERVABLE_2_OF_4"
+            elif protection.tracking_allowed(t) and not frozen and pstate == "NORMAL":
+                if abs(error) <= PHASE_DEADBAND_DEG:
+                    if phase_converged_since is None:
+                        phase_converged_since = t
+                    if (t >= phase_guard_until
+                            and (t - phase_converged_since) >= GUARD_MIN_DWELL_S):
+                        # 伪锁定防护：相位已收敛，用端口有功功率做邻域探测。
+                        # 邻点明显更高即说明当前点不是功率极大，判为伪锁定并重捕获。
+                        p0 = float(response(np.array([frequency]), scenario,
+                                            PROBE_AMPLITUDE)["p_port_W"][0])
+                        lo = max(F_MIN, frequency - GUARD_PROBE_HZ)
+                        hi = min(F_MAX, frequency + GUARD_PROBE_HZ)
+                        pn = max(float(response(np.array([lo]), scenario, PROBE_AMPLITUDE)["p_port_W"][0]),
+                                 float(response(np.array([hi]), scenario, PROBE_AMPLITUDE)["p_port_W"][0]))
+                        if pn / max(p0, 1e-30) > GUARD_RATIO:
+                            po_need_reacquire = True
+                            po_reacquire_reason = "PHASE_FALSE_LOCK_GUARD"
+                else:
+                    phase_converged_since = None
+                    lo = max(F_MIN, frequency - PHASE_PROBE_HZ)
+                    hi = min(F_MAX, frequency + PHASE_PROBE_HZ)
+                    slope = (float(response(np.array([hi]), scenario, 1.0)["phase_deg"][0])
+                             - float(response(np.array([lo]), scenario, 1.0)["phase_deg"][0])
+                             ) / max(hi - lo, 1.0)
+                    if abs(slope) > 1e-12:
+                        frequency = float(np.clip(
+                            frequency + np.clip(PHASE_GAIN_HZ_PER_DEG * error * np.sign(slope),
+                                                -PHASE_MAX_UPDATE_HZ, PHASE_MAX_UPDATE_HZ),
+                            F_MIN, F_MAX))
 
         t += CONTROL_DT
     return rows
