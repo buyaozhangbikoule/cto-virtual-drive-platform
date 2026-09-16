@@ -14,7 +14,9 @@ v2.1 的做法：给定 |Z(fs)| = 7.071 kΩ（由 100 Vpp ÷ 5 mA 得来）反�
     Qm = 1/(1/Qm_material + 1/Q_rad)    材料损耗与辐射损耗并联
     Rm = w0 * Lm / Qm
 
-再把导管电缆电容并到 C0 上——这是 v2.1 完全未建模的一阶效应。
+`build()` 保留 cable_pF 参数，但【基线不含任何连接导线】：
+导管电缆是 HANDOFF.md 第 4 节的推测，计划书与项目文档均未提及，长度与类型无依据，
+且其影响取决于尚未确定的电流口径。详见 operating_point.json 的 not_modelled 段。
 
 所有参数来自 operating_point.json，不写死在代码里。
 
@@ -148,24 +150,6 @@ def main() -> None:
     print(f"  Rm = {tr.rm_ohm:.0f} Ω   fs = {tr.fs_Hz/1e6:.5f} MHz   Cm/C0 = {tr.cm_F/tr.c0_F:.4f}")
     print(f"  工作点：{op['V_vpp']:.1f} Vpp、换能器电流 {op['I_transducer_mA']:.2f} mA、"
           f"{op['P_mech_mW']:.1f} mW，受限于{op['limited_by']}")
-
-    print()
-    print("=" * 74)
-    print("导管电缆的影响 —— 完全取决于 5 mA 限值约束的是哪股电流")
-    print("=" * 74)
-    print(f"{'电缆':>7}{'口径B 仅换能器':>24}{'口径A 含电缆':>22}{'功放额外':>12}")
-    print(f"{'':7}{'V(Vpp)':>12}{'P(mW)':>12}{'V(Vpp)':>11}{'P(mW)':>11}{'电流mA':>12}")
-    for pf in REG["scan_variables"]["cable_pF"]:
-        tc = build(tr.material, tr.diameter_mm, cable_pF=pf)
-        b_ = operating_point(tc, count_cable_current=False)
-        a_ = operating_point(tc, count_cable_current=True)
-        print(f"{pf:>6}p{b_['V_vpp']:>12.1f}{b_['P_mech_mW']:>12.1f}"
-              f"{a_['V_vpp']:>11.1f}{a_['P_mech_mW']:>11.1f}{b_['I_cable_mA']:>12.2f}")
-    print()
-    print("  口径 B（默认）：5 mA 保护器件，电缆电流不流经压电体 ——")
-    print("    电缆【完全不影响】换能器工作点，代价是功放须额外供给无功电流。")
-    print("  口径 A：若 5 mA 其实来自功放输出能力，电缆会严重压低可达电压。")
-    print("    交接文档「150 pF 使功率衰减 41 倍」用的正是这一口径。")
 
     print()
     print("=" * 74)

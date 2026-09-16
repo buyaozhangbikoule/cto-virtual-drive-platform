@@ -48,13 +48,16 @@
       "note": "0.8 MHz 谐振长度 1.88 mm，可沿导管轴向放置；厚度模圆片需 2.3 mm 直径，径向放不下"
     },
     "expected": {
-      "C0_pF": 1.33,
-      "Rm_ohm": 7150,
-      "V_at_5mA_Vpp": 101.1,
-      "P_mech_mW": 178.8,
-      "ka": 0.98
+      "C0_pF": 1.335,
+      "Rm_ohm": 7093,
+      "Qm": 30.3,
+      "cm_over_c0": 0.694,
+      "V_at_5mA_Vpp": 100.2,
+      "P_mech_mW": 176.9,
+      "ka": 0.98,
+      "_note": "不含任何连接导线。"
     },
-    "margin_warning": "余量为零。ka=0.98 卡在边界，电压刚过 100。导管电缆并上 100+ pF 会使阻抗塌掉，是唯一可能打穿此方案的因素。"
+    "margin_warning": "余量为零：ka=0.98 恰在辐射有效边界，电压刚过 100 Vpp。任何使 C0 增大或耦合降低的因素都会打穿此方案。"
   },
   "materials": {
     "_class": "公开典型值，非本项目实测",
@@ -99,25 +102,6 @@
     "Q_radiation_formula": "pi * Z_piezo / (2 * Z_blood)，空气背衬平板平面波近似",
     "ka_validity": "ka = 2*pi*a/lambda。ka>2 适用，1<ka<=2 边缘，ka<=1 辐射效率显著下降、本近似不再成立。"
   },
-  "cable": {
-    "capacitance_per_m_pF": {
-      "value": 100.0,
-      "class": "ASSUMED_BASELINE",
-      "note": "同轴导管线典型值；实测方法见 qm_extraction_20260916（带缆/不带缆相减）"
-    },
-    "length_m": {
-      "value": 1.25,
-      "class": "ASSUMED_BASELINE",
-      "note": "冠脉导管 1.0-1.5 m"
-    },
-    "note": "并联在 C0 上。这是 v2.1 完全未建模的一阶效应（docs/04 第 3 节）。",
-    "impact": {
-      "on_transducer_operating_point": "无（口径 B 下）。换能器电压、电流、功率均不受电缆影响。",
-      "on_amplifier": "功放须额外供给电缆的无功电流：125 pF @ 0.8 MHz、100 Vpp 下约 22.3 mA。",
-      "why_it_still_matters": "① 功放输出能力与匹配网络必须按含电缆的总负载设计；② 这部分无功电流在电缆电阻与匹配网络 ESR 上产生实耗；③ 若限值其实来自功放能力而非器件保护，则应改用口径 A，结论逆转。",
-      "supersedes": "交接文档「150 pF 使功率衰减 41 倍」的说法采用的是口径 A。"
-    }
-  },
   "scan_variables": {
     "note": "材料与直径是第一扫描变量，与 Qm 同级。不得再像 v2.1 的 7.071 kΩ 那样固化成隐式前提。",
     "materials": [
@@ -140,11 +124,24 @@
       3.0,
       5.0
     ],
-    "cable_pF": [
-      0,
-      50,
-      125,
-      250
-    ]
+    "_removed_2026-09-16": "cable_pF 已移出扫描：见 not_modelled.catheter_cable_capacitance"
+  },
+  "not_modelled": {
+    "_note": "以下因素已被识别，但本阶段【不纳入模型】，因为缺少确认的依据。",
+    "catheter_cable_capacitance": {
+      "status": "NOT_MODELLED",
+      "provenance": "来自 HANDOFF.md 第 4 节的推测（上一会话提出），并非计划书要求，也未经导师或学生确认。",
+      "checked_2026-09-16": "计划书全文 0 次提及；项目自身 docs/、报告、讲稿 0 次提及。",
+      "speculated_values": {
+        "length_m": "1.0-1.5（推测）",
+        "capacitance_per_m_pF": "约 100（推测）"
+      },
+      "why_deferred": [
+        "计划书第一章明确不涉及实物换能器与功放，纯电学建模阶段无需引入连接方式",
+        "长度与类型全为猜测，没有任何依据",
+        "其影响完全取决于 5 mA 约束的是哪股电流，而该问题尚未确定——在未定的假设上再叠一层假设，结论不可用"
+      ],
+      "if_revisited": "先确认实际连接方案（体外功放+长导线？还是别的），再确认 5 mA 是器件耐受还是功放能力，两者都定了才值得建模。bvd_from_geometry.build() 仍保留 cable_pF 参数，可随时启用。"
+    }
   }
 }
