@@ -437,3 +437,98 @@ def test_fine_step_stays_below_power_fwhm(model, scan_registry):
     assert status == "OK"
     step = float(scan_registry["ladder"]["fine"]["step_Hz"])
     assert step < width, f"细化级步长 {step} Hz 不小于功率峰 FWHM {width:.0f} Hz"
+
+
+# --------------------------------------------------------------------------
+# 模型数值行为的回归保护
+# --------------------------------------------------------------------------
+
+NUMERIC_BASELINE = Path(__file__).resolve().parent / "model_numeric_baseline.json"
+# 相对容差：允许不同 numpy/BLAS 版本的末位差异，但拦住任何有物理意义的改动
+NUMERIC_RTOL = 1e-9
+
+
+@pytest.fixture(scope="module")
+def numeric_baseline() -> dict:
+    return json.loads(NUMERIC_BASELINE.read_text(encoding="utf-8"))
+
+
+def _numeric_snapshot(model, scenario) -> dict:
+    """与生成基线时完全相同的口径：0.8-1.0 MHz、2001 点、amplitude=1。"""
+    f = np.linspace(model.F_MIN, model.F_MAX, 2001)
+    r = model.response(f, scenario, 1.0)
+    keys = ["p_rm_W", "p_port_W", "q_port_var", "s_port_VA", "p_source_W",
+            "p_rs_W", "p_l_esr_W", "p_c_esr_W", "gamma", "vport_vpp",
+            "iport_irms_A", "phase_deg"]
+    row = {k: float(np.sum(r[k])) for k in keys}
+    row["zin_abs_sum"] = float(np.sum(np.abs(r["z_in"])))
+    row["zbvd_abs_sum"] = float(np.sum(np.abs(r["z_bvd"])))
+    row["a_soft_sum"] = float(np.sum(model.allowed_amplitude(f, scenario, use_soft_limits=True)))
+    row["a_hard_sum"] = float(np.sum(model.allowed_amplitude(f, scenario, use_soft_limits=False)))
+    row["safe_power_sum"] = float(np.sum(model.safe_power(f, scenario)))
+    w, status, _, _ = model.half_power_width(f, model.safe_power(f, scenario))
+    row["fwhm_Hz"] = float(w) if status == "OK" else status
+    return row
+
+
+def test_numeric_baseline_covers_every_scenario(model, numeric_baseline):
+    assert sorted(numeric_baseline) == sorted(s.case_id for s in model.all_scenarios()), (
+        "基线与场景登记表不一致：新增或删除场景后需重新生成 model_numeric_baseline.json"
+    )
+
+
+def test_model_numeric_behaviour_unchanged(model, numeric_baseline):
+    """锁住模型的数值行为本身，而不只是参数与结构。
+
+    前面的用例保证参数来自登记表、三份副本一致、阶梯覆盖已声明；
+    但它们都拦不住「公式改了、参数没改」这类回归——例如误改 ESR 的频率依赖、
+    把 p_port 与 p_rm 的定义搞混、或在限幅里少一个 clip。本用例覆盖 response()
+    的全部输出量、软硬两套限幅、safe_power 与半功率宽度，共 34 场景 x 18 个量。
+
+    基线由 active_stage3_5 当前模型生成（0.8-1.0 MHz、2001 点、amplitude=1）。
+    若确实有意改变模型，重新生成基线并在提交信息里说明改了什么、为什么。
+    """
+    bad = []
+    for s in model.all_scenarios():
+        got = _numeric_snapshot(model, s)
+        exp = numeric_baseline[s.case_id]
+        for k, want in exp.items():
+            have = got[k]
+            if isinstance(want, str) or isinstance(have, str):
+                if want != have:
+                    bad.append(f"{s.case_id}.{k}: {want!r} -> {have!r}")
+                continue
+            if want == 0:
+                if abs(have) > 1e-30:
+                    bad.append(f"{s.case_id}.{k}: 0 -> {have!r}")
+            elif abs(have - want) / abs(want) > NUMERIC_RTOL:
+                bad.append(f"{s.case_id}.{k}: {want!r} -> {have!r} "
+                           f"(相对差 {abs(have-want)/abs(want):.3e})")
+    assert not bad, "模型数值行为发生变化：\n  " + "\n  ".join(bad[:12])
+
+
+def test_power_balance_closes_everywhere(model):
+    """能量守恒是模型的硬性质，与基线无关，任何改动都不得破坏。"""
+    f = np.linspace(model.F_MIN, model.F_MAX, 2001)
+    for s in model.all_scenarios():
+        err = np.max(np.abs(model.response(f, s, 1.0)["power_balance_error_W"]))
+        assert err < 1e-12, f"{s.case_id}: 功率守恒残差 {err:.3e} W"
+
+
+def test_p_port_equals_p_rm(model):
+    """C0 无损，故端口有功功率恒等于机械支路功率。定义搞混会被此用例拦住。"""
+    f = np.linspace(model.F_MIN, model.F_MAX, 2001)
+    for s in model.all_scenarios():
+        r = model.response(f, s, 1.0)
+        rel = np.max(np.abs(r["p_port_W"] - r["p_rm_W"]) / np.maximum(r["p_rm_W"], 1e-30))
+        assert rel < 1e-9, f"{s.case_id}: p_port 与 p_rm 相对偏差 {rel:.3e}"
+
+
+def test_amplitude_never_exceeds_declared_source_cap(model):
+    """限幅不得越过登记的功放能力上限，也不得为负。"""
+    f = np.linspace(model.F_MIN, model.F_MAX, 2001)
+    for s in model.all_scenarios():
+        for soft in (True, False):
+            a = model.allowed_amplitude(f, s, use_soft_limits=soft)
+            assert np.all(a >= 0.0)
+            assert np.all(a <= model.SOURCE_MAX_AMPLITUDE + 1e-12)
