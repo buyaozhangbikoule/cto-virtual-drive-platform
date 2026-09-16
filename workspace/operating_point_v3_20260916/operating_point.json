@@ -1,0 +1,150 @@
+{
+  "registry_id": "OPERATING_POINT_V3",
+  "created": "2026-09-16",
+  "supersedes": "v2.1 的 |Z(fs)| = 7.071 kΩ 反推工作点（由 100 Vpp ÷ 5 mA 得来）",
+  "why_superseded": "导师 2026-09-16 澄清：100 Vpp 是推荐值（与振幅成正比，越高越好），5 mA 是上限（推荐更小），0.8 MHz 才是合适振动条件，材料与尺寸可选。因此 7.071 kΩ 不是约束，而是期望达到的下限；BVD 参数应由材料与几何【正向推导】，而非由工作点反推。",
+  "declaration": "材料常数取自公开典型值，不是本项目实测。几何为设计选择。全部标注为假设基线值，实测后替换。",
+  "supervisor_given": {
+    "f0_Hz": {
+      "value": 800000.0,
+      "class": "SUPERVISOR_GIVEN",
+      "note": "0.8 MHz 附近为合适振动条件（2026-09-16 澄清，原模型用 0.9 MHz）"
+    },
+    "voltage_target_vpp": {
+      "value": 100.0,
+      "class": "SUPERVISOR_RECOMMENDED",
+      "note": "推荐值而非工作点；振幅与之成正比，越高越好"
+    },
+    "voltage_hard_vpp": {
+      "value": 160.0,
+      "class": "SUPERVISOR_GIVEN",
+      "note": "硬上限"
+    },
+    "current_limit_mA": {
+      "value": 5.0,
+      "class": "SUPERVISOR_GIVEN",
+      "note": "上限且推荐更小。按【流入换能器本体】的电流计（口径 B），不含导管电缆的电容电流：5 mA 是保护器件（发热/机械应力）的限值，而电缆电流不流经压电体。在无电缆时两种口径在谐振点仅差 0.11%（K≈21-29）；有电缆时差别巨大——125 pF 下口径 A 会把电压从 100.2 压到 21.7 Vpp，口径 B 则完全不受影响。"
+    },
+    "diameter_max_mm": {
+      "value": 2.0,
+      "class": "SUPERVISOR_GIVEN",
+      "note": "长度方向可放宽"
+    }
+  },
+  "baseline_choice": {
+    "material": {
+      "value": "PZT-8",
+      "class": "DESIGN_CHOICE",
+      "note": "四种候选中唯一能在 ka>=1 前提下用 5 mA 建立接近 100 Vpp 的材料"
+    },
+    "diameter_mm": {
+      "value": 0.6,
+      "class": "DESIGN_CHOICE",
+      "note": "由约束推出，非自由选择：ka=0.98 恰在辐射有效边界；更大则电压不足，更小则辐射不出去"
+    },
+    "mode": {
+      "value": "33_longitudinal_rod",
+      "class": "DESIGN_CHOICE",
+      "note": "0.8 MHz 谐振长度 1.88 mm，可沿导管轴向放置；厚度模圆片需 2.3 mm 直径，径向放不下"
+    },
+    "expected": {
+      "C0_pF": 1.33,
+      "Rm_ohm": 7150,
+      "V_at_5mA_Vpp": 101.1,
+      "P_mech_mW": 178.8,
+      "ka": 0.98
+    },
+    "margin_warning": "余量为零。ka=0.98 卡在边界，电压刚过 100。导管电缆并上 100+ pF 会使阻抗塌掉，是唯一可能打穿此方案的因素。"
+  },
+  "materials": {
+    "_class": "公开典型值，非本项目实测",
+    "PZT-5H": {
+      "epsilon_r": 3400,
+      "k33": 0.75,
+      "Qm_material": 65,
+      "N33_Hz_m": 1400
+    },
+    "PZT-5A": {
+      "epsilon_r": 1800,
+      "k33": 0.71,
+      "Qm_material": 75,
+      "N33_Hz_m": 1400
+    },
+    "PZT-4": {
+      "epsilon_r": 1300,
+      "k33": 0.7,
+      "Qm_material": 500,
+      "N33_Hz_m": 1500
+    },
+    "PZT-8": {
+      "epsilon_r": 1000,
+      "k33": 0.64,
+      "Qm_material": 1000,
+      "N33_Hz_m": 1500
+    }
+  },
+  "acoustic": {
+    "Z_piezo_MRayl": {
+      "value": 33.0,
+      "class": "ASSUMED_BASELINE"
+    },
+    "Z_blood_MRayl": {
+      "value": 1.66,
+      "class": "ASSUMED_BASELINE"
+    },
+    "c_blood_m_s": {
+      "value": 1540.0,
+      "class": "ASSUMED_BASELINE"
+    },
+    "Q_radiation_formula": "pi * Z_piezo / (2 * Z_blood)，空气背衬平板平面波近似",
+    "ka_validity": "ka = 2*pi*a/lambda。ka>2 适用，1<ka<=2 边缘，ka<=1 辐射效率显著下降、本近似不再成立。"
+  },
+  "cable": {
+    "capacitance_per_m_pF": {
+      "value": 100.0,
+      "class": "ASSUMED_BASELINE",
+      "note": "同轴导管线典型值；实测方法见 qm_extraction_20260916（带缆/不带缆相减）"
+    },
+    "length_m": {
+      "value": 1.25,
+      "class": "ASSUMED_BASELINE",
+      "note": "冠脉导管 1.0-1.5 m"
+    },
+    "note": "并联在 C0 上。这是 v2.1 完全未建模的一阶效应（docs/04 第 3 节）。",
+    "impact": {
+      "on_transducer_operating_point": "无（口径 B 下）。换能器电压、电流、功率均不受电缆影响。",
+      "on_amplifier": "功放须额外供给电缆的无功电流：125 pF @ 0.8 MHz、100 Vpp 下约 22.3 mA。",
+      "why_it_still_matters": "① 功放输出能力与匹配网络必须按含电缆的总负载设计；② 这部分无功电流在电缆电阻与匹配网络 ESR 上产生实耗；③ 若限值其实来自功放能力而非器件保护，则应改用口径 A，结论逆转。",
+      "supersedes": "交接文档「150 pF 使功率衰减 41 倍」的说法采用的是口径 A。"
+    }
+  },
+  "scan_variables": {
+    "note": "材料与直径是第一扫描变量，与 Qm 同级。不得再像 v2.1 的 7.071 kΩ 那样固化成隐式前提。",
+    "materials": [
+      "PZT-5H",
+      "PZT-5A",
+      "PZT-4",
+      "PZT-8"
+    ],
+    "diameters_mm": [
+      0.4,
+      0.5,
+      0.6,
+      0.8,
+      1.0,
+      1.5,
+      2.0
+    ],
+    "current_limits_mA": [
+      2.0,
+      3.0,
+      5.0
+    ],
+    "cable_pF": [
+      0,
+      50,
+      125,
+      250
+    ]
+  }
+}
