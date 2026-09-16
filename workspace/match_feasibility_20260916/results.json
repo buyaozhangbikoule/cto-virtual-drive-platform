@@ -1,0 +1,167 @@
+{
+  "purpose": "更正「7085 Ω 无法匹配到 50 Ω」这一错误断言，并给出实测依据",
+  "verdict": "断言错误。141:1 变换是常规射频操作，项目自身 stage2 已实现，Γ = 0.0635。",
+  "corrected_claim": "高阻抗几何【不】被 50 Ω 功放排除。空心圆柱与高阻抗实心柱是两个并列的设计选择，各有代价，应由应用需求（是否需要导丝中心孔）与实测决定，不能以「不可匹配」排除前者。",
+  "still_valid": "v3 批次里『29 Ω 负载下并联 C 跨负载够不到 50 Ω』这条【仍然成立】——那是对 29 Ω 负载算出的上界 1/Re(Y_load) = 30.4 Ω，与本更正不冲突。不成立的是把它表述为「原项目的匹配设计作废」。",
+  "incidental_finding": "stage2 匹配落在 56.7 Ω 而非 50 Ω，实部偏 13%，Γ 因此为 0.0635 而非约 0.005。",
+  "data": {
+    "v2_1_solid_high_Z": {
+      "f0_Hz": 900000.0,
+      "z_load_ohm": 7071.07,
+      "transformation_ratio": 141.4214,
+      "match_Q_theoretical": 11.849953586406995,
+      "match_bandwidth_Hz": 75949.6645651325,
+      "cases": {
+        "CASE_000_BASELINE": {
+          "gamma": 0.06345872031936921,
+          "zin_abs_ohm": 56.69594471838978,
+          "phase_deg": -1.0782096368565852,
+          "efficiency_prm_over_psource": 0.4692315325151948,
+          "gamma_relative_to_baseline": 1.0
+        },
+        "CASE_LMATCH_P2": {
+          "gamma": 0.12050286010949296,
+          "zin_abs_ohm": 57.862500923469774,
+          "phase_deg": 10.962539123210263,
+          "efficiency_prm_over_psource": 0.4687012455804326,
+          "gamma_relative_to_baseline": 1.8989172725676984
+        },
+        "CASE_LMATCH_P5": {
+          "gamma": 0.26999388765866245,
+          "zin_abs_ohm": 63.991695200505944,
+          "phase_deg": 27.05783011037126,
+          "efficiency_prm_over_psource": 0.46790805870037966,
+          "gamma_relative_to_baseline": 4.25463807495427
+        },
+        "CASE_LMATCH_P10": {
+          "gamma": 0.4872885667437035,
+          "zin_abs_ohm": 82.44276664514264,
+          "phase_deg": 45.98080128455136,
+          "efficiency_prm_over_psource": 0.466592029638739,
+          "gamma_relative_to_baseline": 7.6788275006385645
+        },
+        "CASE_CMATCH_M2": {
+          "gamma": 0.14241050194457464,
+          "zin_abs_ohm": 60.105599121386305,
+          "phase_deg": -12.429944747733536,
+          "efficiency_prm_over_psource": 0.47894641209868144,
+          "gamma_relative_to_baseline": 2.2441439289645957
+        },
+        "CASE_CMATCH_M5": {
+          "gamma": 0.2906990525979399,
+          "zin_abs_ohm": 69.55675152120807,
+          "phase_deg": -27.05443595198262,
+          "efficiency_prm_over_psource": 0.49390910011459016,
+          "gamma_relative_to_baseline": 4.5809157691005495
+        },
+        "CASE_CMATCH_M10": {
+          "gamma": 0.502884557193466,
+          "zin_abs_ohm": 94.42099947743004,
+          "phase_deg": -43.86929695786518,
+          "efficiency_prm_over_psource": 0.519890372885391,
+          "gamma_relative_to_baseline": 7.924593415413908
+        },
+        "CASE_QL_100": {
+          "gamma": 0.06345872031936921,
+          "zin_abs_ohm": 56.69594471838978,
+          "phase_deg": -1.0782096368565852,
+          "efficiency_prm_over_psource": 0.4692315325151948,
+          "gamma_relative_to_baseline": 1.0
+        },
+        "CASE_QL_50": {
+          "gamma": 0.11324582624266888,
+          "zin_abs_ohm": 62.73018181228766,
+          "phase_deg": -0.9744823206457524,
+          "efficiency_prm_over_psource": 0.44410839878002106,
+          "gamma_relative_to_baseline": 1.7845589333150071
+        },
+        "CASE_QL_20": {
+          "gamma": 0.23576336881968363,
+          "zin_abs_ohm": 80.83375832134283,
+          "phase_deg": -0.7562221784011867,
+          "efficiency_prm_over_psource": 0.3826465429258435,
+          "gamma_relative_to_baseline": 3.715224127324904
+        }
+      }
+    },
+    "v3_hollow_low_Z": {
+      "f0_Hz": 800000.0,
+      "z_load_ohm": 29.37,
+      "transformation_ratio": 1.7024174327545114,
+      "match_Q_theoretical": 0.8381034737754709,
+      "match_bandwidth_Hz": 954536.0746402552,
+      "cases": {
+        "CASE_000_BASELINE": {
+          "gamma": 0.005602036258997259,
+          "zin_abs_ohm": 50.033176483961995,
+          "phase_deg": -0.6408134095087012,
+          "efficiency_prm_over_psource": 0.4940986413909905,
+          "gamma_relative_to_baseline": 1.0
+        },
+        "CASE_LMATCH_P2": {
+          "gamma": 0.012262121479489331,
+          "zin_abs_ohm": 51.16154251554038,
+          "phase_deg": -0.49316698396195974,
+          "efficiency_prm_over_psource": 0.49949060297246695,
+          "gamma_relative_to_baseline": 2.1888686385768232
+        },
+        "CASE_LMATCH_P5": {
+          "gamma": 0.028387249972150325,
+          "zin_abs_ohm": 52.906516623563384,
+          "phase_deg": -0.32610673578818766,
+          "efficiency_prm_over_psource": 0.50758688926034,
+          "gamma_relative_to_baseline": 5.067309217529329
+        },
+        "CASE_LMATCH_P10": {
+          "gamma": 0.05623176396405605,
+          "zin_abs_ohm": 55.95539649835759,
+          "phase_deg": -0.19261167583779598,
+          "efficiency_prm_over_psource": 0.5210727422080634,
+          "gamma_relative_to_baseline": 10.037736523704918
+        },
+        "CASE_CMATCH_M2": {
+          "gamma": 0.003156123751130596,
+          "zin_abs_ohm": 50.036195613741334,
+          "phase_deg": 0.35927944799792183,
+          "efficiency_prm_over_psource": 0.4941327608967794,
+          "gamma_relative_to_baseline": 0.5633886689079605
+        },
+        "CASE_CMATCH_M5": {
+          "gamma": 0.01622369776594943,
+          "zin_abs_ohm": 50.01215684786951,
+          "phase_deg": 1.8588835681914657,
+          "efficiency_prm_over_psource": 0.493901857636033,
+          "gamma_relative_to_baseline": 2.89603583695001
+        },
+        "CASE_CMATCH_M10": {
+          "gamma": 0.03800853861452161,
+          "zin_abs_ohm": 49.89640679302407,
+          "phase_deg": 4.351743103318024,
+          "efficiency_prm_over_psource": 0.4927679935146684,
+          "gamma_relative_to_baseline": 6.784771975275465
+        },
+        "CASE_QL_100": {
+          "gamma": 0.005602036258997259,
+          "zin_abs_ohm": 50.033176483961995,
+          "phase_deg": -0.6408134095087012,
+          "efficiency_prm_over_psource": 0.4940986413909905,
+          "gamma_relative_to_baseline": 1.0
+        },
+        "CASE_QL_50": {
+          "gamma": 0.011175349744267078,
+          "zin_abs_ohm": 50.10916648429873,
+          "phase_deg": -1.2744369538457336,
+          "efficiency_prm_over_psource": 0.4889331710503004,
+          "gamma_relative_to_baseline": 1.9948727976043874
+        },
+        "CASE_QL_20": {
+          "gamma": 0.027545197856008802,
+          "zin_abs_ohm": 50.332581939983086,
+          "phase_deg": -3.132727684564442,
+          "efficiency_prm_over_psource": 0.47391448268045167,
+          "gamma_relative_to_baseline": 4.916997424243605
+        }
+      }
+    }
+  }
+}
