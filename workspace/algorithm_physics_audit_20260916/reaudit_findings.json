@@ -1,0 +1,103 @@
+{
+  "C": {
+    "L0_uH": 22.870947260124705,
+    "crossings": {
+      "换能器端 z_bvd 不补偿": [
+        {
+          "f_Hz": 805450.0,
+          "power_pct": 92.41817046163966
+        },
+        {
+          "f_Hz": 862850.0,
+          "power_pct": 8.929448044435127
+        }
+      ],
+      "换能器端 z_bvd+L0": [
+        {
+          "f_Hz": 800000.0,
+          "power_pct": 100.0
+        }
+      ],
+      "功放输入端 z_in 不补偿": [
+        {
+          "f_Hz": 786500.0,
+          "power_pct": 65.9833343506972
+        },
+        {
+          "f_Hz": 799400.0,
+          "power_pct": 99.89991689499541
+        }
+      ],
+      "功放输入端 z_in+L0": [
+        {
+          "f_Hz": 800850.0,
+          "power_pct": 99.79970354134495
+        },
+        {
+          "f_Hz": 805850.0,
+          "power_pct": 91.36794192419678
+        }
+      ]
+    },
+    "verdict": "成立但须限定：仅当在换能器端测相位。代码当前在功放输入端测，与计划书第四章指定的节点不一致。"
+  },
+  "B": {
+    "sweep": [
+      {
+        "shift_ms": 0.0,
+        "pairs": 15,
+        "straddle": 0,
+        "mean_capture": 0.8057482471417801,
+        "steady_capture": 0.9617476716535015,
+        "scans": 6,
+        "triggers": 4
+      },
+      {
+        "shift_ms": 20.0,
+        "pairs": 15,
+        "straddle": 0,
+        "mean_capture": 0.8064730671151316,
+        "steady_capture": 0.9476087015785708,
+        "scans": 6,
+        "triggers": 4
+      },
+      {
+        "shift_ms": 40.0,
+        "pairs": 14,
+        "straddle": 0,
+        "mean_capture": 0.8071924980923988,
+        "steady_capture": 0.9338795567232033,
+        "scans": 6,
+        "triggers": 4
+      },
+      {
+        "shift_ms": 50.0,
+        "pairs": 16,
+        "straddle": 1,
+        "mean_capture": 0.8722013835058621,
+        "steady_capture": 0.9675931022325233,
+        "scans": 6,
+        "triggers": 4
+      },
+      {
+        "shift_ms": 60.0,
+        "pairs": 18,
+        "straddle": 1,
+        "mean_capture": 0.9259962404030774,
+        "steady_capture": 1.0,
+        "scans": 6,
+        "triggers": 4
+      },
+      {
+        "shift_ms": 70.0,
+        "pairs": 16,
+        "straddle": 2,
+        "mean_capture": 0.8722013835058621,
+        "steady_capture": 0.9606506823966122,
+        "scans": 6,
+        "triggers": 4
+      }
+    ],
+    "verdict": "机制真实但后果被吸收。严重度由〔高〕降为〔低/理论〕。「步长坍缩到 0.1 kHz」不可达（每次检测触发都重置 po_step，且重扫不使用 po_step）。「4/7 判错方向」是假定初始方向的产物。"
+  }
+}
