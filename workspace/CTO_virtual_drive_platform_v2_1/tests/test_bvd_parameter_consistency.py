@@ -581,3 +581,30 @@ def test_disturbance_table_records_parallel_resonance():
     src = (ACTIVE / "run_stage3_disturbance.py").read_text(encoding="utf-8")
     for col in ("fp_Hz", "zin_abs_max_ohm", "fp_minus_fs_Hz", "zbvd_abs_max_ohm"):
         assert f'"{col}"' in src, f"扰动汇总表缺少 {col} 列"
+
+
+def test_manifest_mismatches_are_all_recorded():
+    """被 FILE_MANIFEST 收录的文件若被改动，必须在 POST_HANDOFF_CHANGES.json 中有记录。
+
+    FILE_MANIFEST.json 是交接当日的交付回执，不是演进中仓库的实时完整性检查。
+    交接后的开发必然使其失配——失配本身不是错误，**没有记录的失配才是**。
+    本用例保证两者始终对得上：改了受清单覆盖的文件却忘了登记，立刻失败。
+    """
+    import hashlib
+
+    manifest = {e["path"]: e for e in
+                json.loads((REPO / "FILE_MANIFEST.json").read_text(encoding="utf-8"))}
+    recorded = {c["file"] for c in
+                json.loads((REPO / "POST_HANDOFF_CHANGES.json").read_text(encoding="utf-8"))["changes"]}
+    unrecorded = []
+    for path, entry in manifest.items():
+        f = REPO / path
+        if not f.is_file():
+            continue  # 未纳入 Git 树的 Release 文件，README 已说明
+        if f.stat().st_size != entry["bytes"] or \
+                hashlib.sha256(f.read_bytes()).hexdigest() != entry["sha256"]:
+            if path not in recorded:
+                unrecorded.append(path)
+    assert not unrecorded, (
+        "以下文件与 FILE_MANIFEST 失配但未登记到 POST_HANDOFF_CHANGES.json：\n  "
+        + "\n  ".join(unrecorded))

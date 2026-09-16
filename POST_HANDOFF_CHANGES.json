@@ -1,0 +1,75 @@
+{
+  "record_id": "POST_HANDOFF_CHANGES",
+  "created": "2026-09-16",
+  "branch": "claude/github-project-review-f2upu8",
+  "purpose": "记录 2026-09-15 交接快照之后对【已被 FILE_MANIFEST.json 收录的文件】所做的修改。handoff.py verify 会把它们报为 HASH_OR_SIZE_MISMATCH 并返回退出码 1；本文件说明每一处失配的来源与理由，使失配可解释、可核对。",
+  "how_to_read": "FILE_MANIFEST.json 是交接当日的交付回执，不是演进中仓库的实时完整性检查。交接后的正常开发必然使其失配：失配本身不是错误，**没有记录的失配才是**。格式沿用 handoff.py prepare 写出的 PORTABILITY_CHANGES.json。",
+  "verify_expectation": {
+    "expected_hash_mismatches": 7,
+    "note": "除下列文件外不应有其他 HASH_OR_SIZE_MISMATCH；若有，属未记录的改动，需追查。",
+    "missing_entries_are_normal": "verify 另报的 MISSING 项是 Git 树未纳入 Release 文件所致，README 已说明。"
+  },
+  "unchanged_by_policy": [
+    "stage2_matching/ 的两个设计 JSON（被清单收录且为历史设计产物，本次刻意未改，Qm 改放新建的 bvd_parameters.json）",
+    "report_evidence_final/ 与 scripts/archived_sources/ 下的一切（历史批次；其中的 28 场景记录在当时是正确的）",
+    "所有 stage 脚本的既有输出 CSV / JSON / 图（脚本已改但未重跑，以免覆盖历史结果）"
+  ],
+  "changes": [
+    {
+      "file": "docs/01_项目状态与下一步.md",
+      "before_sha256": "63aa9bcd9e30769904b33af70fde489069ed5ae50ce25b8612f96a430017e518",
+      "after_sha256": "b855407cfd8ec6ec4efd763aef2e9b2c436829b34a4d0cf32c09bdeb22b84c1b",
+      "size_before": 3874,
+      "size_after": 4250,
+      "reason": "新增指向 docs/04、docs/05 审核文档的导读指针，未改动原有任何状态表述"
+    },
+    {
+      "file": "workspace/CTO_virtual_drive_platform_v2_1/results/tables/stage3_selection/stage3_selection_report.md",
+      "before_sha256": "2ea4766e5f01e490a7c1d69612484e5a795092b8bb8ba744c9913a259137e133",
+      "after_sha256": "64c9b138da09e767416a767c244e849720ec34ecc006231a36682a2275244bfe",
+      "size_before": 980,
+      "size_after": 980,
+      "reason": "同上，平台副本的同一处更正"
+    },
+    {
+      "file": "workspace/outputs/v2_self_consistent_rebuild/active_stage3_5/model_v2_1.py",
+      "before_sha256": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23",
+      "after_sha256": "e2f3b7bc07ce80f36642fbd2500e07e5a6d607744e2c310e0085f9277cb36108",
+      "size_before": 12585,
+      "size_after": 16309,
+      "reason": "Qm 与 V/I 限值移入参数登记表并加一致性断言；模型数值行为逐位不变（docs/04 第 9、10 节）"
+    },
+    {
+      "file": "workspace/outputs/v2_self_consistent_rebuild/active_stage3_5/run_stage3_disturbance.py",
+      "before_sha256": "9cfec69b2c4c5c14d01f86b3392840faefe6e28147f31984cc596d3d9ebab0e0",
+      "after_sha256": "11d825b0ffa960ff4324b2dbdceabc2666e871f3a39fe1e05cffc45980cf40e4",
+      "size_before": 17065,
+      "size_after": 18075,
+      "reason": "扰动汇总表补上并联谐振列；未重跑，既有 CSV 未含新列（docs/05 第 6 节）"
+    },
+    {
+      "file": "workspace/outputs/v2_self_consistent_rebuild/active_stage3_5/run_stage3_selection.py",
+      "before_sha256": "520a199931b426a145424601cc0823bf13e137a8366c9c8aafa3ecfe729652ab",
+      "after_sha256": "dd9b6ed6f39555e9015483f689ddbbe7b8772ba2236df04c9a64aa3f0734195b",
+      "size_before": 13686,
+      "size_after": 14812,
+      "reason": "选频表补上计划书第 3 周要求的 V/I 约束列；未重跑，本目录 CSV 仍为无约束版本（docs/05 第 6 节）"
+    },
+    {
+      "file": "workspace/outputs/v2_self_consistent_rebuild/active_stage3_5/run_stage4_5_control.py",
+      "before_sha256": "240b203d43ead0988695845df9eaef493a4daf1ba95fb747eaa6a3c4612bf6f0",
+      "after_sha256": "598cf3514a30810680c48895609717bb9d378e89559acb297f183b09e48f9014",
+      "size_before": 45722,
+      "size_after": 50989,
+      "reason": "三级扫描阶梯移入登记表；PHASE_LOCK 纳入正式策略；原三策略逐位不变；未重跑，既有输出仍为三策略版本"
+    },
+    {
+      "file": "workspace/outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_selection/stage3_selection_report.md",
+      "before_sha256": "2ea4766e5f01e490a7c1d69612484e5a795092b8bb8ba744c9913a259137e133",
+      "after_sha256": "64c9b138da09e767416a767c244e849720ec34ecc006231a36682a2275244bfe",
+      "size_before": 980,
+      "size_after": 980,
+      "reason": "更正硬编码的场景数 28 -> 34（验收基准实际覆盖全部 34 场景）；仅改该行，保留 CRLF"
+    }
+  ]
+}
