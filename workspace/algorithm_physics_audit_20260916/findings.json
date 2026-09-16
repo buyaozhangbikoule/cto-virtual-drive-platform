@@ -1,0 +1,123 @@
+{
+  "batch": "algorithm_physics_audit_20260916",
+  "basis": "计划书第二/三/四周与第六章的物理审核要求",
+  "findings": [
+    {
+      "id": "A",
+      "title": "准稳态假设未校验，v2.1 下裕量仅 1.15 倍",
+      "severity": "中",
+      "detail": "SCAN_POINT_DT = 1.5 ms 在 Qm=800 时只有 5.3 个时常数，残余幅度误差 0.5%。模型不模拟瞬态，因此这个不足【在仿真里看不出来】，只会在实机上出现。Qm 越高越危险，而 Qm 恰是项目最大的未知量。",
+      "fix": "把 scan_point_dt >= 5 * (4.6 * Qm / (pi*f0)) 写成登记表里的一条显式约束，随 Qm 一起校验；Qm 上调时扫描驻留必须同步上调。",
+      "data": [
+        {
+          "baseline": "v2.1 (Qm=800)",
+          "tau_us": 282.9421210522584,
+          "settle_1pct_us": 1301.5337568403884,
+          "scan_dwell_margin": 1.1524864354201687,
+          "verdict": "勉强"
+        },
+        {
+          "baseline": "v3 (Qm=21.1)",
+          "tau_us": 8.391444374520182,
+          "settle_1pct_us": 38.600644122792836,
+          "scan_dwell_margin": 38.8594551745908,
+          "verdict": "充足"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "P&O 跨扰动时方向判断失效且步长坍缩；现有日程从未触发",
+      "severity": "高",
+      "detail": "负载一变，归一化功率必降，P&O 恒判「反向 + 减半」。7 个边界里 4/7 方向判错，且步长在最需要大步长时坍缩到 0.1 kHz，而 fs 跳变可达 45 kHz。检测器 60 ms 的确认时间慢于 P&O 的 40 ms 决策周期。",
+      "literature": "这是光伏 MPPT 里的经典 drift 问题。Killi & Samanta, IEEE Trans. Ind. Electron. 2015, Modified Perturb and Observe MPPT Algorithm for Drift Avoidance in Photovoltaic Systems：在 dP 之外把 dI 纳入决策即可区分「自己扰动的结果」与「外部条件变化」。",
+      "fix": "本项目已经同时测 V、I、相位，dI 是免费的。把判据从 sign(dP) 改为 (dP, dI) 联合判据；并把「步长减半」与「方向反转」解耦——确认是外部扰动时应【放大】步长而非减半。",
+      "data": [
+        {
+          "boundary": "CASE_000_BASELINE->CASE_C0_P30",
+          "true_direction": "不动",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": false,
+          "rel": -0.15856342438366774
+        },
+        {
+          "boundary": "CASE_C0_P30->CASE_RM_P50",
+          "true_direction": "不动",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": false,
+          "rel": -0.17444731872888147
+        },
+        {
+          "boundary": "CASE_RM_P50->CASE_FS_M5",
+          "true_direction": "降频",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": true,
+          "rel": -0.9994503275898858
+        },
+        {
+          "boundary": "CASE_FS_M5->CASE_LMATCH_P10",
+          "true_direction": "升频",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": false,
+          "rel": -0.9993125848396333
+        },
+        {
+          "boundary": "CASE_LMATCH_P10->CASE_QL_20",
+          "true_direction": "降频",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": true,
+          "rel": -0.5450608732824629
+        },
+        {
+          "boundary": "CASE_QL_20->CASE_COMBINED_HIGH",
+          "true_direction": "降频",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": true,
+          "rel": -0.9997716725572219
+        },
+        {
+          "boundary": "CASE_COMBINED_HIGH->CASE_000_BASELINE",
+          "true_direction": "升频",
+          "po_reads": "功率下降->反向并减半步长",
+          "correct": false,
+          "rel": -0.9994102148881692
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "相位判据多解；文献有结构性解法，优于本审核先前的事后防护",
+      "severity": "中（已有可用缓解，但解法可升级）",
+      "detail": "裸 BVD 相位过零 2 个，其中只有一个在功率峰上。控制律用 np.sign(slope) 就地测符号，使每个解都成为稳定吸引子。",
+      "literature": "这是超声换能器驱动里的已知问题，文献称 antiresonance frequency tracing。解法：静态电容宽带补偿（SCBC）。见 PubMed 24626028, An improved phase-locked loop method for automatic resonance frequency tracing based on static capacitance broadband compensation for a high-power ultrasonic transducer.",
+      "fix": "并联 L0 = 1/(w0^2*C0) = 22.87 µH（v3 几何）。实测：过零点 2 -> 1，且唯一零点与功率峰重合。先前的事后防护可保留作为兜底，但不应是主要手段。",
+      "data": {
+        "L0_uH": 22.870947260124705,
+        "zeros_before": 2,
+        "zeros_after": 1
+      }
+    },
+    {
+      "id": "D",
+      "title": "ESR 频率无关近似在加宽后的窗口下沿偏差达 15%",
+      "severity": "低",
+      "detail": "固定 R 使模型 Q ∝ f，而趋肤效应下应为 Q ∝ sqrt(f)。v2.1 窗口内偏差 5.7% 可接受，v3 窗口下沿 650 kHz 处达 15%。",
+      "fix": "或改为 r_L(f) = r_L(f0)*sqrt(f/f0)，或在登记表显式标注该近似及其适用窗口。影响的是匹配网络损耗，不影响谐振频率，优先级低。",
+      "data": {
+        "worst_deviation_pct": 15.01634144012024
+      }
+    },
+    {
+      "id": "E",
+      "title": "单模 BVD 在 v3 窗口内成立（已验证）；v2.1 无几何故不可验证",
+      "severity": "无（此项通过）",
+      "detail": "窗口 650-950 kHz 内只有三次谐波一个模态，最近邻居（二次 533、四次 1067 kHz）各距窗边 >100 kHz。环向模 1058 kHz、壁厚模 6452 kHz 均在窗外。",
+      "fix": "无需修改。建议把该检查作为几何变更时的常规校验项纳入登记表。",
+      "data": {
+        "modes_in_window": [
+          "长度模 3 次谐波"
+        ]
+      }
+    }
+  ]
+}
