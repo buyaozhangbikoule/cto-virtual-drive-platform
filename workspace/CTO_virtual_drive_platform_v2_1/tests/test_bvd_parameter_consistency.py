@@ -376,3 +376,64 @@ def test_phase_target_has_multiple_stable_solutions(model):
     )
     powers = [float(model.safe_power(np.array([c]), s)[0]) for c in distinct]
     assert min(powers) / max(powers) < 0.1, "至少一个解应为低功率伪锁点"
+
+
+# --------------------------------------------------------------------------
+# 三级扫描阶梯与捕获级覆盖范围
+# --------------------------------------------------------------------------
+
+@pytest.fixture(scope="module")
+def scan_registry() -> dict:
+    return json.loads((ACTIVE / "scan_parameters.json").read_text(encoding="utf-8"))
+
+
+def test_scan_ladder_read_from_registry():
+    """三级阶梯的 6 个常量必须来自登记表，不得写死回代码。"""
+    src = (ACTIVE / "run_stage4_5_control.py").read_text(encoding="utf-8")
+    for name in ("COARSE_HALFWIDTH_HZ", "COARSE_STEP_HZ", "FINE_HALFWIDTH_HZ",
+                 "FINE_STEP_HZ", "ULTRA_HALFWIDTH_HZ", "ULTRA_STEP_HZ"):
+        assert name in src, f"缺少具名常量 {name}"
+    assert "current_f - 50e3" not in src, "捕获级窗口不得写死"
+    assert "coarse_best - 5e3" not in src and "fine_best - 1e3" not in src
+
+
+def test_registry_records_required_coarse_halfwidth(model, scan_registry):
+    """登记表记录的「所需捕获级半宽」必须等于全部场景的最大 fs 偏移。"""
+    required = max(abs(s.bvd.fs - model.F0) for s in model.all_scenarios())
+    declared = float(scan_registry["known_coverage_gap"]["required_halfwidth_Hz"])
+    assert abs(declared - required) <= 1.0, (
+        f"登记表声明 {declared} Hz，实际需要 {required:.1f} Hz"
+    )
+
+
+def test_declared_coverage_gap_matches_reality(model, scan_registry):
+    """登记表声明的「够不到的场景」必须与当前捕获级窗口下的实测一致。
+
+    这是本条改动的核心可审计性保证：
+      - 现在（±50 kHz）声明 LM_P20/CM_P20 够不到，测试据此通过；
+      - 若有人把窗口放宽到 ±100 kHz 却忘了清空该列表，测试失败；
+      - 若有人把窗口收窄，新增的够不到场景也会让测试失败。
+    缺口被写进登记表本身，而不是只存在于审核文档里。
+    """
+    half = float(scan_registry["ladder"]["coarse"]["halfwidth_Hz"])
+    actual = sorted(s.case_id for s in model.all_scenarios()
+                    if abs(s.bvd.fs - model.F0) > half)
+    declared = sorted(scan_registry["known_coverage_gap"]["uncovered_scenarios_at_current_coarse"])
+    assert actual == declared, (
+        f"捕获级 ±{half/1e3:.0f} kHz 下实际够不到 {actual}，登记表声明 {declared}。"
+        "改了窗口就要同步更新 known_coverage_gap。"
+    )
+
+
+def test_fine_step_stays_below_power_fwhm(model, scan_registry):
+    """细化级步长必须小于基线功率峰 FWHM。
+
+    这是粗扫失手后仍能被捞回来的原因，也是 32/34 场景达到 100% 捕获的机理。
+    步长一旦大于峰宽，三级扫描就会整个跨过峰值。
+    """
+    s = model.scenario_map()["CASE_000_BASELINE"]
+    f = np.linspace(model.F_MIN, model.F_MAX, 400001)
+    width, status, _, _ = model.half_power_width(f, model.safe_power(f, s))
+    assert status == "OK"
+    step = float(scan_registry["ladder"]["fine"]["step_Hz"])
+    assert step < width, f"细化级步长 {step} Hz 不小于功率峰 FWHM {width:.0f} Hz"

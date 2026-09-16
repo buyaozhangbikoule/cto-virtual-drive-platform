@@ -27,8 +27,20 @@ from model_v2_1 import (
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "stage4_5_control"
+# 三级扫描阶梯的 6 个常量来自登记表，不写死在代码里：捕获级窗口决定控制器能追
+# 多远的 fs 漂移，是一个有后果的设计选择（当前 ±50 kHz 够不到 CASE_LM_P20 /
+# CASE_CM_P20，见 scan_parameters.json 的 known_coverage_gap）。
+_scan = json.loads((Path(__file__).resolve().parent / "scan_parameters.json").read_text(encoding="utf-8"))
+_ladder = _scan["ladder"]
+COARSE_HALFWIDTH_HZ = float(_ladder["coarse"]["halfwidth_Hz"])
+COARSE_STEP_HZ = float(_ladder["coarse"]["step_Hz"])
+FINE_HALFWIDTH_HZ = float(_ladder["fine"]["halfwidth_Hz"])
+FINE_STEP_HZ = float(_ladder["fine"]["step_Hz"])
+ULTRA_HALFWIDTH_HZ = float(_ladder["ultra"]["halfwidth_Hz"])
+ULTRA_STEP_HZ = float(_ladder["ultra"]["step_Hz"])
+
 CONTROL_DT = 20e-3
-SCAN_POINT_DT = 1.5e-3
+SCAN_POINT_DT = float(_scan["timing"]["scan_point_dt_s"])
 PROBE_AMPLITUDE = 0.40
 SCAN_INTERVAL = 0.50
 SOFT_STABILIZE = 0.10
@@ -373,7 +385,8 @@ def local_scan(t: float, strategy: str, current_f: float, reason: str, rows: lis
     The plant schedule is consulted only to produce the physical response at the
     current time.  Scenario identity is not used to trigger or abort the scan.
     """
-    coarse = np.arange(max(F_MIN, current_f - 50e3), min(F_MAX, current_f + 50e3) + 1, 5e3)
+    coarse = np.arange(max(F_MIN, current_f - COARSE_HALFWIDTH_HZ),
+                       min(F_MAX, current_f + COARSE_HALFWIDTH_HZ) + 1, COARSE_STEP_HZ)
     measured = []
     for f in coarse:
         seg = schedule_at(t); scenario = scenarios[seg["case_id"]]; opt = optima[seg["case_id"]]
@@ -381,7 +394,8 @@ def local_scan(t: float, strategy: str, current_f: float, reason: str, rows: lis
                       protection.state, 0, 0, True, seg, scenario, opt, reason)
         rows.append(row); measured.append((row["normalized_port_power_W"], float(f))); t += SCAN_POINT_DT
     coarse_best = max(measured)[1]
-    fine = np.arange(max(F_MIN, coarse_best - 5e3), min(F_MAX, coarse_best + 5e3) + 1, 1e3)
+    fine = np.arange(max(F_MIN, coarse_best - FINE_HALFWIDTH_HZ),
+                     min(F_MAX, coarse_best + FINE_HALFWIDTH_HZ) + 1, FINE_STEP_HZ)
     measured = []
     for f in fine:
         seg = schedule_at(t); scenario = scenarios[seg["case_id"]]; opt = optima[seg["case_id"]]
@@ -392,7 +406,8 @@ def local_scan(t: float, strategy: str, current_f: float, reason: str, rows: lis
     # The Qm sensitivity study shows a ~1.7--3.5 kHz FWHM.  A final 0.1 kHz
     # refinement is therefore needed to satisfy a 95% power-capture criterion;
     # it is restricted to +/-1 kHz so its time cost remains explicit and small.
-    ultra = np.arange(max(F_MIN, fine_best - 1e3), min(F_MAX, fine_best + 1e3) + 1, 0.1e3)
+    ultra = np.arange(max(F_MIN, fine_best - ULTRA_HALFWIDTH_HZ),
+                      min(F_MAX, fine_best + ULTRA_HALFWIDTH_HZ) + 1, ULTRA_STEP_HZ)
     measured = []
     for f in ultra:
         seg = schedule_at(t); scenario = scenarios[seg["case_id"]]; opt = optima[seg["case_id"]]

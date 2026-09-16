@@ -1,0 +1,47 @@
+{
+  "registry_id": "SCAN_LADDER_REGISTRY_V2_1",
+  "created": "2026-09-16",
+  "purpose": "控制器三级扫描阶梯的参数登记表。这 6 个数原本硬编码在 run_stage4_5_control.local_scan() 里，现移入本表，与 bvd_parameters.json（换能器）、drive_limits.json（驱动限值）共同构成完整参数登记。",
+  "declaration": "本表数值为控制器设计选择，不是器件参数，也不是硬件实时性指标。扫描时间为「点数 x scan_point_dt_s」的假设代理。",
+
+  "ladder": {
+    "coarse": {
+      "halfwidth_Hz": 50000.0,
+      "step_Hz": 5000.0,
+      "class": "DESIGN_CHOICE",
+      "note": "捕获级。决定控制器能追多远的 fs 漂移。当前 ±50 kHz 是历史值；项目自己的选频研究（stage3_selection）结论是 ±100 kHz 才能覆盖全部 34 个场景，见 known_coverage_gap。"
+    },
+    "fine": {
+      "halfwidth_Hz": 5000.0,
+      "step_Hz": 1000.0,
+      "class": "DESIGN_CHOICE",
+      "note": "细化级。步长 1 kHz 小于基线功率峰 FWHM（约 1736 Hz），因此能把粗扫的失手捞回来——这是 32/34 场景仍达 100% 捕获的原因。"
+    },
+    "ultra": {
+      "halfwidth_Hz": 1000.0,
+      "step_Hz": 100.0,
+      "class": "DESIGN_CHOICE",
+      "note": "终扫级。Qm=800 下峰很尖，需要 0.1 kHz 才能满足高捕获率判据。"
+    }
+  },
+
+  "known_coverage_gap": {
+    "required_halfwidth_Hz": 78416.2,
+    "required_by": "登记表中所有场景相对 0.9 MHz 的最大 fs 偏移",
+    "uncovered_scenarios_at_current_coarse": ["CASE_LM_P20", "CASE_CM_P20"],
+    "measured_capture_at_current_coarse": {"CASE_LM_P20": 0.0010, "CASE_CM_P20": 0.0014},
+    "note": "Lm 或 Cm 单独 +20% 使 fs = f0/sqrt(1.2)，下移 78.4 kHz，超出 ±50 kHz 捕获级。这两个场景不在闭环调度表中，现有批次不会暴露。项目自己的 stage3_window_step_all_cases.csv 用 window_excludes_global_optimum 列独立标出了同样这两个场景。",
+    "evidence": "docs/04 第 2 节；docs/05；tools/audit_2026-09-15/audit_checks.py 的 C1/C2"
+  },
+
+  "widening_tradeoff": {
+    "measured_2026-09-16": "把 coarse.halfwidth_Hz 改为 100000 后：34/34 场景捕获率均 >=90%（当前为 32/34）；单次三级扫描点数 53 -> 73，时间代理 79.5 -> 109.5 ms（1.38x）；闭环 7 段日程上 PERIODIC_SCAN 稳态捕获 0.9951 -> 0.9973、全程能量 -5.7%，P_AND_O 稳态捕获 0.8529 -> 0.8854、全程能量 +4.3%、硬跳闸 2 -> 1。",
+    "caveat": "上述能量差异有相当部分来自扫描落点与 0.8 s 扰动切换时刻的相位对齐（拉长扫描周期后结果非单调），在只有 7 段的日程上不构成稳健性质。稳健的只有两条：单次扫描 +30 ms，以及覆盖从 32/34 变为 34/34。",
+    "recommendation": "建议改为 100000（与 stage3_selection 报告的 ±100 kHz 推荐窗口一致）。默认值暂留 50000 以保证历史批次逐位复现；切换前请重跑闭环并另开批次目录。"
+  },
+
+  "timing": {
+    "scan_point_dt_s": 0.0015,
+    "note": "与 run_stage4_5_control.SCAN_POINT_DT 一致，为假设代理值，不是硬件实测。"
+  }
+}
