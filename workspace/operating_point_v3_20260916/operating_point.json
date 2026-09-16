@@ -1,7 +1,7 @@
 {
   "registry_id": "OPERATING_POINT_V3",
   "created": "2026-09-16",
-  "supersedes": "v2.1 的 |Z(fs)| = 7.071 kΩ 反推工作点（由 100 Vpp ÷ 5 mA 得来）",
+  "supersedes": "v2.1 的 |Z(fs)| = 7.071 kΩ 反推工作点；以及本文件 2026-09-16 上午的实心柱 33 模基线（已证实与 50 Ω 功放不兼容）",
   "why_superseded": "导师 2026-09-16 澄清：100 Vpp 是推荐值（与振幅成正比，越高越好），5 mA 是上限（推荐更小），0.8 MHz 才是合适振动条件，材料与尺寸可选。因此 7.071 kΩ 不是约束，而是期望达到的下限；BVD 参数应由材料与几何【正向推导】，而非由工作点反推。",
   "declaration": "材料常数取自公开典型值，不是本项目实测。几何为设计选择。全部标注为假设基线值，实测后替换。",
   "supervisor_given": {
@@ -32,32 +32,49 @@
     }
   },
   "baseline_choice": {
+    "geometry": {
+      "value": "hollow_cylinder_31_mode",
+      "class": "DESIGN_CHOICE",
+      "note": "径向极化空心圆柱、内外表面电极、沿长度振动（31 模），取自 reference/前视超声治疗.pdf。中心孔可走导丝并释放空化种子。选它的电学理由：把 C0 做大从而把阻抗拉到 50 Ω 附近——文献原话是 overcome electrical impedance challenges associated with small aperture transducers。"
+    },
     "material": {
-      "value": "PZT-8",
+      "value": "PZT-5H",
       "class": "DESIGN_CHOICE",
-      "note": "四种候选中唯一能在 ka>=1 前提下用 5 mA 建立接近 100 Vpp 的材料"
+      "note": "与文献一致，亦为导师先前使用的材料"
     },
-    "diameter_mm": {
-      "value": 0.6,
-      "class": "DESIGN_CHOICE",
-      "note": "由约束推出，非自由选择：ka=0.98 恰在辐射有效边界；更大则电压不足，更小则辐射不出去"
+    "od_mm": {
+      "value": 1.35,
+      "class": "DESIGN_CHOICE"
     },
-    "mode": {
-      "value": "33_longitudinal_rod",
+    "id_mm": {
+      "value": 0.73,
       "class": "DESIGN_CHOICE",
-      "note": "0.8 MHz 谐振长度 1.88 mm，可沿导管轴向放置；厚度模圆片需 2.3 mm 直径，径向放不下"
+      "note": "中心孔供导丝通过；缩小内径可提高阻抗但牺牲该功能"
+    },
+    "harmonic": {
+      "value": 3,
+      "class": "SUPERVISOR_GIVEN",
+      "note": "导师确认 0.8 MHz 亦为三次谐波"
     },
     "expected": {
-      "C0_pF": 1.335,
-      "Rm_ohm": 7093,
-      "Qm": 30.3,
-      "cm_over_c0": 0.694,
-      "V_at_5mA_Vpp": 100.2,
-      "P_mech_mW": 176.9,
-      "ka": 0.98,
-      "_note": "不含任何连接导线。"
+      "length_mm": 5.62,
+      "C0_pF": 1730.5,
+      "Z_res_ohm": 29,
+      "Qm": 21.1,
+      "cm_over_c0": 0.179,
+      "k31": 0.39,
+      "at_176_8mW": {
+        "V_vpp": 6.4,
+        "I_mA": 77.6
+      },
+      "ka": 2.2,
+      "match_ratio_to_50ohm": 0.6
     },
-    "margin_warning": "余量为零：ka=0.98 恰在辐射有效边界，电压刚过 100 Vpp。任何使 C0 增大或耦合降低的因素都会打穿此方案。"
+    "alternatives": {
+      "F_厚壁": "内径 0.50 mm → 47 Ω（vs 50 Ω 为 0.9×，最易匹配），但中心孔变小",
+      "D_PZT-8": "→ 109 Ω，Qm 30.3 更高、峰更尖，对频率跟踪的研究更有区分度",
+      "H_基波": "→ 88 Ω 且长度仅 1.88 mm，但基波与导师给定的三次谐波不符"
+    }
   },
   "materials": {
     "_class": "公开典型值，非本项目实测",
@@ -103,28 +120,32 @@
     "ka_validity": "ka = 2*pi*a/lambda。ka>2 适用，1<ka<=2 边缘，ka<=1 辐射效率显著下降、本近似不再成立。"
   },
   "scan_variables": {
-    "note": "材料与直径是第一扫描变量，与 Qm 同级。不得再像 v2.1 的 7.071 kΩ 那样固化成隐式前提。",
+    "note": "几何与材料是第一扫描变量，与 Qm 同级。见 workspace/candidate_designs_20260916/。",
     "materials": [
       "PZT-5H",
       "PZT-5A",
       "PZT-4",
       "PZT-8"
     ],
-    "diameters_mm": [
-      0.4,
-      0.5,
-      0.6,
-      0.8,
+    "od_mm": [
       1.0,
-      1.5,
-      2.0
+      1.35,
+      1.6
     ],
-    "current_limits_mA": [
-      2.0,
-      3.0,
-      5.0
+    "id_mm": [
+      0.5,
+      0.73,
+      1.0
     ],
-    "_removed_2026-09-16": "cable_pF 已移出扫描：见 not_modelled.catheter_cable_capacitance"
+    "harmonic": [
+      1,
+      3
+    ],
+    "power_mW": [
+      88,
+      176.8,
+      350
+    ]
   },
   "not_modelled": {
     "_note": "以下因素已被识别，但本阶段【不纳入模型】，因为缺少确认的依据。",
@@ -141,7 +162,31 @@
         "长度与类型全为猜测，没有任何依据",
         "其影响完全取决于 5 mA 约束的是哪股电流，而该问题尚未确定——在未定的假设上再叠一层假设，结论不可用"
       ],
-      "if_revisited": "先确认实际连接方案（体外功放+长导线？还是别的），再确认 5 mA 是器件耐受还是功放能力，两者都定了才值得建模。bvd_from_geometry.build() 仍保留 cable_pF 参数，可随时启用。"
+      "if_revisited": "先确认实际连接方案（体外功放+长导线？还是别的），再确认 5 mA 是器件耐受还是功放能力，两者都定了才值得建模。bvd_from_geometry.build() 仍保留 cable_pF 参数，可随时启用。",
+      "revised_note_2026-09-16": "几何改为空心圆柱后 C0 约 1730 pF，远大于原先假设的 1.3 pF，因此即便日后建模电缆（约 125 pF），其相对影响也从「淹没 C0」降为约 7%。这进一步支持本阶段不建模的决定。"
+    }
+  },
+  "driver": {
+    "type": {
+      "value": "50_ohm_RF_power_amplifier",
+      "class": "SUPERVISOR_CONFIRMED",
+      "note": "2026-09-16 导师确认。决定性后果：负载必须在几十 Ω 量级，排除高阻抗几何（实心柱 33 模为 7085 Ω，离 50 Ω 有 142 倍，无法匹配）。"
+    },
+    "reference_device_amp": "文献 reference/前视超声治疗.pdf 用 E&I A150（150 W 级）+ 动态 L-C 匹配"
+  },
+  "power_target": {
+    "value_mW": 176.8,
+    "class": "DERIVED_FROM_SUPERVISOR_VI",
+    "derivation": "100 Vpp (=35.36 Vrms) × 5 mA = 176.8 mW",
+    "why_power_not_VI": "V 与 I 是【某个特定阻抗下】的表现：两者相除即 7.07 kΩ，而 50 Ω 功放下的实际负载是几十 Ω，该 V/I 对无法成立。功率是可跨几何迁移的量，因此以它承载导师的原始意图。",
+    "cross_check": "同样 176.8 mW 下空心圆柱需 4.5–12.4 Vpp / 40–111 mA；文献实测驱动为 20 Vpp，落在同一量级，佐证该功率量级合理。",
+    "headroom": "E&I A150 为 150 W 级，176.8 mW 仅占 0.12%，余量极大——该值可上调。"
+  },
+  "retired": {
+    "solid_rod_33_mode": {
+      "was": "PZT-8 ⌀0.6 mm 实心柱，2026-09-16 上午的基线",
+      "why_retired": "|Z| = 7085 Ω，与 50 Ω 功放相差 142 倍，无法匹配。该方案源于本次审核早期「元件越小、阻抗越高越好」的推理，方向与真实器件相反：空心圆柱的存在理由正是把阻抗【降】到 50 Ω 附近。",
+      "lesson": "在确认驱动源类型之前推导负载设计，方向可能整体搞反。"
     }
   }
 }
