@@ -323,3 +323,56 @@ def test_live_selection_reports_agree_with_scenario_count(model):
             continue
         text = path.read_text(encoding="utf-8")
         assert f"以全部{n}个活动场景" in text, f"{path.name} 的场景数与登记表({n})不一致"
+
+
+# --------------------------------------------------------------------------
+# 相位消融：伪锁定检测必须保留
+# --------------------------------------------------------------------------
+
+def test_phase_ablation_target_is_power_calibrated():
+    """相位设定点必须由功率最优点标定，不得退回朴素的相位归零。
+
+    项目本来就是这么做的（target = phase at baseline constrained max-P_Rm，
+    约 -1.078 度）。固化它，免得有人「简化」成 target=0 —— 那样会让伪锁定
+    更容易发生，而表面上看不出区别。
+    """
+    src = (REBUILD / "active_stage3_5" / "run_phase_ablation.py").read_text(encoding="utf-8")
+    assert "target_phase = phase_at(baseline_opt" in src, "目标相位必须由功率最优点标定"
+
+
+def test_phase_ablation_keeps_wrong_lock_detector():
+    """必须保留「相位收敛但功率低」的伪锁定判据。
+
+    这是本项目自己发明的检测器，也是 docs/04 第 4 节所述失效模式的唯一
+    内建观测手段。删掉它，伪锁定就会以「|相位误差| 合格」的面貌通过验收。
+    """
+    src = (REBUILD / "active_stage3_5" / "run_phase_ablation.py").read_text(encoding="utf-8")
+    assert "wrong_phase_lock_flag" in src
+    assert "phase_error <= 0.5 and capture < 0.95" in src
+    assert "wrong_phase_lock_seen_in_gain_sweep" in src
+
+
+def test_phase_target_has_multiple_stable_solutions(model):
+    """记录机理：目标相位在带内有多个解，全部在 sign(slope) 下稳定。
+
+    这是伪锁定的根因。若模型改动使解的个数变化，本用例会失败并提示
+    重新评估 docs/04 第 4 节与 docs/05 第 6 节的结论。
+    """
+    s = model.scenario_map()["CASE_000_BASELINE"]
+    fine = np.arange(model.F_MIN, model.F_MAX + 0.1, 100.0)
+    f_opt = float(fine[int(np.argmax(model.safe_power(fine, s)))])
+    target = float(model.response(np.array([f_opt]), s, 1.0)["phase_deg"][0])
+    dense = np.linspace(model.F_MIN, model.F_MAX, 400001)
+    phase = model.response(dense, s, 1.0)["phase_deg"]
+    crossings = dense[np.where(np.diff(np.sign(phase - target)))[0]]
+    # 去掉数值上重合的解
+    distinct = [crossings[0]]
+    for c in crossings[1:]:
+        if c - distinct[-1] > 100.0:
+            distinct.append(c)
+    assert len(distinct) >= 3, (
+        f"目标相位 {target:.3f} 度只有 {len(distinct)} 个解；"
+        "docs/04 第 4 节的三吸引子结论需要重新评估"
+    )
+    powers = [float(model.safe_power(np.array([c]), s)[0]) for c in distinct]
+    assert min(powers) / max(powers) < 0.1, "至少一个解应为低功率伪锁点"
