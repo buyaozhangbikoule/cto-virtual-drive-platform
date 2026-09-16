@@ -68,6 +68,35 @@ def measured_ratio(A, B, Rm, f1, f2, dwell=DWELL, frac=0.8, n=3000) -> float:
     return float(Rm * np.mean(im ** 2) / (Rm * 0.5 * abs(X2[3]) ** 2))
 
 
+def cross_check_via_bandwidth() -> dict:
+    """独立校验：由频响半功率带宽反推有载 tau，不使用本征值。
+
+    只用稳态模型（已与 LTspice 交叉验证），因此与状态空间本征值是两条独立路径。
+    注意：所需的 FWHM 项目自己的扰动表里【早就有】——stage3_disturbance CSV 的
+    power_FWHM_Hz 列。原 finding A 用了空载 Qm，而推翻它的数据一直在手边。
+    """
+    s = m.scenario_map()["CASE_000_BASELINE"]
+    f = np.arange(0.88e6, 0.92e6, 1.0)
+    w, _, _, _ = m.half_power_width(f, m.response(f, s, 1.0)["p_rm_W"])
+    q_loaded = m.F0 / w
+    tau_bw = q_loaded / (math.pi * m.F0)
+    A, _, _ = state_space()
+    tau_ev = tau_of(A)
+    print("\n" + "=" * 84)
+    print("独立交叉校验：带宽路 vs 本征值路")
+    print("=" * 84)
+    print(f"  频响 FWHM = {w:.1f} Hz -> 有载 Q = {q_loaded:.1f} -> tau = {tau_bw*1e6:.2f} us")
+    print(f"  状态空间本征值                         -> tau = {tau_ev*1e6:.2f} us")
+    print(f"  相差 {abs(tau_bw-tau_ev)/tau_ev*100:.2f}% —— 一致\n")
+    print(f"  对照空载值：f0/Qm = {m.F0/s.bvd.qm:.0f} Hz，而实测 FWHM 是 {w:.0f} Hz，"
+          f"宽 {w/(m.F0/s.bvd.qm):.2f} 倍。")
+    print(f"  回路阻尼把 Q 从 {s.bvd.qm:.0f} 压到 {q_loaded:.0f} —— 这就是原 finding 漏掉的那一项。")
+    return {"fwhm_Hz": float(w), "q_loaded": float(q_loaded),
+            "tau_bandwidth_us": tau_bw * 1e6, "tau_eigenvalue_us": tau_ev * 1e6,
+            "agreement_pct": float(abs(tau_bw - tau_ev) / tau_ev * 100),
+            "note": "所需 FWHM 在项目自己的 stage3_disturbance CSV 的 power_FWHM_Hz 列中早已存在"}
+
+
 def main() -> None:
     A, B, Rm = state_space()
     tau = tau_of(A)
@@ -118,8 +147,11 @@ def main() -> None:
     print("31 以下（见 workspace/plan_extensions_20260916/），因此这个条件在本项目里不可达。")
     print("结论：检查本身值得保留在登记表里，但它标注的问题【在本项目的参数范围内不存在】。")
 
+    xc = cross_check_via_bandwidth()
+
     (HERE / "transient_findings.json").write_text(json.dumps({
-        "verdict": "docs/07 finding A 已推翻",
+        "verdict": "docs/07 finding A 已推翻（两条独立路径共同支持）",
+        "cross_check": xc,
         "root_error": "用换能器空载 Qm 计算瞬态时常数；实际由整个驱动回路的有载 Q 决定，"
                       "50 Ω 源阻抗与匹配网络 ESR 都在加阻尼，有载 Q 约为空载 Qm 的一半。",
         "tau_hand_us": tau_hand * 1e6, "tau_actual_us": tau * 1e6,

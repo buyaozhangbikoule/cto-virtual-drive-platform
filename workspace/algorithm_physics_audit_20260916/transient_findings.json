@@ -1,5 +1,13 @@
 {
-  "verdict": "docs/07 finding A 已推翻",
+  "verdict": "docs/07 finding A 已推翻（两条独立路径共同支持）",
+  "cross_check": {
+    "fwhm_Hz": 2141.883276957553,
+    "q_loaded": 420.19096450410166,
+    "tau_bandwidth_us": 148.6121534297309,
+    "tau_eigenvalue_us": 148.51712565032219,
+    "agreement_pct": 0.06398439169397997,
+    "note": "所需 FWHM 在项目自己的 stage3_disturbance CSV 的 power_FWHM_Hz 列中早已存在"
+  },
   "root_error": "用换能器空载 Qm 计算瞬态时常数；实际由整个驱动回路的有载 Q 决定，50 Ω 源阻抗与匹配网络 ESR 都在加阻尼，有载 Q 约为空载 Qm 的一半。",
   "tau_hand_us": 282.9421210522584,
   "tau_actual_us": 148.51712565032219,
