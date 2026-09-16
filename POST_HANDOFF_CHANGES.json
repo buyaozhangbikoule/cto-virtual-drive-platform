@@ -18,9 +18,9 @@
     {
       "file": "docs/01_项目状态与下一步.md",
       "before_sha256": "63aa9bcd9e30769904b33af70fde489069ed5ae50ce25b8612f96a430017e518",
-      "after_sha256": "99b6a45ca1d73360b87a18aad69683ef6d088df99cbb96d587249bc66226cc74",
+      "after_sha256": "9e2aae4b26b72ab30a83d6f1a80c3024e094bcd10dff901ae06bd46684312600",
       "size_before": 3874,
-      "size_after": 7259,
+      "size_after": 7595,
       "reason": "新增 docs/04、docs/05 导读指针；追加前提失效警示与新基线导读；2026-09-16 再追加一条更正——本次审核「50 Ω 功放排除高阻抗几何」的断言已被实测推翻，两个几何并列保留。未改动原有任何状态表述。",
       "revisions": [
         {
@@ -46,6 +46,12 @@
           "sha256": "99b6a45ca1d73360b87a18aad69683ef6d088df99cbb96d587249bc66226cc74",
           "size": 7259,
           "what": "docs/07 算法物理审核的导读指针"
+        },
+        {
+          "date": "2026-09-16",
+          "sha256": "9e2aae4b26b72ab30a83d6f1a80c3024e094bcd10dff901ae06bd46684312600",
+          "size": 7595,
+          "what": "docs/08 计划书拓展建议的导读指针"
         }
       ]
     },
