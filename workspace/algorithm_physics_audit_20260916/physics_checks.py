@@ -28,9 +28,19 @@ findings: list[dict] = []
 
 
 def check_A_quasistatic() -> None:
-    """准稳态假设：每个测量点的驻留时间是否远大于机械支路的衰减时常数。"""
+    """准稳态假设——【本项已被 transient_check.py 推翻，保留仅为留痕】。
+
+    原做法用手算 tau = Qm/(pi*f0)，即换能器的【空载】Qm。这是错的：
+    瞬态由整个驱动回路的【有载 Q】决定，50 Ω 源阻抗与匹配 ESR 都在加阻尼。
+    实测有载 tau = 148.5 us 而非 283 us，1.5 ms 驻留是 10.1 个时常数而非 5.3 个，
+    实际测量误差 0.03-0.06% 而非 0.5%。
+
+    正确的算法见 transient_check.py（状态空间本征值 + 闭式瞬态解）。
+    """
     print("=" * 88)
     print("A. 准稳态假设的时间尺度自洽性")
+    print("   ⚠️ 本项结论已被 transient_check.py 推翻。下面的手算用的是【空载】Qm，")
+    print("      而瞬态由【有载】Q 决定。保留此输出仅为对照，勿引用其结论。")
     print("=" * 88)
     print("机械支路是二阶谐振系统，激励改变后包络按 exp(-t/tau) 衰减，tau = 2Qm/w0 = Qm/(pi*f0)。")
     print("模型是稳态 AC 解，【不模拟瞬态】，因此它报出的永远是完全稳定后的值；")
@@ -50,14 +60,19 @@ def check_A_quasistatic() -> None:
                      "settle_1pct_us": settle_1pct * 1e6,
                      "scan_dwell_margin": margin, "verdict": verdict})
     findings.append({
-        "id": "A", "title": "准稳态假设未校验，v2.1 下裕量仅 1.15 倍",
-        "severity": "中",
-        "detail": "SCAN_POINT_DT = 1.5 ms 在 Qm=800 时只有 5.3 个时常数，残余幅度误差 0.5%。"
-                  "模型不模拟瞬态，因此这个不足【在仿真里看不出来】，只会在实机上出现。"
-                  "Qm 越高越危险，而 Qm 恰是项目最大的未知量。",
-        "fix": "把 scan_point_dt >= 5 * (4.6 * Qm / (pi*f0)) 写成登记表里的一条显式约束，"
-               "随 Qm 一起校验；Qm 上调时扫描驻留必须同步上调。",
-        "data": rows,
+        "id": "A", "title": "【已撤回】准稳态假设未校验，v2.1 下裕量仅 1.15 倍",
+        "severity": "已撤回——该问题不存在",
+        "withdrawn": "2026-09-16",
+        "root_error": "用换能器【空载】Qm 计算瞬态时常数。瞬态由整个驱动回路的【有载】Q "
+                      "决定，50 Ω 源阻抗与匹配网络 ESR 都在加阻尼，有载 Q 约为空载的一半。",
+        "corrected": "有载 tau = 148.5 us（非 283 us），1.5 ms 驻留 = 10.1 tau（非 5.3），"
+                     "状态空间闭式瞬态解给出的实际测量误差为 0.03-0.06%（非 0.5%）。"
+                     "准稳态假设成立且裕量充裕。",
+        "residual_value": "检查本身值得保留，但阈值在空载 Qm ≈ 1600，而辐射负载使浸入血液的 "
+                          "Qm 上限约 31，本项目参数范围内不可达。断言应写成"
+                          "「驻留 >= 7 x 有载 tau」，用状态空间本征值求 tau。",
+        "evidence": "workspace/algorithm_physics_audit_20260916/transient_check.py",
+        "data_superseded": rows,
     })
 
 
