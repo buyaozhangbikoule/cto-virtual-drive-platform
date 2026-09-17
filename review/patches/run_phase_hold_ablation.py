@@ -5,18 +5,30 @@ strategies in ``run_stage4_5_control.py`` and the third ablation in
 ``run_phase_ablation.py`` are untouched, so their outputs stay byte-identical
 and the plan's wording does not have to be settled before these numbers exist.
 
-Three variants run on the same schedule and the same gain sweep as the third
-ablation, so the comparison decomposes cleanly:
+Six variants run on the same schedule and the same gain sweep as the third
+ablation, so every change is isolated:
 
-    ARG_ZIN_PURE        the existing signal and controller, recomputed here as a
-                        cross-check that this script agrees with the third
-                        ablation
-    MOTIONAL_PURE       only the error signal changes, from arg(Zin) to the
-                        de-embedded arg(Zm).  Isolates what the signal is worth.
-    MOTIONAL_SCAN_HOLD  a power scan acquires, the motional phase holds the value
-                        recorded at that peak, and the existing observable
-                        detector triggers re-acquisition.  This is the
-                        architecture proposed in review/05.
+    ARG_ZIN_PURE          the existing signal and controller, recomputed here as
+                          a cross-check that this script agrees with the third
+                          ablation.  It does, to every printed digit.
+    MOTIONAL_PURE         only the error signal changes, from arg(Zin) to the
+                          de-embedded arg(Zm).  Isolates what the signal is worth,
+                          which turns out to be negative on its own.
+    HOLD_FROZEN_NOSLEW    a power scan acquires and the motional phase holds, with
+                          re-acquisition from the existing frozen-reference
+                          detector.  Reproduces the blind spot described below.
+    HOLD_FROZEN_SLEW      same, plus the slew-budget backstop.
+    HOLD_SCANREF_NOSLEW   same as HOLD_FROZEN_NOSLEW but the reference is the last
+                          scan's measured curve, interpolated at the current
+                          frequency.  Isolates the reference fix on its own.
+    HOLD_SCANREF_SLEW     both fixes together.
+
+The blind spot the last four variants exist to measure: the frozen detector needs
+ten consecutive samples at ONE frequency to build its reference and clears the
+buffer on any frequency change, so a phase controller retuning every control tick
+can never arm it.  It works while the controller is settled, which is when it is
+least needed.  Pure scanning and P&O never show this because their frequency is
+constant between updates.
 
 Why the motional phase is a better signal: arg(Zm) = atan((wLm - 1/(wCm))/Rm) is
 strictly monotone in frequency, so it has exactly one zero and a non-zero target
@@ -317,7 +329,16 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, reference_kind: st
         }
 
         if scan_hold:
-            closable = MAX_UPDATE_HZ * REACQUIRE_HORIZON_SAMPLES * abs(slope) if available else math.nan
+            # Floor the threshold at the controller's own deadband.  Far from
+            # resonance the slope collapses and the raw budget falls below the
+            # deadband, which would ask for a scan over an error the controller
+            # has already decided is too small to act on.  With no noise that
+            # never fires, because the target is re-recorded at the acquired
+            # frequency and the error sits at zero, but any measurement noise
+            # would turn it into scan thrashing.
+            closable = (max(MAX_UPDATE_HZ * REACQUIRE_HORIZON_SAMPLES * abs(slope),
+                            PHASE_DEADBAND_DEG)
+                        if available else math.nan)
             row["closable_error_deg"] = closable
             if reference_kind == "SCAN_CURVE":
                 annotations = scan_reference.observe(frequency, row["normalized_port_power_W"])
