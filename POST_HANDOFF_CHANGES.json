@@ -18,9 +18,9 @@
     {
       "file": "docs/01_项目状态与下一步.md",
       "before_sha256": "63aa9bcd9e30769904b33af70fde489069ed5ae50ce25b8612f96a430017e518",
-      "after_sha256": "082613ad89b8eec952ae21fad0b99158569d44599b41922d2b290adb50f706d7",
+      "after_sha256": "7aa5e6ec10f4f7600a9c5d948c756bb1095025da92d3c39df18ce2f57af0b562",
       "size_before": 3874,
-      "size_after": 7722,
+      "size_after": 7962,
       "reason": "新增 docs/04、docs/05 导读指针；追加前提失效警示与新基线导读；2026-09-16 再追加一条更正——本次审核「50 Ω 功放排除高阻抗几何」的断言已被实测推翻，两个几何并列保留。未改动原有任何状态表述。",
       "revisions": [
         {
@@ -58,6 +58,12 @@
           "sha256": "082613ad89b8eec952ae21fad0b99158569d44599b41922d2b290adb50f706d7",
           "size": 7722,
           "what": "撤回「驱动源互不相容」的阻塞性断言"
+        },
+        {
+          "date": "2026-09-17",
+          "sha256": "7aa5e6ec10f4f7600a9c5d948c756bb1095025da92d3c39df18ce2f57af0b562",
+          "size": 7962,
+          "what": "docs/08 第一、三节撤回的下游更正"
         }
       ]
     },
