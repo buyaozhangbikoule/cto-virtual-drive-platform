@@ -21,13 +21,21 @@ OD_MM = 1.35
 out: dict = {}
 
 # 公开典型值，非本项目实测
+# 声阻抗与声速。每一项标注出处——2026-09-17 修正：原表的钙化斑块用了 7.00 MRayl
+# 与 3000 m/s，【两者都没有出处】（多半是拿了皮质骨），实测值小得多。
 MEDIA = [
-    ("空气/气泡（空化或失接触）", 0.0004, 340.0),
-    ("脂质斑块", 1.38, 1450.0),
-    ("血液（基线）", 1.66, 1540.0),
-    ("组织化血栓", 1.70, 1550.0),
-    ("纤维斑块", 1.90, 1600.0),
-    ("钙化斑块", 7.00, 3000.0),
+    # (名称, Z_MRayl, c_m_s, 出处)
+    ("空气/气泡（失接触）", 0.0004, 340.0,
+     "空气的标准值。【模糊推测】：把空化气泡云当作空气是粗糙上界——"
+     "含气液体的等效阻抗是复数且随频率变，可能高于也可能低于液体。"),
+    ("血液（基线）", 1.66, 1540.0, "公开典型值（软组织超声标准表）"),
+    ("脂质池", 1.70, 1500.0,
+     "实测 1.70 ± 0.07 MRayl，扫描声学显微镜，Sci Rep 2018 s41598-018-32788-2"),
+    ("纤维组织", 2.02, 1700.0,
+     "实测 2.02 ± 0.06 MRayl，同上文献"),
+    ("钙化（内膜内）", 2.23, 1858.0,
+     "实测 2.23 ± 0.09 MRayl，同上文献。声速由 c = Z/rho 反推，取 rho = 1.2 g/cm^3"
+     "（部分矿化组织的假设值，【此项为假设】）"),
 ]
 
 
@@ -40,13 +48,16 @@ def ext1_tissue_levels() -> None:
     print("=" * 92)
     print("拓展一：扰动等级应由组织声阻抗推出，而不是取 ±15/30/50% 这种整数档")
     print("=" * 92)
-    print("计划书第三章立规矩：「不能缺少实验或多物理场依据地把一个层次的数值代入另一层次」。")
-    print("规矩本身对，但在这里用过头了——辐射阻抗不需要实验，它是解析结果。")
-    print("用公开组织声阻抗算 Rm，属于【有多物理场依据】，不是把临床参数硬塞进电路。\n")
+    print("⚠ 2026-09-17 修正：本节原结论「计划书扰动档比应用隐含的小 2.1 倍」【已撤回】。")
+    print("  该结论建立在钙化斑块 Z = 7.00 MRayl 上，而这个数【我没有出处】。")
+    print("  扫描声学显微镜实测值是 2.23 ± 0.09 MRayl（Sci Rep 2018 s41598-018-32788-2）。")
+    print("  用实测值重算，组织驱动的 Rm 范围是 1.00x-1.23x，【完全落在计划书的 ±15/30/50% 之内】。\n")
+    print("Q_rad = pi*Z_piezo/(2*Z_medium) 这个公式本身已自行推导验证（见 docs/08 第一节），")
+    print("成立条件是：半波厚度模、单面辐射、另一面空气背衬。本器件几何与之不符。\n")
     _, qm_blood = qm_of(1.66)
     print(f"{'声学负载':<26}{'Z(MRayl)':>10}{'Q_rad':>10}{'Qm':>8}{'Rm/血液':>10}{'FWHM(kHz)':>11}")
     rows = []
-    for name, z, _c in MEDIA:
+    for name, z, _c, _src in MEDIA:
         q_rad, qm = qm_of(z)
         rm_rel = qm_blood / qm
         rows.append({"medium": name, "Z_MRayl": z, "Q_rad": q_rad, "Qm": qm,
@@ -54,15 +65,22 @@ def ext1_tissue_levels() -> None:
         print(f"{name:<26}{z:>10.4f}{q_rad:>10.1f}{qm:>8.2f}{rm_rel:>9.2f}x{F0/qm/1e3:>11.2f}")
     lo = min(r["Rm_relative_to_blood"] for r in rows)
     hi = max(r["Rm_relative_to_blood"] for r in rows)
+    tissue = [r for r in rows if "气泡" not in r["medium"]]
+    t_hi = max(r["Rm_relative_to_blood"] for r in tissue)
     print(f"\n计划书的 Rm 扰动档：+15%/+30%/+50%，最大 1.50x")
-    print(f"由组织声阻抗推出的范围：{lo:.2f}x ~ {hi:.2f}x")
-    print(f"=> 计划书最大档比应用真正隐含的小 {hi/1.5:.1f} 倍。")
-    print(f"   顶到钙化斑块 Rm 是血液的 {hi:.2f} 倍；失去接触（气泡包裹）降到 {lo:.2f} 倍、")
-    print(f"   Qm 冲到 {QM_MAT}、峰宽由 {F0/qm_blood/1e3:.1f} kHz 收窄到 {F0/QM_MAT/1e3:.1f} kHz"
-          f"（{(F0/qm_blood)/(F0/QM_MAT):.1f} 倍）。失接触这一档计划书里完全没有。")
+    print(f"由【实测组织】声阻抗推出的范围：1.00x ~ {t_hi:.2f}x —— 完全落在计划书档位【之内】。")
+    print(f"=> 原结论「计划书档位小了 2.1 倍」不成立，已撤回。")
+    print(f"   计划书用 ±15/30/50% 覆盖组织变化是【够的】。")
+    print(f"\n唯一仍在档位之外的是「失去接触」一档：Rm 降到 {lo:.2f}x、Qm 冲到 {QM_MAT}、")
+    print(f"峰宽由 {F0/qm_blood/1e3:.1f} kHz 收窄到 {F0/QM_MAT/1e3:.1f} kHz。")
+    print("但这一档把气泡当成空气，【此处为模糊推测内容】——含气液体不等于空气。")
+    print("在有可靠的气泡云等效阻抗之前，这一档只能算「值得注意的方向」，不是可用的数值。")
     out["ext1_tissue_levels"] = {"rows": rows, "plan_max": 1.5,
                                  "derived_range": [lo, hi],
-                                 "note": "声阻抗与声速为公开典型值，非本项目实测"}
+                                 "correction_2026_09_17": "原结论「计划书档位小 2.1 倍」已撤回；"
+                                 "该结论依赖无出处的 Z=7.0 MRayl，实测为 2.23±0.09。"
+                                 "用实测值，组织范围 1.00x-1.23x，落在计划书 ±15/30/50% 之内。",
+                                 "sources": {r[0]: r[3] for r in MEDIA}}
 
 
 def ext2_sensor_noise() -> None:
@@ -140,7 +158,7 @@ def ext4_radiation_reactance() -> None:
     a = OD_MM * 1e-3 / 2
     print(f"{'声学负载':<26}{'ka':>7}{'X1/R1':>8}{'Q_rad':>9}{'附加质量':>10}{'Δfs/fs':>9}{'Δfs(kHz)':>10}")
     rows = []
-    for name, z, c in MEDIA:
+    for name, z, c, _src in MEDIA:
         if z < 0.01:
             continue
         ka = 2 * math.pi * a / (c / F0)
