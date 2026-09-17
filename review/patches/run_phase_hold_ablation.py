@@ -59,10 +59,18 @@ from run_phase_ablation import (
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "stage4_5_control" / "phase_hold_ablation"
 
+# (name, signal, scan acquisition, reference kind, slew-budget backstop)
+#
+# The last two columns decompose the two separate fixes.  HOLD_FROZEN_NOSLEW is
+# the first version that was built and it reproduces the original failure, so
+# the other two rows show what each fix is worth on its own.
 VARIANTS = [
-    ("ARG_ZIN_PURE", "ARG_ZIN", False),
-    ("MOTIONAL_PURE", "MOTIONAL_DEEMBED", False),
-    ("MOTIONAL_SCAN_HOLD", "MOTIONAL_DEEMBED", True),
+    ("ARG_ZIN_PURE", "ARG_ZIN", False, "FROZEN", False),
+    ("MOTIONAL_PURE", "MOTIONAL_DEEMBED", False, "FROZEN", False),
+    ("HOLD_FROZEN_NOSLEW", "MOTIONAL_DEEMBED", True, "FROZEN", False),
+    ("HOLD_FROZEN_SLEW", "MOTIONAL_DEEMBED", True, "FROZEN", True),
+    ("HOLD_SCANREF_NOSLEW", "MOTIONAL_DEEMBED", True, "SCAN_CURVE", False),
+    ("HOLD_SCANREF_SLEW", "MOTIONAL_DEEMBED", True, "SCAN_CURVE", True),
 ]
 
 plt.rcParams["font.family"] = "sans-serif"
@@ -71,7 +79,9 @@ plt.rcParams["svg.fonttype"] = "none"
 plt.rcParams["pdf.fonttype"] = 42
 plt.rcParams.update({"font.size": 8, "axes.spines.top": False, "axes.spines.right": False,
                      "legend.frameon": False})
-COLORS = {"ARG_ZIN_PURE": "#767676", "MOTIONAL_PURE": "#3775BA", "MOTIONAL_SCAN_HOLD": "#B64342"}
+COLORS = {"ARG_ZIN_PURE": "#767676", "MOTIONAL_PURE": "#3775BA",
+          "HOLD_FROZEN_NOSLEW": "#C98A2E", "HOLD_FROZEN_SLEW": "#B64342",
+          "HOLD_SCANREF_NOSLEW": "#6B4C9A", "HOLD_SCANREF_SLEW": "#2E7D5B"}
 
 
 def write_csv(path: Path, rows: list[dict]) -> None:
@@ -137,6 +147,65 @@ MEASUREMENT_FLOOR_AMPLITUDE = 1e-6
 REACQUIRE_HORIZON_SAMPLES = 10
 
 
+# Scan-curve reference thresholds, same shape as the frozen detector's.
+SCANREF_DROP_TRIGGER = 0.10
+SCANREF_CONFIRM_SAMPLES = 3
+
+
+class ScanCurveReference:
+    """A reference that moves with the controller, so retuning cancels out of it.
+
+    The frozen detector stores one measurement taken at one frequency, so the
+    moment the controller retunes the residual is dominated by the controller's
+    own move rather than by the plant.  That is why it has to clear its reference
+    after every scan and rebuild it from ten samples at a standing frequency, and
+    that rebuild is what never completes while a phase controller is chasing.
+
+    The scan already measures normalised port power at fifty-odd frequencies
+    spanning about 100 kHz.  Keeping that curve and interpolating it at whatever
+    frequency the controller is currently on gives a reference defined everywhere
+    the scan looked, with no fit and no extra measurement.  The residual is then
+    zero wherever the plant still matches the scan, whatever the controller does.
+
+    This is the model-referenced residual of the fault-detection literature, with
+    the last scan standing in for the model.
+
+    Caveat: the scan is taken at the probe amplitude and control samples at full
+    amplitude.  Dividing by amplitude squared makes the two comparable in a linear
+    model only.  On real hardware the two would have to be reconciled.
+    """
+
+    def __init__(self) -> None:
+        self.frequencies: np.ndarray | None = None
+        self.powers: np.ndarray | None = None
+        self.abnormal = 0
+
+    def load(self, samples: list[tuple[float, float]]) -> None:
+        ordered = sorted(samples)
+        self.frequencies = np.array([f for f, _ in ordered])
+        self.powers = np.array([p for _, p in ordered])
+        self.abnormal = 0
+
+    def observe(self, frequency_hz: float, measured: float) -> dict:
+        if self.frequencies is None or not (
+                self.frequencies[0] <= frequency_hz <= self.frequencies[-1]):
+            self.abnormal = 0
+            return {"detector_state": "NO_REFERENCE", "detector_vote_count": 0,
+                    "detector_trigger": 0, "detector_reason": ""}
+        expected = float(np.interp(frequency_hz, self.frequencies, self.powers))
+        residual = abs(measured - expected) / max(abs(expected), 1e-30)
+        if residual > SCANREF_DROP_TRIGGER:
+            self.abnormal += 1
+        else:
+            self.abnormal = 0
+        trigger = int(self.abnormal >= SCANREF_CONFIRM_SAMPLES)
+        if trigger:
+            self.abnormal = 0
+        return {"detector_state": "SCAN_CURVE", "detector_vote_count": int(residual > SCANREF_DROP_TRIGGER),
+                "detector_trigger": trigger,
+                "detector_reason": "SCAN_CURVE_RESIDUAL" if trigger else ""}
+
+
 def read_signal(signal, frequency_hz: float, scenario, amplitude: float) -> tuple[float, bool]:
     """Return the signal and whether it was measurable at this drive level."""
     if amplitude <= MEASUREMENT_FLOOR_AMPLITUDE:
@@ -154,12 +223,14 @@ def offline_optima(scenarios: dict) -> dict[str, dict]:
 
 
 # -------------------------------------------------------------------- simulate
-def simulate(variant: str, signal_name: str, scan_hold: bool, gain: float,
+def simulate(variant: str, signal_name: str, scan_hold: bool, reference_kind: str,
+             use_slew_rule: bool, gain: float,
              scenarios: dict, optima: dict) -> tuple[list[dict], dict]:
     signal = SIGNALS[signal_name]
     rows: list[dict] = []
     protection = Protection()
     detector = ObservableDisturbanceDetector()
+    scan_reference = ScanCurveReference()
     scratch: list[dict] = []          # stage-4 schema rows produced by local_scan
     frequency = F0
     t = 0.0
@@ -171,6 +242,10 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, gain: float,
 
     base_opt = optima["CASE_000_BASELINE"]["frequency_Hz"]
     target = signal(base_opt, scenarios["CASE_000_BASELINE"], 1.0)
+    if reference_kind == "SCAN_CURVE":
+        # The curve only exists after a scan, so this variant acquires once up front.
+        reacquire_pending = True
+        reacquire_reason = "INITIAL_ACQUISITION"
 
     while t < TOTAL_TIME - 1e-12:
         seg = schedule_at(t)
@@ -191,6 +266,9 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, gain: float,
             # the new operating point, not a constant carried over from before.
             target = signal(frequency, scenario, 1.0)
             detector.after_scan(t)
+            if reference_kind == "SCAN_CURVE":
+                scan_reference.load([(r["frequency_Hz"], r["normalized_port_power_W"])
+                                     for r in scratch[before:]])
             reacquire_pending = False
             reacquire_reason = ""
             continue
@@ -241,7 +319,10 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, gain: float,
         if scan_hold:
             closable = MAX_UPDATE_HZ * REACQUIRE_HORIZON_SAMPLES * abs(slope) if available else math.nan
             row["closable_error_deg"] = closable
-            annotations = detector.observe(row, t, allow_trigger=True)
+            if reference_kind == "SCAN_CURVE":
+                annotations = scan_reference.observe(frequency, row["normalized_port_power_W"])
+            else:
+                annotations = detector.observe(row, t, allow_trigger=True)
             row.update({k: annotations[k] for k in
                         ("detector_state", "detector_vote_count", "detector_trigger", "detector_reason")})
             if (hard or soft) and not reacquire_pending:
@@ -249,8 +330,8 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, gain: float,
                 reacquire_reason = "HARD_LIMIT_EVENT" if hard else "SOFT_LIMIT_EVENT"
             elif row["detector_trigger"]:
                 reacquire_pending = True
-                reacquire_reason = "OBSERVABLE_2_OF_4"
-            elif available and abs(error) > closable:
+                reacquire_reason = row["detector_reason"] or "DETECTOR_TRIGGER"
+            elif use_slew_rule and available and abs(error) > closable:
                 reacquire_pending = True
                 reacquire_reason = "PHASE_ERROR_NOT_CLOSABLE"
             row["reacquire_request"] = reacquire_reason if reacquire_pending else ""
@@ -329,9 +410,10 @@ def main() -> None:
     all_rows: list[dict] = []
     all_segments: list[dict] = []
     summaries: list[dict] = []
-    for variant, signal_name, scan_hold in VARIANTS:
+    for variant, signal_name, scan_hold, reference_kind, use_slew in VARIANTS:
         for gain in GAINS_HZ_PER_DEG:
-            rows, meta = simulate(variant, signal_name, scan_hold, gain, scenarios, optima)
+            rows, meta = simulate(variant, signal_name, scan_hold, reference_kind,
+                                  use_slew, gain, scenarios, optima)
             summary, segments = summarize(rows, meta, variant, gain)
             summaries.append(summary)
             all_segments.extend(segments)
@@ -348,7 +430,7 @@ def main() -> None:
     segment_s = SCHEDULE[0]["end_s"] - SCHEDULE[0]["start_s"]
 
     fig, axes = plt.subplots(2, 1, figsize=(9.0, 5.4), sharex=True)
-    for variant, _, _ in VARIANTS:
+    for variant, *_ in VARIANTS:
         sel = [r for r in all_rows if r["variant"] == variant]
         axes[0].plot([r["time_s"] for r in sel], [r["frequency_MHz"] for r in sel],
                      color=COLORS[variant], lw=1.0, label=variant)
@@ -377,7 +459,9 @@ def main() -> None:
         "model_id": "MODEL_V2_1_HYPOTHETICAL",
         "role": "fourth ablation only; replaces none of the formal three strategies "
                 "and does not modify run_phase_ablation.py",
-        "variants": {v: {"signal": sig, "scan_acquisition": hold} for v, sig, hold in VARIANTS},
+        "variants": {v: {"signal": sig, "scan_acquisition": hold, "reference": ref,
+                         "slew_budget_backstop": slew}
+                     for v, sig, hold, ref, slew in VARIANTS},
         "signal_definitions": {
             "ARG_ZIN": "arg(Vinput/Isource), positive inductive",
             "MOTIONAL_DEEMBED": "arg(Zm) recovered from Vinput and Isource using the known "

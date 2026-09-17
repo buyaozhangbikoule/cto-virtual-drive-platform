@@ -5,15 +5,39 @@
   "variants": {
     "ARG_ZIN_PURE": {
       "signal": "ARG_ZIN",
-      "scan_acquisition": false
+      "scan_acquisition": false,
+      "reference": "FROZEN",
+      "slew_budget_backstop": false
     },
     "MOTIONAL_PURE": {
       "signal": "MOTIONAL_DEEMBED",
-      "scan_acquisition": false
+      "scan_acquisition": false,
+      "reference": "FROZEN",
+      "slew_budget_backstop": false
     },
-    "MOTIONAL_SCAN_HOLD": {
+    "HOLD_FROZEN_NOSLEW": {
       "signal": "MOTIONAL_DEEMBED",
-      "scan_acquisition": true
+      "scan_acquisition": true,
+      "reference": "FROZEN",
+      "slew_budget_backstop": false
+    },
+    "HOLD_FROZEN_SLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "FROZEN",
+      "slew_budget_backstop": true
+    },
+    "HOLD_SCANREF_NOSLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "SCAN_CURVE",
+      "slew_budget_backstop": false
+    },
+    "HOLD_SCANREF_SLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "SCAN_CURVE",
+      "slew_budget_backstop": true
     }
   },
   "signal_definitions": {
@@ -61,11 +85,62 @@
       "scan_points": 0,
       "scan_time_s": 0.0
     },
-    "MOTIONAL_SCAN_HOLD": {
-      "variant": "MOTIONAL_SCAN_HOLD",
+    "HOLD_FROZEN_NOSLEW": {
+      "variant": "HOLD_FROZEN_NOSLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 19.338400164112066,
+      "mean_abs_signal_error_deg": 13.524783544652506,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 8,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 1,
+      "never_converged_segments": 2,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 7,
+      "scan_points": 392,
+      "scan_time_s": 0.588
+    },
+    "HOLD_FROZEN_SLEW": {
+      "variant": "HOLD_FROZEN_SLEW",
       "gain_Hz_per_deg": 5.0,
       "mean_steady_power_error_pct": 1.5988611411531166,
       "mean_abs_signal_error_deg": 7.980349983940202e-15,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 9,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 2,
+      "never_converged_segments": 0,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 10,
+      "scan_points": 601,
+      "scan_time_s": 0.9015
+    },
+    "HOLD_SCANREF_NOSLEW": {
+      "variant": "HOLD_SCANREF_NOSLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 1.9352689676390205,
+      "mean_abs_signal_error_deg": 2.2645884247562324e-13,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 9,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 2,
+      "never_converged_segments": 0,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 10,
+      "scan_points": 602,
+      "scan_time_s": 0.903
+    },
+    "HOLD_SCANREF_SLEW": {
+      "variant": "HOLD_SCANREF_SLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 1.5988611411531166,
+      "mean_abs_signal_error_deg": 2.270078982259833e-13,
       "segments_with_unmeasurable_tail": 0,
       "segments_at_or_above_95pct": 9,
       "segments_evaluated": 11,
