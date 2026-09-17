@@ -51,5 +51,6 @@ Git保留可审阅的代码、配置、结果表、PNG/PDF图、PPT及讲稿。`
 - `workspace/outputs/v2_self_consistent_rebuild/active_stage3_5/`：活动模型和阶段脚本。
 - `docs/`：接手顺序、数据导航、历史勘误与边界。
 - `reports/`：最新PPT和逐页讲稿。
+- `review/`：2026-09-17算法合理性与物理可实现性审查，含可复算脚本 `audit_algorithm_physics.py`（只读，不写入`workspace/`）。审查指出三级扫描是局部搜索且失效时不置标志、`arg(Zin)`相位闭环在中等以上扰动下会锁到匹配网络零点，并对照两篇参考文献核对了BVD参数的物理量级。
 
 私有仓库不会自动向接手人开放；仓库所有者需要另行邀请其GitHub账号。本次上传不自动添加协作者、不部署网页、不触发仿真。

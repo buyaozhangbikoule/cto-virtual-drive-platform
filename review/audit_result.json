@@ -1,0 +1,502 @@
+{
+  "scope": "read-only recomputation of committed hypothetical model",
+  "baseline": {
+    "peak_safe_power_mW": 169.99997832489854,
+    "peak_frequency_Hz": 900000.0,
+    "tau_amplitude_us": 282.9421210522584,
+    "scan_dwell_in_tau": 5.301437602932776,
+    "fp_minus_fs_Hz": 1970.4361231834628,
+    "k_eff": 0.06606367182528543
+  },
+  "scenarios": [
+    {
+      "case_id": "CASE_000_BASELINE",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1740.078780091484,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 99.96826009059035,
+      "phase_zmotional_capture_pct": 99.9928397944946,
+      "in_closed_loop_schedule": true
+    },
+    {
+      "case_id": "CASE_C0_P10",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1740.2588159977458,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.98832811516591,
+      "phase_zmotional_capture_pct": 99.9592355910188,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_C0_P20",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1740.8618795328075,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 100.00000000000001,
+      "phase_zmotional_capture_pct": 99.89931603542816,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_C0_P30",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1726.6141391631681,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.99704663571823,
+      "phase_zmotional_capture_pct": 99.81045572674691,
+      "in_closed_loop_schedule": true
+    },
+    {
+      "case_id": "CASE_RM_P15",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1821.8453419886064,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.88516787643184,
+      "phase_zmotional_capture_pct": 99.99368846230128,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_RM_P30",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1904.2654891817365,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 99.77212582885103,
+      "phase_zmotional_capture_pct": 99.99435865006595,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_RM_P50",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 2001.2178762886906,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.46353194821195,
+      "phase_zmotional_capture_pct": 99.99505135147916,
+      "in_closed_loop_schedule": true
+    },
+    {
+      "case_id": "CASE_FS_M1",
+      "peak_frequency_Hz": 890900.0,
+      "fwhm_Hz": 1728.759632794885,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 890900.0,
+      "coarse_best_Hz": 890000.0,
+      "scan_capture_pct": 100.00000000000001,
+      "phase_zin_capture_pct": 99.35661572564031,
+      "phase_zmotional_capture_pct": 99.11224221236641,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_FS_M3",
+      "peak_frequency_Hz": 872800.0,
+      "fwhm_Hz": 1565.085219046683,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 872800.0,
+      "coarse_best_Hz": 875000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.055268716180189664,
+      "phase_zmotional_capture_pct": 95.54180274538803,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_FS_M5",
+      "peak_frequency_Hz": 854800.0,
+      "fwhm_Hz": 1490.6079989684513,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 854800.0,
+      "coarse_best_Hz": 855000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.025370497199838974,
+      "phase_zmotional_capture_pct": 93.35616265976775,
+      "in_closed_loop_schedule": true
+    },
+    {
+      "case_id": "CASE_LM_P5",
+      "peak_frequency_Hz": 878100.0,
+      "fwhm_Hz": 1582.9725633425405,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 878100.0,
+      "coarse_best_Hz": 880000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.07408744260924871,
+      "phase_zmotional_capture_pct": 96.25427392106225,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_LM_P10",
+      "peak_frequency_Hz": 857900.0,
+      "fwhm_Hz": 1424.1416915386217,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 857900.0,
+      "coarse_best_Hz": 860000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.025621368753231802,
+      "phase_zmotional_capture_pct": 93.34915445453359,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_LM_P20",
+      "peak_frequency_Hz": 821400.0,
+      "fwhm_Hz": 1133.0815105380025,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 844000.0,
+      "coarse_best_Hz": 850000.0,
+      "scan_capture_pct": 0.10033024201547237,
+      "phase_zin_capture_pct": 0.010533007306233848,
+      "phase_zmotional_capture_pct": 93.47966621329448,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_CM_P5",
+      "peak_frequency_Hz": 878100.0,
+      "fwhm_Hz": 1660.1555740130134,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 878100.0,
+      "coarse_best_Hz": 880000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.08143780451842567,
+      "phase_zmotional_capture_pct": 96.25796968221368,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_CM_P10",
+      "peak_frequency_Hz": 857900.0,
+      "fwhm_Hz": 1565.4543872344075,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 857900.0,
+      "coarse_best_Hz": 860000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.030954216812982466,
+      "phase_zmotional_capture_pct": 93.32854050244109,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_CM_P20",
+      "peak_frequency_Hz": 821400.0,
+      "fwhm_Hz": 1355.314202867914,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 844000.0,
+      "coarse_best_Hz": 850000.0,
+      "scan_capture_pct": 0.1435852148704189,
+      "phase_zin_capture_pct": 0.015158784916826155,
+      "phase_zmotional_capture_pct": 93.46082343044534,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_RS_P5",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1793.7223901605466,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.95272305240253,
+      "phase_zmotional_capture_pct": 99.98543402471557,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_RS_P10",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1853.9463352512103,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.93513460038827,
+      "phase_zmotional_capture_pct": 99.97561236716041,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_RS_P20",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1954.988179992768,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.895585853248,
+      "phase_zmotional_capture_pct": 99.9505957169136,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_LMATCH_P2",
+      "peak_frequency_Hz": 900100.0,
+      "fwhm_Hz": 1743.724893803941,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900100.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.98274817699075,
+      "phase_zmotional_capture_pct": 98.85127670504421,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_LMATCH_P5",
+      "peak_frequency_Hz": 900200.0,
+      "fwhm_Hz": 1654.1150332824327,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900200.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 0.14961386023282894,
+      "phase_zmotional_capture_pct": 94.495067934399,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_LMATCH_P10",
+      "peak_frequency_Hz": 900300.0,
+      "fwhm_Hz": 1510.2573494799435,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900300.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.04017804345911972,
+      "phase_zmotional_capture_pct": 88.22382432575766,
+      "in_closed_loop_schedule": true
+    },
+    {
+      "case_id": "CASE_CMATCH_M2",
+      "peak_frequency_Hz": 899900.0,
+      "fwhm_Hz": 1743.6598294652067,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 899900.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.00000000000001,
+      "phase_zin_capture_pct": 99.55904524879872,
+      "phase_zmotional_capture_pct": 99.2626636266056,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_CMATCH_M5",
+      "peak_frequency_Hz": 899800.0,
+      "fwhm_Hz": 1649.973079544492,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 899800.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 0.07415579123510889,
+      "phase_zmotional_capture_pct": 96.0916481363482,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_CMATCH_M10",
+      "peak_frequency_Hz": 899800.0,
+      "fwhm_Hz": 1547.6869000849547,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 899800.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.024900210828193565,
+      "phase_zmotional_capture_pct": 92.06205574583932,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_QL_100",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1740.078780091484,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 99.96826009059035,
+      "phase_zmotional_capture_pct": 99.9928397944946,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_QL_50",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1878.29264758504,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.92664865715209,
+      "phase_zmotional_capture_pct": 99.9702410800459,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_QL_20",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1837.2794539034367,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.78153156475156,
+      "phase_zmotional_capture_pct": 99.87160580379052,
+      "in_closed_loop_schedule": true
+    },
+    {
+      "case_id": "CASE_QM_500",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 2778.2187530040974,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 99.97258512783618,
+      "phase_zmotional_capture_pct": 99.9975720000727,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_QM_800",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1740.078780091484,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 99.96826009059035,
+      "phase_zmotional_capture_pct": 99.9928397944946,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_QM_1000",
+      "peak_frequency_Hz": 900000.0,
+      "fwhm_Hz": 1389.8219425317366,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 900000.0,
+      "coarse_best_Hz": 900000.0,
+      "scan_capture_pct": 99.99999999999999,
+      "phase_zin_capture_pct": 99.98829179972479,
+      "phase_zmotional_capture_pct": 99.98829179972479,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_COMBINED_LOW",
+      "peak_frequency_Hz": 890900.0,
+      "fwhm_Hz": 1633.9567145858891,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 890900.0,
+      "coarse_best_Hz": 890000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 98.2462220100674,
+      "phase_zmotional_capture_pct": 99.610171633974,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_COMBINED_MEDIUM",
+      "peak_frequency_Hz": 872900.0,
+      "fwhm_Hz": 1569.3393280515447,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 872900.0,
+      "coarse_best_Hz": 875000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.06158662857918969,
+      "phase_zmotional_capture_pct": 97.77632079901984,
+      "in_closed_loop_schedule": false
+    },
+    {
+      "case_id": "CASE_COMBINED_HIGH",
+      "peak_frequency_Hz": 854900.0,
+      "fwhm_Hz": 1387.2325188466348,
+      "fwhm_status": "OK",
+      "scan_result_Hz": 854900.0,
+      "coarse_best_Hz": 855000.0,
+      "scan_capture_pct": 100.0,
+      "phase_zin_capture_pct": 0.030545987043106057,
+      "phase_zmotional_capture_pct": 98.71475314155416,
+      "in_closed_loop_schedule": true
+    }
+  ],
+  "scan_reach": [
+    {
+      "fs_shift_pct": -3.0,
+      "found_Hz": 872800.0,
+      "capture_pct": 100.0
+    },
+    {
+      "fs_shift_pct": -5.0,
+      "found_Hz": 854800.0,
+      "capture_pct": 100.0
+    },
+    {
+      "fs_shift_pct": -6.0,
+      "found_Hz": 845800.0,
+      "capture_pct": 100.0
+    },
+    {
+      "fs_shift_pct": -6.5,
+      "found_Hz": 844000.0,
+      "capture_pct": 6.394362358331976
+    },
+    {
+      "fs_shift_pct": -6.7,
+      "found_Hz": 844000.0,
+      "capture_pct": 2.442798941575252
+    },
+    {
+      "fs_shift_pct": -7.0,
+      "found_Hz": 844000.0,
+      "capture_pct": 0.9955826507457782
+    },
+    {
+      "fs_shift_pct": -8.0,
+      "found_Hz": 844000.0,
+      "capture_pct": 0.21814233604007946
+    },
+    {
+      "fs_shift_pct": -10.0,
+      "found_Hz": 844000.0,
+      "capture_pct": 0.059764160401423544
+    }
+  ],
+  "amplitude": {
+    "allowed_at_optimum_min": 1.0,
+    "allowed_at_optimum_max": 1.0,
+    "worst_in_band_allowed": 0.6558925308439046,
+    "baseline_unit_peak_vpp": 187.75197238657785,
+    "probe_worst_vpp": 79.28128093346965,
+    "probe_worst_irms_A": 0.0023864786743203917
+  },
+  "literature_bvd": {
+    "Janu 2021 initial": {
+      "fs_Hz": 39621.79680074022,
+      "Qm": 25.087031797880666,
+      "cm_over_c0": 0.06287079292641187,
+      "k_eff": 0.24321157060738846,
+      "fp_minus_fs_pct": 3.0956251703442517,
+      "c0_F": 2.8048e-09
+    },
+    "Janu 2021 FINAL": {
+      "fs_Hz": 39951.3692334632,
+      "Qm": 43.40979467591172,
+      "cm_over_c0": 0.03039647577092511,
+      "k_eff": 0.1717550180735139,
+      "fp_minus_fs_pct": 1.508446730847246,
+      "c0_F": 2.27e-09
+    },
+    "project v2.1": {
+      "fs_Hz": 899999.9999999999,
+      "Qm": 800.0,
+      "cm_over_c0": 0.004383540296599886,
+      "k_eff": 0.06606367182528543,
+      "fp_minus_fs_pct": 0.21893734702038703,
+      "c0_F": 6.858064105198409e-12
+    }
+  },
+  "catheter_reference": {
+    "duty_fraction": 0.09090000000000001,
+    "pulse_amplitude_fraction_at_project_Qm": 0.2977242694615686,
+    "speculative": true
+  }
+}
