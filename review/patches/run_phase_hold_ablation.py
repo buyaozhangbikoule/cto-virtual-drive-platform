@@ -37,9 +37,17 @@ network at 1/(2*pi*sqrt(L*(C0+Cmatch))) = 903.95 kHz, which does not move when
 the transducer resonance moves, and that is the point a phase controller locks
 to once the resonance has gone.
 
-De-embedding uses only what a driver measures at the amplifier terminals, namely
-input voltage and source current, plus design values it already knows.  It never
-reads Rm, Lm or Cm.
+CORRECTION, external review finding F3.  De-embedding here takes the matching
+network and C0 from ``scenario``, which is the PERTURBED plant, so the controller
+is handed the true post-disturbance C0 and matching values.  "It never reads Rm,
+Lm or Cm" was true and misleading: what matters is not which BVD element but
+whether the controller knows the perturbed plant, and here it does.  These
+results are therefore an ideal-observability study, not evidence that electrical
+measurement alone adapts to unknown drift.  With calibration frozen at the
+baseline design values the de-embedded phase error reaches -68.0 degrees on
+CASE_LMATCH_P10, and it is no longer monotone: 816 of 1000 samples have negative
+slope.  The monotonicity argument below holds only for exact calibration.
+Separating PlantTruth from CalibrationEstimate is outstanding work.
 
 Copy this file next to ``run_stage4_5_control.py`` inside a working copy made by
 ``handoff.py prepare``, after applying
@@ -112,9 +120,12 @@ def motional_phase_deg(frequency_hz: float, scenario, amplitude: float) -> float
     """De-embed arg(Zm) from input voltage and source current.
 
     The matching inductor, its ESR, the matching capacitor, its ESR and C0 are
-    design values, so the motional branch is peeled off analytically.  Verified
-    against the model's internal z_m to 1e-15..1e-12 degrees in
-    review/proposed_fixes_prototype.py.
+    read from ``scenario``, which is the perturbed plant, so this is exact
+    de-embedding with perfect calibration, not de-embedding from a fixed
+    calibration a real driver would hold.  See the module docstring, finding F3.
+    Verified against the model's internal z_m to 1e-15..1e-12 degrees in
+    review/proposed_fixes_prototype.py, which is a statement about the algebra,
+    not about calibration robustness.
     """
     q = response(np.array([frequency_hz]), scenario, amplitude)
     v_input = complex(q["v_input"][0])
@@ -158,6 +169,12 @@ MEASUREMENT_FLOOR_AMPLITUDE = 1e-6
 # or the true optimum.
 REACQUIRE_HORIZON_SAMPLES = 10
 
+# A scan can fail to converge: every level pinned to a window edge, or the
+# plant changed part way through so the points came from two different loads.
+# local_scan already reports this, and it used to be ignored.  Retries are
+# bounded so a persistently unreachable peak cannot spin forever.
+MAX_FAILED_SCAN_RETRIES = 2
+
 
 # Scan-curve reference thresholds, same shape as the frozen detector's.
 SCANREF_DROP_TRIGGER = 0.10
@@ -176,8 +193,16 @@ class ScanCurveReference:
     The scan already measures normalised port power at fifty-odd frequencies
     spanning about 100 kHz.  Keeping that curve and interpolating it at whatever
     frequency the controller is currently on gives a reference defined everywhere
-    the scan looked, with no fit and no extra measurement.  The residual is then
-    zero wherever the plant still matches the scan, whatever the controller does.
+    the scan looked, with no fit and no extra measurement.
+
+    CORRECTION, external review finding F4.  An earlier version of this comment
+    claimed the residual is zero wherever the plant still matches the scan.  That
+    is false: linear interpolation between scan points does not reproduce a peak
+    about 1 kHz wide sampled on a 1 to 5 kHz grid.  With the load completely
+    unchanged the interpolation residual reaches 11.06% at 898430 Hz, above the
+    10% trigger, and 60 of 1000 probed frequencies in 895 to 905 kHz exceed it.
+    The trigger threshold and the grid density have to be tuned together, and
+    this reference also lacks the measurability gate the phase signal has.
 
     This is the model-referenced residual of the fault-detection literature, with
     the last scan standing in for the model.
@@ -247,6 +272,7 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, reference_kind: st
     frequency = F0
     t = 0.0
     scan_episodes = 0
+    failed_scans = 0
     scan_points_before = 0
     negative_slope_samples = 0
     reacquire_pending = False
@@ -273,16 +299,32 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, reference_kind: st
             seg = schedule_at(t)
             scenario = scenarios[seg["case_id"]]
             optimum = optima[seg["case_id"]]
-            # Re-record the target at the frequency the scan just found.  This is
-            # the whole point of the hybrid: the target is a measured property of
-            # the new operating point, not a constant carried over from before.
-            target = signal(frequency, scenario, 1.0)
-            detector.after_scan(t)
-            if reference_kind == "SCAN_CURVE":
-                scan_reference.load([(r["frequency_Hz"], r["normalized_port_power_W"])
-                                     for r in scratch[before:]])
-            reacquire_pending = False
-            reacquire_reason = ""
+            if converged:
+                # Re-record the target at the frequency the scan just found.  This
+                # is the whole point of the hybrid: the target is a measured
+                # property of the new operating point, not a constant carried over.
+                target = signal(frequency, scenario, 1.0)
+                if reference_kind == "SCAN_CURVE":
+                    scan_reference.load([(r["frequency_Hz"], r["normalized_port_power_W"])
+                                         for r in scratch[before:]])
+                detector.after_scan(t)
+                failed_scans = 0
+                reacquire_pending = False
+                reacquire_reason = ""
+            else:
+                # A scan that pinned to a window edge, or that straddled a plant
+                # change, did not measure one operating point.  Adopting its
+                # frequency would be bad enough; re-recording the phase target and
+                # replacing the reference curve from it poisons both the hold stage
+                # and the detector with points taken under different loads.  So
+                # neither is updated, and a bounded retry is scheduled instead.
+                failed_scans += 1
+                if failed_scans < MAX_FAILED_SCAN_RETRIES:
+                    reacquire_pending = True
+                    reacquire_reason = "RETRY_AFTER_FAILED_SCAN"
+                else:
+                    reacquire_pending = False
+                    reacquire_reason = ""
             continue
 
         amplitude, pstate, hard, soft, frozen = protection.apply(t, frequency, scenario, 1.0)
@@ -367,6 +409,7 @@ def simulate(variant: str, signal_name: str, scan_hold: bool, reference_kind: st
 
     meta = {
         "scan_episodes": scan_episodes,
+        "failed_scans": failed_scans,
         "scan_points": scan_points_before,
         "scan_time_s": scan_points_before * SCAN_POINT_DT,
         "negative_slope_samples": negative_slope_samples,
@@ -417,6 +460,7 @@ def summarize(rows: list[dict], meta: dict, variant: str, gain: float) -> tuple[
         "actual_hard_violations": int(sum(r["vport_vpp"] > 160.0 or r["iport_irms_A"] > 0.006 for r in rows)),
         "negative_slope_samples": meta["negative_slope_samples"],
         "scan_episodes": meta["scan_episodes"],
+        "failed_scans": meta["failed_scans"],
         "scan_points": meta["scan_points"],
         "scan_time_s": meta["scan_time_s"],
     }

@@ -22,6 +22,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import math
 import sys
 from pathlib import Path
 
@@ -70,6 +71,29 @@ def compare_file(old: Path, new: Path, tol: float) -> dict:
                 result["notes"].append(f"row {index} column {column}: {a!r} -> {b!r}")
                 continue
             result["cells_differing"] += 1
+
+            # Non-finite values must be screened before the relative error, not
+            # after.  abs(1.0 - nan) is nan, nan > worst_rel is False, so a
+            # finite value turning into nan used to leave worst_rel at zero and
+            # the file was reported as numerically identical.  The same held for
+            # a value turning into inf and for inf flipping sign.
+            finite_old, finite_new = math.isfinite(x), math.isfinite(y)
+            if not (finite_old and finite_new):
+                both_nan = math.isnan(x) and math.isnan(y)
+                same_infinity = (not math.isnan(x) and not math.isnan(y)
+                                 and not finite_old and not finite_new and x == y)
+                if both_nan or same_infinity:
+                    # A column that is legitimately blank or infinite on both
+                    # sides has not moved.  It still does not enter worst_rel,
+                    # because there is no meaningful relative difference.
+                    continue
+                result["verdict"] = "CHANGED"
+                result["notes"].append(
+                    f"row {index} column {column}: non-finite change {a!r} -> {b!r}")
+                if result["worst_cell"] is None:
+                    result["worst_cell"] = (index, column, a, b)
+                continue
+
             rel = abs(x - y) / max(abs(x), abs(y), 1e-30)
             if rel > result["worst_rel"]:
                 result["worst_rel"] = rel

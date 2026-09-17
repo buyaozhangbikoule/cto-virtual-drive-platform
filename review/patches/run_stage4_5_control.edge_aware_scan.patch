@@ -1,15 +1,20 @@
 --- a/run_stage4_5_control.py
 +++ b/run_stage4_5_control.py
-@@ -51,6 +51,8 @@
+@@ -51,6 +51,13 @@
  REACQUIRE_COOLDOWN = 0.40
  RECOVERY_CAPTURE_THRESHOLD = 0.98
  RECOVERY_CONSECUTIVE_SAMPLES = 10
 +MAX_SCAN_RECENTRES = 3
 +EDGE_TOLERANCE_HZ = 1.0
++# A scan that still pins to a window edge after its re-centres has not
++# measured a peak, and its result must not be recorded as a successful
++# acquisition.  Retry sooner than the periodic interval, but bounded.
++FAILED_SCAN_RETRY_S = 0.05
++MAX_FAILED_SCAN_RETRIES = 2
  FINE_REFERENCE = np.arange(F_MIN, F_MAX + 0.1, 100.0)
  STRATEGIES = ["FIXED_0P9", "PERIODIC_SCAN", "P_AND_O"]
  
-@@ -62,9 +64,20 @@
+@@ -62,9 +69,20 @@
  COLORS = {"FIXED_0P9": "#767676", "PERIODIC_SCAN": "#3775BA", "P_AND_O": "#B64342"}
  
  
@@ -30,7 +35,7 @@
  ]
  SEGMENT_DURATION = 0.80
  SCHEDULE = [
-@@ -114,6 +127,25 @@
+@@ -114,6 +132,25 @@
          )
          return self.state == "NORMAL" or soft_stable
  
@@ -56,7 +61,7 @@
      def apply(self, t: float, frequency_hz: float, scenario, requested: float) -> tuple[float, str, int, int, bool]:
          """Return amplitude, state, hard-trigger, soft-trigger and frequency-frozen flag."""
          soft_allow = float(allowed_amplitude(frequency_hz, scenario, use_soft_limits=True)[0])
-@@ -348,7 +380,10 @@
+@@ -348,7 +385,10 @@
          "frequency_Hz": frequency, "frequency_MHz": frequency / 1e6,
          "amplitude_command": amplitude, "protection_state": protection_state,
          "frequency_frozen": int(frozen), "hard_trip_trigger": hard_trigger, "soft_limit_trigger": soft_trigger,
@@ -68,7 +73,7 @@
          "normalized_port_power_W": normalized_port_power,
          "zin_real_ohm": float(z_in.real), "zin_imag_ohm": float(z_in.imag), "zin_abs_ohm": abs(z_in),
          "phase_deg": phase, "gamma": float(q["gamma"][0]),
-@@ -373,33 +408,70 @@
+@@ -373,40 +413,77 @@
      The plant schedule is consulted only to produce the physical response at the
      current time.  Scenario identity is not used to trigger or abort the scan.
      """
@@ -166,3 +171,46 @@
  
  
  def simulate(strategy: str, scenarios: dict, optima: dict) -> list[dict]:
+     rows: list[dict] = []
+     protection = Protection()
+     detector = ObservableDisturbanceDetector()
+-    t = 0.0; frequency = F0; next_scan = 0.0
++    t = 0.0; frequency = F0; next_scan = 0.0; failed_scans = 0
+     po_dir = 1.0; po_step = P_AND_O_INITIAL_STEP; po_next_update = 0.0
+     po_need_reacquire = False
+     po_reacquire_reason = ""
+@@ -417,7 +494,16 @@
+         # Scans are only allowed after protection has stabilized.
+         if strategy == "PERIODIC_SCAN" and t >= next_scan and protection.tracking_allowed(t):
+             frequency, t, completed = local_scan(t, strategy, frequency, "PERIODIC_TIMER", rows, protection, scenarios, optima)
+-            next_scan = t + SCAN_INTERVAL
++            if completed:
++                failed_scans = 0
++                next_scan = t + SCAN_INTERVAL
++            else:
++                # Do not wait a full interval on a scan that did not converge, and
++                # do not let it stand as an acquisition; retry a bounded number of
++                # times before falling back to the ordinary cadence.
++                failed_scans += 1
++                next_scan = t + (FAILED_SCAN_RETRY_S
++                                 if failed_scans < MAX_FAILED_SCAN_RETRIES else SCAN_INTERVAL)
+             detector.after_scan(t)
+             seg = schedule_at(t); case_id = seg["case_id"]; scenario = scenarios[case_id]; optimum = optima[case_id]
+ 
+@@ -425,8 +511,14 @@
+             frequency, t, completed = local_scan(
+                 t, strategy, frequency, po_reacquire_reason or "OBSERVABLE_REACQUIRE", rows, protection, scenarios, optima
+             )
+-            po_need_reacquire = False
+-            po_reacquire_reason = ""
++            if completed:
++                failed_scans = 0
++                po_need_reacquire = False
++                po_reacquire_reason = ""
++            else:
++                failed_scans += 1
++                po_need_reacquire = failed_scans < MAX_FAILED_SCAN_RETRIES
++                po_reacquire_reason = "RETRY_AFTER_FAILED_SCAN" if po_need_reacquire else ""
+             po_step = P_AND_O_INITIAL_STEP
+             detector.after_scan(t)
+             po_next_update = t + REACQUIRE_COOLDOWN + REFERENCE_STABLE_SAMPLES * CONTROL_DT
