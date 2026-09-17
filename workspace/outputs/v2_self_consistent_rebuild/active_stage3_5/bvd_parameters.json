@@ -52,5 +52,5 @@
     "rationale": "Lm 在三处各存一份:本表(经 Qm 推导)、stage2 设计 JSON、stage2 LTspice 网表字面值。三者今天一致仅因同源生成,此前没有任何机制保证。本检查把 Python 与设计 JSON 钉死,网表一致性由 tests/test_bvd_parameter_consistency.py 覆盖。",
     "enforced_by": "model_v2_1._assert_bvd_consistent()"
   },
-  "superseded_notice_2026_09_16": "2026-09-16 起，本表描述的是【v2.1 基线】，该基线锚在 |Z(0.9 MHz)| = 7.071 kΩ 上，而该工作点由 100 Vpp ÷ 5 mA 反推、导师澄清后已失效。本表保留原样是为了让 v2.1 的历史批次继续逐位复现，不得据此开展新设计。新基线见 workspace/operating_point_v3_20260916/ 与 workspace/disturbance_v3_20260916/。 具体到本表：Qm = 800 是 v2.1 的假设值。v3 由材料损耗（PZT-5H 典型 65）与辐射损耗（平面波近似 31.2）并联正向推导出 Qm ≈ 21，浸入血液的 PZT-5H 上 800 物理不可达。"
+  "baseline_scope_notice": "2026-09-16 起，本表描述的是【v2.1 基线】。该基线的 |Z(0.9 MHz)| = 7.071 kΩ 来自 100 Vpp ÷ 5 mA（均为【换能器端】量，见 docs/03 与 00_先读 §5）。【2026-09-17 更正】此前本字段称该工作点「已失效」「不得据此开展新设计」、并把 v3 称为「新基线」——三处都说过头了：V÷I = Z 是欧姆定律，7.07 kΩ 是有效的【下界】；v2.1 经 L 匹配后 Γ = 0.0635、驻波比 1.14:1，是【可建、自洽】的方案；v3 空心圆柱是【另一条并列候选】，不是取代。两者由「元件是否需要中心孔走导丝」与实测决定。实测对照见 workspace/match_feasibility_20260916/。本表保留原样以保证历史批次逐位复现。 具体到本表：Qm = 800 是 v2.1 的假设值，且它是【空载】Qm——注意瞬态由整个回路的【有载】Q 决定（实测有载 Q ≈ 420、tau ≈ 148.5 µs，见 workspace/algorithm_physics_audit_20260916/transient_check.py）。空载与有载不可混用。v3 候选由几何正推得 Qm ≈ 21。"
 }
