@@ -28,6 +28,17 @@ SEGMENT_TRIP_CANDIDATES = (
 PERIOD_SWEEP_US = (400000, 450000, 500000, 550000, 600000, 700000, 800000, 900000, 1000000)
 
 
+def frozen_phase_target(model, cfg) -> float:
+    """run_unified.py 的冻结口径：BASELINE 在起始频率的 arg(V_input/I_source)。
+
+    本脚本第一版在这里传了 0.0，与正式批次的 -1.0782096369 deg 不符，
+    因此相位闭环的逐位数值复现不了（达标段数与保护时刻相同，能量差 0.26 个百分点）。
+    外部复核指出了这一点，已改正。周期扫频不使用相位目标，第 2、4、5 节不受影响。
+    """
+    return float(model.response(cfg['initial_frequency_Hz'],
+                                model.scenario_map()['CASE_000_BASELINE'])['phase_deg'][0])
+
+
 def load(root: Path):
     """把被审分支挂到 sys.path 上并导入它自己的引擎、策略、模型。"""
     sys.path.insert(0, str(root))
@@ -39,12 +50,12 @@ def load(root: Path):
     return model, Engine, Executor, run_policy, cfg
 
 
-def run_periodic_scan(Engine, Executor, run_policy, cfg, scan_period_us=None):
+def run_periodic_scan(Engine, Executor, run_policy, cfg, scan_period_us=None, phase=0.0):
     local = copy.deepcopy(cfg)
     if scan_period_us is not None:
         local['scan_period_us'] = scan_period_us
     engine = Engine(local, local['historical_schedule'], 'PERIODIC_SCAN', 'HISTORICAL_12')
-    run_policy(Executor(engine), 'PERIODIC_SCAN', 0.0)
+    run_policy(Executor(engine), 'PERIODIC_SCAN', phase)
     return engine
 
 
@@ -66,10 +77,10 @@ def section_hard_limit_headroom(model, cfg):
     return tripping
 
 
-def section_baseline_failure(Engine, Executor, run_policy, cfg):
+def section_baseline_failure(Engine, Executor, run_policy, cfg, phase):
     """第二节：分支自带参数下那唯一一次失败的完整时间线。"""
     print('\n== 2. 分支自带参数（scan_period 500 ms）下的失败时间线')
-    engine = run_periodic_scan(Engine, Executor, run_policy, cfg)
+    engine = run_periodic_scan(Engine, Executor, run_policy, cfg, phase=phase)
     fails = [e for e in engine.events if e['event'] == 'SCAN_FAILURE']
     print(f'  SCAN_FAILURE 共 {len(fails)} 条')
     for e in fails:
@@ -100,24 +111,24 @@ def section_baseline_failure(Engine, Executor, run_policy, cfg):
     return engine
 
 
-def section_cross_strategy(Engine, Executor, run_policy, cfg):
+def section_cross_strategy(Engine, Executor, run_policy, cfg, phase):
     """第四节：三个策略的硬跳闸时刻对照，证明 8.0 s 不是扫描独有的。"""
     print('\n== 3. 三策略硬跳闸时刻对照')
     for strategy in ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK'):
         engine = Engine(copy.deepcopy(cfg), cfg['historical_schedule'], strategy, 'HISTORICAL_12')
-        run_policy(Executor(engine), strategy, 0.0)
+        run_policy(Executor(engine), strategy, phase)
         trips = [(e['time_us'], e.get('kind')) for e in engine.events
                  if e['event'] == 'OBSERVED_HARD_TRIP']
         print(f'  {strategy:<16} {len(trips)} 次: ' +
               ' | '.join(f'{t} {k}' for t, k in trips))
 
 
-def section_period_sweep(Engine, Executor, run_policy, cfg):
+def section_period_sweep(Engine, Executor, run_policy, cfg, phase):
     """第七节：失败数对扫描周期的敏感性。其余参数一律不动。"""
     print('\n== 4. 扫描周期敏感性（其余参数不变）')
     print(f"{'周期(ms)':>10}{'成功':>6}{'失败':>6}{'锁定保持行':>12}  失败明细")
     for period in PERIOD_SWEEP_US:
-        engine = run_periodic_scan(Engine, Executor, run_policy, cfg, period)
+        engine = run_periodic_scan(Engine, Executor, run_policy, cfg, period, phase)
         ok = sum(1 for e in engine.events if e['event'] == 'SCAN_SUCCESS')
         fails = [(e['time_us'], e['reason']) for e in engine.events
                  if e['event'] == 'SCAN_FAILURE']
@@ -126,11 +137,11 @@ def section_period_sweep(Engine, Executor, run_policy, cfg):
         print(f'{period/1000:10.0f}{ok:6d}{len(fails):6d}{latched:12d}  {detail}')
 
 
-def section_straddle(Engine, Executor, run_policy, cfg):
+def section_straddle(Engine, Executor, run_policy, cfg, phase):
     """第八节：跨段扫描导致第三级边缘行走。"""
     print('\n== 5. 跨段扫描与第三级边缘行走')
     for period, window in ((450000, (3100000, 3500000)), (550000, (7100000, 7500000))):
-        engine = run_periodic_scan(Engine, Executor, run_policy, cfg, period)
+        engine = run_periodic_scan(Engine, Executor, run_policy, cfg, period, phase)
         print(f'  ---- scan_period {period/1000:.0f} ms，窗口 {window} ----')
         for e in engine.events:
             if window[0] <= e['time_us'] <= window[1] and e['event'].startswith('SCAN'):
@@ -160,10 +171,12 @@ def main() -> int:
     print(f"scan_period_us={cfg['scan_period_us']}  segment_us={cfg['segment_us']}  "
           f"gcd 与 lcm 见 review/12 第四节")
     section_hard_limit_headroom(model, cfg)
-    section_baseline_failure(Engine, Executor, run_policy, cfg)
-    section_cross_strategy(Engine, Executor, run_policy, cfg)
-    section_period_sweep(Engine, Executor, run_policy, cfg)
-    section_straddle(Engine, Executor, run_policy, cfg)
+    phase = frozen_phase_target(model, cfg)
+    print(f'冻结相位目标 {phase:.9f} deg（三策略共用入口，周期扫频不使用它）')
+    section_baseline_failure(Engine, Executor, run_policy, cfg, phase)
+    section_cross_strategy(Engine, Executor, run_policy, cfg, phase)
+    section_period_sweep(Engine, Executor, run_policy, cfg, phase)
+    section_straddle(Engine, Executor, run_policy, cfg, phase)
     return 0
 
 
