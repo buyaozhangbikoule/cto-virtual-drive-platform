@@ -1,0 +1,606 @@
+[
+  {
+    "time_us": 823000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 25.97622631512604,
+    "measured_slope_deg_per_Hz": -0.062459339832276015,
+    "proposed_frequency_Hz": 899870.1188684243
+  },
+  {
+    "time_us": 843000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 18.666481000703612,
+    "measured_slope_deg_per_Hz": -0.04660414609044253,
+    "proposed_frequency_Hz": 899776.7864634208
+  },
+  {
+    "time_us": 860000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 47,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 860000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 47,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 860000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 47,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 861500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 960000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 53,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 980000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 54,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 980000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 54,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 980000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 54,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 981500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1080000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 60,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1100000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 61,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1100000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 61,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1100000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 61,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 1101500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1200000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 67,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1220000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 68,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1220000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 68,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1220000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 68,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 1221500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1320000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 74,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 75,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 75,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 75,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 1341500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1440000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 81,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1460000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 82,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1460000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 82,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1460000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 82,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 1461500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1560000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 88,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1580000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 89,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1580000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 89,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1580000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 89,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.9765149823182202
+  },
+  {
+    "time_us": 1581500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1680000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 95,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1700000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 96,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1700000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 96,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1700000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 96,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.996941489360558
+  },
+  {
+    "time_us": 1701500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 102,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1820000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 103,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1820000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 103,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1820000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 103,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.996941489360558
+  },
+  {
+    "time_us": 1821500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1920000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 109,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1940000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 110,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1940000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 110,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 1940000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 110,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.996941489360558
+  },
+  {
+    "time_us": 1941500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 2040000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 116,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2060000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 117,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 2060000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 117,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 2060000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 117,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.996941489360558
+  },
+  {
+    "time_us": 2061500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 2160000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 123,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2180000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 124,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 2180000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 124,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 2180000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 124,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.996941489360558
+  },
+  {
+    "time_us": 2181500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 2280000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 130,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2300000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 131,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 2300000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 131,
+    "kind": "PHASE_PROBE_MINUS"
+  },
+  {
+    "time_us": 2300000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 131,
+    "kind": "PHASE_PROBE_MINUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899776.7864634208,
+    "applied_amplitude": 0.996941489360558
+  },
+  {
+    "time_us": 2301500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CMATCH_M5",
+    "event": "PHASE_PROBE_FAILED"
+  }
+]

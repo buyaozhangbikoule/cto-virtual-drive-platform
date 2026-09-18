@@ -1,0 +1,379 @@
+[
+  {
+    "time_us": 800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "OBSERVED_HARD_TRIP",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 40,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "HARD_TRIP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.0
+  },
+  {
+    "time_us": 860000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 43,
+    "kind": "CONTROL",
+    "from_state": "HARD_TRIP",
+    "to_state": "HOLD",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.25
+  },
+  {
+    "time_us": 960000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 48,
+    "kind": "CONTROL",
+    "from_state": "HOLD",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.3
+  },
+  {
+    "time_us": 1120000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 56,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.6906638297712007
+  },
+  {
+    "time_us": 1141500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 58,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1141500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 58,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1141500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 58,
+    "kind": "PHASE_PROBE_PLUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899900.0,
+    "applied_amplitude": 0.6905807722992842
+  },
+  {
+    "time_us": 1143000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1260000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 65,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.6905807722992842
+  },
+  {
+    "time_us": 1283000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 39.22343226358427,
+    "measured_slope_deg_per_Hz": 0.0067915755286286125,
+    "proposed_frequency_Hz": 900196.117161318
+  },
+  {
+    "time_us": 1283000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 68,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1283000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 68,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1283000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 68,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900100.0,
+    "applied_amplitude": 0.6905045613595673
+  },
+  {
+    "time_us": 1400000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 74,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900196.117161318,
+    "applied_amplitude": 0.6905045613595673
+  },
+  {
+    "time_us": 1421500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 76,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1421500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 76,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1421500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 76,
+    "kind": "PHASE_PROBE_PLUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900096.117161318,
+    "applied_amplitude": 0.6904290420245124
+  },
+  {
+    "time_us": 1423000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1540000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 83,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900196.117161318,
+    "applied_amplitude": 0.6904290420245124
+  },
+  {
+    "time_us": 1563000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 37.865187376437376,
+    "measured_slope_deg_per_Hz": 0.007061820846923581,
+    "proposed_frequency_Hz": 900385.4430982001
+  },
+  {
+    "time_us": 1563000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 86,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1563000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 86,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1563000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 86,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900296.117161318,
+    "applied_amplitude": 0.6903648368845724
+  },
+  {
+    "time_us": 1680000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 92,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900385.4430982001,
+    "applied_amplitude": 0.6903648368845724
+  },
+  {
+    "time_us": 1703000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 30.650252972232778,
+    "measured_slope_deg_per_Hz": -0.062093021889514405,
+    "proposed_frequency_Hz": 900232.1918333389
+  },
+  {
+    "time_us": 1723000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 19.827150772629267,
+    "measured_slope_deg_per_Hz": -0.07812734970421403,
+    "proposed_frequency_Hz": 900133.0560794758
+  },
+  {
+    "time_us": 1743000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 11.631945446558916,
+    "measured_slope_deg_per_Hz": -0.08501532769228007,
+    "proposed_frequency_Hz": 900074.896352243
+  },
+  {
+    "time_us": 1763000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 6.56988763051487,
+    "measured_slope_deg_per_Hz": -0.08675316365257003,
+    "proposed_frequency_Hz": 900042.0469140904
+  },
+  {
+    "time_us": 1783000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 3.6820517879935437,
+    "measured_slope_deg_per_Hz": -0.0868514557981635,
+    "proposed_frequency_Hz": 900023.6366551504
+  },
+  {
+    "time_us": 1803000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 2.065487280196322,
+    "measured_slope_deg_per_Hz": -0.08661996390174466,
+    "proposed_frequency_Hz": 900013.3092187495
+  },
+  {
+    "time_us": 1823000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 1.1612224758180787,
+    "measured_slope_deg_per_Hz": -0.08640047473313985,
+    "proposed_frequency_Hz": 900007.5031063705
+  },
+  {
+    "time_us": 1843000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.6539967929870727,
+    "measured_slope_deg_per_Hz": -0.08624906252793778,
+    "proposed_frequency_Hz": 900004.2331224055
+  },
+  {
+    "time_us": 1863000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.36875542833985264,
+    "measured_slope_deg_per_Hz": -0.08615497890530718,
+    "proposed_frequency_Hz": 900002.3893452638
+  },
+  {
+    "time_us": 1883000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.20806866186407547,
+    "measured_slope_deg_per_Hz": -0.08609914531690321,
+    "proposed_frequency_Hz": 900001.3490019545
+  },
+  {
+    "time_us": 1903000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.1174503247533778,
+    "measured_slope_deg_per_Hz": -0.08606675795939253,
+    "proposed_frequency_Hz": 900000.7617503308
+  },
+  {
+    "time_us": 1920000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 126,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.7617503308,
+    "applied_amplitude": 0.7328648368845724
+  },
+  {
+    "time_us": 2040000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 132,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.7617503308,
+    "applied_amplitude": 1.0
+  }
+]

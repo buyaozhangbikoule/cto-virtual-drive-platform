@@ -1,0 +1,90 @@
+[
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "OBSERVED_HARD_TRIP",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 40,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "HARD_TRIP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.0
+  },
+  {
+    "time_us": 860000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 43,
+    "kind": "CONTROL",
+    "from_state": "HARD_TRIP",
+    "to_state": "HOLD",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.25
+  },
+  {
+    "time_us": 960000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 48,
+    "kind": "CONTROL",
+    "from_state": "HOLD",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.3
+  },
+  {
+    "time_us": 1140000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 57,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.7106002327409391
+  },
+  {
+    "time_us": 1600000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 80,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.7606002327409391
+  },
+  {
+    "time_us": 1700000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_COMBINED_LOW",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 85,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  }
+]

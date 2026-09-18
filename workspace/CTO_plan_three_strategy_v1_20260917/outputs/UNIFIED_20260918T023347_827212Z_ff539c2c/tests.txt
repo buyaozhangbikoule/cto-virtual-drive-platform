@@ -1,0 +1,32 @@
+test_all_strategies_identical_schedule_and_duration (test_unified.UnifiedTests.test_all_strategies_identical_schedule_and_duration) ... ok
+test_boundary_split_no_extra_controller_measurement (test_unified.UnifiedTests.test_boundary_split_no_extra_controller_measurement) ... ok
+test_bvd_Q_derived (test_unified.UnifiedTests.test_bvd_Q_derived) ... ok
+test_controller_measurement_has_no_ground_truth (test_unified.UnifiedTests.test_controller_measurement_has_no_ground_truth) ... ok
+test_enter_and_confirmation_are_separate (test_unified.UnifiedTests.test_enter_and_confirmation_are_separate) ... ok
+test_failed_scan_at_final_endpoint_is_counted (test_unified.UnifiedTests.test_failed_scan_at_final_endpoint_is_counted) ... ok
+test_failed_scan_target_unchanged_and_low_latch (test_unified.UnifiedTests.test_failed_scan_target_unchanged_and_low_latch) ... ok
+test_flat_scan_fails (test_unified.UnifiedTests.test_flat_scan_fails) ... ok
+test_grid_includes_boundaries_and_center (test_unified.UnifiedTests.test_grid_includes_boundaries_and_center) ... ok
+test_hard_latch_applies_to_scan (test_unified.UnifiedTests.test_hard_latch_applies_to_scan) ... ok
+test_invalid_plant_data_fails_off (test_unified.UnifiedTests.test_invalid_plant_data_fails_off) ... ok
+test_invalid_scan_measurements_never_succeed (test_unified.UnifiedTests.test_invalid_scan_measurements_never_succeed) ... ok
+test_late_invalid_point_not_just_anchor (test_unified.UnifiedTests.test_late_invalid_point_not_just_anchor) ... ok
+test_missed_tick_breaks_continuous_window (test_unified.UnifiedTests.test_missed_tick_breaks_continuous_window) ... ok
+test_nan_is_not_steady_state (test_unified.UnifiedTests.test_nan_is_not_steady_state) ... ok
+test_no_fallback_for_short_qualified_run (test_unified.UnifiedTests.test_no_fallback_for_short_qualified_run) ... ok
+test_no_simultaneous_amplitude_and_frequency_step (test_unified.UnifiedTests.test_no_simultaneous_amplitude_and_frequency_step) ... ok
+test_peak_includes_pre_guard_not_only_clamped_output (test_unified.UnifiedTests.test_peak_includes_pre_guard_not_only_clamped_output) ... ok
+test_phase_probes_are_executed_and_timed (test_unified.UnifiedTests.test_phase_probes_are_executed_and_timed) ... ok
+test_protection_invalidates_phase_pair (test_unified.UnifiedTests.test_protection_invalidates_phase_pair) ... ok
+test_reference_not_returned_from_executor (test_unified.UnifiedTests.test_reference_not_returned_from_executor) ... ok
+test_retry_deadline_and_exhaustion (test_unified.UnifiedTests.test_retry_deadline_and_exhaustion) ... ok
+test_scan_amplitude_synced_and_no_instant_return (test_unified.UnifiedTests.test_scan_amplitude_synced_and_no_instant_return) ... ok
+test_short_probes_not_extra_control_samples (test_unified.UnifiedTests.test_short_probes_not_extra_control_samples) ... ok
+test_truncated_probe_is_not_validated (test_unified.UnifiedTests.test_truncated_probe_is_not_validated) ... ok
+test_units_power_and_phase (test_unified.UnifiedTests.test_units_power_and_phase) ... ok
+test_unobserved_boundary_not_reprotected (test_unified.UnifiedTests.test_unobserved_boundary_not_reprotected) ... ok
+
+----------------------------------------------------------------------
+Ran 27 tests in 0.477s
+
+OK

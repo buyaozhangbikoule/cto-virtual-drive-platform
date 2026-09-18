@@ -1,0 +1,162 @@
+[
+  {
+    "time_us": 500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 584000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 584000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 81,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 94,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 1084000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900100.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1084000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 158,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900100.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 171,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900100.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900100.0
+  },
+  {
+    "time_us": 1584000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900100.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1584000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 235,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900100.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 248,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900100.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900100.0
+  },
+  {
+    "time_us": 2084000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 2084000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 312,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 2340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LMATCH_P2",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 325,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  }
+]

@@ -1,0 +1,70 @@
+{
+  "version": "plan-three-strategy-v1",
+  "parameter_origin": "hypothetical_baseline_non_measured",
+  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; 5 mA interpreted as RMS by assumption",
+  "frequency_min_Hz": 800000,
+  "frequency_max_Hz": 1000000,
+  "initial_frequency_Hz": 900000,
+  "control_tick_us": 20000,
+  "segment_us": 800000,
+  "scan_point_us": 1500,
+  "point_acquire_timeout_us": 500000,
+  "scan_period_us": 500000,
+  "scan_amplitude": 0.4,
+  "scan_levels_Hz": [
+    [
+      50000,
+      5000
+    ],
+    [
+      5000,
+      1000
+    ],
+    [
+      1000,
+      100
+    ]
+  ],
+  "scan_max_recentres": 3,
+  "scan_validation_relative_tolerance": 0.1,
+  "failed_scan_retry_us": 50000,
+  "failed_scan_max_retries": 2,
+  "failed_scan_exhaustion": "latched_low_hold_until_explicit_run_reset",
+  "hard_hold_us": 60000,
+  "recovery_hold_us": 100000,
+  "soft_hold_us": 100000,
+  "recovery_amplitude": 0.25,
+  "ramp_amplitude_per_s": 2.5,
+  "voltage_soft_Vpp": 130.0,
+  "voltage_hard_Vpp": 160.0,
+  "current_soft_Arms": 0.0055,
+  "current_hard_Arms": 0.006,
+  "phase_gain_Hz_per_deg": 5.0,
+  "phase_deadband_deg": 0.1,
+  "phase_max_step_Hz": 500.0,
+  "phase_probe_offset_Hz": 100.0,
+  "phase_slope_min_deg_per_Hz": 1e-06,
+  "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
+  "capture_threshold": 0.98,
+  "continuous_samples": 10,
+  "tail_window_us": 200000,
+  "reference_grid_step_Hz": 100,
+  "reference_policy": "soft_limits_and_source_amplitude_le_1",
+  "gamma_role": "monitor_only_no_claim_of_reflection_upper_bound",
+  "power_cap_role": "no_independent_absolute_power_cap; maximize_P_Rm_under_declared_V_I_and_source_amplitude_constraints",
+  "protection_assumption": "ideal_current_model_guard_at_command_instants; no_guard_at_unobserved_disturbance_boundaries",
+  "historical_schedule": [
+    "CASE_000_BASELINE",
+    "CASE_C0_P30",
+    "CASE_RM_P50",
+    "CASE_FS_M5",
+    "CASE_LMATCH_P10",
+    "CASE_QL_20",
+    "CASE_COMBINED_HIGH",
+    "CASE_000_BASELINE",
+    "CASE_LM_P20",
+    "CASE_000_BASELINE",
+    "CASE_CM_P20",
+    "CASE_000_BASELINE"
+  ]
+}

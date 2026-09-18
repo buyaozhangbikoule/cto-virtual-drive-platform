@@ -1,0 +1,9 @@
+{
+  "target_deg": -1.0782096368565852,
+  "calibration_case": "CASE_000_BASELINE",
+  "frequency_Hz": 900000,
+  "measurement": "arg(V_input / I_source), RMS phasors",
+  "target_frozen_before_test": true,
+  "current_load_truth_or_optimum_used_by_phase": false,
+  "slope": "two_executed_neighbour_measurements_with_logged_cost"
+}
