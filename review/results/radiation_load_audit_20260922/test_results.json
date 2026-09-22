@@ -1,0 +1,755 @@
+{
+  "scope": "REFERENCE_AND_STATIC_REGRESSION_NO_NEW_CONTROL_OR_LTSPICE_RUN",
+  "assumptions": "Hypothetical BVD/geometry/media; not measured transducer or acoustic field.",
+  "runtime": {
+    "python": "3.12.10",
+    "numpy": "2.2.4",
+    "scipy": "1.17.1"
+  },
+  "tests_run": 15,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "passed": true,
+  "frozen_model_unchanged": true,
+  "frozen_model_sha256": {
+    "workspace\\outputs\\v2_self_consistent_rebuild\\active_stage3_5\\model_v2_1.py": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23",
+    "workspace\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_audit.json": "4397db9766e9167055464ce2f67054166f47566878ce632ee5dfdf002fd8da1b",
+    "workspace\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_匹配设计参数.json": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202",
+    "workspace\\outputs\\v2_self_consistent_rebuild\\stage2_matching\\stage2_控制源幅度校准.json": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4"
+  },
+  "code_sha256": {
+    "radiation_load_layer1_reference.py": "90d50a9fcf5c4a4ea644c2e43df274eb175b878cfad35a23c8973fdc51f75387",
+    "test_radiation_load_audit_regression.py": "399c37c8967cfbf3d96cdac1a38d3366cb0abd857254fa7e13a6b3fc54f96dc0"
+  },
+  "details": {
+    "special_function_log": "== 1. 特殊函数自检\n  H1(1                   ) =    0.198457336   参考 0.198457   ✓\n  H1(3                   ) =    1.020109569   参考 1.020110   ✓\n  H1(5                   ) =    0.807811946   参考 0.807812   ✓\n  H1(33                  ) =    0.541422652   参考 0.541423   ✓\n  H1(49.459476178965     ) =    0.638357778   参考 0.638358   ✓\n  X1 在 (0, 400.0] 的 1260 点网格上恒正 ⇒ 附加质量恒正\n  R1(1e-6)=1.250000e-13（≈x²/8）  R1(400)=1.000046（→1）\n  定义域守卫：负值 / NaN / 超域 一律拒绝求值，不外推\n  反例固定：朴素级数 H1(49.4594761789647) = -3934.3791，稳定求值 = 0.638357778\n  对照 scipy（1260 点）：max|ΔH1|=2.003e-12  max|ΔJ1|=4.732e-15\n  独立自适应积分 H1(33                ) = 0.541422652171 ✓\n  独立自适应积分 H1(49.459476178965   ) = 0.638357778028 ✓\n  独立自适应积分 H1(400               ) = 0.675437496147 ✓\n",
+    "frozen_mapping_checks": [
+      {
+        "radius_mm": 0.3,
+        "medium": "air",
+        "contact": 0.25,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "air",
+        "contact": 0.5,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "air",
+        "contact": 1,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "blood",
+        "contact": 0.25,
+        "rm_rel_error": 1.2212453270876722e-15,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "blood",
+        "contact": 0.5,
+        "rm_rel_error": 1.2212453270876722e-15,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "blood",
+        "contact": 1,
+        "rm_rel_error": 1.4432899320127035e-15,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "calcif",
+        "contact": 0.25,
+        "rm_rel_error": 4.440892098500626e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "calcif",
+        "contact": 0.5,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.3,
+        "medium": "calcif",
+        "contact": 1,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "air",
+        "contact": 0.25,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "air",
+        "contact": 0.5,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "air",
+        "contact": 1,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "blood",
+        "contact": 0.25,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "blood",
+        "contact": 0.5,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "blood",
+        "contact": 1,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "calcif",
+        "contact": 0.25,
+        "rm_rel_error": 1.5432100042289676e-14,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "calcif",
+        "contact": 0.5,
+        "rm_rel_error": 1.6542323066914832e-14,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 0.5,
+        "medium": "calcif",
+        "contact": 1,
+        "rm_rel_error": 1.6986412276764895e-14,
+        "lm_rel_error": 4.440892098500626e-16
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "air",
+        "contact": 0.25,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "air",
+        "contact": 0.5,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "air",
+        "contact": 1,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "blood",
+        "contact": 0.25,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "blood",
+        "contact": 0.5,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "blood",
+        "contact": 1,
+        "rm_rel_error": 2.220446049250313e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "calcif",
+        "contact": 0.25,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "calcif",
+        "contact": 0.5,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 1.0,
+        "medium": "calcif",
+        "contact": 1,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "air",
+        "contact": 0.25,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "air",
+        "contact": 0.5,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "air",
+        "contact": 1,
+        "rm_rel_error": 0.0,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "blood",
+        "contact": 0.25,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "blood",
+        "contact": 0.5,
+        "rm_rel_error": 4.440892098500626e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "blood",
+        "contact": 1,
+        "rm_rel_error": 6.661338147750939e-16,
+        "lm_rel_error": 2.220446049250313e-16
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "calcif",
+        "contact": 0.25,
+        "rm_rel_error": 4.440892098500626e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "calcif",
+        "contact": 0.5,
+        "rm_rel_error": 4.440892098500626e-16,
+        "lm_rel_error": 0.0
+      },
+      {
+        "radius_mm": 1.5,
+        "medium": "calcif",
+        "contact": 1,
+        "rm_rel_error": 4.440892098500626e-16,
+        "lm_rel_error": 0.0
+      }
+    ],
+    "self_consistent_checks": [
+      {
+        "medium": "air",
+        "contact": 1.0,
+        "frozen": {
+          "medium": "air",
+          "contact": 1.0,
+          "two_ka": 16.486492059654893,
+          "radiation_evaluation_frequency_Hz": 900000.0,
+          "radiation_frequency_mode": "frozen_at_unloaded_fs",
+          "rm": 7400.3129497077925,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 47.37177323720662,
+          "lm": 1.0402292350293496,
+          "cm": 3.006260036180247e-14,
+          "fs": 899999.6328082499,
+          "qm": 794.8792680930873,
+          "q_rad": 124174.26959443903,
+          "q_int_loaded": 800.0003263927998,
+          "motional_constant_voltage_fwhm_Hz": 1132.2469574119677,
+          "rm_ratio": 1.00644256116026,
+          "fs_shift_pct": -4.079908334508886e-05
+        },
+        "self_consistent": {
+          "medium": "air",
+          "contact": 1.0,
+          "two_ka": 16.486485333311258,
+          "radiation_evaluation_frequency_Hz": 899999.6328079227,
+          "radiation_frequency_mode": "self_consistent",
+          "rm": 7400.312942131933,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 47.37176566134757,
+          "lm": 1.0402292350301061,
+          "cm": 3.006260036180247e-14,
+          "fs": 899999.6328079227,
+          "qm": 794.8792689071113,
+          "q_rad": 124174.28945286924,
+          "q_int_loaded": 800.0003263930906,
+          "motional_constant_voltage_fwhm_Hz": 1132.246956252039,
+          "rm_ratio": 1.0064425601299432,
+          "fs_shift_pct": -4.079911970489292e-05
+        },
+        "independent": {
+          "rm": 7400.312942131933,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 47.37176566134757,
+          "lm": 1.0402292350301061,
+          "fs": 899999.6328079227,
+          "qm": 794.8792689071113
+        },
+        "independent_mechanical_root_Hz": 899999.6328079227,
+        "delta_Q_pct": 1.0240850389919842e-07
+      },
+      {
+        "medium": "blood",
+        "contact": 0.25,
+        "frozen": {
+          "medium": "blood",
+          "contact": 0.25,
+          "two_ka": 3.6018259722685526,
+          "radiation_evaluation_frequency_Hz": 900000.0,
+          "radiation_frequency_mode": "frozen_at_unloaded_fs",
+          "rm": 52737.268684612565,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 45384.32750814198,
+          "lm": 1.0453737527717961,
+          "cm": 3.006260036180247e-14,
+          "fs": 897782.3518971641,
+          "qm": 111.81624159876424,
+          "q_rad": 129.93214839284943,
+          "q_int_loaded": 801.9761120036715,
+          "motional_constant_voltage_fwhm_Hz": 8029.087179648919,
+          "rm_ratio": 7.172268541107312,
+          "fs_shift_pct": -0.24640534475953713
+        },
+        "self_consistent": {
+          "medium": "blood",
+          "contact": 0.25,
+          "two_ka": 3.592907805603035,
+          "radiation_evaluation_frequency_Hz": 897771.5886162289,
+          "radiation_frequency_mode": "self_consistent",
+          "rm": 52631.57542024927,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 45278.63424377868,
+          "lm": 1.045398818654864,
+          "cm": 3.006260036180247e-14,
+          "fs": 897771.5886162289,
+          "qm": 112.04213110609331,
+          "q_rad": 130.2370085150272,
+          "q_int_loaded": 801.98572680359,
+          "motional_constant_voltage_fwhm_Hz": 8012.803574452935,
+          "rm_ratio": 7.157894257153903,
+          "fs_shift_pct": -0.2476012648634507
+        },
+        "independent": {
+          "rm": 52631.57542024928,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 45278.634243778695,
+          "lm": 1.045398818654864,
+          "fs": 897771.5886162289,
+          "qm": 112.04213110609328
+        },
+        "independent_mechanical_root_Hz": 897771.5886162288,
+        "delta_Q_pct": 0.20201851188992315
+      },
+      {
+        "medium": "blood",
+        "contact": 0.5,
+        "frozen": {
+          "medium": "blood",
+          "contact": 0.5,
+          "two_ka": 3.6018259722685526,
+          "radiation_evaluation_frequency_Hz": 900000.0,
+          "radiation_frequency_mode": "frozen_at_unloaded_fs",
+          "rm": 98074.22441951734,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 90721.28324304675,
+          "lm": 1.0505182705142426,
+          "cm": 3.006260036180247e-14,
+          "fs": 895581.3784397081,
+          "qm": 60.274504776996004,
+          "q_rad": 65.15974087841673,
+          "q_int_loaded": 803.9470419253155,
+          "motional_constant_voltage_fwhm_Hz": 14858.378044799967,
+          "rm_ratio": 13.338094521054364,
+          "fs_shift_pct": -0.4909579511435447
+        },
+        "self_consistent": {
+          "medium": "blood",
+          "contact": 0.5,
+          "two_ka": 3.583971183461642,
+          "radiation_evaluation_frequency_Hz": 895538.5657025238,
+          "radiation_frequency_mode": "self_consistent",
+          "rm": 97649.94185274134,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 90297.00067627075,
+          "lm": 1.0506187165238627,
+          "cm": 3.006260036180247e-14,
+          "fs": 895538.5657025204,
+          "qm": 60.539287575749626,
+          "q_rad": 65.46903958385705,
+          "q_int_loaded": 803.985475974654,
+          "motional_constant_voltage_fwhm_Hz": 14792.684247927102,
+          "rm_ratio": 13.280392091972827,
+          "fs_shift_pct": -0.4957149219421697
+        },
+        "independent": {
+          "rm": 97649.94185274102,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 90297.00067627043,
+          "lm": 1.0506187165238627,
+          "fs": 895538.5657025204,
+          "qm": 60.539287575749825
+        },
+        "independent_mechanical_root_Hz": 895538.5657025204,
+        "delta_Q_pct": 0.439294855649619
+      },
+      {
+        "medium": "blood",
+        "contact": 1.0,
+        "frozen": {
+          "medium": "blood",
+          "contact": 1.0,
+          "two_ka": 3.6018259722685526,
+          "radiation_evaluation_frequency_Hz": 900000.0,
+          "radiation_frequency_mode": "frozen_at_unloaded_fs",
+          "rm": 188748.13588932686,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 181395.1947128563,
+          "lm": 1.0608073059991359,
+          "cm": 3.006260036180247e-14,
+          "fs": 891227.5615896456,
+          "qm": 31.47185257038187,
+          "q_rad": 32.74757920156903,
+          "q_int_loaded": 807.8744767674888,
+          "motional_constant_voltage_fwhm_Hz": 28318.242772539517,
+          "rm_ratio": 25.66974648094846,
+          "fs_shift_pct": -0.9747153789282703
+        },
+        "self_consistent": {
+          "medium": "blood",
+          "contact": 1.0,
+          "two_ka": 3.5660405808999416,
+          "radiation_evaluation_frequency_Hz": 891058.1875749358,
+          "radiation_frequency_mode": "self_consistent",
+          "rm": 187038.25926366198,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 179685.3180871914,
+          "lm": 1.061210624819553,
+          "cm": 3.006260036180247e-14,
+          "fs": 891058.1875749279,
+          "qm": 31.765600597345376,
+          "q_rad": 33.06548750582501,
+          "q_int_loaded": 808.0280390661422,
+          "motional_constant_voltage_fwhm_Hz": 28051.041718675795,
+          "rm_ratio": 25.437203259858038,
+          "fs_shift_pct": -0.9935347138968931
+        },
+        "independent": {
+          "rm": 187038.2592636604,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 179685.31808718984,
+          "lm": 1.0612106248195534,
+          "fs": 891058.1875749278,
+          "qm": 31.76560059734565
+        },
+        "independent_mechanical_root_Hz": 891058.1875749278,
+        "delta_Q_pct": 0.9333674473295916
+      },
+      {
+        "medium": "calcif",
+        "contact": 0.5,
+        "frozen": {
+          "medium": "calcif",
+          "contact": 0.5,
+          "two_ka": 1.5707963267948966,
+          "radiation_evaluation_frequency_Hz": 900000.0,
+          "radiation_frequency_mode": "frozen_at_unloaded_fs",
+          "rm": 116876.86969906185,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 109523.92852259126,
+          "lm": 1.079502495676854,
+          "cm": 3.006260036180247e-14,
+          "fs": 883476.5661170048,
+          "qm": 51.2707867979354,
+          "q_rad": 54.71287552212522,
+          "q_int_loaded": 814.9621932412923,
+          "motional_constant_voltage_fwhm_Hz": 17231.578083615077,
+          "rm_ratio": 15.895254279072416,
+          "fs_shift_pct": -1.8359370981105738
+        },
+        "self_consistent": {
+          "medium": "calcif",
+          "contact": 0.5,
+          "two_ka": 1.5417841347148498,
+          "radiation_evaluation_frequency_Hz": 883377.2383939044,
+          "radiation_frequency_mode": "self_consistent",
+          "rm": 113266.6335958277,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 105913.69241935712,
+          "lm": 1.0797452697682108,
+          "cm": 3.006260036180247e-14,
+          "fs": 883377.2383939037,
+          "qm": 52.910929414998286,
+          "q_rad": 56.584212280451155,
+          "q_int_loaded": 815.0538283158108,
+          "motional_constant_voltage_fwhm_Hz": 16695.553228053843,
+          "rm_ratio": 15.404262169032574,
+          "fs_shift_pct": -1.8469735117884745
+        },
+        "independent": {
+          "rm": 113266.63359582963,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 105913.69241935904,
+          "lm": 1.0797452697682106,
+          "fs": 883377.2383939037,
+          "qm": 52.91092941499738
+        },
+        "independent_mechanical_root_Hz": 883377.2383939038,
+        "delta_Q_pct": 3.1989807832029094
+      },
+      {
+        "medium": "calcif",
+        "contact": 1.0,
+        "frozen": {
+          "medium": "calcif",
+          "contact": 1.0,
+          "two_ka": 1.5707963267948966,
+          "radiation_evaluation_frequency_Hz": 900000.0,
+          "radiation_frequency_mode": "frozen_at_unloaded_fs",
+          "rm": 226353.4264484159,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 219000.48527194533,
+          "lm": 1.1187757563243583,
+          "cm": 3.006260036180247e-14,
+          "fs": 867831.3534625943,
+          "qm": 26.950770046510694,
+          "q_rad": 27.85564213648119,
+          "q_int_loaded": 829.6542837813403,
+          "motional_constant_voltage_fwhm_Hz": 32200.61437817626,
+          "rm_ratio": 30.784065996984573,
+          "fs_shift_pct": -3.5742940597117467
+        },
+        "self_consistent": {
+          "medium": "calcif",
+          "contact": 1.0,
+          "two_ka": 1.5140127374075363,
+          "radiation_evaluation_frequency_Hz": 867465.3998250039,
+          "radiation_frequency_mode": "self_consistent",
+          "rm": 212295.6645402045,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 204942.72336373394,
+          "lm": 1.1197199009964949,
+          "cm": 3.006260036180247e-14,
+          "fs": 867465.3998250033,
+          "qm": 28.74751449113484,
+          "q_rad": 29.77891867838131,
+          "q_int_loaded": 830.00428621735,
+          "motional_constant_voltage_fwhm_Hz": 30175.31829029993,
+          "rm_ratio": 28.872210377467823,
+          "fs_shift_pct": -3.614955574999623
+        },
+        "independent": {
+          "rm": 212295.66454020853,
+          "rm_internal": 7352.941176470586,
+          "rm_radiation": 204942.72336373795,
+          "lm": 1.1197199009964942,
+          "fs": 867465.3998250035,
+          "qm": 28.74751449113429
+        },
+        "independent_mechanical_root_Hz": 867465.3998250035,
+        "delta_Q_pct": 6.6667647771228244
+      }
+    ],
+    "alias_groups": [
+      {
+        "bvd": [
+          7400.3129497077925,
+          1.0402292350293496,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "air",
+            0
+          ],
+          [
+            "air",
+            0.25
+          ],
+          [
+            "air",
+            0.5
+          ],
+          [
+            "air",
+            0.75
+          ],
+          [
+            "air",
+            1
+          ],
+          [
+            "blood",
+            0
+          ],
+          [
+            "calcif",
+            0
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          52737.268684612565,
+          1.0453737527717961,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "blood",
+            0.25
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          98074.22441951734,
+          1.0505182705142426,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "blood",
+            0.5
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          143411.1801544221,
+          1.0556627882566891,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "blood",
+            0.75
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          188748.13588932686,
+          1.0608073059991359,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "blood",
+            1
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          62138.591324384826,
+          1.0598658653531017,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "calcif",
+            0.25
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          116876.86969906185,
+          1.079502495676854,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "calcif",
+            0.5
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          171615.14807373888,
+          1.0991391260006063,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "calcif",
+            0.75
+          ]
+        ]
+      },
+      {
+        "bvd": [
+          226353.4264484159,
+          1.1187757563243583,
+          3.006260036180247e-14
+        ],
+        "labels": [
+          [
+            "calcif",
+            1
+          ]
+        ]
+      }
+    ],
+    "blood_frozen_power_and_matching": {
+      "peak_Hz": 891200.0,
+      "peak_W": 0.011192121105505935,
+      "voltage_bound_W": 0.01119216351486868,
+      "fraction_of_bound": 0.999996210798503,
+      "z_in_ohm": [
+        8.63240459647417,
+        -17.208237204011652
+      ],
+      "gamma_proxy": 0.7332242113789963,
+      "P_port_over_P_source": 0.0341579822781868
+    },
+    "maximum_balance_residual_W": 4.440892098500626e-16,
+    "report_0.5mm": "\n== 2. 基线与导出几何  (a=0.50 mm)\n  fs=900000.0 Hz  Qm=800.0  Rm=7352.941 Ω  Lm=1.040228 H\n  L = c_D/(2fs) = 2.4111 mm    m = ρAL/2 = 7.101 mg\n  c = ω·m/Qm = 5.0196e-02 kg/s\n  空气 R_rad = ρ0c0·A·R1 = 3.234e-04 kg/s\n  辐射阻抗求值频率（冻结近似）= 900000.0 Hz\n\n== 3. 负载格点（相对未加载基线），含内部/辐射电阻拆分\n工况                  2ka      Rm(Ω)   Rm_int     Rm_rad    Rm×     fs(Hz)     fs偏移      Qm    支路FWHM\n空气 全接触           16.486     7400.3   7352.9       47.4    1.0   899999.6   -0.00%  794.88      1132\n血液 25% 接触         3.602    52737.3   7352.9    45384.3    7.2   897782.4   -0.25%  111.82      8029\n血液 50% 接触         3.602    98074.2   7352.9    90721.3   13.3   895581.4   -0.49%   60.27     14858\n血液 全接触            3.602   188748.1   7352.9   181395.2   25.7   891227.6   -0.97%   31.47     28318\n钙化 50% 接触         1.571   116876.9   7352.9   109523.9   15.9   883476.6   -1.84%   51.27     17232\n钙化 全接触            1.571   226353.4   7352.9   219000.5   30.8   867831.4   -3.57%   26.95     32201\n\n== 4. 以「血液 全接触」为假设比较原点（不更改历史主基准）\n工况                     ΔRm       Δfs        Qm\n空气 全接触              -96.1%    +0.98%    794.88\n血液 25% 接触           -72.1%    +0.74%    111.82\n血液 50% 接触           -48.0%    +0.49%     60.27\n血液 全接触               +0.0%    +0.00%     31.47\n钙化 50% 接触           -38.1%    -0.87%     51.27\n钙化 全接触              +19.9%    -2.63%     26.95\n\n== 5. 空气中：固有 Qm 决定一切（辐射可忽略）\n    固有Qm   Q_total    支路FWHM       Q_rad Q_total≤Q_int\n     500    497.99    1807.2      124174          True\n     800    794.88    1132.2      124174          True\n    1000    992.01     907.2      124174          True\n    2000   1968.30     457.2      124174          True\n  注：Q_total ≤ Q_intrinsic 是本格点上的回归事实，不是无条件成立的物理定律。\n      由 Q′/Q_i = √(1+m_r)/(1+Q_i·r_r) 可见，当 Q_i·r_r < √(1+m_r)−1 时 Q′ > Q_i。\n\n== 6. 半径敏感性：2ka 落在 R1 的陡段，a 不是可随手固定的常数\n  --- blood  ρ0c0=1.664 MRayl\n    a=0.30 mm  2ka= 2.161  R1=0.4806  Qm=   59.83  支路FWHM=   14881 Hz  Δfs= -1.07%\n    a=0.40 mm  2ka= 2.881  R1=0.7349  Qm=   40.17  支路FWHM=   22157 Hz  Δfs= -1.10%\n    a=0.50 mm  2ka= 3.602  R1=0.9474  Qm=   31.47  支路FWHM=   28318 Hz  Δfs= -0.97%\n    a=0.60 mm  2ka= 4.322  R1=1.0828  Qm=   27.61  支路FWHM=   32352 Hz  Δfs= -0.75%\n    a=0.80 mm  2ka= 5.763  R1=1.1097  Qm=   26.84  支路FWHM=   33427 Hz  Δfs= -0.31%\n    a=1.00 mm  2ka= 7.204  R1=0.9846  Qm=   30.08  支路FWHM=   29873 Hz  Δfs= -0.16%\n    a=1.50 mm  2ka=10.805  R1=1.0265  Qm=   28.92  支路FWHM=   31039 Hz  Δfs= -0.25%\n  --- calcif  ρ0c0=6.840 MRayl\n    a=0.30 mm  2ka= 0.942  R1=0.1070  Qm=   65.85  支路FWHM=   13335 Hz  Δfs= -2.43%\n    a=0.40 mm  2ka= 1.257  R1=0.1848  Qm=   39.71  支路FWHM=   21968 Hz  Δfs= -3.06%\n    a=0.50 mm  2ka= 1.571  R1=0.2783  Qm=   26.95  支路FWHM=   32201 Hz  Δfs= -3.57%\n    a=0.60 mm  2ka= 1.885  R1=0.3830  Qm=   19.84  支路FWHM=   43578 Hz  Δfs= -3.96%\n    a=0.80 mm  2ka= 2.513  R1=0.6071  Qm=   12.67  支路FWHM=   67936 Hz  Δfs= -4.32%\n    a=1.00 mm  2ka= 3.142  R1=0.8188  Qm=    9.42  支路FWHM=   91527 Hz  Δfs= -4.19%\n    a=1.50 mm  2ka= 4.712  R1=1.1195  Qm=    6.79  支路FWHM=  129286 Hz  Δfs= -2.47%\n\n== 7. 厚度模式声速敏感性（a=0.5 mm，血液全接触）\n  c_D=  3800 m/s  L=2.1111 mm  Qm=  27.73  支路FWHM=   32097 Hz\n  c_D=  4100 m/s  L=2.2778 mm  Qm=  29.81  支路FWHM=   29877 Hz\n  c_D=  4340 m/s  L=2.4111 mm  Qm=  31.47  支路FWHM=   28318 Hz\n  c_D=  4600 m/s  L=2.5556 mm  Qm=  33.26  支路FWHM=   26809 Hz\n  c_D=  5000 m/s  L=2.7778 mm  Qm=  36.00  支路FWHM=   24789 Hz\n\n== 8. 冻结辐射频率 vs 自洽辐射频率（局部常参数等效差异）\n工况                  冻结fs(Hz)    自洽fs(Hz)   Δfs(Hz)     冻结Qm     自洽Qm    ΔQm%\n空气 全接触              899999.6    899999.6      -0.0   794.88   794.88  +0.00%\n血液 25% 接触           897782.4    897771.6     -10.8   111.82   112.04  +0.20%\n血液 50% 接触           895581.4    895538.6     -42.8    60.27    60.54  +0.44%\n血液 全接触              891227.6    891058.2    -169.4    31.47    31.77  +0.93%\n钙化 50% 接触           883476.6    883377.2     -99.3    51.27    52.91  +3.20%\n钙化 全接触              867831.4    867465.4    -366.0    26.95    28.75  +6.67%\n  Q 为局部常参数 RLC 等效值，不等于完整频变辐射模型的系统带宽 Q。\n  是否可接受需预先定义误差容限；本表不证明闭环验收改善。\n\n== 9. 电学后果：可交付功率与端口电压解析上界\n  解析上界：机械支路两端为 V_port 时 P = V²R/(R²+X²) ≤ V_rms²/R = V_pp²/(8R)，\n  此上界与匹配元件如何选择无关，但达到端口功率上界不等于输入匹配良好。\n\n工况                 峰频Hz       安全峰W     幅度     Vpp   mArms      限幅    130Vpp上界W     达上界%   170mW所需Vpp     |Gamma|代理  Pport/Psource%\n未加载基线            900000    0.17000  1.000  100.00   5.000    源幅度1      0.28730   59.17%       100.00        0.0635           46.92\n空气 全接触           900000    0.16993  1.000  100.30   4.985    源幅度1      0.28546   59.53%       100.32        0.0609           46.77\n血液 25% 接触        897800    0.04006  0.778  130.00   1.977      电压      0.04006  100.00%       267.81        0.5797           11.09\n血液 全接触           891200    0.01119  0.735  130.00   1.782      电压      0.01119  100.00%       506.65        0.7332            3.42\n钙化 全接触           867800    0.00933  0.896  130.00   1.731      电压      0.00933  100.00%       554.83        0.8447            3.02\n  电学效率含戴维南源电阻损耗；Gamma 仅为输入反射代理，均非声学效率或实测量。\n\n== 10. 支路带宽 vs 系统带宽（F4：两者定义不同，不可互换）\n工况                 fs/Qm       未保护系统FWHM        软限安全功率FWHM\n未加载基线             1125.0          2141.9            1735.6\n空气 全接触            1132.2          2149.2            1739.3\n血液 25% 接触         8029.1          9026.6            8029.1\n血液 全接触           28318.2         27456.7           28318.2\n钙化 全接触           32200.6         34856.0           30990.4\n\n== 11. 功率含义拆分（F7：Rm′ 合并了内部阻尼与辐射阻）\n工况                   总支路W       内部耗散W       辐射分量W     辐射占比\n未加载基线            0.170000    0.170000    0.000000     0.0%\n空气 全接触           0.169930    0.168842    0.001088     0.6%\n血液 25% 接触        0.040056    0.005585    0.034471    86.1%\n血液 全接触           0.011192    0.000436    0.010756    96.1%\n钙化 全接触           0.009333    0.000303    0.009030    96.8%\n  「辐射分量」只是该理想负载模型内的功率划分，\n  **不是经声场或水听器验证的声功率，更不是靶区有效治疗功率**。\n",
+    "report_1.5mm": "\n== 2. 基线与导出几何  (a=1.50 mm)\n  fs=900000.0 Hz  Qm=800.0  Rm=7352.941 Ω  Lm=1.040228 H\n  L = c_D/(2fs) = 2.4111 mm    m = ρAL/2 = 63.912 mg\n  c = ω·m/Qm = 4.5177e-01 kg/s\n  空气 R_rad = ρ0c0·A·R1 = 2.923e-03 kg/s\n  辐射阻抗求值频率（冻结近似）= 900000.0 Hz\n\n== 3. 负载格点（相对未加载基线），含内部/辐射电阻拆分\n工况                  2ka      Rm(Ω)   Rm_int     Rm_rad    Rm×     fs(Hz)     fs偏移      Qm    支路FWHM\n空气 全接触           49.459     7400.5   7352.9       47.6    1.0   899999.9   -0.00%  794.86      1132\n血液 25% 接触        10.805    56523.2   7352.9    49170.3    7.7   899432.2   -0.06%  104.14      8637\n血液 50% 接触        10.805   105645.9   7352.9    98292.9   14.4   898865.6   -0.13%   55.75     16123\n血液 全接触           10.805   203891.3   7352.9   196538.3   27.7   897735.6   -0.25%   28.92     31039\n钙化 50% 接触         4.712   447876.5   7352.9   440523.5   60.9   888676.3   -1.26%   13.30     66812\n钙化 全接触            4.712   888352.4   7352.9   880999.5  120.8   877769.6   -2.47%    6.79    129286\n\n== 4. 以「血液 全接触」为假设比较原点（不更改历史主基准）\n工况                     ΔRm       Δfs        Qm\n空气 全接触              -96.4%    +0.25%    794.86\n血液 25% 接触           -72.3%    +0.19%    104.14\n血液 50% 接触           -48.2%    +0.13%     55.75\n血液 全接触               +0.0%    +0.00%     28.92\n钙化 50% 接触          +119.7%    -1.01%     13.30\n钙化 全接触             +335.7%    -2.22%      6.79\n\n== 5. 空气中：固有 Qm 决定一切（辐射可忽略）\n    固有Qm   Q_total    支路FWHM       Q_rad Q_total≤Q_int\n     500    497.99    1807.3      123654          True\n     800    794.86    1132.3      123654          True\n    1000    991.98     907.3      123654          True\n    2000   1968.17     457.3      123654          True\n  注：Q_total ≤ Q_intrinsic 是本格点上的回归事实，不是无条件成立的物理定律。\n      由 Q′/Q_i = √(1+m_r)/(1+Q_i·r_r) 可见，当 Q_i·r_r < √(1+m_r)−1 时 Q′ > Q_i。\n\n== 6. 半径敏感性：2ka 落在 R1 的陡段，a 不是可随手固定的常数\n  --- blood  ρ0c0=1.664 MRayl\n    a=0.30 mm  2ka= 2.161  R1=0.4806  Qm=   59.83  支路FWHM=   14881 Hz  Δfs= -1.07%\n    a=0.40 mm  2ka= 2.881  R1=0.7349  Qm=   40.17  支路FWHM=   22157 Hz  Δfs= -1.10%\n    a=0.50 mm  2ka= 3.602  R1=0.9474  Qm=   31.47  支路FWHM=   28318 Hz  Δfs= -0.97%\n    a=0.60 mm  2ka= 4.322  R1=1.0828  Qm=   27.61  支路FWHM=   32352 Hz  Δfs= -0.75%\n    a=0.80 mm  2ka= 5.763  R1=1.1097  Qm=   26.84  支路FWHM=   33427 Hz  Δfs= -0.31%\n    a=1.00 mm  2ka= 7.204  R1=0.9846  Qm=   30.08  支路FWHM=   29873 Hz  Δfs= -0.16%\n    a=1.50 mm  2ka=10.805  R1=1.0265  Qm=   28.92  支路FWHM=   31039 Hz  Δfs= -0.25%\n  --- calcif  ρ0c0=6.840 MRayl\n    a=0.30 mm  2ka= 0.942  R1=0.1070  Qm=   65.85  支路FWHM=   13335 Hz  Δfs= -2.43%\n    a=0.40 mm  2ka= 1.257  R1=0.1848  Qm=   39.71  支路FWHM=   21968 Hz  Δfs= -3.06%\n    a=0.50 mm  2ka= 1.571  R1=0.2783  Qm=   26.95  支路FWHM=   32201 Hz  Δfs= -3.57%\n    a=0.60 mm  2ka= 1.885  R1=0.3830  Qm=   19.84  支路FWHM=   43578 Hz  Δfs= -3.96%\n    a=0.80 mm  2ka= 2.513  R1=0.6071  Qm=   12.67  支路FWHM=   67936 Hz  Δfs= -4.32%\n    a=1.00 mm  2ka= 3.142  R1=0.8188  Qm=    9.42  支路FWHM=   91527 Hz  Δfs= -4.19%\n    a=1.50 mm  2ka= 4.712  R1=1.1195  Qm=    6.79  支路FWHM=  129286 Hz  Δfs= -2.47%\n\n== 7. 厚度模式声速敏感性（a=0.5 mm，血液全接触）\n  c_D=  3800 m/s  L=2.1111 mm  Qm=  27.73  支路FWHM=   32097 Hz\n  c_D=  4100 m/s  L=2.2778 mm  Qm=  29.81  支路FWHM=   29877 Hz\n  c_D=  4340 m/s  L=2.4111 mm  Qm=  31.47  支路FWHM=   28318 Hz\n  c_D=  4600 m/s  L=2.5556 mm  Qm=  33.26  支路FWHM=   26809 Hz\n  c_D=  5000 m/s  L=2.7778 mm  Qm=  36.00  支路FWHM=   24789 Hz\n\n== 8. 冻结辐射频率 vs 自洽辐射频率（局部常参数等效差异）\n工况                  冻结fs(Hz)    自洽fs(Hz)   Δfs(Hz)     冻结Qm     自洽Qm    ΔQm%\n空气 全接触              899999.9    899999.9      -0.0   794.86   794.86  -0.00%\n血液 25% 接触           899432.2    899430.8      -1.4   104.14   104.16  +0.02%\n血液 50% 接触           898865.6    898859.9      -5.7    55.75    55.77  +0.04%\n血液 全接触              897735.6    897713.0     -22.7    28.92    28.95  +0.09%\n钙化 50% 接触           888676.3    888135.9    -540.4    13.30    13.36  +0.43%\n钙化 全接触              877769.6    875599.0   -2170.6     6.79     6.86  +1.08%\n  Q 为局部常参数 RLC 等效值，不等于完整频变辐射模型的系统带宽 Q。\n  是否可接受需预先定义误差容限；本表不证明闭环验收改善。\n\n== 9. 电学后果：可交付功率与端口电压解析上界\n  解析上界：机械支路两端为 V_port 时 P = V²R/(R²+X²) ≤ V_rms²/R = V_pp²/(8R)，\n  此上界与匹配元件如何选择无关，但达到端口功率上界不等于输入匹配良好。\n\n工况                 峰频Hz       安全峰W     幅度     Vpp   mArms      限幅    130Vpp上界W     达上界%   170mW所需Vpp     |Gamma|代理  Pport/Psource%\n未加载基线            900000    0.17000  1.000  100.00   5.000    源幅度1      0.28730   59.17%       100.00        0.0635           46.92\n空气 全接触           900000    0.16993  1.000  100.30   4.985    源幅度1      0.28545   59.53%       100.32        0.0608           46.77\n血液 25% 接触        899400    0.03737  0.770  130.00   1.964      电压      0.03737   99.99%       277.26        0.5875           10.39\n血液 全接触           897700    0.01036  0.715  130.00   1.793      电压      0.01036  100.00%       526.59        0.7177            3.13\n钙化 全接触           877800    0.00238  0.797  130.00   1.739      电压      0.00238  100.00%      1099.16        0.8292            0.77\n  电学效率含戴维南源电阻损耗；Gamma 仅为输入反射代理，均非声学效率或实测量。\n\n== 10. 支路带宽 vs 系统带宽（F4：两者定义不同，不可互换）\n工况                 fs/Qm       未保护系统FWHM        软限安全功率FWHM\n未加载基线             1125.0          2141.9            1735.6\n空气 全接触            1132.3          2149.3            1739.3\n血液 25% 接触         8637.1          9630.0            8637.1\n血液 全接触           31038.6         29044.4           31038.6\n钙化 全接触          129286.4         70345.6          105634.7\n\n== 11. 功率含义拆分（F7：Rm′ 合并了内部阻尼与辐射阻）\n工况                   总支路W       内部耗散W       辐射分量W     辐射占比\n未加载基线            0.170000    0.170000    0.000000     0.0%\n空气 全接触           0.169930    0.168837    0.001092     0.6%\n血液 25% 接触        0.037372    0.004862    0.032510    87.0%\n血液 全接触           0.010361    0.000374    0.009987    96.4%\n钙化 全接触           0.002378    0.000020    0.002358    99.2%\n  「辐射分量」只是该理想负载模型内的功率划分，\n  **不是经声场或水听器验证的声功率，更不是靶区有效治疗功率**。\n",
+    "numpy_only_smoke_returncode": 0
+  }
+}

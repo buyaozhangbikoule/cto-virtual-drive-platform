@@ -18,6 +18,10 @@
 原版用朴素交替级数求 Struve H1，在 x≳30 起严重失准、x≈49 处给出 −3934（真值 0.638），
 而当时的自检只验 x≤8 的精度与若干点的正号，因此打印「全部断言通过」却输出了错误结果。
 现改为全域稳定的积分求值 + 全域精度断言 + 定义域守卫。
+
+2026-09-22：修正自洽模式辐射电阻的求值频率归一化；Q 分量从定义直接计算。
+冻结模式不变。自洽 Q 是局部常参数 RLC 等效量，不是完整频变模型的带宽 Q。
+独立物理折算回归见 test_radiation_load_audit_regression.py。
 """
 from __future__ import annotations
 
@@ -254,6 +258,9 @@ class Layer1:
         # 自洽性：模型自己的 Qm 必须等于 ω·Lm/Rm
         if abs(self.omega*self.lm/self.rm - self.qm) > 1e-6*self.qm:
             raise ValueError('输入 BVD 不自洽：ω·Lm/Rm ≠ Qm')
+        fs_from_lc = 1.0/(2*math.pi*math.sqrt(self.lm*self.cm))
+        if not math.isclose(fs_from_lc, self.fs, rel_tol=1e-9, abs_tol=0.0):
+            raise ValueError('输入 BVD 不自洽：fs ≠ 1/(2π√(Lm·Cm))')
         # 定义域守卫：最刺耳的介质（声速最低）决定最大 2ka
         slowest = min(c0 for _, c0 in MEDIA.values())
         _check_domain(2.0*(self.omega/slowest)*self.radius)
@@ -319,13 +326,19 @@ class Layer1:
 
         lm2 = self.lm*(1.0+mr)
         rm_internal = self.omega*self.lm/qi          # c/φ²，与负载无关
-        rm_radiation = rm_internal*qi*rr             # R_rad/φ²，与 qi 无关
+        # rr = R_rad(f_eval)/(omega_eval*m), not R_rad/(omega_unloaded*m).
+        # Keeping omega_unloaded here overestimates R_rad by fs_unloaded/f_eval
+        # in self-consistent mode; reciprocal-Q checks alone cannot detect it.
+        omega_eval = 2*math.pi*f_eval
+        rm_radiation = omega_eval*self.lm*rr          # R_rad/φ²，与 qi 无关
         rm2 = rm_internal + rm_radiation
         fs2 = 1.0/(2*math.pi*math.sqrt(lm2*self.cm))
         qm2 = 2*math.pi*fs2*lm2/rm2
 
-        q_int_loaded = qi*math.sqrt(1.0+mr)          # ω'm'/c
-        q_rad = math.sqrt(1.0+mr)/rr if rr > 0 else float('inf')   # ω'm'/R_rad
+        omega_loaded = 2*math.pi*fs2
+        q_int_loaded = omega_loaded*lm2/rm_internal  # ω'm'/c，直接由定义计算
+        q_rad = (omega_loaded*lm2/rm_radiation
+                 if rm_radiation > 0 else float('inf'))  # ω'm'/R_rad
         reciprocal = 1.0/(1.0/q_int_loaded + 1.0/q_rad)
         if abs(reciprocal-qm2) > 1e-9*qm2:           # 倒数分解必须与直接计算相符
             raise AssertionError(f'倒数分解不闭合：{reciprocal} vs {qm2}')
@@ -417,6 +430,11 @@ def _fwhm(freq: np.ndarray, power: np.ndarray) -> float | None:
     return float(right-left)
 
 
+def _format_fwhm(value: float | None) -> str:
+    """Missing crossings are an explicit diagnostic, not a formatting error."""
+    return 'N/A(区间内缺交点)' if value is None else f'{value:.1f}'
+
+
 def report(bvd, radius_m=PISTON_RADIUS_M) -> dict:
     layer = Layer1(bvd, radius_m=radius_m)
     print(f'\n== 2. 基线与导出几何  (a={radius_m*1e3:.2f} mm)')
@@ -443,7 +461,7 @@ def report(bvd, radius_m=PISTON_RADIUS_M) -> dict:
               f'{r.motional_constant_voltage_fwhm_Hz:>10.0f}')
 
     nom = rows['血液 全接触']
-    print('\n== 4. 以「血液 全接触」为标称（建议的格点原点）')
+    print('\n== 4. 以「血液 全接触」为假设比较原点（不更改历史主基准）')
     print(f"{'工况':<16}{'ΔRm':>10}{'Δfs':>10}{'Qm':>10}")
     for label, r in rows.items():
         print(f'{label:<16}{100*(r.rm/nom.rm-1):>+9.1f}%'
@@ -475,7 +493,7 @@ def report(bvd, radius_m=PISTON_RADIUS_M) -> dict:
         print(f'  c_D={cd:6.0f} m/s  L={lay.thickness*1e3:.4f} mm  Qm={r.qm:7.2f}'
               f'  支路FWHM={r.motional_constant_voltage_fwhm_Hz:8.0f} Hz')
 
-    print('\n== 8. 冻结辐射频率 vs 自洽辐射频率（量化该近似的误差）')
+    print('\n== 8. 冻结辐射频率 vs 自洽辐射频率（局部常参数等效差异）')
     print(f"{'工况':<16}{'冻结fs(Hz)':>12}{'自洽fs(Hz)':>12}{'Δfs(Hz)':>10}"
           f"{'冻结Qm':>9}{'自洽Qm':>9}{'ΔQm%':>8}")
     for label, medium, contact in GRID:
@@ -483,6 +501,8 @@ def report(bvd, radius_m=PISTON_RADIUS_M) -> dict:
         b = layer.load(medium, contact, self_consistent=True)
         print(f'{label:<16}{a.fs:>12.1f}{b.fs:>12.1f}{b.fs-a.fs:>10.1f}'
               f'{a.qm:>9.2f}{b.qm:>9.2f}{100*(b.qm/a.qm-1):>+7.2f}%')
+    print('  Q 为局部常参数 RLC 等效值，不等于完整频变辐射模型的系统带宽 Q。')
+    print('  是否可接受需预先定义误差容限；本表不证明闭环验收改善。')
     return rows
 
 
@@ -491,11 +511,12 @@ def report_electrical(model, base_scenario, layer: Layer1) -> None:
     from dataclasses import replace
     print('\n== 9. 电学后果：可交付功率与端口电压解析上界')
     print('  解析上界：机械支路两端为 V_port 时 P = V²R/(R²+X²) ≤ V_rms²/R = V_pp²/(8R)，')
-    print('  与匹配元件如何选择无关。因此它不是「失配」，是端口电压边界下的硬上界。')
+    print('  此上界与匹配元件如何选择无关，但达到端口功率上界不等于输入匹配良好。')
     f = np.arange(800000., 1000000.+100., 100.)
     fw = np.arange(500000., 1500000.+10., 10.)   # 仅用于找半高交点，未改控制器搜索边界
     print(f"\n{'工况':<14}{'峰频Hz':>9}{'安全峰W':>11}{'幅度':>7}{'Vpp':>8}{'mArms':>8}"
-          f"{'限幅':>8}{'130Vpp上界W':>13}{'达上界%':>9}{'170mW所需Vpp':>13}")
+          f"{'限幅':>8}{'130Vpp上界W':>13}{'达上界%':>9}{'170mW所需Vpp':>13}"
+          f"{'|Gamma|代理':>14}{'Pport/Psource%':>16}")
     grid = [('未加载基线', None, None)] + [(lbl, m, c) for lbl, m, c in GRID
                                        if (m, c) in (('air', 1.0), ('blood', 0.25),
                                                      ('blood', 1.0), ('calcif', 1.0))]
@@ -522,16 +543,19 @@ def report_electrical(model, base_scenario, layer: Layer1) -> None:
             limiter = '电流'
         print(f'{label:<14}{f[i]:>9.0f}{power[i]:>11.5f}{amp[i]:>7.3f}{v_at_peak:>8.2f}'
               f'{i_at_peak*1000:>8.3f}{limiter:>8}{bound:>13.5f}'
-              f'{100*power[i]/bound:>8.2f}%{math.sqrt(8*0.170*bvd.rm):>13.2f}')
+              f'{100*power[i]/bound:>8.2f}%{math.sqrt(8*0.170*bvd.rm):>13.2f}'
+              f'{unit["gamma"][i]:>14.4f}'
+              f'{100*unit["p_port_W"][i]/unit["p_source_W"][i]:>16.2f}')
         assert power[i] <= bound*(1+1e-9), '实得功率不得超过解析上界'
         rows.append((label, sc, bvd, lp, power[i]))
+    print('  电学效率含戴维南源电阻损耗；Gamma 仅为输入反射代理，均非声学效率或实测量。')
 
     print('\n== 10. 支路带宽 vs 系统带宽（F4：两者定义不同，不可互换）')
     print(f"{'工况':<14}{'fs/Qm':>10}{'未保护系统FWHM':>16}{'软限安全功率FWHM':>18}")
     for label, sc, bvd, lp, _ in rows:
         print(f'{label:<14}{bvd.fs/bvd.qm:>10.1f}'
-              f'{_fwhm(fw, model.response(fw, sc)["p_rm_W"]):>16.1f}'
-              f'{_fwhm(fw, model.safe_power(fw, sc)):>18.1f}')
+              f'{_format_fwhm(_fwhm(fw, model.response(fw, sc)["p_rm_W"])):>16}'
+              f'{_format_fwhm(_fwhm(fw, model.safe_power(fw, sc))):>18}')
 
     print('\n== 11. 功率含义拆分（F7：Rm′ 合并了内部阻尼与辐射阻）')
     print(f"{'工况':<14}{'总支路W':>11}{'内部耗散W':>12}{'辐射分量W':>12}{'辐射占比':>9}")
