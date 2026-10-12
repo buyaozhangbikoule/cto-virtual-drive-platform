@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "release": "current-unified-20260922",
+  "repository": "https://github.com/buyaozhangbikoule/cto-virtual-drive-platform",
+  "validation_branch": "validation/plan-three-strategy-v1-20260917",
+  "validation_commit": "650abdc87f3fcf10f5d4250aaf520efcfde3b56d",
+  "review_commit_checked": "dd1a58eda1116e54835a97bc0afff519316bc735",
+  "patch_source": "review/patches/plan_three_strategy.scan_fault_taxonomy.patch",
+  "patch_sha256": "4185f657f21c0178383b869417c795ec3db93ecd4ea2d1dc2840cf9d3cc74c95",
+  "patch_status": "APPLIED; 41 behavior tests passed before full batch; adopted patch changes config/controllers/metrics/tests, no existing physical thresholds changed",
+  "upstream_files": [
+    {
+      "path": "README.md",
+      "base_sha256": "559401c4b8b9f40595859e7c2aea063f073e1f34f98aab6edcc3eb33c46184ea",
+      "git_blob": "ebf36e0bba633e0b91756af2d8f0c36dc05b0ad6"
+    },
+    {
+      "path": "requirements.txt",
+      "base_sha256": "0bece1334a6220b95d272cee7a47b0ec32b9daea4cc3316836090d5fae0c22c9",
+      "git_blob": "1708690e3d2f7bdb18f82d71732aed3c2a4d28de"
+    },
+    {
+      "path": "config.json",
+      "base_sha256": "4c906ab1a5750574c26d8cdfc9c2a0828ef414402c6fc895880add4ea3e50bb1",
+      "git_blob": "4c96c7e36d823782abc9c8442ba50c2da23cf6b5"
+    },
+    {
+      "path": "controllers.py",
+      "base_sha256": "194a5c35329de6e7f46eed324cb547dc5a47d16f9fbe847481a5cb9f9caf974a",
+      "git_blob": "a093d275626930253a272a5e32b34a282dfe5c79"
+    },
+    {
+      "path": "engine.py",
+      "base_sha256": "54659dd6fa23f6cdaee330544f774c138f8f73831e7cdbed2aba44a7dc0dd233",
+      "git_blob": "155f3004be81d2b09695a13c0ed8bf7a1ca125eb"
+    },
+    {
+      "path": "metrics.py",
+      "base_sha256": "9c3e09d74e0d16151f2969349415bf797539e92337feb25d5c0e76211f2f2d7e",
+      "git_blob": "b394176807f9c5bbba5c6e1478667315534947df"
+    },
+    {
+      "path": "run_unified.py",
+      "base_sha256": "0e5ca22e022d749796f157fb80771b338d4116d752ca61d2db4537a313223b38",
+      "git_blob": "aadff7555923b756050f4c5ab224c134c9bebc7b"
+    },
+    {
+      "path": "audit_batch.py",
+      "base_sha256": "cab769fdeb8abff13198bc30868d809b2d6c66a44e415d2f6785f790b16bcb42",
+      "git_blob": "ec01de93357fc937280578c2e69d755ef30e3fe9"
+    },
+    {
+      "path": "tests/test_unified.py",
+      "base_sha256": "3021ae800e2a866220894af05d4483c1a5a62ac495fe58f70ca042361193dbd9",
+      "git_blob": "bf8c8445ea6e3507a77d7cd8017da3b2d870edba"
+    },
+    {
+      "path": "models/model_v2_1.py",
+      "base_sha256": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23",
+      "git_blob": "bfee0dcb65c7d82dcc39157cd0dd077a38762d33"
+    },
+    {
+      "path": "stage2_matching/stage2_控制源幅度校准.json",
+      "base_sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4",
+      "git_blob": "3696059f64c6636c4866d4550c613b5700373cd9"
+    },
+    {
+      "path": "stage2_matching/stage2_匹配设计参数.json",
+      "base_sha256": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202",
+      "git_blob": "bb92748ba14c5dd464d436398e8b7b319eba37d0"
+    }
+  ],
+  "platform_backups": [
+    {
+      "path": "README.md",
+      "sha256": "dcdab89126efc48bd1ad52abe3efea04333086b98d3910fa2b1f515a4429bb9c"
+    },
+    {
+      "path": "streamlit_app.py",
+      "sha256": "9e7ab74687ee03e92a47542e2ecef6555809e8b35bc9a329b55d63e76e0e532f"
+    },
+    {
+      "path": "run_all.py",
+      "sha256": "4777c7e55ab9e71b88e74ffaef6edafa6845b15204b18c8dac8c6182fb1d1f84"
+    }
+  ],
+  "frozen_history_files": 1038,
+  "excludes": [
+    "PPT",
+    "speaker_notes",
+    "new_radiation_load",
+    "PI",
+    "P_AND_O",
+    "deembedded_phase"
+  ],
+  "numeric_parameters_changed": false,
+  "github_pushed": false
+}

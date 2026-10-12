@@ -1,0 +1,490 @@
+{
+  "interface_version": "EA_IF_V1.0",
+  "electrical_to_acoustic": [
+    {
+      "name": "interface_version",
+      "unit": "-",
+      "required": true,
+      "meaning": "Data-contract version",
+      "source_class": "interface metadata"
+    },
+    {
+      "name": "record_id",
+      "unit": "-",
+      "required": true,
+      "meaning": "Unique key shared with the acoustic return file",
+      "source_class": "derived identifier"
+    },
+    {
+      "name": "scenario_id",
+      "unit": "-",
+      "required": true,
+      "meaning": "Electrical disturbance scenario identifier",
+      "source_class": "scan variable registry"
+    },
+    {
+      "name": "operating_point_type",
+      "unit": "-",
+      "required": true,
+      "meaning": "Reason for exporting the point",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "parameter_source_class",
+      "unit": "-",
+      "required": true,
+      "meaning": "假设基线值/扫描变量/派生仿真结果",
+      "source_class": "provenance label"
+    },
+    {
+      "name": "electrical_model_id",
+      "unit": "-",
+      "required": true,
+      "meaning": "Electrical model version",
+      "source_class": "model metadata"
+    },
+    {
+      "name": "electrical_model_sha256",
+      "unit": "-",
+      "required": true,
+      "meaning": "Hash of the Python electrical model",
+      "source_class": "generated evidence"
+    },
+    {
+      "name": "phasor_convention",
+      "unit": "-",
+      "required": true,
+      "meaning": "RMS-equivalent phasor convention",
+      "source_class": "interface convention"
+    },
+    {
+      "name": "phase_reference",
+      "unit": "-",
+      "required": true,
+      "meaning": "Ideal Thevenin source voltage is 0 deg",
+      "source_class": "interface convention"
+    },
+    {
+      "name": "excitation_mode",
+      "unit": "-",
+      "required": true,
+      "meaning": "Quantity to impose in the FEM model",
+      "source_class": "interface convention"
+    },
+    {
+      "name": "frequency_Hz",
+      "unit": "Hz",
+      "required": true,
+      "meaning": "Harmonic study frequency",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "amplitude_command",
+      "unit": "p.u.",
+      "required": true,
+      "meaning": "Electrical amplitude command in [0,1]",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "source_Vrms_real",
+      "unit": "V RMS",
+      "required": true,
+      "meaning": "Real part of ideal Thevenin source phasor",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "source_Vrms_imag",
+      "unit": "V RMS",
+      "required": true,
+      "meaning": "Imaginary part of ideal Thevenin source phasor",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "vport_Vrms_real",
+      "unit": "V RMS",
+      "required": true,
+      "meaning": "Terminal-voltage phasor real part; FEM voltage excitation",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "vport_Vrms_imag",
+      "unit": "V RMS",
+      "required": true,
+      "meaning": "Terminal-voltage phasor imaginary part; FEM voltage excitation",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "vport_Vrms_abs",
+      "unit": "V RMS",
+      "required": true,
+      "meaning": "Terminal-voltage phasor magnitude",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "vport_phase_deg",
+      "unit": "deg",
+      "required": true,
+      "meaning": "Terminal-voltage phase relative to ideal source",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "vport_Vpp",
+      "unit": "Vpp",
+      "required": true,
+      "meaning": "2*sqrt(2)*|Vport,RMS|",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "iport_Arms_real",
+      "unit": "A RMS",
+      "required": true,
+      "meaning": "Predicted terminal-current real part; validation only",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "iport_Arms_imag",
+      "unit": "A RMS",
+      "required": true,
+      "meaning": "Predicted terminal-current imaginary part; validation only",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "iport_Arms_abs",
+      "unit": "A RMS",
+      "required": true,
+      "meaning": "Predicted terminal-current magnitude",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "iport_phase_deg",
+      "unit": "deg",
+      "required": true,
+      "meaning": "Predicted terminal-current phase",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zport_ohm_real",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Transducer terminal impedance real part Vport/Iport",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zport_ohm_imag",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Transducer terminal impedance imaginary part",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zport_ohm_abs",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Transducer terminal impedance magnitude",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zport_phase_deg",
+      "unit": "deg",
+      "required": true,
+      "meaning": "Transducer terminal impedance phase",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zin_ohm_real",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Lossy matching-network input impedance real part",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zin_ohm_imag",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Lossy matching-network input impedance imaginary part",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "zin_ohm_abs",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Lossy matching-network input impedance magnitude",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "matching_input_phase_deg",
+      "unit": "deg",
+      "required": true,
+      "meaning": "arg(Zin); not the transducer-port phase",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "p_source_W",
+      "unit": "W",
+      "required": true,
+      "meaning": "Active power supplied by the ideal Thevenin source",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "p_port_W",
+      "unit": "W",
+      "required": true,
+      "meaning": "Electrical active power entering the transducer port",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "q_port_var",
+      "unit": "var",
+      "required": true,
+      "meaning": "Electrical reactive power at the transducer port",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "s_port_VA",
+      "unit": "VA",
+      "required": true,
+      "meaning": "Port apparent-power magnitude",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "p_rm_W",
+      "unit": "W",
+      "required": true,
+      "meaning": "BVD motional-branch dissipation; diagnostic, not acoustic power",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "eta_elec",
+      "unit": "p.u.",
+      "required": true,
+      "meaning": "Pport/Psource; electrical transfer efficiency only",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "reflection_proxy_gamma",
+      "unit": "p.u.",
+      "required": true,
+      "meaning": "|Zin-Rs|/|Zin+Rs|; mismatch proxy, not measured reflected power",
+      "source_class": "derived simulation result"
+    },
+    {
+      "name": "frequency_within_hard_bounds",
+      "unit": "bool",
+      "required": true,
+      "meaning": "0.8-1.0 MHz check",
+      "source_class": "constraint check"
+    },
+    {
+      "name": "voltage_soft_exceeded",
+      "unit": "bool",
+      "required": true,
+      "meaning": "Vport > 130 Vpp",
+      "source_class": "constraint check"
+    },
+    {
+      "name": "voltage_hard_exceeded",
+      "unit": "bool",
+      "required": true,
+      "meaning": "Vport > 160 Vpp",
+      "source_class": "constraint check"
+    },
+    {
+      "name": "current_soft_exceeded",
+      "unit": "bool",
+      "required": true,
+      "meaning": "|Iport| > 5.5 mA RMS",
+      "source_class": "constraint check"
+    },
+    {
+      "name": "current_hard_exceeded",
+      "unit": "bool",
+      "required": true,
+      "meaning": "|Iport| > 6 mA RMS",
+      "source_class": "constraint check"
+    },
+    {
+      "name": "admissible_for_fem_run",
+      "unit": "bool",
+      "required": true,
+      "meaning": "No simulated hard-limit violation",
+      "source_class": "constraint check"
+    },
+    {
+      "name": "electrical_status",
+      "unit": "-",
+      "required": true,
+      "meaning": "Electrical-only record status",
+      "source_class": "generated evidence"
+    }
+  ],
+  "acoustic_to_electrical": [
+    {
+      "name": "interface_version",
+      "unit": "-",
+      "required": true,
+      "meaning": "Must equal the excitation-file version",
+      "source_class": "interface metadata"
+    },
+    {
+      "name": "record_id",
+      "unit": "-",
+      "required": true,
+      "meaning": "Foreign key to the electrical excitation record",
+      "source_class": "interface metadata"
+    },
+    {
+      "name": "solver_name",
+      "unit": "-",
+      "required": true,
+      "meaning": "COMSOL Multiphysics or Ansys Mechanical/Acoustics",
+      "source_class": "solver metadata"
+    },
+    {
+      "name": "solver_version",
+      "unit": "-",
+      "required": true,
+      "meaning": "Exact solver version",
+      "source_class": "solver metadata"
+    },
+    {
+      "name": "solver_model_id",
+      "unit": "-",
+      "required": true,
+      "meaning": "Finite-element model identifier",
+      "source_class": "solver metadata"
+    },
+    {
+      "name": "solver_model_sha256",
+      "unit": "-",
+      "required": false,
+      "meaning": "Hash of exported model/archive if available",
+      "source_class": "generated evidence"
+    },
+    {
+      "name": "mesh_id",
+      "unit": "-",
+      "required": true,
+      "meaning": "Mesh level or mesh hash",
+      "source_class": "solver metadata"
+    },
+    {
+      "name": "frequency_Hz",
+      "unit": "Hz",
+      "required": true,
+      "meaning": "Solved harmonic frequency",
+      "source_class": "solver input echo"
+    },
+    {
+      "name": "terminal_current_Arms_real",
+      "unit": "A RMS",
+      "required": true,
+      "meaning": "FEM terminal-current phasor real part",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "terminal_current_Arms_imag",
+      "unit": "A RMS",
+      "required": true,
+      "meaning": "FEM terminal-current phasor imaginary part",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "terminal_charge_C_real",
+      "unit": "C",
+      "required": false,
+      "meaning": "Electrode charge phasor real part",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "terminal_charge_C_imag",
+      "unit": "C",
+      "required": false,
+      "meaning": "Electrode charge phasor imaginary part",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "z_fem_ohm_real",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Vport/Iterminal real part",
+      "source_class": "derived from FEM output"
+    },
+    {
+      "name": "z_fem_ohm_imag",
+      "unit": "ohm",
+      "required": true,
+      "meaning": "Vport/Iterminal imaginary part",
+      "source_class": "derived from FEM output"
+    },
+    {
+      "name": "relative_acoustic_efficiency",
+      "unit": "p.u.",
+      "required": false,
+      "meaning": "Relative acoustic metric normalized to a declared reference case",
+      "source_class": "derived from FEM lookup"
+    },
+    {
+      "name": "max_displacement_m",
+      "unit": "m",
+      "required": true,
+      "meaning": "Maximum structural displacement magnitude",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "reference_displacement_phase_deg",
+      "unit": "deg",
+      "required": false,
+      "meaning": "Phase at a declared structural probe",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "target_pressure_Pa_rms",
+      "unit": "Pa RMS",
+      "required": true,
+      "meaning": "Pressure magnitude at a declared acoustic target probe",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "target_pressure_phase_deg",
+      "unit": "deg",
+      "required": false,
+      "meaning": "Pressure phase at the target probe",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "wall_pressure_Pa_rms",
+      "unit": "Pa RMS",
+      "required": false,
+      "meaning": "Pressure at a declared wall/off-target probe",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "radiated_acoustic_power_W",
+      "unit": "W",
+      "required": false,
+      "meaning": "Integrated acoustic intensity over a declared surface",
+      "source_class": "FEM solver output"
+    },
+    {
+      "name": "mesh_convergence_metric_pct",
+      "unit": "%",
+      "required": true,
+      "meaning": "Declared mesh-convergence change",
+      "source_class": "FEM verification output"
+    },
+    {
+      "name": "solver_status",
+      "unit": "-",
+      "required": true,
+      "meaning": "NOT_RUN/PASS/FAIL",
+      "source_class": "solver evidence"
+    },
+    {
+      "name": "solver_log_path",
+      "unit": "-",
+      "required": true,
+      "meaning": "Path to the solver completion log",
+      "source_class": "solver evidence"
+    }
+  ]
+}

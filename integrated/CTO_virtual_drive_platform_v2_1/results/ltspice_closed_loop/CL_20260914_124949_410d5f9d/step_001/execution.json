@@ -1,0 +1,16 @@
+{
+  "started_at": "2026-09-14T12:50:03.883038+08:00",
+  "command": [
+    "D:\\LTspice.exe",
+    "-b",
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\ltspice_closed_loop\\CL_20260914_124949_410d5f9d\\step_001\\circuit.cir"
+  ],
+  "cir_sha256": "ac53acb0b9faea08c0ace9858d4987fe245c65f85a94e99f82c44efc4ce0e0fd",
+  "return_code": 0,
+  "wall_seconds": 17.212035099975765,
+  "stdout": "",
+  "stderr": "",
+  "raw_sha256": "86c260ef928ae066df2500377cbdaea89303204a937e5c4060347a63bf8b79bf",
+  "raw_bytes": 70002178,
+  "log_sha256": "15ee0385500cc5e9bbadd266ec60b1ad8c40861e4c466f9ef844c96b25d6f9f6"
+}

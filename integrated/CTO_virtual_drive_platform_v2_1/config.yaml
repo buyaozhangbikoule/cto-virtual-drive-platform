@@ -1,0 +1,237 @@
+{
+  "schema_version": "1.0",
+  "project": {
+    "name": "CTO超声换能器虚拟阻抗建模与自适应驱动控制",
+    "platform_version": "v2.1-organized",
+    "model_id": "MODEL_V2_1_HYPOTHETICAL",
+    "positioning": "研究型、可复现的离散准稳态电学仿真平台原型",
+    "scope": "小信号线性BVD+有损L型匹配；无实测、声场、热、空化、临床或硬件实时结论",
+    "source_model": "戴维南电压源+串联源阻抗Rs；不是完整开关功放模型"
+  },
+  "declared_parameters": {
+    "frequency_search_Hz": {"value": [800000.0, 1000000.0], "source_type": "用户给定工作范围；作为仿真控制硬边界"},
+    "initial_frequency_Hz": {"value": 900000.0, "source_type": "用户给定初始工作频率"},
+    "source_resistance_ohm": {"value": 50.0, "source_type": "戴维南源阻抗的假设基线值"},
+    "transducer_voltage_target_Vpp": {"value": 100.0, "source_type": "用户给定换能器端仿真工作目标"},
+    "voltage_soft_limit_Vpp": {"value": 130.0, "source_type": "假设控制阈值"},
+    "voltage_hard_limit_Vpp": {"value": 160.0, "source_type": "用户给定换能器端仿真电压边界；非器件额定值"},
+    "current_target_Arms": {"value": 0.005, "source_type": "用户给定约5 mA量级；本次按RMS解释为假设口径"},
+    "current_soft_limit_Arms": {"value": 0.0055, "source_type": "假设控制阈值"},
+    "current_hard_limit_Arms": {"value": 0.006, "source_type": "假设控制阈值"},
+    "measured_data_available": {"value": false, "source_type": "项目事实"},
+    "Lm_only_levels_pct": {"value": [5, 10, 20], "source_type": "扫描变量；其余BVD元件冻结，fs/Qm派生"},
+    "Cm_only_levels_pct": {"value": [5, 10, 20], "source_type": "扫描变量；其余BVD元件冻结，fs/Qm派生"}
+  },
+  "runtime": {
+    "python_minimum": "3.10",
+    "ltspice_executable": "D:/LTspice.exe",
+    "required_python_packages": ["numpy", "scipy", "matplotlib"]
+  },
+  "pipeline": [
+    {
+      "id": "stage1_ltspice",
+      "title": "阶段一：重新运行裸BVD LTspice网表",
+      "action": "ltspice_batch",
+      "netlists": ["../outputs/v2_self_consistent_rebuild/ltspice_stage1/V2_1_BARE_BVD_Q800.cir"]
+    },
+    {
+      "id": "stage1_analyze",
+      "title": "阶段一：解析RAW并与Python交叉验证",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/ltspice_stage1/analyze_v2_1_stage1.py"
+    },
+    {
+      "id": "stage2_design",
+      "title": "阶段二：重建设计参数和匹配网表",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/stage2_matching/design_stage2.py"
+    },
+    {
+      "id": "stage2_ltspice",
+      "title": "阶段二：相同源条件下运行匹配前后网表",
+      "action": "ltspice_batch",
+      "netlists": [
+        "../outputs/v2_self_consistent_rebuild/stage2_matching/V2_1_MATCH_BEFORE.cir",
+        "../outputs/v2_self_consistent_rebuild/stage2_matching/V2_1_MATCH_IDEAL.cir",
+        "../outputs/v2_self_consistent_rebuild/stage2_matching/V2_1_MATCH_ACTIVE_LOSSY.cir"
+      ]
+    },
+    {
+      "id": "stage2_analyze",
+      "title": "阶段二：匹配网络LTspice/Python交叉验证",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/stage2_matching/analyze_stage2_ltspice.py"
+    },
+    {
+      "id": "stage3_disturbance",
+      "title": "阶段三：单因素、组合扰动及选定场景LTspice验证",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/active_stage3_5/run_stage3_disturbance.py"
+    },
+    {
+      "id": "stage3_cm_only_figure",
+      "title": "阶段三：机械支路电容Cm-only功率与电气约束专项图",
+      "action": "python",
+      "script": "scripts/plot_cm_only_power_safety.py"
+    },
+    {
+      "id": "stage3_selection",
+      "title": "阶段三：三种选频准则及步长/窗口比较",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/active_stage3_5/run_stage3_selection.py"
+    },
+    {
+      "id": "stage4_5_control",
+      "title": "阶段四至五：历史固定/扫频/P&O扩展比较，尚非计划三策略统一验收",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/active_stage3_5/run_stage4_5_control.py"
+    },
+    {
+      "id": "phase_ablation",
+      "title": "计划要求的相位闭环已有单独结果，统一三策略验收待完成",
+      "action": "python",
+      "script": "../outputs/v2_self_consistent_rebuild/active_stage3_5/run_phase_ablation.py"
+    },
+    {
+      "id": "constrained_control_audit",
+      "title": "审核是否已由找峰值升级为带约束控制",
+      "action": "python",
+      "script": "scripts/audit_constrained_control.py"
+    },
+    {
+      "id": "electro_acoustic_interface",
+      "title": "导出电学—结构/声场标准化接口与空白回传模板",
+      "action": "python",
+      "script": "scripts/export_electro_acoustic_interface.py"
+    },
+    {
+      "id": "plan_phase_comparison",
+      "title": "补充计划书口径的固定—扫频—相位同时间表比较",
+      "action": "python",
+      "script": "scripts/build_plan_phase_comparison.py"
+    },
+    {
+      "id": "plan_control_coupling_audit",
+      "title": "逐条审核计划书控制与声场耦合要求",
+      "action": "python",
+      "script": "scripts/audit_plan_controls_and_coupling.py"
+    }
+  ],
+  "collection_rules": [
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5",
+      "patterns": ["model_v2_1.py"],
+      "target": "models/python",
+      "source_type": "假设模型源代码"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/ltspice_stage1",
+      "patterns": ["*.cir"],
+      "target": "models/ltspice/stage1",
+      "source_type": "LTspice网表"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/stage2_matching",
+      "patterns": ["*.cir", "stage2_匹配设计参数.json", "stage2_控制源幅度校准.json"],
+      "target": "models/ltspice/stage2",
+      "source_type": "LTspice网表/派生匹配参数"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance",
+      "patterns": ["stage3_scenario_registry_and_summary.csv", "stage3_trend_table.csv", "stage3_Qm_500_800_1000_summary.csv"],
+      "target": "scenarios",
+      "source_type": "扫描变量与派生结果"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/ltspice_stage1",
+      "patterns": ["*.raw", "*.log", "*_audit.json", "*_交叉验证.csv"],
+      "target": "evidence/ltspice/stage1",
+      "source_type": "真实LTspice批处理输出/审核文件"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/stage2_matching",
+      "patterns": ["*.raw", "*.log", "stage2_audit.json", "stage2_LTspice_解析交叉验证.csv", "stage2_LTspice_RAW文件哈希.csv"],
+      "target": "evidence/ltspice/stage2",
+      "source_type": "真实LTspice批处理输出/审核文件"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance/ltspice_validation",
+      "patterns": ["*.raw", "*.log", "*.cir"],
+      "target": "evidence/ltspice/stage3_selected_cases",
+      "source_type": "真实LTspice批处理输出/网表"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/ltspice_stage1",
+      "patterns": ["*.png"],
+      "target": "figures/stage1",
+      "source_type": "由真实LTspice RAW与解析模型生成的图"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/stage2_matching",
+      "patterns": ["*.png"],
+      "target": "figures/stage2",
+      "source_type": "由真实LTspice RAW与解析模型生成的图"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance",
+      "patterns": ["*.png", "*.pdf", "*.svg"],
+      "target": "figures/stage3_disturbance",
+      "source_type": "仿真数据派生图"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_selection",
+      "patterns": ["*.png", "*.pdf", "*.svg"],
+      "target": "figures/stage3_selection",
+      "source_type": "仿真数据派生图"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage4_5_control",
+      "patterns": ["*.png", "*.pdf", "*.svg"],
+      "target": "figures/stage4_5",
+      "source_type": "离散准稳态控制仿真派生图"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_disturbance",
+      "patterns": ["*.csv", "*audit.json"],
+      "exclude_patterns": ["stage3_frequency_response_all_cases.csv"],
+      "target": "results/tables/stage3_disturbance",
+      "source_type": "扫描变量与派生结果"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage3_selection",
+      "patterns": ["*.csv", "*.json", "*.md"],
+      "target": "results/tables/stage3_selection",
+      "source_type": "选频分析派生结果"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage4_5_control",
+      "patterns": ["*.csv", "*.json", "*.md"],
+      "target": "results/tables/stage4_5",
+      "source_type": "控制仿真派生结果"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5/stage4_5_control/phase_ablation",
+      "patterns": ["*.csv", "*.json", "*.png", "*.pdf", "*.svg"],
+      "target": "results/phase_ablation",
+      "source_type": "相位闭环消融结果"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/active_stage3_5",
+      "patterns": ["run_stage3_disturbance.py", "run_stage3_selection.py", "run_stage4_5_control.py", "run_phase_ablation.py", "model_v2_1.py"],
+      "target": "scripts/archived_sources/stage3_5",
+      "source_type": "运行脚本快照"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/stage2_matching",
+      "patterns": ["design_stage2.py", "analyze_stage2_ltspice.py"],
+      "target": "scripts/archived_sources/stage2",
+      "source_type": "运行脚本快照"
+    },
+    {
+      "source": "../outputs/v2_self_consistent_rebuild/ltspice_stage1",
+      "patterns": ["analyze_v2_stage1.py", "analyze_v2_1_stage1.py"],
+      "target": "scripts/archived_sources/stage1",
+      "source_type": "运行脚本快照"
+    }
+  ]
+}

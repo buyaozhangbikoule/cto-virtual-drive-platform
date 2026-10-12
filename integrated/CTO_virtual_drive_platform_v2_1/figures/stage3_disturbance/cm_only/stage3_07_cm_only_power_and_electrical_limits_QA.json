@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "backend": "Python/matplotlib only",
+  "core_conclusion": "Within the frozen v2.1 hypothetical circuit, increasing motional capacitance Cm shifts the P_Rm peak to lower frequency and lowers its height; electrical-limit panels are needed before discussing admissibility.",
+  "evidence_chain": {
+    "power_panel": "peak direction, magnitude and 0.1 kHz display precision",
+    "voltage_panel": "unlimited-scan Vpp envelope against 130/160 Vpp assumed thresholds",
+    "current_panel": "unlimited-scan Irms envelope against 5.5/6 mA assumed thresholds"
+  },
+  "archetype": "quantitative hero panel plus two constraint evidence panels",
+  "source_data": [
+    "results\\tables\\stage3_disturbance\\stage3_cm_only_power_safety_summary.csv",
+    "results\\tables\\stage3_disturbance\\stage3_cm_only_power_safety_curves.csv"
+  ],
+  "source_scope": "deterministic hypothetical MODEL_V2_1_HYPOTHETICAL; not measured data",
+  "statistics": "No error bars or hypothesis tests because this is a deterministic parameter sweep, not replicated experimental sampling.",
+  "display_precision": {
+    "frequency_MHz": 4,
+    "power_mW": 1,
+    "scan_step_Hz": 100
+  },
+  "naming": {
+    "Cm": "motional capacitance C_m (Cm-only)",
+    "Cmatch": "matching capacitance C_match"
+  },
+  "single_factor_interpretation": "Only the original Cm component changes; derived fs and Qm change accordingly.",
+  "ltspice_cross_validation": "CASE_CM_P20 has representative LTspice/Python validation in the existing stage-3 evidence bundle.",
+  "review_risks": [
+    "Do not call the soft/hard electrical thresholds measured device safety ratings.",
+    "Do not infer acoustic or clinical safety from the electrical-limit panels.",
+    "Do not interpret four-decimal MHz labels as accuracy beyond the 0.1 kHz scan grid."
+  ]
+}

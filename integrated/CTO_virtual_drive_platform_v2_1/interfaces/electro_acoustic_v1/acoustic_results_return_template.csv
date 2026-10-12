@@ -1,0 +1,5 @@
+﻿interface_version,record_id,solver_name,solver_version,solver_model_id,solver_model_sha256,mesh_id,frequency_Hz,terminal_current_Arms_real,terminal_current_Arms_imag,terminal_charge_C_real,terminal_charge_C_imag,z_fem_ohm_real,z_fem_ohm_imag,relative_acoustic_efficiency,max_displacement_m,reference_displacement_phase_deg,target_pressure_Pa_rms,target_pressure_phase_deg,wall_pressure_Pa_rms,radiated_acoustic_power_W,mesh_convergence_metric_pct,solver_status,solver_log_path
+EA_IF_V1.0,EA_V1_CASE_000_BASELINE_SAFE_POWER_PEAK,,,,,,900000.0,,,,,,,,,,,,,,,NOT_RUN,
+EA_IF_V1.0,EA_V1_CASE_COMBINED_LOW_SAFE_POWER_PEAK,,,,,,890900.0,,,,,,,,,,,,,,,NOT_RUN,
+EA_IF_V1.0,EA_V1_CASE_COMBINED_MEDIUM_SAFE_POWER_PEAK,,,,,,872900.0,,,,,,,,,,,,,,,NOT_RUN,
+EA_IF_V1.0,EA_V1_CASE_COMBINED_HIGH_SAFE_POWER_PEAK,,,,,,854900.0,,,,,,,,,,,,,,,NOT_RUN,

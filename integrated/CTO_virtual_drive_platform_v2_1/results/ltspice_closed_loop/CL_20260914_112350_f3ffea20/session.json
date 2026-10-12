@@ -1,0 +1,102 @@
+{
+  "status": "COMPLETE",
+  "next_command": {
+    "frequency_hz": 900500.0,
+    "amplitude": 0.4
+  },
+  "controller": {
+    "direction": 1,
+    "previous": 0.16992116869635288,
+    "hold_left": 0,
+    "trip": false
+  },
+  "records": [
+    {
+      "iteration": 0,
+      "time_s": 0.001,
+      "command": {
+        "frequency_hz": 899000.0,
+        "amplitude": 0.4
+      },
+      "measurement": {
+        "vpp": 59.45509338378906,
+        "irms_A": 0.002156022811468884,
+        "p_port_W": 0.014697106592724525,
+        "phase_port_deg": -71.09588959464924,
+        "p_rm_W": 0.014623428902174083,
+        "max_window_vpp": 59.45509338378906,
+        "max_window_irms_A": 0.0021563105681195326,
+        "tail_window_s": 0.0002,
+        "protection_window_s": 5e-05,
+        "raw_points": 2000033
+      },
+      "next_command": {
+        "frequency_hz": 899500.0,
+        "amplitude": 0.4
+      },
+      "state": "TRACK",
+      "reason": "建立实测功率参考，试探下一频点",
+      "frequency_saturated": false,
+      "raw_sha256": "5cf69ecf9bdaea8f0917c5763db5edf7236c4db598207418f8ef6ac1d38aa7b9",
+      "wall_seconds": 13.41091229999438
+    },
+    {
+      "iteration": 1,
+      "time_s": 0.002,
+      "command": {
+        "frequency_hz": 899500.0,
+        "amplitude": 0.4
+      },
+      "measurement": {
+        "vpp": 48.27841758728027,
+        "irms_A": 0.0022359596094055547,
+        "p_port_W": 0.022514350215435214,
+        "phase_port_deg": -53.82111867882236,
+        "p_rm_W": 0.022415744641908496,
+        "max_window_vpp": 59.45180320739746,
+        "max_window_irms_A": 0.0022361272749445125,
+        "tail_window_s": 0.0002,
+        "protection_window_s": 5e-05,
+        "raw_points": 2500040
+      },
+      "next_command": {
+        "frequency_hz": 900000.0,
+        "amplitude": 0.4
+      },
+      "state": "TRACK",
+      "reason": "RAW测得功率未显著下降：保持搜索方向",
+      "frequency_saturated": false,
+      "raw_sha256": "b16ffa99bf37f1e81f50ea083664a3ef5916a47d5de55ffe66ee01829398a9be",
+      "wall_seconds": 16.32403359998716
+    },
+    {
+      "iteration": 2,
+      "time_s": 0.003,
+      "command": {
+        "frequency_hz": 900000.0,
+        "amplitude": 0.4
+      },
+      "measurement": {
+        "vpp": 40.11143493652344,
+        "irms_A": 0.0019871296124644986,
+        "p_port_W": 0.027187386991416467,
+        "phase_port_deg": -15.198969980648327,
+        "p_rm_W": 0.02704492952954026,
+        "max_window_vpp": 48.27583885192871,
+        "max_window_irms_A": 0.002189268919134381,
+        "tail_window_s": 0.0002,
+        "protection_window_s": 5e-05,
+        "raw_points": 3000048
+      },
+      "next_command": {
+        "frequency_hz": 900500.0,
+        "amplitude": 0.4
+      },
+      "state": "TRACK",
+      "reason": "RAW测得功率未显著下降：保持搜索方向",
+      "frequency_saturated": false,
+      "raw_sha256": "844c4738f7fc8813c63022511f1739028aa4efbee9103795975cc99a1469709e",
+      "wall_seconds": 20.00579739996465
+    }
+  ]
+}

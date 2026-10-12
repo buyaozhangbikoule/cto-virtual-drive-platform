@@ -1,0 +1,79 @@
+test_actual_current_batch (test_catalog.CatalogTests.test_actual_current_batch) ... ok
+test_changed_receipt_after_registration_rejected (test_catalog.CatalogTests.test_changed_receipt_after_registration_rejected) ... ok
+test_failed_audit_rejected (test_catalog.CatalogTests.test_failed_audit_rejected) ... ok
+test_fallback_steady_error_rejected (test_catalog.CatalogTests.test_fallback_steady_error_rejected) ... ok
+test_incomplete_target_coverage_rejected (test_catalog.CatalogTests.test_incomplete_target_coverage_rejected) ... ok
+test_missing_data_rejected (test_catalog.CatalogTests.test_missing_data_rejected) ... ok
+test_no_implicit_newest_fallback (test_catalog.CatalogTests.test_no_implicit_newest_fallback) ... ok
+test_noncurrent_output_rejected (test_catalog.CatalogTests.test_noncurrent_output_rejected) ... ok
+test_old_p_and_o_strategy_rejected (test_catalog.CatalogTests.test_old_p_and_o_strategy_rejected) ... ok
+test_path_escape_rejected (test_catalog.CatalogTests.test_path_escape_rejected) ... ok
+test_scan_failure_count_recomputed (test_catalog.CatalogTests.test_scan_failure_count_recomputed) ... ok
+test_tamper_rejected (test_catalog.CatalogTests.test_tamper_rejected) ... ok
+test_valid_complete_batch_registers (test_catalog.CatalogTests.test_valid_complete_batch_registers) ... ok
+test_ast_reads_keyword_and_media_without_execution (test_parameter_sources.ParameterSourceTests.test_ast_reads_keyword_and_media_without_execution) ... ok
+test_binding_cannot_escape_platform (test_parameter_sources.ParameterSourceTests.test_binding_cannot_escape_platform) ... ok
+test_changed_value_not_silently_adopted (test_parameter_sources.ParameterSourceTests.test_changed_value_not_silently_adopted) ... ok
+test_design_quantities_not_component_ratings (test_parameter_sources.ParameterSourceTests.test_design_quantities_not_component_ratings) ... ok
+test_display_conversions_and_scan_units (test_parameter_sources.ParameterSourceTests.test_display_conversions_and_scan_units) ... ok
+test_duplicate_id_rejected (test_parameter_sources.ParameterSourceTests.test_duplicate_id_rejected) ... ok
+test_every_numeric_config_input_registered (test_parameter_sources.ParameterSourceTests.test_every_numeric_config_input_registered) ... ok
+test_export_complete_and_load_does_not_mutate_input (test_parameter_sources.ParameterSourceTests.test_export_complete_and_load_does_not_mutate_input) ... ok
+test_missing_field_fails_closed (test_parameter_sources.ParameterSourceTests.test_missing_field_fails_closed) ... ok
+test_missing_source_surfaces_failure (test_parameter_sources.ParameterSourceTests.test_missing_source_surfaces_failure) ... ok
+test_pending_range_is_not_a_literature_default (test_parameter_sources.ParameterSourceTests.test_pending_range_is_not_a_literature_default) ... ok
+test_reference_load_defaults_untouched (test_parameter_sources.ParameterSourceTests.test_reference_load_defaults_untouched) ... ok
+test_removed_registration_is_detected (test_parameter_sources.ParameterSourceTests.test_removed_registration_is_detected) ... ok
+test_required_metadata_and_sources_present (test_parameter_sources.ParameterSourceTests.test_required_metadata_and_sources_present) ... ok
+test_saijo_keeps_units_sd_frequency_and_no_density (test_parameter_sources.ParameterSourceTests.test_saijo_keeps_units_sd_frequency_and_no_density) ... ok
+test_saijo_may_not_be_bound_or_adopted (test_parameter_sources.ParameterSourceTests.test_saijo_may_not_be_bound_or_adopted) ... ok
+test_source_amplitude_uses_runtime_calibration_not_design_rounding (test_parameter_sources.ParameterSourceTests.test_source_amplitude_uses_runtime_calibration_not_design_rounding) ... ok
+test_pending_range_and_empty_search (test_parameter_sources_ui.ProvenanceUITests.test_pending_range_and_empty_search) ... 2026-10-06 07:32:46.618 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_sources_page_and_saijo_details (test_parameter_sources_ui.ProvenanceUITests.test_sources_page_and_saijo_details) ... 2026-10-06 07:32:50.990 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_switch_groups_resets_selection_safely (test_parameter_sources_ui.ProvenanceUITests.test_switch_groups_resets_selection_safely) ... 2026-10-06 07:32:54.252 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_default_current_results_and_selection (test_ui.UITests.test_default_current_results_and_selection) ... 2026-10-06 07:32:58.331 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_legacy_page_remains_available (test_ui.UITests.test_legacy_page_remains_available) ... 2026-10-06 07:33:04.576 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_version_and_experimental_pages (test_ui.UITests.test_version_and_experimental_pages) ... 2026-10-06 07:33:11.317 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+
+----------------------------------------------------------------------
+Ran 36 tests in 38.972s
+
+OK
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\current\\ui_test_tmp\\tmp8yidv28v'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 939, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 906, in onexc
+    _resetperms(path)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\current\\ui_test_tmp\\tmp8yidv28v'

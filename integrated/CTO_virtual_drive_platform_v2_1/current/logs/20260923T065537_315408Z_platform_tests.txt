@@ -1,0 +1,56 @@
+test_actual_current_batch (test_catalog.CatalogTests.test_actual_current_batch) ... ok
+test_changed_receipt_after_registration_rejected (test_catalog.CatalogTests.test_changed_receipt_after_registration_rejected) ... ok
+test_failed_audit_rejected (test_catalog.CatalogTests.test_failed_audit_rejected) ... ok
+test_fallback_steady_error_rejected (test_catalog.CatalogTests.test_fallback_steady_error_rejected) ... ok
+test_incomplete_target_coverage_rejected (test_catalog.CatalogTests.test_incomplete_target_coverage_rejected) ... ok
+test_missing_data_rejected (test_catalog.CatalogTests.test_missing_data_rejected) ... ok
+test_no_implicit_newest_fallback (test_catalog.CatalogTests.test_no_implicit_newest_fallback) ... ok
+test_noncurrent_output_rejected (test_catalog.CatalogTests.test_noncurrent_output_rejected) ... ok
+test_old_p_and_o_strategy_rejected (test_catalog.CatalogTests.test_old_p_and_o_strategy_rejected) ... ok
+test_path_escape_rejected (test_catalog.CatalogTests.test_path_escape_rejected) ... ok
+test_scan_failure_count_recomputed (test_catalog.CatalogTests.test_scan_failure_count_recomputed) ... ok
+test_tamper_rejected (test_catalog.CatalogTests.test_tamper_rejected) ... ok
+test_valid_complete_batch_registers (test_catalog.CatalogTests.test_valid_complete_batch_registers) ... ok
+test_default_current_results_and_selection (test_ui.UITests.test_default_current_results_and_selection) ... 2026-09-23 02:55:54.580 WARNING streamlit.runtime.scriptrunner_utils.script_run_context: Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_legacy_page_remains_available (test_ui.UITests.test_legacy_page_remains_available) ... 2026-09-23 02:56:09.033 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+test_version_and_experimental_pages (test_ui.UITests.test_version_and_experimental_pages) ... 2026-09-23 02:56:15.066 Thread 'MainThread': missing ScriptRunContext! This warning can be ignored when running in bare mode.
+ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 35.540s
+
+OK
+Traceback (most recent call last):
+  File "<frozen os>", line 366, in walk
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\current\\ui_test_tmp\\tmpht566w5_'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\weakref.py", line 666, in _exitfunc
+    f()
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\weakref.py", line 590, in __call__
+    return info.func(*info.args, **(info.kwargs or {}))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 939, in _cleanup
+    cls._rmtree(name, ignore_errors=ignore_errors)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 934, in _rmtree
+    _shutil.rmtree(name, onexc=onexc)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 781, in rmtree
+    return _rmtree_unsafe(path, onexc)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 623, in _rmtree_unsafe
+    for dirpath, dirnames, filenames in results:
+                                        ^^^^^^^
+  File "<frozen os>", line 369, in walk
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\shutil.py", line 621, in onerror
+    onexc(os.scandir, err.filename, err)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 906, in onexc
+    _resetperms(path)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 286, in _resetperms
+    _dont_follow_symlinks(_os.chmod, path, 0o700)
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.12_3.12.2800.0_x64__qbz5n2kfra8p0\Lib\tempfile.py", line 277, in _dont_follow_symlinks
+    func(path, *args)
+PermissionError: [WinError 5] 拒绝访问。: 'C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\current\\ui_test_tmp\\tmpht566w5_'

@@ -1,0 +1,20 @@
+LTspice 26.0.2 for Windows
+Circuit: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\CTO_virtual_drive_platform_v2_1\results\ltspice_closed_loop\CL_20260914_112350_f3ffea20\step_001\circuit.cir
+Start Time: Mon Sep 14 11:24:05 2026
+Options:plotwinsize=0 reltol=0.0001 abstol=1p vntol=0.1u
+solver = Normal
+Maximum thread count: 16
+tnom = 27
+temp = 27
+method = trap
+reltol = 0.0001
+volttol = 1e-07
+Direct Newton iteration succeeded in finding operating point.
+Total elapsed time: 15.252 seconds.
+
+Files loaded:
+C:\Users\24739\Documents\Codex\2026-08-10\new-chat\CTO_virtual_drive_platform_v2_1\results\ltspice_closed_loop\CL_20260914_112350_f3ffea20\step_001\circuit.cir
+
+tail_vpp: PP(V(n_port) )=48.2784175873 FROM 0.0048 TO 0.005
+tail_irms: RMS(I(Vprobe) )=0.00223593569714 FROM 0.0048 TO 0.005
+tail_port_power: AVG((V(n_port)*I(Vprobe)) )=0.0225138680863 FROM 0.0048 TO 0.005

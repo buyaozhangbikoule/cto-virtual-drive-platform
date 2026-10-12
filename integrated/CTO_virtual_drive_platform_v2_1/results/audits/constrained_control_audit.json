@@ -1,0 +1,131 @@
+{
+  "generated_at_utc": "2026-09-01T09:58:18.096457+00:00",
+  "status": "CONSTRAINED_CONTROL_CONFIRMED_WITH_LIMITATIONS",
+  "model_scope": "hypothetical small-signal linear BVD plus lossy L-match; discrete quasi-steady simulation",
+  "objective": "maximize motional active power P_Rm under simulated frequency, voltage and current constraints",
+  "checks": {
+    "frequency_hard_boundary_enforced": true,
+    "voltage_and_current_hard_limits_enforced_in_saved_timeline": true,
+    "amplitude_foldback_or_recovery_present": true,
+    "adaptive_strategies_change_frequency": true,
+    "protection_state_machine_exercised": true,
+    "constrained_power_objective_is_scored": true,
+    "reflection_proxy_is_observed_by_detector": true,
+    "reflection_proxy_has_independent_hard_operating_limit": false
+  },
+  "strategy_evidence": [
+    {
+      "strategy": "FIXED_0P9",
+      "control_sample_count": 320,
+      "frequency_min_Hz": 900000.0,
+      "frequency_max_Hz": 900000.0,
+      "frequency_changed": false,
+      "amplitude_min": 0.0,
+      "amplitude_max": 1.0,
+      "amplitude_was_reduced": true,
+      "peak_vport_Vpp": 130.0,
+      "peak_iport_Arms": 0.005124166251178052,
+      "actual_hard_violation_count": 0,
+      "frequency_saturated_sample_count": 0,
+      "safe_power_capture_available": true,
+      "minimum_safe_power_capture_pct": 0.0,
+      "protection_states_observed": [
+        "HARD_TRIP",
+        "NORMAL",
+        "RAMP_UP",
+        "RECOVERY_HOLD",
+        "SOFT_FOLDBACK"
+      ]
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "control_sample_count": 277,
+      "frequency_min_Hz": 854800.0,
+      "frequency_max_Hz": 900300.0,
+      "frequency_changed": true,
+      "amplitude_min": 0.0,
+      "amplitude_max": 1.0,
+      "amplitude_was_reduced": true,
+      "peak_vport_Vpp": 130.0,
+      "peak_iport_Arms": 0.005124166251178052,
+      "actual_hard_violation_count": 0,
+      "frequency_saturated_sample_count": 0,
+      "safe_power_capture_available": true,
+      "minimum_safe_power_capture_pct": 0.0,
+      "protection_states_observed": [
+        "HARD_TRIP",
+        "NORMAL",
+        "RAMP_UP",
+        "RECOVERY_HOLD",
+        "SOFT_FOLDBACK"
+      ]
+    },
+    {
+      "strategy": "P_AND_O",
+      "control_sample_count": 267,
+      "frequency_min_Hz": 854800.0,
+      "frequency_max_Hz": 900300.0,
+      "frequency_changed": true,
+      "amplitude_min": 0.0,
+      "amplitude_max": 1.0,
+      "amplitude_was_reduced": true,
+      "peak_vport_Vpp": 130.0,
+      "peak_iport_Arms": 0.005124166251178052,
+      "actual_hard_violation_count": 0,
+      "frequency_saturated_sample_count": 0,
+      "safe_power_capture_available": true,
+      "minimum_safe_power_capture_pct": 0.0,
+      "protection_states_observed": [
+        "HARD_TRIP",
+        "NORMAL",
+        "RAMP_UP",
+        "RECOVERY_HOLD",
+        "SOFT_FOLDBACK"
+      ]
+    }
+  ],
+  "constraint_register": [
+    {
+      "constraint": "frequency",
+      "bound": "0.8-1.0 MHz",
+      "role": "hard command boundary",
+      "implemented": true
+    },
+    {
+      "constraint": "port voltage",
+      "bound": "130 Vpp soft / 160 Vpp hard",
+      "role": "foldback and predictive hard clipping",
+      "implemented": true
+    },
+    {
+      "constraint": "port current",
+      "bound": "5.5 mA RMS soft / 6 mA RMS hard",
+      "role": "foldback and predictive hard clipping",
+      "implemented": true
+    },
+    {
+      "constraint": "amplitude command",
+      "bound": "0-1",
+      "role": "foldback, hold and ramp-up",
+      "implemented": true
+    },
+    {
+      "constraint": "reflection proxy",
+      "bound": "relative/absolute detector threshold",
+      "role": "disturbance vote and reacquisition trigger",
+      "implemented": true
+    },
+    {
+      "constraint": "reflection proxy",
+      "bound": "independent hard operating limit",
+      "role": "direct foldback/trip",
+      "implemented": false
+    }
+  ],
+  "interpretation": [
+    "The adaptive strategies are not pure offline argmax calls: frequency commands are bounded and amplitude/protection states alter the applied operating point.",
+    "Safe-power optima are used for simulation scoring; the online detector does not read the true disturbance time or true optimum.",
+    "Gamma is a model-based mismatch proxy, not measured reflected RF power, and currently has no independent hard trip limit.",
+    "Passing this audit is not hardware validation or a clinical safety claim."
+  ]
+}

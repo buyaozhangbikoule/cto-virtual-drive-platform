@@ -1,0 +1,20 @@
+test_01_original_special_function_cross_check (__main__.Regression.test_01_original_special_function_cross_check) ... ok
+test_02_special_function_boundaries (__main__.Regression.test_02_special_function_boundaries) ... ok
+test_03_frozen_direct_mapping_36_cases (__main__.Regression.test_03_frozen_direct_mapping_36_cases) ... ok
+test_04_self_consistent_direct_mechanical_root (__main__.Regression.test_04_self_consistent_direct_mechanical_root) ... ok
+test_05_q_decomposition_and_intrinsic_q_variants (__main__.Regression.test_05_q_decomposition_and_intrinsic_q_variants) ... ok
+test_06_corrected_q_regression (__main__.Regression.test_06_corrected_q_regression) ... ok
+test_07_registry_aliases (__main__.Regression.test_07_registry_aliases) ... ok
+test_08_power_bound_does_not_imply_input_match (__main__.Regression.test_08_power_bound_does_not_imply_input_match) ... ok
+test_09_all_unique_loads_balance_constraints_and_power_partition (__main__.Regression.test_09_all_unique_loads_balance_constraints_and_power_partition) ... ok
+test_10_invalid_inputs (__main__.Regression.test_10_invalid_inputs) ... ok
+test_11_reject_inconsistent_fs_lm_cm_at_construction (__main__.Regression.test_11_reject_inconsistent_fs_lm_cm_at_construction) ... ok
+test_12_missing_half_height_crossing_is_explicit (__main__.Regression.test_12_missing_half_height_crossing_is_explicit) ... ok
+test_13_baseline_and_1p5mm_reports (__main__.Regression.test_13_baseline_and_1p5mm_reports) ... ok
+test_14_numpy_only_runtime (__main__.Regression.test_14_numpy_only_runtime) ... ok
+test_15_historical_baseline_unchanged (__main__.Regression.test_15_historical_baseline_unchanged) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 30.045s
+
+OK

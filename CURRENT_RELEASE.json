@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "release_id": "verified-integration-20261012",
+  "release_date": "2026-10-12",
+  "platform_root": "integrated/CTO_virtual_drive_platform_v2_1",
+  "entrypoint": "integrated/CTO_virtual_drive_platform_v2_1/run_project.py",
+  "batch_pointer": "integrated/CTO_virtual_drive_platform_v2_1/current/active_batch.json",
+  "batch_id": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "verification": "release/20261012/verification.json",
+  "source_manifest": "release/20261012/source_manifest.json",
+  "formal_branch": "main",
+  "frozen_release_branch": "release/verified-integration-20261012",
+  "prototype_branch": "research/recovery-scan-handoff-unvalidated-20261012",
+  "prototype_status": "UNVALIDATED_DRAFT_NOT_IN_FORMAL_ENTRYPOINT",
+  "new_control_batch_generated": false,
+  "scope": "Software-verified integrated delivery of archived hypothetical quasi-steady electrical results; not a statement that all controllers pass or hardware is safe"
+}

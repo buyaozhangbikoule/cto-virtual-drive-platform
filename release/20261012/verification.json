@@ -1,0 +1,140 @@
+{
+  "checked_utc": "2026-10-12T10:43:49.825600+00:00",
+  "checks": [
+    {
+      "name": "environment",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-c",
+        "import sys,numpy,scipy,pandas,streamlit; print(sys.version); print(\"numpy\",numpy.__version__,\"scipy\",scipy.__version__,\"pandas\",pandas.__version__,\"streamlit\",streamlit.__version__)"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1",
+      "duration_seconds": 1.75,
+      "log": "release/20261012/environment.txt",
+      "log_sha256": "ce235f02edfe26805ed9ad207ca24c0e74e4a7b3be39ad4fc3dc20ad9c8fa558",
+      "tests_run": null
+    },
+    {
+      "name": "batch_verify",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "run_project.py",
+        "verify"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1",
+      "duration_seconds": 0.6090000000003783,
+      "log": "release/20261012/batch_verify.txt",
+      "log_sha256": "a1841d8b36a576f8d8e5377b7c12bac07ccf6a615daa22079d2265f269336acf",
+      "tests_run": null
+    },
+    {
+      "name": "unified_behavior_tests",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "run_unified.py",
+        "--test-only"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1/current/unified",
+      "duration_seconds": 1.625,
+      "log": "release/20261012/unified_behavior_tests.txt",
+      "log_sha256": "65cbdbc5fa7927e7ebafa990911a3b02ece3df03bc9acd16a60f8c5216388de1",
+      "tests_run": 41
+    },
+    {
+      "name": "platform_and_provenance_tests",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "current/tests",
+        "-v"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1",
+      "duration_seconds": 42.875,
+      "log": "release/20261012/platform_and_provenance_tests.txt",
+      "log_sha256": "d4f9257e1c222f19196e43841d131a8ebbc4853f5cc84e08ff280edd789693b6",
+      "tests_run": 36
+    },
+    {
+      "name": "fitting_and_accounting_tests",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "research/fit_control_diagnostics_20261006",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1",
+      "duration_seconds": 10.062000000001717,
+      "log": "release/20261012/fitting_and_accounting_tests.txt",
+      "log_sha256": "3729725db98fe96383f646d9d368f521c510c1029942a88a16a60b79461ef167",
+      "tests_run": 19
+    },
+    {
+      "name": "all_105_accounting_recheck",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "research/fit_control_diagnostics_20261006/control_accounting.py",
+        "--all-suites",
+        "--output",
+        "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\sync_1012\\checkout\\release\\20261012\\accounting_recheck"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1",
+      "duration_seconds": 4.360000000000582,
+      "log": "release/20261012/all_105_accounting_recheck.txt",
+      "log_sha256": "6253ef7255d5289fdcdbc119ae900203181ce305fe9f8691c70bf8feeb59664f",
+      "tests_run": null
+    },
+    {
+      "name": "batch_verify_after_tests",
+      "returncode": 0,
+      "command": [
+        "python",
+        "-B",
+        "-X",
+        "utf8",
+        "run_project.py",
+        "verify"
+      ],
+      "cwd": "integrated/CTO_virtual_drive_platform_v2_1",
+      "duration_seconds": 0.5940000000009604,
+      "log": "release/20261012/batch_verify_after_tests.txt",
+      "log_sha256": "a1841d8b36a576f8d8e5377b7c12bac07ccf6a615daa22079d2265f269336acf",
+      "tests_run": null
+    }
+  ],
+  "scope": "Software regression and archived evidence replay; no new controller performance batch, no LTspice rerun or hardware proof",
+  "unvalidated_recovery_candidate_included": false,
+  "all_passed": true,
+  "accounting_byte_semantics_identical_to_archived_json": true
+}

@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "relative_paths_base": "platform root; ../ entries intentionally external",
+  "artifacts": [
+    {
+      "身份": "当前",
+      "路径": "run_project.py",
+      "说明": "正式命令入口",
+      "本机存在": true
+    },
+    {
+      "身份": "当前",
+      "路径": "current_app.py",
+      "说明": "正式网页入口",
+      "本机存在": true
+    },
+    {
+      "身份": "当前",
+      "路径": "current/active_batch.json",
+      "说明": "唯一已核验批次定位",
+      "本机存在": true
+    },
+    {
+      "身份": "已采用",
+      "路径": "current/patches/plan_three_strategy.scan_fault_taxonomy.patch",
+      "说明": "仅扫描失败分类补丁",
+      "本机存在": true
+    },
+    {
+      "身份": "历史",
+      "路径": "run_all.py",
+      "说明": "旧流水线；本次未运行，不要用来更新当前批次",
+      "本机存在": true
+    },
+    {
+      "身份": "历史",
+      "路径": "results/tables/stage4_5",
+      "说明": "旧P&O三策略和单独相位补充，非当前统一结果",
+      "本机存在": true
+    },
+    {
+      "身份": "历史",
+      "路径": "figures",
+      "说明": "存档绘图，不更名成当前批次",
+      "本机存在": true
+    },
+    {
+      "身份": "历史",
+      "路径": "evidence/ltspice",
+      "说明": "原AC证据；与新控制时序分开",
+      "本机存在": true
+    },
+    {
+      "身份": "独立实验",
+      "路径": "results/ltspice_closed_loop/CL_20260914_124949_410d5f9d/reversal_acceptance.json",
+      "说明": "五轮真实RAW反馈接口；非动态三策略验收",
+      "本机存在": true
+    },
+    {
+      "身份": "历史外部依赖",
+      "路径": "../outputs/v2_self_consistent_rebuild/active_stage3_5",
+      "说明": "旧交互页面所需冻结解析模型",
+      "本机存在": true
+    },
+    {
+      "身份": "历史外部资料",
+      "路径": "../ltspice_transient_replay_20260911_continue/运行与核查报告.md",
+      "说明": "开环指令重放，不是完整闭环",
+      "本机存在": true
+    },
+    {
+      "身份": "扩展研究外部资料",
+      "路径": "../control_factorial_20260907/deliverables/第二轮控制消融验证报告.md",
+      "说明": "相位/PI/约束及8组合等历史试验；未合并正式引擎",
+      "本机存在": true
+    },
+    {
+      "身份": "未接入",
+      "路径": "research/radiation_load_layer1/radiation_load_layer1_reference.py",
+      "说明": "第一层负载参考快照，不改变正式34条目",
+      "本机存在": true
+    },
+    {
+      "身份": "接口模板",
+      "路径": "interfaces/electro_acoustic_v1",
+      "说明": "不等于结构／声场结果",
+      "本机存在": true
+    }
+  ]
+}

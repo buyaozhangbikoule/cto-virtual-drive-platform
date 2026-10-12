@@ -1,0 +1,9 @@
+# Publication snapshot excludes caches and transient test fixtures.
+__pycache__/
+**/__pycache__/
+**/test_tmp/
+**/ui_test_tmp/
+**/closed_loop_readiness_tmp/
+*.pyc
+.env
+secrets.toml

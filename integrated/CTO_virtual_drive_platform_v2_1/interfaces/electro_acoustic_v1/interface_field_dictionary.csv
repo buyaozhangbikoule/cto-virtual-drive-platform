@@ -1,0 +1,70 @@
+﻿direction,field,unit,required,meaning,source_class
+electrical_to_acoustic,interface_version,-,True,Data-contract version,interface metadata
+electrical_to_acoustic,record_id,-,True,Unique key shared with the acoustic return file,derived identifier
+electrical_to_acoustic,scenario_id,-,True,Electrical disturbance scenario identifier,scan variable registry
+electrical_to_acoustic,operating_point_type,-,True,Reason for exporting the point,derived simulation result
+electrical_to_acoustic,parameter_source_class,-,True,假设基线值/扫描变量/派生仿真结果,provenance label
+electrical_to_acoustic,electrical_model_id,-,True,Electrical model version,model metadata
+electrical_to_acoustic,electrical_model_sha256,-,True,Hash of the Python electrical model,generated evidence
+electrical_to_acoustic,phasor_convention,-,True,RMS-equivalent phasor convention,interface convention
+electrical_to_acoustic,phase_reference,-,True,Ideal Thevenin source voltage is 0 deg,interface convention
+electrical_to_acoustic,excitation_mode,-,True,Quantity to impose in the FEM model,interface convention
+electrical_to_acoustic,frequency_Hz,Hz,True,Harmonic study frequency,derived simulation result
+electrical_to_acoustic,amplitude_command,p.u.,True,"Electrical amplitude command in [0,1]",derived simulation result
+electrical_to_acoustic,source_Vrms_real,V RMS,True,Real part of ideal Thevenin source phasor,derived simulation result
+electrical_to_acoustic,source_Vrms_imag,V RMS,True,Imaginary part of ideal Thevenin source phasor,derived simulation result
+electrical_to_acoustic,vport_Vrms_real,V RMS,True,Terminal-voltage phasor real part; FEM voltage excitation,derived simulation result
+electrical_to_acoustic,vport_Vrms_imag,V RMS,True,Terminal-voltage phasor imaginary part; FEM voltage excitation,derived simulation result
+electrical_to_acoustic,vport_Vrms_abs,V RMS,True,Terminal-voltage phasor magnitude,derived simulation result
+electrical_to_acoustic,vport_phase_deg,deg,True,Terminal-voltage phase relative to ideal source,derived simulation result
+electrical_to_acoustic,vport_Vpp,Vpp,True,"2*sqrt(2)*|Vport,RMS|",derived simulation result
+electrical_to_acoustic,iport_Arms_real,A RMS,True,Predicted terminal-current real part; validation only,derived simulation result
+electrical_to_acoustic,iport_Arms_imag,A RMS,True,Predicted terminal-current imaginary part; validation only,derived simulation result
+electrical_to_acoustic,iport_Arms_abs,A RMS,True,Predicted terminal-current magnitude,derived simulation result
+electrical_to_acoustic,iport_phase_deg,deg,True,Predicted terminal-current phase,derived simulation result
+electrical_to_acoustic,zport_ohm_real,ohm,True,Transducer terminal impedance real part Vport/Iport,derived simulation result
+electrical_to_acoustic,zport_ohm_imag,ohm,True,Transducer terminal impedance imaginary part,derived simulation result
+electrical_to_acoustic,zport_ohm_abs,ohm,True,Transducer terminal impedance magnitude,derived simulation result
+electrical_to_acoustic,zport_phase_deg,deg,True,Transducer terminal impedance phase,derived simulation result
+electrical_to_acoustic,zin_ohm_real,ohm,True,Lossy matching-network input impedance real part,derived simulation result
+electrical_to_acoustic,zin_ohm_imag,ohm,True,Lossy matching-network input impedance imaginary part,derived simulation result
+electrical_to_acoustic,zin_ohm_abs,ohm,True,Lossy matching-network input impedance magnitude,derived simulation result
+electrical_to_acoustic,matching_input_phase_deg,deg,True,arg(Zin); not the transducer-port phase,derived simulation result
+electrical_to_acoustic,p_source_W,W,True,Active power supplied by the ideal Thevenin source,derived simulation result
+electrical_to_acoustic,p_port_W,W,True,Electrical active power entering the transducer port,derived simulation result
+electrical_to_acoustic,q_port_var,var,True,Electrical reactive power at the transducer port,derived simulation result
+electrical_to_acoustic,s_port_VA,VA,True,Port apparent-power magnitude,derived simulation result
+electrical_to_acoustic,p_rm_W,W,True,"BVD motional-branch dissipation; diagnostic, not acoustic power",derived simulation result
+electrical_to_acoustic,eta_elec,p.u.,True,Pport/Psource; electrical transfer efficiency only,derived simulation result
+electrical_to_acoustic,reflection_proxy_gamma,p.u.,True,"|Zin-Rs|/|Zin+Rs|; mismatch proxy, not measured reflected power",derived simulation result
+electrical_to_acoustic,frequency_within_hard_bounds,bool,True,0.8-1.0 MHz check,constraint check
+electrical_to_acoustic,voltage_soft_exceeded,bool,True,Vport > 130 Vpp,constraint check
+electrical_to_acoustic,voltage_hard_exceeded,bool,True,Vport > 160 Vpp,constraint check
+electrical_to_acoustic,current_soft_exceeded,bool,True,|Iport| > 5.5 mA RMS,constraint check
+electrical_to_acoustic,current_hard_exceeded,bool,True,|Iport| > 6 mA RMS,constraint check
+electrical_to_acoustic,admissible_for_fem_run,bool,True,No simulated hard-limit violation,constraint check
+electrical_to_acoustic,electrical_status,-,True,Electrical-only record status,generated evidence
+acoustic_to_electrical,interface_version,-,True,Must equal the excitation-file version,interface metadata
+acoustic_to_electrical,record_id,-,True,Foreign key to the electrical excitation record,interface metadata
+acoustic_to_electrical,solver_name,-,True,COMSOL Multiphysics or Ansys Mechanical/Acoustics,solver metadata
+acoustic_to_electrical,solver_version,-,True,Exact solver version,solver metadata
+acoustic_to_electrical,solver_model_id,-,True,Finite-element model identifier,solver metadata
+acoustic_to_electrical,solver_model_sha256,-,False,Hash of exported model/archive if available,generated evidence
+acoustic_to_electrical,mesh_id,-,True,Mesh level or mesh hash,solver metadata
+acoustic_to_electrical,frequency_Hz,Hz,True,Solved harmonic frequency,solver input echo
+acoustic_to_electrical,terminal_current_Arms_real,A RMS,True,FEM terminal-current phasor real part,FEM solver output
+acoustic_to_electrical,terminal_current_Arms_imag,A RMS,True,FEM terminal-current phasor imaginary part,FEM solver output
+acoustic_to_electrical,terminal_charge_C_real,C,False,Electrode charge phasor real part,FEM solver output
+acoustic_to_electrical,terminal_charge_C_imag,C,False,Electrode charge phasor imaginary part,FEM solver output
+acoustic_to_electrical,z_fem_ohm_real,ohm,True,Vport/Iterminal real part,derived from FEM output
+acoustic_to_electrical,z_fem_ohm_imag,ohm,True,Vport/Iterminal imaginary part,derived from FEM output
+acoustic_to_electrical,relative_acoustic_efficiency,p.u.,False,Relative acoustic metric normalized to a declared reference case,derived from FEM lookup
+acoustic_to_electrical,max_displacement_m,m,True,Maximum structural displacement magnitude,FEM solver output
+acoustic_to_electrical,reference_displacement_phase_deg,deg,False,Phase at a declared structural probe,FEM solver output
+acoustic_to_electrical,target_pressure_Pa_rms,Pa RMS,True,Pressure magnitude at a declared acoustic target probe,FEM solver output
+acoustic_to_electrical,target_pressure_phase_deg,deg,False,Pressure phase at the target probe,FEM solver output
+acoustic_to_electrical,wall_pressure_Pa_rms,Pa RMS,False,Pressure at a declared wall/off-target probe,FEM solver output
+acoustic_to_electrical,radiated_acoustic_power_W,W,False,Integrated acoustic intensity over a declared surface,FEM solver output
+acoustic_to_electrical,mesh_convergence_metric_pct,%,True,Declared mesh-convergence change,FEM verification output
+acoustic_to_electrical,solver_status,-,True,NOT_RUN/PASS/FAIL,solver evidence
+acoustic_to_electrical,solver_log_path,-,True,Path to the solver completion log,solver evidence

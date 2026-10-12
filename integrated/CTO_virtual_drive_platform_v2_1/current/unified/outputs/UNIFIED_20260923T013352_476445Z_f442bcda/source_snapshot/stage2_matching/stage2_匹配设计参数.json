@@ -1,0 +1,40 @@
+{
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "topology": "Rs -> series (R_L_ESR + Lmatch) -> port; shunt (Cmatch + R_C_ESR) across BVD port",
+  "comparison_source": "1 Vrms Thevenin source with fixed 50 ohm Rs for BEFORE/IDEAL/ACTIVE_LOSSY",
+  "bvd": {
+    "C0_F": 6.858064105198409e-12,
+    "Rm_ohm": 7352.941176470586,
+    "Lm_H": 1.0402283862215378,
+    "Cm_F": 3.006260036180247e-14,
+    "fs_Hz": 900000.0
+  },
+  "matching_loss_assumptions": {
+    "source_class": "HYPOTHETICAL_BASELINE",
+    "inductor_Q_at_f0": 100.0,
+    "capacitor_Q_at_f0": 1000.0,
+    "esr_model": "fixed series R calculated at f0"
+  },
+  "design": {
+    "l_ideal_H": 0.00010685910332792834,
+    "c_ideal_F": 2.8379869694676985e-10,
+    "l_active_H": 0.00010672581904440851,
+    "c_active_F": 2.8359878734546773e-10,
+    "r_l_active_ohm_at_f0": 6.035202883048814,
+    "r_c_active_ohm_at_f0": 0.6235528272631298,
+    "optimizer_iterations": 83,
+    "optimizer_success": true
+  },
+  "calibration": {
+    "source_class": "DERIVED_VALUE from active matched baseline; not a hardware rating",
+    "calibration_frequency_Hz": 900000.0,
+    "target_transducer_Vpp": 100.0,
+    "unit_source_Vrms": 1.0,
+    "vport_per_unit_source_Vrms": 5.686550516395065,
+    "a1_source_Vrms": 6.217361290890379,
+    "a1_source_Vpp": 17.585353319501337,
+    "expected_p_rm_W": 0.17000000000000012,
+    "expected_total_iport_Arms": 0.0049999999999998344,
+    "rule": "freeze this Thevenin source amplitude for all future scenarios; protection may only reduce it"
+  }
+}

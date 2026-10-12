@@ -1,0 +1,16 @@
+COMMAND: C:\Users\24739\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe export_electro_acoustic_interface.py
+CWD: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\CTO_virtual_drive_platform_v2_1\scripts
+RETURN_CODE: 0
+
+STDOUT:
+{
+  "status": "PASS",
+  "interface_dir": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\interfaces\\electro_acoustic_v1",
+  "audit": "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\interfaces\\electro_acoustic_v1\\electro_acoustic_interface_audit.json",
+  "records": 4,
+  "finite_element_solver_was_run": false
+}
+
+
+STDERR:
+

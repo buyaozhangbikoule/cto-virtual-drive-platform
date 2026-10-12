@@ -1,0 +1,4 @@
+﻿strategy,control_sample_count,frequency_min_Hz,frequency_max_Hz,frequency_changed,amplitude_min,amplitude_max,amplitude_was_reduced,peak_vport_Vpp,peak_iport_Arms,actual_hard_violation_count,frequency_saturated_sample_count,safe_power_capture_available,minimum_safe_power_capture_pct,protection_states_observed
+FIXED_0P9,320,900000.0,900000.0,False,0.0,1.0,True,130.0,0.005124166251178052,0,0,True,0.0,HARD_TRIP;NORMAL;RAMP_UP;RECOVERY_HOLD;SOFT_FOLDBACK
+PERIODIC_SCAN,277,854800.0,900300.0,True,0.0,1.0,True,130.0,0.005124166251178052,0,0,True,0.0,HARD_TRIP;NORMAL;RAMP_UP;RECOVERY_HOLD;SOFT_FOLDBACK
+P_AND_O,267,854800.0,900300.0,True,0.0,1.0,True,130.0,0.005124166251178052,0,0,True,0.0,HARD_TRIP;NORMAL;RAMP_UP;RECOVERY_HOLD;SOFT_FOLDBACK

@@ -1,0 +1,54 @@
+{
+  "created_utc": "2026-09-23T07:04:14.575275+00:00",
+  "batch_id": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "control_behavior_tests": 41,
+  "platform_tests": 16,
+  "test_logs": {
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\current\\logs\\20260923T065537_315408Z_platform_tests.txt": "bcb801017a57678273158533b305c4dc5026dbd2461efaa977ac2c771d703e79",
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\current\\logs\\20260923T065534_300577Z_behavior_tests.txt": "ce43c37f577fdf7065884469d68d8cf891bcb9e3f2f8eeab9a6796e58b022082"
+  },
+  "test_environment_note": "Some sandboxed Windows Store Python runs emitted TemporaryDirectory cleanup PermissionError after OK; UI assertions and process exit code passed. This does not certify cleanup of denied temp directories.",
+  "preserved_historical_files": 1038,
+  "historical_changes": [],
+  "old_run_all_unchanged": true,
+  "existing_config_values_changed": [],
+  "new_declared_patch_budget_fields": {
+    "scan_preemption_max_retries": 4,
+    "scan_measurement_fault_max_retries": 2,
+    "scan_nonstationary_max_retries": 2,
+    "scan_max_coarse_fallbacks": 2,
+    "scan_max_points": 400,
+    "scan_max_duration_us": 300000,
+    "scan_budget_origin": "declared_not_tuned; every class is bounded and any exhaustion reaches the same latch; rationale and the sensitivity that is NOT established in review/13"
+  },
+  "adopted_patch_numeric_regression_absolute_differences": {
+    "FIXED": {
+      "energy_J": 0.0,
+      "energy_capture_pct": 0.0,
+      "settled_segments": 0.0,
+      "scan_failures": 0.0
+    },
+    "PERIODIC_SCAN": {
+      "energy_J": 0.0,
+      "energy_capture_pct": 0.0,
+      "settled_segments": 0.0,
+      "scan_failures": 0.0
+    },
+    "PHASE_FEEDBACK": {
+      "energy_J": 0.0,
+      "energy_capture_pct": 0.0,
+      "settled_segments": 0.0,
+      "scan_failures": 0.0
+    }
+  },
+  "audit_pass": true,
+  "timelines": 105,
+  "executed_rows": 23676,
+  "manifest_files": 235,
+  "PPT_modified": false,
+  "old_speaker_notes_modified": false,
+  "github_pushed": false,
+  "new_ltspice_run": false,
+  "new_comsol_run": false,
+  "scientific_scope": "hypothetical BVD quasi-steady electrical comparison only"
+}

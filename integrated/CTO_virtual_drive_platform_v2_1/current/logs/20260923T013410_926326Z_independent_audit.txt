@@ -1,0 +1,19 @@
+{
+  "batch_id": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "audit_pass": true,
+  "problems": [],
+  "manifest_files_verified": 235,
+  "timelines": 105,
+  "executed_rows": 23676,
+  "executed_actions": 23672,
+  "post_guard_hold_violation_rows": 0,
+  "pre_guard_hard_observations": 42,
+  "max_pre_guard_voltage_Vpp": 188.22471135207078,
+  "max_post_guard_hold_voltage_Vpp": 130.00000000000003,
+  "max_energy_recompute_error_J": 2.7755575615628914e-15,
+  "max_voltage_recompute_error_Vpp": 7.105427357601002e-14,
+  "max_current_recompute_error_Arms": 2.6020852139652106e-18,
+  "max_power_recompute_error_W": 1.3877787807814457e-16,
+  "scope": "saved-log, analytic-model and statistics audit; not independent LTspice/hardware proof"
+}
+AUDIT C:\Users\24739\Documents\Codex\2026-08-10\new-chat\CTO_virtual_drive_platform_v2_1\current\unified\audits\UNIFIED_20260923T013352_476445Z_f442bcda_20260923T013412_135137Z.json

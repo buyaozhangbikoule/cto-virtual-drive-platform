@@ -1,0 +1,38 @@
+{
+  "batch_id": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "source_tree_sha256": "f442bcda10396bb29748a562b3c2a1953d0b6288a5972a8acdeb39317fef972b",
+  "source_hashes": {
+    "audit_batch.py": "cab769fdeb8abff13198bc30868d809b2d6c66a44e415d2f6785f790b16bcb42",
+    "config.json": "7ec2b3a970446f67d3220ab2a17d1604a14dd89eb64e55ed69d836e6369b9896",
+    "controllers.py": "a416c98b3da1eceecf881d5f466856f13d866f9fb3963e60487770ca40a8a4f2",
+    "engine.py": "54659dd6fa23f6cdaee330544f774c138f8f73831e7cdbed2aba44a7dc0dd233",
+    "metrics.py": "5234fdf88d0fea25dc85620d92f387a21ec399f7c3aeef24eaf26f5258f893aa",
+    "models/model_v2_1.py": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23",
+    "README.md": "1878e36c67194b718943d4b676768d21e0b1b3d0e41297a6d8238463adb475d4",
+    "requirements.txt": "0bece1334a6220b95d272cee7a47b0ec32b9daea4cc3316836090d5fae0c22c9",
+    "run_unified.py": "b5d1f59a5905fa604354d16c37e2fa32e05337451242bf088129df4e7f725792",
+    "stage2_matching/stage2_匹配设计参数.json": "6a73eec859a0d747f6bd03feb2f99d4a36190efe4814fc09b967a33cd88e2202",
+    "stage2_matching/stage2_控制源幅度校准.json": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4",
+    "tests/test_unified.py": "c1c23f51c45026e841b555acfb14fe369a148d0915f8fac8d299305aee597c0a"
+  },
+  "python": "3.12.10 (tags/v3.12.10:0cc8128, Apr  8 2025, 12:21:36) [MSC v.1943 64 bit (AMD64)]",
+  "numpy": "2.2.4",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "command": [
+    "run_unified.py",
+    "--suite",
+    "all"
+  ],
+  "source_model_provenance": "frozen v2.1 model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; see integration_sources.json",
+  "strategies": [
+    "FIXED",
+    "PERIODIC_SCAN",
+    "PHASE_FEEDBACK"
+  ],
+  "suite_count": 35,
+  "tests_passed": 41,
+  "control_uses_schedule_or_offline_reference": false,
+  "ideal_guard_uses_current_model": true,
+  "phase_target_deg": -1.0782096368565852,
+  "physical_scope": "hypothetical linear quasi-steady electrical model; no hardware/acoustic claim"
+}

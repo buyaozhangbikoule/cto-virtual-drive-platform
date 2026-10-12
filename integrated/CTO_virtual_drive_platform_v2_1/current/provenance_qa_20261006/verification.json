@@ -1,0 +1,95 @@
+{
+  "date": "2026-10-06",
+  "task": "参数来源登记与只读网页接入",
+  "parameter_entries": 77,
+  "new_tests": 20,
+  "regression": {
+    "behavior_tests": 41,
+    "platform_tests_including_new": 36,
+    "exit_code": 0,
+    "behavior_log": "current/logs/20261006T113231_994213Z_behavior_tests.txt",
+    "platform_log": "current/logs/20261006T113233_348217Z_platform_tests.txt",
+    "final_ui_recheck_tests": 3,
+    "final_ui_recheck_exit_code": 0,
+    "warning": "Streamlit测试进程退出时，Windows Store Python清理current/ui_test_tmp临时目录出现PermissionError。断言通过且进程退出码为0；未清理目录或修改ACL。不是无警告测试。"
+  },
+  "browser_checks": {
+    "entry": "http://127.0.0.1:8502",
+    "navigation_and_source_groups": true,
+    "saijo_calcification_1760_sd14": true,
+    "saijo_doi_href": "https://doi.org/10.1016/S0301-5629(98)00054-4",
+    "doi_publisher_page_opened": false,
+    "pending_range_warning": true,
+    "json_download_rows": 77,
+    "csv_download_rows": 77,
+    "csv_original_value_and_unit_separate_from_display": true,
+    "csv_example": {
+      "display": "0.8 MHz",
+      "raw_value": 800000,
+      "raw_unit": "Hz"
+    },
+    "screenshots": [
+      "current/provenance_qa_20261006/saijo_sources.jpg",
+      "current/provenance_qa_20261006/saijo_conditions.jpg"
+    ]
+  },
+  "active_batch": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "active_batch_verify": {
+    "audit_pass": true,
+    "source_drift": []
+  },
+  "protected_files": [
+    {
+      "path": "current/active_batch.json",
+      "sha256": "C01F293155FBB05011A78305181B6BC17B804D485D1EDC1CC1ACF8B41444C44D",
+      "unchanged": true
+    },
+    {
+      "path": "current/unified/config.json",
+      "sha256": "7EC2B3A970446F67D3220AB2A17D1604A14DD89EB64E55ED69D836E6369B9896",
+      "unchanged": true
+    },
+    {
+      "path": "current/unified/models/model_v2_1.py",
+      "sha256": "ECF0FDAED26F29394DFDE729E6C3001C231C6B77BCA122E138E7136425640D23",
+      "unchanged": true
+    },
+    {
+      "path": "current/unified/controllers.py",
+      "sha256": "A416C98B3DA1ECEECF881D5F466856F13D866F9FB3963E60487770CA40A8A4F2",
+      "unchanged": true
+    },
+    {
+      "path": "current/unified/stage2_matching/stage2_匹配设计参数.json",
+      "sha256": "6A73EEC859A0D747F6BD03FEB2F99D4A36190EFE4814FC09B967A33CD88E2202",
+      "unchanged": true
+    },
+    {
+      "path": "current/unified/stage2_matching/stage2_控制源幅度校准.json",
+      "sha256": "EA21DE799DAFF1958269BCF2F89FF47142DC85E25FBB13A63D2B1239ED6E1BA4",
+      "unchanged": true
+    },
+    {
+      "path": "streamlit_app.py",
+      "sha256": "D144C2C5D98EE7FE76AB3A64F549D787B5109BA2F34A35D2C6214C011E7EDD28",
+      "unchanged": true
+    },
+    {
+      "path": "research/radiation_load_layer1/radiation_load_layer1_reference.py",
+      "sha256": "90D50A9FCF5C4A4EA644C2E43DF274EB175B878CFAD35A23C8973FDC51F75387",
+      "unchanged": true
+    },
+    {
+      "path": "research/radiation_load_layer1/14_第一层负载参数化_给Codex的实施指导_2026-09-18.md",
+      "sha256": "D0B7ADB00CA7F30035FB40C5A004D1369E8D6F315EC32D473B9FA77C66CE0B12",
+      "unchanged": true
+    }
+  ],
+  "boundaries": [
+    "未修改BVD、匹配、源、控制阈值和负载原型默认值",
+    "Saijo仅作独立参考，不作为0.9 MHz默认值",
+    "2.5–7.8 MRayl未建立原始出处，仍待核实",
+    "没有新控制批次、LTspice或声场实验",
+    "没有修改PPT或上传GitHub"
+  ]
+}

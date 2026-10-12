@@ -1,0 +1,234 @@
+{
+  "status": "FROZEN_DESIGN_NOT_EXECUTED",
+  "identity": "prospective tuning separation, NOT unseen physical validation",
+  "source_batch": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "source_config_sha256": "91818957bc882bfd9e0e4f8537404d5e6c8157f8f396557196af3e45e965e1da",
+  "source_registry_sha256": "4bf8b631f2f05a91d560222310e4a343692b3af13ab7e3518997fa3e48d45ce0",
+  "assumed_protocol_choices": "low disturbance levels for development, remaining non-alias cases for evaluation; not literature-derived",
+  "baseline_shared": "CASE_000_BASELINE",
+  "tuning_cases": [
+    "CASE_C0_P10",
+    "CASE_RM_P15",
+    "CASE_FS_M1",
+    "CASE_LM_P5",
+    "CASE_CM_P5",
+    "CASE_RS_P5",
+    "CASE_LMATCH_P2",
+    "CASE_CMATCH_M2",
+    "CASE_QL_50",
+    "CASE_QM_500",
+    "CASE_COMBINED_LOW"
+  ],
+  "validation_cases": [
+    "CASE_C0_P20",
+    "CASE_C0_P30",
+    "CASE_RM_P30",
+    "CASE_RM_P50",
+    "CASE_FS_M3",
+    "CASE_FS_M5",
+    "CASE_LM_P10",
+    "CASE_LM_P20",
+    "CASE_CM_P10",
+    "CASE_CM_P20",
+    "CASE_RS_P10",
+    "CASE_RS_P20",
+    "CASE_LMATCH_P5",
+    "CASE_LMATCH_P10",
+    "CASE_CMATCH_M5",
+    "CASE_CMATCH_M10",
+    "CASE_QL_20",
+    "CASE_QM_1000",
+    "CASE_COMBINED_MEDIUM",
+    "CASE_COMBINED_HIGH"
+  ],
+  "case_ids_disjoint": true,
+  "physical_parameter_fingerprints_disjoint": true,
+  "schedules": {
+    "tuning": [
+      [
+        "CASE_000_BASELINE",
+        "CASE_C0_P10",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_RM_P15",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_FS_M1",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_LM_P5",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_CM_P5",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_RS_P5",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_LMATCH_P2",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_CMATCH_M2",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_QL_50",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_QM_500",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_COMBINED_LOW",
+        "CASE_000_BASELINE"
+      ]
+    ],
+    "validation": [
+      [
+        "CASE_000_BASELINE",
+        "CASE_C0_P20",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_C0_P30",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_RM_P30",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_RM_P50",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_FS_M3",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_FS_M5",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_LM_P10",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_LM_P20",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_CM_P10",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_CM_P20",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_RS_P10",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_RS_P20",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_LMATCH_P5",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_LMATCH_P10",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_CMATCH_M5",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_CMATCH_M10",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_QL_20",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_QM_1000",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_COMBINED_MEDIUM",
+        "CASE_000_BASELINE"
+      ],
+      [
+        "CASE_000_BASELINE",
+        "CASE_COMBINED_HIGH",
+        "CASE_000_BASELINE"
+      ]
+    ]
+  },
+  "segment_us": 800000,
+  "capture_threshold": 0.98,
+  "continuous_samples": 10,
+  "protection_must_remain": {
+    "hard_hold_us": 60000,
+    "recovery_hold_us": 100000,
+    "soft_hold_us": 100000,
+    "voltage_soft_Vpp": 130.0,
+    "voltage_hard_Vpp": 160.0,
+    "current_soft_Arms": 0.0055,
+    "current_hard_Arms": 0.006
+  },
+  "original_12": "diagnostic/regression only; preserve unchanged segment length/order for comparison",
+  "candidate_freeze_before_validation": [
+    "candidate source SHA256",
+    "full configuration SHA256",
+    "tuning run manifest",
+    "decision rule"
+  ],
+  "not_yet_covered": [
+    "noise",
+    "delay",
+    "continuous transients",
+    "new unknown physical device",
+    "unseen disturbance magnitudes/order"
+  ],
+  "no_promotion_until": "baseline/candidate common engine comparison, all failures and hard violations retained"
+}

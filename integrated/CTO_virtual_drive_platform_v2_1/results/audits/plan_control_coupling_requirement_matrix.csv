@@ -1,0 +1,11 @@
+﻿requirement_id,requirement,status,evidence,gap_or_boundary
+R1,同扰动序列固定频率/固定幅度基线，记录功率与相位偏离,COMPLETED,stage4_control_timeline.csv; stage5_per_segment_metrics.csv,电压电流保护仍会覆盖固定幅度命令；这是受保护基线，不是无保护开环
+R2,区分基线较差与模型出错,COMPLETED,stage1/stage2/stage3 LTspice RAW/LOG/audit and Python cross-validation,只证明网表与解析实现一致，不证明假设参数等于真实器件
+R3,局部扫频和相位闭环的锁定频率、恢复时间、峰值电流、功率变化,COMPLETED,plan_fixed_periodic_phase_per_segment.csv; plan_fixed_periodic_phase_integrated.csv,相位结果仍标成消融/计划书补充，不替代正式P&O排名
+R4,电压、电流或壁面代理约束触发时限制幅度增长,PARTIAL,"voltage/current foldback, hard trip, hold and ramp-up are implemented",没有COMSOL/实测壁面代理查找表和阈值，因此壁面代理尚未接入保护状态机
+R5,同一单因素/组合扰动下比较固定、周期扫频、相位闭环,COMPLETED_AS_SUPPLEMENT,plan_fixed_periodic_phase_per_segment.csv; same representative single-factor/high-combined schedule,比较覆盖共同代表时间表，不声称遍历全部34个场景；正式第三策略仍是扫描辅助P&O
+R6,分析扫频与相位闭环适用场景并限制结论范围,COMPLETED_WITH_MODEL_SCOPE,scan_vs_phase_scenario_comparison.csv,结论仅限当前假设BVD和代表扰动时间表，不能形成通用器械结论
+R7,已有COMSOL结果时接入相对声学效率查找表,NOT_STARTED_NO_INPUT,none,没有COMSOL模型/结果；不得生成声学效率和压力代理数值
+R8,无COMSOL时定义标准化电学—声场接口字段,COMPLETED,interfaces/electro_acoustic_v1/*; electro_acoustic_interface_audit.json,声学字段是空模板，状态明确为NOT_RUN/NOT_AVAILABLE
+R9,逐条限制结论到特定BVD模型与扰动范围,COMPLETED,config.yaml scope; control/interface audits; README boundary statements,汇报或论文仍需沿用这些限定语
+R10,明确下一阶段阻抗、功率与水听器验证假设,COMPLETED_AS_PLAN_ONLY,docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md,尚未开展实测

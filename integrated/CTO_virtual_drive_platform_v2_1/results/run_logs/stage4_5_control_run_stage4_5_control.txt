@@ -1,0 +1,83 @@
+COMMAND: C:\Users\24739\AppData\Local\Microsoft\WindowsApps\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\python.exe run_stage4_5_control.py
+CWD: C:\Users\24739\Documents\Codex\2026-08-10\new-chat\outputs\v2_self_consistent_rebuild\active_stage3_5
+RETURN_CODE: 0
+
+STDOUT:
+{
+  "status": "PASS",
+  "overall": [
+    {
+      "strategy": "FIXED_0P9",
+      "steady_error_pct": 30.14473442397421,
+      "mean_recovery_time_ms_penalized": 345.7142857142817,
+      "unsettled_segments": 3,
+      "power_stability_cv_pct": 6.0791251997897906e-15,
+      "peak_current_mA_RMS": 5.1241662511780515,
+      "peak_voltage_vpp": 130.0,
+      "soft_limit_triggers": 1,
+      "hard_trip_triggers": 1,
+      "actual_hard_violations": 0,
+      "frequency_saturation_ms": 0.0,
+      "locked_frequency_min_MHz": 0.9,
+      "locked_frequency_max_MHz": 0.9,
+      "max_power_overshoot_pct": 0.0,
+      "oscillating_segments": 0,
+      "wrong_phase_lock_segments": 0,
+      "observable_detector_triggers": 0,
+      "limit_event_triggers": 2,
+      "scan_episodes": 0,
+      "scan_points": 0,
+      "scan_time_s": 0.0
+    },
+    {
+      "strategy": "PERIODIC_SCAN",
+      "steady_error_pct": 0.0,
+      "mean_recovery_time_ms_penalized": 409.0000000000009,
+      "unsettled_segments": 2,
+      "power_stability_cv_pct": 6.818962689908922e-15,
+      "peak_current_mA_RMS": 5.1241662511780515,
+      "peak_voltage_vpp": 130.0,
+      "soft_limit_triggers": 2,
+      "hard_trip_triggers": 2,
+      "actual_hard_violations": 0,
+      "frequency_saturation_ms": 0.0,
+      "locked_frequency_min_MHz": 0.8548,
+      "locked_frequency_max_MHz": 0.9003,
+      "max_power_overshoot_pct": 0.0,
+      "oscillating_segments": 0,
+      "wrong_phase_lock_segments": 0,
+      "observable_detector_triggers": 0,
+      "limit_event_triggers": 4,
+      "scan_episodes": 11,
+      "scan_points": 583,
+      "scan_time_s": 0.8745
+    },
+    {
+      "strategy": "P_AND_O",
+      "steady_error_pct": 0.0,
+      "mean_recovery_time_ms_penalized": 458.85714285714323,
+      "unsettled_segments": 3,
+      "power_stability_cv_pct": 1.7536284371614765e-15,
+      "peak_current_mA_RMS": 5.1241662511780515,
+      "peak_voltage_vpp": 130.0,
+      "soft_limit_triggers": 2,
+      "hard_trip_triggers": 2,
+      "actual_hard_violations": 0,
+      "frequency_saturation_ms": 0.0,
+      "locked_frequency_min_MHz": 0.8548,
+      "locked_frequency_max_MHz": 0.9003,
+      "max_power_overshoot_pct": 0.0,
+      "oscillating_segments": 0,
+      "wrong_phase_lock_segments": 0,
+      "observable_detector_triggers": 4,
+      "limit_event_triggers": 4,
+      "scan_episodes": 6,
+      "scan_points": 318,
+      "scan_time_s": 0.47700000000000004
+    }
+  ]
+}
+
+
+STDERR:
+

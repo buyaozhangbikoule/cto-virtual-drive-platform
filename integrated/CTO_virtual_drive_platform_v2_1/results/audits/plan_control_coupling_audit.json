@@ -1,0 +1,87 @@
+{
+  "generated_at_utc": "2026-09-01T09:58:18.726806+00:00",
+  "status": "PASS_WITH_GAPS",
+  "requirement_count": 10,
+  "completed_count": 8,
+  "partial_count": 1,
+  "not_started_count": 1,
+  "formal_strategy_set": [
+    "FIXED_0P9",
+    "PERIODIC_SCAN",
+    "P_AND_O"
+  ],
+  "phase_controller_role": "same-schedule ablation, not included in the formal three-strategy ranking",
+  "comsol_or_ansys_result_available": false,
+  "matrix": [
+    {
+      "requirement_id": "R1",
+      "requirement": "同扰动序列固定频率/固定幅度基线，记录功率与相位偏离",
+      "status": "COMPLETED",
+      "evidence": "stage4_control_timeline.csv; stage5_per_segment_metrics.csv",
+      "gap_or_boundary": "电压电流保护仍会覆盖固定幅度命令；这是受保护基线，不是无保护开环"
+    },
+    {
+      "requirement_id": "R2",
+      "requirement": "区分基线较差与模型出错",
+      "status": "COMPLETED",
+      "evidence": "stage1/stage2/stage3 LTspice RAW/LOG/audit and Python cross-validation",
+      "gap_or_boundary": "只证明网表与解析实现一致，不证明假设参数等于真实器件"
+    },
+    {
+      "requirement_id": "R3",
+      "requirement": "局部扫频和相位闭环的锁定频率、恢复时间、峰值电流、功率变化",
+      "status": "COMPLETED",
+      "evidence": "plan_fixed_periodic_phase_per_segment.csv; plan_fixed_periodic_phase_integrated.csv",
+      "gap_or_boundary": "相位结果仍标成消融/计划书补充，不替代正式P&O排名"
+    },
+    {
+      "requirement_id": "R4",
+      "requirement": "电压、电流或壁面代理约束触发时限制幅度增长",
+      "status": "PARTIAL",
+      "evidence": "voltage/current foldback, hard trip, hold and ramp-up are implemented",
+      "gap_or_boundary": "没有COMSOL/实测壁面代理查找表和阈值，因此壁面代理尚未接入保护状态机"
+    },
+    {
+      "requirement_id": "R5",
+      "requirement": "同一单因素/组合扰动下比较固定、周期扫频、相位闭环",
+      "status": "COMPLETED_AS_SUPPLEMENT",
+      "evidence": "plan_fixed_periodic_phase_per_segment.csv; same representative single-factor/high-combined schedule",
+      "gap_or_boundary": "比较覆盖共同代表时间表，不声称遍历全部34个场景；正式第三策略仍是扫描辅助P&O"
+    },
+    {
+      "requirement_id": "R6",
+      "requirement": "分析扫频与相位闭环适用场景并限制结论范围",
+      "status": "COMPLETED_WITH_MODEL_SCOPE",
+      "evidence": "scan_vs_phase_scenario_comparison.csv",
+      "gap_or_boundary": "结论仅限当前假设BVD和代表扰动时间表，不能形成通用器械结论"
+    },
+    {
+      "requirement_id": "R7",
+      "requirement": "已有COMSOL结果时接入相对声学效率查找表",
+      "status": "NOT_STARTED_NO_INPUT",
+      "evidence": "none",
+      "gap_or_boundary": "没有COMSOL模型/结果；不得生成声学效率和压力代理数值"
+    },
+    {
+      "requirement_id": "R8",
+      "requirement": "无COMSOL时定义标准化电学—声场接口字段",
+      "status": "COMPLETED",
+      "evidence": "interfaces/electro_acoustic_v1/*; electro_acoustic_interface_audit.json",
+      "gap_or_boundary": "声学字段是空模板，状态明确为NOT_RUN/NOT_AVAILABLE"
+    },
+    {
+      "requirement_id": "R9",
+      "requirement": "逐条限制结论到特定BVD模型与扰动范围",
+      "status": "COMPLETED",
+      "evidence": "config.yaml scope; control/interface audits; README boundary statements",
+      "gap_or_boundary": "汇报或论文仍需沿用这些限定语"
+    },
+    {
+      "requirement_id": "R10",
+      "requirement": "明确下一阶段阻抗、功率与水听器验证假设",
+      "status": "COMPLETED_AS_PLAN_ONLY",
+      "evidence": "docs/NEXT_STAGE_REAL_VALIDATION_PLAN.md",
+      "gap_or_boundary": "尚未开展实测"
+    }
+  ]
+}

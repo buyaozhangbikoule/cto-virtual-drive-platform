@@ -1,0 +1,25 @@
+
+test_105_timelines_reconciled (test_diagnostics.AccountingTests.test_105_timelines_reconciled) ... ok
+test_exact_confirmation (test_diagnostics.AccountingTests.test_exact_confirmation) ... ok
+test_frozen_tuning_validation_separation (test_diagnostics.AccountingTests.test_frozen_tuning_validation_separation) ... ok
+test_missed_tick_breaks_run (test_diagnostics.AccountingTests.test_missed_tick_breaks_run) ... ok
+test_nine_not_pass (test_diagnostics.AccountingTests.test_nine_not_pass) ... ok
+test_noncontrol_not_extra_qualified_sample (test_diagnostics.AccountingTests.test_noncontrol_not_extra_qualified_sample) ... ok
+test_rejected_sample_breaks_run (test_diagnostics.AccountingTests.test_rejected_sample_breaks_run) ... ok
+test_signed_energy_not_clipped (test_diagnostics.AccountingTests.test_signed_energy_not_clipped) ... ok
+test_stage_protection_over_probe (test_diagnostics.AccountingTests.test_stage_protection_over_probe) ... ok
+test_boundary_flag (test_diagnostics.FeatureTests.test_boundary_flag) ... ok
+test_complex_derivative (test_diagnostics.FeatureTests.test_complex_derivative) ... ok
+test_continuous_extrema_against_scalar_minimization (test_diagnostics.FeatureTests.test_continuous_extrema_against_scalar_minimization) ... ok
+test_invalid_params (test_diagnostics.FeatureTests.test_invalid_params) ... ok
+test_jacobian_step_stability (test_diagnostics.FeatureTests.test_jacobian_step_stability) ... ok
+test_no_frequency_quantization (test_diagnostics.FeatureTests.test_no_frequency_quantization) ... ok
+test_old_seed_zero_frequency_jacobian (test_diagnostics.FeatureTests.test_old_seed_zero_frequency_jacobian) ... ok
+test_phase_is_maximum (test_diagnostics.FeatureTests.test_phase_is_maximum) ... ok
+test_saved_synthetic_gate_and_failed_ablation_retained (test_diagnostics.FeatureTests.test_saved_synthetic_gate_and_failed_ablation_retained) ... ok
+test_scale_is_spacing_not_claimed_uncertainty (test_diagnostics.FeatureTests.test_scale_is_spacing_not_claimed_uncertainty) ... ok
+
+----------------------------------------------------------------------
+Ran 19 tests in 0.123s
+
+OK

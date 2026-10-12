@@ -1,0 +1,48 @@
+test_a_stationary_plant_never_reports_nonstationary (test_unified.ScanFaultTaxonomyTests.test_a_stationary_plant_never_reports_nonstationary) ... ok
+test_anchor_recheck_between_levels_detects_a_moved_plant (test_unified.ScanFaultTaxonomyTests.test_anchor_recheck_between_levels_detects_a_moved_plant) ... ok
+test_cost_cap_bounds_one_attempt (test_unified.ScanFaultTaxonomyTests.test_cost_cap_bounds_one_attempt) ... ok
+test_each_class_is_bounded_and_latches_independently (test_unified.ScanFaultTaxonomyTests.test_each_class_is_bounded_and_latches_independently) ... ok
+test_edge_walk_with_an_unchanged_anchor_falls_back_and_stays_bounded (test_unified.ScanFaultTaxonomyTests.test_edge_walk_with_an_unchanged_anchor_falls_back_and_stays_bounded)
+Edge-walking alone must not be reported as a moved plant. ... ok
+test_invalid_data_under_normal_protection_is_a_measurement_fault (test_unified.ScanFaultTaxonomyTests.test_invalid_data_under_normal_protection_is_a_measurement_fault) ... ok
+test_metrics_split_the_failure_column_without_losing_the_total (test_unified.ScanFaultTaxonomyTests.test_metrics_split_the_failure_column_without_losing_the_total) ... ok
+test_policy_reports_the_class_and_keeps_the_low_amplitude_hold (test_unified.ScanFaultTaxonomyTests.test_policy_reports_the_class_and_keeps_the_low_amplitude_hold) ... ok
+test_preemption_does_not_spend_the_search_allowance (test_unified.ScanFaultTaxonomyTests.test_preemption_does_not_spend_the_search_allowance) ... ok
+test_protection_preemption_is_not_a_search_failure (test_unified.ScanFaultTaxonomyTests.test_protection_preemption_is_not_a_search_failure) ... ok
+test_real_segment_change_under_a_scan_is_caught_before_the_last_level (test_unified.ScanFaultTaxonomyTests.test_real_segment_change_under_a_scan_is_caught_before_the_last_level) ... ok
+test_success_clears_the_episode_but_never_the_latch (test_unified.ScanFaultTaxonomyTests.test_success_clears_the_episode_but_never_the_latch) ... ok
+test_truncation_is_charged_to_nothing (test_unified.ScanFaultTaxonomyTests.test_truncation_is_charged_to_nothing) ... ok
+test_unknown_status_falls_back_to_the_search_budget (test_unified.ScanFaultTaxonomyTests.test_unknown_status_falls_back_to_the_search_budget) ... ok
+test_all_strategies_identical_schedule_and_duration (test_unified.UnifiedTests.test_all_strategies_identical_schedule_and_duration) ... ok
+test_boundary_split_no_extra_controller_measurement (test_unified.UnifiedTests.test_boundary_split_no_extra_controller_measurement) ... ok
+test_bvd_Q_derived (test_unified.UnifiedTests.test_bvd_Q_derived) ... ok
+test_controller_measurement_has_no_ground_truth (test_unified.UnifiedTests.test_controller_measurement_has_no_ground_truth) ... ok
+test_enter_and_confirmation_are_separate (test_unified.UnifiedTests.test_enter_and_confirmation_are_separate) ... ok
+test_failed_scan_at_final_endpoint_is_counted (test_unified.UnifiedTests.test_failed_scan_at_final_endpoint_is_counted) ... ok
+test_failed_scan_target_unchanged_and_low_latch (test_unified.UnifiedTests.test_failed_scan_target_unchanged_and_low_latch) ... ok
+test_flat_scan_fails (test_unified.UnifiedTests.test_flat_scan_fails) ... ok
+test_grid_includes_boundaries_and_center (test_unified.UnifiedTests.test_grid_includes_boundaries_and_center) ... ok
+test_hard_latch_applies_to_scan (test_unified.UnifiedTests.test_hard_latch_applies_to_scan) ... ok
+test_invalid_plant_data_fails_off (test_unified.UnifiedTests.test_invalid_plant_data_fails_off) ... ok
+test_invalid_scan_measurements_never_succeed (test_unified.UnifiedTests.test_invalid_scan_measurements_never_succeed) ... ok
+test_late_invalid_point_not_just_anchor (test_unified.UnifiedTests.test_late_invalid_point_not_just_anchor) ... ok
+test_missed_tick_breaks_continuous_window (test_unified.UnifiedTests.test_missed_tick_breaks_continuous_window) ... ok
+test_nan_is_not_steady_state (test_unified.UnifiedTests.test_nan_is_not_steady_state) ... ok
+test_no_fallback_for_short_qualified_run (test_unified.UnifiedTests.test_no_fallback_for_short_qualified_run) ... ok
+test_no_simultaneous_amplitude_and_frequency_step (test_unified.UnifiedTests.test_no_simultaneous_amplitude_and_frequency_step) ... ok
+test_peak_includes_pre_guard_not_only_clamped_output (test_unified.UnifiedTests.test_peak_includes_pre_guard_not_only_clamped_output) ... ok
+test_phase_probes_are_executed_and_timed (test_unified.UnifiedTests.test_phase_probes_are_executed_and_timed) ... ok
+test_protection_invalidates_phase_pair (test_unified.UnifiedTests.test_protection_invalidates_phase_pair) ... ok
+test_reference_not_returned_from_executor (test_unified.UnifiedTests.test_reference_not_returned_from_executor) ... ok
+test_retry_deadline_and_exhaustion (test_unified.UnifiedTests.test_retry_deadline_and_exhaustion) ... ok
+test_scan_amplitude_synced_and_no_instant_return (test_unified.UnifiedTests.test_scan_amplitude_synced_and_no_instant_return) ... ok
+test_short_probes_not_extra_control_samples (test_unified.UnifiedTests.test_short_probes_not_extra_control_samples) ... ok
+test_truncated_probe_is_not_validated (test_unified.UnifiedTests.test_truncated_probe_is_not_validated) ... ok
+test_units_power_and_phase (test_unified.UnifiedTests.test_units_power_and_phase) ... ok
+test_unobserved_boundary_not_reprotected (test_unified.UnifiedTests.test_unobserved_boundary_not_reprotected) ... ok
+
+----------------------------------------------------------------------
+Ran 41 tests in 0.735s
+
+OK
+

@@ -1,0 +1,65 @@
+{
+  "generated_at_utc": "2026-09-04T14:23:25.730851+00:00",
+  "mode": "rerun",
+  "project": {
+    "name": "CTO超声换能器虚拟阻抗建模与自适应驱动控制",
+    "platform_version": "v2.1-organized",
+    "model_id": "MODEL_V2_1_HYPOTHETICAL",
+    "positioning": "研究型、可复现的离散准稳态电学仿真平台原型",
+    "scope": "小信号线性BVD+有损L型匹配；无实测、声场、热、空化、临床或硬件实时结论",
+    "source_model": "戴维南电压源+串联源阻抗Rs；不是完整开关功放模型"
+  },
+  "config_sha256": "c506ee14bc57a2ef206079a885af849dbae1867a83b67dbfa9b1e089441a9117",
+  "pipeline_records": [
+    {
+      "stage": "stage4_5_control",
+      "status": "PASS"
+    },
+    {
+      "stage": "phase_ablation",
+      "status": "PASS"
+    }
+  ],
+  "collection_audit": {
+    "status": "PASS",
+    "files_collected": 154,
+    "bytes_collected": 34464726,
+    "warning_count": 0,
+    "missing_source_directory_count": 0,
+    "declared_source_audits": [
+      {
+        "file": "evidence\\ltspice\\stage1\\V2_1_STAGE1_audit.json",
+        "declared_status": "PASS"
+      },
+      {
+        "file": "evidence\\ltspice\\stage1\\V2_STAGE1_audit.json",
+        "declared_status": "UNDECLARED"
+      },
+      {
+        "file": "evidence\\ltspice\\stage2\\stage2_audit.json",
+        "declared_status": "PASS"
+      },
+      {
+        "file": "results\\tables\\stage3_disturbance\\stage3_audit.json",
+        "declared_status": "PASS"
+      },
+      {
+        "file": "results\\tables\\stage3_selection\\stage3_selection_audit.json",
+        "declared_status": "PASS"
+      },
+      {
+        "file": "results\\tables\\stage4_5\\stage4_5_audit.json",
+        "declared_status": "PASS"
+      },
+      {
+        "file": "results\\phase_ablation\\phase_ablation_audit.json",
+        "declared_status": "PASS"
+      }
+    ],
+    "important_interpretation": [
+      "RAW/LOG是LTspice批处理证据；PNG/PDF/SVG是数据派生图，不是GUI截图。",
+      "当前正式三策略为固定0.9 MHz、周期扫频、扫描辅助P&O；相位误差闭环单列为消融验证。",
+      "全部电学结果基于假设BVD与线性准稳态模型，不是实测或声场结果。"
+    ]
+  }
+}

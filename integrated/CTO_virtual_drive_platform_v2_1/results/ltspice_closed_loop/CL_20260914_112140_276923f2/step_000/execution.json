@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-09-14T11:21:40.513478+08:00",
+  "command": [
+    "D:\\LTspice.exe",
+    "-b",
+    "C:\\Users\\24739\\Documents\\Codex\\2026-08-10\\new-chat\\CTO_virtual_drive_platform_v2_1\\results\\ltspice_closed_loop\\CL_20260914_112140_276923f2\\step_000\\circuit.cir"
+  ],
+  "cir_sha256": "18dbe47a06c679ede69ab95015d3d40fc7d4c070d2d720fa3af444bd269ca2d3",
+  "return_code": 0,
+  "wall_seconds": 12.21561680000741,
+  "stdout": "",
+  "stderr": "",
+  "error": "ValueError: RAW未覆盖要求区间"
+}

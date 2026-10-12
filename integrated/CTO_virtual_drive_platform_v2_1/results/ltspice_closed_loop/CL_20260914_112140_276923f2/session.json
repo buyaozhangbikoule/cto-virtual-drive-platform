@@ -1,0 +1,15 @@
+{
+  "status": "ERROR",
+  "next_command": {
+    "frequency_hz": 899000.0,
+    "amplitude": 0.4
+  },
+  "controller": {
+    "direction": 1,
+    "previous": null,
+    "hold_left": 0,
+    "trip": false
+  },
+  "records": [],
+  "error": "RAW未覆盖要求区间"
+}

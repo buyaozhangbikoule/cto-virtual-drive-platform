@@ -1,0 +1,14 @@
+{
+  "scope": "Live local Streamlit browser verification, not a circuit experiment",
+  "url": "http://127.0.0.1:8501",
+  "batch_id": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "observed": [
+    "Current unified overview displayed the explicit batch, 235-file check and scientific limits",
+    "The time-series tab displayed all recorded phases with separate frequency, P_Rm and capture axes",
+    "The CASE_FS_M5 2.4-3.2 s interval was selected using searchable combo input and Enter; screenshot checked",
+    "Download event received for the complete per-segment CSV",
+    "Version/patch/evidence page displayed current, historical and unintegrated research categories"
+  ],
+  "additional_automated_coverage": "Streamlit AppTest visited current, version, legacy exploration and experimental LTspice pages without triggering a simulator run",
+  "note": "Browser download event was verified, not an independent recomputation of downloaded content; source file hashes are checked by the catalog. Initial semantic mouse selection did not stick; searchable input and Enter did."
+}
