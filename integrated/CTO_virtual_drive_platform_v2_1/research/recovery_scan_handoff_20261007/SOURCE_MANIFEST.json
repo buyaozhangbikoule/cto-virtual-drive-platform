@@ -1,0 +1,49 @@
+{
+  "status": "UNVALIDATED_DRAFT",
+  "performance_validated": false,
+  "formal_base_commit": "e359dbe2818801dc5ef665101cb50e842a272dac",
+  "files": [
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/candidate.py",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/candidate.py",
+      "bytes": 4428,
+      "sha256": "756e40f07797c1b3e30911607a1907523d39f5654c867a28ab3778026f569e34"
+    },
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/protocol.md",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/protocol.md",
+      "bytes": 3593,
+      "sha256": "d42289e54b452226d7a4e488c6dcb2f8223303443e5ca9ce4ea5f468988a01fe"
+    },
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/config.json",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/config.json",
+      "bytes": 2581,
+      "sha256": "7ec2b3a970446f67d3220ab2a17d1604a14dd89eb64e55ed69d836e6369b9896"
+    },
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/controllers.py",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/controllers.py",
+      "bytes": 20246,
+      "sha256": "a416c98b3da1eceecf881d5f466856f13d866f9fb3963e60487770ca40a8a4f2"
+    },
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/engine.py",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/engine.py",
+      "bytes": 13113,
+      "sha256": "54659dd6fa23f6cdaee330544f774c138f8f73831e7cdbed2aba44a7dc0dd233"
+    },
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/metrics.py",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/metrics.py",
+      "bytes": 10899,
+      "sha256": "5234fdf88d0fea25dc85620d92f387a21ec399f7c3aeef24eaf26f5258f893aa"
+    },
+    {
+      "path": "integrated/CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/models/model_v2_1.py",
+      "source": "CTO_virtual_drive_platform_v2_1/research/recovery_scan_handoff_20261007/shared/models/model_v2_1.py",
+      "bytes": 12585,
+      "sha256": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23"
+    }
+  ]
+}
