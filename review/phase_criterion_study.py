@@ -58,8 +58,24 @@ def arg_zin(model, f: float, s) -> float:
     return float(np.degrees(np.arctan2(z.imag, z.real)))
 
 
-def arg_zbvd(model, f: float, s) -> float:
+def arg_zbvd_exact(model, f: float, s) -> float:
+    """The model's own z_bvd: an EXACT de-embedding reference.
+
+    This is NOT what a controller can compute. It reads the perturbed
+    scenario's true motional branch. Reported only as the ideal bound against
+    which the implementable nominal de-embedding below is judged. The first
+    version of this study used it while the prose claimed nominal-only; that
+    conflation inflated the >=98% count from 3/9 to 4/9.
+    """
     return float(np.degrees(np.angle(complex(model.response(f, s)['z_bvd'][0]))))
+
+
+def arg_zbvd_nominal(model, f: float, s, de) -> float | None:
+    """What a controller CAN compute: measured Z_in through the nominal match."""
+    q = model.response(f, s)
+    zin = complex(q['v_input'][0]) / complex(q['i_source'][0])
+    z = de(zin, f)
+    return None if z is None else float(np.degrees(np.arctan2(z.imag, z.real)))
 
 
 class Deembed:
@@ -99,16 +115,26 @@ def roots(fn, s, target: float, lo: float, hi: float, coarse: float = 25.0,
           tol: float = 1e-9) -> list[float]:
     """Every root of fn(f,s)-target on [lo,hi]: exact grid zeros and bisected
     sign changes. The exact-zero branch matters: the calibration frequency is
-    itself a root by construction and a strict sign test silently drops it."""
+    itself a root by construction and a strict sign test silently drops it.
+    fn may return None where the quantity is undefined; such nodes are skipped
+    rather than treated as a crossing."""
     g = np.arange(lo, hi + 1, coarse)
-    e = [fn(f, s) - target for f in g]
+    e = []
+    for f in g:
+        v = fn(f, s)
+        e.append(None if v is None else v - target)
     out = [float(g[i]) for i, v in enumerate(e) if v == 0.0]
     for i in range(len(g) - 1):
+        if e[i] is None or e[i + 1] is None:
+            continue
         if e[i] * e[i + 1] < 0:
             a, c, fa = float(g[i]), float(g[i + 1]), e[i]
             for _ in range(80):
                 m = 0.5 * (a + c)
-                fm = fn(m, s) - target
+                v = fn(m, s)
+                if v is None:
+                    break
+                fm = v - target
                 if fm == 0.0:
                     a = c = m
                     break
@@ -122,13 +148,25 @@ def roots(fn, s, target: float, lo: float, hi: float, coarse: float = 25.0,
     return sorted({round(x, 4) for x in out})
 
 
-def optima(model, cfg, step: float = 25.0):
-    g = np.arange(cfg['frequency_min_Hz'], cfg['frequency_max_Hz'] + 1, step)
-    out = {}
-    for c, s in model.scenario_map().items():
-        p = np.array([float(model.response(f, s)['p_rm_W'][0]) for f in g])
-        out[c] = (float(g[int(np.argmax(p))]), float(p.max()))
-    return out
+def feasible_power(model, cfg, f: float, s) -> float:
+    """Soft-constraint-feasible power at f, matching metrics.references().
+
+    The platform's acceptance divides by the maximum of p_rm_W*a^2 with
+    a = min(1, Vsoft/Vport, Isoft/Iport), not by raw p_rm_W at amplitude 1.
+    Using the raw value as a denominator, as the first version of this study
+    did, reports a different quantity from the capture ratio being gated.
+    """
+    q = model.response(f, s)
+    a = min(1.0, cfg['voltage_soft_Vpp'] / float(q['vport_vpp'][0]),
+            cfg['current_soft_Arms'] / float(q['iport_irms_A'][0]))
+    return float(q['p_rm_W'][0]) * a * a
+
+
+def optima(model, M, cfg):
+    """Power optimum per scenario, on the platform's own reference definition."""
+    ref = M.references(cfg)
+    return {c: (ref[c]['policy']['frequency_Hz'], ref[c]['policy']['power_W'])
+            for c in ref}
 
 
 def unique_cases(ids):
@@ -235,17 +273,33 @@ def run_variant(E, C, model, cfg, ids, law, clip, deembed_on, suite='CANDIDATE')
 # sections
 # --------------------------------------------------------------------------
 def s1(E, C, model, cfg, ids, opt):
-    it_us = cfg['control_tick_us'] + 2 * cfg['scan_point_us']
+    # Engine.control_duration() = min(tick - t % tick, end - t): a CONTROL
+    # action runs only to the next ABSOLUTE lattice point, so the two 1.5 ms
+    # probes consume part of the 20 ms tick instead of extending it. One full
+    # iteration therefore occupies one tick, not tick + 2*scan_point_us. The
+    # measured interval distribution printed below is the check.
+    it_us = cfg['control_tick_us']
     print('S1 迭代成本与每段需要的频率行程')
-    print('  一次更新 = 1 个控制周期 %.0f ms + 2 个探针 %.1f ms = %.1f ms'
-          % (cfg['control_tick_us'] / 1000, cfg['scan_point_us'] / 1000,
-             it_us / 1000))
+    print('  CONTROL 被截到下一个绝对格点：'
+          'control_duration() = min(tick - t % tick, end - t)')
+    print('  故一次"两探针 + 一次 CONTROL"占用 %.0f ms，探针吃掉格点内的 %.1f ms，'
+          '不是额外加上去的' % (it_us / 1000, 2 * cfg['scan_point_us'] / 1000))
     print('  一段 %.0f ms 最多 %d 次更新；比例律封顶 %.0f Hz/次 -> 段内最多移动 %.0f Hz'
           % (cfg['segment_us'] / 1000, cfg['segment_us'] // it_us,
              cfg['phase_max_step_Hz'],
              (cfg['segment_us'] // it_us) * cfg['phase_max_step_Hz']))
     eng, tp = run_variant(E, C, model, cfg, ids, 'PROPORTIONAL',
                           cfg['phase_max_step_Hz'], False, 'S1')
+    ups = [e['time_us'] for e in eng.events if e['event'] == 'PHASE_UPDATE']
+    gaps = collections.Counter(b - a for a, b in zip(ups, ups[1:]))
+    dom = gaps.most_common(1)[0]
+    print('  实测: %d 个更新、%d 个间隔，最常见间隔 %d us 出现 %d 次（%.1f%%）'
+          % (len(ups), len(ups) - 1, dom[0], dom[1],
+             100 * dom[1] / max(1, len(ups) - 1)))
+    cd = collections.Counter(r['action_end_us'] - r['action_start_us']
+                             for r in eng.rows if r['kind'] == 'CONTROL')
+    print('  CONTROL 实际时长分布 (us:次): %s'
+          % ', '.join('%d:%d' % kv for kv in sorted(cd.items())[:6]))
     first = {}
     for r in eng.rows:
         first.setdefault(r['segment_index'], r['frequency_Hz'])
@@ -266,7 +320,7 @@ def s1(E, C, model, cfg, ids, opt):
 
 def s2(cfg, eng):
     gain, clip = cfg['phase_gain_Hz_per_deg'], cfg['phase_max_step_Hz']
-    it = (cfg['control_tick_us'] + 2 * cfg['scan_point_us']) / 1e6
+    it = cfg['control_tick_us'] / 1e6          # see the note in s1()
     print()
     print('S2 比例增益在替代什么')
     print('  比例律 df = clip(%.1f Hz/deg x error x sign(slope), +-%.0f Hz)'
@@ -308,41 +362,51 @@ def s3s4(model, cfg, ids, opt, tp):
     base = model.scenario_map()['CASE_000_BASELINE']
     de = Deembed(model)
     f0 = cfg['initial_frequency_Hz']
-    q = model.response(f0, base)
-    z = de(complex(q['v_input'][0]) / complex(q['i_source'][0]), f0)
-    tb = math.degrees(math.atan2(z.imag, z.real))
+    tb_exact = arg_zbvd_exact(model, f0, base)
+    tb_nom = arg_zbvd_nominal(model, f0, base, de)
     lo, hi = cfg['frequency_min_Hz'], cfg['frequency_max_Hz']
     gate = cfg['capture_threshold']
     print()
     print('S3/S4 冻结相位目标在功率最优处是否可解')
-    print('  arg(Z_in)  目标 %+.6f deg（正式策略所闭的量）' % tp)
-    print('  arg(Z_bvd) 目标 %+.6f deg（用标称 L 型网络去嵌后，来源 %s）'
-          % (tb, de.origin))
-    print('  判据: 解处功率 / 该场景参考最优功率 >= %.0f%% 才可能达标' % (100 * gate))
+    print('  arg(Z_in)           目标 %+.6f deg（正式策略所闭的量，可测）' % tp)
+    print('  精确 arg(Z_bvd)      目标 %+.6f deg（读模型 z_bvd，控制器办不到，'
+          '只作理想上界）' % tb_exact)
+    print('  标称去嵌 arg(Z_bvd_est) 目标 %+.6f deg（测得 Z_in + 冻结标称网络，'
+          '可实现；来源 %s）' % (tb_nom, de.origin))
+    print('  基准场景网络即标称网络，故后两者在标定频率处应相同，差 %.2e deg'
+          % abs(tb_exact - tb_nom))
+    print('  分母用平台 metrics.references() 的软约束可行功率，'
+          '不是裸 p_rm_W；门槛 %.0f%%' % (100 * gate))
     print()
+    cols = (('arg(Z_in)', lambda f, s: arg_zin(model, f, s), tp),
+            ('精确去嵌', lambda f, s: arg_zbvd_exact(model, f, s), tb_exact),
+            ('标称去嵌', lambda f, s: arg_zbvd_nominal(model, f, s, de), tb_nom))
     rows = []
     for c in unique_cases(ids):
         s = model.scenario_map()[c]
         fopt, popt = opt[c]
         cells, bests = [], []
-        for fn, t in ((arg_zin, tp), (arg_zbvd, tb)):
-            rs = roots(lambda f, sc: fn(model, f, sc), s, t, lo, hi)
-            fr = [100 * float(model.response(f, s)['p_rm_W'][0]) / popt for f in rs]
+        for _, fn, t in cols:
+            rs = roots(fn, s, t, lo, hi)
+            fr = [100 * feasible_power(model, cfg, f, s) / popt for f in rs]
             bests.append(max(fr) if fr else 0.)
             cells.append(', '.join('%.0f:%.1f%%' % (f, r)
                                    for f, r in zip(rs, fr)) or '带内无解')
         rows.append((c, fopt, cells, bests))
-        print('  %-20s 最优 %8.0f Hz' % (c, fopt))
-        print('      arg(Z_in) 的解: %s' % cells[0])
-        print('      arg(Z_bvd)的解: %s' % cells[1])
+        print('  %-20s 参考最优 %8.0f Hz / %7.3f mW' % (c, fopt, 1000 * popt))
+        for (nm, _, _), cell in zip(cols, cells):
+            print('      %-9s 的解: %s' % (nm, cell))
     print()
-    for i, nm in enumerate(('arg(Z_in) ', 'arg(Z_bvd)')):
+    for i, (nm, _, _) in enumerate(cols):
         b = [r[3][i] for r in rows]
         ok = sum(1 for v in b if v >= 100 * gate)
-        print('  %s 存在达标解 %d/%d 场景；各场景最好解的功率占比 最小 %.1f%% '
-              '中位 %.1f%% 均值 %.1f%%'
+        print('  %-9s 存在达标解 %d/%d 场景；各场景最好解占参考功率 '
+              '最小 %.3f%% 中位 %.2f%% 均值 %.2f%%'
               % (nm, ok, len(rows), min(b), float(np.median(b)), sum(b) / len(b)))
-    print('  两种判据的达标场景数相同；差别在其余场景是"灾难"还是"差一点"。')
+    print('  可实现的标称去嵌是 3/9，低于 arg(Z_in) 的 4/9：匹配网络自身被扰动时')
+    print('  （LMATCH_P10、QL_20）用标称值去嵌本身就是错的。精确去嵌的 4/9 是')
+    print('  读了真值的理想上界，不能当作换判据的收益。')
+    print('  个别解略超 100%：细根落在 100 Hz 参考网格的节点之间，不是效率超过 1。')
     # Does the error even change sign near the optimum?
     print()
     print('  在功率最优点 +-3 kHz、1 Hz 细网格上 arg(Z_in)-目标 的取值范围:')
@@ -406,12 +470,13 @@ def main():
     root = pathlib.Path(a.root).resolve()
     E, C, M, model, cfg = build(root)
     ids = cfg['historical_schedule']
-    opt = optima(model, cfg)
+    opt = optima(model, M, cfg)
     print('源目录 %s' % root)
-    print('参考最优取自 %.0f Hz 网格上的 p_rm_W 峰值；门槛 %.0f%%；'
+    print('参考最优与功率分母均取自平台 metrics.references()（%.0f Hz 网格上'
+          '软约束可行功率 p_rm_W*a^2 的峰值）；门槛 %.0f%%；'
           '达标还要求 %d 个连续 %d ms 格点样本。\n'
-          % (25.0, 100 * cfg['capture_threshold'], cfg['continuous_samples'],
-             cfg['control_tick_us'] / 1000))
+          % (cfg['reference_grid_step_Hz'], 100 * cfg['capture_threshold'],
+             cfg['continuous_samples'], cfg['control_tick_us'] / 1000))
     eng = tp = None
     if 'S1' in want or 'S2' in want:
         eng, tp = s1(E, C, model, cfg, ids, opt)
