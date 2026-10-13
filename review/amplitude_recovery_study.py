@@ -20,10 +20,17 @@ Established first (see audit_codex_oct13.py and the segment-7 trace):
                  20 ms, so that negative result is confounded with the clock.
 
 No variant reads a scenario ID, a segment boundary, the offline optimum table
-or the acceptance counter. Nothing is written.
+or the acceptance counter.
+
+Read-only by default. With --out <dir> it additionally writes the per-variant
+execution tables, events and metrics into that directory, in the same CSV/JSON
+shape run_unified.py uses, so a reviewer can diff them line by line against
+their own batches. It never writes into workspace/ or any outputs/ tree.
 """
 import argparse
 import collections
+import csv
+import hashlib
 import json
 import math
 import pathlib
@@ -194,7 +201,37 @@ def run_hybrid(E, C, cfg, ids, mode, hold, suite):
 TARGET = [None]      # the frozen phase target, set once in main()
 
 
-def report(M, cfg, name, eng, ref):
+SAFE_SLUG = str.maketrans({c: '_' for c in ' /\\:*?"<>|°+'})
+
+
+def dump(out: pathlib.Path, name: str, eng, per, summary):
+    """Same CSV/JSON shape as run_unified.py, for line-by-line comparison."""
+    slug = name.translate(SAFE_SLUG)
+    if eng.rows:
+        with (out / f'{slug}_executions.csv').open(
+                'w', encoding='utf-8-sig', newline='') as f:
+            w = csv.DictWriter(f, fieldnames=list(eng.rows[0]))
+            w.writeheader()
+            w.writerows(eng.rows)
+    (out / f'{slug}_events.json').write_text(
+        json.dumps(eng.events, ensure_ascii=False, indent=2, allow_nan=False),
+        encoding='utf-8')
+    return slug
+
+
+def source_hashes(root: pathlib.Path) -> dict:
+    """Prove which baseline was run: compare against the batch's run_metadata."""
+    names = ('config.json', 'controllers.py', 'engine.py', 'metrics.py',
+             'models/model_v2_1.py')
+    out = {}
+    for n in names:
+        p = root / n
+        if p.is_file():
+            out[n] = hashlib.sha256(p.read_bytes()).hexdigest()
+    return out
+
+
+def report(M, cfg, name, eng, ref, out=None, collected=None):
     per, s = M.evaluate(eng.rows, eng.events, cfg, ref)
     c = collections.Counter(e['event'] for e in eng.events)
     low = sum(r['duration_us'] for r in eng.rows
@@ -207,14 +244,43 @@ def report(M, cfg, name, eng, ref):
           % (name, s['settled_segments'], s['energy_capture_pct'],
              c['PHASE_UPDATE'], c['PHASE_PROBE_FAILED'],
              c['SCAN_ATTEMPT_START'], low, pv, hv))
+    if out is not None:
+        slug = dump(out, name, eng, per, s)
+        row = dict(variant=name, variant_slug=slug,
+                   settled_segments=s['settled_segments'],
+                   energy_capture_pct=s['energy_capture_pct'],
+                   phase_updates=c['PHASE_UPDATE'],
+                   phase_probe_failed=c['PHASE_PROBE_FAILED'],
+                   phase_slope_unresolved=c['PHASE_SLOPE_UNRESOLVED'],
+                   scan_attempts=c['SCAN_ATTEMPT_START'],
+                   scan_failures=s['scan_failures'],
+                   below_full_amplitude_ms=low,
+                   max_applied_amplitude=max(r['applied_amplitude']
+                                             for r in eng.rows),
+                   pre_guard_peak_vport_Vpp=pv,
+                   actual_hard_violation_ms=hv)
+        collected['overall'].append(row)
+        for r in per:
+            collected['per_segment'].append(dict(variant=name, **r))
     return per
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--root', required=True)
+    ap.add_argument('--out', default=None,
+                    help='optional directory for execution tables, events and '
+                         'metrics; never workspace/ or an outputs/ tree')
     a = ap.parse_args()
     root = pathlib.Path(a.root).resolve()
+    out = None
+    if a.out:
+        out = pathlib.Path(a.out).resolve()
+        parts = set(out.parts)
+        if 'workspace' in parts or 'outputs' in parts:
+            raise SystemExit('refusing to write into workspace/ or outputs/: %s' % out)
+        out.mkdir(parents=True, exist_ok=True)
+    collected = dict(overall=[], per_segment=[])
     E, C, M, model, cfg = build(root)
     ids = cfg['historical_schedule']
     ref = M.references(cfg)
@@ -225,21 +291,21 @@ def main():
           % cfg['phase_deadband_deg'])
     tables = {}
     tables['A 原样'] = report(M, cfg, 'A 原样 (死区 0.10°)',
-                              run_phase(E, C, cfg, ids, 0.1, False, 'L0'), ref)
+                              run_phase(E, C, cfg, ids, 0.1, False, 'L0'), ref, out, collected)
     for db in (0.3, 1.0, 3.0):
         tables['死区 %.1f°' % db] = report(
             M, cfg, 'L1 死区 %.1f°' % db,
-            run_phase(E, C, cfg, ids, db, False, 'L1'), ref)
+            run_phase(E, C, cfg, ids, db, False, 'L1'), ref, out, collected)
     tables['L2 升幅优先'] = report(
-        M, cfg, 'L2 改频后等升幅停止', run_phase(E, C, cfg, ids, 0.1, True, 'L2'), ref)
+        M, cfg, 'L2 改频后等升幅停止', run_phase(E, C, cfg, ids, 0.1, True, 'L2'), ref, out, collected)
     tables['L2+死区1.0'] = report(
-        M, cfg, 'L2 + 死区 1.0°', run_phase(E, C, cfg, ids, 1.0, True, 'L2b'), ref)
+        M, cfg, 'L2 + 死区 1.0°', run_phase(E, C, cfg, ids, 1.0, True, 'L2b'), ref, out, collected)
     print()
     for mode in ('ABSOLUTE', 'SCAN_END'):
         for hold in (False, True):
             nm = 'L3 重冻结 %s%s' % (mode, ' + 等升幅' if hold else '')
             tables[nm] = report(M, cfg, nm,
-                                run_hybrid(E, C, cfg, ids, mode, hold, 'L3'), ref)
+                                run_hybrid(E, C, cfg, ids, mode, hold, 'L3'), ref, out, collected)
     print()
     print('每段能量捕获 (%):')
     print('%-26s' % '' + ''.join('%7d' % i for i in range(12)))
@@ -254,6 +320,37 @@ def main():
         print('  %-26s %s  能量 %5.1f%%'
               % (k, '  未合格' if v is None else '%5.0f ms' % v,
                  r['energy_capture_pct']))
+
+
+    if out is not None:
+        for nm, rows in (('overall_metrics.csv', collected['overall']),
+                         ('per_segment_metrics.csv', collected['per_segment'])):
+            if rows:
+                with (out / nm).open('w', encoding='utf-8-sig', newline='') as f:
+                    w = csv.DictWriter(f, fieldnames=list(rows[0]))
+                    w.writeheader()
+                    w.writerows(rows)
+        (out / 'configuration.json').write_text(
+            json.dumps(cfg, ensure_ascii=False, indent=2, allow_nan=False),
+            encoding='utf-8')
+        (out / 'provenance.json').write_text(json.dumps(dict(
+            source_root=str(root),
+            source_hashes=source_hashes(root),
+            registered_batch_compared_against=
+                'UNIFIED_20260923T013352_476445Z_f442bcda',
+            registered_source_tree_sha256=
+                'f442bcda10396bb29748a562b3c2a1953d0b6288a5972a8acdeb39317fef972b',
+            schedule=ids,
+            scorer='metrics.evaluate with metrics.references(cfg)',
+            frozen_phase_target_deg=TARGET[0],
+            reference_definition=
+                'max over reference_grid_step_Hz of p_rm_W*a^2, '
+                'a = min(1, voltage_soft_Vpp/vport_vpp, current_soft_Arms/iport_irms_A)',
+            note='A variant must reproduce 6/12 and 57.34% or nothing here is evidence',
+            python=sys.version, numpy=np.__version__,
+        ), ensure_ascii=False, indent=2), encoding='utf-8')
+        print()
+        print('已写入 %s' % out)
 
 
 if __name__ == '__main__':

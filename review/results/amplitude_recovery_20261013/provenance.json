@@ -1,0 +1,32 @@
+{
+  "source_root": "/tmp/claude-0/-home-user-cto-virtual-drive-platform/bc293afb-98ff-55d3-b088-2c39b9b0faae/scratchpad/main_unified",
+  "source_hashes": {
+    "config.json": "7ec2b3a970446f67d3220ab2a17d1604a14dd89eb64e55ed69d836e6369b9896",
+    "controllers.py": "a416c98b3da1eceecf881d5f466856f13d866f9fb3963e60487770ca40a8a4f2",
+    "engine.py": "54659dd6fa23f6cdaee330544f774c138f8f73831e7cdbed2aba44a7dc0dd233",
+    "metrics.py": "5234fdf88d0fea25dc85620d92f387a21ec399f7c3aeef24eaf26f5258f893aa",
+    "models/model_v2_1.py": "ecf0fdaed26f29394dfde729e6c3001c231c6b77bca122e138e7136425640d23"
+  },
+  "registered_batch_compared_against": "UNIFIED_20260923T013352_476445Z_f442bcda",
+  "registered_source_tree_sha256": "f442bcda10396bb29748a562b3c2a1953d0b6288a5972a8acdeb39317fef972b",
+  "schedule": [
+    "CASE_000_BASELINE",
+    "CASE_C0_P30",
+    "CASE_RM_P50",
+    "CASE_FS_M5",
+    "CASE_LMATCH_P10",
+    "CASE_QL_20",
+    "CASE_COMBINED_HIGH",
+    "CASE_000_BASELINE",
+    "CASE_LM_P20",
+    "CASE_000_BASELINE",
+    "CASE_CM_P20",
+    "CASE_000_BASELINE"
+  ],
+  "scorer": "metrics.evaluate with metrics.references(cfg)",
+  "frozen_phase_target_deg": -1.0782096368565852,
+  "reference_definition": "max over reference_grid_step_Hz of p_rm_W*a^2, a = min(1, voltage_soft_Vpp/vport_vpp, current_soft_Arms/iport_irms_A)",
+  "note": "A variant must reproduce 6/12 and 57.34% or nothing here is evidence",
+  "python": "3.11.15 (main, Mar  3 2026, 09:26:23) [GCC 13.3.0]",
+  "numpy": "2.4.6"
+}
