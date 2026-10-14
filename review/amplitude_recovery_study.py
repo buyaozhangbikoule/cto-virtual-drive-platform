@@ -156,8 +156,26 @@ def run_hybrid(E, C, cfg, ids, mode, hold, suite):
                 pt = io.point(target, cfg['scan_amplitude'], 'PHASE_TARGET_CAPTURE')
                 if pt.ok:
                     tp = float(pt.measurement.phase_input_deg)
+                    # The capture point IS the freshest measurement at the new
+                    # centre. Before 2026-10-14 this refresh was missing, so the
+                    # next probe_update computed its error from a pre-scan
+                    # measurement at the OLD centre while bracketing the NEW
+                    # one -- 33 such calls, 19 of them past the deadband. With
+                    # hold=True the settling gate happened to suppress that
+                    # path, which made the gate look worth +11.75 pp when its
+                    # own contribution is +0.53. Never let `last`, `tp` and
+                    # `target` come from different captures.
+                    last = pt.measurement
                     io.event('PHASE_TARGET_REFROZEN', target_deg=tp,
                              reference_frequency_Hz=target)
+                else:
+                    # No validated phase at the new centre: the old target
+                    # belongs to a frequency we have left. Revoke it rather
+                    # than steer on it, and wait for a fresh capture.
+                    tp, last = None, None
+                    io.event('PHASE_TARGET_REVOKED',
+                             reason='CAPTURE_UNAVAILABLE_AT_NEW_CENTRE',
+                             frequency_Hz=target, status=pt.status)
                 settling, a_prev = True, -1.0
                 next_scan = ((io.time // period + 1) * period if mode == 'ABSOLUTE'
                              else io.time + period)
@@ -188,11 +206,20 @@ def run_hybrid(E, C, cfg, ids, mode, hold, suite):
                 else:
                     may_probe = False
             if may_probe:
-                new, probed = probe_update(E, C, io, last, tp, target,
-                                           cfg['phase_deadband_deg'])
-                if hold and probed and new != target:
-                    settling, a_prev = True, -1.0
-                target = new
+                # Guard against the 2026-10-14 defect returning: the error and
+                # the probe bracket must refer to the same centre.
+                if (C.valid_measurement(last)
+                        and abs(last.frequency_Hz - target) > 1e-7):
+                    io.event('STALE_CENTRE_MEASUREMENT_BLOCKED',
+                             measurement_frequency_Hz=last.frequency_Hz,
+                             trusted_centre_Hz=target,
+                             measurement_time_us=last.time_us)
+                else:
+                    new, probed = probe_update(E, C, io, last, tp, target,
+                                               cfg['phase_deadband_deg'])
+                    if hold and probed and new != target:
+                        settling, a_prev = True, -1.0
+                    target = new
         if not io.finished:
             last = io.control(target, cfg['scan_amplitude'] if failed else 1.)
     return eng
