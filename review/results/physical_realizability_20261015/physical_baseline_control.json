@@ -1,0 +1,552 @@
+{
+  "results": {
+    "Q=800.00": {
+      "keff": 0.0661,
+      "q": 800.0,
+      "fwhm_Hz": 1125.0,
+      "fp_minus_fs_Hz": 1970.4361231834832,
+      "phase_target_deg": -1.0782096368565852,
+      "strategies": {
+        "FIXED": {
+          "settled": 7,
+          "energy_pct": 73.77834015632311,
+          "per_segment": [
+            100.0,
+            100.0,
+            100.0,
+            0.02177056376272617,
+            85.67688087483772,
+            100.0,
+            0.03636478164254244,
+            100.0,
+            0.00835880471226227,
+            96.34998299261214,
+            0.012004778284599539,
+            96.35041216147265
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 0
+        },
+        "PERIODIC_SCAN": {
+          "settled": 1,
+          "energy_pct": 41.958641853267814,
+          "per_segment": [
+            74.98289838667147,
+            62.764832746646086,
+            60.73523828246072,
+            20.32791190286955,
+            36.883179282190206,
+            49.484065358707326,
+            37.795484376307165,
+            24.492415764677098,
+            18.411882004934572,
+            38.35684528742487,
+            22.7802740540155,
+            34.78753657249488
+          ],
+          "settled_flags": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 21,
+          "phase_updates": 0
+        },
+        "PHASE_FEEDBACK": {
+          "settled": 6,
+          "energy_pct": 57.337358679119646,
+          "per_segment": [
+            100.0,
+            100.08198116770612,
+            99.7534137243921,
+            0.021775303180012237,
+            46.959451722814286,
+            73.51173931644693,
+            0.035188124245906824,
+            26.928930055202617,
+            0.011628781557477735,
+            80.18617447616218,
+            0.011985469796681508,
+            74.60964978886504
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 154
+        }
+      },
+      "reference_frequency_Hz": {
+        "CASE_000_BASELINE": 900000.0,
+        "CASE_C0_P30": 900000.0,
+        "CASE_RM_P50": 900000.0,
+        "CASE_FS_M5": 854800.0,
+        "CASE_LMATCH_P10": 900300.0,
+        "CASE_QL_20": 900000.0,
+        "CASE_COMBINED_HIGH": 854900.0,
+        "CASE_LM_P20": 821400.0,
+        "CASE_CM_P20": 821400.0
+      },
+      "reference_amplitude": {
+        "CASE_000_BASELINE": 1.0,
+        "CASE_C0_P30": 1.0,
+        "CASE_RM_P50": 1.0,
+        "CASE_FS_M5": 1.0,
+        "CASE_LMATCH_P10": 1.0,
+        "CASE_QL_20": 1.0,
+        "CASE_COMBINED_HIGH": 1.0,
+        "CASE_LM_P20": 1.0,
+        "CASE_CM_P20": 1.0
+      }
+    },
+    "Q=35.46": {
+      "keff": 0.3,
+      "q": 35.45797039916352,
+      "fwhm_Hz": 25382.163442192723,
+      "fp_minus_fs_Hz": 43456.35304972657,
+      "phase_target_deg": -1.078209636849829,
+      "strategies": {
+        "FIXED": {
+          "settled": 7,
+          "energy_pct": 77.0405007366319,
+          "per_segment": [
+            100.0,
+            99.8999161106309,
+            99.99157538797695,
+            10.387564481208972,
+            92.06574696703036,
+            99.94127617854949,
+            16.470850450341846,
+            100.0,
+            4.265185483340267,
+            96.75795431565122,
+            6.10064909669077,
+            96.91170801687285
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 0
+        },
+        "PERIODIC_SCAN": {
+          "settled": 1,
+          "energy_pct": 43.549646672005174,
+          "per_segment": [
+            75.642621866008,
+            64.05699787313891,
+            61.36026896041439,
+            21.871921799148453,
+            37.02332469940497,
+            50.76171888405026,
+            43.097382489266735,
+            29.255728794142527,
+            20.570467671260374,
+            37.430173961348856,
+            21.079033225822517,
+            37.42818808943844
+          ],
+          "settled_flags": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 21,
+          "phase_updates": 0
+        },
+        "PHASE_FEEDBACK": {
+          "settled": 3,
+          "energy_pct": 55.8914242676419,
+          "per_segment": [
+            100.0,
+            99.95401316078458,
+            99.99599698987366,
+            10.373826142335567,
+            55.28727082003387,
+            54.68380559314941,
+            7.829671482512572,
+            54.856985898570514,
+            5.513520655456753,
+            48.38207928404212,
+            7.462180868588256,
+            46.79088384378737
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 361
+        }
+      },
+      "reference_frequency_Hz": {
+        "CASE_000_BASELINE": 900000.0,
+        "CASE_C0_P30": 901000.0,
+        "CASE_RM_P50": 900300.0,
+        "CASE_FS_M5": 851600.0,
+        "CASE_LMATCH_P10": 904700.0,
+        "CASE_QL_20": 900600.0,
+        "CASE_COMBINED_HIGH": 853900.0,
+        "CASE_LM_P20": 819100.0,
+        "CASE_CM_P20": 818800.0
+      },
+      "reference_amplitude": {
+        "CASE_000_BASELINE": 1.0,
+        "CASE_C0_P30": 1.0,
+        "CASE_RM_P50": 1.0,
+        "CASE_FS_M5": 1.0,
+        "CASE_LMATCH_P10": 1.0,
+        "CASE_QL_20": 1.0,
+        "CASE_COMBINED_HIGH": 1.0,
+        "CASE_LM_P20": 1.0,
+        "CASE_CM_P20": 1.0
+      }
+    },
+    "Q=13.81": {
+      "keff": 0.45,
+      "q": 13.810857823361614,
+      "fwhm_Hz": 65166.11868073932,
+      "fp_minus_fs_Hz": 107806.51972053784,
+      "phase_target_deg": -1.0782096368502874,
+      "strategies": {
+        "FIXED": {
+          "settled": 8,
+          "energy_pct": 89.04308529224443,
+          "per_segment": [
+            99.99714846271517,
+            99.97945894020111,
+            99.95647357851844,
+            73.21591564775603,
+            99.65328160087715,
+            99.95988190951712,
+            62.77172692217185,
+            99.99714846271517,
+            25.138974193098328,
+            98.3304140853187,
+            50.68879537767046,
+            98.83862554751089
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 0
+        },
+        "PERIODIC_SCAN": {
+          "settled": 1,
+          "energy_pct": 52.17326408894489,
+          "per_segment": [
+            75.84098259441927,
+            64.48023917726236,
+            61.52867412199772,
+            47.92361347765363,
+            58.31979546667412,
+            51.25797820762026,
+            54.719766630291616,
+            45.813210707197186,
+            25.71930494103,
+            40.51656410413472,
+            48.283869036955615,
+            39.7190289950365
+          ],
+          "settled_flags": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 20,
+          "phase_updates": 0
+        },
+        "PHASE_FEEDBACK": {
+          "settled": 3,
+          "energy_pct": 75.04959391983562,
+          "per_segment": [
+            99.99714846271517,
+            99.98743810628866,
+            99.9943565226839,
+            69.92479617994462,
+            84.10896952780976,
+            84.05097227411265,
+            48.20276027341982,
+            83.9277429607505,
+            32.01378407507173,
+            56.160487353961024,
+            39.93051300381141,
+            55.65433159324063
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 361
+        }
+      },
+      "reference_frequency_Hz": {
+        "CASE_000_BASELINE": 900700.0,
+        "CASE_C0_P30": 901800.0,
+        "CASE_RM_P50": 901600.0,
+        "CASE_FS_M5": 852400.0,
+        "CASE_LMATCH_P10": 903200.0,
+        "CASE_QL_20": 901300.0,
+        "CASE_COMBINED_HIGH": 856400.0,
+        "CASE_LM_P20": 819000.0,
+        "CASE_CM_P20": 820100.0
+      },
+      "reference_amplitude": {
+        "CASE_000_BASELINE": 1.0,
+        "CASE_C0_P30": 1.0,
+        "CASE_RM_P50": 1.0,
+        "CASE_FS_M5": 1.0,
+        "CASE_LMATCH_P10": 1.0,
+        "CASE_QL_20": 1.0,
+        "CASE_COMBINED_HIGH": 1.0,
+        "CASE_LM_P20": 1.0,
+        "CASE_CM_P20": 1.0
+      }
+    },
+    "Q=6.23": {
+      "keff": 0.6,
+      "q": 6.234368421830949,
+      "fwhm_Hz": 144361.0545774711,
+      "fp_minus_fs_Hz": 225000.0,
+      "phase_target_deg": -1.0782096368501728,
+      "strategies": {
+        "FIXED": {
+          "settled": 9,
+          "energy_pct": 97.85922865053958,
+          "per_segment": [
+            99.9948173344606,
+            99.92732878901542,
+            99.9523187568609,
+            98.51178940845881,
+            82.91511370476114,
+            99.99788470736993,
+            96.88790108428311,
+            99.9948173344606,
+            96.19989570257422,
+            99.9948173344606,
+            98.68753974411013,
+            99.9948173344606
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            true,
+            true
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 0
+        },
+        "PERIODIC_SCAN": {
+          "settled": 1,
+          "energy_pct": 61.882281114568336,
+          "per_segment": [
+            75.9004760058897,
+            64.57486450497954,
+            61.39678712543365,
+            55.94741136773861,
+            59.61310581307888,
+            51.3010742891279,
+            63.73705112328866,
+            60.76134010387978,
+            55.29467251747172,
+            70.41767076201411,
+            51.34647975485485,
+            64.59870821527758
+          ],
+          "settled_flags": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 19,
+          "phase_updates": 0
+        },
+        "PHASE_FEEDBACK": {
+          "settled": 6,
+          "energy_pct": 96.25261013679516,
+          "per_segment": [
+            99.9948173344606,
+            99.94152650022106,
+            99.92956106248491,
+            99.1182198908316,
+            82.48110852567818,
+            99.86530224059598,
+            97.44910463850589,
+            99.9975619770307,
+            95.33263032319933,
+            93.78199135052367,
+            93.91834705187946,
+            93.58861847489491
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false
+          ],
+          "scan_attempts": 0,
+          "phase_updates": 400
+        }
+      },
+      "reference_frequency_Hz": {
+        "CASE_000_BASELINE": 901000.0,
+        "CASE_C0_P30": 896300.0,
+        "CASE_RM_P50": 901800.0,
+        "CASE_FS_M5": 910400.0,
+        "CASE_LMATCH_P10": 857100.0,
+        "CASE_QL_20": 900600.0,
+        "CASE_COMBINED_HIGH": 881700.0,
+        "CASE_LM_P20": 897400.0,
+        "CASE_CM_P20": 903600.0
+      },
+      "reference_amplitude": {
+        "CASE_000_BASELINE": 1.0,
+        "CASE_C0_P30": 1.0,
+        "CASE_RM_P50": 1.0,
+        "CASE_FS_M5": 1.0,
+        "CASE_LMATCH_P10": 1.0,
+        "CASE_QL_20": 1.0,
+        "CASE_COMBINED_HIGH": 1.0,
+        "CASE_LM_P20": 1.0,
+        "CASE_CM_P20": 1.0
+      }
+    }
+  },
+  "schedule": [
+    "CASE_000_BASELINE",
+    "CASE_C0_P30",
+    "CASE_RM_P50",
+    "CASE_FS_M5",
+    "CASE_LMATCH_P10",
+    "CASE_QL_20",
+    "CASE_COMBINED_HIGH",
+    "CASE_000_BASELINE",
+    "CASE_LM_P20",
+    "CASE_000_BASELINE",
+    "CASE_CM_P20",
+    "CASE_000_BASELINE"
+  ],
+  "kappa_q": 3.506832237279909,
+  "registered_batch": "UNIFIED_20260923T013352_476445Z_f442bcda"
+}
