@@ -1,0 +1,298 @@
+{
+  "status": "PASS",
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "strategies": [
+    "FIXED_0P9",
+    "PERIODIC_SCAN",
+    "P_AND_O"
+  ],
+  "schedule": [
+    {
+      "state_index": 0,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 0.0,
+      "end_s": 0.8
+    },
+    {
+      "state_index": 1,
+      "case_id": "CASE_C0_P30",
+      "start_s": 0.8,
+      "end_s": 1.6
+    },
+    {
+      "state_index": 2,
+      "case_id": "CASE_RM_P50",
+      "start_s": 1.6,
+      "end_s": 2.4000000000000004
+    },
+    {
+      "state_index": 3,
+      "case_id": "CASE_FS_M5",
+      "start_s": 2.4000000000000004,
+      "end_s": 3.2
+    },
+    {
+      "state_index": 4,
+      "case_id": "CASE_LMATCH_P10",
+      "start_s": 3.2,
+      "end_s": 4.0
+    },
+    {
+      "state_index": 5,
+      "case_id": "CASE_QL_20",
+      "start_s": 4.0,
+      "end_s": 4.800000000000001
+    },
+    {
+      "state_index": 6,
+      "case_id": "CASE_COMBINED_HIGH",
+      "start_s": 4.800000000000001,
+      "end_s": 5.6000000000000005
+    },
+    {
+      "state_index": 7,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 5.6000000000000005,
+      "end_s": 6.4
+    },
+    {
+      "state_index": 8,
+      "case_id": "CASE_LM_P20",
+      "start_s": 6.4,
+      "end_s": 7.2
+    },
+    {
+      "state_index": 9,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 7.2,
+      "end_s": 8.0
+    },
+    {
+      "state_index": 10,
+      "case_id": "CASE_CM_P20",
+      "start_s": 8.0,
+      "end_s": 8.8
+    },
+    {
+      "state_index": 11,
+      "case_id": "CASE_000_BASELINE",
+      "start_s": 8.8,
+      "end_s": 9.600000000000001
+    }
+  ],
+  "schedule_sha256": "148d5fbe3a265a287d7aad0ba9378a9d48b2e71a63252f3cb6d6053390c36106",
+  "all_strategies_same_schedule": true,
+  "control_dt_s": 0.02,
+  "scan_point_dt_s": 0.0015,
+  "recovery_capture_threshold": 0.98,
+  "recovery_consecutive_control_samples": 10,
+  "recovery_only_normal_control_samples": true,
+  "p_and_o_initial_step_Hz": 500.0,
+  "p_and_o_min_step_Hz": 100.0,
+  "controller_uses_case_change_as_trigger": false,
+  "controller_uses_optimal_safe_power_as_trigger": false,
+  "schedule_and_optimum_used_for_evaluation_only": true,
+  "detector_logic_pass": true,
+  "observable_scan_reason_pass": true,
+  "allowed_reacquisition_reasons": [
+    "HARD_LIMIT_EVENT",
+    "OBSERVABLE_2_OF_4",
+    "SOFT_LIMIT_EVENT"
+  ],
+  "p_and_o_objective": "amplitude-normalized observable port active power",
+  "disturbance_detector": {
+    "measurement_vector": [
+      "P_port/a^2",
+      "complex_Zin",
+      "phase",
+      "reflection_proxy",
+      "Vpp",
+      "Irms"
+    ],
+    "reference_alpha": 0.02,
+    "reference_stable_samples": 10,
+    "minimum_votes": 2,
+    "consecutive_samples": 3,
+    "thresholds_are_hypothetical": true,
+    "power_drop_fraction": 0.1,
+    "complex_z_change_fraction": 0.15,
+    "phase_change_deg": 5.0,
+    "gamma_rise": 0.1,
+    "gamma_absolute": 0.2,
+    "post_scan_cooldown_s": 0.4
+  },
+  "frequency_update_only_after_protection_stabilized": true,
+  "protection_states": [
+    "NORMAL",
+    "SOFT_FOLDBACK",
+    "HARD_TRIP",
+    "RECOVERY_HOLD",
+    "RAMP_UP"
+  ],
+  "soft_limits": {
+    "Vpp": 130.0,
+    "Irms_A": 0.0055
+  },
+  "hard_limits": {
+    "Vpp": 160.0,
+    "Irms_A": 0.006
+  },
+  "actual_hard_violation_total": 0,
+  "observable_trigger_evaluation": [
+    {
+      "state_index": 1,
+      "case_id": "CASE_C0_P30",
+      "first_control_capture_pct_evaluation_only": 100.0,
+      "trigger_observed": 0,
+      "trigger_source": "NONE",
+      "trigger_delay_ms": "",
+      "scan_started": 0,
+      "scan_start_delay_ms": "",
+      "event_rows_in_segment": 0,
+      "scan_points_in_segment": 0,
+      "detector_reason": "",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 2,
+      "case_id": "CASE_RM_P50",
+      "first_control_capture_pct_evaluation_only": 100.0,
+      "trigger_observed": 1,
+      "trigger_source": "OBSERVABLE_2_OF_4",
+      "trigger_delay_ms": 40.000000000000924,
+      "scan_started": 1,
+      "scan_start_delay_ms": 60.00000000000094,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 53,
+      "detector_reason": "COMPLEX_Z_CHANGE+PHASE_CHANGE",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 3,
+      "case_id": "CASE_FS_M5",
+      "first_control_capture_pct_evaluation_only": 0.0,
+      "trigger_observed": 1,
+      "trigger_source": "HARD_LIMIT_EVENT",
+      "trigger_delay_ms": 19.50000000000429,
+      "scan_started": 1,
+      "scan_start_delay_ms": 439.50000000000466,
+      "event_rows_in_segment": 2,
+      "scan_points_in_segment": 53,
+      "detector_reason": "",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 4,
+      "case_id": "CASE_LMATCH_P10",
+      "first_control_capture_pct_evaluation_only": 0.0,
+      "trigger_observed": 1,
+      "trigger_source": "HARD_LIMIT_EVENT",
+      "trigger_delay_ms": 19.00000000000812,
+      "scan_started": 1,
+      "scan_start_delay_ms": 439.00000000000847,
+      "event_rows_in_segment": 2,
+      "scan_points_in_segment": 53,
+      "detector_reason": "",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 5,
+      "case_id": "CASE_QL_20",
+      "first_control_capture_pct_evaluation_only": 91.70594360219502,
+      "trigger_observed": 1,
+      "trigger_source": "OBSERVABLE_2_OF_4",
+      "trigger_delay_ms": 178.50000000000853,
+      "scan_started": 1,
+      "scan_start_delay_ms": 198.50000000000813,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 53,
+      "detector_reason": "POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 6,
+      "case_id": "CASE_COMBINED_HIGH",
+      "first_control_capture_pct_evaluation_only": 0.036364781642542414,
+      "trigger_observed": 1,
+      "trigger_source": "OBSERVABLE_2_OF_4",
+      "trigger_delay_ms": 57.99999999999805,
+      "scan_started": 1,
+      "scan_start_delay_ms": 77.99999999999763,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 53,
+      "detector_reason": "POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 7,
+      "case_id": "CASE_000_BASELINE",
+      "first_control_capture_pct_evaluation_only": 0.024321438359613808,
+      "trigger_observed": 1,
+      "trigger_source": "OBSERVABLE_2_OF_4",
+      "trigger_delay_ms": 57.499999999985896,
+      "scan_started": 1,
+      "scan_start_delay_ms": 77.49999999998548,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 53,
+      "detector_reason": "POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE+REFLECTION_RISE",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 8,
+      "case_id": "CASE_LM_P20",
+      "first_control_capture_pct_evaluation_only": 0.01166650028798224,
+      "trigger_observed": 1,
+      "trigger_source": "SOFT_LIMIT_EVENT",
+      "trigger_delay_ms": 16.99999999997459,
+      "scan_started": 1,
+      "scan_start_delay_ms": 136.99999999997203,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 74,
+      "detector_reason": "",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 9,
+      "case_id": "CASE_000_BASELINE",
+      "first_control_capture_pct_evaluation_only": 0.0038546799603657524,
+      "trigger_observed": 1,
+      "trigger_source": "OBSERVABLE_2_OF_4",
+      "trigger_delay_ms": 47.99999999996363,
+      "scan_started": 1,
+      "scan_start_delay_ms": 67.9999999999632,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 68,
+      "detector_reason": "POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE+REFLECTION_RISE",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 10,
+      "case_id": "CASE_CM_P20",
+      "first_control_capture_pct_evaluation_only": 0.01675536678723174,
+      "trigger_observed": 1,
+      "trigger_source": "SOFT_LIMIT_EVENT",
+      "trigger_delay_ms": 29.999999999953175,
+      "scan_started": 1,
+      "scan_start_delay_ms": 149.9999999999506,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 74,
+      "detector_reason": "",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    },
+    {
+      "state_index": 11,
+      "case_id": "CASE_000_BASELINE",
+      "first_control_capture_pct_evaluation_only": 0.0038546799603657524,
+      "trigger_observed": 1,
+      "trigger_source": "OBSERVABLE_2_OF_4",
+      "trigger_delay_ms": 40.99999999994175,
+      "scan_started": 1,
+      "scan_start_delay_ms": 60.99999999994132,
+      "event_rows_in_segment": 1,
+      "scan_points_in_segment": 68,
+      "detector_reason": "POWER_DROP+COMPLEX_Z_CHANGE+PHASE_CHANGE+REFLECTION_RISE",
+      "note": "schedule and optimum fields are used here for post-run scoring only"
+    }
+  ],
+  "scope": "quasi-steady linear electrical control simulation; no sensor noise, measured data, acoustic, thermal or hardware timing claim"
+}

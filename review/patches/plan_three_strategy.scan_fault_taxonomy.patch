@@ -1,0 +1,659 @@
+# 扫描失败分类补丁 (scan fault taxonomy)
+#
+# 目标实现：validation/plan-three-strategy-v1-20260917 提交 650abdc 的
+#           workspace/CTO_plan_three_strategy_v1_20260917/
+# 落地方式：在该实现目录里执行
+#     patch -p1 < <本文件>
+#     python3 -m unittest discover tests      # 41 项，原 27 项全保留
+#     python3 run_unified.py --suite all
+# 说明与结果：review/13_对根因复核意见的处置与扫描失败分类补丁_2026-09-18.md
+#
+# 本补丁不改动本仓库的 workspace/ 冻结快照，也不改动被审分支的 models/。
+# 验收门槛（98%、10 连续样本、160 Vpp / 6 mA 硬限、0.8 s 段长、
+# 功率参考与源标定）一律未动。
+--- a/config.json
++++ b/config.json
+@@ -29,6 +29,13 @@
+   "scan_validation_relative_tolerance": 0.1,
+   "failed_scan_retry_us": 50000,
+   "failed_scan_max_retries": 2,
++  "scan_preemption_max_retries": 4,
++  "scan_measurement_fault_max_retries": 2,
++  "scan_nonstationary_max_retries": 2,
++  "scan_max_coarse_fallbacks": 2,
++  "scan_max_points": 400,
++  "scan_max_duration_us": 300000,
++  "scan_budget_origin": "declared_not_tuned; every class is bounded and any exhaustion reaches the same latch; rationale and the sensitivity that is NOT established in review/13",
+   "failed_scan_exhaustion": "latched_low_hold_until_explicit_run_reset",
+   "hard_hold_us": 60000,
+   "recovery_hold_us": 100000,
+--- a/controllers.py
++++ b/controllers.py
+@@ -18,12 +18,54 @@
+     return sorted(set(xs + [left, min(max(center, left), right)]))
+ 
+ 
++# A scan point, and therefore a scan, stops for reasons that are not
++# interchangeable: protection pre-empting the drive is a different event from
++# corrupt data, from a plant that moved under the scan, and from a search that
++# ran out of budget. Returning a bare None for all of them made the first three
++# indistinguishable in the log and charged every one of them to a single
++# counter, so a protection trip that happened to land on a scan release was
++# reported as a scan-algorithm failure.
++POINT_VALID = 'VALID'
++POINT_PREEMPTED = 'PREEMPTED_PROTECTION'
++POINT_INVALID = 'INVALID_MEASUREMENT'
++POINT_TRUNCATED = 'END_OF_RUN_TRUNCATED'
++
++SCAN_VALID = 'VALID_LOCAL_CANDIDATE'
++SCAN_PREEMPTED = POINT_PREEMPTED
++SCAN_INVALID = POINT_INVALID
++SCAN_TRUNCATED = POINT_TRUNCATED
++SCAN_NONSTATIONARY = 'NONSTATIONARY_SCAN'
++SCAN_SEARCH_FAILED = 'SEARCH_FAILED'
++
++# Which budget a failed scan is charged to. A status missing from this map is
++# charged to the search budget: an unrecognised failure must never escape
++# accounting, so unknown is treated as the controller's own fault.
++BUDGET_OF_STATUS = {
++    SCAN_PREEMPTED: 'preemption',
++    SCAN_INVALID: 'measurement',
++    SCAN_NONSTATIONARY: 'nonstationary',
++    SCAN_SEARCH_FAILED: 'search',
++}
++
++
++@dataclass(frozen=True)
++class PointResult:
++    """One scan point: why it ended, and a measurement only when it is usable."""
++    status: str
++    measurement: Measurement | None = None
++
++    @property
++    def ok(self) -> bool:
++        return self.status == POINT_VALID
++
++
+ @dataclass(frozen=True)
+ class ScanResult:
+     ok: bool
+     frequency_Hz: float | None
+-    reason: str
++    reason: str          # diagnostic detail, kept for existing log readers
+     band_edge: bool = False
++    status: str = SCAN_SEARCH_FAILED    # accounting class; unknown means ours
+ 
+ 
+ class RetryBudget:
+@@ -53,6 +95,69 @@
+         # Cumulative failure count is deliberately retained.
+ 
+ 
++class ScanBudget:
++    """Four separate budgets, one shared latch.
++
++    Splitting the counters stops a protection pre-emption from consuming the
++    search-failure allowance, which is what silently spent one of three slots
++    at the 8.0 s boundary. It does NOT remove the limit: every class has its
++    own bounded allowance, and exhausting ANY of them latches the same
++    low-amplitude hold that only an explicit run reset clears
++    (config: failed_scan_exhaustion). Deleting the counter was never the fix.
++    """
++    CLASSES = ('search', 'preemption', 'measurement', 'nonstationary')
++
++    def __init__(self, cfg: dict):
++        self.delay = cfg['failed_scan_retry_us']
++        self.limit = {
++            'search': cfg['failed_scan_max_retries'],
++            'preemption': cfg['scan_preemption_max_retries'],
++            'measurement': cfg['scan_measurement_fault_max_retries'],
++            'nonstationary': cfg['scan_nonstationary_max_retries'],
++        }
++        self.episode = {k: 0 for k in self.CLASSES}
++        self.total = {k: 0 for k in self.CLASSES}
++        self.attempts = 0
++        self.not_before = 0
++        self.exhausted = False
++        self.exhausted_class = None
++
++    @staticmethod
++    def classify(status: str) -> str | None:
++        """None means 'not a failure to charge' (the run simply ended)."""
++        if status == SCAN_TRUNCATED:
++            return None
++        return BUDGET_OF_STATUS.get(status, 'search')
++
++    @property
++    def total_failures(self) -> int:
++        return sum(self.total.values())
++
++    def can_start(self, t: int) -> bool:
++        return not self.exhausted and t >= self.not_before
++
++    def start(self, t: int):
++        if not self.can_start(t):
++            raise RuntimeError('retry attempted before deadline or after exhaustion')
++        self.attempts += 1
++
++    def fail(self, cls: str, t: int):
++        if cls not in self.limit:
++            raise ValueError(f'unknown budget class {cls!r}')
++        self.episode[cls] += 1
++        self.total[cls] += 1
++        self.not_before = t+self.delay
++        if self.episode[cls] >= 1+self.limit[cls]:
++            self.exhausted = True
++            self.exhausted_class = cls
++
++    def success(self):
++        self.attempts, self.not_before = 0, 0
++        for cls in self.CLASSES:
++            self.episode[cls] = 0
++        # Cumulative counts and the latch are deliberately retained.
++
++
+ class Executor:
+     """Narrow adapter. Policies can execute/read, but cannot inspect plant truth."""
+     def __init__(self, engine: Engine):
+@@ -76,20 +181,29 @@
+     def control(self, f, a, kind='CONTROL'):
+         return self.execute(f, a, kind, self._engine.control_duration()) if not self.finished else None
+ 
+-    def point(self, f, a, kind) -> Measurement | None:
+-        """Deferred actions consume logged time; latch/hold cannot be bypassed."""
++    def point(self, f, a, kind) -> PointResult:
++        """Deferred actions consume logged time; latch/hold cannot be bypassed.
++
++        The status separates the three ways a point can fail to produce data.
++        Protection state is read from the returned sample, never from the plant.
++        """
+         start = self.time
+         while not self.finished and self.time-start < self.cfg['point_acquire_timeout_us']:
+             point_start = self.time
+             m = self.execute(f, a, kind, self.cfg['scan_point_us'])
+-            if self.time-point_start != self.cfg['scan_point_us']:
+-                return None  # truncated dwell is not a completed measurement
++            if m is None or self.time-point_start != self.cfg['scan_point_us']:
++                return PointResult(POINT_TRUNCATED)  # truncated dwell is not a measurement
+             if not valid_measurement(m):
+                 # Invalid data aborts, not a successful zero-power boundary peak.
+-                return None
++                # A guard that zeroed or froze the drive is a pre-emption, not a
++                # data fault: it is the protection chain working, and charging it
++                # to the search budget is what hid the 8.0 s boundary trip.
++                if m.frozen or m.state != 'NORMAL':
++                    return PointResult(POINT_PREEMPTED)
++                return PointResult(POINT_INVALID)
+             if not m.frozen and m.state == 'NORMAL' and abs(m.frequency_Hz-f)<1e-7:
+-                return m
+-        return None
++                return PointResult(POINT_VALID, m)
++        return PointResult(POINT_TRUNCATED if self.finished else POINT_PREEMPTED)
+ 
+ 
+ def changed_anchor(a: Measurement, b: Measurement, cfg: dict) -> bool:
+@@ -101,27 +215,66 @@
+     return abs(zb-za)/max(abs(za), 1e-15)>tol or abs(pb-pa)/max(pa,1e-15)>tol
+ 
+ 
++def _failed_point(result: PointResult, reason: str) -> ScanResult:
++    """Carry a point's status up to the scan without inventing a cause."""
++    return ScanResult(False, None, reason, status=result.status)
++
++
+ def scan(io: Executor, trusted_frequency: float) -> ScanResult:
++    """Three-level local search with a re-measured anchor between levels.
++
++    Two things changed relative to the single end-of-scan anchor check.
++
++    A level whose argmax keeps landing on the window edge no longer aborts the
++    whole scan on the spot. Edge-walking on its own does not prove the plant
++    moved: a true peak outside the window, a second peak, or noise produce the
++    same symptom. So the anchor is RE-MEASURED at the trusted frequency, and
++    only a measured change in it is called non-stationary. If the anchor is
++    unchanged, the search falls back one level coarser -- bounded by
++    scan_max_coarse_fallbacks -- because a 100 Hz step with three re-centres can
++    move the centre by at most 400 Hz and cannot bridge a large shift.
++
++    The anchor is also re-measured after every completed level, not only after
++    the last one, so a plant that moves under the scan is caught in one level
++    instead of after the whole budget has been spent. Every re-measurement is a
++    real executed point and is charged to the timeline like any other.
++    """
+     cfg = io.cfg
+     amp = cfg['scan_amplitude']
+-    anchor = io.point(trusted_frequency, amp, 'SCAN_ANCHOR_START')
+-    if not valid_measurement(anchor):
+-        return ScanResult(False, None, 'INVALID_START_ANCHOR_OR_PROTECTION')
++    start_us = io.time
++    points = 0
++    anchor_point = io.point(trusted_frequency, amp, 'SCAN_ANCHOR_START')
++    if not anchor_point.ok:
++        return _failed_point(anchor_point, 'INVALID_START_ANCHOR_OR_PROTECTION')
++    anchor = anchor_point.measurement
+     center = trusted_frequency
+     edge = False
+     best_score = None
+-    for half, step in cfg['scan_levels_Hz']:
++    fallbacks = 0
++    level = 0
++    levels = cfg['scan_levels_Hz']
++    while level < len(levels):
++        half, step = levels[level]
++        walked = False
+         for recenter in range(cfg['scan_max_recentres']+1):
+             fs = grid(center, half, step, cfg['frequency_min_Hz'], cfg['frequency_max_Hz'])
+             values = []
+             for f in fs:
+-                m = io.point(f, amp, 'SCAN_POINT')
+-                score = measured_score(m, cfg)
++                if points >= cfg['scan_max_points'] or \
++                        io.time-start_us >= cfg['scan_max_duration_us']:
++                    return ScanResult(False, None, 'SCAN_COST_CAP_REACHED',
++                                      status=SCAN_SEARCH_FAILED)
++                p = io.point(f, amp, 'SCAN_POINT')
++                points += 1
++                if not p.ok:
++                    return _failed_point(p, 'INVALID_POINT_OR_PROTECTION_OR_END')
++                score = measured_score(p.measurement, cfg)
+                 if score is None or not math.isfinite(score):
+-                    return ScanResult(False, None, 'INVALID_POINT_OR_PROTECTION_OR_END')
++                    return ScanResult(False, None, 'INVALID_POINT_OR_PROTECTION_OR_END',
++                                      status=SCAN_INVALID)
+                 values.append(score)
+             if max(values) <= 1e-15 or max(values)-min(values) <= max(values)*1e-12:
+-                return ScanResult(False, None, 'FLAT_OR_NO_SIGNAL')
++                return ScanResult(False, None, 'FLAT_OR_NO_SIGNAL', status=SCAN_SEARCH_FAILED)
+             best = int(np.argmax(values))
+             center, best_score = fs[best], values[best]
+             edge = center in (cfg['frequency_min_Hz'], cfg['frequency_max_Hz'])
+@@ -130,16 +283,51 @@
+                 break
+             io.event('SCAN_RECENTRE', frequency_Hz=center, level_step_Hz=step)
+             if recenter == cfg['scan_max_recentres']:
+-                return ScanResult(False, None, 'RECENTRE_EXHAUSTED')
+-    end_anchor = io.point(trusted_frequency, amp, 'SCAN_ANCHOR_END')
+-    if changed_anchor(anchor, end_anchor, cfg):
+-        return ScanResult(False, None, 'ANCHOR_CHANGED_OR_INVALID')
++                walked = True
++        kind = 'SCAN_ANCHOR_END' if level == len(levels)-1 and not walked else 'SCAN_ANCHOR_LEVEL'
++        recheck = io.point(trusted_frequency, amp, kind)
++        points += 1
++        if not recheck.ok:
++            return _failed_point(recheck, 'ANCHOR_RECHECK_UNAVAILABLE')
++        if changed_anchor(anchor, recheck.measurement, cfg):
++            # Measured, not inferred: the load moved while we were scanning, so
++            # every candidate collected in this attempt mixes two plants.
++            io.event('SCAN_NONSTATIONARY_DETECTED', stage='LEVEL', level_index=level,
++                     level_step_Hz=step, walked_to_edge=walked)
++            return ScanResult(False, None, 'ANCHOR_CHANGED_OR_INVALID',
++                              status=SCAN_NONSTATIONARY)
++        if not walked:
++            level += 1
++            continue
++        if level > 0 and fallbacks < cfg['scan_max_coarse_fallbacks']:
++            fallbacks += 1
++            io.event('SCAN_COARSE_FALLBACK', from_level_index=level,
++                     to_level_index=level-1, fallback_count=fallbacks,
++                     restart_frequency_Hz=trusted_frequency)
++            center = trusted_frequency
++            level -= 1
++            continue
++        return ScanResult(False, None, 'RECENTRE_EXHAUSTED', status=SCAN_SEARCH_FAILED)
+     final = io.point(center, amp, 'SCAN_VALIDATE')
+-    score = measured_score(final, cfg)
++    if not final.ok:
++        return _failed_point(final, 'FINAL_VALIDATION_UNAVAILABLE')
++    score = measured_score(final.measurement, cfg)
+     if score is None or abs(score-best_score)/max(best_score,1e-15)>cfg['scan_validation_relative_tolerance']:
+-        return ScanResult(False, None, 'FINAL_VALIDATION_FAILED')
++        # A candidate that fails to reproduce may mean the search picked wrong,
++        # or may mean the plant moved between the last level and this check.
++        # Re-measure the anchor rather than charging a cause we did not observe.
++        verdict = io.point(trusted_frequency, amp, 'SCAN_ANCHOR_VALIDATE')
++        if not verdict.ok:
++            return _failed_point(verdict, 'ANCHOR_RECHECK_UNAVAILABLE')
++        if changed_anchor(anchor, verdict.measurement, cfg):
++            io.event('SCAN_NONSTATIONARY_DETECTED', stage='FINAL_VALIDATION',
++                     level_index=len(levels)-1, level_step_Hz=levels[-1][1],
++                     walked_to_edge=False)
++            return ScanResult(False, None, 'ANCHOR_CHANGED_OR_INVALID',
++                              status=SCAN_NONSTATIONARY)
++        return ScanResult(False, None, 'FINAL_VALIDATION_FAILED', status=SCAN_SEARCH_FAILED)
+     # Local measured candidate, NOT proof of the global maximum or steady lock.
+-    return ScanResult(True, center, 'LOCAL_CANDIDATE_VALIDATED', edge)
++    return ScanResult(True, center, 'LOCAL_CANDIDATE_VALIDATED', edge, status=SCAN_VALID)
+ 
+ 
+ def phase_update(io: Executor, m: Measurement, target_phase: float,
+@@ -188,7 +376,7 @@
+     cfg = io.cfg
+     target = float(cfg['initial_frequency_Hz'])
+     next_scan = cfg['scan_period_us']
+-    retry = RetryBudget(cfg)
++    retry = ScanBudget(cfg)
+     last = None
+     failed_episode = False
+     while not io.finished:
+@@ -212,13 +400,28 @@
+                 failed_episode = False
+                 next_scan = (io.time//cfg['scan_period_us']+1)*cfg['scan_period_us']
+             else:
+-                retry.fail(io.time)
++                budget_class = retry.classify(result.status)
++                if budget_class is None:
++                    # The run ended under the scan. Not a failure of anything;
++                    # recording it as one would put a phantom count in the table.
++                    io.event('SCAN_TRUNCATED_BY_RUN_END', reason=result.reason,
++                             status=result.status, trusted_frequency_unchanged_Hz=target)
++                    continue
++                retry.fail(budget_class, io.time)
+                 failed_episode = True
+-                io.event('SCAN_FAILURE', reason=result.reason,
++                io.event('SCAN_FAILURE', reason=result.reason, status=result.status,
++                         budget_class=budget_class,
+                          trusted_frequency_unchanged_Hz=target,
+-                         total_failures=retry.total_failures, retry_not_before_us=retry.not_before)
++                         episode_failures_in_class=retry.episode[budget_class],
++                         class_limit=retry.limit[budget_class],
++                         total_failures=retry.total_failures,
++                         total_search=retry.total['search'],
++                         total_preemption=retry.total['preemption'],
++                         total_measurement=retry.total['measurement'],
++                         total_nonstationary=retry.total['nonstationary'],
++                         retry_not_before_us=retry.not_before)
+                 if retry.exhausted:
+-                    io.event('SCAN_RETRIES_EXHAUSTED')
++                    io.event('SCAN_RETRIES_EXHAUSTED', budget_class=retry.exhausted_class)
+                 # Never adopt the last failed scan point as a new control target.
+                 if not io.finished:
+                     last = io.control(target, cfg['scan_amplitude'], 'FAILED_SCAN_ROLLBACK')
+--- a/metrics.py
++++ b/metrics.py
+@@ -38,6 +38,23 @@
+     return counts
+ 
+ 
++# A single scan_failures column cannot be read: a protection pre-emption, a data
++# fault, a plant that moved under the scan, and a search that ran out of budget
++# are different events with different owners. Count them separately and keep the
++# total, so the existing column still means exactly what it meant before.
++SCAN_FAILURE_CLASSES = ('search', 'preemption', 'measurement', 'nonstationary')
++
++
++def count_scan_failures(events, start, end) -> dict:
++    per = {k: 0 for k in SCAN_FAILURE_CLASSES}
++    for e in events:
++        if start <= e['time_us'] < end and e['event'] == 'SCAN_FAILURE':
++            # A failure with no class is an old-format log; count it as a search
++            # failure rather than dropping it.
++            per[e.get('budget_class', 'search')] += 1
++    return {f'scan_failures_{k}': v for k, v in per.items()}
++
++
+ def evaluate(rows: list[dict], events: list[dict], cfg: dict, refs: dict) -> tuple[list[dict],dict]:
+     if not rows:
+         raise ValueError('No executed data')
+@@ -116,6 +133,10 @@
+             rejected_hard_candidate_actions=len({r['action_id'] for r in rs if r['candidate_hard_rejected']}),
+             scan_attempts=counts.get('SCAN_ATTEMPT_START',0),scan_successes=counts.get('SCAN_SUCCESS',0),
+             scan_failures=counts.get('SCAN_FAILURE',0),scan_exhaustions=counts.get('SCAN_RETRIES_EXHAUSTED',0),
++            **count_scan_failures(events,start,end+1 if end==full_end else end),
++            scan_truncated_by_run_end=counts.get('SCAN_TRUNCATED_BY_RUN_END',0),
++            scan_nonstationary_detected=counts.get('SCAN_NONSTATIONARY_DETECTED',0),
++            scan_coarse_fallbacks=counts.get('SCAN_COARSE_FALLBACK',0),
+             frequency_saturation_events=counts.get('FREQUENCY_SATURATION',0),
+             phase_probe_failures=counts.get('PHASE_PROBE_FAILED',0),
+             noncontrol_duration_ms=sum(r['duration_us'] for r in rs if r['kind']!='CONTROL')/1000))
+@@ -138,6 +159,10 @@
+                    protection_trigger_events=sum(counts.get(k,0) for k in ('OBSERVED_HARD_TRIP','SOFT_FOLDBACK_ENTER')),
+                    scan_attempts=counts.get('SCAN_ATTEMPT_START',0),scan_failures=counts.get('SCAN_FAILURE',0),
+                    scan_exhaustions=counts.get('SCAN_RETRIES_EXHAUSTED',0),
++                   **count_scan_failures(events,0,full_end+1),
++                   scan_truncated_by_run_end=counts.get('SCAN_TRUNCATED_BY_RUN_END',0),
++                   scan_nonstationary_detected=counts.get('SCAN_NONSTATIONARY_DETECTED',0),
++                   scan_coarse_fallbacks=counts.get('SCAN_COARSE_FALLBACK',0),
+                    frequency_saturation_events=counts.get('FREQUENCY_SATURATION',0),
+                    total_executed_actions=len({r['action_id'] for r in rows}),
+                    logged_duration_s=sum(r['duration_us'] for r in rows)/1e6,
+--- a/tests/test_unified.py
++++ b/tests/test_unified.py
+@@ -6,7 +6,8 @@
+ from unittest.mock import patch
+ import numpy as np
+ 
+-from controllers import Executor, RetryBudget, ScanResult, grid, phase_update, run_policy, scan
++from controllers import (Executor, PointResult, RetryBudget, ScanBudget, ScanResult, grid,
++                         phase_update, run_policy, scan)
+ from engine import Engine, Measurement, Protection, measured_score, valid_measurement
+ from metrics import energy, evaluate, references
+ from models import model_v2_1 as model
+@@ -250,7 +251,11 @@
+         e.t = e.end-500
+         e.protection.last_us=e.t
+         result = Executor(e).point(900000,1.,'SCAN_VALIDATE')
+-        self.assertIsNone(result)
++        self.assertFalse(result.ok)
++        self.assertIsNone(result.measurement)
++        # A run that ended under the probe is not a failure of the search.
++        self.assertEqual(result.status,'END_OF_RUN_TRUNCATED')
++        self.assertIsNone(ScanBudget.classify(result.status))
+         self.assertEqual(e.rows[-1]['duration_us'],500)
+ 
+     def test_peak_includes_pre_guard_not_only_clamped_output(self):
+@@ -274,5 +279,215 @@
+         self.assertEqual(timelines[0],timelines[2])
+ 
+ 
++class ScanFaultTaxonomyTests(unittest.TestCase):
++    """Coverage for the failure classes that normal operation never reaches.
++
++    Every branch added by the taxonomy patch is forced here on purpose. A
++    failure path that only exists on paper is the defect the previous round
++    already caught once (an uninitialised counter that ran clean because its
++    branch was unreachable), so none of these are left to chance.
++    """
++
++    @classmethod
++    def setUpClass(cls):
++        cls.refs = references(CFG)
++
++    def engine(self, ids=None, strategy='PERIODIC_SCAN', cfg=None):
++        return Engine(cfg or copy.deepcopy(CFG), ids or [BASE], strategy, 'TEST')
++
++    # ---- point-level status ----------------------------------------------
++
++    def test_protection_preemption_is_not_a_search_failure(self):
++        e = self.engine()
++        e.protection.hard_until = 60000          # tripped before the scan starts
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'PREEMPTED_PROTECTION')
++        self.assertEqual(ScanBudget.classify(r.status), 'preemption')
++        # The scan aborted on the anchor: no grid point was ever executed.
++        self.assertFalse(any(x['kind'] == 'SCAN_POINT' for x in e.rows))
++
++    def test_invalid_data_under_normal_protection_is_a_measurement_fault(self):
++        e = self.engine()
++        e.measurement_filter = lambda m, k: replace(m, p_port_W=float('nan'))
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'INVALID_MEASUREMENT')
++        self.assertEqual(ScanBudget.classify(r.status), 'measurement')
++
++    def test_truncation_is_charged_to_nothing(self):
++        e = self.engine()
++        e.t = e.end - 500
++        e.protection.last_us = e.t
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'END_OF_RUN_TRUNCATED')
++        self.assertIsNone(ScanBudget.classify(r.status))
++
++    def test_unknown_status_falls_back_to_the_search_budget(self):
++        self.assertEqual(ScanBudget.classify('SOMETHING_NEW'), 'search')
++        self.assertEqual(ScanResult(False, None, 'FORCED').status, 'SEARCH_FAILED')
++
++    # ---- non-stationary detection ----------------------------------------
++
++    def test_anchor_recheck_between_levels_detects_a_moved_plant(self):
++        e = self.engine()
++
++        def moved(m, kind):
++            if kind in ('SCAN_ANCHOR_LEVEL', 'SCAN_ANCHOR_END'):
++                return replace(m, zin_real=m.zin_real*3., p_port_W=m.p_port_W*3.)
++            return m
++        e.measurement_filter = moved
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'NONSTATIONARY_SCAN')
++        self.assertEqual(ScanBudget.classify(r.status), 'nonstationary')
++        detected = [x for x in e.events if x['event'] == 'SCAN_NONSTATIONARY_DETECTED']
++        self.assertEqual(len(detected), 1)
++        # Caught at the FIRST level, not after the whole three-level budget.
++        self.assertEqual(detected[0]['level_index'], 0)
++
++    def test_real_segment_change_under_a_scan_is_caught_before_the_last_level(self):
++        cfg = copy.deepcopy(CFG)
++        cfg['segment_us'] = 40000            # boundary lands inside level 0
++        e = self.engine([BASE, 'CASE_CM_P20'], cfg=cfg)
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'NONSTATIONARY_SCAN')
++        self.assertTrue(any(x['case_id'] == BASE for x in e.rows))
++        self.assertTrue(any(x['case_id'] == 'CASE_CM_P20' for x in e.rows))
++
++    def test_a_stationary_plant_never_reports_nonstationary(self):
++        e = self.engine()
++        r = scan(Executor(e), 900000)
++        self.assertTrue(r.ok)
++        self.assertEqual(r.status, 'VALID_LOCAL_CANDIDATE')
++        self.assertFalse(any(x['event'] == 'SCAN_NONSTATIONARY_DETECTED' for x in e.events))
++
++    # ---- bounded coarse fallback -----------------------------------------
++
++    def test_edge_walk_with_an_unchanged_anchor_falls_back_and_stays_bounded(self):
++        """Edge-walking alone must not be reported as a moved plant.
++
++        The forced shape is a curve that turns monotone once the coarse levels
++        are done, while the anchor keeps reading the truth. That is deliberately
++        artificial -- it is the discrimination under test: the fine level walks,
++        the anchor says nothing moved, so the answer is a BOUNDED fallback to a
++        coarser step, not NONSTATIONARY and not an unbounded re-search.
++        """
++        cfg = copy.deepcopy(CFG)
++        cfg['scan_max_coarse_fallbacks'] = 1
++        e = self.engine(cfg=cfg)
++        seen = []
++
++        def ramp_after_coarse_levels(m, kind):
++            if kind != 'SCAN_POINT':
++                return m                      # anchors always read the truth
++            seen.append(kind)
++            if len(seen) <= 40:               # levels 0 and 1 see the real curve
++                return m
++            scale = 1e-4*(m.frequency_Hz-cfg['frequency_min_Hz'])+1.
++            return replace(m, p_port_W=scale, vpp=40., irms=.002,
++                           zin_real=50., zin_imag=0.)
++        e.measurement_filter = ramp_after_coarse_levels
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'SEARCH_FAILED')
++        self.assertEqual(r.reason, 'RECENTRE_EXHAUSTED')
++        fallbacks = [x for x in e.events if x['event'] == 'SCAN_COARSE_FALLBACK']
++        self.assertEqual(len(fallbacks), cfg['scan_max_coarse_fallbacks'])
++        self.assertEqual(fallbacks[0]['restart_frequency_Hz'], 900000)
++        self.assertFalse(any(x['event'] == 'SCAN_NONSTATIONARY_DETECTED' for x in e.events))
++
++    def test_cost_cap_bounds_one_attempt(self):
++        cfg = copy.deepcopy(CFG)
++        cfg['scan_max_points'] = 12
++        e = self.engine(cfg=cfg)
++        r = scan(Executor(e), 900000)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.reason, 'SCAN_COST_CAP_REACHED')
++        self.assertEqual(r.status, 'SEARCH_FAILED')
++        self.assertLessEqual(sum(1 for x in e.rows if x['kind'] == 'SCAN_POINT'),
++                             cfg['scan_max_points'])
++
++    # ---- budget bookkeeping ----------------------------------------------
++
++    def test_each_class_is_bounded_and_latches_independently(self):
++        for cls, limit_key in (('search', 'failed_scan_max_retries'),
++                               ('preemption', 'scan_preemption_max_retries'),
++                               ('measurement', 'scan_measurement_fault_max_retries'),
++                               ('nonstationary', 'scan_nonstationary_max_retries')):
++            with self.subTest(cls=cls):
++                b = ScanBudget(CFG)
++                for n in range(CFG[limit_key]+1):
++                    self.assertFalse(b.exhausted)
++                    b.start(n*CFG['failed_scan_retry_us'])
++                    b.fail(cls, n*CFG['failed_scan_retry_us'])
++                self.assertTrue(b.exhausted)
++                self.assertEqual(b.exhausted_class, cls)
++                self.assertFalse(b.can_start(10**9))
++
++    def test_preemption_does_not_spend_the_search_allowance(self):
++        b = ScanBudget(CFG)
++        for n in range(CFG['scan_preemption_max_retries']):
++            b.start(n*CFG['failed_scan_retry_us'])
++            b.fail('preemption', n*CFG['failed_scan_retry_us'])
++        self.assertFalse(b.exhausted)
++        self.assertEqual(b.episode['search'], 0)
++        # ...and the search allowance is still whole.
++        for n in range(CFG['failed_scan_max_retries']+1):
++            self.assertFalse(b.exhausted)
++            t = 10**6+n*CFG['failed_scan_retry_us']
++            b.start(t)
++            b.fail('search', t)
++        self.assertTrue(b.exhausted)
++        self.assertEqual(b.exhausted_class, 'search')
++
++    def test_success_clears_the_episode_but_never_the_latch(self):
++        b = ScanBudget(CFG)
++        b.start(0); b.fail('search', 0)
++        b.success()
++        self.assertEqual(b.episode['search'], 0)
++        self.assertEqual(b.total['search'], 1)
++        self.assertEqual(b.total_failures, 1)
++        b.exhausted, b.exhausted_class = True, 'search'
++        b.success()
++        self.assertTrue(b.exhausted, 'an explicit run reset is the only way out')
++
++    def test_policy_reports_the_class_and_keeps_the_low_amplitude_hold(self):
++        e = Engine(copy.deepcopy(CFG), [BASE]*3, 'PERIODIC_SCAN', 'TEST')
++
++        def preempted(io, trusted):
++            io.execute(880000, .4, 'FORCED_PREEMPTED_POINT', 1500)
++            return ScanResult(False, None, 'FORCED', status='PREEMPTED_PROTECTION')
++        with patch('controllers.scan', side_effect=preempted):
++            run_policy(Executor(e), 'PERIODIC_SCAN', 0.)
++        failures = [x for x in e.events if x['event'] == 'SCAN_FAILURE']
++        self.assertTrue(failures)
++        self.assertTrue(all(x['budget_class'] == 'preemption' for x in failures))
++        self.assertTrue(all(x['total_search'] == 0 for x in failures))
++        self.assertTrue(all(x['trusted_frequency_unchanged_Hz'] == 900000 for x in failures))
++        after = [r for r in e.rows if r['start_us'] >= failures[0]['time_us']]
++        self.assertTrue(all(r['applied_amplitude'] <= .4 for r in after))
++        # Bounded: the pre-emption allowance latches too, it is not unlimited.
++        self.assertEqual(len(failures), CFG['scan_preemption_max_retries']+1)
++        self.assertTrue(any(r['kind'] == 'FAILED_SCAN_LATCHED_HOLD' for r in e.rows))
++
++    def test_metrics_split_the_failure_column_without_losing_the_total(self):
++        e = Engine(copy.deepcopy(CFG), [BASE]*2, 'PERIODIC_SCAN', 'TEST')
++        run_policy(Executor(e), 'PERIODIC_SCAN', 0.)
++        e.event('SCAN_FAILURE', reason='X', status='PREEMPTED_PROTECTION',
++                budget_class='preemption')
++        e.event('SCAN_FAILURE', reason='Y', status='SEARCH_FAILED', budget_class='search')
++        per, overall = evaluate(e.rows, e.events, CFG, self.refs)
++        self.assertEqual(overall['scan_failures_preemption'], 1)
++        self.assertEqual(overall['scan_failures_search'], 1)
++        self.assertEqual(overall['scan_failures'], 2)
++        self.assertEqual(sum(overall[f'scan_failures_{k}'] for k in
++                             ('search', 'preemption', 'measurement', 'nonstationary')),
++                         overall['scan_failures'])
++
++
++
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

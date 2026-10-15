@@ -1,0 +1,1036 @@
+[
+  {
+    "time_us": 500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 83,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 96,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 1087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 162,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 175,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 1587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 241,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 254,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 2087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 2087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 320,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 2340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 333,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2400000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "OBSERVED_HARD_TRIP",
+    "action_id": 336,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 2400000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 336,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 2400000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 336,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "HARD_TRIP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.0
+  },
+  {
+    "time_us": 2460000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 339,
+    "kind": "CONTROL",
+    "from_state": "HARD_TRIP",
+    "to_state": "HOLD",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.25
+  },
+  {
+    "time_us": 2560000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 344,
+    "kind": "CONTROL",
+    "from_state": "HOLD",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.3
+  },
+  {
+    "time_us": 2720000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 352,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.6907665676397019
+  },
+  {
+    "time_us": 2740000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 2827000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 854800.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 2827000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 411,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 854800.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 3080000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 424,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 854800.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 3100000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 854800.0
+  },
+  {
+    "time_us": 3187000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 854800.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 3187000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 483,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 854800.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 3200000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 484,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 3300000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 489,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 854800.0,
+    "applied_amplitude": 0.6704566902565134
+  },
+  {
+    "time_us": 3500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 854800.0
+  },
+  {
+    "time_us": 3587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900300.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 3587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 557,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900300.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 3840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 570,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900300.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 4000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900300.0
+  },
+  {
+    "time_us": 4087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 4087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 636,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 4340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 649,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 4500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 4587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 4587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 715,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 4840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 728,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 5000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 5087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 854900.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 5087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 794,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 854900.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 5340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 807,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 854900.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 5500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 854900.0
+  },
+  {
+    "time_us": 5587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 854900.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 5587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 873,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 854900.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 5840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 886,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 854900.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 6000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 854900.0
+  },
+  {
+    "time_us": 6087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 6087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 952,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 6340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 965,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 6400000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "OBSERVED_HARD_TRIP",
+    "action_id": 968,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 6400000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 968,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 6400000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 968,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "HARD_TRIP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.0
+  },
+  {
+    "time_us": 6460000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 971,
+    "kind": "CONTROL",
+    "from_state": "HARD_TRIP",
+    "to_state": "HOLD",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.25
+  },
+  {
+    "time_us": 6560000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 976,
+    "kind": "CONTROL",
+    "from_state": "HOLD",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.3
+  },
+  {
+    "time_us": 6720000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 984,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.6906638297712007
+  },
+  {
+    "time_us": 6740000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 6773000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_RECENTRE",
+    "frequency_Hz": 850000.0,
+    "level_step_Hz": 5000
+  },
+  {
+    "time_us": 6858500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 821400.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 6858500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1064,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 821400.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 7100000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1077,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 821400.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 7120000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 821400.0
+  },
+  {
+    "time_us": 7202500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_NONSTATIONARY_DETECTED",
+    "stage": "FINAL_VALIDATION",
+    "level_index": 2,
+    "level_step_Hz": 100,
+    "walked_to_edge": false
+  },
+  {
+    "time_us": 7202500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_FAILURE",
+    "reason": "ANCHOR_CHANGED_OR_INVALID",
+    "status": "NONSTATIONARY_SCAN",
+    "budget_class": "nonstationary",
+    "trusted_frequency_unchanged_Hz": 821400.0,
+    "episode_failures_in_class": 1,
+    "class_limit": 2,
+    "total_failures": 1,
+    "total_search": 0,
+    "total_preemption": 0,
+    "total_measurement": 0,
+    "total_nonstationary": 1,
+    "retry_not_before_us": 7252500
+  },
+  {
+    "time_us": 7260000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 2,
+    "trusted_frequency_Hz": 821400.0
+  },
+  {
+    "time_us": 7287000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_RECENTRE",
+    "frequency_Hz": 871400.0,
+    "level_step_Hz": 5000
+  },
+  {
+    "time_us": 7372500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 7372500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1211,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 7620000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1224,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 7640000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 7727000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 7727000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1283,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 7980000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1296,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 8000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 8000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "OBSERVED_HARD_TRIP",
+    "action_id": 1297,
+    "kind": "SCAN_ANCHOR_START"
+  },
+  {
+    "time_us": 8000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1297,
+    "kind": "SCAN_ANCHOR_START",
+    "from_state": "NORMAL",
+    "to_state": "HARD_TRIP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.0
+  },
+  {
+    "time_us": 8001500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_FAILURE",
+    "reason": "INVALID_START_ANCHOR_OR_PROTECTION",
+    "status": "PREEMPTED_PROTECTION",
+    "budget_class": "preemption",
+    "trusted_frequency_unchanged_Hz": 900000.0,
+    "episode_failures_in_class": 1,
+    "class_limit": 4,
+    "total_failures": 2,
+    "total_search": 0,
+    "total_preemption": 1,
+    "total_measurement": 0,
+    "total_nonstationary": 1,
+    "retry_not_before_us": 8051500
+  },
+  {
+    "time_us": 8060000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1301,
+    "kind": "CONTROL",
+    "from_state": "HARD_TRIP",
+    "to_state": "HOLD",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.25
+  },
+  {
+    "time_us": 8160000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1306,
+    "kind": "CONTROL",
+    "from_state": "HOLD",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.3
+  },
+  {
+    "time_us": 8200000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1308,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.39999999999999997
+  },
+  {
+    "time_us": 8220000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 2,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 8253000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_RECENTRE",
+    "frequency_Hz": 850000.0,
+    "level_step_Hz": 5000
+  },
+  {
+    "time_us": 8338500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 821400.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 8338500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1388,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 821400.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 8580000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1401,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 821400.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 8600000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 821400.0
+  },
+  {
+    "time_us": 8681000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 821400.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 8681000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1456,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 821400.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 8920000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1468,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 821400.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 9000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 821400.0
+  },
+  {
+    "time_us": 9027000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_RECENTRE",
+    "frequency_Hz": 871400.0,
+    "level_step_Hz": 5000
+  },
+  {
+    "time_us": 9112500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 9112500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1547,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 9360000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1560,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 9500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 9587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 9587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 1625,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.40375
+  }
+]

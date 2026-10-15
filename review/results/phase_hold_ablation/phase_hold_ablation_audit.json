@@ -1,0 +1,164 @@
+{
+  "status": "PASS",
+  "model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "role": "fourth ablation only; replaces none of the formal three strategies and does not modify run_phase_ablation.py",
+  "variants": {
+    "ARG_ZIN_PURE": {
+      "signal": "ARG_ZIN",
+      "scan_acquisition": false,
+      "reference": "FROZEN",
+      "slew_budget_backstop": false
+    },
+    "MOTIONAL_PURE": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": false,
+      "reference": "FROZEN",
+      "slew_budget_backstop": false
+    },
+    "HOLD_FROZEN_NOSLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "FROZEN",
+      "slew_budget_backstop": false
+    },
+    "HOLD_FROZEN_SLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "FROZEN",
+      "slew_budget_backstop": true
+    },
+    "HOLD_SCANREF_NOSLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "SCAN_CURVE",
+      "slew_budget_backstop": false
+    },
+    "HOLD_SCANREF_SLEW": {
+      "signal": "MOTIONAL_DEEMBED",
+      "scan_acquisition": true,
+      "reference": "SCAN_CURVE",
+      "slew_budget_backstop": true
+    }
+  },
+  "signal_definitions": {
+    "ARG_ZIN": "arg(Vinput/Isource), positive inductive",
+    "MOTIONAL_DEEMBED": "arg(Zm) recovered from Vinput and Isource using the known matching network and C0; never reads Rm, Lm or Cm"
+  },
+  "network_zero_Hz": "1/(2*pi*sqrt(L*(C0+Cmatch))) = 903950 Hz, fixed by the matching network and C0, so it does not follow the transducer resonance",
+  "control_law": "df=clip(Kphi*(target-signal)*sign(dsignal/df),+-500 Hz)",
+  "slew_limit_Hz_per_s": 25000.0,
+  "max_frequency_travel_per_segment_kHz": 20.0,
+  "slew_limit_note": "A pure phase controller cannot cross more than this per segment whatever the gain or the signal, because the clip binds before the gain does.  This is why the scan-then-hold variant differs.",
+  "selected_gain_Hz_per_deg": 5.0,
+  "selected_summary": {
+    "ARG_ZIN_PURE": {
+      "variant": "ARG_ZIN_PURE",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 57.71859255487679,
+      "mean_abs_signal_error_deg": 28.073147688697404,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 4,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 0,
+      "never_converged_segments": 7,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 300,
+      "scan_episodes": 0,
+      "failed_scans": 0,
+      "scan_points": 0,
+      "scan_time_s": 0.0
+    },
+    "MOTIONAL_PURE": {
+      "variant": "MOTIONAL_PURE",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 64.58453595311796,
+      "mean_abs_signal_error_deg": 56.53372051916758,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 3,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 1,
+      "never_converged_segments": 7,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 0,
+      "failed_scans": 0,
+      "scan_points": 0,
+      "scan_time_s": 0.0
+    },
+    "HOLD_FROZEN_NOSLEW": {
+      "variant": "HOLD_FROZEN_NOSLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 19.338400164112066,
+      "mean_abs_signal_error_deg": 13.524783544652506,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 8,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 1,
+      "never_converged_segments": 2,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 7,
+      "failed_scans": 0,
+      "scan_points": 392,
+      "scan_time_s": 0.588
+    },
+    "HOLD_FROZEN_SLEW": {
+      "variant": "HOLD_FROZEN_SLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 1.5988611411531166,
+      "mean_abs_signal_error_deg": 7.980349983940202e-15,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 9,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 2,
+      "never_converged_segments": 0,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 10,
+      "failed_scans": 0,
+      "scan_points": 601,
+      "scan_time_s": 0.9015
+    },
+    "HOLD_SCANREF_NOSLEW": {
+      "variant": "HOLD_SCANREF_NOSLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 1.9352689676390205,
+      "mean_abs_signal_error_deg": 2.2645884247562324e-13,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 9,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 2,
+      "never_converged_segments": 0,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 10,
+      "failed_scans": 0,
+      "scan_points": 602,
+      "scan_time_s": 0.903
+    },
+    "HOLD_SCANREF_SLEW": {
+      "variant": "HOLD_SCANREF_SLEW",
+      "gain_Hz_per_deg": 5.0,
+      "mean_steady_power_error_pct": 1.5988611411531166,
+      "mean_abs_signal_error_deg": 2.270078982259833e-13,
+      "segments_with_unmeasurable_tail": 0,
+      "segments_at_or_above_95pct": 9,
+      "segments_evaluated": 11,
+      "wrong_lock_segments": 2,
+      "never_converged_segments": 0,
+      "frequency_saturation_ms": 0.0,
+      "actual_hard_violations": 0,
+      "negative_slope_samples": 0,
+      "scan_episodes": 10,
+      "failed_scans": 0,
+      "scan_points": 601,
+      "scan_time_s": 0.9015
+    }
+  },
+  "scope": "quasi-steady hypothetical electrical model; no sensor noise, measured data, acoustic, thermal or hardware timing claim"
+}
