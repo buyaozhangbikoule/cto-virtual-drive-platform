@@ -1,0 +1,5135 @@
+{
+  "po_params": {
+    "step0_Hz": 1000.0,
+    "step_min_Hz": 200.0,
+    "step_max_Hz": 8000.0,
+    "grow": 1.5,
+    "shrink": 0.5,
+    "full_amplitude": 0.999,
+    "initial_direction": -1.0
+  },
+  "schedule": [
+    "CASE_000_BASELINE",
+    "CASE_C0_P30",
+    "CASE_RM_P50",
+    "CASE_FS_M5",
+    "CASE_LMATCH_P10",
+    "CASE_QL_20",
+    "CASE_COMBINED_HIGH",
+    "CASE_000_BASELINE",
+    "CASE_LM_P20",
+    "CASE_000_BASELINE",
+    "CASE_CM_P20",
+    "CASE_000_BASELINE"
+  ],
+  "why_slow": {
+    "k_eff 0.45": {
+      "q": 13.810857823361614,
+      "table": {
+        "CASE_000_BASELINE": {
+          "optimum_Hz": 900680.0,
+          "window98_Hz": 29530.0,
+          "stay_at_900k_pct": 99.99714488739642
+        },
+        "CASE_C0_P30": {
+          "optimum_Hz": 901770.0,
+          "window98_Hz": 24040.0,
+          "stay_at_900k_pct": 99.97945261011128
+        },
+        "CASE_RM_P50": {
+          "optimum_Hz": 901640.0,
+          "window98_Hz": 21780.0,
+          "stay_at_900k_pct": 99.95644151892301
+        },
+        "CASE_FS_M5": {
+          "optimum_Hz": 852420.0,
+          "window98_Hz": 14010.0,
+          "stay_at_900k_pct": 73.21589809062246
+        },
+        "CASE_LMATCH_P10": {
+          "optimum_Hz": 903250.0,
+          "window98_Hz": 16970.0,
+          "stay_at_900k_pct": 99.71009579586072
+        },
+        "CASE_QL_20": {
+          "optimum_Hz": 901340.0,
+          "window98_Hz": 18790.0,
+          "stay_at_900k_pct": 99.9598402435241
+        },
+        "CASE_COMBINED_HIGH": {
+          "optimum_Hz": 856450.0,
+          "window98_Hz": 12760.0,
+          "stay_at_900k_pct": 62.77165203753974
+        },
+        "CASE_LM_P20": {
+          "optimum_Hz": 819020.0,
+          "window98_Hz": 9610.0,
+          "stay_at_900k_pct": 36.83491263577942
+        },
+        "CASE_CM_P20": {
+          "optimum_Hz": 820120.0,
+          "window98_Hz": 12070.0,
+          "stay_at_900k_pct": 50.68878625025095
+        }
+      }
+    },
+    "k_eff 0.30": {
+      "q": 35.45797039916352,
+      "table": {
+        "CASE_000_BASELINE": {
+          "optimum_Hz": 900020.0,
+          "window98_Hz": 8990.0,
+          "stay_at_900k_pct": 99.99995982451
+        },
+        "CASE_C0_P30": {
+          "optimum_Hz": 901000.0,
+          "window98_Hz": 8710.0,
+          "stay_at_900k_pct": 99.89991611063094
+        },
+        "CASE_RM_P50": {
+          "optimum_Hz": 900340.0,
+          "window98_Hz": 10410.0,
+          "stay_at_900k_pct": 99.99145372288399
+        },
+        "CASE_FS_M5": {
+          "optimum_Hz": 851600.0,
+          "window98_Hz": 4730.0,
+          "stay_at_900k_pct": 14.934370088376518
+        },
+        "CASE_LMATCH_P10": {
+          "optimum_Hz": 904740.0,
+          "window98_Hz": 5120.0,
+          "stay_at_900k_pct": 94.24426355144729
+        },
+        "CASE_QL_20": {
+          "optimum_Hz": 900560.0,
+          "window98_Hz": 6620.0,
+          "stay_at_900k_pct": 99.9410525068987
+        },
+        "CASE_COMBINED_HIGH": {
+          "optimum_Hz": 853880.0,
+          "window98_Hz": 4540.0,
+          "stay_at_900k_pct": 16.470823586610212
+        },
+        "CASE_LM_P20": {
+          "optimum_Hz": 819090.0,
+          "window98_Hz": 3550.0,
+          "stay_at_900k_pct": 6.0039145809608945
+        },
+        "CASE_CM_P20": {
+          "optimum_Hz": 818820.0,
+          "window98_Hz": 4280.0,
+          "stay_at_900k_pct": 8.620256866951701
+        }
+      }
+    },
+    "登记基线": {
+      "q": 800.0,
+      "table": {
+        "CASE_000_BASELINE": {
+          "optimum_Hz": 900000.0,
+          "window98_Hz": 300.0,
+          "stay_at_900k_pct": 99.99999999999999
+        },
+        "CASE_C0_P30": {
+          "optimum_Hz": 900040.0,
+          "window98_Hz": 290.0,
+          "stay_at_900k_pct": 99.8832402221643
+        },
+        "CASE_RM_P50": {
+          "optimum_Hz": 900000.0,
+          "window98_Hz": 380.0,
+          "stay_at_900k_pct": 100.0
+        },
+        "CASE_FS_M5": {
+          "optimum_Hz": 854790.0,
+          "window98_Hz": 200.0,
+          "stay_at_900k_pct": 0.0303809355168753
+        },
+        "CASE_LMATCH_P10": {
+          "optimum_Hz": 900290.0,
+          "window98_Hz": 220.0,
+          "stay_at_900k_pct": 88.90726956178062
+        },
+        "CASE_QL_20": {
+          "optimum_Hz": 900020.0,
+          "window98_Hz": 250.0,
+          "stay_at_900k_pct": 99.93809885558225
+        },
+        "CASE_COMBINED_HIGH": {
+          "optimum_Hz": 854910.0,
+          "window98_Hz": 180.0,
+          "stay_at_900k_pct": 0.036355804274776096
+        },
+        "CASE_LM_P20": {
+          "optimum_Hz": 821430.0,
+          "window98_Hz": 150.0,
+          "stay_at_900k_pct": 0.011631624119521511
+        },
+        "CASE_CM_P20": {
+          "optimum_Hz": 821400.0,
+          "window98_Hz": 180.0,
+          "stay_at_900k_pct": 0.016755366787231735
+        }
+      }
+    }
+  },
+  "results": {
+    "k_eff 0.45": {
+      "q": 13.810857823361614,
+      "phase_target_deg": -1.0782096368502874,
+      "slope_deg_per_Hz": -0.0001808996785972461,
+      "v2_retune": {
+        "slope_ratio": 475.53326379053374,
+        "q_ratio": 57.92543882732384,
+        "gain_Hz_per_deg": 2377.666318952669,
+        "probe_offset_Hz": 5792.543882732384,
+        "max_step_Hz": 28962.71941366192,
+        "deadband_deg": 0.012181153925088877
+      },
+      "strategies": {
+        "固定频率": {
+          "settled": 8,
+          "energy_pct": 89.04308529224443,
+          "below_full_amplitude_ms": 2560.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 165.36255718627922,
+          "pre_guard_peak_mArms": 5.124166251178251,
+          "per_segment": [
+            99.99714846271517,
+            99.97945894020111,
+            99.95647357851844,
+            73.21591564775603,
+            99.65328160087715,
+            99.95988190951712,
+            62.77172692217185,
+            99.99714846271517,
+            25.138974193098328,
+            98.3304140853187,
+            50.68879537767046,
+            98.83862554751089
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            40.0,
+            20.0,
+            null,
+            20.0,
+            null,
+            100.0,
+            null,
+            80.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.938524713676926,
+              "min_amplitude": 0.938524713676926
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9885247136769261
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.7861513646862411,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8361513646862412
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.818618096065373,
+              "min_amplitude": 0.818618096065373
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.868618096065373
+            }
+          ],
+          "events": {
+            "CANDIDATE_LIMIT_ENTER": 3,
+            "SOFT_FOLDBACK_ENTER": 2,
+            "PROTECTION_STATE_TRANSITION": 14,
+            "OBSERVED_HARD_TRIP": 1
+          }
+        },
+        "正式相位反馈": {
+          "settled": 3,
+          "energy_pct": 75.04959391983562,
+          "below_full_amplitude_ms": 7200.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 158.49404683176166,
+          "pre_guard_peak_mArms": 5.129162190965991,
+          "per_segment": [
+            99.99714846271517,
+            99.98743810628866,
+            99.9943565226839,
+            69.92479617994462,
+            84.10896952780976,
+            84.05097227411265,
+            48.20276027341982,
+            83.9277429607505,
+            32.01378407507173,
+            56.160487353961024,
+            39.93051300381141,
+            55.65433159324063
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900819.630316189,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 901336.9564687564,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 901712.0164410892,
+              "amplitude": 0.9171473437262413,
+              "min_amplitude": 0.9171473437262413
+            },
+            {
+              "frequency_Hz": 902983.974780689,
+              "amplitude": 0.9171473437262413,
+              "min_amplitude": 0.9171473437262413
+            },
+            {
+              "frequency_Hz": 903195.3546117719,
+              "amplitude": 0.9171473437262413,
+              "min_amplitude": 0.9171473437262413
+            },
+            {
+              "frequency_Hz": 906830.8411703797,
+              "amplitude": 0.9171473437262413,
+              "min_amplitude": 0.9171473437262413
+            },
+            {
+              "frequency_Hz": 906517.722029684,
+              "amplitude": 0.9171473437262413,
+              "min_amplitude": 0.9171473437262413
+            },
+            {
+              "frequency_Hz": 906851.3962783146,
+              "amplitude": 0.7503018334602704,
+              "min_amplitude": 0.7503018334602704
+            },
+            {
+              "frequency_Hz": 906711.6495179884,
+              "amplitude": 0.7503018334602704,
+              "min_amplitude": 0.7503018334602704
+            },
+            {
+              "frequency_Hz": 912804.3459379417,
+              "amplitude": 0.7503018334602704,
+              "min_amplitude": 0.7503018334602704
+            },
+            {
+              "frequency_Hz": 913091.6775398595,
+              "amplitude": 0.7503018334602704,
+              "min_amplitude": 0.7503018334602704
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 361,
+            "CANDIDATE_LIMIT_ENTER": 52,
+            "SOFT_FOLDBACK_ENTER": 12,
+            "PROTECTION_STATE_TRANSITION": 24,
+            "PHASE_PROBE_FAILED": 8
+          }
+        },
+        "v2": {
+          "settled": 8,
+          "energy_pct": 86.76783861861523,
+          "below_full_amplitude_ms": 2760.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 171.2266998204908,
+          "pre_guard_peak_mArms": 5.129162190965991,
+          "per_segment": [
+            99.99714846271517,
+            99.98394413857154,
+            99.98183829742294,
+            71.15801828492218,
+            97.96243673922844,
+            99.9316449728374,
+            58.40414562899245,
+            99.89056899084366,
+            22.96101303237265,
+            95.44865540314464,
+            31.19619428123463,
+            96.13010550738565
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            140.0,
+            20.0,
+            null,
+            20.0,
+            null,
+            140.0,
+            null,
+            140.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900423.9239448503,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900745.5398534808,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 901126.233962239,
+              "amplitude": 0.9235297667249553,
+              "min_amplitude": 0.9235297667249553
+            },
+            {
+              "frequency_Hz": 902867.5354058952,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9235297667249553
+            },
+            {
+              "frequency_Hz": 903092.1220217089,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 905027.368714104,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 904844.2103647287,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 904988.0370462372,
+              "amplitude": 0.757696204424625,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 905005.7069455598,
+              "amplitude": 1.0,
+              "min_amplitude": 0.757696204424625
+            },
+            {
+              "frequency_Hz": 905146.0248672778,
+              "amplitude": 0.7847982046312547,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 905161.4537705192,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7847982046312547
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 145,
+            "CENTRE_RECOVERY_BEGIN": 145,
+            "CENTRE_RECOVERY_COMPLETE": 144,
+            "CANDIDATE_LIMIT_ENTER": 14,
+            "SOFT_FOLDBACK_ENTER": 12,
+            "PROTECTION_STATE_TRANSITION": 38,
+            "PHASE_PROBE_FAILED": 9,
+            "PHASE_NO_NEW_CENTRE_RETURN": 29,
+            "PHASE_SLOPE_UNRESOLVED": 20,
+            "OBSERVED_HARD_TRIP": 2,
+            "PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT": 6,
+            "CENTRE_RECOVERY_TRUNCATED": 1
+          }
+        },
+        "v2 按物理峰重定": {
+          "settled": 6,
+          "energy_pct": 83.7449334357676,
+          "below_full_amplitude_ms": 2658.5,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 165.29852050524485,
+          "pre_guard_peak_mArms": 5.407436459244548,
+          "per_segment": [
+            99.99714846271517,
+            99.50386428848812,
+            98.11498045950937,
+            52.42405653562432,
+            85.99923867243095,
+            96.62552952883466,
+            50.32635749409829,
+            99.98743475688484,
+            18.974352610873357,
+            96.50956665000088,
+            35.222557344376554,
+            97.19608275366726
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            null,
+            null,
+            20.0,
+            null,
+            120.0,
+            null,
+            120.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 903336.3066559217,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 889898.1582286377,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 942453.5685301189,
+              "amplitude": 0.8455019577100873,
+              "min_amplitude": 0.8000588291166021
+            },
+            {
+              "frequency_Hz": 913490.849116457,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8455019577100873
+            },
+            {
+              "frequency_Hz": 889523.8374346669,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 898054.5825327835,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899953.6533698641,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 928916.372783526,
+              "amplitude": 0.7518795194065548,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 899953.6533698641,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8018795194065549
+            },
+            {
+              "frequency_Hz": 928916.372783526,
+              "amplitude": 0.7855309214068028,
+              "min_amplitude": 0.7624286298243497
+            },
+            {
+              "frequency_Hz": 899953.6533698641,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7855309214068028
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 94,
+            "CENTRE_RECOVERY_BEGIN": 94,
+            "CENTRE_RECOVERY_COMPLETE": 94,
+            "CANDIDATE_LIMIT_ENTER": 12,
+            "SOFT_FOLDBACK_ENTER": 14,
+            "PROTECTION_STATE_TRANSITION": 38,
+            "PHASE_PROBE_FAILED": 12,
+            "PHASE_NO_NEW_CENTRE_RETURN": 12,
+            "OBSERVED_HARD_TRIP": 1,
+            "PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT": 3
+          }
+        },
+        "功率 P&O 第一版(缺陷)": {
+          "settled": 5,
+          "energy_pct": 84.33158602834767,
+          "below_full_amplitude_ms": 2700.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 137.14429509302605,
+          "pre_guard_peak_mArms": 5.483795239331218,
+          "per_segment": [
+            99.99693054130279,
+            99.96822957165983,
+            99.95798968313092,
+            70.81756506833102,
+            99.38183624010884,
+            99.97621571543735,
+            89.5284940967885,
+            69.60287101912745,
+            89.11160829341111,
+            60.26016340168544,
+            92.71641799921493,
+            56.57125592999455
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            60.0,
+            20.0,
+            260.0,
+            null,
+            240.0,
+            null,
+            240.0,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900581.5489409034,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 904920.9941468788,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899201.6729497741,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899201.6729497741,
+              "amplitude": 0.9167674024132553,
+              "min_amplitude": 0.9167674024132553
+            },
+            {
+              "frequency_Hz": 904747.1078949923,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9167674024132553
+            },
+            {
+              "frequency_Hz": 901119.6586585126,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 850653.6430335126,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 864653.6430335126,
+              "amplitude": 0.9711388672487917,
+              "min_amplitude": 0.9711388672487917
+            },
+            {
+              "frequency_Hz": 822942.7055335126,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9711388672487917
+            },
+            {
+              "frequency_Hz": 863192.7055335126,
+              "amplitude": 0.9737833550364564,
+              "min_amplitude": 0.9737833550364564
+            },
+            {
+              "frequency_Hz": 831192.7055335126,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9737833550364564
+            },
+            {
+              "frequency_Hz": 859442.7055335126,
+              "amplitude": 0.9869347894458478,
+              "min_amplitude": 0.9869347894458478
+            }
+          ],
+          "events": {
+            "PO_STEP": 351,
+            "CANDIDATE_LIMIT_ENTER": 20,
+            "SOFT_FOLDBACK_ENTER": 26,
+            "PROTECTION_STATE_TRANSITION": 52
+          }
+        },
+        "功率 P&O": {
+          "settled": 7,
+          "energy_pct": 86.75597376888497,
+          "below_full_amplitude_ms": 2540.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 170.94066387355434,
+          "pre_guard_peak_mArms": 5.602538043133327,
+          "per_segment": [
+            99.99693054130279,
+            99.96822957165983,
+            99.95798968313092,
+            88.74365302624128,
+            80.92946474627526,
+            99.67158541193277,
+            90.30224999099154,
+            87.03732454766558,
+            70.32704143960319,
+            80.48264735483188,
+            41.45242633698191,
+            79.47912267080633
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            380.0,
+            560.0,
+            20.0,
+            220.0,
+            420.0,
+            480.0,
+            380.0,
+            null,
+            480.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900581.5489409034,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 904920.9941468788,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899201.6729497741,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 847843.1685191069,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9167674024132553
+            },
+            {
+              "frequency_Hz": 896624.4185191069,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8489332392712117
+            },
+            {
+              "frequency_Hz": 909892.6795372579,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 865111.4295372579,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 895361.4295372579,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9712896854485291
+            },
+            {
+              "frequency_Hz": 823400.4920372579,
+              "amplitude": 0.9996109942470452,
+              "min_amplitude": 0.7775944955606994
+            },
+            {
+              "frequency_Hz": 911650.4920372579,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9728099041230938
+            },
+            {
+              "frequency_Hz": 833400.4920372579,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 895913.6756310079,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9696877647545372
+            }
+          ],
+          "events": {
+            "PO_STEP": 378,
+            "CANDIDATE_LIMIT_ENTER": 7,
+            "SOFT_FOLDBACK_ENTER": 9,
+            "PROTECTION_STATE_TRANSITION": 34,
+            "PO_HOLD_FOR_RAMP": 32,
+            "OBSERVED_HARD_TRIP": 1
+          }
+        },
+        "功率 P&O 噪声0.5%": {
+          "settled": 7,
+          "energy_pct": 88.25265244278881,
+          "below_full_amplitude_ms": 3200.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 168.39281607927697,
+          "pre_guard_peak_mArms": 5.592979050720205,
+          "per_segment": [
+            99.87147970317022,
+            99.74039594795423,
+            99.71242601771958,
+            82.68236396526808,
+            86.56674274610441,
+            99.92394571588456,
+            85.61532727247447,
+            87.2908997476251,
+            25.879489032443846,
+            93.59398072166606,
+            56.1792000630194,
+            99.08225721291542
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            720.0,
+            780.0,
+            20.0,
+            360.0,
+            420.0,
+            null,
+            300.0,
+            null,
+            60.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 894954.4756412506,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 896766.9756412506,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 897851.3506412506,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 853185.3350162506,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9606454217344385
+            },
+            {
+              "frequency_Hz": 907915.7770633698,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8931642197031769
+            },
+            {
+              "frequency_Hz": 902558.8190555573,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 865367.8034305573,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 902324.1632938385,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9716523365517593
+            },
+            {
+              "frequency_Hz": 877401.952123642,
+              "amplitude": 0.9209107603701912,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 894942.0264720917,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9702976039694159
+            },
+            {
+              "frequency_Hz": 895645.4372882843,
+              "amplitude": 0.8543341308307656,
+              "min_amplitude": 0.8543341308307656
+            },
+            {
+              "frequency_Hz": 894895.4372882843,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9043341308307656
+            }
+          ],
+          "events": {
+            "PO_STEP": 353,
+            "CANDIDATE_LIMIT_ENTER": 6,
+            "SOFT_FOLDBACK_ENTER": 13,
+            "PROTECTION_STATE_TRANSITION": 38,
+            "PO_HOLD_FOR_RAMP": 38,
+            "OBSERVED_HARD_TRIP": 1
+          }
+        },
+        "功率 P&O 噪声2.0%": {
+          "settled": 6,
+          "energy_pct": 91.51036837865368,
+          "below_full_amplitude_ms": 3820.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 147.73909010462776,
+          "pre_guard_peak_mArms": 5.500000000000003,
+          "per_segment": [
+            99.98285099531473,
+            99.97287697498857,
+            99.6666770683632,
+            83.30448704397975,
+            98.22212460901872,
+            98.10271551164382,
+            71.69765400988805,
+            99.03578178472718,
+            47.57412915898529,
+            96.20729036518307,
+            68.31066015681728,
+            95.50008609351701
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            20.0,
+            240.0,
+            null,
+            20.0,
+            null,
+            80.0,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 898685.05859375,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 898822.55859375,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 895636.23046875,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 894886.23046875,
+              "amplitude": 1.0,
+              "min_amplitude": 0.990242078060804
+            },
+            {
+              "frequency_Hz": 890741.6557312012,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 892902.898812294,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 891388.836312294,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 889103.582406044,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 888441.082406044,
+              "amplitude": 0.886953383989027,
+              "min_amplitude": 0.8775759396035541
+            },
+            {
+              "frequency_Hz": 886539.519906044,
+              "amplitude": 0.9993101279742184,
+              "min_amplitude": 0.886953383989027
+            },
+            {
+              "frequency_Hz": 885898.894906044,
+              "amplitude": 0.9572525746894055,
+              "min_amplitude": 0.9416947161163653
+            },
+            {
+              "frequency_Hz": 883514.519906044,
+              "amplitude": 0.9871933823588049,
+              "min_amplitude": 0.9572525746894055
+            }
+          ],
+          "events": {
+            "PO_STEP": 331,
+            "CANDIDATE_LIMIT_ENTER": 4,
+            "SOFT_FOLDBACK_ENTER": 21,
+            "PROTECTION_STATE_TRANSITION": 43,
+            "PO_HOLD_FOR_RAMP": 46
+          }
+        }
+      }
+    },
+    "k_eff 0.30": {
+      "q": 35.45797039916352,
+      "phase_target_deg": -1.078209636849829,
+      "slope_deg_per_Hz": -0.0025724428524574556,
+      "v2_retune": {
+        "slope_ratio": 33.44051530623058,
+        "q_ratio": 22.561923059726865,
+        "gain_Hz_per_deg": 167.20257653115289,
+        "probe_offset_Hz": 2256.1923059726864,
+        "max_step_Hz": 11280.961529863433,
+        "deadband_deg": 0.06746882592303584
+      },
+      "strategies": {
+        "固定频率": {
+          "settled": 7,
+          "energy_pct": 77.0405007366319,
+          "below_full_amplitude_ms": 2680.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 183.6956142568309,
+          "pre_guard_peak_mArms": 5.124166251178264,
+          "per_segment": [
+            100.0,
+            99.8999161106309,
+            99.99157538797695,
+            10.387564481208972,
+            92.06574696703036,
+            99.94127617854949,
+            16.470850450341846,
+            100.0,
+            4.265185483340267,
+            96.75795431565122,
+            6.10064909669077,
+            96.91170801687285
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            20.0,
+            null,
+            20.0,
+            null,
+            120.0,
+            null,
+            120.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.7500206335375921,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8000206335375921
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.7076924537688891,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7576924537688892
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.7148333026368882,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7648333026368882
+            }
+          ],
+          "events": {
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 3,
+            "PROTECTION_STATE_TRANSITION": 18
+          }
+        },
+        "正式相位反馈": {
+          "settled": 3,
+          "energy_pct": 55.8914242676419,
+          "below_full_amplitude_ms": 7200.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 173.18919127331333,
+          "pre_guard_peak_mArms": 5.1367215069608685,
+          "per_segment": [
+            100.0,
+            99.95401316078458,
+            99.99599698987366,
+            10.373826142335567,
+            55.28727082003387,
+            54.68380559314941,
+            7.829671482512572,
+            54.856985898570514,
+            5.513520655456753,
+            48.38207928404212,
+            7.462180868588256,
+            46.79088384378737
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900657.1975351463,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899904.8757565375,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900203.7991262102,
+              "amplitude": 0.7481261932673612,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 904603.0205292321,
+              "amplitude": 0.7481261932673612,
+              "min_amplitude": 0.7481261932673612
+            },
+            {
+              "frequency_Hz": 903456.3724054062,
+              "amplitude": 0.7481261932673612,
+              "min_amplitude": 0.7481261932673612
+            },
+            {
+              "frequency_Hz": 905763.4770867231,
+              "amplitude": 0.7481261932673612,
+              "min_amplitude": 0.7481261932673612
+            },
+            {
+              "frequency_Hz": 903479.4245947172,
+              "amplitude": 0.7481261932673612,
+              "min_amplitude": 0.7481261932673612
+            },
+            {
+              "frequency_Hz": 903804.3539893911,
+              "amplitude": 0.6987906524253619,
+              "min_amplitude": 0.6987906524253619
+            },
+            {
+              "frequency_Hz": 902344.7923467362,
+              "amplitude": 0.6987906524253619,
+              "min_amplitude": 0.6987906524253619
+            },
+            {
+              "frequency_Hz": 908259.6803419176,
+              "amplitude": 0.6987906524253619,
+              "min_amplitude": 0.6987906524253619
+            },
+            {
+              "frequency_Hz": 905157.7737117196,
+              "amplitude": 0.6987906524253619,
+              "min_amplitude": 0.6987906524253619
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 361,
+            "OBSERVED_HARD_TRIP": 1,
+            "CANDIDATE_LIMIT_ENTER": 50,
+            "PROTECTION_STATE_TRANSITION": 22,
+            "PHASE_PROBE_FAILED": 7,
+            "SOFT_FOLDBACK_ENTER": 9
+          }
+        },
+        "v2": {
+          "settled": 8,
+          "energy_pct": 75.38093166168042,
+          "below_full_amplitude_ms": 2940.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 185.9079764015687,
+          "pre_guard_peak_mArms": 5.1367215069608685,
+          "per_segment": [
+            100.0,
+            99.93389138116117,
+            99.9973586671528,
+            10.345746518239674,
+            91.82354428688551,
+            98.12471739534496,
+            14.26222575691735,
+            98.33934499809763,
+            3.924574221970866,
+            87.63776631761627,
+            5.648694704768065,
+            94.33060177564839
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            460.0,
+            260.0,
+            null,
+            100.0,
+            null,
+            260.0,
+            null,
+            160.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900378.6941272743,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899991.9550273444,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900190.1112936346,
+              "amplitude": 0.747597188064949,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 903871.0760581752,
+              "amplitude": 1.0,
+              "min_amplitude": 0.747597188064949
+            },
+            {
+              "frequency_Hz": 903473.4463065483,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 904746.2572958953,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 903672.376593995,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 903982.4623588609,
+              "amplitude": 0.6986792148004146,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 903452.9599378307,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6986792148004146
+            },
+            {
+              "frequency_Hz": 903684.8854765506,
+              "amplitude": 0.7044082901236368,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 902805.6073840761,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7044082901236368
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 150,
+            "CENTRE_RECOVERY_BEGIN": 150,
+            "CENTRE_RECOVERY_COMPLETE": 149,
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 13,
+            "PROTECTION_STATE_TRANSITION": 38,
+            "SOFT_FOLDBACK_ENTER": 10,
+            "PHASE_PROBE_FAILED": 8,
+            "PHASE_NO_NEW_CENTRE_RETURN": 8,
+            "PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT": 6,
+            "CENTRE_RECOVERY_TRUNCATED": 1
+          }
+        },
+        "v2 按物理峰重定": {
+          "settled": 6,
+          "energy_pct": 71.99835532640914,
+          "below_full_amplitude_ms": 2940.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 183.7130666424471,
+          "pre_guard_peak_mArms": 5.394601561503639,
+          "per_segment": [
+            100.0,
+            99.95104317546961,
+            98.94563670148214,
+            10.776671292433571,
+            88.58108535814587,
+            57.89358027095492,
+            11.530004150548052,
+            99.48296939905946,
+            3.9553334554802406,
+            89.42002361777195,
+            5.634783804746347,
+            89.68456354000172
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            220.0,
+            null,
+            null,
+            80.0,
+            null,
+            280.0,
+            null,
+            260.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 901622.3909609196,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 895436.649841006,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 904148.587938847,
+              "amplitude": 0.7156822688453792,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 908170.2771634482,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7156822688453792
+            },
+            {
+              "frequency_Hz": 920068.9490794338,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 909297.0603574568,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900021.9888599052,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 909569.0559394053,
+              "amplitude": 0.6965873299509876,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900023.0071224625,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6965873299509876
+            },
+            {
+              "frequency_Hz": 909775.1149942724,
+              "amplitude": 0.7001718458983277,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900023.8092659898,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7001718458983277
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 104,
+            "CENTRE_RECOVERY_BEGIN": 104,
+            "CENTRE_RECOVERY_COMPLETE": 104,
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 10,
+            "PROTECTION_STATE_TRANSITION": 38,
+            "SOFT_FOLDBACK_ENTER": 11,
+            "PHASE_PROBE_FAILED": 8,
+            "PHASE_NO_NEW_CENTRE_RETURN": 8,
+            "PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT": 6
+          }
+        },
+        "功率 P&O 第一版(缺陷)": {
+          "settled": 1,
+          "energy_pct": 50.99852495331131,
+          "below_full_amplitude_ms": 4240.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 181.41397039192324,
+          "pre_guard_peak_mArms": 5.407394253289668,
+          "per_segment": [
+            99.68861378439568,
+            93.21125193065592,
+            97.0870439136389,
+            32.22223180862539,
+            6.518164508681726,
+            68.71251426575238,
+            72.05166124855944,
+            15.179460174195572,
+            62.09797403662234,
+            5.89841179123547,
+            80.1397230959926,
+            5.881731157006404
+          ],
+          "settled_flags": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            100.0,
+            660.0,
+            null,
+            300.0,
+            240.0,
+            null,
+            320.0,
+            null,
+            160.0,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900661.6031772902,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899505.6964255489,
+              "amplitude": 0.9569041614147178,
+              "min_amplitude": 0.9569041614147178
+            },
+            {
+              "frequency_Hz": 905137.4204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9569041614147178
+            },
+            {
+              "frequency_Hz": 843137.4204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 843137.4204707092,
+              "amplitude": 0.7082554714692871,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 909137.4204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7082554714692871
+            },
+            {
+              "frequency_Hz": 864356.1704707092,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 860356.1704707092,
+              "amplitude": 0.8852909936173025,
+              "min_amplitude": 0.8711967970057196
+            },
+            {
+              "frequency_Hz": 817574.9204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8852909936173025
+            },
+            {
+              "frequency_Hz": 843574.9204707092,
+              "amplitude": 0.9877011598557683,
+              "min_amplitude": 0.9877011598557683
+            },
+            {
+              "frequency_Hz": 813574.9204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9877011598557683
+            },
+            {
+              "frequency_Hz": 844356.1704707092,
+              "amplitude": 0.9791859533631029,
+              "min_amplitude": 0.9791859533631029
+            }
+          ],
+          "events": {
+            "PO_STEP": 283,
+            "CANDIDATE_LIMIT_ENTER": 22,
+            "SOFT_FOLDBACK_ENTER": 30,
+            "PROTECTION_STATE_TRANSITION": 75,
+            "OBSERVED_HARD_TRIP": 2,
+            "PO_HOLD_FOR_RAMP": 5
+          }
+        },
+        "功率 P&O": {
+          "settled": 1,
+          "energy_pct": 55.48302788738177,
+          "below_full_amplitude_ms": 4900.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 185.69192514587692,
+          "pre_guard_peak_mArms": 5.5,
+          "per_segment": [
+            99.68861378439568,
+            90.5516124467584,
+            97.39315926288434,
+            32.22223180862539,
+            19.093200472352734,
+            94.79228626698722,
+            72.2283250842811,
+            34.60562464480408,
+            21.707918051745413,
+            35.260604729168655,
+            14.407134050930921,
+            33.53917855637616
+          ],
+          "settled_flags": [
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            40.0,
+            660.0,
+            null,
+            100.0,
+            240.0,
+            740.0,
+            700.0,
+            680.0,
+            800.0,
+            700.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900661.6031772902,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 895137.4204707092,
+              "amplitude": 0.9671936902168253,
+              "min_amplitude": 0.9171936902168253
+            },
+            {
+              "frequency_Hz": 905137.4204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 843137.4204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 909137.4204707092,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 908653.9915156311,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 863872.7415156311,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 898122.7415156311,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8464613103558828
+            },
+            {
+              "frequency_Hz": 824122.7415156311,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 908622.7415156311,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8411426725959507
+            },
+            {
+              "frequency_Hz": 820591.4915156311,
+              "amplitude": 0.9993834507204683,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900591.4915156311,
+              "amplitude": 0.9817977444571466,
+              "min_amplitude": 0.8433002502898405
+            }
+          ],
+          "events": {
+            "PO_STEP": 275,
+            "CANDIDATE_LIMIT_ENTER": 11,
+            "SOFT_FOLDBACK_ENTER": 15,
+            "PROTECTION_STATE_TRANSITION": 77,
+            "PO_HOLD_FOR_RAMP": 46,
+            "OBSERVED_HARD_TRIP": 4
+          }
+        },
+        "功率 P&O 噪声0.5%": {
+          "settled": 4,
+          "energy_pct": 56.82978470842757,
+          "below_full_amplitude_ms": 4740.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 182.4357243180258,
+          "pre_guard_peak_mArms": 5.5,
+          "per_segment": [
+            99.83584418977122,
+            99.63550952296316,
+            99.91533919976702,
+            10.433749929229313,
+            85.40747260914443,
+            96.93856875195769,
+            65.39638174757138,
+            31.83975381253904,
+            5.607761715461544,
+            25.534511914829924,
+            7.607874848194707,
+            25.534511914829924
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            200.0,
+            140.0,
+            320.0,
+            720.0,
+            null,
+            800.0,
+            null,
+            800.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 899180.3108215332,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900205.3108215332,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 901289.6858215332,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 891738.1233215332,
+              "amplitude": 0.7870982068359124,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 906786.0725402832,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8370982068359124
+            },
+            {
+              "frequency_Hz": 901141.2409927696,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 854614.4119204953,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 897614.4119204953,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8410948425479747
+            },
+            {
+              "frequency_Hz": 867833.1619204953,
+              "amplitude": 0.9854844657957059,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 901833.1619204953,
+              "amplitude": 0.9950093332463671,
+              "min_amplitude": 0.8451166988642882
+            },
+            {
+              "frequency_Hz": 867833.1619204953,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 901833.1619204953,
+              "amplitude": 0.9950093332463671,
+              "min_amplitude": 0.8451166988642882
+            }
+          ],
+          "events": {
+            "PO_STEP": 289,
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 5,
+            "PROTECTION_STATE_TRANSITION": 70,
+            "SOFT_FOLDBACK_ENTER": 15,
+            "PO_HOLD_FOR_RAMP": 47
+          }
+        },
+        "功率 P&O 噪声2.0%": {
+          "settled": 3,
+          "energy_pct": 59.246040759302346,
+          "below_full_amplitude_ms": 3160.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 166.06274074973442,
+          "pre_guard_peak_mArms": 5.5,
+          "per_segment": [
+            99.89447093095482,
+            99.82821215960409,
+            99.18544077254329,
+            12.176285630685863,
+            87.62391478045343,
+            98.17640162613996,
+            74.89224294822337,
+            11.270924528221402,
+            20.835963563487145,
+            11.380068450356998,
+            72.3373284866269,
+            32.48842099854414
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            300.0,
+            40.0,
+            340.0,
+            null,
+            null,
+            null,
+            260.0,
+            700.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 898685.05859375,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 898822.55859375,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 895636.23046875,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 895636.23046875,
+              "amplitude": 0.7811023286322837,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 902710.0772857666,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7811023286322837
+            },
+            {
+              "frequency_Hz": 899475.8387037207,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 854121.3758819433,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 854021.3758819433,
+              "amplitude": 0.9568213582795515,
+              "min_amplitude": 0.9568213582795515
+            },
+            {
+              "frequency_Hz": 853772.9383819433,
+              "amplitude": 1.0,
+              "min_amplitude": 0.9568213582795515
+            },
+            {
+              "frequency_Hz": 855197.9383819433,
+              "amplitude": 0.939282873584761,
+              "min_amplitude": 0.939282873584761
+            },
+            {
+              "frequency_Hz": 819948.4266631933,
+              "amplitude": 1.0,
+              "min_amplitude": 0.939282873584761
+            },
+            {
+              "frequency_Hz": 902198.4266631933,
+              "amplitude": 0.9993801590774546,
+              "min_amplitude": 0.8412150073037078
+            }
+          ],
+          "events": {
+            "PO_STEP": 344,
+            "OBSERVED_HARD_TRIP": 1,
+            "CANDIDATE_LIMIT_ENTER": 5,
+            "PROTECTION_STATE_TRANSITION": 45,
+            "SOFT_FOLDBACK_ENTER": 18,
+            "PO_HOLD_FOR_RAMP": 26
+          }
+        }
+      }
+    },
+    "登记基线": {
+      "q": 800.0,
+      "phase_target_deg": -1.0782096368565852,
+      "slope_deg_per_Hz": -0.086023814582007,
+      "v2_retune": {
+        "slope_ratio": 1.0,
+        "q_ratio": 1.0,
+        "gain_Hz_per_deg": 5.0,
+        "probe_offset_Hz": 100.0,
+        "max_step_Hz": 500.0,
+        "deadband_deg": 0.1
+      },
+      "strategies": {
+        "固定频率": {
+          "settled": 7,
+          "energy_pct": 73.77834015632311,
+          "below_full_amplitude_ms": 2760.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 188.22471135207078,
+          "pre_guard_peak_mArms": 5.1241662511780515,
+          "per_segment": [
+            100.0,
+            100.0,
+            100.0,
+            0.02177056376272617,
+            85.67688087483772,
+            100.0,
+            0.03636478164254244,
+            100.0,
+            0.00835880471226227,
+            96.34998299261214,
+            0.012004778284599539,
+            96.35041216147265
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            20.0,
+            null,
+            20.0,
+            null,
+            140.0,
+            null,
+            140.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.6907665676397019,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.740766567639702
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.6906638297712007,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7406638297712007
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.6906803552302142,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 0.7406803552302142
+            }
+          ],
+          "events": {
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 3,
+            "PROTECTION_STATE_TRANSITION": 18
+          }
+        },
+        "正式相位反馈": {
+          "settled": 6,
+          "energy_pct": 57.337358679119646,
+          "below_full_amplitude_ms": 5260.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 188.2203887619446,
+          "pre_guard_peak_mArms": 5.381451308738694,
+          "per_segment": [
+            100.0,
+            100.08198116770612,
+            99.7534137243921,
+            0.021775303180012237,
+            46.959451722814286,
+            73.51173931644693,
+            0.035188124245906824,
+            26.928930055202617,
+            0.011628781557477735,
+            80.18617447616218,
+            0.011985469796681508,
+            74.60964978886504
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            false,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            480.0,
+            null,
+            null,
+            null,
+            380.0,
+            null,
+            460.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900047.6276415341,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899930.6394655049,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900236.231989999,
+              "amplitude": 0.6904736759310123,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900225.1674634842,
+              "amplitude": 0.6904736759310123,
+              "min_amplitude": 0.6904736759310123
+            },
+            {
+              "frequency_Hz": 900006.5399447762,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6904736759310123
+            },
+            {
+              "frequency_Hz": 901419.4160329027,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900001.4742826796,
+              "amplitude": 0.7831182951306082,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900286.8170202029,
+              "amplitude": 0.6902956930144941,
+              "min_amplitude": 0.6902956930144941
+            },
+            {
+              "frequency_Hz": 900000.7650548118,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6902956930144941
+            },
+            {
+              "frequency_Hz": 900298.4125823533,
+              "amplitude": 0.6903716057701331,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.7709795057,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6903716057701331
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 154,
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 20,
+            "PROTECTION_STATE_TRANSITION": 48,
+            "SOFT_FOLDBACK_ENTER": 15,
+            "PHASE_PROBE_FAILED": 10
+          }
+        },
+        "v2": {
+          "settled": 7,
+          "energy_pct": 70.10496879195203,
+          "below_full_amplitude_ms": 3518.5,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 188.2276618831893,
+          "pre_guard_peak_mArms": 5.381451308738694,
+          "per_segment": [
+            100.0,
+            100.08246824750434,
+            99.78894295378275,
+            0.021778734802056016,
+            87.39308960076197,
+            98.49426588045542,
+            0.0357019336235598,
+            75.83026233971773,
+            0.0083459679291915,
+            94.81000705794493,
+            0.011986464842777933,
+            85.58118110070686
+          ],
+          "settled_flags": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            false,
+            false,
+            false,
+            true,
+            false,
+            true
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            260.0,
+            140.0,
+            null,
+            640.0,
+            null,
+            160.0,
+            null,
+            340.0
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900047.6276415341,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 899930.6394655049,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900236.231989999,
+              "amplitude": 0.6904736759310123,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900203.5184613515,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6904736759310123
+            },
+            {
+              "frequency_Hz": 900006.4654686367,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900816.043246339,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 900012.777129359,
+              "amplitude": 1.0,
+              "min_amplitude": 0.8952388215574499
+            },
+            {
+              "frequency_Hz": 900208.45987512,
+              "amplitude": 0.6904199875810345,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900001.1181334627,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6904199875810345
+            },
+            {
+              "frequency_Hz": 900298.7537741123,
+              "amplitude": 0.690371369324976,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 900000.7717754028,
+              "amplitude": 1.0,
+              "min_amplitude": 0.690371369324976
+            }
+          ],
+          "events": {
+            "PHASE_UPDATE": 101,
+            "CENTRE_RECOVERY_BEGIN": 101,
+            "CENTRE_RECOVERY_COMPLETE": 101,
+            "OBSERVED_HARD_TRIP": 3,
+            "CANDIDATE_LIMIT_ENTER": 17,
+            "PROTECTION_STATE_TRANSITION": 48,
+            "PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT": 6,
+            "SOFT_FOLDBACK_ENTER": 14,
+            "PHASE_PROBE_FAILED": 8,
+            "PHASE_NO_NEW_CENTRE_RETURN": 8
+          }
+        },
+        "功率 P&O 第一版(缺陷)": {
+          "settled": 0,
+          "energy_pct": 25.945429718367432,
+          "below_full_amplitude_ms": 8260.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 190.95590075092525,
+          "pre_guard_peak_mArms": 5.1241662511780515,
+          "per_segment": [
+            82.45041212101721,
+            84.9542622171027,
+            83.58165105748823,
+            3.8185132678867806,
+            0.01742786237541829,
+            0.16551704873725295,
+            14.670036846194524,
+            0.024084049190045122,
+            0.04699613881519807,
+            0.024303698317178466,
+            0.06699527504761346,
+            0.02419984670053018
+          ],
+          "settled_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            20.0,
+            20.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.9719396341679837,
+              "min_amplitude": 0.8719396341679836
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.9878140696966443,
+              "min_amplitude": 0.8878140696966442
+            },
+            {
+              "frequency_Hz": 900000.0,
+              "amplitude": 0.9791463536937358,
+              "min_amplitude": 0.8791463536937357
+            },
+            {
+              "frequency_Hz": 851218.75,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 851218.75,
+              "amplitude": 0.6665901495964064,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 881218.75,
+              "amplitude": 0.9967129735640828,
+              "min_amplitude": 0.7165901495964064
+            },
+            {
+              "frequency_Hz": 857218.75,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 857218.75,
+              "amplitude": 0.9007064259378406,
+              "min_amplitude": 0.9007064259378406
+            },
+            {
+              "frequency_Hz": 857218.75,
+              "amplitude": 0.9102585682356897,
+              "min_amplitude": 0.9102585682356897
+            },
+            {
+              "frequency_Hz": 857218.75,
+              "amplitude": 0.9007064259378406,
+              "min_amplitude": 0.9007064259378406
+            },
+            {
+              "frequency_Hz": 857218.75,
+              "amplitude": 0.961078977534505,
+              "min_amplitude": 0.9007064259378406
+            },
+            {
+              "frequency_Hz": 857218.75,
+              "amplitude": 0.9007064259378406,
+              "min_amplitude": 0.9007064259378406
+            }
+          ],
+          "events": {
+            "PO_STEP": 108,
+            "CANDIDATE_LIMIT_ENTER": 23,
+            "SOFT_FOLDBACK_ENTER": 53,
+            "PROTECTION_STATE_TRANSITION": 162,
+            "OBSERVED_HARD_TRIP": 2,
+            "PO_HOLD_FOR_RAMP": 9
+          }
+        },
+        "功率 P&O": {
+          "settled": 0,
+          "energy_pct": 20.143620662067747,
+          "below_full_amplitude_ms": 7480.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 183.5688125658176,
+          "pre_guard_peak_mArms": 5.87682679673147,
+          "per_segment": [
+            63.65310993775634,
+            51.945546223670796,
+            56.15840078664038,
+            3.6658202750860553,
+            1.0105129023790305,
+            21.615917302978865,
+            14.584880929596439,
+            0.4745874533017271,
+            1.7219124542416042,
+            0.09085204681969218,
+            6.926794139917433,
+            0.0844716347384784
+          ],
+          "settled_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            340.0,
+            140.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 899335.9375,
+              "amplitude": 0.9847744572444571,
+              "min_amplitude": 0.8008286047784171
+            },
+            {
+              "frequency_Hz": 901230.6671142578,
+              "amplitude": 0.7818276640266725,
+              "min_amplitude": 0.7318276640266724
+            },
+            {
+              "frequency_Hz": 899815.7900571823,
+              "amplitude": 0.7305178146371843,
+              "min_amplitude": 0.7297593908604261
+            },
+            {
+              "frequency_Hz": 855896.3731352706,
+              "amplitude": 0.943806879289838,
+              "min_amplitude": 0.6909462131570194
+            },
+            {
+              "frequency_Hz": 911896.3731352706,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 903814.3418852706,
+              "amplitude": 0.9906261507888352,
+              "min_amplitude": 0.9869727387297312
+            },
+            {
+              "frequency_Hz": 853037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 903037.608486833,
+              "amplitude": 0.711423709354728,
+              "min_amplitude": 0.7020436246752579
+            },
+            {
+              "frequency_Hz": 821037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6898640900085414
+            },
+            {
+              "frequency_Hz": 887037.608486833,
+              "amplitude": 0.7020436246752579,
+              "min_amplitude": 0.7020436246752579
+            },
+            {
+              "frequency_Hz": 817037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6996509400516641
+            },
+            {
+              "frequency_Hz": 887818.858486833,
+              "amplitude": 0.7045045283490045,
+              "min_amplitude": 0.7045045283490045
+            }
+          ],
+          "events": {
+            "PO_STEP": 172,
+            "CANDIDATE_LIMIT_ENTER": 17,
+            "SOFT_FOLDBACK_ENTER": 35,
+            "PROTECTION_STATE_TRANSITION": 122,
+            "PO_HOLD_FOR_RAMP": 81,
+            "OBSERVED_HARD_TRIP": 1
+          }
+        },
+        "功率 P&O 噪声0.5%": {
+          "settled": 0,
+          "energy_pct": 20.143620662067747,
+          "below_full_amplitude_ms": 7480.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 183.5688125658176,
+          "pre_guard_peak_mArms": 5.87682679673147,
+          "per_segment": [
+            63.65310993775634,
+            51.945546223670796,
+            56.15840078664038,
+            3.6658202750860553,
+            1.0105129023790305,
+            21.615917302978865,
+            14.584880929596439,
+            0.4745874533017271,
+            1.7219124542416042,
+            0.09085204681969218,
+            6.926794139917433,
+            0.0844716347384784
+          ],
+          "settled_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            340.0,
+            140.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 899335.9375,
+              "amplitude": 0.9847744572444571,
+              "min_amplitude": 0.8008286047784171
+            },
+            {
+              "frequency_Hz": 901230.6671142578,
+              "amplitude": 0.7818276640266725,
+              "min_amplitude": 0.7318276640266724
+            },
+            {
+              "frequency_Hz": 899815.7900571823,
+              "amplitude": 0.7305178146371843,
+              "min_amplitude": 0.7297593908604261
+            },
+            {
+              "frequency_Hz": 855896.3731352706,
+              "amplitude": 0.943806879289838,
+              "min_amplitude": 0.6909462131570194
+            },
+            {
+              "frequency_Hz": 911896.3731352706,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 903814.3418852706,
+              "amplitude": 0.9906261507888352,
+              "min_amplitude": 0.9869727387297312
+            },
+            {
+              "frequency_Hz": 853037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 903037.608486833,
+              "amplitude": 0.711423709354728,
+              "min_amplitude": 0.7020436246752579
+            },
+            {
+              "frequency_Hz": 821037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6898640900085414
+            },
+            {
+              "frequency_Hz": 887037.608486833,
+              "amplitude": 0.7020436246752579,
+              "min_amplitude": 0.7020436246752579
+            },
+            {
+              "frequency_Hz": 817037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6996509400516641
+            },
+            {
+              "frequency_Hz": 887818.858486833,
+              "amplitude": 0.7045045283490045,
+              "min_amplitude": 0.7045045283490045
+            }
+          ],
+          "events": {
+            "PO_STEP": 172,
+            "CANDIDATE_LIMIT_ENTER": 17,
+            "SOFT_FOLDBACK_ENTER": 35,
+            "PROTECTION_STATE_TRANSITION": 122,
+            "PO_HOLD_FOR_RAMP": 81,
+            "OBSERVED_HARD_TRIP": 1
+          }
+        },
+        "功率 P&O 噪声2.0%": {
+          "settled": 0,
+          "energy_pct": 20.143620662067747,
+          "below_full_amplitude_ms": 7480.0,
+          "actual_hard_violation_ms": 0.0,
+          "pre_guard_peak_Vpp": 183.5688125658176,
+          "pre_guard_peak_mArms": 5.87682679673147,
+          "per_segment": [
+            63.65310993775634,
+            51.945546223670796,
+            56.15840078664038,
+            3.6658202750860553,
+            1.0105129023790305,
+            21.615917302978865,
+            14.584880929596439,
+            0.4745874533017271,
+            1.7219124542416042,
+            0.09085204681969218,
+            6.926794139917433,
+            0.0844716347384784
+          ],
+          "settled_flags": [
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false,
+            false
+          ],
+          "first_qualified_ms": [
+            20.0,
+            340.0,
+            140.0,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null,
+            null
+          ],
+          "segment_end": [
+            {
+              "frequency_Hz": 899335.9375,
+              "amplitude": 0.9847744572444571,
+              "min_amplitude": 0.8008286047784171
+            },
+            {
+              "frequency_Hz": 901230.6671142578,
+              "amplitude": 0.7818276640266725,
+              "min_amplitude": 0.7318276640266724
+            },
+            {
+              "frequency_Hz": 899815.7900571823,
+              "amplitude": 0.7305178146371843,
+              "min_amplitude": 0.7297593908604261
+            },
+            {
+              "frequency_Hz": 855896.3731352706,
+              "amplitude": 0.943806879289838,
+              "min_amplitude": 0.6909462131570194
+            },
+            {
+              "frequency_Hz": 911896.3731352706,
+              "amplitude": 1.0,
+              "min_amplitude": 0.0
+            },
+            {
+              "frequency_Hz": 903814.3418852706,
+              "amplitude": 0.9906261507888352,
+              "min_amplitude": 0.9869727387297312
+            },
+            {
+              "frequency_Hz": 853037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 1.0
+            },
+            {
+              "frequency_Hz": 903037.608486833,
+              "amplitude": 0.711423709354728,
+              "min_amplitude": 0.7020436246752579
+            },
+            {
+              "frequency_Hz": 821037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6898640900085414
+            },
+            {
+              "frequency_Hz": 887037.608486833,
+              "amplitude": 0.7020436246752579,
+              "min_amplitude": 0.7020436246752579
+            },
+            {
+              "frequency_Hz": 817037.608486833,
+              "amplitude": 1.0,
+              "min_amplitude": 0.6996509400516641
+            },
+            {
+              "frequency_Hz": 887818.858486833,
+              "amplitude": 0.7045045283490045,
+              "min_amplitude": 0.7045045283490045
+            }
+          ],
+          "events": {
+            "PO_STEP": 172,
+            "CANDIDATE_LIMIT_ENTER": 17,
+            "SOFT_FOLDBACK_ENTER": 35,
+            "PROTECTION_STATE_TRANSITION": 122,
+            "PO_HOLD_FOR_RAMP": 81,
+            "OBSERVED_HARD_TRIP": 1
+          }
+        }
+      }
+    }
+  },
+  "noise_multi_seed": {
+    "0.5%": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "settled": [
+        8,
+        7,
+        9,
+        8,
+        9,
+        8,
+        9,
+        8,
+        9,
+        8
+      ],
+      "energy_pct": [
+        89.21794248145189,
+        89.80810404820984,
+        87.82538963480498,
+        87.84911836520973,
+        87.52149618713143,
+        88.11132754003631,
+        86.24712501245462,
+        89.20097545234239,
+        85.51604426062438,
+        87.65526884940593
+      ],
+      "energy_mean": 87.89527918316716,
+      "energy_std": 1.3225128375938835,
+      "energy_min": 85.51604426062438,
+      "energy_max": 89.80810404820984,
+      "settled_mean": 8.3
+    },
+    "2.0%": {
+      "seeds": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "settled": [
+        8,
+        8,
+        6,
+        8,
+        8,
+        8,
+        8,
+        7,
+        8,
+        8
+      ],
+      "energy_pct": [
+        87.2787989987568,
+        90.04154022753941,
+        83.27847575344376,
+        86.41598853948693,
+        88.88961781035245,
+        89.48239261140853,
+        91.16920508365268,
+        83.54016769857344,
+        87.07837864140036,
+        89.79671809758025
+      ],
+      "energy_mean": 87.69712834621946,
+      "energy_std": 2.699239462614641,
+      "energy_min": 83.27847575344376,
+      "energy_max": 91.16920508365268,
+      "settled_mean": 7.7
+    }
+  },
+  "cover": {
+    "登记基线": {
+      "CASE_000_BASELINE": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.61284905460437,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.14828420759888
+        }
+      },
+      "CASE_C0_P10": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99431596212419,
+          "return_settled": true,
+          "return_energy": 99.98267461976677,
+          "total_energy": 99.99233009340226
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99435877168249,
+          "return_settled": true,
+          "return_energy": 99.9823903468249,
+          "total_energy": 99.99224959936384
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.689285223275355,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.173990029403974
+        }
+      },
+      "CASE_C0_P20": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.00000000000001
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.02623151200838,
+          "return_settled": true,
+          "return_energy": 99.97664829181178,
+          "total_energy": 100.00095436702006
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.02640204670412,
+          "return_settled": true,
+          "return_energy": 99.9755412455568,
+          "total_energy": 100.00064209015542
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.80015600154457,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.21169154888672
+        }
+      },
+      "CASE_C0_P30": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.08198116770612,
+          "return_settled": true,
+          "return_energy": 99.96882968064511,
+          "total_energy": 100.01690385722277
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.08246824750434,
+          "return_settled": true,
+          "return_energy": 99.96634770705468,
+          "total_energy": 100.01623830650533
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.945546223670796,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.26137789192352
+        }
+      },
+      "CASE_RM_P15": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.96642235684587,
+          "return_settled": true,
+          "return_energy": 99.98305892092536,
+          "total_energy": 99.98323602535127
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.96740942549117,
+          "return_settled": true,
+          "return_energy": 99.98285054880836,
+          "total_energy": 99.98349230500855
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 53.298270443715545,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.7255012214445
+        }
+      },
+      "CASE_RM_P30": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.90127770874633,
+          "return_settled": true,
+          "return_energy": 99.97289673920369,
+          "total_energy": 99.9586866856469
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.9076043494483,
+          "return_settled": true,
+          "return_energy": 99.97164704376762,
+          "total_energy": 99.96032770064018
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 54.78252205763401,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 57.2316559681678
+        }
+      },
+      "CASE_RM_P50": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.7516332621911,
+          "return_settled": true,
+          "return_energy": 99.95791091223519,
+          "total_energy": 99.90646146487192
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.77643026542658,
+          "return_settled": true,
+          "return_energy": 99.95319861649298,
+          "total_energy": 99.91276456960003
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 56.18415588502446,
+          "return_settled": false,
+          "return_energy": 53.9684789465639,
+          "total_energy": 57.973148503251245
+        }
+      },
+      "CASE_FS_M1": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.46784548543689275,
+          "return_settled": true,
+          "return_energy": 96.43856033420869,
+          "total_energy": 65.73520119796525
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.46036002199321396,
+          "return_settled": true,
+          "return_energy": 74.56159958307356,
+          "total_energy": 58.42923325654294
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.4606995213565798,
+          "return_settled": true,
+          "return_energy": 84.2625630396771,
+          "total_energy": 61.6679493500029
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 9.937525689789252,
+          "return_settled": false,
+          "return_energy": 1.6993809484400464,
+          "total_energy": 25.119871763990076
+        }
+      },
+      "CASE_FS_M3": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.05395498789988046,
+          "return_settled": true,
+          "return_energy": 96.35911162071046,
+          "total_energy": 66.71434885948076
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.053705948194933274,
+          "return_settled": true,
+          "return_energy": 74.55967994055084,
+          "total_energy": 59.309684011735946
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.053719819571632944,
+          "return_settled": true,
+          "return_energy": 85.20823485692068,
+          "total_energy": 62.92666944606826
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.2121323678967488,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 21.903530857844018
+        }
+      },
+      "CASE_FS_M5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.02177056376272617,
+          "return_settled": true,
+          "return_energy": 96.35265124463947,
+          "total_energy": 69.51455711234361
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.021711593034127254,
+          "return_settled": true,
+          "return_energy": 74.59019332870619,
+          "total_energy": 61.810700565732205
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.02171500035347134,
+          "return_settled": true,
+          "return_energy": 85.4518441623942,
+          "total_energy": 65.6556906317561
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.029632293345984426,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 22.76523420284353
+        }
+      },
+      "CASE_LM_P5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.07829777065472036,
+          "return_settled": true,
+          "return_energy": 96.36389398656755,
+          "total_energy": 66.23724530296862
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.07784097233383226,
+          "return_settled": true,
+          "return_energy": 74.5477182982636,
+          "total_energy": 58.88092156410877
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.07786582151453235,
+          "return_settled": true,
+          "return_energy": 85.08463823584349,
+          "total_energy": 62.433863408911556
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 1.3479687476537765,
+          "return_settled": false,
+          "return_energy": 1.190147426474951,
+          "total_energy": 22.303362899972733
+        }
+      },
+      "CASE_LM_P10": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.022287756835932638,
+          "return_settled": true,
+          "return_energy": 96.3528411243107,
+          "total_energy": 68.93383992074621
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.02222316186942685,
+          "return_settled": true,
+          "return_energy": 74.58881531116586,
+          "total_energy": 61.29383264290205
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.022226899838606914,
+          "return_settled": true,
+          "return_energy": 85.44219322918462,
+          "total_energy": 65.10377581998333
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.03181053585740981,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 22.575820644522338
+        }
+      },
+      "CASE_LM_P20": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.00835880471226227,
+          "return_settled": true,
+          "return_energy": 96.34998299261214,
+          "total_energy": 76.52665500266897
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.00834567947669888,
+          "return_settled": true,
+          "return_energy": 74.61856824319521,
+          "total_energy": 68.05712032839891
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.00834643968486209,
+          "return_settled": true,
+          "return_energy": 85.63548923481392,
+          "total_energy": 72.35081989528263
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.009464731273473435,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 25.05620702600601
+        }
+      },
+      "CASE_CM_P5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.08626115069900295,
+          "return_settled": true,
+          "return_energy": 96.36538999260979,
+          "total_energy": 66.2267904634957
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.08575366919232764,
+          "return_settled": true,
+          "return_energy": 74.54499552324583,
+          "total_energy": 58.87053490200189
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.08578107135677698,
+          "return_settled": true,
+          "return_energy": 85.05097982627332,
+          "total_energy": 62.412320708251144
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 1.4545794297901484,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 22.14550498374034
+        }
+      },
+      "CASE_CM_P10": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.026963699415841313,
+          "return_settled": true,
+          "return_energy": 96.35362637439594,
+          "total_energy": 68.93305862069667
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.02688471693073489,
+          "return_settled": true,
+          "return_energy": 74.58361464414773,
+          "total_energy": 61.29121748676065
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.026889246544932365,
+          "return_settled": true,
+          "return_energy": 85.40457983357527,
+          "total_energy": 65.08964776097748
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.038472769374509164,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 22.577004108585257
+        }
+      },
+      "CASE_CM_P20": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.012004778284599539,
+          "return_settled": true,
+          "return_energy": 96.35041216147265,
+          "total_energy": 76.48323563957999
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.011985686037011558,
+          "return_settled": true,
+          "return_energy": 74.61212160326438,
+          "total_energy": 68.0159350521548
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.011986780999407585,
+          "return_settled": true,
+          "return_energy": 85.59605136411902,
+          "total_energy": 72.29429326004556
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.013591812785066389,
+          "return_settled": false,
+          "return_energy": 0.6316088363323905,
+          "total_energy": 25.04258811548334
+        }
+      },
+      "CASE_RS_P5": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 52.71137086091716,
+          "return_settled": false,
+          "return_energy": 52.99893966320077,
+          "total_energy": 56.51181570677308
+        }
+      },
+      "CASE_RS_P10": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 55.06094540185533,
+          "return_settled": false,
+          "return_energy": 52.732082430982416,
+          "total_energy": 57.21145338507165
+        }
+      },
+      "CASE_RS_P20": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 99.99999999999999
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 99.99999999999999
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 99.99999999999999
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 60.611461320790056,
+          "return_settled": false,
+          "return_energy": 46.555182155678985,
+          "total_energy": 56.72754243145176
+        }
+      },
+      "CASE_LMATCH_P2": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.04083113472329,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 99.68093349498699
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.85722114542759,
+          "return_settled": true,
+          "return_energy": 99.90342743566993,
+          "total_energy": 99.92028086391453
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.86319660163927,
+          "return_settled": true,
+          "return_energy": 99.88351496317252,
+          "total_energy": 99.9156242882535
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 52.298344411262,
+          "return_settled": false,
+          "return_energy": 52.640093126073076,
+          "total_energy": 56.20118500782265
+        }
+      },
+      "CASE_LMATCH_P5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 95.00215812522075,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 98.36246583800994
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 94.19677852621143,
+          "return_settled": true,
+          "return_energy": 97.16559291806247,
+          "total_energy": 97.14572534312892
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 96.0690131234378,
+          "return_settled": true,
+          "return_energy": 97.33750566836433,
+          "total_energy": 97.81695265816857
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 53.907895674882475,
+          "return_settled": false,
+          "return_energy": 53.4581012621092,
+          "total_energy": 57.0327915597975
+        }
+      },
+      "CASE_LMATCH_P10": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 88.92010730177424,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 96.69011569446442
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 98.00613933156296,
+          "return_settled": true,
+          "return_energy": 99.40516905399724,
+          "total_energy": 99.19580729724517
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 98.09715040864614,
+          "return_settled": true,
+          "return_energy": 99.16202225698572,
+          "total_energy": 99.13773902812257
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 56.88622344525047,
+          "return_settled": false,
+          "return_energy": 49.025204199525966,
+          "total_energy": 56.50258161284441
+        }
+      },
+      "CASE_CMATCH_M2": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.09203989591646,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 99.69795693502437
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 99.58380051111683,
+          "return_settled": true,
+          "return_energy": 99.8010557503571,
+          "total_energy": 99.7951649816192
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.63512517095677,
+          "return_settled": true,
+          "return_energy": 99.77970364346449,
+          "total_energy": 99.80511415761572
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.22964047592203,
+          "return_settled": false,
+          "return_energy": 47.42638416191637,
+          "total_energy": 54.105941980536905
+        }
+      },
+      "CASE_CMATCH_M5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 95.69485333503278,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 98.59312987551019
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 96.21747538589891,
+          "return_settled": false,
+          "return_energy": 94.98379803208425,
+          "total_energy": 97.07543270938127
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 96.3200351534493,
+          "return_settled": false,
+          "return_energy": 95.38488785990482,
+          "total_energy": 97.2439572565572
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 52.201697837505215,
+          "return_settled": false,
+          "return_energy": 46.555182155678985,
+          "total_energy": 54.15566089831439
+        }
+      },
+      "CASE_CMATCH_M10": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 91.72122274464988,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 97.56141282570678
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 97.85701737947511,
+          "return_settled": false,
+          "return_energy": 90.46339238812395,
+          "total_energy": 96.0050078044226
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 97.63944358681476,
+          "return_settled": true,
+          "return_energy": 99.9325255872426,
+          "total_energy": 99.28087758520182
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 75.64697321517943,
+          "return_settled": false,
+          "return_energy": 55.008448425448165,
+          "total_energy": 64.13685866367211
+        }
+      },
+      "CASE_QL_100": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.61284905460437,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.14828420759888
+        }
+      },
+      "CASE_QL_50": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99716575060351,
+          "return_settled": true,
+          "return_energy": 99.99989602043914,
+          "total_energy": 99.99908733734219
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99716575060351,
+          "return_settled": true,
+          "return_energy": 99.99989602043914,
+          "total_energy": 99.99908733734219
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 56.24561018647673,
+          "return_settled": false,
+          "return_energy": 52.84204691793376,
+          "total_energy": 57.628283320578966
+        }
+      },
+      "CASE_QL_20": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0015149096014,
+          "return_settled": true,
+          "return_energy": 99.99004864527636,
+          "total_energy": 99.99664396450957
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.00100811216565,
+          "return_settled": true,
+          "return_energy": 99.99002778729263,
+          "total_energy": 99.99650967320451
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 60.08278619797618,
+          "return_settled": false,
+          "return_energy": 26.097916436631376,
+          "total_energy": 48.6702911100428
+        }
+      },
+      "CASE_QM_500": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 65.93208438428749,
+          "return_settled": false,
+          "return_energy": 48.57410351634058,
+          "total_energy": 59.386432612794955
+        }
+      },
+      "CASE_QM_800": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 51.61284905460437,
+          "return_settled": false,
+          "return_energy": 53.17889363043555,
+          "total_energy": 56.14828420759888
+        }
+      },
+      "CASE_QM_1000": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 100.0,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 100.0
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 48.14809213462719,
+          "return_settled": false,
+          "return_energy": 52.023905353536826,
+          "total_energy": 54.60836914197362
+        }
+      },
+      "CASE_COMBINED_LOW": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.4296362835350739,
+          "return_settled": true,
+          "return_energy": 96.82040950742199,
+          "total_energy": 67.20588167569808
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.42496076927763293,
+          "return_settled": true,
+          "return_energy": 74.75376336215777,
+          "total_energy": 59.684902804557424
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.4252257377004724,
+          "return_settled": true,
+          "return_energy": 95.38783950815198,
+          "total_energy": 66.71631061326725
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 7.821414683883734,
+          "return_settled": false,
+          "return_energy": 1.6993809484400464,
+          "total_energy": 24.7606129746467
+        }
+      },
+      "CASE_COMBINED_MEDIUM": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.05103763629531919,
+          "return_settled": true,
+          "return_energy": 98.46233028571359,
+          "total_energy": 72.74055083244424
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.051056019876105675,
+          "return_settled": true,
+          "return_energy": 88.04890937834136,
+          "total_energy": 68.92453677040986
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.0510230821690651,
+          "return_settled": true,
+          "return_energy": 91.62328222189296,
+          "total_energy": 70.23436406863522
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 0.07584120404160956,
+          "return_settled": false,
+          "return_energy": 1.242968845560328,
+          "total_energy": 23.80155507944914
+        }
+      },
+      "CASE_COMBINED_HIGH": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 0.03636478164254244,
+          "return_settled": true,
+          "return_energy": 100.0,
+          "total_energy": 82.42211850082951
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 0.0351960524140138,
+          "return_settled": false,
+          "return_energy": 26.997692499527997,
+          "total_energy": 52.33922285034448
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 0.035710817433198205,
+          "return_settled": false,
+          "return_energy": 76.16192760401631,
+          "total_energy": 72.5988435275033
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 14.297212480394112,
+          "return_settled": false,
+          "return_energy": 0.03955708458935372,
+          "total_energy": 28.76044763657654
+        }
+      }
+    },
+    "k_eff 0.45": {
+      "CASE_000_BASELINE": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.94003048103004,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.89499153999363
+        }
+      },
+      "CASE_C0_P10": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99275460088755,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99568394754299
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.9944258671657,
+          "return_settled": true,
+          "return_energy": 99.99902415089834,
+          "total_energy": 99.99686624809756
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.9936567928948,
+          "return_settled": true,
+          "return_energy": 99.99821855456457,
+          "total_energy": 99.99634136668548
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.93877022188217,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.89456986268549
+        }
+      },
+      "CASE_C0_P20": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.98673179563585,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99367752919022
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.9910939023913,
+          "return_settled": true,
+          "return_energy": 99.99989526689878,
+          "total_energy": 99.99604679638277
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.98914354923188,
+          "return_settled": true,
+          "return_energy": 99.99903949949258,
+          "total_energy": 99.99511161123382
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.99789427971025,
+          "return_settled": true,
+          "return_energy": 99.99128363221183,
+          "total_energy": 99.99536901582582
+        }
+      },
+      "CASE_C0_P30": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.97945894020111,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99125725996073
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.98743810628866,
+          "return_settled": true,
+          "return_energy": 99.99985545633112,
+          "total_energy": 99.99481732628321
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.98394413857154,
+          "return_settled": true,
+          "return_energy": 99.99960974927284,
+          "total_energy": 99.99357177895801
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.96822957165983,
+          "return_settled": true,
+          "return_energy": 99.77781245174518,
+          "total_energy": 99.91429994043992
+        }
+      },
+      "CASE_RM_P15": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.984998486318,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99313472850967
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.9877767691467,
+          "return_settled": true,
+          "return_energy": 99.99883117864401,
+          "total_energy": 99.99461594792999
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.98648435127286,
+          "return_settled": true,
+          "return_energy": 99.99813510780784,
+          "total_energy": 99.99395593658338
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.9800383853948,
+          "return_settled": true,
+          "return_energy": 99.90426975795857,
+          "total_energy": 99.96032504538019
+        }
+      },
+      "CASE_RM_P30": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.97207259314152,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.98897351083178
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.97972943269188,
+          "return_settled": true,
+          "return_energy": 99.9996561177821,
+          "total_energy": 99.99231477605073
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.97629130054574,
+          "return_settled": true,
+          "return_energy": 99.99880354027415,
+          "total_energy": 99.99090660011917
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.99569428497888,
+          "return_settled": true,
+          "return_energy": 99.99128363221183,
+          "total_energy": 99.99462452720137
+        }
+      },
+      "CASE_RM_P50": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.95647357851844,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.98417347867878
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.97209455811172,
+          "return_settled": true,
+          "return_energy": 99.99998787422017,
+          "total_energy": 99.9901232846394
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.96536081672234,
+          "return_settled": true,
+          "return_energy": 99.99938176349345,
+          "total_energy": 99.98776888850016
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.97897284141501,
+          "return_settled": true,
+          "return_energy": 99.99577194479133,
+          "total_energy": 99.99080766282039
+        }
+      },
+      "CASE_FS_M1": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.14625428569894,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.71601250806953
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.31718313518523,
+          "return_settled": true,
+          "return_energy": 99.92632076439877,
+          "total_energy": 99.74877441229444
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.23751396373311,
+          "return_settled": true,
+          "return_energy": 99.97356130648468,
+          "total_energy": 99.73826778858988
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.5030779350327,
+          "return_settled": true,
+          "return_energy": 95.95340998544015,
+          "total_energy": 98.4799918892385
+        }
+      },
+      "CASE_FS_M3": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 92.62429665482351,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 97.71042465432602
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 91.34848328866148,
+          "return_settled": true,
+          "return_energy": 99.6310773677824,
+          "total_energy": 97.18845905368596
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 92.00588801636162,
+          "return_settled": true,
+          "return_energy": 99.9504857770028,
+          "total_energy": 97.50252735854586
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 98.4763123305464,
+          "return_settled": false,
+          "return_energy": 80.77925520913071,
+          "total_energy": 92.8966912409371
+        }
+      },
+      "CASE_FS_M5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 73.21591564775603,
+          "return_settled": true,
+          "return_energy": 99.94010286331323,
+          "total_energy": 92.55245362437346
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 72.64478140360353,
+          "return_settled": true,
+          "return_energy": 99.58016923979588,
+          "total_energy": 92.2640505094184
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 72.66468629347176,
+          "return_settled": true,
+          "return_energy": 98.92134467407824,
+          "total_energy": 92.03147313590216
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 83.34221761043409,
+          "return_settled": true,
+          "return_energy": 89.01974863910601,
+          "total_energy": 91.4129566716442
+        }
+      },
+      "CASE_LM_P5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 94.48202064239939,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 98.24365893097165
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 93.42871241553073,
+          "return_settled": true,
+          "return_energy": 99.84398182597643,
+          "total_energy": 97.85653396094058
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 93.9669326912479,
+          "return_settled": true,
+          "return_energy": 99.9649210928128,
+          "total_energy": 98.06890048185626
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 98.18784764281735,
+          "return_settled": true,
+          "return_energy": 93.68483006069414,
+          "total_energy": 97.2691374893048
+        }
+      },
+      "CASE_LM_P10": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 73.38169654599233,
+          "return_settled": true,
+          "return_energy": 99.9772456298412,
+          "total_energy": 92.43936881795528
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 72.78722744180408,
+          "return_settled": true,
+          "return_energy": 99.64973750260849,
+          "total_energy": 92.1534233623167
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 72.8078142390939,
+          "return_settled": true,
+          "return_energy": 99.05868256111879,
+          "total_energy": 91.94757570028742
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 83.77369327834374,
+          "return_settled": true,
+          "return_energy": 83.65272193715197,
+          "total_energy": 89.54076589495816
+        }
+      },
+      "CASE_LM_P20": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 25.138974193098328,
+          "return_settled": true,
+          "return_energy": 98.3304140853187,
+          "total_energy": 83.61851242561353
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 25.048239252656586,
+          "return_settled": true,
+          "return_energy": 97.18356240060426,
+          "total_energy": 83.14645205973443
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 25.049737647371717,
+          "return_settled": true,
+          "return_energy": 97.32115296330574,
+          "total_energy": 83.20111494092534
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 36.447845531958684,
+          "return_settled": true,
+          "return_energy": 73.9595131898478,
+          "total_energy": 76.36680231458057
+        }
+      },
+      "CASE_CM_P5": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 95.61357114066956,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 98.604181829942
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 94.76856230179482,
+          "return_settled": true,
+          "return_energy": 99.85753162110014,
+          "total_energy": 98.28803845556838
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 95.20207184995907,
+          "return_settled": true,
+          "return_energy": 99.9682779917001,
+          "total_energy": 98.46357179715459
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 98.7255781609101,
+          "return_settled": false,
+          "return_energy": 79.51564475529902,
+          "total_energy": 92.60645350276752
+        }
+      },
+      "CASE_CM_P10": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 83.01023431833858,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 95.18637009785633
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 82.39268083023212,
+          "return_settled": true,
+          "return_energy": 99.83819722590935,
+          "total_energy": 94.95450815712468
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 82.41482994648578,
+          "return_settled": true,
+          "return_energy": 99.51514364491896,
+          "total_energy": 94.8449992947136
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 89.97701530111779,
+          "return_settled": true,
+          "return_energy": 85.48810912926547,
+          "total_energy": 91.95931523038584
+        }
+      },
+      "CASE_CM_P20": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 50.68879537767046,
+          "return_settled": true,
+          "return_energy": 98.83862554751089,
+          "total_energy": 89.21982259909637
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 50.36590085232698,
+          "return_settled": false,
+          "return_energy": 66.22385228839737,
+          "total_energy": 76.25768363437447
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 50.37685332323573,
+          "return_settled": true,
+          "return_energy": 95.29489467242243,
+          "total_energy": 87.75349112887172
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 59.06166579730739,
+          "return_settled": true,
+          "return_energy": 94.79009266565157,
+          "total_energy": 89.37139136118923
+        }
+      },
+      "CASE_RS_P5": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99331849866613,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99591089120602
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99331849866613,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99591089120602
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99331849866613,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99591089120602
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.9221500338082,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.88852444816185
+        }
+      },
+      "CASE_RS_P10": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.98919874809384,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99465768975466
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.98919874809384,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99465768975466
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.98919874809384,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99465768975466
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.9046181135439,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.88254394012242
+        }
+      },
+      "CASE_RS_P20": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.98089980906408,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99235828322172
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.98089980906408,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99235828322172
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.98089980906408,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99235828322172
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.87124328934418,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.8721098193156
+        }
+      },
+      "CASE_LMATCH_P2": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.91397554393524,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.96964342988599
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.95743099583837,
+          "return_settled": true,
+          "return_energy": 99.98340864548443,
+          "total_energy": 99.9794159658725
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.93920553569916,
+          "return_settled": true,
+          "return_energy": 99.99841555909076,
+          "total_energy": 99.9784109476155
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.99097327132908,
+          "return_settled": true,
+          "return_energy": 99.99185015754998,
+          "total_energy": 99.99326033202851
+        }
+      },
+      "CASE_LMATCH_P5": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.77064057396525,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.92535776000292
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.93714392406736,
+          "return_settled": true,
+          "return_energy": 99.90965147124393,
+          "total_energy": 99.94824768398139
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.88612285546444,
+          "return_settled": true,
+          "return_energy": 99.97324507124941,
+          "total_energy": 99.95379571615096
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.53767167716764,
+          "return_settled": true,
+          "return_energy": 99.82716023893192,
+          "total_energy": 99.79338924936283
+        }
+      },
+      "CASE_LMATCH_P10": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.71016348330897,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.9181426130711
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.9584976594641,
+          "return_settled": true,
+          "return_energy": 99.96029761228044,
+          "total_energy": 99.97315506951763
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.92863462187718,
+          "return_settled": true,
+          "return_energy": 99.97266241930693,
+          "total_energy": 99.96941430316437
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.94024195595843,
+          "return_settled": true,
+          "return_energy": 99.99720698168365,
+          "total_energy": 99.98142456275093
+        }
+      },
+      "CASE_CMATCH_M2": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.95564666580134,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.98342252007939
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.98460810453977,
+          "return_settled": true,
+          "return_energy": 99.94591500928524,
+          "total_energy": 99.97585650017368
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.97402229948122,
+          "return_settled": true,
+          "return_energy": 99.97952133677504,
+          "total_energy": 99.98360127506383
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.95562753505693,
+          "return_settled": true,
+          "return_energy": 99.96983079384322,
+          "total_energy": 99.97420183838484
+        }
+      },
+      "CASE_CMATCH_M5": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.76366832995694,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.92297460629634
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.93186329901106,
+          "return_settled": true,
+          "return_energy": 99.91996821083936,
+          "total_energy": 99.95007764133159
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.88824597470088,
+          "return_settled": true,
+          "return_energy": 99.93090312111102,
+          "total_energy": 99.93995144685013
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.94327900585468,
+          "return_settled": true,
+          "return_energy": 99.64337291355164,
+          "total_energy": 99.85926779680474
+        }
+      },
+      "CASE_CMATCH_M10": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.47114119085249,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.85092717914308
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.8015684046025,
+          "return_settled": true,
+          "return_energy": 99.94972708025111,
+          "total_energy": 99.9256609425753
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.7702068289659,
+          "return_settled": true,
+          "return_energy": 99.96373421920124,
+          "total_energy": 99.92199963902955
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.95483015943171,
+          "return_settled": true,
+          "return_energy": 99.99080490393749,
+          "total_energy": 99.98301592854378
+        }
+      },
+      "CASE_QL_100": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.94003048103004,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.89499153999363
+        }
+      },
+      "CASE_QL_50": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.98746211595233,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99415185748315
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.98767714231357,
+          "return_settled": true,
+          "return_energy": 99.99731896657457,
+          "total_energy": 99.99427725692699
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.98757338315802,
+          "return_settled": true,
+          "return_energy": 99.99723520689736,
+          "total_energy": 99.99421623386662
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.89750448566353,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.88021619335937
+        }
+      },
+      "CASE_QL_20": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.95988190951712,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.98784647569038
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.96166919969998,
+          "return_settled": true,
+          "return_energy": 99.99766259630124,
+          "total_energy": 99.98848549672712
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.96080959909669,
+          "return_settled": true,
+          "return_energy": 99.99741376144162,
+          "total_energy": 99.98817757253966
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.98345439358573,
+          "return_settled": true,
+          "return_energy": 99.98259336398671,
+          "total_energy": 99.9881875426847
+        }
+      },
+      "CASE_QM_500": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99363627101549,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99597770473468
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99363627101549,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99597770473468
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99363627101549,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99597770473468
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.99735996058122,
+          "return_settled": true,
+          "return_energy": 99.99957997803166,
+          "total_energy": 99.9979568196506
+        }
+      },
+      "CASE_QM_800": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99714846271517,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99714846271469
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.94003048103004,
+          "return_settled": true,
+          "return_energy": 99.74801359764876,
+          "total_energy": 99.89499153999363
+        }
+      },
+      "CASE_QM_1000": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.99877619030151,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99769103268902
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 99.99877619030151,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99769103268902
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 99.99877619030151,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.99769103268902
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.97607602489643,
+          "return_settled": true,
+          "return_energy": 99.8138530776268,
+          "total_energy": 99.92895295892711
+        }
+      },
+      "CASE_COMBINED_LOW": {
+        "固定频率": {
+          "target_settled": true,
+          "target_energy": 99.13250709763156,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 99.72259734373894
+        },
+        "正式相位反馈": {
+          "target_settled": true,
+          "target_energy": 98.85044488103152,
+          "return_settled": true,
+          "return_energy": 99.98115569766712,
+          "total_energy": 99.62757634678245
+        },
+        "v2": {
+          "target_settled": true,
+          "target_energy": 98.99457310322623,
+          "return_settled": true,
+          "return_energy": 99.99764386051703,
+          "total_energy": 99.67896796244115
+        },
+        "功率 P&O": {
+          "target_settled": true,
+          "target_energy": 99.5745738050582,
+          "return_settled": true,
+          "return_energy": 99.74013833558044,
+          "total_energy": 99.77519259280542
+        }
+      },
+      "CASE_COMBINED_MEDIUM": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 88.40179446903474,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 96.94821006283777
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 86.09381719814697,
+          "return_settled": true,
+          "return_energy": 99.88113052061797,
+          "total_energy": 96.29858355672934
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 87.22118143645982,
+          "return_settled": true,
+          "return_energy": 99.97190915404202,
+          "total_energy": 96.6284725866864
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 97.12903064390613,
+          "return_settled": true,
+          "return_energy": 87.08373273409333,
+          "total_energy": 94.48396149251643
+        }
+      },
+      "CASE_COMBINED_HIGH": {
+        "固定频率": {
+          "target_settled": false,
+          "target_energy": 62.77172692217185,
+          "return_settled": true,
+          "return_energy": 99.99714846271517,
+          "total_energy": 93.53230044012678
+        },
+        "正式相位反馈": {
+          "target_settled": false,
+          "target_energy": 60.27488758177837,
+          "return_settled": true,
+          "return_energy": 99.91899903786954,
+          "total_energy": 93.06639174873007
+        },
+        "v2": {
+          "target_settled": false,
+          "target_energy": 61.433823781666604,
+          "return_settled": true,
+          "return_energy": 99.98092341426454,
+          "total_energy": 93.29324642805989
+        },
+        "功率 P&O": {
+          "target_settled": false,
+          "target_energy": 90.64243144129678,
+          "return_settled": true,
+          "return_energy": 89.1224547320626,
+          "total_energy": 93.87939145418645
+        }
+      }
+    }
+  },
+  "cover_aliases": [
+    "CASE_000_BASELINE",
+    "CASE_QL_100",
+    "CASE_QM_800"
+  ],
+  "registered_batch": "UNIFIED_20260923T013352_476445Z_f442bcda"
+}
