@@ -1,0 +1,784 @@
+[
+  {
+    "case_id": "CASE_000_BASELINE",
+    "family": "baseline",
+    "factor": "baseline",
+    "level": "baseline",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_C0_P10",
+    "family": "single_factor",
+    "factor": "C0",
+    "level": "+10%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.5263223094309505e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_C0_P20",
+    "family": "single_factor",
+    "factor": "C0",
+    "level": "+20%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.937806155742855e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_C0_P30",
+    "family": "single_factor",
+    "factor": "C0",
+    "level": "+30%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 5.3492900020547596e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_RM_P15",
+    "family": "single_factor",
+    "factor": "Rm",
+    "level": "+15%",
+    "description": "Rm-only scan: C0/Lm/Cm/fs remain frozen; Qm is derived from the changed Rm.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 14093.137254901954,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 12.009441585531839,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_RM_P30",
+    "family": "single_factor",
+    "factor": "Rm",
+    "level": "+30%",
+    "description": "Rm-only scan: C0/Lm/Cm/fs remain frozen; Qm is derived from the changed Rm.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 15931.372549019603,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 10.62373678720124,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_RM_P50",
+    "family": "single_factor",
+    "factor": "Rm",
+    "level": "+50%",
+    "description": "Rm-only scan: C0/Lm/Cm/fs remain frozen; Qm is derived from the changed Rm.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 18382.352941176465,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 9.20723854890774,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_FS_M1",
+    "family": "single_factor",
+    "factor": "fs",
+    "level": "-1%",
+    "description": "fs changes while Rm and Qm remain fixed; Lm and Cm are re-derived together.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.030232420761638366,
+      "cm": 1.055387465604771e-12,
+      "qm": 13.810857823361614,
+      "fs": 891000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_FS_M3",
+    "family": "single_factor",
+    "factor": "fs",
+    "level": "-3%",
+    "description": "fs changes while Rm and Qm remain fixed; Lm and Cm are re-derived together.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.03085576964332163,
+      "cm": 1.0771480319059005e-12,
+      "qm": 13.810857823361614,
+      "fs": 873000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_FS_M5",
+    "family": "single_factor",
+    "factor": "fs",
+    "level": "-5%",
+    "description": "fs changes while Rm and Qm remain fixed; Lm and Cm are re-derived together.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.03150536479370735,
+      "cm": 1.0998248325776035e-12,
+      "qm": 13.810857823361614,
+      "fs": 855000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_LM_P5",
+    "family": "single_factor",
+    "factor": "Lm",
+    "level": "+5%",
+    "description": "Lm-only scan: Lm changes while C0, Rm and Cm remain frozen; the resulting fs and Qm are derived, not independently held fixed.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.03142660138172308,
+      "cm": 1.0448335909487233e-12,
+      "qm": 14.15191801516544,
+      "fs": 878310.0656536799
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_LM_P10",
+    "family": "single_factor",
+    "factor": "Lm",
+    "level": "+10%",
+    "description": "Lm-only scan: Lm changes while C0, Rm and Cm remain frozen; the resulting fs and Qm are derived, not independently held fixed.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.03292310620942418,
+      "cm": 1.0448335909487233e-12,
+      "qm": 14.48494988596162,
+      "fs": 858116.3303210331
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_LM_P20",
+    "family": "single_factor",
+    "factor": "Lm",
+    "level": "+20%",
+    "description": "Lm-only scan: Lm changes while C0, Rm and Cm remain frozen; the resulting fs and Qm are derived, not independently held fixed.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.035916115864826376,
+      "cm": 1.0448335909487233e-12,
+      "qm": 15.129036736703707,
+      "fs": 821583.8362577492
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_CM_P5",
+    "family": "single_factor",
+    "factor": "Cm",
+    "level": "+5%",
+    "description": "Cm-only scan: Cm changes while C0, Rm and Lm remain frozen; the resulting fs and Qm are derived, not independently held fixed.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0970752704961596e-12,
+      "qm": 13.478017157300417,
+      "fs": 878310.0656536799
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_CM_P10",
+    "family": "single_factor",
+    "factor": "Cm",
+    "level": "+10%",
+    "description": "Cm-only scan: Cm changes while C0, Rm and Lm remain frozen; the resulting fs and Qm are derived, not independently held fixed.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.1493169500435957e-12,
+      "qm": 13.16813625996511,
+      "fs": 858116.3303210331
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_CM_P20",
+    "family": "single_factor",
+    "factor": "Cm",
+    "level": "+20%",
+    "description": "Cm-only scan: Cm changes while C0, Rm and Lm remain frozen; the resulting fs and Qm are derived, not independently held fixed.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.253800309138468e-12,
+      "qm": 12.607530613919758,
+      "fs": 821583.8362577492
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_RS_P5",
+    "family": "single_factor",
+    "factor": "Rs",
+    "level": "+5%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 52.5,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_RS_P10",
+    "family": "single_factor",
+    "factor": "Rs",
+    "level": "+10%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 55.00000000000001,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_RS_P20",
+    "family": "single_factor",
+    "factor": "Rs",
+    "level": "+20%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 60.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_LMATCH_P2",
+    "family": "single_factor",
+    "factor": "Lmatch",
+    "level": "+2%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.00014077151832585293,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_LMATCH_P5",
+    "family": "single_factor",
+    "factor": "Lmatch",
+    "level": "+5%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001449118571001427,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_LMATCH_P10",
+    "family": "single_factor",
+    "factor": "Lmatch",
+    "level": "+10%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.00015181242172395903,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_CMATCH_M2",
+    "family": "single_factor",
+    "factor": "Cmatch",
+    "level": "-2%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.167835588047111e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_CMATCH_M5",
+    "family": "single_factor",
+    "factor": "Cmatch",
+    "level": "-5%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.1014732741273012e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_CMATCH_M10",
+    "family": "single_factor",
+    "factor": "Cmatch",
+    "level": "-10%",
+    "description": "Only the named scan variable changes; all others remain frozen.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 1.9908694175942857e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_QL_100",
+    "family": "single_factor",
+    "factor": "inductor_Q",
+    "level": "Q=100",
+    "description": "Inductor ESR changes through the declared Q at 0.9 MHz.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_QL_50",
+    "family": "single_factor",
+    "factor": "inductor_Q",
+    "level": "Q=50",
+    "description": "Inductor ESR changes through the declared Q at 0.9 MHz.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 50.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_QL_20",
+    "family": "single_factor",
+    "factor": "inductor_Q",
+    "level": "Q=20",
+    "description": "Inductor ESR changes through the declared Q at 0.9 MHz.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 20.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_QM_500",
+    "family": "single_factor",
+    "factor": "Qm",
+    "level": "Qm=500/800 x baseline (8.63179)",
+    "description": "Qm sensitivity relative to the baseline Qm: fs, Rm and C0 remain fixed; Lm/Cm are re-derived.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.018706310346263737,
+      "cm": 1.6717337455179575e-12,
+      "qm": 8.631786139601008,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_QM_800",
+    "family": "single_factor",
+    "factor": "Qm",
+    "level": "Qm=800/800 x baseline (13.8109)",
+    "description": "Qm sensitivity relative to the baseline Qm: fs, Rm and C0 remain fixed; Lm/Cm are re-derived.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.02993009655402198,
+      "cm": 1.0448335909487233e-12,
+      "qm": 13.810857823361614,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_QM_1000",
+    "family": "single_factor",
+    "factor": "Qm",
+    "level": "Qm=1000/800 x baseline (17.2636)",
+    "description": "Qm sensitivity relative to the baseline Qm: fs, Rm and C0 remain fixed; Lm/Cm are re-derived.",
+    "bvd": {
+      "c0": 4.1148384631190455e-12,
+      "rm": 12254.90196078431,
+      "lm": 0.03741262069252747,
+      "cm": 8.358668727589788e-13,
+      "qm": 17.263572279202016,
+      "fs": 900000.0
+    },
+    "matching": {
+      "l_h": 0.0001380112924763264,
+      "c_f": 2.2120771306603173e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 50.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_COMBINED_LOW",
+    "family": "combined",
+    "factor": "combined",
+    "level": "low",
+    "description": "C0 +10%, Rm +15%, fs -1%, Rs +5%, Lmatch +2%, Cmatch -2%, inductor Q=100.",
+    "bvd": {
+      "c0": 4.5263223094309505e-12,
+      "rm": 14093.137254901954,
+      "lm": 0.034767283875884125,
+      "cm": 9.177282309606703e-13,
+      "qm": 13.810857823361614,
+      "fs": 891000.0
+    },
+    "matching": {
+      "l_h": 0.00014077151832585293,
+      "c_f": 2.167835588047111e-10,
+      "ql": 100.0,
+      "qc": 1000.0
+    },
+    "rs": 52.5,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_COMBINED_MEDIUM",
+    "family": "combined",
+    "factor": "combined",
+    "level": "medium",
+    "description": "C0 +20%, Rm +30%, fs -3%, Rs +10%, Lmatch +5%, Cmatch -5%, inductor Q=50.",
+    "bvd": {
+      "c0": 4.937806155742855e-12,
+      "rm": 15931.372549019603,
+      "lm": 0.040112500536318124,
+      "cm": 8.285754091583848e-13,
+      "qm": 13.810857823361614,
+      "fs": 873000.0
+    },
+    "matching": {
+      "l_h": 0.0001449118571001427,
+      "c_f": 2.1014732741273012e-10,
+      "ql": 50.0,
+      "qc": 1000.0
+    },
+    "rs": 55.00000000000001,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  },
+  {
+    "case_id": "CASE_COMBINED_HIGH",
+    "family": "combined",
+    "factor": "combined",
+    "level": "high",
+    "description": "C0 +30%, Rm +50%, fs -5%, Rs +20%, Lmatch +10%, Cmatch -10%, inductor Q=20.",
+    "bvd": {
+      "c0": 5.3492900020547596e-12,
+      "rm": 18382.352941176465,
+      "lm": 0.04725804719056103,
+      "cm": 7.332165550517356e-13,
+      "qm": 13.810857823361614,
+      "fs": 855000.0
+    },
+    "matching": {
+      "l_h": 0.00015181242172395903,
+      "c_f": 1.9908694175942857e-10,
+      "ql": 20.0,
+      "qc": 1000.0
+    },
+    "rs": 60.0,
+    "origin": "hypothetical_baseline_or_scan_variable_non_measured"
+  }
+]

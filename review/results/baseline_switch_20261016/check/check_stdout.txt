@@ -1,0 +1,45 @@
+== O 原源码本机重跑 vs 旧登记批次（Windows-11-10.0.26200-SP0）：可接受 True
+   执行记录：{'differing_cells': {'phase_port_deg': 202, 'phase_input_deg': 29}, 'max_relative_difference': 2.4626231932713163e-16}；事件：{'files_with_crlf_in_registered': 74, 'structural_differences': [], 'max_relative_difference': 0.0}
+   per_segment_metrics.csv: {'differing_columns': {'whole_segment_power_std_W': 119, 'whole_segment_power_cv_pct': 114}, 'max_relative_difference': 1.6185639232402536e-15}
+   formal_three_strategy_summary.csv: {'differing_columns': {}, 'max_relative_difference': 0.0}
+   historical_12_three_strategy_table.csv: {'differing_columns': {}, 'max_relative_difference': 0.0}
+   registered34_target_segment_metrics.csv: {'differing_columns': {'whole_segment_power_std_W': 58, 'whole_segment_power_cv_pct': 56}, 'max_relative_difference': 1.6185639232402536e-15}
+== A 旧参数＋门控关 vs 原源码本机批次
+  executions                                 {'files': 105, 'mismatches': []}
+  events                                     {'files': 105, 'mismatches': []}
+  per_segment_metrics.csv                    {'rows': 342, 'identical': True}
+  formal_three_strategy_summary.csv          {'rows': 105, 'identical': True}
+  historical_12_three_strategy_table.csv     {'rows': 3, 'identical': True}
+  registered34_target_segment_metrics.csv    {'rows': 102, 'identical': True}
+  reference_optima.json                      {'identical': True}
+  phase_calibration.json                     {'identical': True}
+  schedules.json                             {'identical': True}
+  scenario_registry.json                     {'same_ids': True, 'text_only_differences': ['CASE_QM_1000', 'CASE_QM_500', 'CASE_QM_800'], 'physics_differences': []}
+== B 旧参数＋门控开：12 段 (7, 70.104969)，v2 登记 (7, 70.104969)；候选逐字节重放 {'schedules': 35, 'mismatches': []}
+   旧基线上门控开/关（B 对 O）：{'unique_perturbations': 31, 'target_settled_on': 15, 'target_settled_off': 14, 'settled_gained': ['COVER_CASE_CMATCH_M2'], 'settled_lost': [], 'target_energy_higher': 22, 'target_energy_lower': 3, 'pre_guard_current_higher': [], 'pre_guard_current_lower': ['COVER_CASE_CMATCH_M10', 'COVER_CASE_COMBINED_HIGH'], 'pre_guard_voltage_higher': [], 'max_pre_guard_current_mA_on': 5.499581229803299, 'max_pre_guard_current_mA_off': 5.499581229803299, 'trial_peak_current_higher': ['COVER_CASE_CM_P10', 'COVER_CASE_CM_P20', 'COVER_CASE_CM_P5', 'COVER_CASE_COMBINED_HIGH', 'COVER_CASE_COMBINED_LOW', 'COVER_CASE_COMBINED_MEDIUM', 'COVER_CASE_FS_M1', 'COVER_CASE_FS_M3', 'COVER_CASE_FS_M5', 'COVER_CASE_LMATCH_P5', 'COVER_CASE_LM_P10', 'COVER_CASE_LM_P20', 'COVER_CASE_LM_P5'], 'trial_peak_voltage_higher': ['COVER_CASE_LMATCH_P10'], 'max_trial_peak_current_mA_on': 5.499581229803299, 'max_trial_peak_current_mA_off': 5.501728768160031, 'max_trial_peak_voltage_Vpp_on': 188.22471135207078, 'max_trial_peak_voltage_Vpp_off': 188.22471135207078}
+   FIXED/PERIODIC_SCAN vs 原源码本机：{'executions': ([], None), 'events': ([], None), 'per_segment_metrics.csv': (None, True), 'formal_three_strategy_summary.csv': (None, True), 'historical_12_three_strategy_table.csv': (None, True), 'registered34_target_segment_metrics.csv': (None, True), 'reference_optima.json': (None, True), 'phase_calibration.json': (None, True), 'schedules.json': (None, True), 'scenario_registry.json': (None, None)}
+== C 新批次 UNIFIED_20261016T052552_776807Z_184767b2：与研究结果逐值比较，不符 []
+   FIXED           新：12段 7/12 92.3480%  覆盖 25/34（独立 22/31）  保护前峰 163.60 Vpp | 旧：7/12 73.7783%  覆盖 18/34（独立 15/31）
+   PERIODIC_SCAN   新：12段 1/12 53.1823%  覆盖 0/34（独立 0/31）  保护前峰 164.66 Vpp | 旧：1/12 41.9586%  覆盖 0/34（独立 0/31）
+   PHASE_FEEDBACK  新：12段 7/12 91.5335%  覆盖 25/34（独立 22/31）  保护前峰 164.21 Vpp | 旧：6/12 57.3374%  覆盖 17/34（独立 14/31）
+== D 新基线门控关：PHASE 12段 5/12 82.4082%  覆盖 24/34（独立 21/31）；FIXED/SCAN 与 C 逐字节相同：True
+   unique_perturbations: 31
+   target_settled_on: 22
+   target_settled_off: 21
+   settled_gained: ['COVER_CASE_LM_P5']
+   settled_lost: []
+   target_energy_higher: 18
+   target_energy_lower: 8
+   pre_guard_current_higher: []
+   pre_guard_current_lower: ['COVER_CASE_C0_P10', 'COVER_CASE_C0_P20', 'COVER_CASE_C0_P30', 'COVER_CASE_LMATCH_P10', 'COVER_CASE_LMATCH_P2', 'COVER_CASE_LMATCH_P5', 'COVER_CASE_QL_20', 'COVER_CASE_QL_50']
+   pre_guard_voltage_higher: []
+   max_pre_guard_current_mA_on: 3.089471805650202
+   max_pre_guard_current_mA_off: 3.1010494275193747
+   trial_peak_current_higher: []
+   trial_peak_voltage_higher: []
+   max_trial_peak_current_mA_on: 3.089471805650202
+   max_trial_peak_current_mA_off: 3.1549341785733107
+   max_trial_peak_voltage_Vpp_on: 163.60410150288436
+   max_trial_peak_voltage_Vpp_off: 163.60410150288436
+
+全部核对通过

@@ -1,0 +1,162 @@
+[
+  {
+    "time_us": 500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900700.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 83,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 96,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900700.0
+  },
+  {
+    "time_us": 1087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 878000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 162,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 878000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 175,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 878000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 878000.0
+  },
+  {
+    "time_us": 1587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 878000.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 241,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 878000.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1840000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 254,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 878000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 878000.0
+  },
+  {
+    "time_us": 2087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900700.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 2087000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 320,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 2340000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_COMBINED_MEDIUM",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 333,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 1.0
+  }
+]

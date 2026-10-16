@@ -1,0 +1,218 @@
+[
+  {
+    "time_us": 2400000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 120,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 2400000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 120,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 2400000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 120,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9438798154313872
+  },
+  {
+    "time_us": 2500000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 125,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9438798154313872
+  },
+  {
+    "time_us": 3200000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 160,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9938798154313873
+  },
+  {
+    "time_us": 3220000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 161,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 6400000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "OBSERVED_HARD_TRIP",
+    "action_id": 320,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 6400000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 320,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 6400000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 320,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "HARD_TRIP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.0
+  },
+  {
+    "time_us": 6460000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 323,
+    "kind": "CONTROL",
+    "from_state": "HARD_TRIP",
+    "to_state": "HOLD",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.25
+  },
+  {
+    "time_us": 6560000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 328,
+    "kind": "CONTROL",
+    "from_state": "HOLD",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.3
+  },
+  {
+    "time_us": 6760000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 338,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.794601105997994
+  },
+  {
+    "time_us": 7200000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 360,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.8446011059979941
+  },
+  {
+    "time_us": 7280000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 364,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 8000000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 400,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 8000000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 400,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 8000000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 400,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.8263430347032391
+  },
+  {
+    "time_us": 8100000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 405,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.8263430347032391
+  },
+  {
+    "time_us": 8800000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 440,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.8763430347032392
+  },
+  {
+    "time_us": 8860000,
+    "strategy": "FIXED",
+    "suite": "HISTORICAL_12",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 443,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  }
+]

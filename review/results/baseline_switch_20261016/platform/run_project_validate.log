@@ -1,0 +1,186 @@
+test_a_non_comparable_sample_restarts_the_count (test_unified.CentreRecoveryGateTests.test_a_non_comparable_sample_restarts_the_count) ... ok
+test_gate_off_is_the_formal_phase_path (test_unified.CentreRecoveryGateTests.test_gate_off_is_the_formal_phase_path) ... ok
+test_gate_only_waits (test_unified.CentreRecoveryGateTests.test_gate_only_waits) ... ok
+test_no_phase_probe_while_a_new_centre_is_recovering (test_unified.CentreRecoveryGateTests.test_no_phase_probe_while_a_new_centre_is_recovering) ... ok
+test_ready_needs_two_equal_amplitude_samples_at_the_new_centre (test_unified.CentreRecoveryGateTests.test_ready_needs_two_equal_amplitude_samples_at_the_new_centre) ... ok
+test_a_stationary_plant_never_reports_nonstationary (test_unified.ScanFaultTaxonomyTests.test_a_stationary_plant_never_reports_nonstationary) ... ok
+test_anchor_recheck_between_levels_detects_a_moved_plant (test_unified.ScanFaultTaxonomyTests.test_anchor_recheck_between_levels_detects_a_moved_plant) ... ok
+test_cost_cap_bounds_one_attempt (test_unified.ScanFaultTaxonomyTests.test_cost_cap_bounds_one_attempt) ... ok
+test_each_class_is_bounded_and_latches_independently (test_unified.ScanFaultTaxonomyTests.test_each_class_is_bounded_and_latches_independently) ... ok
+test_edge_walk_with_an_unchanged_anchor_falls_back_and_stays_bounded (test_unified.ScanFaultTaxonomyTests.test_edge_walk_with_an_unchanged_anchor_falls_back_and_stays_bounded)
+Edge-walking alone must not be reported as a moved plant. ... ok
+test_invalid_data_under_normal_protection_is_a_measurement_fault (test_unified.ScanFaultTaxonomyTests.test_invalid_data_under_normal_protection_is_a_measurement_fault) ... ok
+test_metrics_split_the_failure_column_without_losing_the_total (test_unified.ScanFaultTaxonomyTests.test_metrics_split_the_failure_column_without_losing_the_total) ... ok
+test_policy_reports_the_class_and_keeps_the_low_amplitude_hold (test_unified.ScanFaultTaxonomyTests.test_policy_reports_the_class_and_keeps_the_low_amplitude_hold) ... ok
+test_preemption_does_not_spend_the_search_allowance (test_unified.ScanFaultTaxonomyTests.test_preemption_does_not_spend_the_search_allowance) ... ok
+test_protection_preemption_is_not_a_search_failure (test_unified.ScanFaultTaxonomyTests.test_protection_preemption_is_not_a_search_failure) ... ok
+test_real_segment_change_under_a_scan_is_caught_before_the_last_level (test_unified.ScanFaultTaxonomyTests.test_real_segment_change_under_a_scan_is_caught_before_the_last_level) ... ok
+test_success_clears_the_episode_but_never_the_latch (test_unified.ScanFaultTaxonomyTests.test_success_clears_the_episode_but_never_the_latch) ... ok
+test_truncation_is_charged_to_nothing (test_unified.ScanFaultTaxonomyTests.test_truncation_is_charged_to_nothing) ... ok
+test_unknown_status_falls_back_to_the_search_budget (test_unified.ScanFaultTaxonomyTests.test_unknown_status_falls_back_to_the_search_budget) ... ok
+test_all_strategies_identical_schedule_and_duration (test_unified.UnifiedTests.test_all_strategies_identical_schedule_and_duration) ... ok
+test_baseline_qm_comes_from_the_design_file (test_unified.UnifiedTests.test_baseline_qm_comes_from_the_design_file) ... ok
+test_boundary_split_no_extra_controller_measurement (test_unified.UnifiedTests.test_boundary_split_no_extra_controller_measurement) ... ok
+test_bvd_Q_derived (test_unified.UnifiedTests.test_bvd_Q_derived) ... ok
+test_controller_measurement_has_no_ground_truth (test_unified.UnifiedTests.test_controller_measurement_has_no_ground_truth) ... ok
+test_enter_and_confirmation_are_separate (test_unified.UnifiedTests.test_enter_and_confirmation_are_separate) ... ok
+test_failed_scan_at_final_endpoint_is_counted (test_unified.UnifiedTests.test_failed_scan_at_final_endpoint_is_counted) ... ok
+test_failed_scan_target_unchanged_and_low_latch (test_unified.UnifiedTests.test_failed_scan_target_unchanged_and_low_latch) ... ok
+test_flat_scan_fails (test_unified.UnifiedTests.test_flat_scan_fails) ... ok
+test_grid_includes_boundaries_and_center (test_unified.UnifiedTests.test_grid_includes_boundaries_and_center) ... ok
+test_hard_latch_applies_to_scan (test_unified.UnifiedTests.test_hard_latch_applies_to_scan) ... ok
+test_invalid_plant_data_fails_off (test_unified.UnifiedTests.test_invalid_plant_data_fails_off) ... ok
+test_invalid_scan_measurements_never_succeed (test_unified.UnifiedTests.test_invalid_scan_measurements_never_succeed) ... ok
+test_late_invalid_point_not_just_anchor (test_unified.UnifiedTests.test_late_invalid_point_not_just_anchor) ... ok
+test_missed_tick_breaks_continuous_window (test_unified.UnifiedTests.test_missed_tick_breaks_continuous_window) ... ok
+test_model_limit_helpers_use_the_config_limits (test_unified.UnifiedTests.test_model_limit_helpers_use_the_config_limits) ... ok
+test_nan_is_not_steady_state (test_unified.UnifiedTests.test_nan_is_not_steady_state) ... ok
+test_no_fallback_for_short_qualified_run (test_unified.UnifiedTests.test_no_fallback_for_short_qualified_run) ... ok
+test_no_simultaneous_amplitude_and_frequency_step (test_unified.UnifiedTests.test_no_simultaneous_amplitude_and_frequency_step) ... ok
+test_peak_includes_pre_guard_not_only_clamped_output (test_unified.UnifiedTests.test_peak_includes_pre_guard_not_only_clamped_output) ... ok
+test_phase_probes_are_executed_and_timed (test_unified.UnifiedTests.test_phase_probes_are_executed_and_timed) ... ok
+test_protection_invalidates_phase_pair (test_unified.UnifiedTests.test_protection_invalidates_phase_pair) ... ok
+test_reference_not_returned_from_executor (test_unified.UnifiedTests.test_reference_not_returned_from_executor) ... ok
+test_retry_deadline_and_exhaustion (test_unified.UnifiedTests.test_retry_deadline_and_exhaustion) ... ok
+test_scan_amplitude_synced_and_no_instant_return (test_unified.UnifiedTests.test_scan_amplitude_synced_and_no_instant_return) ... ok
+test_short_probes_not_extra_control_samples (test_unified.UnifiedTests.test_short_probes_not_extra_control_samples) ... ok
+test_truncated_probe_is_not_validated (test_unified.UnifiedTests.test_truncated_probe_is_not_validated) ... ok
+test_units_power_and_phase (test_unified.UnifiedTests.test_units_power_and_phase) ... ok
+test_unobserved_boundary_not_reprotected (test_unified.UnifiedTests.test_unobserved_boundary_not_reprotected) ... ok
+
+----------------------------------------------------------------------
+Ran 48 tests in 0.689s
+
+OK
+
+BATCH UNIFIED_20261016T052552_776807Z_184767b2
+Frozen input phase target -1.061527881 deg
+Phasors RMS; Vpp=2*sqrt(2)*Vrms; S=V*conj(I); P=real(S), Q=imag(S).
+phase_in=arg(Vinput/Isource), phase_port separate; frequency Hz; power W; time integer us.
+HISTORICAL_12 FIXED: 7/12; energy 92.35%; scans failed 0
+HISTORICAL_12 PERIODIC_SCAN: 1/12; energy 53.18%; scans failed 1
+HISTORICAL_12 PHASE_FEEDBACK: 7/12; energy 91.53%; scans failed 0
+COVER_CASE_000_BASELINE FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_000_BASELINE PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_000_BASELINE PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_C0_P10 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_C0_P10 PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_C0_P10 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_C0_P20 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_C0_P20 PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_C0_P20 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_C0_P30 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_C0_P30 PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_C0_P30 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_RM_P15 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RM_P15 PERIODIC_SCAN: 1/3; energy 67.26%; scans failed 0
+COVER_CASE_RM_P15 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RM_P30 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RM_P30 PERIODIC_SCAN: 1/3; energy 67.27%; scans failed 0
+COVER_CASE_RM_P30 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RM_P50 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RM_P50 PERIODIC_SCAN: 1/3; energy 67.30%; scans failed 0
+COVER_CASE_RM_P50 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_FS_M1 FIXED: 3/3; energy 99.93%; scans failed 0
+COVER_CASE_FS_M1 PERIODIC_SCAN: 1/3; energy 67.20%; scans failed 0
+COVER_CASE_FS_M1 PHASE_FEEDBACK: 3/3; energy 99.92%; scans failed 0
+COVER_CASE_FS_M3 FIXED: 2/3; energy 99.38%; scans failed 0
+COVER_CASE_FS_M3 PERIODIC_SCAN: 1/3; energy 65.57%; scans failed 0
+COVER_CASE_FS_M3 PHASE_FEEDBACK: 2/3; energy 99.25%; scans failed 0
+COVER_CASE_FS_M5 FIXED: 2/3; energy 95.95%; scans failed 0
+COVER_CASE_FS_M5 PERIODIC_SCAN: 1/3; energy 59.33%; scans failed 0
+COVER_CASE_FS_M5 PHASE_FEEDBACK: 2/3; energy 95.44%; scans failed 0
+COVER_CASE_LM_P5 FIXED: 3/3; energy 99.43%; scans failed 0
+COVER_CASE_LM_P5 PERIODIC_SCAN: 1/3; energy 66.32%; scans failed 0
+COVER_CASE_LM_P5 PHASE_FEEDBACK: 3/3; energy 99.33%; scans failed 0
+COVER_CASE_LM_P10 FIXED: 2/3; energy 95.63%; scans failed 0
+COVER_CASE_LM_P10 PERIODIC_SCAN: 1/3; energy 59.94%; scans failed 0
+COVER_CASE_LM_P10 PHASE_FEEDBACK: 2/3; energy 95.16%; scans failed 0
+COVER_CASE_LM_P20 FIXED: 2/3; energy 87.88%; scans failed 0
+COVER_CASE_LM_P20 PERIODIC_SCAN: 1/3; energy 50.17%; scans failed 0
+COVER_CASE_LM_P20 PHASE_FEEDBACK: 2/3; energy 87.45%; scans failed 0
+COVER_CASE_CM_P5 FIXED: 3/3; energy 99.73%; scans failed 0
+COVER_CASE_CM_P5 PERIODIC_SCAN: 1/3; energy 66.68%; scans failed 0
+COVER_CASE_CM_P5 PHASE_FEEDBACK: 3/3; energy 99.66%; scans failed 0
+COVER_CASE_CM_P10 FIXED: 2/3; energy 98.35%; scans failed 0
+COVER_CASE_CM_P10 PERIODIC_SCAN: 1/3; energy 61.25%; scans failed 0
+COVER_CASE_CM_P10 PHASE_FEEDBACK: 2/3; energy 98.02%; scans failed 0
+COVER_CASE_CM_P20 FIXED: 2/3; energy 93.66%; scans failed 0
+COVER_CASE_CM_P20 PERIODIC_SCAN: 1/3; energy 57.80%; scans failed 1
+COVER_CASE_CM_P20 PHASE_FEEDBACK: 2/3; energy 92.17%; scans failed 0
+COVER_CASE_RS_P5 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_RS_P5 PERIODIC_SCAN: 1/3; energy 67.29%; scans failed 0
+COVER_CASE_RS_P5 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_RS_P10 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RS_P10 PERIODIC_SCAN: 1/3; energy 67.33%; scans failed 0
+COVER_CASE_RS_P10 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RS_P20 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_RS_P20 PERIODIC_SCAN: 1/3; energy 67.40%; scans failed 0
+COVER_CASE_RS_P20 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_LMATCH_P2 FIXED: 3/3; energy 99.98%; scans failed 0
+COVER_CASE_LMATCH_P2 PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_LMATCH_P2 PHASE_FEEDBACK: 3/3; energy 99.97%; scans failed 0
+COVER_CASE_LMATCH_P5 FIXED: 3/3; energy 99.86%; scans failed 0
+COVER_CASE_LMATCH_P5 PERIODIC_SCAN: 1/3; energy 67.00%; scans failed 0
+COVER_CASE_LMATCH_P5 PHASE_FEEDBACK: 3/3; energy 99.86%; scans failed 0
+COVER_CASE_LMATCH_P10 FIXED: 2/3; energy 99.24%; scans failed 0
+COVER_CASE_LMATCH_P10 PERIODIC_SCAN: 1/3; energy 61.63%; scans failed 0
+COVER_CASE_LMATCH_P10 PHASE_FEEDBACK: 2/3; energy 99.28%; scans failed 0
+COVER_CASE_CMATCH_M2 FIXED: 3/3; energy 99.97%; scans failed 0
+COVER_CASE_CMATCH_M2 PERIODIC_SCAN: 1/3; energy 67.26%; scans failed 0
+COVER_CASE_CMATCH_M2 PHASE_FEEDBACK: 3/3; energy 99.98%; scans failed 0
+COVER_CASE_CMATCH_M5 FIXED: 3/3; energy 99.97%; scans failed 0
+COVER_CASE_CMATCH_M5 PERIODIC_SCAN: 1/3; energy 67.36%; scans failed 0
+COVER_CASE_CMATCH_M5 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_CMATCH_M10 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_CMATCH_M10 PERIODIC_SCAN: 1/3; energy 67.60%; scans failed 0
+COVER_CASE_CMATCH_M10 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QL_100 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QL_100 PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_QL_100 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QL_50 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_QL_50 PERIODIC_SCAN: 1/3; energy 67.37%; scans failed 0
+COVER_CASE_QL_50 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_QL_20 FIXED: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_QL_20 PERIODIC_SCAN: 1/3; energy 67.67%; scans failed 0
+COVER_CASE_QL_20 PHASE_FEEDBACK: 3/3; energy 99.99%; scans failed 0
+COVER_CASE_QM_500 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QM_500 PERIODIC_SCAN: 1/3; energy 67.28%; scans failed 0
+COVER_CASE_QM_500 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QM_800 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QM_800 PERIODIC_SCAN: 1/3; energy 67.24%; scans failed 0
+COVER_CASE_QM_800 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QM_1000 FIXED: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_QM_1000 PERIODIC_SCAN: 1/3; energy 67.22%; scans failed 0
+COVER_CASE_QM_1000 PHASE_FEEDBACK: 3/3; energy 100.00%; scans failed 0
+COVER_CASE_COMBINED_LOW FIXED: 3/3; energy 99.87%; scans failed 0
+COVER_CASE_COMBINED_LOW PERIODIC_SCAN: 1/3; energy 67.23%; scans failed 0
+COVER_CASE_COMBINED_LOW PHASE_FEEDBACK: 3/3; energy 99.84%; scans failed 0
+COVER_CASE_COMBINED_MEDIUM FIXED: 2/3; energy 97.95%; scans failed 0
+COVER_CASE_COMBINED_MEDIUM PERIODIC_SCAN: 1/3; energy 65.70%; scans failed 0
+COVER_CASE_COMBINED_MEDIUM PHASE_FEEDBACK: 2/3; energy 97.69%; scans failed 0
+COVER_CASE_COMBINED_HIGH FIXED: 2/3; energy 94.93%; scans failed 0
+COVER_CASE_COMBINED_HIGH PERIODIC_SCAN: 1/3; energy 59.19%; scans failed 0
+COVER_CASE_COMBINED_HIGH PHASE_FEEDBACK: 2/3; energy 94.75%; scans failed 0
+{"verified_files": 235, "mismatches": []}
+OUTPUT <main 副本>/integrated/CTO_virtual_drive_platform_v2_1/current/unified/outputs/UNIFIED_20261016T052552_776807Z_184767b2
+{
+  "batch_id": "UNIFIED_20261016T052552_776807Z_184767b2",
+  "audit_pass": true,
+  "problems": [],
+  "manifest_files_verified": 235,
+  "timelines": 105,
+  "executed_rows": 23997,
+  "executed_actions": 23995,
+  "post_guard_hold_violation_rows": 0,
+  "pre_guard_hard_observations": 5,
+  "max_pre_guard_voltage_Vpp": 164.65993671053602,
+  "max_post_guard_hold_voltage_Vpp": 130.00000000000003,
+  "max_energy_recompute_error_J": 5.551115123125783e-17,
+  "max_voltage_recompute_error_Vpp": 5.684341886080802e-14,
+  "max_current_recompute_error_Arms": 1.3010426069826053e-18,
+  "max_power_recompute_error_W": 8.326672684688674e-17,
+  "scope": "saved-log, analytic-model and statistics audit; not independent LTspice/hardware proof"
+}
+AUDIT <main 副本>/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audits/UNIFIED_20261016T052552_776807Z_184767b2_20261016T052602_454589Z.json
+已登记当前完整批次：UNIFIED_20261016T052552_776807Z_184767b2

@@ -1,0 +1,206 @@
+[
+  {
+    "time_us": 500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900000.0
+  },
+  {
+    "time_us": 587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900700.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 587000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 83,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 94,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 94,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 94,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 0.7895059514600297
+  },
+  {
+    "time_us": 900000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 99,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 0.7895059514600297
+  },
+  {
+    "time_us": 1000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 900700.0
+  },
+  {
+    "time_us": 1033000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_RECENTRE",
+    "frequency_Hz": 850700.0,
+    "level_step_Hz": 5000
+  },
+  {
+    "time_us": 1118500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 821100.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1118500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 183,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 821100.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1360000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 196,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 821100.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 1500000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 821100.0
+  },
+  {
+    "time_us": 1581000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 821100.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 1581000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 257,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 821100.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 1820000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 269,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 821100.0,
+    "applied_amplitude": 1.0
+  },
+  {
+    "time_us": 2000000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_ATTEMPT_START",
+    "attempt": 1,
+    "trusted_frequency_Hz": 821100.0
+  },
+  {
+    "time_us": 2027000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_RECENTRE",
+    "frequency_Hz": 871100.0,
+    "level_step_Hz": 5000
+  },
+  {
+    "time_us": 2112500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "SCAN_SUCCESS",
+    "frequency_Hz": 900700.0,
+    "band_edge": false
+  },
+  {
+    "time_us": 2112500,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 353,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 0.40375
+  },
+  {
+    "time_us": 2360000,
+    "strategy": "PERIODIC_SCAN",
+    "suite": "COVER_CASE_LM_P20",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 366,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900700.0,
+    "applied_amplitude": 1.0
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 40,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9786737545700318
+  },
+  {
+    "time_us": 900000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 45,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9786737545700318
+  }
+]

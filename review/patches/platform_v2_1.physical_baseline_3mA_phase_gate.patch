@@ -1,0 +1,873 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/README.md b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+index 5c993c6..bac3fcb 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+@@ -1,6 +1,6 @@
+ # CTO虚拟电学驱动平台：当前入口与历史分区
+ 
+-更新：2026-09-22（本地整合）。**已完成固定频率／周期扫频／相位误差闭环的同批次、同口径准稳态比较，并接入网页。**“尚无统一表”不再代表当前状态；不等于所有策略通过验收，也不是实物、声场或临床验证。本次不修改PPT、旧讲稿，不自动推送GitHub。
++更新：2026-10-16 换主基线（见下文“当前采用版本”与 review/25）；2026-09-22（本地整合）。**已完成固定频率／周期扫频／相位误差闭环的同批次、同口径准稳态比较，并接入网页。**“尚无统一表”不再代表当前状态；不等于所有策略通过验收，也不是实物、声场或临床验证。本次不修改PPT、旧讲稿，不自动推送GitHub。
+ 
+ ## 快速使用
+ 
+@@ -30,12 +30,14 @@ python run_project.py verify     # 复核当前哈希、覆盖、失败分类
+ |正式网页入口|current_app.py|当前结果／版本证据／历史探索／LTspice实验|
+ |统一引擎|current/unified/|固定、周期扫频、相位反馈；统一执行与评分|
+ |采用补丁|current/patches/plan_three_strategy.scan_fault_taxonomy.patch|寻峰失败、保护抢占、测量失效、非平稳分类及有界预算|
++|采用补丁（2026-10-16）|current/patches/platform_v2_1.physical_baseline_3mA_phase_gate.patch（原件在审查分支 review/patches/）|换3 mA物理基线（k_eff 0.45、Qm 13.81）、电流软/硬限4.5/5.0 mA、相位反馈中心恢复门控；说明见review/25|
+ |来源记录|current/integration_sources.json|上游提交、补丁哈希、排除范围|
+ |结果定位|current/active_batch.json|唯一明确批次及逐日志复核|
+ |历史平台|streamlit_app.py、run_all.py、results/tables/、figures/|保留旧数据；run_all是旧流水线，可能重写旧输出，本次未调用|
+ |负载研究原型|research/radiation_load_layer1/|参考快照，尚未接入正式控制链|
+ 
+ 统一实现来自validation/plan-three-strategy-v1-20260917的 **650abdc87f3fcf10f5d4250aaf520efcfde3b56d**。审核分支检查至 **dd1a58eda1116e54835a97bc0afff519316bc735**，仅采用上述扫描分类补丁，不把整个审核分支视为已合并。补丁改config/controllers/metrics/tests；本次额外接入只改入口、网页、来源和报告说明，不调高限值、不延长扰动、不降低验收门槛。
++2026-10-16补丁更换BVD／匹配／源标定基线，按用户“5 mA为上限、推荐更小”把电流软/硬限从假设的5.5/6 mA下调为4.5/5.0 mA，并给相位反馈加只等待的中心恢复门控；不延长扰动、不降低验收门槛、不改扫描参数与相位增益。旧Qm=800基线的登记批次原样保留作对照。
+ 
+ ## 网页可以看到
+ 
+@@ -60,9 +62,9 @@ Janů连续极值拟合完成合成回收、Jacobian和多初值对照；“0.22
+ - 相位反馈用匹配输入arg(V_input/I_source)，不是端口相位；目标基准标定后冻结，邻频试探执行记时。
+ - 周期扫频：±50 kHz/5 kHz → ±5 kHz/1 kHz → ±1 kHz/0.1 kHz，加有界重定位／粗扫回退。不是±100 kHz单级扫描；1.5 ms/点为时间代理假设。
+ - 连续验收：有效CONTROL、NORMAL、未冻结、≥98%、20 ms格点连续10样本；未通过不用回退样本。
+-- 参考为当前场景130 Vpp／5.5 mA软阈值、a≤1下100 Hz网格最大P_Rm；不是硬限最大值，不等于恢复基准功率。离散参考可能使比值略高于100%，不截断掩盖。
++- 参考为当前场景130 Vpp／4.5 mA软阈值（旧批次为5.5 mA）、a≤1下100 Hz网格最大P_Rm；不是硬限最大值，不等于恢复基准功率。离散参考可能使比值略高于100%，不截断掩盖。
+ - 理想保护依赖精确当前模型。保护前预测可超过160 Vpp；保护后记录受限不证明真实动态硬限。反射代理只监测；未独立定义绝对功率上限。
+-- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。
++- 用户给出5 mA RMS为电流上限、推荐更小，50 Ω为源阻抗口径，均不是实测器件额定值。2026-10-16起设计点取100 Vpp／3 mA RMS／102 mW，BVD换为由一维Mason模型与需求推导的物理基线（k_eff 0.45、Qm 13.81；未经实测辨识，不反推真实结构／模式）。旧配置与旧基线留在旧批次快照供追溯。
+ 
+ ## 历史保留与移交边界
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+index 3eac2a5..959c531 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+@@ -138,10 +138,10 @@ def render_results():
+             held(ax[0],rows,rows.vport_Vpp,strategy)
+             observed = rows[rows.pre_guard_sample_here]
+             ax[0].scatter(observed.start_us/1e6,observed.pre_guard_vport_Vpp,color='#be123c',s=10,label='保护前预测（点，不积分）')
+-            ax[0].axhline(160,color='red',ls=':',label='160 Vpp硬边界'); ax[0].axhline(130,color='#d97706',ls='--')
++            ax[0].axhline(cfg['voltage_hard_Vpp'],color='red',ls=':',label=f"{cfg['voltage_hard_Vpp']:g} Vpp硬边界"); ax[0].axhline(cfg['voltage_soft_Vpp'],color='#d97706',ls='--')
+             held(ax[1],rows,rows.iport_Arms*1000,strategy)
+             ax[1].scatter(observed.start_us/1e6,observed.pre_guard_iport_Arms*1000,color='#be123c',s=10)
+-            ax[1].axhline(6,color='red',ls=':'); ax[1].axhline(5.5,color='#d97706',ls='--')
++            ax[1].axhline(cfg['current_hard_Arms']*1000,color='red',ls=':'); ax[1].axhline(cfg['current_soft_Arms']*1000,color='#d97706',ls='--')
+             held(ax[2],rows,rows.applied_amplitude,strategy)
+             for a,label in zip(ax,['端口电压 (Vpp)','端口电流 (mA RMS)','实际幅度 a']):
+                 a.set_ylabel(label);a.set_xlim(lo,hi);a.grid(alpha=.2)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index bfac3f3..52e4142 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -1,13 +1,13 @@
+ {
+   "schema_version": 1,
+-  "updated": "2026-10-06",
++  "updated": "2026-10-16",
+   "scope": "只读来源登记：正式配置的全部数值型参数、BVD/源/匹配基线、负载原型声明常数、Saijo参考及待核实范围。不是所有历史脚本内部常数的完整目录，也不是新的仿真批次。",
+   "sources": {
+     "design": {"title": "冻结假设模型与匹配设计", "path": "current/unified/stage2_matching/stage2_匹配设计参数.json", "note": "项目内部设计记录，不是器件手册或测量结果。"},
+     "model": {"title": "当前统一引擎的BVD/戴维南源模型", "path": "current/unified/models/model_v2_1.py", "note": "模型明确声明参数为假设、派生值或扫描变量；交流功率按RMS相量计算。"},
+     "calibration": {"title": "源幅度标定记录", "path": "current/unified/stage2_matching/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准；正式模型读取本文件中的source_Vrms_for_a1。"},
+     "config": {"title": "统一三策略配置", "path": "current/unified/config.json", "note": "控制时序、阈值及预算为仿真假设；不是实时硬件性能或器件额定值。"},
+-    "user_design": {"title": "用户设计工况与推荐量级", "path": "README.md", "note": "用户给出的0.8–1.0 MHz、约100 Vpp、不超过160 Vpp、约5 mA RMS和50 Ω；允许后续协商。没有独立器件辨识或额定规格证据。历史配置原有的RMS假设文字保留不改。"},
++    "user_design": {"title": "用户设计工况与推荐量级", "path": "README.md", "note": "用户给出的0.8–1.0 MHz、约100 Vpp、不超过160 Vpp、电流5 mA RMS为上限且推荐更小、50 Ω；允许后续协商。没有独立器件辨识或额定规格证据。2026-10-16起设计点取3 mA RMS，5 mA RMS作电流硬限；旧配置的RMS假设文字留在旧批次快照供追溯。"},
+     "load": {"title": "第一层辐射负载研究原型", "path": "research/radiation_load_layer1/radiation_load_layer1_reference.py", "note": "声明常数，尚未接入正式控制引擎。未给出足以将这些数值作为本器件实测值的一手证据。"},
+     "unverified_range": {"title": "负载实施指导中的未核实范围", "path": "research/radiation_load_layer1/14_第一层负载参数化_给Codex的实施指导_2026-09-18.md", "note": "第十二节第3项提到2.5–7.8 MRayl，但未建立逐个端点的一手出处。保留历史文本不等于认可该范围。"},
+     "saijo": {
+@@ -21,7 +21,7 @@
+     }
+   },
+   "profiles": {
+-    "bvd": {"group": "BVD与匹配基线", "identity": "假设基线值／内部派生值，非实测", "frequency_scope": "本项目0.8–1.0 MHz电学扫描；基准0.9 MHz。不是实测适用频段。", "measurement_conditions": "无线下测量；线性、小信号、RMS相量、冻结匹配网络。几何、工作模态及脉冲占空比未辨识。", "adoption_reason": "保留可复算的历史假设基线，供算法与扰动对照；不能反推真实换能器结构。", "limitations": "与目标工作点自洽不等于器件参数已辨识。", "formal_use": true, "status": "假设／派生", "source_ids": ["design", "model"]},
++    "bvd": {"group": "BVD与匹配基线", "identity": "假设基线值／内部派生值，非实测", "frequency_scope": "本项目0.8–1.0 MHz电学扫描；基准0.9 MHz。不是实测适用频段。", "measurement_conditions": "无线下测量；线性、小信号、RMS相量、冻结匹配网络。几何、工作模态及脉冲占空比未辨识。", "adoption_reason": "2026-10-16起采用由一维Mason模型与需求推导的3 mA物理基线（k_eff 0.45、Qm 13.81），推导记录在设计文件baseline_derivation；旧Qm=800基线只在旧登记批次中作对照。仍不能反推真实换能器结构。", "limitations": "与目标工作点自洽不等于器件参数已辨识。", "formal_use": true, "status": "假设／派生", "source_ids": ["design", "model"]},
+     "operating": {"group": "设计工况与源", "identity": "用户设计工况／推荐量级，非器件辨识", "frequency_scope": "拟研究0.8–1.0 MHz，基准0.9 MHz；没有器件频带测量。", "measurement_conditions": "无实测；电压注明测点与Vpp，电流按RMS；连续波／脉冲及占空比尚未确定。", "adoption_reason": "沿用用户给出的可协商工况，保留既有可复现比较。", "limitations": "不能将推荐值解释为额定值、热限或临床边界。", "formal_use": true, "status": "设计工况", "source_ids": ["user_design"]},
+     "control": {"group": "控制与验收假设", "identity": "假设控制／验收参数，非实测或器件额定值", "frequency_scope": "本项目0.8–1.0 MHz准稳态控制；载波瞬态未由这些时长保证。", "measurement_conditions": "Python离散准稳态；扫描、试探、保护均计时；无传感器或执行器延迟实测。", "adoption_reason": "采用当前冻结配置用于同口径对照；本次不重新调参，不声称最优。", "limitations": "需另做敏感性与硬件验证；数值来源是项目配置，不是文献推荐值。", "formal_use": true, "status": "假设／派生", "source_ids": ["config"]},
+     "research": {"group": "负载研究原型（未接入）", "identity": "研究原型声明值；原始出处待补", "frequency_scope": "原型用于0.9 MHz附近的假设计算；没有材料实测频段依据。", "measurement_conditions": "假设圆形活塞和等效半波厚度；不是已确定器件结构。介质温度、压力、制备条件未登记为实测。", "adoption_reason": "保留原型数值以复现历史研究，不将其升级为正式模型默认参数。", "limitations": "需补齐材料、几何和介质的一手来源及适用性验证；不自动采用Saijo数值。", "formal_use": false, "status": "研究假设", "source_ids": ["load"]},
+@@ -29,23 +29,24 @@
+     "pending": {"group": "待核实（禁止作为默认）", "identity": "未建立原始出处的历史说法", "frequency_scope": "未核实", "measurement_conditions": "组织、频段、温度及测量方法均未核实。", "adoption_reason": "保留问题线索并明确隔离，不作为默认参数或敏感性扫描上下界。", "limitations": "需逐端点找到原始论文、表格与条件；Saijo1998未测声阻抗，不能为此范围背书。", "formal_use": false, "status": "待核实", "source_ids": ["unverified_range"]}
+   },
+   "entries": [
+-    {"id":"bvd.c0","profile":"bvd","name":"静态电容 C0","value":6.858064105198409e-12,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","C0_F"]}},
+-    {"id":"bvd.rm","profile":"bvd","name":"机械支路电阻 Rm","value":7352.941176470586,"unit":"Ω","binding":{"source":"design","path":["bvd","Rm_ohm"]},"limitations":"P_Rm为支路电阻的电学耗散；未经辨识，不能认定Rm只含内部损耗或只含辐射损耗。"},
+-    {"id":"bvd.lm","profile":"bvd","name":"机械支路电感 Lm","value":1.0402283862215378,"unit":"H","binding":{"source":"design","path":["bvd","Lm_H"]},"adoption_reason":"假设基线派生：Lm=Qm·Rm/(2πfs)；运行代码由fs、Rm、Qm重算，而非独立拟合。"},
+-    {"id":"bvd.cm","profile":"bvd","name":"机械支路电容 Cm（不是Cmatch）","value":3.006260036180247e-14,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","Cm_F"]},"adoption_reason":"假设基线派生：Cm=1/[(2πfs)²Lm]；不是匹配电容。"},
++    {"id":"bvd.c0","profile":"bvd","name":"静态电容 C0","value":4.1148384631190455e-12,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","C0_F"]}},
++    {"id":"bvd.rm","profile":"bvd","name":"机械支路电阻 Rm","value":12254.90196078431,"unit":"Ω","binding":{"source":"design","path":["bvd","Rm_ohm"]},"limitations":"P_Rm为支路电阻的电学耗散；未经辨识，不能认定Rm只含内部损耗或只含辐射损耗。"},
++    {"id":"bvd.lm","profile":"bvd","name":"机械支路电感 Lm","value":0.02993009655402198,"unit":"H","binding":{"source":"design","path":["bvd","Lm_H"]},"adoption_reason":"假设基线派生：Lm=Qm·Rm/(2πfs)；运行代码由fs、Rm、Qm重算，而非独立拟合。"},
++    {"id":"bvd.cm","profile":"bvd","name":"机械支路电容 Cm（不是Cmatch）","value":1.0448335909487233e-12,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","Cm_F"]},"adoption_reason":"假设基线派生：Cm=1/[(2πfs)²Lm]；不是匹配电容。"},
+     {"id":"bvd.fs","profile":"bvd","name":"机械支路串联谐振频率 fs","value":900000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"binding":{"source":"design","path":["bvd","fs_Hz"]}},
+-    {"id":"bvd.qm","profile":"bvd","name":"基准机械品质因数 Qm","value":800,"unit":"1","binding":{"source":"model","mode":"keyword","name":"BASE_BVD","keyword":"qm"}},
+-    {"id":"match.l","profile":"bvd","name":"匹配电感 Lmatch","value":0.00010672581904440851,"unit":"H","display_unit":"μH","scale":1e6,"binding":{"source":"design","path":["design","l_active_H"]},"adoption_reason":"冻结有损L型匹配设计的数值结果，非实测电感。"},
+-    {"id":"match.c","profile":"bvd","name":"匹配电容 Cmatch（不是Cm）","value":2.8359878734546773e-10,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["design","c_active_F"]}},
++    {"id":"bvd.qm","profile":"bvd","name":"基准机械品质因数 Qm","value":13.810857823361614,"unit":"1","binding":{"source":"design","path":["bvd","Qm"]},"adoption_reason":"Qm=M(1−k²)/k²，M=X_C0/Rm=3.5068由工作点钉死、k_eff=0.45（一维Mason模型血液负载下的量级）；2026-10-16起由设计文件读取，原Qm=800写死于模型。"},
++    {"id":"match.l","profile":"bvd","name":"匹配电感 Lmatch","value":0.0001380112924763264,"unit":"H","display_unit":"μH","scale":1e6,"binding":{"source":"design","path":["design","l_active_H"]},"adoption_reason":"冻结有损L型匹配设计的数值结果，非实测电感。"},
++    {"id":"match.c","profile":"bvd","name":"匹配电容 Cmatch（不是Cm）","value":2.2120771306603173e-10,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["design","c_active_F"]}},
+     {"id":"match.ql","profile":"bvd","name":"匹配电感Q（0.9 MHz）","value":100,"unit":"1","binding":{"source":"design","path":["matching_loss_assumptions","inductor_Q_at_f0"]},"adoption_reason":"假设损耗；按基准频率折算固定ESR，不是所有频点Q恒定。"},
+     {"id":"match.qc","profile":"bvd","name":"匹配电容Q（0.9 MHz）","value":1000,"unit":"1","binding":{"source":"design","path":["matching_loss_assumptions","capacitor_Q_at_f0"]}},
+-    {"id":"match.rl","profile":"bvd","name":"匹配电感串联ESR","value":6.035202883048814,"unit":"Ω","binding":{"source":"design","path":["design","r_l_active_ohm_at_f0"]},"adoption_reason":"由R_L=2πf0·Lmatch/QL派生；模型中为频率无关电阻。"},
+-    {"id":"match.rc","profile":"bvd","name":"匹配电容串联ESR","value":0.6235528272631298,"unit":"Ω","binding":{"source":"design","path":["design","r_c_active_ohm_at_f0"]},"adoption_reason":"由R_C=1/(2πf0·Cmatch·QC)派生；模型中为频率无关电阻。"},
++    {"id":"match.rl","profile":"bvd","name":"匹配电感串联ESR","value":7.804354726009067,"unit":"Ω","binding":{"source":"design","path":["design","r_l_active_ohm_at_f0"]},"adoption_reason":"由R_L=2πf0·Lmatch/QL派生；模型中为频率无关电阻。"},
++    {"id":"match.rc","profile":"bvd","name":"匹配电容串联ESR","value":0.7994243202761837,"unit":"Ω","binding":{"source":"design","path":["design","r_c_active_ohm_at_f0"]},"adoption_reason":"由R_C=1/(2πf0·Cmatch·QC)派生；模型中为频率无关电阻。"},
+     {"id":"source.rs","profile":"operating","name":"戴维南源阻抗 Rs","value":50,"unit":"Ω","source_ids":["user_design","model"],"binding":{"source":"model","mode":"constant","name":"BASE_RS"},"limitations":"模型只含实数源电阻；50 Ω射频系统推荐量级不等于建立完整射频功放、真实输出阻抗或热模型。"},
+     {"id":"operating.vpp","profile":"operating","name":"换能器端口标称电压目标","value":100,"unit":"Vpp","source_ids":["user_design","design"],"binding":{"source":"design","path":["calibration","target_transducer_Vpp"]}},
+-    {"id":"operating.irms","profile":"operating","name":"换能器端口电流推荐量级","value":5,"unit":"mA RMS","limitations":"5 mA RMS是用户推荐量级，不是电流硬限、热限或电流闭环设定。历史配置最初将RMS作为假设；后续用户明确该口径。本条无运行配置写入绑定。"},
+-    {"id":"source.a1","profile":"operating","name":"a=1时戴维南源电压（RMS）","identity":"假设模型内派生标定值，非实测","value":6.217360894531728,"unit":"V RMS","source_ids":["calibration","model"],"binding":{"source":"calibration","path":["source_Vrms_for_a1"]},"adoption_reason":"在冻结有损匹配基线上数值标定约100 Vpp端口工作点，再冻结此源幅度；不是源端100 Vpp。"},
+-    {"id":"source.unit","profile":"operating","name":"匹配设计的归一化源幅度（非运行a=1）","identity":"归一化计算约定，非实际工作点","value":1,"unit":"V RMS","formal_use":false,"source_ids":["design"],"binding":{"source":"design","path":["calibration","unit_source_Vrms"]},"adoption_reason":"用于匹配前后同源归一化对照。不得将1 V RMS源条件与约170 mW标定工作点拼在一起。"},
++    {"id":"operating.irms","profile":"operating","name":"换能器端口电流上限（用户）","value":5,"unit":"mA RMS","limitations":"用户给出5 mA RMS为上限、推荐更小；2026-10-16起正式配置以它作电流硬限（current_hard_Arms），设计点取3 mA RMS。不是器件热限或电流闭环设定。本条无运行配置写入绑定。"},
++    {"id":"operating.irms_design","profile":"operating","name":"设计点端口电流（0.9 MHz、a=1、100 Vpp）","identity":"假设模型内派生标定值，非实测","value":0.0030000000000000005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["calibration","design"],"binding":{"source":"calibration","path":["transducer_Irms_A"]},"adoption_reason":"按阻抗均匀缩放k=5/3把设计点放在用户上限之内：同一电压下端面振速不变，总电流与功率按3/5缩小。"},
++    {"id":"source.a1","profile":"operating","name":"a=1时戴维南源电压（RMS）","identity":"假设模型内派生标定值，非实测","value":4.90383615973994,"unit":"V RMS","source_ids":["calibration","model"],"binding":{"source":"calibration","path":["source_Vrms_for_a1"]},"adoption_reason":"在冻结有损匹配基线上数值标定约100 Vpp端口工作点，再冻结此源幅度；不是源端100 Vpp。"},
++    {"id":"source.unit","profile":"operating","name":"匹配设计的归一化源幅度（非运行a=1）","identity":"归一化计算约定，非实际工作点","value":1,"unit":"V RMS","formal_use":false,"source_ids":["design"],"binding":{"source":"design","path":["calibration","unit_source_Vrms"]},"adoption_reason":"用于匹配前后同源归一化对照。不得将1 V RMS源条件与约102 mW标定工作点拼在一起。"},
+     {"id":"frequency_min_Hz","profile":"operating","name":"运行频率下限","value":800000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"config_key":"frequency_min_Hz"},
+     {"id":"frequency_max_Hz","profile":"operating","name":"运行频率上限","value":1000000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"config_key":"frequency_max_Hz"},
+     {"id":"initial_frequency_Hz","profile":"operating","name":"初始驱动频率","value":900000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"config_key":"initial_frequency_Hz"},
+@@ -73,14 +74,14 @@
+     {"id":"ramp_amplitude_per_s","profile":"control","name":"幅度渐升斜率","value":2.5,"unit":"1/s","config_key":"ramp_amplitude_per_s"},
+     {"id":"voltage_soft_Vpp","profile":"control","name":"端口电压软阈值","value":130,"unit":"Vpp","config_key":"voltage_soft_Vpp","adoption_reason":"仿真预警／降幅阈值，为用户160 Vpp边界留出模型内余量；余量未做硬件验证。"},
+     {"id":"voltage_hard_Vpp","profile":"operating","name":"端口电压硬边界","value":160,"unit":"Vpp","config_key":"voltage_hard_Vpp","limitations":"用户仿真边界，不是器件耐压。模型保护后的样本受限不证明采样间隙、执行延迟或瞬态绝不越限。"},
+-    {"id":"current_soft_Arms","profile":"control","name":"端口电流软阈值","value":0.0055,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_soft_Arms"},
+-    {"id":"current_hard_Arms","profile":"control","name":"端口电流硬阈值","value":0.006,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_hard_Arms","limitations":"6 mA是仿真假设保护阈值，不是用户5 mA推荐量级的同义词，也不是器件额定电流。"},
++    {"id":"current_soft_Arms","profile":"control","name":"端口电流软阈值","value":0.0045,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_soft_Arms"},
++    {"id":"current_hard_Arms","profile":"control","name":"端口电流硬阈值","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_hard_Arms","limitations":"5 mA RMS取自用户给出的电流上限（2026-10-16前为假设阈值6 mA）；不是器件额定电流。理想保护在指令时刻用精确模型检查，不证明硬件动态不越限。"},
+     {"id":"phase_gain_Hz_per_deg","profile":"control","name":"相位反馈增益","value":5,"unit":"Hz/°","config_key":"phase_gain_Hz_per_deg","limitations":"输入相位arg Z_in反馈，目标在基准工作点标定后冻结；不是端口相位或自动最优功率保证。"},
+     {"id":"phase_deadband_deg","profile":"control","name":"相位死区","value":0.1,"unit":"°","config_key":"phase_deadband_deg"},
+     {"id":"phase_max_step_Hz","profile":"control","name":"相位控制最大调频步长","value":500,"unit":"Hz","config_key":"phase_max_step_Hz"},
+     {"id":"phase_probe_offset_Hz","profile":"control","name":"邻频相位试探偏移","value":100,"unit":"Hz","config_key":"phase_probe_offset_Hz"},
+     {"id":"phase_slope_min_deg_per_Hz","profile":"control","name":"相位斜率有效性下限","value":0.000001,"unit":"°/Hz","config_key":"phase_slope_min_deg_per_Hz"},
+-    {"id":"capture_threshold","profile":"control","name":"功率捕获验收门槛","value":0.98,"unit":"1","display_unit":"%","scale":100,"config_key":"capture_threshold","limitations":"相对当前场景软限安全参考，不等于恢复基准170 mW，更不是声学效率。"},
++    {"id":"capture_threshold","profile":"control","name":"功率捕获验收门槛","value":0.98,"unit":"1","display_unit":"%","scale":100,"config_key":"capture_threshold","limitations":"相对当前场景软限安全参考，不等于恢复基准工作点功率（新基线102 mW），更不是声学效率。"},
+     {"id":"continuous_samples","profile":"control","name":"连续合格控制样本数","value":10,"unit":"样本","config_key":"continuous_samples"},
+     {"id":"tail_window_us","profile":"control","name":"固定尾窗诊断长度","value":200000,"unit":"μs","display_unit":"ms","scale":0.001,"config_key":"tail_window_us","limitations":"尾窗指标不是稳态验收的回退样本；未验收稳态误差为NA。"},
+     {"id":"reference_grid_step_Hz","profile":"control","name":"离线安全参考网格步长","value":100,"unit":"Hz","config_key":"reference_grid_step_Hz","limitations":"离线评价用；不能让控制器免费读取真实最优频率。"},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+index d41adab..625f3ab 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+@@ -1,5 +1,7 @@
+ from copy import deepcopy
+ import json
++from pathlib import Path
++import tempfile
+ import unittest
+ from current.catalog import PLATFORM, inside
+ from current.parameter_sources import (REQUIRED, bound_value, check_registry, expand_registry,
+@@ -96,8 +98,28 @@ class ParameterSourceTests(unittest.TestCase):
+         self.assertEqual(self.entries()['current_hard_Arms']['profile'], 'control')
+ 
+     def test_ast_reads_keyword_and_media_without_execution(self):
+-        self.assertEqual(bound_value(self.entries()['bvd.qm']['binding'], self.data['sources']), 800)
++        # Qm moved from a literal in the model to the design file on 2026-10-16.
++        design = json.loads((PLATFORM/'current/unified/stage2_matching/stage2_匹配设计参数.json')
++                            .read_text(encoding='utf-8'))
++        self.assertEqual(bound_value(self.entries()['bvd.qm']['binding'], self.data['sources']),
++                         design['bvd']['Qm'])
+         self.assertEqual(bound_value(self.entries()['load.blood.c']['binding'], self.data['sources']), 1570)
++        # The keyword reader still reads literals only, and never evaluates a call.
++        with tempfile.TemporaryDirectory() as tmp:
++            src = Path(tmp)/'decl.py'
++            sources = {'decl': {'path': 'decl.py'}}
++            binding = {'source': 'decl', 'mode': 'keyword', 'name': 'BASE', 'keyword': 'qm'}
++            src.write_text('BASE = make(c0=1.0, qm=800.0)\n', encoding='utf-8')
++            self.assertEqual(bound_value(binding, sources, root=tmp), 800.0)
++            src.write_text('BASE = make(c0=1.0, qm=float(spec["Qm"]))\n', encoding='utf-8')
++            with self.assertRaises(ValueError):
++                bound_value(binding, sources, root=tmp)
++
++    def test_design_point_sits_inside_the_current_limits(self):
++        e = self.entries()
++        self.assertLess(e['operating.irms_design']['value'], e['current_soft_Arms']['value'])
++        self.assertLess(e['current_soft_Arms']['value'], e['current_hard_Arms']['value'])
++        self.assertLessEqual(e['current_hard_Arms']['value']*1000, e['operating.irms']['value'])
+ 
+     def test_binding_cannot_escape_platform(self):
+         self.data['sources']['load']['path'] = '../outside.py'
+@@ -118,13 +140,15 @@ class ParameterSourceTests(unittest.TestCase):
+     def test_display_conversions_and_scan_units(self):
+         e = self.entries()
+         self.assertEqual(format_value(e['scan_levels_Hz']), '±50 / 5 → ±5 / 1 → ±1 / 0.1 kHz')
+-        self.assertEqual(format_value(e['current_hard_Arms']), '6 mA RMS')
++        self.assertEqual(format_value(e['current_hard_Arms']), '5 mA RMS')
+         self.assertEqual(format_value(e['saijo.calcification.c']), '1760 ± 14 m/s（均值±SD）')
+ 
+     def test_source_amplitude_uses_runtime_calibration_not_design_rounding(self):
+         e = self.entries()['source.a1']
+         self.assertEqual(e['binding']['source'], 'calibration')
+-        self.assertEqual(e['value'], 6.217360894531728)
++        cal = json.loads((PLATFORM/'current/unified/stage2_matching/stage2_控制源幅度校准.json')
++                         .read_text(encoding='utf-8'))
++        self.assertEqual(e['value'], cal['source_Vrms_for_a1'])
+ 
+ 
+ if __name__ == '__main__':
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index 8059dd7..96bca16 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -1,5 +1,7 @@
+ # 计划书三策略统一验证 v1＋扫描失败分类补丁（当前整合引擎）
+ 
++2026-10-16 换主基线：BVD、匹配网络与源标定换为 3 mA 物理基线（k_eff 0.45、Qm 13.81，0.9 MHz、a=1 时 100 Vpp / 3 mA RMS / 102 mW），电流软/硬限改为 4.5/5.0 mA RMS（5 mA 为用户给出的上限），相位反馈加中心恢复门控（`phase_centre_recovery_gate`）。推导与证据见补丁所附 review/25 及 `stage2_matching/stage2_匹配设计参数.json` 的 `baseline_derivation`。旧 Qm=800 基线的登记批次原样保留作对照，不与新批次拼表。
++
+ 2026-09-22整合：上游 validation/plan-three-strategy-v1-20260917 的 650abdc，合入 review/patches/plan_three_strategy.scan_fault_taxonomy.patch。补丁覆盖配置、控制器、指标及测试；已有物理阈值、原扰动时长、98%/10样本标准不变。项目正式入口为上两级的 `python run_project.py validate`，它会执行新批次、复核并显式登记；不要靠目录时间自行选取“最新”结果。来源见 `../integration_sources.json`。
+ 
+ 本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**。
+@@ -20,11 +22,11 @@ python audit_batch.py "outputs/具体批次目录"
+ 每次运行创建时间戳＋源码摘要的新输出目录，`exist_ok=False` 防止覆盖。
+ `--suite all` 包含原 12 段绝对日程和全部 34 个登记场景的独立基准→场景→基准试验。
+ 每个三段试验开始显式重置控制器；不在一个连续试验中悄悄重置失败预算。
+-登记场景含 Qm=800、QL=100 等与基准物理参数相同的条目；34 是登记条目数，不是 34 种独立物理负载。
++登记场景含 CASE_QM_800（Qm 等于基准）、CASE_QL_100 等与基准物理参数相同的条目；34 是登记条目数，不是 34 种独立物理负载。Qm 族按基准相对取值：编号沿用 500/800/1000，含义是基准 Qm×500/800、×1、×1000/800。
+ 
+ ## 模块与边界
+ 
+-- `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。
++- `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。2026-10-16 起 C0、Rm、fs、Qm 全部从设计文件读取（原 Qm=800 写死在模型里），模型里的限值常量从 config.json 读取。
+ - `engine.py`：共用实际执行、保护、整数微秒时间和分段积分日志。
+ - `controllers.py`：三个控制器；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
+ - `metrics.py`：唯一正式指标函数，不合格段的稳态误差为空值，不以尾窗/回退替代。
+@@ -36,9 +38,9 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ ## 统一的物理和信号口径
+ 
+-基准假设：fs=0.9 MHz、Qm=800、Rm≈7352.94 Ω、C0≈6.858 pF。Lm/Cm 为机械支路电学等效元件，不是实际绕制电感。
+-戴维南源 a=1 对应约 6.21736 V RMS、Rs=50 Ω，匹配后换能器端约 100 Vpp / 5 mA RMS / 170 mW。
+-全部 BVD、匹配损耗、源阻抗为假设基线；场景变化为扫描变量；无实测器件参数。
++基准假设（2026-10-16 起）：fs=0.9 MHz、Qm≈13.81、k_eff=0.45、Rm≈12254.9 Ω、C0≈4.115 pF；匹配 L≈138.01 μH、C≈221.21 pF（QL=100、QC=1000）。Lm/Cm 为机械支路电学等效元件，不是实际绕制电感。
++戴维南源 a=1 对应约 4.90384 V RMS、Rs=50 Ω，匹配后换能器端约 100 Vpp / 3 mA RMS / 102 mW。
++全部 BVD、匹配损耗、源阻抗为假设基线（由一维 Mason 模型与需求推导，未经实测辨识）；场景变化为扫描变量；无实测器件参数。旧基线 Qm=800、Rm≈7352.94 Ω、C0≈6.858 pF、6.21736 V RMS、100 Vpp / 5 mA / 170 mW 只在旧登记批次中作对照。
+ 
+ 相量统一 RMS；`S_port=V_port*conj(I_port)`，P=实部，Q=虚部。
+ 频率记录 Hz，电压 Vpp，电流 A RMS（汇总另外给 mA RMS），功率 W，时间整数 us。
+@@ -49,14 +51,15 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ 1. **FIXED**：0.9 MHz、不主动选频，名义幅度 a=1，受共同保护改变实际幅度。
+ 2. **PERIODIC_SCAN**：每 0.5 s 的绝对周期到期后、在保护允许时启动。三级局部扫描为 ±50 kHz/5 kHz → ±5 kHz/1 kHz → ±1 kHz/0.1 kHz，边缘峰最多重定位 3 次。每点 1.5 ms，低幅请求 a=0.4，但仍必须经过保护。选频比较从实际 V/I/P 推算的软阈值可行功率，不查询当前场景最优表。起止锚点和最终候选复测验证失败即拒收。它只能确认局部候选，不证明全局最优。
+-3. **PHASE_FEEDBACK**：基准 0.9 MHz 输入相位标定约 −1.078209637°，每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
++3. **PHASE_FEEDBACK**：基准 0.9 MHz 输入相位标定（新基线约 −1.061527881°），每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数（本次未按新基线重整定）。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
++   中心恢复门控（`phase_centre_recovery_gate: true`）：保护器在改频的那一拍从不升幅（新频点允许幅度更低时先在旧频率降幅），之后在新频率保持不动、按 2.5/s 渐升；渐升未完就再改频，幅度会停在上次被压到的水平（棘轮）。门控在采纳新中心后，要求在新中心得到两个相邻 20 ms、NORMAL、未冻结、有效且实际幅度相同的普通控制样本，才做下一次相位更新。它只等待，不加幅、不加步长、不加试探，也不读取模型或场景；关掉该开关即为原正式相位路径。移植自 review/22–23 核对过的 v2 候选，执行记录与事件日志与候选逐字节相同（review/25 第三节）。
+ 
+ 三者共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
+ 未添加 PI 积分器，因此不存在需要伪装为已实现的“积分饱和修复”。
+ 
+ ## 保护与失败处理
+ 
+-- 电压硬限 160 Vpp 是用户边界；130 Vpp 软限、5.5/6 mA RMS 软/硬限是待验证的假设控制阈值。
++- 电压硬限 160 Vpp、电流硬限 5 mA RMS 是用户边界（用户给出 5 mA 为上限，推荐更小；设计点取 3 mA）；130 Vpp、4.5 mA RMS 软限是待验证的假设控制阈值。旧批次的 5.5/6 mA 是当时的假设阈值。
+ - 所有普通控制、扫描、相位试探、重试等待和回退都调用同一个保护器，实际幅度每次同步；先降幅再改变频率，渐升冻结频率。
+ - 假设硬停保持 60 ms、恢复保持 100 ms、软降幅保持 100 ms；渐升速率 2.5 每秒（等价每 20 ms +0.05），不能通过密集扫描点加速升幅。
+ - 无效/无信号/平坦扫描不得成功。失败保留旧可信目标，不采用末扫描频率；实际回退动作也走保护接口，并保持 a≤0.4。
+@@ -77,7 +80,7 @@ python audit_batch.py "outputs/具体批次目录"
+ - `steady_error_pct`：首个已确认10样本窗口的平均绝对相对功率误差；未通过为空。不存在任何回退样本。
+ - `fixed_tail_error_pct`：最后200 ms所有执行阶段的时间加权功率缺额，单列诊断，不冒充稳态指标。
+ - `energy_J`：含扫描/试探/保护/等待/渐升的 P_Rm 分段保持积分，不是瞬态模拟。
+-- 捕获率分母是软阈值130 Vpp/5.5 mA和a≤1下的100 Hz网格最大P_Rm，明确叫“策略可行参考”；另存160 Vpp/6 mA硬限下参考，不混用。
++- 捕获率分母是软阈值130 Vpp/4.5 mA和a≤1下的100 Hz网格最大P_Rm，明确叫“策略可行参考”；另存160 Vpp/5 mA硬限下参考，不混用。
+ - 功率稳定性、峰值过冲、V/I峰值、保护触发、候选限幅、实际越限持续时间、扫描失败/耗尽、频率饱和分别记录。
+ - 主表峰值包括保护前旧命令在新负载下的准稳态预测；保护后/保持区间峰值另外给出。可能出现“保护后峰值≤130 Vpp、保护前预测>160 Vpp”：必须报告，不能用保护后的值掩盖。这不是LTspice瞬态峰值或实测尖峰；理想瞬时保护前观测不被赋予虚构的持续时间。
+ - 100 Hz离散参考可能略低于网格之间的真实峰，故原始捕获率可能略高于100%。这不是能量创造；不截断掩盖，另用10 Hz网格作离散误差诊断，不事后修改本批次验收分母。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 50ceafa..a8543d1 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -1,7 +1,7 @@
+ {
+-  "version": "plan-three-strategy-v1",
+-  "parameter_origin": "hypothetical_baseline_non_measured",
+-  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; 5 mA interpreted as RMS by assumption",
++  "version": "plan-three-strategy-v1-physical-baseline-3mA",
++  "parameter_origin": "physical_model_derived_baseline_non_measured",
++  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; 5 mA RMS is the user upper limit (hard), design point 3 mA RMS at 100 Vpp",
+   "frequency_min_Hz": 800000,
+   "frequency_max_Hz": 1000000,
+   "initial_frequency_Hz": 900000,
+@@ -44,14 +44,16 @@
+   "ramp_amplitude_per_s": 2.5,
+   "voltage_soft_Vpp": 130.0,
+   "voltage_hard_Vpp": 160.0,
+-  "current_soft_Arms": 0.0055,
+-  "current_hard_Arms": 0.006,
++  "current_soft_Arms": 0.0045,
++  "current_hard_Arms": 0.005,
+   "phase_gain_Hz_per_deg": 5.0,
+   "phase_deadband_deg": 0.1,
+   "phase_max_step_Hz": 500.0,
+   "phase_probe_offset_Hz": 100.0,
+   "phase_slope_min_deg_per_Hz": 1e-06,
+   "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
++  "phase_centre_recovery_gate": true,
++  "phase_centre_recovery_rule": "after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude",
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+index 348a033..872be36 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+@@ -370,6 +370,78 @@ def phase_update(io: Executor, m: Measurement, target_phase: float,
+     return candidate
+ 
+ 
++@dataclass
++class CentreRecoveryGate:
++    """Hold the next phase update until the drive has settled at a new centre.
++
++    Every accepted frequency change goes through the common guard, which never
++    raises the amplitude on the tick that changes frequency (it lowers it
++    first, at the old frequency, when the new point allows less) and only
++    ramps it back afterwards, at its own rate, while the frequency is held.
++    A phase update taken before that ramp has finished moves the centre again
++    and the amplitude stays wherever it was last cut to -- the ratchet. The
++    gate waits for two consecutive ordinary 20 ms CONTROL samples at the new
++    centre that are NORMAL, unfrozen, valid and at the same applied amplitude.
++    It only waits: no extra amplitude, step, probe or model query. Ported
++    from the v2 candidate checked in review/22-23; its logs are byte-identical
++    to the candidate's (config: phase_centre_recovery_gate).
++    """
++    tick_us: int
++    active: bool = False
++    previous: Measurement | None = None
++    opened_us: int | None = None
++
++    def begin(self, now: int):
++        self.active = True
++        self.previous = None
++        self.opened_us = now
++
++    def ready(self, m: Measurement, target: float, now: int) -> bool:
++        comparable = (valid_measurement(m) and m.state == 'NORMAL' and not m.frozen
++                      and m.time_us == now and now % self.tick_us == 0
++                      and abs(m.frequency_Hz-target) <= 1e-7)
++        if not comparable:
++            self.previous = None
++            return False
++        p = self.previous
++        self.previous = m
++        if (p is not None and m.time_us-p.time_us == self.tick_us
++                and abs(p.frequency_Hz-target) <= 1e-7
++                and abs(m.amplitude-p.amplitude) <= 1e-12):
++            self.active = False
++            return True
++        return False
++
++
++def gated_phase_update(io: Executor, m: Measurement, target_phase: float,
++                       trusted_frequency: float, gate: CentreRecoveryGate) -> float:
++    """phase_update behind the centre recovery gate; the phase law is unchanged."""
++    eligible = (valid_measurement(m) and m.state == 'NORMAL' and not m.frozen
++                and m.time_us == io.time and abs(m.frequency_Hz-trusted_frequency) <= 1e-7)
++    if gate.active:
++        eligible = gate.ready(m, trusted_frequency, io.time)
++        if eligible:
++            io.event('CENTRE_RECOVERY_COMPLETE', frequency_Hz=trusted_frequency,
++                     amplitude=m.amplitude, wait_us=io.time-gate.opened_us,
++                     criterion='two_consecutive_valid_control_plateau_samples')
++    if not eligible:
++        if not gate.active and not valid_measurement(m):
++            io.event('PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT')
++        return trusted_frequency
++    before = io.time
++    new = phase_update(io, m, target_phase, trusted_frequency)
++    if io.time > before:
++        # Probe time is already charged by the common Executor.
++        if new != trusted_frequency:
++            gate.begin(io.time)
++            io.event('CENTRE_RECOVERY_BEGIN', frequency_Hz=new,
++                     probe_duration_us=io.time-before)
++        else:
++            io.event('PHASE_NO_NEW_CENTRE_RETURN', frequency_Hz=trusted_frequency,
++                     probe_duration_us=io.time-before)
++    return new
++
++
+ def run_policy(io: Executor, strategy: str, target_phase: float):
+     if strategy not in STRATEGIES:
+         raise ValueError(strategy)
+@@ -377,6 +449,8 @@ def run_policy(io: Executor, strategy: str, target_phase: float):
+     target = float(cfg['initial_frequency_Hz'])
+     next_scan = cfg['scan_period_us']
+     retry = ScanBudget(cfg)
++    gate = (CentreRecoveryGate(cfg['control_tick_us'])
++            if strategy == 'PHASE_FEEDBACK' and cfg.get('phase_centre_recovery_gate', False) else None)
+     last = None
+     failed_episode = False
+     while not io.finished:
+@@ -427,6 +501,12 @@ def run_policy(io: Executor, strategy: str, target_phase: float):
+                     last = io.control(target, cfg['scan_amplitude'], 'FAILED_SCAN_ROLLBACK')
+                 continue
+         if strategy == 'PHASE_FEEDBACK' and last is not None:
+-            target = phase_update(io, last, target_phase, target)
++            if gate is None:
++                target = phase_update(io, last, target_phase, target)
++            else:
++                target = gated_phase_update(io, last, target_phase, target, gate)
+         if not io.finished:
+             last = io.control(target, cfg['scan_amplitude'] if failed_episode else 1.)
++    if gate is not None and gate.active:
++        io.event('CENTRE_RECOVERY_TRUNCATED', frequency_Hz=target,
++                 wait_us=io.time-gate.opened_us)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
+index bfee0dc..094c69f 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
+@@ -3,6 +3,11 @@
+ All parameters are hypothetical baselines, derived values, or scan variables.
+ No value in this module is a measured transducer or a hardware safety rating.
+ AC phasors are interpreted as RMS-equivalent values for power calculations.
++
++Baseline (2026-10-16): C0, Rm, fs and Qm are all read from the frozen stage-2
++design file. The physical 3 mA baseline there (k_eff 0.45, Qm 13.81) replaced
++the Qm=800 hypothesis that used to be written into this module; how it was
++derived is recorded in that file under "baseline_derivation".
+ """
+ 
+ from __future__ import annotations
+@@ -20,10 +25,6 @@ ROOT = HERE.parent
+ F0 = 0.9e6
+ F_MIN = 0.8e6
+ F_MAX = 1.0e6
+-VPP_SOFT = 130.0
+-VPP_HARD = 160.0
+-IRMS_SOFT = 5.5e-3
+-IRMS_HARD = 6.0e-3
+ 
+ 
+ @dataclass(frozen=True)
+@@ -70,12 +71,22 @@ _design = json.loads(
+ _cal = json.loads(
+     (ROOT / "stage2_matching" / "stage2_控制源幅度校准.json").read_text(encoding="utf-8")
+ )
++_config = json.loads((ROOT / "config.json").read_text(encoding="utf-8"))
++
++# The protection limits are read from config.json, the file the engine and the
++# metrics use, so these helpers cannot drift from them again (they were
++# literals here before). Only allowed_amplitude and safe_power read them.
++VPP_SOFT = float(_config["voltage_soft_Vpp"])
++VPP_HARD = float(_config["voltage_hard_Vpp"])
++IRMS_SOFT = float(_config["current_soft_Arms"])
++IRMS_HARD = float(_config["current_hard_Arms"])
+ 
++BASELINE_ID = str(_design["model_id"])
+ BASE_BVD = bvd_from_fs_qm(
+     c0=float(_design["bvd"]["C0_F"]),
+     rm=float(_design["bvd"]["Rm_ohm"]),
+     fs=float(_design["bvd"]["fs_Hz"]),
+-    qm=800.0,
++    qm=float(_design["bvd"]["Qm"]),
+ )
+ BASE_MATCH = Matching(
+     l_h=float(_design["design"]["l_active_H"]),
+@@ -280,11 +291,19 @@ def single_factor_scenarios() -> list[Scenario]:
+             matching=replace(BASE_MATCH, ql=float(ql)),
+             description="Inductor ESR changes through the declared Q at 0.9 MHz.",
+         ))
++    # The IDs keep the legacy levels 500/800/1000, which were ratios 0.625/1/1.25
++    # around the old Qm=800 baseline. The level is applied relative to the
++    # current baseline, so the family stays a perturbation whatever Qm is
++    # frozen; with Qm=800 this is exactly the old absolute value.
+     for qm in (500, 800, 1000):
++        scaled = float(qm) * (BASE_BVD.qm / 800.0)
+         cases.append(_case(
+-            f"CASE_QM_{qm}", "Qm", f"Qm={qm}",
+-            bvd=changed_qm(BASE_BVD, float(qm)),
+-            description="Qm sensitivity: fs, Rm and C0 remain fixed; Lm/Cm are re-derived.",
++            f"CASE_QM_{qm}", "Qm", f"Qm={qm}/800 x baseline ({scaled:.6g})",
++            bvd=changed_qm(BASE_BVD, scaled),
++            description=(
++                "Qm sensitivity relative to the baseline Qm: fs, Rm and C0 remain fixed; "
++                "Lm/Cm are re-derived."
++            ),
+         ))
+     return cases
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index d81cbd3..f6544eb 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -57,6 +57,10 @@ def make_report(folder, batch, config, overall, segments, test_result):
+     hist = [r for r in overall if r['suite']=='HISTORICAL_12']
+     fs = [r for r in segments if r['suite']=='HISTORICAL_12' and r['segment_index']==3]
+     coverage = [r for r in segments if r['suite'].startswith('COVER_') and r['segment_index']==1]
++    soft = f"{config['voltage_soft_Vpp']:g} Vpp / {config['current_soft_Arms']*1000:g} mA RMS"
++    hard = f"{config['voltage_hard_Vpp']:g} Vpp / {config['current_hard_Arms']*1000:g} mA RMS"
++    pre_peak = max(r['peak_pre_guard_voltage_Vpp'] for r in hist)
++    gate = config.get('phase_centre_recovery_gate', False)
+     lines = [f'# 计划书三策略统一准稳态验证 — {batch}', '',
+       '这是独立新实现的一次同批次比较，不覆盖历史结果，也不是旧三策略结果的重新拼表。', '',
+       '## 本批次真实完成', '',
+@@ -64,21 +68,23 @@ def make_report(folder, batch, config, overall, segments, test_result):
+       '- 正式策略：FIXED / PERIODIC_SCAN / PHASE_FEEDBACK；P&O 不纳入此批次正式比较。',
+       '- 共用同一模型、配置、执行保护器、整数微秒时钟、虚拟测量和指标计算函数。',
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+-      '- 相位目标仅在基准 0.9 MHz 标定一次；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。', '',
++      '- 相位目标仅在基准 0.9 MHz 标定一次；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。',
++      f"- 基线：{model.BASELINE_ID}（推导见 stage2_matching/stage2_匹配设计参数.json 的 baseline_derivation）；保护软限 {soft}、硬限 {hard}。",
++      '- 相位反馈中心恢复门控：' + ('启用（采纳新中心后，须在新中心得到两个连续、同幅度、NORMAL 未冻结的普通控制样本，才做下一次相位更新；只等待，不加幅、不加步长）。' if gate else '未启用。'), '',
+       '## 历史 12 段日程的新批次结果', '',
+       '|策略|通过段数/12|全程电能 J|相对策略可行参考电能 %|峰值 Vpp（含保护前）|峰值 mA RMS（含保护前）|扫描失败次数|',
+       '|---|---:|---:|---:|---:|---:|---:|']
+     for r in hist:
+         lines.append(f"|{r['strategy']}|{r['settled_segments']}/12|{r['energy_J']:.6f}|{r['energy_capture_pct']:.2f}|{r['peak_voltage_Vpp']:.3f}|{r['peak_current_mArms']:.6f}|{r['scan_failures']}|")
+-    lines += ['', '保护前旧指令在新负载下的准稳态预测也属于必须披露的记录。保护后峰值单独保存，不能代替上表包含保护前预测的最大值。约188 Vpp不是LTspice瞬态峰值或实测尖峰；保护前观测不赋予人为持续时间，不虚构瞬态积分。', '',
++    lines += ['', f'保护前旧指令在新负载下的准稳态预测也属于必须披露的记录。保护后峰值单独保存，不能代替上表包含保护前预测的最大值。本批次12段日程中保护前预测最高约{pre_peak:.0f} Vpp，不是LTspice瞬态峰值或实测尖峰；保护前观测不赋予人为持续时间，不虚构瞬态积分。', '',
+               '本轮仅完成统一比较和实现修正，尚未完成优化调参；不能据此宣布某策略对真实器件普遍更好。']
+     if coverage:
+         lines += ['', '### 34 个登记场景的目标扰动段覆盖', '',
+                   '每个独立试验为基准0.8 s→目标场景0.8 s→基准0.8 s；下表仅统计中间段，不用基准段增加通过率。', '',
+-                  '|策略|目标场景通过数/34|', '|---|---:|']
++                  f'|策略|目标场景通过数/{len(coverage)//len(STRATEGIES)}|', '|---|---:|']
+         for name in STRATEGIES:
+             count=sum(r['settled'] for r in coverage if r['strategy']==name)
+-            lines.append(f'|{name}|{count}/34|')
++            lines.append(f'|{name}|{count}/{len(coverage)//len(STRATEGIES)}|')
+     lines += ['', '### fs−5% 段（2.4–3.2 s）', '',
+       '|策略|连续验收|最长合格串|进入/确认 ms|稳态误差 %|固定尾窗误差 %|',
+       '|---|---|---:|---|---|---:|']
+@@ -88,7 +94,7 @@ def make_report(folder, batch, config, overall, segments, test_result):
+         lines.append(f"|{r['strategy']}|{'通过' if r['settled'] else '未通过'}|{r['max_consecutive_qualified_samples']}|{timing}|{err}|{r['fixed_tail_error_pct']:.3f}|")
+     lines += ['', '## 必须一并汇报的限制', '',
+       '1. “完成统一比较”不等于“三种控制都通过验收”。未通过是本批次有效结果；没有改变 98% / 10 样本门槛或延长原扰动段。',
+-      '2. 捕获率参考是 130 Vpp / 5.5 mA RMS 软阈值及 a≤1 下、100 Hz 离散网格的策略可行最大 P_Rm；不是仅受 160 Vpp / 6 mA 硬限约束的最大值。两种参考都写在 reference_optima.json。',
++      f'2. 捕获率参考是 {soft} 软阈值及 a≤1 下、100 Hz 离散网格的策略可行最大 P_Rm；不是仅受 {hard} 硬限约束的最大值。两种参考都写在 reference_optima.json。',
+       '   100 Hz 网格参考是近似值；连续调频可能落在网格点之间，使比值略高于100%。不将其截断成100%，也不解读为效率超过100%；audit_batch.py 提供10 Hz网格复核作为误差诊断，不更换正式分母。',
+       '3. 能量是准稳态分段保持积分，含扫描、相位试探、停机、等待和渐升。不是 LTspice 瞬态电能，也不是声学效率。',
+       '4. 共同保护器在指令时刻使用当前精确模型作理想可行幅度检查：这是理想安全接口，不是仅靠有延迟传感器的真实保护。候选硬越限与实际施加后的越限分别记录。',
+@@ -96,7 +102,7 @@ def make_report(folder, batch, config, overall, segments, test_result):
+       '6. 已采用扫描失败分类补丁：寻峰失败、保护抢占、无效测量、非平稳扫描分别计数；重试预算分别为2/4/2/2，间隔至少50 ms；任一预算耗尽即低幅锁存。每次扫描至多400点、300 ms、2次粗扫回退。以上均为预登记假设，未优化，也未完成预算敏感性验证；截断记录另列。',
+       '7. 相位固定目标可能在扰动后不再对应高功率。不同扰动的相位曲线可非单调；邻频测斜率也不保证全局寻优。',
+       '8. 反射代理只监测，无已验证的反射上限；未独立规定绝对功率上限。没有把这两项冒充为已经完成的约束。',
+-      '9. 本轮没有重新运行 LTspice、真实器件或 COMSOL。模型来自已存档 v2.1，不代表本轮每个控制动作已经由 LTspice 复核。',
++      '9. 本轮没有重新运行 LTspice、真实器件或 COMSOL。电路模型结构来自已存档 v2.1，基线参数为上述冻结设计文件，不代表本轮每个控制动作已经由 LTspice 复核。',
+       '10. 本轮不调参优化排名。此处为模糊推测内容：进一步整定相位增益、扫描周期或失败后可观测重置规则可能改善表现，但本批次没有验证。', '',
+       '## 查阅入口', '',
+       '- formal_three_strategy_summary.csv：同口径综合表；per_segment_metrics.csv：逐段验收与尾窗诊断。',
+@@ -181,7 +187,10 @@ def main():
+     csv_write(folder/'registered34_target_segment_metrics.csv',[r for r in all_segments if r['suite'].startswith('COVER_') and r['segment_index']==1])
+     json_write(folder/'run_metadata.json',dict(batch_id=batch,source_tree_sha256=code_id,source_hashes=code_hashes,
+         python=sys.version,numpy=np.__version__,platform=platform.platform(),command=sys.argv,
+-        source_model_provenance='frozen v2.1 model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; see integration_sources.json',
++        source_model_provenance='v2.1 circuit model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; '
++            f'baseline {model.BASELINE_ID} from stage2_matching (baseline_derivation); see integration_sources.json',
++        baseline_model_id=model.BASELINE_ID,
++        phase_centre_recovery_gate=bool(config.get('phase_centre_recovery_gate', False)),
+         strategies=STRATEGIES,suite_count=len(schedules),tests_passed=result.testsRun,
+         control_uses_schedule_or_offline_reference=False,ideal_guard_uses_current_model=True,
+         phase_target_deg=phase,physical_scope='hypothetical linear quasi-steady electrical model; no hardware/acoustic claim'))
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json
+index bb92748..090084c 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json
+@@ -1,13 +1,14 @@
+ {
+-  "model_id": "MODEL_V2_1_HYPOTHETICAL",
++  "model_id": "MODEL_V2_1_PHYSICAL_BASELINE_3MA",
+   "topology": "Rs -> series (R_L_ESR + Lmatch) -> port; shunt (Cmatch + R_C_ESR) across BVD port",
+   "comparison_source": "1 Vrms Thevenin source with fixed 50 ohm Rs for BEFORE/IDEAL/ACTIVE_LOSSY",
+   "bvd": {
+-    "C0_F": 6.858064105198409e-12,
+-    "Rm_ohm": 7352.941176470586,
+-    "Lm_H": 1.0402283862215378,
+-    "Cm_F": 3.006260036180247e-14,
+-    "fs_Hz": 900000.0
++    "C0_F": 4.1148384631190455e-12,
++    "Rm_ohm": 12254.90196078431,
++    "Lm_H": 0.02993009655402198,
++    "Cm_F": 1.0448335909487233e-12,
++    "fs_Hz": 900000.0,
++    "Qm": 13.810857823361614
+   },
+   "matching_loss_assumptions": {
+     "source_class": "HYPOTHETICAL_BASELINE",
+@@ -16,13 +17,14 @@
+     "esr_model": "fixed series R calculated at f0"
+   },
+   "design": {
+-    "l_ideal_H": 0.00010685910332792834,
+-    "c_ideal_F": 2.8379869694676985e-10,
+-    "l_active_H": 0.00010672581904440851,
+-    "c_active_F": 2.8359878734546773e-10,
+-    "r_l_active_ohm_at_f0": 6.035202883048814,
+-    "r_c_active_ohm_at_f0": 0.6235528272631298,
+-    "optimizer_iterations": 83,
++    "l_ideal_H": 0.00013814328270741726,
++    "c_ideal_F": 2.21334998915386e-10,
++    "l_active_H": 0.0001380112924763264,
++    "c_active_F": 2.2120771306603173e-10,
++    "r_l_active_ohm_at_f0": 7.804354726009067,
++    "r_c_active_ohm_at_f0": 0.7994243202761837,
++    "network_q": 15.6236371954704,
++    "optimizer_iterations": 75,
+     "optimizer_success": true
+   },
+   "calibration": {
+@@ -30,11 +32,40 @@
+     "calibration_frequency_Hz": 900000.0,
+     "target_transducer_Vpp": 100.0,
+     "unit_source_Vrms": 1.0,
+-    "vport_per_unit_source_Vrms": 5.686550516395065,
+-    "a1_source_Vrms": 6.217361290890379,
+-    "a1_source_Vpp": 17.585353319501337,
+-    "expected_p_rm_W": 0.17000000000000012,
+-    "expected_total_iport_Arms": 0.0049999999999998344,
++    "vport_per_unit_source_Vrms": 7.209730893864598,
++    "a1_source_Vrms": 4.90383615973994,
++    "a1_source_Vpp": 13.870143209519636,
++    "expected_p_rm_W": 0.10200000000000005,
++    "expected_total_iport_Arms": 0.0030000000000000005,
+     "rule": "freeze this Thevenin source amplitude for all future scenarios; protection may only reduce it"
++  },
++  "baseline_derivation": {
++    "status": "假设基线（由一维 Mason 模型与需求推导，非实测器件）；2026-10-16 起替代 Qm=800 假设基线",
++    "rule": "同一工作点的物理基线：fs 处 M=X_C0/Rm 由工作点钉死；取 k_eff=0.45 得 Qm=M(1-k^2)/k^2；再按 k=5/3 均匀缩放阻抗（C0/k、Cm/k、Lm*k、Rm*k），使 0.9 MHz、a=1、100 Vpp 时端口电流为 3 mA；匹配网络按 stage2 原规则重设计，源幅度重标定到 100 Vpp",
++    "k_eff": 0.45,
++    "M_xc0_over_rm_at_fs": 3.506832237279909,
++    "impedance_scale": 1.6666666666666667,
++    "design_point_current_Arms": 0.003,
++    "user_current_upper_limit_Arms": 0.005,
++    "previous_baseline": {
++      "C0_F": 6.858064105198409e-12,
++      "Rm_ohm": 7352.941176470586,
++      "Lm_H": 1.0402283862215378,
++      "Cm_F": 3.006260036180247e-14,
++      "fs_Hz": 900000.0,
++      "Qm": 800.0,
++      "l_active_H": 0.00010672581904440851,
++      "c_active_F": 2.8359878734546773e-10,
++      "source_Vrms_for_a1": 6.217360894531728,
++      "design_point": "100 Vpp / 5.000 mA RMS / 170 mW at 0.9 MHz, a=1",
++      "registered_batch": "UNIFIED_20260923T013352_476445Z_f442bcda"
++    },
++    "evidence": [
++      "review/24_仿真参数的物理可实现性_对照原始需求_2026-10-15.md 第八、十五节",
++      "review/physical_realizability_study.py",
++      "review/design_current_study.py",
++      "review/25 （本次换基线说明）"
++    ],
++    "generator": "review/baseline_3mA_parameters.py"
+   }
+ }
+\ No newline at end of file
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_控制源幅度校准.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_控制源幅度校准.json
+index 3696059..2795c14 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_控制源幅度校准.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_控制源幅度校准.json
+@@ -1,17 +1,18 @@
+ {
+   "source_class": "DERIVED_VALUE; based on active matched baseline and AC RMS-equivalent convention",
+-  "source_Vrms_for_a1": 6.217360894531728,
+-  "source_Vpp_for_a1": 17.585352198429778,
+-  "transducer_Vpp": 100.0,
+-  "transducer_Irms_A": 0.004999999371135925,
+-  "P_Rm_W": 0.16999995376000945,
+-  "P_port_W": 0.16999997688000312,
+-  "Q_port_var": -0.04847679857414197,
+-  "S_port_VA": 0.1767766730629342,
+-  "P_source_W": 0.36229446915646774,
+-  "P_Rs_W": 0.16979491711465097,
+-  "P_L_ESR_W": 0.020494935465947547,
+-  "P_C_ESR_W": 0.0020046396958661675,
+-  "eta_elec": 0.4692314352902524,
+-  "rule": "freeze this source amplitude for stage3-5; protection may reduce but strategies may not increase it"
++  "source_Vrms_for_a1": 4.90383615973994,
++  "source_Vpp_for_a1": 13.870143209519636,
++  "transducer_Vpp": 100.00000000000001,
++  "transducer_Irms_A": 0.0030000000000000005,
++  "P_Rm_W": 0.10200000000000005,
++  "P_port_W": 0.10200000000000005,
++  "Q_port_var": -0.02908607914449789,
++  "S_port_VA": 0.10606601717798216,
++  "P_source_W": 0.22136656841418598,
++  "P_Rs_W": 0.10189798446159412,
++  "P_L_ESR_W": 0.01590496033207281,
++  "P_C_ESR_W": 0.0015636236205190787,
++  "eta_elec": 0.4607741843346184,
++  "rule": "freeze this source amplitude for stage3-5; protection may reduce but strategies may not increase it",
++  "baseline": "MODEL_V2_1_PHYSICAL_BASELINE_3MA；推导见 stage2_匹配设计参数.json 的 baseline_derivation"
+ }
+\ No newline at end of file
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index dddf41b..6154720 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -6,15 +6,21 @@ import unittest
+ from unittest.mock import patch
+ import numpy as np
+ 
+-from controllers import (Executor, PointResult, RetryBudget, ScanBudget, ScanResult, grid,
+-                         phase_update, run_policy, scan)
++from controllers import (CentreRecoveryGate, Executor, PointResult, RetryBudget, ScanBudget,
++                         ScanResult, grid, phase_update, run_policy, scan)
+ from engine import Engine, Measurement, Protection, measured_score, valid_measurement
+ from metrics import energy, evaluate, references
+ from models import model_v2_1 as model
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
++CAL = json.loads((ROOT/'stage2_matching'/'stage2_控制源幅度校准.json').read_text(encoding='utf-8'))
+ BASE = 'CASE_000_BASELINE'
++# A registered load that a held 0.9 MHz, a=1 command drives past the hard
++# voltage limit. With the old Qm=800 baseline fs-5% already did (about 188 Vpp);
++# the physical baseline's resonance is broad enough that fs-5% stays near
++# 138 Vpp, so Lm+20% (about 164 Vpp) carries these tests now.
++HELD_HARD = 'CASE_LM_P20'
+ 
+ 
+ class UnifiedTests(unittest.TestCase):
+@@ -36,11 +42,31 @@ class UnifiedTests(unittest.TestCase):
+         m = e.execute(900000,1,'CONTROL',20000)
+         q = model.response(900000,e.cases[BASE])
+         self.assertAlmostEqual(m.phase_input_deg,float(q['phase_deg'][0]))
+-        # Frozen source calibration has a 6.4 microvolt rounding residual.
++        # The frozen source calibration puts the design point at 100 Vpp; its
++        # current and power are the calibration record's, not literals here.
+         self.assertAlmostEqual(m.vpp,100,places=4)
+-        self.assertAlmostEqual(m.irms,.005,places=7)
+-        self.assertAlmostEqual(m.p_port_W,.17,places=7)
++        self.assertAlmostEqual(m.irms,CAL['transducer_Irms_A'],places=7)
++        self.assertAlmostEqual(m.p_port_W,CAL['P_port_W'],places=7)
+         self.assertLess(abs(e.rows[0]['power_balance_error_W']),1e-12)
++        # The design point itself must sit inside the soft limits.
++        self.assertLess(m.vpp,CFG['voltage_soft_Vpp'])
++        self.assertLess(m.irms,CFG['current_soft_Arms'])
++
++    def test_model_limit_helpers_use_the_config_limits(self):
++        self.assertEqual((model.VPP_SOFT,model.VPP_HARD,model.IRMS_SOFT,model.IRMS_HARD),
++                         (CFG['voltage_soft_Vpp'],CFG['voltage_hard_Vpp'],
++                          CFG['current_soft_Arms'],CFG['current_hard_Arms']))
++
++    def test_baseline_qm_comes_from_the_design_file(self):
++        design = json.loads((ROOT/'stage2_matching'/'stage2_匹配设计参数.json').read_text(encoding='utf-8'))
++        self.assertEqual(model.BASE_BVD.qm,design['bvd']['Qm'])
++        self.assertEqual(model.BASE_BVD.c0,design['bvd']['C0_F'])
++        self.assertEqual(model.BASE_BVD.rm,design['bvd']['Rm_ohm'])
++        # The Qm family is a perturbation around the baseline, never absolute.
++        cases = model.scenario_map()
++        self.assertEqual(cases['CASE_QM_800'].bvd.qm,model.BASE_BVD.qm)
++        self.assertAlmostEqual(cases['CASE_QM_500'].bvd.qm/model.BASE_BVD.qm,.625,places=12)
++        self.assertAlmostEqual(cases['CASE_QM_1000'].bvd.qm/model.BASE_BVD.qm,1.25,places=12)
+ 
+     def test_invalid_scan_measurements_never_succeed(self):
+         for bad in (None,float('nan'),float('inf'),0.0):
+@@ -137,14 +163,16 @@ class UnifiedTests(unittest.TestCase):
+         self.assertAlmostEqual(a,sum(r['p_rm_W']*.01 for r in chunks))
+ 
+     def test_unobserved_boundary_not_reprotected(self):
+-        e = self.engine([BASE,'CASE_FS_M5'])
++        e = self.engine([BASE,HELD_HARD])
++        held = float(model.response(900000,e.cases[HELD_HARD])['vport_vpp'][0])
++        self.assertGreater(held,CFG['voltage_hard_Vpp'],'precondition: the held command must exceed the hard limit')
+         # Deliberately prepare a held command; hidden boundary is not a guard call.
+         e.execute(900000,1,'CONTROL',810000)
+         self.assertEqual(e.action_id,1)
+         self.assertEqual(e.rows[0]['applied_amplitude'],e.rows[1]['applied_amplitude'])
+         self.assertFalse(e.rows[0]['actual_hard_violation'])
+         self.assertTrue(e.rows[1]['actual_hard_violation'])
+-        self.assertGreater(e.rows[1]['vport_Vpp'],160.)
++        self.assertGreater(e.rows[1]['vport_Vpp'],CFG['voltage_hard_Vpp'])
+ 
+     def test_invalid_plant_data_fails_off(self):
+         p = Protection(CFG)
+@@ -259,11 +287,11 @@ class UnifiedTests(unittest.TestCase):
+         self.assertEqual(e.rows[-1]['duration_us'],500)
+ 
+     def test_peak_includes_pre_guard_not_only_clamped_output(self):
+-        e = self.engine([BASE,'CASE_FS_M5'],'FIXED')
++        e = self.engine([BASE,HELD_HARD],'FIXED')
+         run_policy(Executor(e),'FIXED',0.)
+         per,overall=evaluate(e.rows,e.events,CFG,self.refs)
+-        self.assertGreater(per[1]['peak_voltage_Vpp'],160.)
+-        self.assertLessEqual(per[1]['peak_post_guard_and_hold_voltage_Vpp'],130.+1e-8)
++        self.assertGreater(per[1]['peak_voltage_Vpp'],CFG['voltage_hard_Vpp'])
++        self.assertLessEqual(per[1]['peak_post_guard_and_hold_voltage_Vpp'],CFG['voltage_soft_Vpp']+1e-8)
+         self.assertGreaterEqual(per[1]['pre_guard_hard_observations'],1)
+ 
+     def test_all_strategies_identical_schedule_and_duration(self):
+@@ -488,6 +516,90 @@ class ScanFaultTaxonomyTests(unittest.TestCase):
+                          overall['scan_failures'])
+ 
+ 
++class CentreRecoveryGateTests(unittest.TestCase):
++    """The phase loop waits after an accepted centre change (config gate).
++
++    The guard ratchets the amplitude down on every frequency change and ramps
++    it back; a phase update taken on that ramp moves the centre again before
++    the last move has finished. The gate may only wait: it must not raise the
++    amplitude, take a larger step, probe more, or read anything a controller
++    is not allowed to read.
++    """
++
++    @staticmethod
++    def sample(t, a, f=900500., state='NORMAL', frozen=False):
++        return Measurement(t, f, a, 100., .003, .1, -1., 1e3, -10., True, state, frozen)
++
++    def run_phase(self, gate_on, ids):
++        cfg = copy.deepcopy(CFG)
++        cfg['phase_centre_recovery_gate'] = gate_on
++        e = Engine(cfg, ids, 'PHASE_FEEDBACK', 'TEST')
++        phi = float(model.response(900000, e.cases[BASE])['phase_deg'][0])
++        run_policy(Executor(e), 'PHASE_FEEDBACK', phi)
++        return e
++
++    def test_ready_needs_two_equal_amplitude_samples_at_the_new_centre(self):
++        g = CentreRecoveryGate(20000)
++        g.begin(0)
++        self.assertFalse(g.ready(self.sample(20000, .50), 900500., 20000))
++        self.assertFalse(g.ready(self.sample(40000, .55), 900500., 40000))   # still ramping
++        self.assertTrue(g.active)
++        self.assertTrue(g.ready(self.sample(60000, .55), 900500., 60000))    # plateau
++        self.assertFalse(g.active)
++
++    def test_a_non_comparable_sample_restarts_the_count(self):
++        g = CentreRecoveryGate(20000)
++        g.begin(0)
++        self.assertFalse(g.ready(self.sample(20000, .5), 900500., 20000))
++        # Frozen ramp sample, old centre, off-lattice time: none can be the pair.
++        self.assertFalse(g.ready(self.sample(40000, .5, state='RAMP_UP', frozen=True), 900500., 40000))
++        self.assertFalse(g.ready(self.sample(60000, .5), 900500., 60000))
++        self.assertFalse(g.ready(self.sample(80000, .5, f=900000.), 900500., 80000))
++        self.assertFalse(g.ready(self.sample(101500, .5), 900500., 101500))
++        self.assertTrue(g.active)
++        self.assertFalse(g.ready(self.sample(120000, .5), 900500., 120000))
++        self.assertTrue(g.ready(self.sample(140000, .5), 900500., 140000))
++
++    def test_gate_off_is_the_formal_phase_path(self):
++        e = self.run_phase(False, [BASE, 'CASE_FS_M5'])
++        names = {x['event'] for x in e.events}
++        self.assertIn('PHASE_UPDATE', names)
++        self.assertFalse({'CENTRE_RECOVERY_BEGIN', 'CENTRE_RECOVERY_COMPLETE',
++                          'CENTRE_RECOVERY_TRUNCATED'} & names)
++
++    def test_no_phase_probe_while_a_new_centre_is_recovering(self):
++        e = self.run_phase(True, [BASE, 'CASE_FS_M5'])
++        begins = [x for x in e.events if x['event'] == 'CENTRE_RECOVERY_BEGIN']
++        completes = [x for x in e.events if x['event'] == 'CENTRE_RECOVERY_COMPLETE']
++        self.assertTrue(begins)
++        self.assertTrue(completes)
++        for b in begins:
++            ends = [c['time_us'] for c in completes if c['time_us'] > b['time_us']]
++            end = min(ends) if ends else e.end
++            probes = [r for r in e.rows if r['kind'].startswith('PHASE_PROBE')
++                      and b['time_us'] <= r['start_us'] < end]
++            self.assertEqual(probes, [])
++        for c in completes:
++            pair = [r for r in e.rows if r['kind'] == 'CONTROL'
++                    and r['end_us'] in (c['time_us']-CFG['control_tick_us'], c['time_us'])]
++            self.assertEqual(len(pair), 2)
++            self.assertTrue(all(r['protection_state'] == 'NORMAL' and not r['frequency_frozen']
++                                and r['frequency_Hz'] == c['frequency_Hz'] for r in pair))
++            self.assertEqual(pair[0]['applied_amplitude'], pair[1]['applied_amplitude'])
++
++    def test_gate_only_waits(self):
++        on = self.run_phase(True, [BASE, 'CASE_FS_M5'])
++        off = self.run_phase(False, [BASE, 'CASE_FS_M5'])
++        for e in (on, off):
++            control = [r for r in e.rows if r['kind'] == 'CONTROL']
++            self.assertTrue(all(r['requested_amplitude'] == 1. for r in control))
++            self.assertTrue(all(r['applied_amplitude'] <= 1. for r in e.rows))
++            # One phase step at most between ordinary samples, never larger.
++            steps = [abs(b['frequency_Hz']-a['frequency_Hz']) for a, b in zip(control, control[1:])]
++            self.assertLessEqual(max(steps), CFG['phase_max_step_Hz']+1e-6)
++            probes = [r for r in e.rows if r['kind'].startswith('PHASE_PROBE')]
++            self.assertTrue(all(r['duration_us'] == CFG['scan_point_us'] for r in probes))
++
+ 
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

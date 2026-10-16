@@ -1,0 +1,66 @@
+[
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_FS_M5",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_FS_M5",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_FS_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 40,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9438798154313872
+  },
+  {
+    "time_us": 900000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_FS_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 45,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9438798154313872
+  },
+  {
+    "time_us": 1600000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_FS_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 80,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "RAMP_UP",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9938798154313873
+  },
+  {
+    "time_us": 1620000,
+    "strategy": "FIXED",
+    "suite": "COVER_CASE_FS_M5",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 81,
+    "kind": "CONTROL",
+    "from_state": "RAMP_UP",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 1.0
+  }
+]

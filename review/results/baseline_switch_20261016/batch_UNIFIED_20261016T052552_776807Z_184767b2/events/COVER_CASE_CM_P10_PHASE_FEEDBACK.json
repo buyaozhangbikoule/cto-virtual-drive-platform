@@ -1,0 +1,338 @@
+[
+  {
+    "time_us": 800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 40,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 800000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 40,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9786737545700318
+  },
+  {
+    "time_us": 900000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 45,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9786737545700318
+  },
+  {
+    "time_us": 921500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 47,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 921500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 47,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 921500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 47,
+    "kind": "PHASE_PROBE_PLUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 899900.0,
+    "applied_amplitude": 0.9773436444557272
+  },
+  {
+    "time_us": 923000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 923000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_NO_NEW_CENTRE_RETURN",
+    "frequency_Hz": 900000.0,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1040000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 54,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900000.0,
+    "applied_amplitude": 0.9773436444557272
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 43.64631443383158,
+    "measured_slope_deg_per_Hz": 0.001238616114106037,
+    "proposed_frequency_Hz": 900218.2315721691
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900218.2315721691,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 57,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 57,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 57,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900100.0,
+    "applied_amplitude": 0.9757778623145953
+  },
+  {
+    "time_us": 1180000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 63,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900218.2315721691,
+    "applied_amplitude": 0.9757778623145953
+  },
+  {
+    "time_us": 1220000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900218.2315721691,
+    "amplitude": 0.9757778623145953,
+    "wait_us": 157000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1221500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 66,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1221500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 66,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1221500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 66,
+    "kind": "PHASE_PROBE_PLUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900118.2315721691,
+    "applied_amplitude": 0.974459329581773
+  },
+  {
+    "time_us": 1223000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1223000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_NO_NEW_CENTRE_RETURN",
+    "frequency_Hz": 900218.2315721691,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 73,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900218.2315721691,
+    "applied_amplitude": 0.974459329581773
+  },
+  {
+    "time_us": 1363000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 43.372678639635495,
+    "measured_slope_deg_per_Hz": 0.0012693007802400303,
+    "proposed_frequency_Hz": 900435.0949653673
+  },
+  {
+    "time_us": 1363000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900435.0949653673,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1363000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 76,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1363000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 76,
+    "kind": "CONTROL"
+  },
+  {
+    "time_us": 1363000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 76,
+    "kind": "CONTROL",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900318.2315721691,
+    "applied_amplitude": 0.9729252189411118
+  },
+  {
+    "time_us": 1480000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 82,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900435.0949653673,
+    "applied_amplitude": 0.9729252189411118
+  },
+  {
+    "time_us": 1520000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900435.0949653673,
+    "amplitude": 0.9729252189411118,
+    "wait_us": 157000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1521500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "CANDIDATE_LIMIT_ENTER",
+    "action_id": 85,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1521500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "SOFT_FOLDBACK_ENTER",
+    "action_id": 85,
+    "kind": "PHASE_PROBE_PLUS"
+  },
+  {
+    "time_us": 1521500,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 85,
+    "kind": "PHASE_PROBE_PLUS",
+    "from_state": "NORMAL",
+    "to_state": "FOLDBACK",
+    "frequency_Hz": 900335.0949653673,
+    "applied_amplitude": 0.9716183016255665
+  },
+  {
+    "time_us": 1523000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_PROBE_FAILED"
+  },
+  {
+    "time_us": 1523000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PHASE_NO_NEW_CENTRE_RETURN",
+    "frequency_Hz": 900435.0949653673,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1640000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_CM_P10",
+    "event": "PROTECTION_STATE_TRANSITION",
+    "action_id": 92,
+    "kind": "CONTROL",
+    "from_state": "FOLDBACK",
+    "to_state": "NORMAL",
+    "frequency_Hz": 900435.0949653673,
+    "applied_amplitude": 0.9716183016255665
+  }
+]

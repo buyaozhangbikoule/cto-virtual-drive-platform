@@ -1,0 +1,40 @@
+{
+  "batch_id": "UNIFIED_20261016T052552_776807Z_184767b2",
+  "source_tree_sha256": "184767b29b2035b25b716ff86ddd5f2b745a829c4ca24dd2087e9a421ccca4e0",
+  "source_hashes": {
+    "README.md": "29c731026dc63849974e0701b33957a089d6c1741555af50efaf637d4f51d05d",
+    "audit_batch.py": "cab769fdeb8abff13198bc30868d809b2d6c66a44e415d2f6785f790b16bcb42",
+    "config.json": "fdc16e8f50724df83ea90e7659cbe61f5b059aa8de606d8be47bc0571135baf4",
+    "controllers.py": "b977dc0e2c6c2085e261c49a305a11e181b270f5207464f5b21f01f7851028c5",
+    "engine.py": "54659dd6fa23f6cdaee330544f774c138f8f73831e7cdbed2aba44a7dc0dd233",
+    "metrics.py": "5234fdf88d0fea25dc85620d92f387a21ec399f7c3aeef24eaf26f5258f893aa",
+    "models/model_v2_1.py": "94ef8c4659b3b055c14b98f121e2d28410e92a6272be245c2ae4bfe0c89c6b90",
+    "requirements.txt": "0bece1334a6220b95d272cee7a47b0ec32b9daea4cc3316836090d5fae0c22c9",
+    "run_unified.py": "7371ed2b2f7ee905caffc69fb0c267ba16889da68688fdbf2d6f858130dd3028",
+    "stage2_matching/stage2_匹配设计参数.json": "ff73a53d9f951343bc5bb7b40ab6470b9ad4f9c989be55318128504248843ae3",
+    "stage2_matching/stage2_控制源幅度校准.json": "463503c6682393ff33fa736d1c31a6a225fb0ad8edebd6af78ee4f625a716062",
+    "tests/test_unified.py": "5fa724f5877cc1c060bed668d991693a9cf6cc06b9ca3d1d168dca57e7eec53a"
+  },
+  "python": "3.11.15 (main, Mar  3 2026, 09:26:23) [GCC 13.3.0]",
+  "numpy": "2.4.6",
+  "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+  "command": [
+    "run_unified.py",
+    "--suite",
+    "all"
+  ],
+  "source_model_provenance": "v2.1 circuit model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; baseline MODEL_V2_1_PHYSICAL_BASELINE_3MA from stage2_matching (baseline_derivation); see integration_sources.json",
+  "baseline_model_id": "MODEL_V2_1_PHYSICAL_BASELINE_3MA",
+  "phase_centre_recovery_gate": true,
+  "strategies": [
+    "FIXED",
+    "PERIODIC_SCAN",
+    "PHASE_FEEDBACK"
+  ],
+  "suite_count": 35,
+  "tests_passed": 48,
+  "control_uses_schedule_or_offline_reference": false,
+  "ideal_guard_uses_current_model": true,
+  "phase_target_deg": -1.0615278807137944,
+  "physical_scope": "hypothetical linear quasi-steady electrical model; no hardware/acoustic claim"
+}

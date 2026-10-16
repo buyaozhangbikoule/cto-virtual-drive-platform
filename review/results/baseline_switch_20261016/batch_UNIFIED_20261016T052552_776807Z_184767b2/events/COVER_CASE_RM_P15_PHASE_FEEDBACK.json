@@ -1,0 +1,542 @@
+[
+  {
+    "time_us": 823000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 1.0014873431399849,
+    "measured_slope_deg_per_Hz": 0.0006333134329537416,
+    "proposed_frequency_Hz": 900005.0074367156
+  },
+  {
+    "time_us": 823000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900005.0074367156,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 860000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900005.0074367156,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 863000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9983162452277554,
+    "measured_slope_deg_per_Hz": 0.0006332669228578425,
+    "proposed_frequency_Hz": 900009.9990179418
+  },
+  {
+    "time_us": 863000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900009.9990179418,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 900000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900009.9990179418,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 903000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9951554195699828,
+    "measured_slope_deg_per_Hz": 0.0006332207469149864,
+    "proposed_frequency_Hz": 900014.9747950396
+  },
+  {
+    "time_us": 903000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900014.9747950396,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 940000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900014.9747950396,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 943000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9920048305195621,
+    "measured_slope_deg_per_Hz": 0.0006331749028828426,
+    "proposed_frequency_Hz": 900019.9348191923
+  },
+  {
+    "time_us": 943000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900019.9348191923,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 980000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900019.9348191923,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 983000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9888644425753625,
+    "measured_slope_deg_per_Hz": 0.0006331293885352806,
+    "proposed_frequency_Hz": 900024.8791414051
+  },
+  {
+    "time_us": 983000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900024.8791414051,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1020000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900024.8791414051,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1023000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9857342203819144,
+    "measured_slope_deg_per_Hz": 0.0006330842016608073,
+    "proposed_frequency_Hz": 900029.807812507
+  },
+  {
+    "time_us": 1023000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900029.807812507,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1060000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900029.807812507,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9826141287298356,
+    "measured_slope_deg_per_Hz": 0.0006330393400587297,
+    "proposed_frequency_Hz": 900034.7208831507
+  },
+  {
+    "time_us": 1063000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900034.7208831507,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1100000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900034.7208831507,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1103000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9795041325532736,
+    "measured_slope_deg_per_Hz": 0.0006329948015513765,
+    "proposed_frequency_Hz": 900039.6184038135
+  },
+  {
+    "time_us": 1103000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900039.6184038135,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1140000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900039.6184038135,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1143000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9764041969304174,
+    "measured_slope_deg_per_Hz": 0.0006329505839659077,
+    "proposed_frequency_Hz": 900044.5004247981
+  },
+  {
+    "time_us": 1143000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900044.5004247981,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1180000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900044.5004247981,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1183000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9733142870821894,
+    "measured_slope_deg_per_Hz": 0.0006329066851466791,
+    "proposed_frequency_Hz": 900049.3669962335
+  },
+  {
+    "time_us": 1183000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900049.3669962335,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1220000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900049.3669962335,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1223000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9702343683716776,
+    "measured_slope_deg_per_Hz": 0.0006328631029552411,
+    "proposed_frequency_Hz": 900054.2181680753
+  },
+  {
+    "time_us": 1223000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900054.2181680753,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1260000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900054.2181680753,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1263000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9671644063026577,
+    "measured_slope_deg_per_Hz": 0.0006328198352646553,
+    "proposed_frequency_Hz": 900059.0539901068
+  },
+  {
+    "time_us": 1263000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900059.0539901068,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1300000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900059.0539901068,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1303000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9641043665197344,
+    "measured_slope_deg_per_Hz": 0.0006327768799606303,
+    "proposed_frequency_Hz": 900063.8745119394
+  },
+  {
+    "time_us": 1303000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900063.8745119394,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1340000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900063.8745119394,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1343000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9610542148080867,
+    "measured_slope_deg_per_Hz": 0.0006327342349469234,
+    "proposed_frequency_Hz": 900068.6797830134
+  },
+  {
+    "time_us": 1343000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900068.6797830134,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1380000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900068.6797830134,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1383000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9580139170903124,
+    "measured_slope_deg_per_Hz": 0.0006326918981405072,
+    "proposed_frequency_Hz": 900073.4698525988
+  },
+  {
+    "time_us": 1383000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900073.4698525988,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1420000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900073.4698525988,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1423000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9549834394279344,
+    "measured_slope_deg_per_Hz": 0.0006326498674643232,
+    "proposed_frequency_Hz": 900078.244769796
+  },
+  {
+    "time_us": 1423000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900078.244769796,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1460000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900078.244769796,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1463000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9519627480207475,
+    "measured_slope_deg_per_Hz": 0.0006326081408614925,
+    "proposed_frequency_Hz": 900083.0045835362
+  },
+  {
+    "time_us": 1463000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900083.0045835362,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1500000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900083.0045835362,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1503000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9489518092034643,
+    "measured_slope_deg_per_Hz": 0.0006325667162933257,
+    "proposed_frequency_Hz": 900087.7493425822
+  },
+  {
+    "time_us": 1503000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900087.7493425822,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1540000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900087.7493425822,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1543000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9459505894479889,
+    "measured_slope_deg_per_Hz": 0.0006325255917263916,
+    "proposed_frequency_Hz": 900092.4790955294
+  },
+  {
+    "time_us": 1543000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900092.4790955294,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1580000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900092.4790955294,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  },
+  {
+    "time_us": 1583000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "PHASE_UPDATE",
+    "measured_error_deg": 0.9429590553618539,
+    "measured_slope_deg_per_Hz": 0.0006324847651426068,
+    "proposed_frequency_Hz": 900097.1938908062
+  },
+  {
+    "time_us": 1583000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_BEGIN",
+    "frequency_Hz": 900097.1938908062,
+    "probe_duration_us": 3000
+  },
+  {
+    "time_us": 1620000,
+    "strategy": "PHASE_FEEDBACK",
+    "suite": "COVER_CASE_RM_P15",
+    "event": "CENTRE_RECOVERY_COMPLETE",
+    "frequency_Hz": 900097.1938908062,
+    "amplitude": 1.0,
+    "wait_us": 37000,
+    "criterion": "two_consecutive_valid_control_plateau_samples"
+  }
+]
