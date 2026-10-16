@@ -1,0 +1,133 @@
+{
+  "batch_id": "UNIFIED_20261016T153842_183119Z_2831be3a",
+  "source_tree_sha256": "2831be3aadc07a140bd527ec988651d4542a20b37b8b6543df93d1aba4e511fe",
+  "source_hashes": {
+    "README.md": "85c4d267b26fa5648f868f9df31ce9fbd6d44eb00e87c39f4afb7a6d8f57153c",
+    "audit_batch.py": "d9f1bd5851691f8f614b3804578780216ff6ff0d72cba118610f57a9a9cc4481",
+    "candidates/synthetic_q13p8_3mA/README.md": "9a2875216bcc51a7e9d0403261817cc602fdca4416345355cded39eac0530da4",
+    "candidates/synthetic_q13p8_3mA/config.json": "6e5b782a1644a623e05c26f3efb3ccb16cb25ac363032c1844ac3fd7140c3df4",
+    "candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json": "032a8793445a54f07d9e877eebcd50368cc3a81db975cee6d31288b2fcefd249",
+    "candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json": "e4a90d4f33630e9172d16644d177f913f2dbcfa86ed99955092b1ca99094e3bb",
+    "config.json": "ad5d84e18fa90f47b4958fbe8127034b09a66f8b68a663157b05c8b5794ffbd6",
+    "controllers.py": "85089ea9cf496cc53548aea676aa6b5a69a08d4f9fcb831dbaec67d17746035c",
+    "engine.py": "107207eedfb309e8cfdeb8cb9f5672553e1e51302d11dd5eef1948d2a074a34e",
+    "metrics.py": "5234fdf88d0fea25dc85620d92f387a21ec399f7c3aeef24eaf26f5258f893aa",
+    "models/model_v2_1.py": "6d3da3e3f268b140ed097798bc9f6136b8793be4ba03bd2b99ad586fad952ab6",
+    "requirements.txt": "0bece1334a6220b95d272cee7a47b0ec32b9daea4cc3316836090d5fae0c22c9",
+    "run_unified.py": "db23f3cad0ae895109a577d2344f990fca589faaaa7ef31837620ce68286f139",
+    "stage2_matching/stage2_匹配设计参数.json": "6d768c0110792535508513ad73e895283013b98d75c68c2b3ee2df61cbdfc050",
+    "stage2_matching/stage2_控制源幅度校准.json": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4",
+    "tests/test_unified.py": "3081727dc11a07bf56e9c1d78848ce8463a4cb93f56444c0abacc9989972d01f"
+  },
+  "python": "3.11.15 (main, Mar  3 2026, 09:26:23) [GCC 13.3.0]",
+  "numpy": "2.4.6",
+  "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+  "command": [
+    "run_unified.py",
+    "--suite",
+    "all"
+  ],
+  "source_model_provenance": "v2.1 circuit model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; baseline MODEL_V2_1_HYPOTHETICAL; see integration_sources.json",
+  "config_file": "config.json",
+  "baseline_model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "baseline_files": {
+    "design": {
+      "path": "stage2_matching/stage2_匹配设计参数.json",
+      "sha256": "6d768c0110792535508513ad73e895283013b98d75c68c2b3ee2df61cbdfc050"
+    },
+    "calibration": {
+      "path": "stage2_matching/stage2_控制源幅度校准.json",
+      "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4"
+    }
+  },
+  "current_limit_measurement_point": "transducer_port, where the user 5 mA RMS upper limit is measured (confirmed by the user 2026-10-16); this historical regression configuration has its 5 mA design point on that limit and 5.5/6.0 mA soft/hard limits above it; amplifier output current is not subject to the limit and is reported only",
+  "phase_centre_recovery_gate": false,
+  "phase_feedback": {
+    "tracker": "newton_v2",
+    "signal": "port",
+    "target_policy": "relearn_after_capture"
+  },
+  "user_current_limit": {
+    "value_Arms": 0.005,
+    "measurement_point": "transducer_port",
+    "guard_hard_limit_within": false,
+    "peak_post_guard_mArms": 5.466770656128519,
+    "rows_above": 1044,
+    "timelines_with_rows_above": 66,
+    "reference_optima_above": {
+      "CASE_C0_P10": {
+        "current_Arms": 0.005038942239762671,
+        "within_limit_fraction": 0.993368681155241
+      },
+      "CASE_C0_P20": {
+        "current_Arms": 0.005080367160005124,
+        "within_limit_fraction": 0.9955241866237072
+      },
+      "CASE_C0_P30": {
+        "current_Arms": 0.005124166251178052,
+        "within_limit_fraction": 0.9976762976894504
+      },
+      "CASE_FS_M1": {
+        "current_Arms": 0.005219207183608315,
+        "within_limit_fraction": 0.991122422123664
+      },
+      "CASE_FS_M3": {
+        "current_Arms": 0.005305204308289389,
+        "within_limit_fraction": 0.9703173797798712
+      },
+      "CASE_LM_P5": {
+        "current_Arms": 0.00540305709597416,
+        "within_limit_fraction": 0.9677023713285297
+      },
+      "CASE_LM_P10": {
+        "current_Arms": 0.005083748991711922,
+        "within_limit_fraction": 0.9867524178495347
+      },
+      "CASE_CM_P5": {
+        "current_Arms": 0.0053809402044696,
+        "within_limit_fraction": 0.9669061940005915
+      },
+      "CASE_CM_P10": {
+        "current_Arms": 0.005039066685487946,
+        "within_limit_fraction": 0.9845545810141142
+      },
+      "CASE_CMATCH_M2": {
+        "current_Arms": 0.0052268707373984424,
+        "within_limit_fraction": 0.9909203989591642
+      },
+      "CASE_CMATCH_M5": {
+        "current_Arms": 0.005389960104280234,
+        "within_limit_fraction": 0.9569485333503271
+      }
+    },
+    "reference_unreachable_within_limit": [
+      "CASE_FS_M3",
+      "CASE_LM_P5",
+      "CASE_CM_P5",
+      "CASE_CMATCH_M5"
+    ],
+    "reference_optimum_current_max_Arms": 0.00540305709597416,
+    "per_timeline_file": "user_current_limit_check.csv"
+  },
+  "amplifier_output_current_peak_mArms": {
+    "all_timelines": 75.45314509936463,
+    "historical_12": {
+      "FIXED": 75.45314509936463,
+      "PERIODIC_SCAN": 75.45314509936463,
+      "PHASE_FEEDBACK": 71.34670476578586,
+      "CAPTURE_PO": 72.04048505230014
+    }
+  },
+  "strategies": [
+    "FIXED",
+    "PERIODIC_SCAN",
+    "PHASE_FEEDBACK",
+    "CAPTURE_PO"
+  ],
+  "suite_count": 35,
+  "tests_passed": 90,
+  "control_uses_schedule_or_offline_reference": false,
+  "ideal_guard_uses_current_model": true,
+  "phase_target_deg": -1.0782096368565852,
+  "physical_scope": "hypothetical linear quasi-steady electrical model; no hardware/acoustic claim"
+}

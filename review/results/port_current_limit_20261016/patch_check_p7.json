@@ -1,0 +1,95 @@
+{
+  "stages": {
+    "p5": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 84 tests in 3.918s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    },
+    "p6": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 85 tests in 3.741s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    },
+    "p7": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 90 tests in 3.591s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      },
+      "configuration": {
+        "default_records_port_limit": true,
+        "candidate_records_port_limit": true,
+        "default_hard_limit_above_user_limit": true,
+        "candidate_hard_limit_within_user_limit": true
+      }
+    },
+    "p5_p7": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 89 tests in 2.554s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      },
+      "configuration": {
+        "default_records_port_limit": true,
+        "candidate_records_port_limit": true,
+        "default_hard_limit_above_user_limit": true,
+        "candidate_hard_limit_within_user_limit": true
+      }
+    }
+  },
+  "timelines": {
+    "default": {
+      "p7_fixed_equals_p6": true,
+      "p5_p7_fixed_equals_p5": true,
+      "p7_periodic_scan_equals_p6": true,
+      "p5_p7_periodic_scan_equals_p5": true,
+      "p7_phase_feedback_equals_p6": true,
+      "p5_p7_phase_feedback_equals_p5": true,
+      "p7_capture_po_equals_p6": true,
+      "p5_p7_capture_po_equals_p5": true
+    },
+    "candidate": {
+      "p7_fixed_equals_p6": true,
+      "p5_p7_fixed_equals_p5": true,
+      "p7_periodic_scan_equals_p6": true,
+      "p5_p7_periodic_scan_equals_p5": true,
+      "p7_phase_feedback_equals_p6": true,
+      "p5_p7_phase_feedback_equals_p5": true,
+      "p7_capture_po_equals_p6": true,
+      "p5_p7_capture_po_equals_p5": true
+    }
+  },
+  "ok": true
+}

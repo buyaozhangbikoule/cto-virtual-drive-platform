@@ -1,0 +1,471 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/README.md b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+index 3823fa728dca99eb953708c0532f69bbc49c9f07..fa5d55bc4197c84f9774119c6ece892156d44097 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+@@ -65,7 +65,7 @@ Janů连续极值拟合完成合成回收、Jacobian和多初值对照；“0.22
+ - 连续验收：有效CONTROL、NORMAL、未冻结、≥98%、20 ms格点连续10样本；未通过不用回退样本。
+ - 参考为当前场景130 Vpp／5.5 mA软阈值、a≤1下100 Hz网格最大P_Rm；不是硬限最大值，不等于恢复基准功率。离散参考可能使比值略高于100%，不截断掩盖。
+ - 理想保护依赖精确当前模型。保护前预测可超过160 Vpp；保护后记录受限不证明真实动态硬限。反射代理只监测；未独立定义绝对功率上限。
+-- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。用户后来说明5 mA是上限、推荐更小，但测点未定：平台电流限值作用于换能器端口，功放输出端电流另列（现有匹配网络下设计点约58 mA），两种解释都保留。
++- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。用户后来说明5 mA是上限、推荐更小，但测点未定：平台电流限值作用于换能器端口，功放输出端电流另列（现有匹配网络下设计点约58 mA），两种解释都保留。〔2026-10-16 补充〕用户已确认测点在换能器端，与平台电流限值同一测点；功放输出端电流不受此上限约束。默认配置的设计点 5 mA 正好在上限上，软/硬阈值 5.5/6 mA 高于上限：正式批次四种策略都有超过 5 mA 的时段，34 个场景中 11 个的验收参考点电流在 5 mA 以上，其中 4 个在不超过 5 mA 时达不到 98% 门槛。合成候选的 4.5/5.0 mA 不超过上限。批次报告逐策略列出核对结果（user_current_limit_check.csv）。
+ 
+ ## 历史保留与移交边界
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+index 9a411f3950fcbd29dca715f69bcfe2254141b218..5314e07122a40e8cc325b45ecf63d153ff69891b 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+@@ -142,6 +142,10 @@ def render_results():
+             held(ax[1],rows,rows.iport_Arms*1000,strategy)
+             ax[1].scatter(observed.start_us/1e6,observed.pre_guard_iport_Arms*1000,color='#be123c',s=10)
+             ax[1].axhline(cfg['current_hard_Arms']*1000,color='red',ls=':'); ax[1].axhline(cfg['current_soft_Arms']*1000,color='#d97706',ls='--')
++            if 'user_current_limit_Arms' in cfg:  # user upper limit at the transducer port (P7); older batches have none
++                user = ax[1].axhline(cfg['user_current_limit_Arms']*1000,color='#7c3aed',ls='-.',
++                                     label=f"用户上限 {cfg['user_current_limit_Arms']*1000:g} mA（换能器端）")
++                ax[1].legend(handles=[user],loc='lower left',frameon=False)
+             held(ax[2],rows,rows.applied_amplitude,strategy)
+             for a,label in zip(ax,['端口电压 (Vpp)','端口电流 (mA RMS)','实际幅度 a']):
+                 a.set_ylabel(label);a.set_xlim(lo,hi);a.grid(alpha=.2)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index f474b86c658dfda484ffcf4bd81c7ddec562597d..b769de3258e8f75bb97fed26e202287a6ad0db65 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -47,7 +47,7 @@
+     {"id":"match.rc","profile":"bvd","name":"匹配电容串联ESR","value":0.6235528272631298,"unit":"Ω","binding":{"source":"design","path":["design","r_c_active_ohm_at_f0"]},"adoption_reason":"由R_C=1/(2πf0·Cmatch·QC)派生；模型中为频率无关电阻。"},
+     {"id":"source.rs","profile":"operating","name":"戴维南源阻抗 Rs","value":50,"unit":"Ω","source_ids":["user_design","model"],"binding":{"source":"model","mode":"constant","name":"BASE_RS"},"limitations":"模型只含实数源电阻；50 Ω射频系统推荐量级不等于建立完整射频功放、真实输出阻抗或热模型。"},
+     {"id":"operating.vpp","profile":"operating","name":"换能器端口标称电压目标","value":100,"unit":"Vpp","source_ids":["user_design","design"],"binding":{"source":"design","path":["calibration","target_transducer_Vpp"]}},
+-    {"id":"operating.irms","profile":"operating","name":"用户给出的电流量级（5 mA RMS，测点未定）","value":5,"unit":"mA RMS","limitations":"用户后来说明5 mA RMS是上限、推荐更小，但没有说明测点：可能指换能器端，也可能指功放输出端。平台的电流限值作用于换能器端口；按功放输出端解释时，现有匹配网络在100 Vpp设计点的功放电流约为58 mA（5 mA设计），不满足。两种解释都保留，待项目方确认。本条无运行配置写入绑定。"},
++    {"id":"operating.irms","profile":"operating","name":"用户电流上限（5 mA RMS，测点在换能器端）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"user_current_limit_Arms","limitations":"用户说明5 mA RMS是上限、推荐更小；2026-10-16确认测点在换能器端，与平台电流限值同一测点。正式批次逐行核对保护后的换能器端电流并在报告中列出；它不改变保护软/硬阈值。默认配置设计点5 mA正好在上限上，软/硬阈值5.5/6 mA高于上限；合成候选设计点3 mA、软/硬阈值4.5/5.0 mA不超过上限。功放输出端电流不受此上限约束，只另列（5 mA设计约58 mA）。〔原登记 2026-10-16 P1：测点未定，按功放输出端解释时现有匹配网络不满足，两种解释都保留；本条原无运行配置绑定。〕"},
+     {"id":"source.a1","profile":"operating","name":"a=1时戴维南源电压（RMS）","identity":"假设模型内派生标定值，非实测","value":6.217360894531728,"unit":"V RMS","source_ids":["calibration","model"],"binding":{"source":"calibration","path":["source_Vrms_for_a1"]},"adoption_reason":"在冻结有损匹配基线上数值标定约100 Vpp端口工作点，再冻结此源幅度；不是源端100 Vpp。"},
+     {"id":"source.unit","profile":"operating","name":"匹配设计的归一化源幅度（非运行a=1）","identity":"归一化计算约定，非实际工作点","value":1,"unit":"V RMS","formal_use":false,"source_ids":["design"],"binding":{"source":"design","path":["calibration","unit_source_Vrms"]},"adoption_reason":"用于匹配前后同源归一化对照。不得将1 V RMS源条件与约170 mW标定工作点拼在一起。"},
+     {"id":"frequency_min_Hz","profile":"operating","name":"运行频率下限","value":800000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"config_key":"frequency_min_Hz"},
+@@ -77,8 +77,8 @@
+     {"id":"ramp_amplitude_per_s","profile":"control","name":"幅度渐升斜率","value":2.5,"unit":"1/s","config_key":"ramp_amplitude_per_s"},
+     {"id":"voltage_soft_Vpp","profile":"control","name":"端口电压软阈值","value":130,"unit":"Vpp","config_key":"voltage_soft_Vpp","adoption_reason":"仿真预警／降幅阈值，为用户160 Vpp边界留出模型内余量；余量未做硬件验证。"},
+     {"id":"voltage_hard_Vpp","profile":"operating","name":"端口电压硬边界","value":160,"unit":"Vpp","config_key":"voltage_hard_Vpp","limitations":"用户仿真边界，不是器件耐压。模型保护后的样本受限不证明采样间隙、执行延迟或瞬态绝不越限。"},
+-    {"id":"current_soft_Arms","profile":"control","name":"端口电流软阈值","value":0.0055,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_soft_Arms"},
+-    {"id":"current_hard_Arms","profile":"control","name":"端口电流硬阈值","value":0.006,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_hard_Arms","limitations":"6 mA是仿真假设保护阈值，不是用户5 mA推荐量级的同义词，也不是器件额定电流。"},
++    {"id":"current_soft_Arms","profile":"control","name":"端口电流软阈值","value":0.0055,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_soft_Arms","limitations":"仿真假设降幅阈值。用户5 mA RMS上限的测点在换能器端（2026-10-16确认），5.5 mA高于该上限：保护放行的稳态电流可以超过用户上限。"},
++    {"id":"current_hard_Arms","profile":"control","name":"端口电流硬阈值","value":0.006,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"config_key":"current_hard_Arms","limitations":"6 mA是仿真假设保护阈值，不是用户5 mA推荐量级的同义词，也不是器件额定电流。〔补充 2026-10-16〕用户5 mA RMS上限的测点在换能器端，6 mA高于该上限；本配置是历史回归基线，结果不满足用户电流上限，逐策略核对见批次报告。"},
+     {"id":"phase_gain_Hz_per_deg","profile":"control","name":"相位反馈增益","value":5,"unit":"Hz/°","config_key":"phase_gain_Hz_per_deg","limitations":"输入相位arg Z_in反馈，目标在基准工作点标定后冻结；不是端口相位或自动最优功率保证。"},
+     {"id":"phase_deadband_deg","profile":"control","name":"相位死区","value":0.1,"unit":"°","config_key":"phase_deadband_deg"},
+     {"id":"phase_max_step_Hz","profile":"control","name":"相位控制最大调频步长","value":500,"unit":"Hz","config_key":"phase_max_step_Hz"},
+@@ -140,9 +140,9 @@
+     {"id":"candidate.match.c","profile":"candidate","name":"合成候选：匹配电容 Cmatch","value":2.2120771306603173e-10,"unit":"F","display_unit":"pF","scale":1000000000000.0,"binding":{"source":"candidate_design","path":["design","c_active_F"]}},
+     {"id":"candidate.a1","profile":"candidate","name":"合成候选：a=1时戴维南源电压（RMS）","value":4.90383615973994,"unit":"V RMS","source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["source_Vrms_for_a1"]}},
+     {"id":"candidate.irms_design","profile":"candidate","name":"合成候选：设计点换能器端电流（0.9 MHz、a=1、100 Vpp）","value":0.0030000000000000005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["transducer_Irms_A"]}},
+-    {"id":"candidate.iamp_design","profile":"candidate","name":"合成候选：设计点功放输出端电流","value":0.04514376689236159,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["amplifier_output_Irms_A"]},"limitations":"若用户的5 mA指功放输出端，本候选在设计点不满足。"},
++    {"id":"candidate.iamp_design","profile":"candidate","name":"合成候选：设计点功放输出端电流","value":0.04514376689236159,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["amplifier_output_Irms_A"]},"limitations":"用户已确认5 mA的测点在换能器端（2026-10-16），功放输出端电流不受此上限约束，只作记录。〔原：若用户的5 mA指功放输出端，本候选在设计点不满足。〕"},
+     {"id":"candidate.current_soft","profile":"candidate","name":"合成候选：电流软阈值（换能器端口）","value":0.0045,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_soft_Arms"]}},
+-    {"id":"candidate.current_hard","profile":"candidate","name":"合成候选：电流硬阈值（换能器端口）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_hard_Arms"]},"limitations":"按换能器端口解释用户的5 mA上限；测点未定。"},
++    {"id":"candidate.current_hard","profile":"candidate","name":"合成候选：电流硬阈值（换能器端口）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_hard_Arms"]},"limitations":"等于用户5 mA RMS上限，测点在换能器端（2026-10-16确认）。〔原：按换能器端口解释用户的5 mA上限；测点未定。〕"},
+     {"id":"candidate.nominal_width","profile":"candidate","name":"合成候选：设计点有载半功率宽度","value":86872,"unit":"Hz","display_unit":"kHz","scale":0.001,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["nominal_peak_width_Hz"]},"adoption_reason":"与默认配置同式推导（review/baseline_3mA_parameters.py 写入候选配置）。"},
+     {"id":"pending.calcif.impedance","profile":"pending","name":"钙化声阻抗历史范围（待核实）","value":[2.5,7.8],"unit":"MRayl","value_kind":"unverified_range"},
+     {"id":"saijo.intima.c","profile":"saijo","name":"Saijo正常内膜声速","value":1568,"sd":18,"unit":"m/s"},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+index ce5f4ac8264817d69f6682a2a39b3dd42410da3d..d74a65f72d1301529d8145f6d15bc224c3090ecf 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+@@ -121,11 +121,22 @@ class ParameterSourceTests(unittest.TestCase):
+         self.assertTrue(all(x['binding']['source'].startswith('candidate_') for x in cand))
+         self.assertLess(e['candidate.irms_design']['value'], e['candidate.current_soft']['value'])
+         self.assertLess(e['candidate.current_soft']['value'], e['candidate.current_hard']['value'])
+-        # Measurement point undetermined: the amplifier side is far above 5 mA.
++        # The 5 mA limit is at the transducer port (confirmed 2026-10-16); the amplifier side is far above it, reported only.
+         self.assertGreater(e['candidate.iamp_design']['value'], e['candidate.current_hard']['value'])
+         cfg = json.loads((PLATFORM/'current/unified/config.json').read_text(encoding='utf-8'))
+         self.assertNotIn('candidates/', cfg['baseline_design_file'])
+ 
++    def test_user_current_limit_is_bound_at_the_transducer_port(self):
++        e = self.entries()
++        user = e['operating.irms']
++        self.assertEqual(user['binding'], {'source': 'config', 'path': ['user_current_limit_Arms']})
++        self.assertEqual(bound_value(user['binding'], self.data['sources']), 0.005)
++        self.assertIn('换能器端', user['name'])
++        # The candidate's hard limit does not exceed it; the historical default's limits do, and say so.
++        self.assertLessEqual(e['candidate.current_hard']['value'], user['value'])
++        self.assertGreater(e['current_soft_Arms']['value'], user['value'])
++        self.assertIn('高于', e['current_hard_Arms']['limitations'])
++
+     def test_binding_cannot_escape_platform(self):
+         self.data['sources']['load']['path'] = '../outside.py'
+         with self.assertRaises(ValueError):
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index 0212831c9fb89a01426a83f3b827f84e1624dc21..a194950f9e940d58efb2da4710648b679d564205 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -70,7 +70,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ ## 保护与失败处理
+ 
+-- 电压硬限 160 Vpp 是用户边界；130 Vpp 软限、5.5/6 mA RMS 软/硬限是待验证的假设控制阈值。电流限值作用于换能器端口；用户后来说明 5 mA RMS 是上限，但测点未定（换能器端或功放输出端），所以批次报告另列功放输出端电流，两种解释都保留。
++- 电压硬限 160 Vpp 是用户边界；130 Vpp 软限、5.5/6 mA RMS 软/硬限是待验证的假设控制阈值。电流限值作用于换能器端口；用户后来说明 5 mA RMS 是上限，但测点未定（换能器端或功放输出端），所以批次报告另列功放输出端电流，两种解释都保留。〔2026-10-16 补充〕用户已确认 5 mA 的测点在换能器端。配置项 `user_current_limit_Arms`（0.005 A）记录这一上限：每个批次逐行核对保护后的换能器端电流，报告「用户电流上限核对」一节和 `user_current_limit_check.csv` 列出各策略超限的时长、行数与电能，并列出验收参考点电流超过上限的场景；它只核对、报告，不改变保护阈值。默认配置的软/硬限 5.5/6 mA 高于上限，结果不满足用户电流边界；合成候选的 4.5/5.0 mA 不超过上限。功放输出端电流不受此上限约束，仍另列。
+ - 所有普通控制、扫描、相位试探、重试等待和回退都调用同一个保护器，实际幅度每次同步；先降幅再改变频率，渐升冻结频率。
+ - 假设硬停保持 60 ms、恢复保持 100 ms、软降幅保持 100 ms；渐升速率 2.5 每秒（等价每 20 ms +0.05），不能通过密集扫描点加速升幅。
+ - 无效/无信号/平坦扫描不得成功。失败保留旧可信目标，不采用末扫描频率；实际回退动作也走保护接口，并保持 a≤0.4。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
+index 8f6fbab5b9794d2244f7aa227d0a4fd55fbad62f..f5ede492e0073b60a35856fc800de3289e1cdce8 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
+@@ -37,6 +37,8 @@ def audit(folder: Path):
+     max_pre_guard_voltage = max_post_guard_voltage = 0.
+     max_energy_error = max_voltage_error = max_current_error = max_power_error = 0.
+     details = []
++    limit = config.get('user_current_limit_Arms')  # absent before P7: nothing to recompute
++    user_recomputed = {}
+     for path in sorted((folder/'executions').glob('*.csv')):
+         rows = read_csv(path)
+         key = rows[0]['suite'],rows[0]['strategy']
+@@ -48,6 +50,10 @@ def audit(folder: Path):
+             r['start_us']==r['action_start_us'] for r in rows)
+         max_pre_guard_voltage=max(max_pre_guard_voltage,max(float(r['pre_guard_vport_Vpp']) for r in rows))
+         max_post_guard_voltage=max(max_post_guard_voltage,max(float(r['vport_Vpp']) for r in rows))
++        if limit is not None:
++            above = [r for r in rows if float(r['iport_Arms'])>limit]
++            user_recomputed[key] = (len(above),sum(int(r['duration_us']) for r in above),
++                                    1000*max(float(r['iport_Arms']) for r in rows))
+         max_all_v=max(float(r['vport_Vpp']) for r in rows)
+         max_all_v=max(max_all_v,max(float(r['pre_guard_vport_Vpp']) for r in rows))
+         if abs(max_all_v-float(summary['peak_voltage_Vpp']))>1e-9:
+@@ -101,6 +107,20 @@ def audit(folder: Path):
+             if any(r['applied_amplitude']!=r['protection_amplitude'] for r in cr):
+                 problems.append('actuator_state:'+path.name)
+         details.append(dict(suite=key[0],strategy=key[1],rows=len(rows),energy_J_recomputed=actual))
++    user_limit = 'not checked: configuration has no user_current_limit_Arms (batch before P7)'
++    if limit is not None:
++        if 'user_current_limit_check.csv' not in manifest['files']:
++            problems.append('user_limit:missing_file')
++        else:
++            recorded = {(r['suite'],r['strategy']):r for r in read_csv(folder/'user_current_limit_check.csv')}
++            for key,(n,t,peak) in user_recomputed.items():
++                r = recorded.get(key)
++                if (r is None or int(r['rows_above'])!=n or int(r['time_above_us'])!=t
++                        or abs(float(r['peak_post_guard_mArms'])-peak)>1e-9):
++                    problems.append('user_limit:'+'_'.join(key))
++        user_limit = dict(value_Arms=limit,rows_above=sum(n for n,_,_ in user_recomputed.values()),
++                          timelines_with_rows_above=sum(n>0 for n,_,_ in user_recomputed.values()),
++                          max_post_guard_current_mArms=max(p for _,_,p in user_recomputed.values()))
+     # Reference-grid discretization diagnostic only. Does NOT replace frozen
+     # denominators or reclassify passes; 10 Hz is also a grid, not an exact bound.
+     fine_check = []
+@@ -118,6 +138,7 @@ def audit(folder: Path):
+         manifest_files_verified=len(manifest['files']),timelines=len(details),executed_rows=total_rows,
+         executed_actions=total_actions,post_guard_hold_violation_rows=total_violating_rows,
+         pre_guard_hard_observations=pre_guard_hard_observations,
++        user_current_limit_recomputed=user_limit,
+         max_pre_guard_voltage_Vpp=max_pre_guard_voltage,max_post_guard_hold_voltage_Vpp=max_post_guard_voltage,
+         max_energy_recompute_error_J=max_energy_error,max_voltage_recompute_error_Vpp=max_voltage_error,
+         max_current_recompute_error_Arms=max_current_error,max_power_recompute_error_W=max_power_error,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
+index 03710285013216cd40721a4f3082eb43037008fe..6464c4c436a02465abc3c517dab76922b190e0d8 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
+@@ -25,7 +25,8 @@
+ - 不能用「端面积缩为 0.6 倍、同电压下振速不变、Q 不变」来解释 3 mA：同材料同长度缩面积时，
+   按同一 Mason 模型重算，Q 与 fs 都会变，|Z| 的比约 1.9 而不是 5/3。
+ - 5 mA 的测点未定。这里的电流限值按换能器端口解释；若 5 mA 指功放输出端，本候选与默认配置在设计点都不满足
+-  （分别约 45 mA 与 58 mA）。
++  （分别约 45 mA 与 58 mA）。〔2026-10-16 补充〕用户已确认测点在换能器端：本候选设计点 3 mA、软/硬限 4.5/5.0 mA，
++  不超过上限，正式批次换能器端电流最高 3.38 mA；功放输出端电流不受此上限约束。默认配置的软/硬限 5.5/6 mA 高于上限。
+ - 最大端口有功功率不自动等于最大振幅或声功率：P_Rm 把内部损耗与辐射合在一起，真实器件里需要单独识别。
+ 
+ ## 怎么跑
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+index 3d4d2ea2f483eb38e9a4b11ccca72bebf50f29a6..5d10f228e12e1e90a9ef8cf0fc9f4497e8067c7e 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+@@ -1,10 +1,12 @@
+ {
+   "version": "plan-three-strategy-v1-candidate-synthetic-q13p8-3mA",
+   "parameter_origin": "synthetic_candidate_constructed_not_a_device_fit_non_measured",
+-  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; user: 5 mA RMS is an upper limit, recommended lower, measurement point unspecified (transducer port or amplifier output)",
++  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; user: 5 mA RMS is an upper limit at the transducer port (measurement point confirmed 2026-10-16), recommended lower",
+   "baseline_design_file": "candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json",
+   "baseline_calibration_file": "candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json",
+-  "current_limit_measurement_point": "transducer_port, i.e. one interpretation of the user 5 mA upper limit; under the amplifier-output interpretation this candidate draws about 45 mA RMS at its design point and does not comply",
++  "current_limit_measurement_point": "transducer_port, where the user 5 mA RMS upper limit is measured (confirmed by the user 2026-10-16); this candidate has a 3 mA design point and 4.5/5.0 mA soft/hard limits, not above the limit; amplifier output current (about 45 mA RMS at the design point) is not subject to the limit and is reported only",
++  "user_current_limit_Arms": 0.005,
++  "user_current_limit_rule": "user upper limit on the RMS current at the transducer port, the same point as current_soft_Arms/current_hard_Arms (measurement point confirmed by the user 2026-10-16); every execution row after the guard is checked against it and reported per strategy; it does not change the guard limits",
+   "frequency_min_Hz": 800000,
+   "frequency_max_Hz": 1000000,
+   "initial_frequency_Hz": 900000,
+diff --git "a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json" "b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json"
+index c144a69bb0fd240d3015278dee7cdd63b7f95b4e..2491c5470b24d0df3bc1132dd314edc9f19c8e58 100644
+--- "a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json"
++++ "b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json"
+@@ -47,7 +47,7 @@
+     "impedance_scale": 1.6666666666666667,
+     "design_point_transducer_current_Arms": 0.003,
+     "design_point_amplifier_output_current_Arms": 0.04514376689236159,
+-    "current_measurement_point": "限值作用于换能器端口，这只是用户「5 mA 上限」的一种测点解释；按功放输出端解释，本候选在设计点不满足",
++    "current_measurement_point": "限值作用于换能器端口，即用户「5 mA RMS 上限」的测点（用户 2026-10-16 确认）；本候选设计点 3 mA、软/硬限 4.5/5.0 mA，不超过该上限。功放输出端电流（设计点约 45 mA）不受此上限约束，只另列",
+     "geometric_scaling_caveat": "同材料、同长度、端面积缩为 0.6 倍时，按本仓库 Mason 模型（血液、空气背衬）重算，Q、fs 都会变，|Z| 比约 1.9 而非 5/3；均匀缩放不能保证「电流减小而振速不变」",
+     "previous_baseline": {
+       "C0_F": 6.858064105198409e-12,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 3f74ce1cba838551ac20d71c9153c2e82ceb2252..ad6772870532676f9cada6fc5b92bfc5925f2913 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -4,7 +4,9 @@
+   "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; 5 mA interpreted as RMS by assumption",
+   "baseline_design_file": "stage2_matching/stage2_匹配设计参数.json",
+   "baseline_calibration_file": "stage2_matching/stage2_控制源幅度校准.json",
+-  "current_limit_measurement_point": "transducer_port; the user 5 mA RMS upper limit has no stated measurement point (transducer port or amplifier output); amplifier output current is reported separately",
++  "current_limit_measurement_point": "transducer_port, where the user 5 mA RMS upper limit is measured (confirmed by the user 2026-10-16); this historical regression configuration has its 5 mA design point on that limit and 5.5/6.0 mA soft/hard limits above it; amplifier output current is not subject to the limit and is reported only",
++  "user_current_limit_Arms": 0.005,
++  "user_current_limit_rule": "user upper limit on the RMS current at the transducer port, the same point as current_soft_Arms/current_hard_Arms (measurement point confirmed by the user 2026-10-16); every execution row after the guard is checked against it and reported per strategy; it does not change the guard limits",
+   "frequency_min_Hz": 800000,
+   "frequency_max_Hz": 1000000,
+   "initial_frequency_Hz": 900000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index bbe995429b4fd0d4528acb0a7b0302c1571a462f..c64f0640107b4e790a26126096076a4ddffb5f5a 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -66,7 +66,68 @@ def phase_lines(config):
+             '- 中心恢复门控只作用于 gain_v1；newton_v2 自带平台等待（满幅，或两个连续同幅度的普通控制样本）。']
+ 
+ 
+-def make_report(folder, batch, config, overall, segments, test_result, amplifier):
++def user_limit_check(rows, limit_Arms):
++    """Transducer-port current after the guard against the user's upper limit; reported only, the guard is unchanged."""
++    above = [r for r in rows if r['iport_Arms'] > limit_Arms]
++    pre = [r for r in rows if r['pre_guard_sample_here']]
++    return dict(user_limit_mArms=1000*limit_Arms,
++                peak_post_guard_mArms=1000*max(r['iport_Arms'] for r in rows),
++                rows=len(rows), rows_above=len(above),
++                time_us=sum(r['duration_us'] for r in rows), time_above_us=sum(r['duration_us'] for r in above),
++                energy_J=sum(r['p_rm_W']*r['duration_us'] for r in rows)/1e6,
++                energy_above_J=sum(r['p_rm_W']*r['duration_us'] for r in above)/1e6,
++                peak_pre_guard_mArms=1000*max([r['pre_guard_iport_Arms'] for r in pre]+[0.]),
++                pre_guard_predictions_above=sum(r['pre_guard_iport_Arms'] > limit_Arms for r in pre))
++
++
++def reference_currents(config, ref, cases):
++    """Per case: transducer-port current at the policy reference optimum (the acceptance denominator), and the
++    best P_Rm on the same grid with the current also capped at the user limit, as a fraction of that reference."""
++    capped = references(dict(config,current_soft_Arms=min(config['current_soft_Arms'],config['user_current_limit_Arms'])))
++    return {cid: dict(current_Arms=float(model.response(r['policy']['frequency_Hz'],cases[cid])['iport_irms_A'][0])*r['policy']['amplitude'],
++                      within_limit_fraction=capped[cid]['policy']['power_W']/r['policy']['power_W'])
++            for cid, r in ref.items()}
++
++
++def current_limit_line(config):
++    user, soft, hard = (1000*config[k] for k in ('user_current_limit_Arms','current_soft_Arms','current_hard_Arms'))
++    verdict = (f'本配置电流软/硬限 {soft:g}/{hard:g} mA 不超过该上限' if config['current_hard_Arms'] <= config['user_current_limit_Arms']
++               else f'本配置电流软/硬限 {soft:g}/{hard:g} mA 高于该上限，保护放行的电流可以超过它，结果不满足用户电流边界')
++    return (f'- 电流限值作用于换能器端口；用户 {user:g} mA RMS 上限的测点也在换能器端（用户 2026-10-16 确认）。{verdict}，'
++            '逐策略核对见「用户电流上限核对」一节。功放输出端电流不受这一上限约束，见下表最后一列。')
++
++
++def user_limit_lines(config, user_limit, ref_current):
++    suites = len({suite for suite, _ in user_limit})
++    limit = config['user_current_limit_Arms']
++    above = {cid: v for cid, v in ref_current.items() if v['current_Arms'] > limit}
++    blocked = {cid: v for cid, v in above.items() if v['within_limit_fraction'] < config['capture_threshold']}
++    lines = ['', f"### 用户电流上限核对（换能器端 {1000*config['user_current_limit_Arms']:g} mA RMS）", '',
++             '逐行统计保护后的换能器端电流，覆盖本批次全部日程；只核对、报告，不改变保护阈值。'
++             '保护前预测是旧指令在新负载下的准稳态预测，只计点数，不赋予持续时间。逐日程数字见 user_current_limit_check.csv。', '',
++             f'|策略|保护后峰值 mA RMS|超过上限的时间 %|超过上限的执行行|含超限行的日程/{suites}|超限期间电能占全程 %|保护前预测峰值 mA RMS|保护前预测超限点数|',
++             '|---|---:|---:|---:|---:|---:|---:|---:|']
++    for name in STRATEGIES:
++        rs = [v for (_, s), v in user_limit.items() if s == name]
++        time_us, energy = sum(v['time_us'] for v in rs), sum(v['energy_J'] for v in rs)
++        lines.append(f"|{name}|{max(v['peak_post_guard_mArms'] for v in rs):.3f}|"
++                     f"{100*sum(v['time_above_us'] for v in rs)/time_us:.2f}|{sum(v['rows_above'] for v in rs)}|"
++                     f"{sum(v['rows_above'] > 0 for v in rs)}|{100*sum(v['energy_above_J'] for v in rs)/energy if energy else 0.:.2f}|"
++                     f"{max(v['peak_pre_guard_mArms'] for v in rs):.3f}|{sum(v['pre_guard_predictions_above'] for v in rs)}|")
++    text = f'验收参考（软限可行最大 P_Rm 点，同一参考网格）处的换能器端电流：{len(above)}/{len(ref_current)} 个场景超过上限'
++    if above:
++        text += ('（' + '、'.join(f"{cid} {1000*v['current_Arms']:.3f} mA" for cid, v in above.items()) + '）。'
++                 f"同一网格上把电流也限在上限以内，{len(blocked)} 个场景最多只能达到参考的 "
++                 + ('、'.join(f"{cid} {100*v['within_limit_fraction']:.2f}%" for cid, v in blocked.items()) or '—')
++                 + f"，低于 {100*config['capture_threshold']:g}% 门槛：不超过上限的控制在这些场景上不能按本参考通过；"
++                 f"其余 {len(above)-len(blocked)} 个换一个频点仍能达到门槛。")
++    else:
++        text += '。'
++    lines += ['', text + f"全部场景中参考点电流最高 {1000*max(v['current_Arms'] for v in ref_current.values()):.3f} mA。"]
++    return lines
++
++
++def make_report(folder, batch, config, overall, segments, test_result, amplifier, user_limit, ref_current):
+     hist = [r for r in overall if r['suite']=='HISTORICAL_12']
+     fs = [r for r in segments if r['suite']=='HISTORICAL_12' and r['segment_index']==3]
+     coverage = [r for r in segments if r['suite'].startswith('COVER_') and r['segment_index']==1]
+@@ -83,7 +144,7 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+       *phase_lines(config),
+       f"- 基线：{model.BASELINE_ID}（{config.get('baseline_design_file', model.DEFAULT_DESIGN_FILE)}）；保护软限 {soft}、硬限 {hard}。",
+-      '- 电流限值作用于换能器端口；用户 5 mA 上限的测点未定（换能器端或功放输出端），功放输出端电流见下表最后一列，不受限值约束。', '',
++      current_limit_line(config), '',
+       '## 历史 12 段日程的新批次结果', '',
+       '|策略|通过段数/12|全程电能 J|相对策略可行参考电能 %|峰值 Vpp（含保护前）|峰值 mA RMS（含保护前）|扫描失败次数|功放输出端电流峰值 mA RMS|',
+       '|---|---:|---:|---:|---:|---:|---:|---:|']
+@@ -98,6 +159,7 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+         for name in STRATEGIES:
+             count=sum(r['settled'] for r in coverage if r['strategy']==name)
+             lines.append(f'|{name}|{count}/{len(coverage)//len(STRATEGIES)}|')
++    lines += user_limit_lines(config, user_limit, ref_current)
+     lines += ['', '### fs−5% 段（2.4–3.2 s）', '',
+       '|策略|连续验收|最长合格串|进入/确认 ms|稳态误差 %|固定尾窗误差 %|',
+       '|---|---|---:|---|---|---:|']
+@@ -120,6 +182,7 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+       '10. 本轮不调参优化排名。此处为模糊推测内容：进一步整定相位增益、扫描周期或失败后可观测重置规则可能改善表现，但本批次没有验证。', '',
+       '## 查阅入口', '',
+       '- formal_three_strategy_summary.csv：同口径综合表；per_segment_metrics.csv：逐段验收与尾窗诊断。',
++      '- user_current_limit_check.csv：逐日程、逐策略的换能器端电流对用户上限的核对（保护后逐行统计，另列保护前预测）。',
+       '- executions/*.csv：所有实际阶段、候选/实际幅度、单位、测点和边界切分。',
+       '- events/*.json：扫描失败、重试、保护、相位更新、饱和事件。',
+       '- configuration.json / phase_calibration.json / scenario_registry.json / schedules.json：冻结输入。',
+@@ -170,6 +233,7 @@ def main():
+     ref = references(config)
+     json_write(folder/'reference_optima.json',ref)
+     cases = model.scenario_map()
++    ref_current = reference_currents(config,ref,cases)
+     json_write(folder/'scenario_registry.json',[dict(**asdict(s),origin='hypothetical_baseline_or_scan_variable_non_measured') for s in cases.values()])
+     phase = float(model.response(config['initial_frequency_Hz'],cases['CASE_000_BASELINE'])['phase_deg'][0])
+     json_write(folder/'phase_calibration.json',dict(target_deg=phase,calibration_case='CASE_000_BASELINE',
+@@ -186,7 +250,7 @@ def main():
+     print('Phasors RMS; Vpp=2*sqrt(2)*Vrms; S=V*conj(I); P=real(S), Q=imag(S).',flush=True)
+     print('phase_in=arg(Vinput/Isource), phase_port separate; frequency Hz; power W; time integer us.',flush=True)
+     all_segments, all_overall = [], []
+-    amplifier = {}
++    amplifier, user_limit = {}, {}
+     for suite, ids in schedules.items():
+         for strategy in STRATEGIES:
+             engine = Engine(config,ids,strategy,suite)
+@@ -194,6 +258,7 @@ def main():
+             per, summary = evaluate(engine.rows,engine.events,config,ref)
+             amplifier[(suite,strategy)] = 1000*max(abs(complex(r['i_source_real_Arms'],r['i_source_imag_Arms']))
+                                                    for r in engine.rows)
++            user_limit[(suite,strategy)] = user_limit_check(engine.rows,config['user_current_limit_Arms'])
+             for row in per:
+                 row['batch_id'] = batch
+             summary['batch_id'] = batch
+@@ -206,6 +271,7 @@ def main():
+     csv_write(folder/'formal_three_strategy_summary.csv',all_overall)
+     csv_write(folder/'historical_12_three_strategy_table.csv',[r for r in all_overall if r['suite']=='HISTORICAL_12'])
+     csv_write(folder/'registered34_target_segment_metrics.csv',[r for r in all_segments if r['suite'].startswith('COVER_') and r['segment_index']==1])
++    csv_write(folder/'user_current_limit_check.csv',[dict(suite=suite,strategy=strategy,**v) for (suite,strategy),v in user_limit.items()])
+     json_write(folder/'run_metadata.json',dict(batch_id=batch,source_tree_sha256=code_id,source_hashes=code_hashes,
+         python=sys.version,numpy=np.__version__,platform=platform.platform(),command=sys.argv,
+         source_model_provenance='v2.1 circuit model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; '
+@@ -217,12 +283,22 @@ def main():
+         current_limit_measurement_point=config.get('current_limit_measurement_point','transducer_port'),
+         phase_centre_recovery_gate=bool(config.get('phase_centre_recovery_gate',False)),
+         phase_feedback=dict(zip(('tracker','signal','target_policy'),phase_mode(config))),
++        user_current_limit=dict(value_Arms=config['user_current_limit_Arms'],measurement_point='transducer_port',
++            guard_hard_limit_within=config['current_hard_Arms']<=config['user_current_limit_Arms'],
++            peak_post_guard_mArms=max(v['peak_post_guard_mArms'] for v in user_limit.values()),
++            rows_above=sum(v['rows_above'] for v in user_limit.values()),
++            timelines_with_rows_above=sum(v['rows_above']>0 for v in user_limit.values()),
++            reference_optima_above={cid:v for cid,v in ref_current.items() if v['current_Arms']>config['user_current_limit_Arms']},
++            reference_unreachable_within_limit=[cid for cid,v in ref_current.items()
++                if v['current_Arms']>config['user_current_limit_Arms'] and v['within_limit_fraction']<config['capture_threshold']],
++            reference_optimum_current_max_Arms=max(v['current_Arms'] for v in ref_current.values()),
++            per_timeline_file='user_current_limit_check.csv'),
+         amplifier_output_current_peak_mArms=dict(all_timelines=max(amplifier.values()),
+             historical_12={s:amplifier[('HISTORICAL_12',s)] for s in STRATEGIES}),
+         strategies=STRATEGIES,suite_count=len(schedules),tests_passed=result.testsRun,
+         control_uses_schedule_or_offline_reference=False,ideal_guard_uses_current_model=True,
+         phase_target_deg=phase,physical_scope='hypothetical linear quasi-steady electrical model; no hardware/acoustic claim'))
+-    make_report(folder,batch,config,all_overall,all_segments,result,amplifier)
++    make_report(folder,batch,config,all_overall,all_segments,result,amplifier,user_limit,ref_current)
+     json_write(folder/'manifest.json',dict(batch_id=batch,source_tree_sha256=code_id,
+         files={p.relative_to(folder).as_posix():sha(p) for p in sorted(folder.rglob('*')) if p.is_file()}))
+     assert verify(folder)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index 9f1fbae18cdae76d83471e781368f813e1be2fab..60553dc752ee1e036a3ed29df72f60638ddcaa20 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -17,6 +17,7 @@ from controllers import (STRATEGIES, CaptureResult, CaptureSupervisor, CentreRec
+ from engine import Engine, Measurement, Protection, measured_score, valid_measurement
+ from metrics import energy, evaluate, references
+ from models import model_v2_1 as model
++from run_unified import current_limit_line, reference_currents, user_limit_check, user_limit_lines
+ 
+ ROOT = Path(__file__).resolve().parents[1]
+ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
+@@ -1105,5 +1106,83 @@ class CapturePOTests(unittest.TestCase):
+                 self.assertEqual(overall['logged_duration_s'], 1.6)
+ 
+ 
++
++class UserCurrentLimitTests(unittest.TestCase):
++    """User 5 mA RMS upper limit, measured at the transducer port (confirmed 2026-10-16): checked and reported only."""
++
++    def setUp(self):
++        self.cand = json.loads(CANDIDATE.read_text(encoding='utf-8'))
++
++    @staticmethod
++    def row(i, dt, p=.1, pre=False, pre_i=0.):
++        return dict(iport_Arms=i, duration_us=dt, p_rm_W=p, pre_guard_sample_here=pre, pre_guard_iport_Arms=pre_i)
++
++    def test_both_configurations_record_the_limit_at_the_transducer_port(self):
++        for cfg in (CFG, self.cand):
++            with self.subTest(version=cfg['version']):
++                self.assertEqual(cfg['user_current_limit_Arms'], .005)
++                self.assertTrue(cfg['current_limit_measurement_point'].startswith('transducer_port'))
++                self.assertIn('confirmed', cfg['current_limit_measurement_point'])
++                for stale in ('no stated', 'unspecified', 'one interpretation'):
++                    self.assertNotIn(stale, cfg['current_limit_measurement_point'])
++                    self.assertNotIn(stale, cfg['user_boundaries'])
++        # The candidate's guard stays inside the limit; the historical default's does not.
++        self.assertLessEqual(self.cand['current_hard_Arms'], self.cand['user_current_limit_Arms'])
++        self.assertGreater(CFG['current_soft_Arms'], CFG['user_current_limit_Arms'])
++
++    def test_check_counts_rows_strictly_above_the_limit(self):
++        rows = [self.row(.004, 20000, pre=True, pre_i=.0062), self.row(.005, 20000), self.row(.0051, 10000, p=.2)]
++        c = user_limit_check(rows, .005)
++        self.assertEqual((c['rows'], c['rows_above'], c['time_us'], c['time_above_us']), (3, 1, 50000, 10000))
++        self.assertAlmostEqual(c['energy_J'], .1*.04+.2*.01, places=15)
++        self.assertAlmostEqual(c['energy_above_J'], .2*.01, places=15)
++        self.assertAlmostEqual(c['peak_post_guard_mArms'], 5.1, places=12)
++        self.assertEqual(c['pre_guard_predictions_above'], 1)
++        self.assertAlmostEqual(c['peak_pre_guard_mArms'], 6.2, places=12)
++
++    def test_report_states_compliance_per_configuration(self):
++        self.assertIn('高于该上限', current_limit_line(CFG))
++        self.assertIn('不满足用户电流边界', current_limit_line(CFG))
++        self.assertIn('不超过该上限', current_limit_line(self.cand))
++        for cfg in (CFG, self.cand):
++            self.assertNotIn('未定', current_limit_line(cfg))
++        user = {('S', s): user_limit_check([self.row(.0051, 20000)], .005) for s in STRATEGIES}
++        refs = {BASE: dict(current_Arms=.0054, within_limit_fraction=.97), 'X': dict(current_Arms=.003, within_limit_fraction=1.)}
++        text = '\n'.join(user_limit_lines(CFG, user, refs))
++        for s in STRATEGIES:
++            self.assertIn(f'|{s}|5.100|100.00|1|1|100.00|0.000|0|', text)
++        self.assertIn('1/2 个场景超过上限', text)
++        self.assertIn(f'1 个场景最多只能达到参考的 {BASE} 97.00%', text)
++
++    def test_default_references_lie_above_the_limit_and_candidate_inside(self):
++        cur = reference_currents(CFG, references(CFG), model.scenario_map())
++        above = {c for c, v in cur.items() if v['current_Arms'] > CFG['user_current_limit_Arms']}
++        blocked = {c for c in above if cur[c]['within_limit_fraction'] < CFG['capture_threshold']}
++        self.assertEqual(len(above), 11)
++        self.assertEqual(blocked, {'CASE_FS_M3', 'CASE_LM_P5', 'CASE_CM_P5', 'CASE_CMATCH_M5'})
++        # The default design point sits on the limit (5 mA at 0.9 MHz, a=1).
++        self.assertAlmostEqual(cur[BASE]['current_Arms'], .005, places=9)
++        self.addCleanup(model.configure, CFG)
++        model.configure(self.cand)
++        cur = reference_currents(self.cand, references(self.cand), model.scenario_map())
++        self.assertLess(max(v['current_Arms'] for v in cur.values()), .0035)
++        self.assertTrue(all(v['within_limit_fraction'] == 1. for v in cur.values()))
++
++    def test_fixed_frequency_exceeds_the_limit_only_on_the_default(self):
++        # C0 +30 % at 0.9 MHz, a=1: 5.124 mA, inside the default's own 5.5 mA soft limit; never on the candidate.
++        schedule = [BASE, 'CASE_C0_P30', BASE]
++        e = Engine(copy.deepcopy(CFG), schedule, 'FIXED', 'TEST')
++        run_policy(Executor(e), 'FIXED', 0.)
++        c = user_limit_check(e.rows, CFG['user_current_limit_Arms'])
++        self.assertEqual(c['time_above_us'], CFG['segment_us'])
++        self.assertAlmostEqual(c['peak_post_guard_mArms'], 5.124166, places=5)
++        self.assertLess(c['peak_post_guard_mArms'], 1000*CFG['current_soft_Arms'])
++        self.addCleanup(model.configure, CFG)
++        model.configure(self.cand)
++        e = Engine(copy.deepcopy(self.cand), schedule, 'FIXED', 'TEST')
++        run_policy(Executor(e), 'FIXED', 0.)
++        self.assertEqual(user_limit_check(e.rows, self.cand['user_current_limit_Arms'])['rows_above'], 0)
++
++
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

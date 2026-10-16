@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "limits_5p5_6p0_as_is": {},
+    "limits_4p5_5p0": {
+      "current_soft_Arms": 0.0045,
+      "current_hard_Arms": 0.005
+    }
+  },
+  "root_config_sha256": "ad5d84e18fa90f47b4958fbe8127034b09a66f8b68a663157b05c8b5794ffbd6",
+  "formal_batch": "UNIFIED_20261016T153842_183119Z_2831be3a",
+  "self_check_as_is_equals_formal_batch": true,
+  "scope": "non-formal what-if; not registered"
+}

@@ -22,6 +22,9 @@
      按功放输出端解释，本候选在设计点的功放电流为 45.14 mA rms，不满足。相位反馈恢复门控打开。
      〔补充 2026-10-16，review/27〕P4 起配置里有 nominal_peak_width_Hz（设计点有载半功率宽度），
      候选取本候选自己的值（同式推导，86872 Hz）；其余新增项随默认配置继承。
+     〔补充 2026-10-16，review/28〕用户确认 5 mA 的测点在换能器端。P7 起默认配置有 user_current_limit_Arms，
+     见到它时，候选配置与设计文件的测点说明改写为「换能器端、不超过上限」，user_current_limit_* 随默认配置继承；
+     没有它（P3–P6 的副本）时仍写原来的两种解释，旧副本照样逐值复核。
 
 只读 --root；--write 只写 <副本>/candidates/synthetic_q13p8_3mA/ 下三个文件（README.md 手写，不由本脚本生成），
 拒绝写原目录、workspace/、outputs/。--check 重新推导并与副本里的文件逐值比较。
@@ -48,8 +51,8 @@ DESIGN_FILE = 'stage2_匹配设计参数.json'
 CAL_FILE = 'stage2_控制源幅度校准.json'
 
 
-def derive(root: pathlib.Path) -> tuple[dict, dict, dict]:
-    """返回 (设计文件, 标定文件, 摘要)；只读 root。"""
+def derive(root: pathlib.Path, port_confirmed: bool = False) -> tuple[dict, dict, dict]:
+    """返回 (设计文件, 标定文件, 摘要)；只读 root。port_confirmed：目标副本是否已有 P7 的用户电流上限。"""
     _, _, _, model, cfg = PB.build(root)
     old_design = json.loads((root / 'stage2_matching' / DESIGN_FILE).read_text(encoding='utf-8'))
     old_cal = json.loads((root / 'stage2_matching' / CAL_FILE).read_text(encoding='utf-8'))
@@ -105,8 +108,11 @@ def derive(root: pathlib.Path) -> tuple[dict, dict, dict]:
         k_eff=KEFF, M_xc0_over_rm_at_fs=m_fixed, impedance_scale=k,
         design_point_transducer_current_Arms=DESIGN_CURRENT_A,
         design_point_amplifier_output_current_Arms=i_amp,
-        current_measurement_point=('限值作用于换能器端口，这只是用户「5 mA 上限」的一种测点解释；'
-                                   '按功放输出端解释，本候选在设计点不满足'),
+        current_measurement_point=(('限值作用于换能器端口，即用户「5 mA RMS 上限」的测点（用户 2026-10-16 确认）；'
+                                    '本候选设计点 3 mA、软/硬限 4.5/5.0 mA，不超过该上限。'
+                                    '功放输出端电流（设计点约 45 mA）不受此上限约束，只另列') if port_confirmed else
+                                   ('限值作用于换能器端口，这只是用户「5 mA 上限」的一种测点解释；'
+                                    '按功放输出端解释，本候选在设计点不满足')),
         geometric_scaling_caveat=('同材料、同长度、端面积缩为 0.6 倍时，按本仓库 Mason 模型（血液、空气背衬）重算，'
                                   'Q、fs 都会变，|Z| 比约 1.9 而非 5/3；均匀缩放不能保证「电流减小而振速不变」'),
         previous_baseline=dict(C0_F=base.c0, Rm_ohm=base.rm, Lm_H=base.lm, Cm_F=base.cm, fs_Hz=base.fs,
@@ -180,6 +186,17 @@ def candidate_config(default_cfg: dict, width_Hz: float | None = None) -> dict:
     })
     if 'nominal_peak_width_Hz' in cfg:          # P4 及以后的配置才有此项
         cfg['nominal_peak_width_Hz'] = round(width_Hz)
+    if 'user_current_limit_Arms' in cfg:        # P7 及以后：用户确认 5 mA 的测点在换能器端
+        cfg.update({
+            'user_boundaries': ('0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; user: 5 mA RMS is an '
+                                'upper limit at the transducer port (measurement point confirmed 2026-10-16), '
+                                'recommended lower'),
+            'current_limit_measurement_point': ('transducer_port, where the user 5 mA RMS upper limit is measured '
+                                                '(confirmed by the user 2026-10-16); this candidate has a 3 mA design '
+                                                'point and 4.5/5.0 mA soft/hard limits, not above the limit; amplifier '
+                                                'output current (about 45 mA RMS at the design point) is not subject '
+                                                'to the limit and is reported only'),
+        })
     return cfg
 
 
@@ -200,9 +217,9 @@ def main():
         raise SystemExit('原目录与补丁副本不能相同')
     if {'workspace', 'outputs'} & set(dest.parts):
         raise SystemExit(f'拒绝写入 workspace/ 或 outputs/：{dest}')
-    design, cal, summary = derive(root)
-    cfg = candidate_config(json.loads((dest / 'config.json').read_text(encoding='utf-8')),
-                           summary['loaded_width_Hz'])
+    default_cfg = json.loads((dest / 'config.json').read_text(encoding='utf-8'))
+    design, cal, summary = derive(root, port_confirmed='user_current_limit_Arms' in default_cfg)
+    cfg = candidate_config(default_cfg, summary['loaded_width_Hz'])
     for key, value in summary.items():
         print(f'{key:>12} = {value!r}')
     out = dest / CANDIDATE_DIR
