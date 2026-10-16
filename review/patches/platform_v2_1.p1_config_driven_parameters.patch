@@ -1,0 +1,501 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/README.md b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+index 5c993c6..5bfbdaa 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+@@ -30,6 +30,7 @@ python run_project.py verify     # 复核当前哈希、覆盖、失败分类
+ |正式网页入口|current_app.py|当前结果／版本证据／历史探索／LTspice实验|
+ |统一引擎|current/unified/|固定、周期扫频、相位反馈；统一执行与评分|
+ |采用补丁|current/patches/plan_three_strategy.scan_fault_taxonomy.patch|寻峰失败、保护抢占、测量失效、非平稳分类及有界预算|
++|采用补丁（2026-10-16，P1）|current/patches/platform_v2_1.p1_config_driven_parameters.patch|参数改从配置与设计文件读取（数值不变）、网页限值线跟随批次配置、报告另列功放输出端电流、来源登记修正|
+ |来源记录|current/integration_sources.json|上游提交、补丁哈希、排除范围|
+ |结果定位|current/active_batch.json|唯一明确批次及逐日志复核|
+ |历史平台|streamlit_app.py、run_all.py、results/tables/、figures/|保留旧数据；run_all是旧流水线，可能重写旧输出，本次未调用|
+@@ -62,7 +63,7 @@ Janů连续极值拟合完成合成回收、Jacobian和多初值对照；“0.22
+ - 连续验收：有效CONTROL、NORMAL、未冻结、≥98%、20 ms格点连续10样本；未通过不用回退样本。
+ - 参考为当前场景130 Vpp／5.5 mA软阈值、a≤1下100 Hz网格最大P_Rm；不是硬限最大值，不等于恢复基准功率。离散参考可能使比值略高于100%，不截断掩盖。
+ - 理想保护依赖精确当前模型。保护前预测可超过160 Vpp；保护后记录受限不证明真实动态硬限。反射代理只监测；未独立定义绝对功率上限。
+-- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。
++- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。用户后来说明5 mA是上限、推荐更小，但测点未定：平台电流限值作用于换能器端口，功放输出端电流另列（现有匹配网络下设计点约58 mA），两种解释都保留。
+ 
+ ## 历史保留与移交边界
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+index 3eac2a5..959c531 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+@@ -138,10 +138,10 @@ def render_results():
+             held(ax[0],rows,rows.vport_Vpp,strategy)
+             observed = rows[rows.pre_guard_sample_here]
+             ax[0].scatter(observed.start_us/1e6,observed.pre_guard_vport_Vpp,color='#be123c',s=10,label='保护前预测（点，不积分）')
+-            ax[0].axhline(160,color='red',ls=':',label='160 Vpp硬边界'); ax[0].axhline(130,color='#d97706',ls='--')
++            ax[0].axhline(cfg['voltage_hard_Vpp'],color='red',ls=':',label=f"{cfg['voltage_hard_Vpp']:g} Vpp硬边界"); ax[0].axhline(cfg['voltage_soft_Vpp'],color='#d97706',ls='--')
+             held(ax[1],rows,rows.iport_Arms*1000,strategy)
+             ax[1].scatter(observed.start_us/1e6,observed.pre_guard_iport_Arms*1000,color='#be123c',s=10)
+-            ax[1].axhline(6,color='red',ls=':'); ax[1].axhline(5.5,color='#d97706',ls='--')
++            ax[1].axhline(cfg['current_hard_Arms']*1000,color='red',ls=':'); ax[1].axhline(cfg['current_soft_Arms']*1000,color='#d97706',ls='--')
+             held(ax[2],rows,rows.applied_amplitude,strategy)
+             for a,label in zip(ax,['端口电压 (Vpp)','端口电流 (mA RMS)','实际幅度 a']):
+                 a.set_ylabel(label);a.set_xlim(lo,hi);a.grid(alpha=.2)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index bfac3f3..b27af24 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -1,6 +1,6 @@
+ {
+   "schema_version": 1,
+-  "updated": "2026-10-06",
++  "updated": "2026-10-16",
+   "scope": "只读来源登记：正式配置的全部数值型参数、BVD/源/匹配基线、负载原型声明常数、Saijo参考及待核实范围。不是所有历史脚本内部常数的完整目录，也不是新的仿真批次。",
+   "sources": {
+     "design": {"title": "冻结假设模型与匹配设计", "path": "current/unified/stage2_matching/stage2_匹配设计参数.json", "note": "项目内部设计记录，不是器件手册或测量结果。"},
+@@ -34,7 +34,7 @@
+     {"id":"bvd.lm","profile":"bvd","name":"机械支路电感 Lm","value":1.0402283862215378,"unit":"H","binding":{"source":"design","path":["bvd","Lm_H"]},"adoption_reason":"假设基线派生：Lm=Qm·Rm/(2πfs)；运行代码由fs、Rm、Qm重算，而非独立拟合。"},
+     {"id":"bvd.cm","profile":"bvd","name":"机械支路电容 Cm（不是Cmatch）","value":3.006260036180247e-14,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","Cm_F"]},"adoption_reason":"假设基线派生：Cm=1/[(2πfs)²Lm]；不是匹配电容。"},
+     {"id":"bvd.fs","profile":"bvd","name":"机械支路串联谐振频率 fs","value":900000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"binding":{"source":"design","path":["bvd","fs_Hz"]}},
+-    {"id":"bvd.qm","profile":"bvd","name":"基准机械品质因数 Qm","value":800,"unit":"1","binding":{"source":"model","mode":"keyword","name":"BASE_BVD","keyword":"qm"}},
++    {"id":"bvd.qm","profile":"bvd","name":"基准机械品质因数 Qm","value":800,"unit":"1","binding":{"source":"design","path":["bvd","Qm"]},"adoption_reason":"原写死于模型（qm=800.0）；2026-10-16起移入设计文件，数值不变。","limitations":"没有器件依据：既不是材料或器件测量值，也不是拟合结果；保留作历史回归基线，不认定其正确。"},
+     {"id":"match.l","profile":"bvd","name":"匹配电感 Lmatch","value":0.00010672581904440851,"unit":"H","display_unit":"μH","scale":1e6,"binding":{"source":"design","path":["design","l_active_H"]},"adoption_reason":"冻结有损L型匹配设计的数值结果，非实测电感。"},
+     {"id":"match.c","profile":"bvd","name":"匹配电容 Cmatch（不是Cm）","value":2.8359878734546773e-10,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["design","c_active_F"]}},
+     {"id":"match.ql","profile":"bvd","name":"匹配电感Q（0.9 MHz）","value":100,"unit":"1","binding":{"source":"design","path":["matching_loss_assumptions","inductor_Q_at_f0"]},"adoption_reason":"假设损耗；按基准频率折算固定ESR，不是所有频点Q恒定。"},
+@@ -43,7 +43,7 @@
+     {"id":"match.rc","profile":"bvd","name":"匹配电容串联ESR","value":0.6235528272631298,"unit":"Ω","binding":{"source":"design","path":["design","r_c_active_ohm_at_f0"]},"adoption_reason":"由R_C=1/(2πf0·Cmatch·QC)派生；模型中为频率无关电阻。"},
+     {"id":"source.rs","profile":"operating","name":"戴维南源阻抗 Rs","value":50,"unit":"Ω","source_ids":["user_design","model"],"binding":{"source":"model","mode":"constant","name":"BASE_RS"},"limitations":"模型只含实数源电阻；50 Ω射频系统推荐量级不等于建立完整射频功放、真实输出阻抗或热模型。"},
+     {"id":"operating.vpp","profile":"operating","name":"换能器端口标称电压目标","value":100,"unit":"Vpp","source_ids":["user_design","design"],"binding":{"source":"design","path":["calibration","target_transducer_Vpp"]}},
+-    {"id":"operating.irms","profile":"operating","name":"换能器端口电流推荐量级","value":5,"unit":"mA RMS","limitations":"5 mA RMS是用户推荐量级，不是电流硬限、热限或电流闭环设定。历史配置最初将RMS作为假设；后续用户明确该口径。本条无运行配置写入绑定。"},
++    {"id":"operating.irms","profile":"operating","name":"用户给出的电流量级（5 mA RMS，测点未定）","value":5,"unit":"mA RMS","limitations":"用户后来说明5 mA RMS是上限、推荐更小，但没有说明测点：可能指换能器端，也可能指功放输出端。平台的电流限值作用于换能器端口；按功放输出端解释时，现有匹配网络在100 Vpp设计点的功放电流约为58 mA（5 mA设计），不满足。两种解释都保留，待项目方确认。本条无运行配置写入绑定。"},
+     {"id":"source.a1","profile":"operating","name":"a=1时戴维南源电压（RMS）","identity":"假设模型内派生标定值，非实测","value":6.217360894531728,"unit":"V RMS","source_ids":["calibration","model"],"binding":{"source":"calibration","path":["source_Vrms_for_a1"]},"adoption_reason":"在冻结有损匹配基线上数值标定约100 Vpp端口工作点，再冻结此源幅度；不是源端100 Vpp。"},
+     {"id":"source.unit","profile":"operating","name":"匹配设计的归一化源幅度（非运行a=1）","identity":"归一化计算约定，非实际工作点","value":1,"unit":"V RMS","formal_use":false,"source_ids":["design"],"binding":{"source":"design","path":["calibration","unit_source_Vrms"]},"adoption_reason":"用于匹配前后同源归一化对照。不得将1 V RMS源条件与约170 mW标定工作点拼在一起。"},
+     {"id":"frequency_min_Hz","profile":"operating","name":"运行频率下限","value":800000,"unit":"Hz","display_unit":"MHz","scale":1e-6,"config_key":"frequency_min_Hz"},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+index d41adab..eb26bb0 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+@@ -1,5 +1,7 @@
+ from copy import deepcopy
+ import json
++from pathlib import Path
++import tempfile
+ import unittest
+ from current.catalog import PLATFORM, inside
+ from current.parameter_sources import (REQUIRED, bound_value, check_registry, expand_registry,
+@@ -96,8 +98,20 @@ class ParameterSourceTests(unittest.TestCase):
+         self.assertEqual(self.entries()['current_hard_Arms']['profile'], 'control')
+ 
+     def test_ast_reads_keyword_and_media_without_execution(self):
++        # Qm moved from a literal in the model to the design file on 2026-10-16 (value unchanged).
+         self.assertEqual(bound_value(self.entries()['bvd.qm']['binding'], self.data['sources']), 800)
++        self.assertEqual(self.entries()['bvd.qm']['binding']['source'], 'design')
+         self.assertEqual(bound_value(self.entries()['load.blood.c']['binding'], self.data['sources']), 1570)
++        # The keyword reader still reads literals only and never evaluates a call.
++        with tempfile.TemporaryDirectory() as tmp:
++            src = Path(tmp)/'decl.py'
++            sources = {'decl': {'path': 'decl.py'}}
++            binding = {'source': 'decl', 'mode': 'keyword', 'name': 'BASE', 'keyword': 'qm'}
++            src.write_text('BASE = make(c0=1.0, qm=800.0)\n', encoding='utf-8')
++            self.assertEqual(bound_value(binding, sources, root=tmp), 800.0)
++            src.write_text('BASE = make(c0=1.0, qm=float(spec["Qm"]))\n', encoding='utf-8')
++            with self.assertRaises(ValueError):
++                bound_value(binding, sources, root=tmp)
+ 
+     def test_binding_cannot_escape_platform(self):
+         self.data['sources']['load']['path'] = '../outside.py'
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index 8059dd7..98083c6 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -24,7 +24,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ ## 模块与边界
+ 
+-- `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。
++- `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。2026-10-16 起 C0、Rm、fs、Qm、匹配与源标定全部从配置指定的设计/标定文件读取（默认即 `stage2_matching/` 这一对；原写死在模型里的 Qm=800 移入设计文件，数值不变），模型里的限值常量从配置读取；`run_unified.py --config <文件>` 可运行另一套配置，正式登记仍只用默认 `config.json`。
+ - `engine.py`：共用实际执行、保护、整数微秒时间和分段积分日志。
+ - `controllers.py`：三个控制器；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
+ - `metrics.py`：唯一正式指标函数，不合格段的稳态误差为空值，不以尾窗/回退替代。
+@@ -36,7 +36,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ ## 统一的物理和信号口径
+ 
+-基准假设：fs=0.9 MHz、Qm=800、Rm≈7352.94 Ω、C0≈6.858 pF。Lm/Cm 为机械支路电学等效元件，不是实际绕制电感。
++基准假设：fs=0.9 MHz、Qm=800、Rm≈7352.94 Ω、C0≈6.858 pF。Lm/Cm 为机械支路电学等效元件，不是实际绕制电感。Qm=800 同样没有器件依据（不是测量或拟合值），保留作历史回归基线，不认定其正确。
+ 戴维南源 a=1 对应约 6.21736 V RMS、Rs=50 Ω，匹配后换能器端约 100 Vpp / 5 mA RMS / 170 mW。
+ 全部 BVD、匹配损耗、源阻抗为假设基线；场景变化为扫描变量；无实测器件参数。
+ 
+@@ -56,7 +56,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ ## 保护与失败处理
+ 
+-- 电压硬限 160 Vpp 是用户边界；130 Vpp 软限、5.5/6 mA RMS 软/硬限是待验证的假设控制阈值。
++- 电压硬限 160 Vpp 是用户边界；130 Vpp 软限、5.5/6 mA RMS 软/硬限是待验证的假设控制阈值。电流限值作用于换能器端口；用户后来说明 5 mA RMS 是上限，但测点未定（换能器端或功放输出端），所以批次报告另列功放输出端电流，两种解释都保留。
+ - 所有普通控制、扫描、相位试探、重试等待和回退都调用同一个保护器，实际幅度每次同步；先降幅再改变频率，渐升冻结频率。
+ - 假设硬停保持 60 ms、恢复保持 100 ms、软降幅保持 100 ms；渐升速率 2.5 每秒（等价每 20 ms +0.05），不能通过密集扫描点加速升幅。
+ - 无效/无信号/平坦扫描不得成功。失败保留旧可信目标，不采用末扫描频率；实际回退动作也走保护接口，并保持 a≤0.4。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
+index ec01de9..8f6fbab 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
+@@ -23,6 +23,7 @@ def read_csv(p):
+ 
+ def audit(folder: Path):
+     config = json.loads((folder/'configuration.json').read_text(encoding='utf-8'))
++    model.configure(config)  # recompute with the baseline the batch was run with
+     refs = json.loads((folder/'reference_optima.json').read_text(encoding='utf-8'))
+     schedules = json.loads((folder/'schedules.json').read_text(encoding='utf-8'))
+     manifest = json.loads((folder/'manifest.json').read_text(encoding='utf-8'))
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 50ceafa..00c1eea 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -2,6 +2,9 @@
+   "version": "plan-three-strategy-v1",
+   "parameter_origin": "hypothetical_baseline_non_measured",
+   "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; 5 mA interpreted as RMS by assumption",
++  "baseline_design_file": "stage2_matching/stage2_匹配设计参数.json",
++  "baseline_calibration_file": "stage2_matching/stage2_控制源幅度校准.json",
++  "current_limit_measurement_point": "transducer_port; the user 5 mA RMS upper limit has no stated measurement point (transducer port or amplifier output); amplifier output current is reported separately",
+   "frequency_min_Hz": 800000,
+   "frequency_max_Hz": 1000000,
+   "initial_frequency_Hz": 900000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
+index bfee0dc..37cb60e 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
+@@ -3,6 +3,14 @@
+ All parameters are hypothetical baselines, derived values, or scan variables.
+ No value in this module is a measured transducer or a hardware safety rating.
+ AC phasors are interpreted as RMS-equivalent values for power calculations.
++
++Baseline selection (2026-10-16): C0, Rm, fs, Qm, the matching network and the
++source calibration all come from a pair of frozen stage-2 files; the limit
++constants come from the run configuration. configure(cfg) selects both; the
++module configures itself from config.json on import, so the default pair
++under stage2_matching/ is used unless a configuration names another one.
++Qm=800 used to be a literal here; it now sits in the default design file with
++the same value.
+ """
+ 
+ from __future__ import annotations
+@@ -20,10 +28,8 @@ ROOT = HERE.parent
+ F0 = 0.9e6
+ F_MIN = 0.8e6
+ F_MAX = 1.0e6
+-VPP_SOFT = 130.0
+-VPP_HARD = 160.0
+-IRMS_SOFT = 5.5e-3
+-IRMS_HARD = 6.0e-3
++DEFAULT_DESIGN_FILE = "stage2_matching/stage2_匹配设计参数.json"
++DEFAULT_CALIBRATION_FILE = "stage2_matching/stage2_控制源幅度校准.json"
+ 
+ 
+ @dataclass(frozen=True)
+@@ -64,27 +70,52 @@ def bvd_from_fs_qm(*, c0: float, rm: float, fs: float, qm: float) -> BVD:
+     return BVD(c0=c0, rm=rm, lm=lm, cm=cm, qm=qm, fs=fs)
+ 
+ 
+-_design = json.loads(
+-    (ROOT / "stage2_matching" / "stage2_匹配设计参数.json").read_text(encoding="utf-8")
+-)
+-_cal = json.loads(
+-    (ROOT / "stage2_matching" / "stage2_控制源幅度校准.json").read_text(encoding="utf-8")
+-)
+-
+-BASE_BVD = bvd_from_fs_qm(
+-    c0=float(_design["bvd"]["C0_F"]),
+-    rm=float(_design["bvd"]["Rm_ohm"]),
+-    fs=float(_design["bvd"]["fs_Hz"]),
+-    qm=800.0,
+-)
+-BASE_MATCH = Matching(
+-    l_h=float(_design["design"]["l_active_H"]),
+-    c_f=float(_design["design"]["c_active_F"]),
+-    ql=float(_design["matching_loss_assumptions"]["inductor_Q_at_f0"]),
+-    qc=float(_design["matching_loss_assumptions"]["capacitor_Q_at_f0"]),
+-)
+ BASE_RS = 50.0
+-SOURCE_A1_VRMS = float(_cal["source_Vrms_for_a1"])
++
++
++def _read_json(name: str) -> tuple[Path, dict]:
++    path = Path(name)
++    if not path.is_absolute():
++        path = ROOT / path
++    return path, json.loads(path.read_text(encoding="utf-8"))
++
++
++def configure(cfg: dict) -> None:
++    """Select the frozen baseline files and the limit constants for this process.
++
++    A configuration may name another design/calibration pair
++    (baseline_design_file, baseline_calibration_file, relative to the engine
++    directory); without them the default pair is used. Runners call this with
++    the configuration they run; scenarios built afterwards use it.
++    """
++    global BASELINE_ID, BASELINE_FILES, BASE_BVD, BASE_MATCH, SOURCE_A1_VRMS
++    global VPP_SOFT, VPP_HARD, IRMS_SOFT, IRMS_HARD
++    design_path, design = _read_json(cfg.get("baseline_design_file", DEFAULT_DESIGN_FILE))
++    cal_path, cal = _read_json(cfg.get("baseline_calibration_file", DEFAULT_CALIBRATION_FILE))
++    BASELINE_ID = str(design["model_id"])
++    BASELINE_FILES = {"design": design_path, "calibration": cal_path}
++    BASE_BVD = bvd_from_fs_qm(
++        c0=float(design["bvd"]["C0_F"]),
++        rm=float(design["bvd"]["Rm_ohm"]),
++        fs=float(design["bvd"]["fs_Hz"]),
++        qm=float(design["bvd"]["Qm"]),
++    )
++    BASE_MATCH = Matching(
++        l_h=float(design["design"]["l_active_H"]),
++        c_f=float(design["design"]["c_active_F"]),
++        ql=float(design["matching_loss_assumptions"]["inductor_Q_at_f0"]),
++        qc=float(design["matching_loss_assumptions"]["capacitor_Q_at_f0"]),
++    )
++    SOURCE_A1_VRMS = float(cal["source_Vrms_for_a1"])
++    # Only allowed_amplitude and safe_power read these; the engine and the
++    # metrics read the configuration itself. They were literals here before.
++    VPP_SOFT = float(cfg["voltage_soft_Vpp"])
++    VPP_HARD = float(cfg["voltage_hard_Vpp"])
++    IRMS_SOFT = float(cfg["current_soft_Arms"])
++    IRMS_HARD = float(cfg["current_hard_Arms"])
++
++
++configure(json.loads((ROOT / "config.json").read_text(encoding="utf-8")))
+ 
+ 
+ def response(
+@@ -216,13 +247,18 @@ def _case(
+     factor: str,
+     level: str,
+     *,
+-    bvd: BVD = BASE_BVD,
+-    matching: Matching = BASE_MATCH,
+-    rs: float = BASE_RS,
++    bvd: BVD | None = None,
++    matching: Matching | None = None,
++    rs: float | None = None,
+     family: str = "single_factor",
+     description: str = "Only the named scan variable changes; all others remain frozen.",
+ ) -> Scenario:
+-    return Scenario(case_id, family, factor, level, description, bvd, matching, rs)
++    # Defaults are resolved when a scenario is built, not at import, so a
++    # configured baseline is honoured.
++    return Scenario(case_id, family, factor, level, description,
++                    BASE_BVD if bvd is None else bvd,
++                    BASE_MATCH if matching is None else matching,
++                    BASE_RS if rs is None else rs)
+ 
+ 
+ def single_factor_scenarios() -> list[Scenario]:
+@@ -280,10 +316,14 @@ def single_factor_scenarios() -> list[Scenario]:
+             matching=replace(BASE_MATCH, ql=float(ql)),
+             description="Inductor ESR changes through the declared Q at 0.9 MHz.",
+         ))
++    # Relative to the configured baseline: the IDs keep the legacy levels
++    # 500/800/1000, i.e. ratios 0.625/1/1.25 of a Qm=800 baseline. With
++    # Qm=800 the values and labels are exactly the old ones.
+     for qm in (500, 800, 1000):
++        scaled = float(qm) * (BASE_BVD.qm / 800.0)
+         cases.append(_case(
+-            f"CASE_QM_{qm}", "Qm", f"Qm={qm}",
+-            bvd=changed_qm(BASE_BVD, float(qm)),
++            f"CASE_QM_{qm}", "Qm", f"Qm={scaled:g}",
++            bvd=changed_qm(BASE_BVD, scaled),
+             description="Qm sensitivity: fs, Rm and C0 remain fixed; Lm/Cm are re-derived.",
+         ))
+     return cases
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index d81cbd3..8259d9f 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -53,10 +53,13 @@ def verify(folder):
+     return not bad
+ 
+ 
+-def make_report(folder, batch, config, overall, segments, test_result):
++def make_report(folder, batch, config, overall, segments, test_result, amplifier):
+     hist = [r for r in overall if r['suite']=='HISTORICAL_12']
+     fs = [r for r in segments if r['suite']=='HISTORICAL_12' and r['segment_index']==3]
+     coverage = [r for r in segments if r['suite'].startswith('COVER_') and r['segment_index']==1]
++    soft = f"{config['voltage_soft_Vpp']:g} Vpp / {config['current_soft_Arms']*1000:g} mA RMS"
++    hard = f"{config['voltage_hard_Vpp']:g} Vpp / {config['current_hard_Arms']*1000:g} mA RMS"
++    pre_peak = max(r['peak_pre_guard_voltage_Vpp'] for r in hist)
+     lines = [f'# 计划书三策略统一准稳态验证 — {batch}', '',
+       '这是独立新实现的一次同批次比较，不覆盖历史结果，也不是旧三策略结果的重新拼表。', '',
+       '## 本批次真实完成', '',
+@@ -64,21 +67,23 @@ def make_report(folder, batch, config, overall, segments, test_result):
+       '- 正式策略：FIXED / PERIODIC_SCAN / PHASE_FEEDBACK；P&O 不纳入此批次正式比较。',
+       '- 共用同一模型、配置、执行保护器、整数微秒时钟、虚拟测量和指标计算函数。',
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+-      '- 相位目标仅在基准 0.9 MHz 标定一次；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。', '',
++      '- 相位目标仅在基准 0.9 MHz 标定一次；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。',
++      f"- 基线：{model.BASELINE_ID}（{config.get('baseline_design_file', model.DEFAULT_DESIGN_FILE)}）；保护软限 {soft}、硬限 {hard}。",
++      '- 电流限值作用于换能器端口；用户 5 mA 上限的测点未定（换能器端或功放输出端），功放输出端电流见下表最后一列，不受限值约束。', '',
+       '## 历史 12 段日程的新批次结果', '',
+-      '|策略|通过段数/12|全程电能 J|相对策略可行参考电能 %|峰值 Vpp（含保护前）|峰值 mA RMS（含保护前）|扫描失败次数|',
+-      '|---|---:|---:|---:|---:|---:|---:|']
++      '|策略|通过段数/12|全程电能 J|相对策略可行参考电能 %|峰值 Vpp（含保护前）|峰值 mA RMS（含保护前）|扫描失败次数|功放输出端电流峰值 mA RMS|',
++      '|---|---:|---:|---:|---:|---:|---:|---:|']
+     for r in hist:
+-        lines.append(f"|{r['strategy']}|{r['settled_segments']}/12|{r['energy_J']:.6f}|{r['energy_capture_pct']:.2f}|{r['peak_voltage_Vpp']:.3f}|{r['peak_current_mArms']:.6f}|{r['scan_failures']}|")
+-    lines += ['', '保护前旧指令在新负载下的准稳态预测也属于必须披露的记录。保护后峰值单独保存，不能代替上表包含保护前预测的最大值。约188 Vpp不是LTspice瞬态峰值或实测尖峰；保护前观测不赋予人为持续时间，不虚构瞬态积分。', '',
++        lines.append(f"|{r['strategy']}|{r['settled_segments']}/12|{r['energy_J']:.6f}|{r['energy_capture_pct']:.2f}|{r['peak_voltage_Vpp']:.3f}|{r['peak_current_mArms']:.6f}|{r['scan_failures']}|{amplifier[('HISTORICAL_12', r['strategy'])]:.3f}|")
++    lines += ['', f'保护前旧指令在新负载下的准稳态预测也属于必须披露的记录。保护后峰值单独保存，不能代替上表包含保护前预测的最大值。本批次12段日程中保护前预测最高约{pre_peak:.0f} Vpp，不是LTspice瞬态峰值或实测尖峰；保护前观测不赋予人为持续时间，不虚构瞬态积分。', '',
+               '本轮仅完成统一比较和实现修正，尚未完成优化调参；不能据此宣布某策略对真实器件普遍更好。']
+     if coverage:
+         lines += ['', '### 34 个登记场景的目标扰动段覆盖', '',
+                   '每个独立试验为基准0.8 s→目标场景0.8 s→基准0.8 s；下表仅统计中间段，不用基准段增加通过率。', '',
+-                  '|策略|目标场景通过数/34|', '|---|---:|']
++                  f'|策略|目标场景通过数/{len(coverage)//len(STRATEGIES)}|', '|---|---:|']
+         for name in STRATEGIES:
+             count=sum(r['settled'] for r in coverage if r['strategy']==name)
+-            lines.append(f'|{name}|{count}/34|')
++            lines.append(f'|{name}|{count}/{len(coverage)//len(STRATEGIES)}|')
+     lines += ['', '### fs−5% 段（2.4–3.2 s）', '',
+       '|策略|连续验收|最长合格串|进入/确认 ms|稳态误差 %|固定尾窗误差 %|',
+       '|---|---|---:|---|---|---:|']
+@@ -88,7 +93,7 @@ def make_report(folder, batch, config, overall, segments, test_result):
+         lines.append(f"|{r['strategy']}|{'通过' if r['settled'] else '未通过'}|{r['max_consecutive_qualified_samples']}|{timing}|{err}|{r['fixed_tail_error_pct']:.3f}|")
+     lines += ['', '## 必须一并汇报的限制', '',
+       '1. “完成统一比较”不等于“三种控制都通过验收”。未通过是本批次有效结果；没有改变 98% / 10 样本门槛或延长原扰动段。',
+-      '2. 捕获率参考是 130 Vpp / 5.5 mA RMS 软阈值及 a≤1 下、100 Hz 离散网格的策略可行最大 P_Rm；不是仅受 160 Vpp / 6 mA 硬限约束的最大值。两种参考都写在 reference_optima.json。',
++      f'2. 捕获率参考是 {soft} 软阈值及 a≤1 下、100 Hz 离散网格的策略可行最大 P_Rm；不是仅受 {hard} 硬限约束的最大值。两种参考都写在 reference_optima.json。',
+       '   100 Hz 网格参考是近似值；连续调频可能落在网格点之间，使比值略高于100%。不将其截断成100%，也不解读为效率超过100%；audit_batch.py 提供10 Hz网格复核作为误差诊断，不更换正式分母。',
+       '3. 能量是准稳态分段保持积分，含扫描、相位试探、停机、等待和渐升。不是 LTspice 瞬态电能，也不是声学效率。',
+       '4. 共同保护器在指令时刻使用当前精确模型作理想可行幅度检查：这是理想安全接口，不是仅靠有延迟传感器的真实保护。候选硬越限与实际施加后的越限分别记录。',
+@@ -96,7 +101,7 @@ def make_report(folder, batch, config, overall, segments, test_result):
+       '6. 已采用扫描失败分类补丁：寻峰失败、保护抢占、无效测量、非平稳扫描分别计数；重试预算分别为2/4/2/2，间隔至少50 ms；任一预算耗尽即低幅锁存。每次扫描至多400点、300 ms、2次粗扫回退。以上均为预登记假设，未优化，也未完成预算敏感性验证；截断记录另列。',
+       '7. 相位固定目标可能在扰动后不再对应高功率。不同扰动的相位曲线可非单调；邻频测斜率也不保证全局寻优。',
+       '8. 反射代理只监测，无已验证的反射上限；未独立规定绝对功率上限。没有把这两项冒充为已经完成的约束。',
+-      '9. 本轮没有重新运行 LTspice、真实器件或 COMSOL。模型来自已存档 v2.1，不代表本轮每个控制动作已经由 LTspice 复核。',
++      '9. 本轮没有重新运行 LTspice、真实器件或 COMSOL。电路模型结构来自已存档 v2.1，基线参数为上述冻结设计文件，不代表本轮每个控制动作已经由 LTspice 复核。',
+       '10. 本轮不调参优化排名。此处为模糊推测内容：进一步整定相位增益、扫描周期或失败后可观测重置规则可能改善表现，但本批次没有验证。', '',
+       '## 查阅入口', '',
+       '- formal_three_strategy_summary.csv：同口径综合表；per_segment_metrics.csv：逐段验收与尾窗诊断。',
+@@ -112,6 +117,8 @@ def make_report(folder, batch, config, overall, segments, test_result):
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__)
+     parser.add_argument('--suite',choices=['historical','all'],default='all')
++    parser.add_argument('--config',type=Path,default=ROOT/'config.json',
++                        help='run configuration; default config.json (other baselines live under candidates/)')
+     parser.add_argument('--test-only',action='store_true')
+     parser.add_argument('--verify',type=Path)
+     args = parser.parse_args()
+@@ -123,7 +130,9 @@ def main():
+         return 1
+     if args.test_only:
+         return 0
+-    config = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
++    config_path = args.config.resolve()
++    config = json.loads(config_path.read_text(encoding='utf-8'))
++    model.configure(config)  # tests above ran on the default configuration
+     source_files = [p for p in ROOT.rglob('*') if p.is_file() and
+                     p.suffix in ('.py','.json','.md','.txt') and
+                     not ({'outputs','audits','__pycache__'} & set(p.relative_to(ROOT).parts))]
+@@ -162,11 +171,14 @@ def main():
+     print('Phasors RMS; Vpp=2*sqrt(2)*Vrms; S=V*conj(I); P=real(S), Q=imag(S).',flush=True)
+     print('phase_in=arg(Vinput/Isource), phase_port separate; frequency Hz; power W; time integer us.',flush=True)
+     all_segments, all_overall = [], []
++    amplifier = {}
+     for suite, ids in schedules.items():
+         for strategy in STRATEGIES:
+             engine = Engine(config,ids,strategy,suite)
+             run_policy(Executor(engine),strategy,phase)
+             per, summary = evaluate(engine.rows,engine.events,config,ref)
++            amplifier[(suite,strategy)] = 1000*max(abs(complex(r['i_source_real_Arms'],r['i_source_imag_Arms']))
++                                                   for r in engine.rows)
+             for row in per:
+                 row['batch_id'] = batch
+             summary['batch_id'] = batch
+@@ -181,11 +193,19 @@ def main():
+     csv_write(folder/'registered34_target_segment_metrics.csv',[r for r in all_segments if r['suite'].startswith('COVER_') and r['segment_index']==1])
+     json_write(folder/'run_metadata.json',dict(batch_id=batch,source_tree_sha256=code_id,source_hashes=code_hashes,
+         python=sys.version,numpy=np.__version__,platform=platform.platform(),command=sys.argv,
+-        source_model_provenance='frozen v2.1 model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; see integration_sources.json',
++        source_model_provenance='v2.1 circuit model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; '
++            f'baseline {model.BASELINE_ID}; see integration_sources.json',
++        config_file=config_path.relative_to(ROOT).as_posix() if config_path.is_relative_to(ROOT) else str(config_path),
++        baseline_model_id=model.BASELINE_ID,
++        baseline_files={k:dict(path=v.relative_to(ROOT).as_posix() if v.is_relative_to(ROOT) else str(v),sha256=sha(v))
++                        for k,v in model.BASELINE_FILES.items()},
++        current_limit_measurement_point=config.get('current_limit_measurement_point','transducer_port'),
++        amplifier_output_current_peak_mArms=dict(all_timelines=max(amplifier.values()),
++            historical_12={s:amplifier[('HISTORICAL_12',s)] for s in STRATEGIES}),
+         strategies=STRATEGIES,suite_count=len(schedules),tests_passed=result.testsRun,
+         control_uses_schedule_or_offline_reference=False,ideal_guard_uses_current_model=True,
+         phase_target_deg=phase,physical_scope='hypothetical linear quasi-steady electrical model; no hardware/acoustic claim'))
+-    make_report(folder,batch,config,all_overall,all_segments,result)
++    make_report(folder,batch,config,all_overall,all_segments,result,amplifier)
+     json_write(folder/'manifest.json',dict(batch_id=batch,source_tree_sha256=code_id,
+         files={p.relative_to(folder).as_posix():sha(p) for p in sorted(folder.rglob('*')) if p.is_file()}))
+     assert verify(folder)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json
+index bb92748..3c0c2b3 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/stage2_matching/stage2_匹配设计参数.json
+@@ -2,12 +2,14 @@
+   "model_id": "MODEL_V2_1_HYPOTHETICAL",
+   "topology": "Rs -> series (R_L_ESR + Lmatch) -> port; shunt (Cmatch + R_C_ESR) across BVD port",
+   "comparison_source": "1 Vrms Thevenin source with fixed 50 ohm Rs for BEFORE/IDEAL/ACTIVE_LOSSY",
++  "baseline_role": "默认历史回归基线：Qm=800 原写死于 model_v2_1.py，2026-10-16 移入本文件、数值不变。它同样没有器件依据，保留用于与已登记批次逐字节对照，不认定其为真实器件参数。",
+   "bvd": {
+     "C0_F": 6.858064105198409e-12,
+     "Rm_ohm": 7352.941176470586,
+     "Lm_H": 1.0402283862215378,
+     "Cm_F": 3.006260036180247e-14,
+-    "fs_Hz": 900000.0
++    "fs_Hz": 900000.0,
++    "Qm": 800.0
+   },
+   "matching_loss_assumptions": {
+     "source_class": "HYPOTHETICAL_BASELINE",
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index dddf41b..934ca8d 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -2,6 +2,7 @@ import copy
+ from dataclasses import replace
+ import json
+ from pathlib import Path
++import tempfile
+ import unittest
+ from unittest.mock import patch
+ import numpy as np
+@@ -42,6 +43,40 @@ class UnifiedTests(unittest.TestCase):
+         self.assertAlmostEqual(m.p_port_W,.17,places=7)
+         self.assertLess(abs(e.rows[0]['power_balance_error_W']),1e-12)
+ 
++    def test_model_limit_helpers_use_the_config_limits(self):
++        self.assertEqual((model.VPP_SOFT,model.VPP_HARD,model.IRMS_SOFT,model.IRMS_HARD),
++                         (CFG['voltage_soft_Vpp'],CFG['voltage_hard_Vpp'],
++                          CFG['current_soft_Arms'],CFG['current_hard_Arms']))
++
++    def test_baseline_comes_from_the_design_files(self):
++        design = json.loads((ROOT/CFG['baseline_design_file']).read_text(encoding='utf-8'))
++        cal = json.loads((ROOT/CFG['baseline_calibration_file']).read_text(encoding='utf-8'))
++        self.assertEqual(model.BASE_BVD.qm,design['bvd']['Qm'])
++        self.assertEqual(model.BASE_BVD.c0,design['bvd']['C0_F'])
++        self.assertEqual(model.SOURCE_A1_VRMS,cal['source_Vrms_for_a1'])
++        cases = model.scenario_map()
++        self.assertIs(cases[BASE].bvd,model.BASE_BVD)
++        # The Qm family is relative to the baseline; with Qm=800 it is the old absolute set.
++        for level,ratio in (('500',.625),('800',1.),('1000',1.25)):
++            self.assertAlmostEqual(cases['CASE_QM_'+level].bvd.qm/model.BASE_BVD.qm,ratio,places=12)
++
++    def test_configure_selects_another_baseline_and_back(self):
++        self.addCleanup(model.configure,CFG)
++        design = json.loads((ROOT/CFG['baseline_design_file']).read_text(encoding='utf-8'))
++        qm0 = design['bvd']['Qm']
++        design['model_id'], design['bvd']['Qm'] = 'TEST_HALF_QM', qm0/2
++        with tempfile.TemporaryDirectory() as tmp:
++            path = Path(tmp)/'design.json'
++            path.write_text(json.dumps(design),encoding='utf-8')
++            model.configure(dict(copy.deepcopy(CFG),baseline_design_file=str(path),current_soft_Arms=.004))
++            cases = model.scenario_map()
++        self.assertEqual(model.BASELINE_ID,'TEST_HALF_QM')
++        self.assertEqual(cases[BASE].bvd.qm,qm0/2)
++        self.assertEqual(cases['CASE_QM_500'].bvd.qm,500*(qm0/2)/800)
++        self.assertEqual(model.IRMS_SOFT,.004)
++        model.configure(CFG)
++        self.assertEqual(model.scenario_map()[BASE].bvd.qm,qm0)
++
+     def test_invalid_scan_measurements_never_succeed(self):
+         for bad in (None,float('nan'),float('inf'),0.0):
+             with self.subTest(bad=bad):

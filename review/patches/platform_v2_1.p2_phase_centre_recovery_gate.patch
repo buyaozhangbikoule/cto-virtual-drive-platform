@@ -1,0 +1,273 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/README.md b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+index 5bfbdaa..1b512a4 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+@@ -31,6 +31,7 @@ python run_project.py verify     # 复核当前哈希、覆盖、失败分类
+ |统一引擎|current/unified/|固定、周期扫频、相位反馈；统一执行与评分|
+ |采用补丁|current/patches/plan_three_strategy.scan_fault_taxonomy.patch|寻峰失败、保护抢占、测量失效、非平稳分类及有界预算|
+ |采用补丁（2026-10-16，P1）|current/patches/platform_v2_1.p1_config_driven_parameters.patch|参数改从配置与设计文件读取（数值不变）、网页限值线跟随批次配置、报告另列功放输出端电流、来源登记修正|
++|采用补丁（2026-10-16，P2）|current/patches/platform_v2_1.p2_phase_centre_recovery_gate.patch|相位反馈中心恢复门控（执行协调修正），配置开关，默认关闭；不改相位目标|
+ |来源记录|current/integration_sources.json|上游提交、补丁哈希、排除范围|
+ |结果定位|current/active_batch.json|唯一明确批次及逐日志复核|
+ |历史平台|streamlit_app.py、run_all.py、results/tables/、figures/|保留旧数据；run_all是旧流水线，可能重写旧输出，本次未调用|
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index 98083c6..f87586d 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -50,6 +50,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 1. **FIXED**：0.9 MHz、不主动选频，名义幅度 a=1，受共同保护改变实际幅度。
+ 2. **PERIODIC_SCAN**：每 0.5 s 的绝对周期到期后、在保护允许时启动。三级局部扫描为 ±50 kHz/5 kHz → ±5 kHz/1 kHz → ±1 kHz/0.1 kHz，边缘峰最多重定位 3 次。每点 1.5 ms，低幅请求 a=0.4，但仍必须经过保护。选频比较从实际 V/I/P 推算的软阈值可行功率，不查询当前场景最优表。起止锚点和最终候选复测验证失败即拒收。它只能确认局部候选，不证明全局最优。
+ 3. **PHASE_FEEDBACK**：基准 0.9 MHz 输入相位标定约 −1.078209637°，每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
++   中心恢复门控（`phase_centre_recovery_gate`，2026-10-16 加入，默认配置关闭）：保护器在改频的那一拍从不升幅（新频点允许幅度更低时先在旧频率降幅），之后在新频率保持不动、按 2.5/s 渐升；渐升未完就再改频，幅度会停在上次被压到的水平（棘轮）。打开开关后，采纳一个新中心要等新中心上两个相邻 20 ms、NORMAL、未冻结、有效且实际幅度相同的普通控制样本，才做下一次相位更新。它只等待，不加幅、不加步长、不加试探，也不读取模型或场景；关闭即原正式相位路径，结果逐字节不变。默认关闭的理由：review/23 的逐场景协议（保护前电流峰值不得上升）在 Qm=800 基线上不满足（13/31）。它不改变相位目标本身——冻结的输入相位目标不是最大功率判据，见审查分支 review/25 第六节、review/26。
+ 
+ 三者共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
+ 未添加 PI 积分器，因此不存在需要伪装为已实现的“积分饱和修复”。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 00c1eea..4742687 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -55,6 +55,8 @@
+   "phase_probe_offset_Hz": 100.0,
+   "phase_slope_min_deg_per_Hz": 1e-06,
+   "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
++  "phase_centre_recovery_gate": false,
++  "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+index 348a033..872be36 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+@@ -370,6 +370,78 @@ def phase_update(io: Executor, m: Measurement, target_phase: float,
+     return candidate
+ 
+ 
++@dataclass
++class CentreRecoveryGate:
++    """Hold the next phase update until the drive has settled at a new centre.
++
++    Every accepted frequency change goes through the common guard, which never
++    raises the amplitude on the tick that changes frequency (it lowers it
++    first, at the old frequency, when the new point allows less) and only
++    ramps it back afterwards, at its own rate, while the frequency is held.
++    A phase update taken before that ramp has finished moves the centre again
++    and the amplitude stays wherever it was last cut to -- the ratchet. The
++    gate waits for two consecutive ordinary 20 ms CONTROL samples at the new
++    centre that are NORMAL, unfrozen, valid and at the same applied amplitude.
++    It only waits: no extra amplitude, step, probe or model query. Ported
++    from the v2 candidate checked in review/22-23; its logs are byte-identical
++    to the candidate's (config: phase_centre_recovery_gate).
++    """
++    tick_us: int
++    active: bool = False
++    previous: Measurement | None = None
++    opened_us: int | None = None
++
++    def begin(self, now: int):
++        self.active = True
++        self.previous = None
++        self.opened_us = now
++
++    def ready(self, m: Measurement, target: float, now: int) -> bool:
++        comparable = (valid_measurement(m) and m.state == 'NORMAL' and not m.frozen
++                      and m.time_us == now and now % self.tick_us == 0
++                      and abs(m.frequency_Hz-target) <= 1e-7)
++        if not comparable:
++            self.previous = None
++            return False
++        p = self.previous
++        self.previous = m
++        if (p is not None and m.time_us-p.time_us == self.tick_us
++                and abs(p.frequency_Hz-target) <= 1e-7
++                and abs(m.amplitude-p.amplitude) <= 1e-12):
++            self.active = False
++            return True
++        return False
++
++
++def gated_phase_update(io: Executor, m: Measurement, target_phase: float,
++                       trusted_frequency: float, gate: CentreRecoveryGate) -> float:
++    """phase_update behind the centre recovery gate; the phase law is unchanged."""
++    eligible = (valid_measurement(m) and m.state == 'NORMAL' and not m.frozen
++                and m.time_us == io.time and abs(m.frequency_Hz-trusted_frequency) <= 1e-7)
++    if gate.active:
++        eligible = gate.ready(m, trusted_frequency, io.time)
++        if eligible:
++            io.event('CENTRE_RECOVERY_COMPLETE', frequency_Hz=trusted_frequency,
++                     amplitude=m.amplitude, wait_us=io.time-gate.opened_us,
++                     criterion='two_consecutive_valid_control_plateau_samples')
++    if not eligible:
++        if not gate.active and not valid_measurement(m):
++            io.event('PHASE_RECOVERY_INVALID_MEASUREMENT_WAIT')
++        return trusted_frequency
++    before = io.time
++    new = phase_update(io, m, target_phase, trusted_frequency)
++    if io.time > before:
++        # Probe time is already charged by the common Executor.
++        if new != trusted_frequency:
++            gate.begin(io.time)
++            io.event('CENTRE_RECOVERY_BEGIN', frequency_Hz=new,
++                     probe_duration_us=io.time-before)
++        else:
++            io.event('PHASE_NO_NEW_CENTRE_RETURN', frequency_Hz=trusted_frequency,
++                     probe_duration_us=io.time-before)
++    return new
++
++
+ def run_policy(io: Executor, strategy: str, target_phase: float):
+     if strategy not in STRATEGIES:
+         raise ValueError(strategy)
+@@ -377,6 +449,8 @@ def run_policy(io: Executor, strategy: str, target_phase: float):
+     target = float(cfg['initial_frequency_Hz'])
+     next_scan = cfg['scan_period_us']
+     retry = ScanBudget(cfg)
++    gate = (CentreRecoveryGate(cfg['control_tick_us'])
++            if strategy == 'PHASE_FEEDBACK' and cfg.get('phase_centre_recovery_gate', False) else None)
+     last = None
+     failed_episode = False
+     while not io.finished:
+@@ -427,6 +501,12 @@ def run_policy(io: Executor, strategy: str, target_phase: float):
+                     last = io.control(target, cfg['scan_amplitude'], 'FAILED_SCAN_ROLLBACK')
+                 continue
+         if strategy == 'PHASE_FEEDBACK' and last is not None:
+-            target = phase_update(io, last, target_phase, target)
++            if gate is None:
++                target = phase_update(io, last, target_phase, target)
++            else:
++                target = gated_phase_update(io, last, target_phase, target, gate)
+         if not io.finished:
+             last = io.control(target, cfg['scan_amplitude'] if failed_episode else 1.)
++    if gate is not None and gate.active:
++        io.event('CENTRE_RECOVERY_TRUNCATED', frequency_Hz=target,
++                 wait_us=io.time-gate.opened_us)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index 8259d9f..4e31f39 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -69,7 +69,8 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+       '- 相位目标仅在基准 0.9 MHz 标定一次；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。',
+       f"- 基线：{model.BASELINE_ID}（{config.get('baseline_design_file', model.DEFAULT_DESIGN_FILE)}）；保护软限 {soft}、硬限 {hard}。",
+-      '- 电流限值作用于换能器端口；用户 5 mA 上限的测点未定（换能器端或功放输出端），功放输出端电流见下表最后一列，不受限值约束。', '',
++      '- 电流限值作用于换能器端口；用户 5 mA 上限的测点未定（换能器端或功放输出端），功放输出端电流见下表最后一列，不受限值约束。',
++      '- 相位反馈中心恢复门控：' + ('开启（采纳新中心后，须在新中心得到两个连续、同幅度、NORMAL 未冻结的普通控制样本，才做下一次相位更新；只等待，不加幅、不加步长）。' if config.get('phase_centre_recovery_gate', False) else '关闭（原正式相位路径）。'), '',
+       '## 历史 12 段日程的新批次结果', '',
+       '|策略|通过段数/12|全程电能 J|相对策略可行参考电能 %|峰值 Vpp（含保护前）|峰值 mA RMS（含保护前）|扫描失败次数|功放输出端电流峰值 mA RMS|',
+       '|---|---:|---:|---:|---:|---:|---:|---:|']
+@@ -200,6 +201,7 @@ def main():
+         baseline_files={k:dict(path=v.relative_to(ROOT).as_posix() if v.is_relative_to(ROOT) else str(v),sha256=sha(v))
+                         for k,v in model.BASELINE_FILES.items()},
+         current_limit_measurement_point=config.get('current_limit_measurement_point','transducer_port'),
++        phase_centre_recovery_gate=bool(config.get('phase_centre_recovery_gate',False)),
+         amplifier_output_current_peak_mArms=dict(all_timelines=max(amplifier.values()),
+             historical_12={s:amplifier[('HISTORICAL_12',s)] for s in STRATEGIES}),
+         strategies=STRATEGIES,suite_count=len(schedules),tests_passed=result.testsRun,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index 934ca8d..8688823 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -7,8 +7,8 @@ import unittest
+ from unittest.mock import patch
+ import numpy as np
+ 
+-from controllers import (Executor, PointResult, RetryBudget, ScanBudget, ScanResult, grid,
+-                         phase_update, run_policy, scan)
++from controllers import (CentreRecoveryGate, Executor, PointResult, RetryBudget, ScanBudget,
++                         ScanResult, grid, phase_update, run_policy, scan)
+ from engine import Engine, Measurement, Protection, measured_score, valid_measurement
+ from metrics import energy, evaluate, references
+ from models import model_v2_1 as model
+@@ -523,6 +523,92 @@ class ScanFaultTaxonomyTests(unittest.TestCase):
+                          overall['scan_failures'])
+ 
+ 
++class CentreRecoveryGateTests(unittest.TestCase):
++    """The phase loop waits after an accepted centre change (config switch).
++
++    The guard never raises the amplitude on a frequency-change tick and ramps
++    it back afterwards; a phase update taken on that ramp moves the centre
++    again before the last move has finished. The gate may only wait: it must
++    not raise the amplitude, take a larger step, probe more, or read anything
++    a controller is not allowed to read.
++    """
++
++    @staticmethod
++    def sample(t, a, f=900500., state='NORMAL', frozen=False):
++        return Measurement(t, f, a, 100., .005, .1, -1., 1e3, -10., True, state, frozen)
++
++    def run_phase(self, gate_on, ids):
++        cfg = copy.deepcopy(CFG)
++        cfg['phase_centre_recovery_gate'] = gate_on
++        e = Engine(cfg, ids, 'PHASE_FEEDBACK', 'TEST')
++        phi = float(model.response(900000, e.cases[BASE])['phase_deg'][0])
++        run_policy(Executor(e), 'PHASE_FEEDBACK', phi)
++        return e
++
++    def test_default_configuration_keeps_the_gate_off(self):
++        self.assertIs(CFG['phase_centre_recovery_gate'], False)
++
++    def test_ready_needs_two_equal_amplitude_samples_at_the_new_centre(self):
++        g = CentreRecoveryGate(20000)
++        g.begin(0)
++        self.assertFalse(g.ready(self.sample(20000, .50), 900500., 20000))
++        self.assertFalse(g.ready(self.sample(40000, .55), 900500., 40000))   # still ramping
++        self.assertTrue(g.active)
++        self.assertTrue(g.ready(self.sample(60000, .55), 900500., 60000))    # plateau
++        self.assertFalse(g.active)
++
++    def test_a_non_comparable_sample_restarts_the_count(self):
++        g = CentreRecoveryGate(20000)
++        g.begin(0)
++        self.assertFalse(g.ready(self.sample(20000, .5), 900500., 20000))
++        # Frozen ramp sample, old centre, off-lattice time: none can be the pair.
++        self.assertFalse(g.ready(self.sample(40000, .5, state='RAMP_UP', frozen=True), 900500., 40000))
++        self.assertFalse(g.ready(self.sample(60000, .5), 900500., 60000))
++        self.assertFalse(g.ready(self.sample(80000, .5, f=900000.), 900500., 80000))
++        self.assertFalse(g.ready(self.sample(101500, .5), 900500., 101500))
++        self.assertTrue(g.active)
++        self.assertFalse(g.ready(self.sample(120000, .5), 900500., 120000))
++        self.assertTrue(g.ready(self.sample(140000, .5), 900500., 140000))
++
++    def test_gate_off_is_the_formal_phase_path(self):
++        e = self.run_phase(False, [BASE, 'CASE_FS_M5'])
++        names = {x['event'] for x in e.events}
++        self.assertIn('PHASE_UPDATE', names)
++        self.assertFalse({'CENTRE_RECOVERY_BEGIN', 'CENTRE_RECOVERY_COMPLETE',
++                          'CENTRE_RECOVERY_TRUNCATED'} & names)
++
++    def test_no_phase_probe_while_a_new_centre_is_recovering(self):
++        e = self.run_phase(True, [BASE, 'CASE_LMATCH_P10'])
++        begins = [x for x in e.events if x['event'] == 'CENTRE_RECOVERY_BEGIN']
++        completes = [x for x in e.events if x['event'] == 'CENTRE_RECOVERY_COMPLETE']
++        self.assertTrue(begins)
++        self.assertTrue(completes)
++        for b in begins:
++            ends = [c['time_us'] for c in completes if c['time_us'] > b['time_us']]
++            end = min(ends) if ends else e.end
++            probes = [r for r in e.rows if r['kind'].startswith('PHASE_PROBE')
++                      and b['time_us'] <= r['start_us'] < end]
++            self.assertEqual(probes, [])
++        for c in completes:
++            pair = [r for r in e.rows if r['kind'] == 'CONTROL'
++                    and r['end_us'] in (c['time_us']-CFG['control_tick_us'], c['time_us'])]
++            self.assertEqual(len(pair), 2)
++            self.assertTrue(all(r['protection_state'] == 'NORMAL' and not r['frequency_frozen']
++                                and r['frequency_Hz'] == c['frequency_Hz'] for r in pair))
++            self.assertEqual(pair[0]['applied_amplitude'], pair[1]['applied_amplitude'])
++
++    def test_gate_only_waits(self):
++        for gate_on in (True, False):
++            e = self.run_phase(gate_on, [BASE, 'CASE_LMATCH_P10'])
++            control = [r for r in e.rows if r['kind'] == 'CONTROL']
++            self.assertTrue(all(r['requested_amplitude'] == 1. for r in control))
++            self.assertTrue(all(r['applied_amplitude'] <= 1. for r in e.rows))
++            # One phase step at most between ordinary samples, never larger.
++            steps = [abs(b['frequency_Hz']-a['frequency_Hz']) for a, b in zip(control, control[1:])]
++            self.assertLessEqual(max(steps), CFG['phase_max_step_Hz']+1e-6)
++            probes = [r for r in e.rows if r['kind'].startswith('PHASE_PROBE')]
++            self.assertTrue(all(r['duration_us'] == CFG['scan_point_us'] for r in probes))
++
+ 
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

@@ -1,0 +1,420 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/README.md b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+index 1b512a4..3823fa7 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+@@ -32,6 +32,7 @@ python run_project.py verify     # 复核当前哈希、覆盖、失败分类
+ |采用补丁|current/patches/plan_three_strategy.scan_fault_taxonomy.patch|寻峰失败、保护抢占、测量失效、非平稳分类及有界预算|
+ |采用补丁（2026-10-16，P1）|current/patches/platform_v2_1.p1_config_driven_parameters.patch|参数改从配置与设计文件读取（数值不变）、网页限值线跟随批次配置、报告另列功放输出端电流、来源登记修正|
+ |采用补丁（2026-10-16，P2）|current/patches/platform_v2_1.p2_phase_centre_recovery_gate.patch|相位反馈中心恢复门控（执行协调修正），配置开关，默认关闭；不改相位目标|
++|采用补丁（2026-10-16，P3）|current/patches/platform_v2_1.p3_synthetic_candidate_q13p8_3mA.patch|加入可选的合成候选配置 current/unified/candidates/synthetic_q13p8_3mA/（Q≈13.8、3 mA、限值4.5/5.0 mA、门控开）；不设为默认，不登记为当前结果|
+ |来源记录|current/integration_sources.json|上游提交、补丁哈希、排除范围|
+ |结果定位|current/active_batch.json|唯一明确批次及逐日志复核|
+ |历史平台|streamlit_app.py、run_all.py、results/tables/、figures/|保留旧数据；run_all是旧流水线，可能重写旧输出，本次未调用|
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index b27af24..92d6b74 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -7,6 +7,9 @@
+     "model": {"title": "当前统一引擎的BVD/戴维南源模型", "path": "current/unified/models/model_v2_1.py", "note": "模型明确声明参数为假设、派生值或扫描变量；交流功率按RMS相量计算。"},
+     "calibration": {"title": "源幅度标定记录", "path": "current/unified/stage2_matching/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准；正式模型读取本文件中的source_Vrms_for_a1。"},
+     "config": {"title": "统一三策略配置", "path": "current/unified/config.json", "note": "控制时序、阈值及预算为仿真假设；不是实时硬件性能或器件额定值。"},
++    "candidate_design": {"title": "合成候选基线设计文件（未设为默认）", "path": "current/unified/candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json", "note": "由审查分支 review/baseline_3mA_parameters.py 从原冻结文件推导；推导、限制与测点说明写在文件的 baseline_derivation。"},
++    "candidate_calibration": {"title": "合成候选源幅度标定", "path": "current/unified/candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准。"},
++    "candidate_config": {"title": "合成候选运行配置", "path": "current/unified/candidates/synthetic_q13p8_3mA/config.json", "note": "仅在 run_unified.py --config 显式选择时使用；run_project.py validate 不登记它。"},
+     "user_design": {"title": "用户设计工况与推荐量级", "path": "README.md", "note": "用户给出的0.8–1.0 MHz、约100 Vpp、不超过160 Vpp、约5 mA RMS和50 Ω；允许后续协商。没有独立器件辨识或额定规格证据。历史配置原有的RMS假设文字保留不改。"},
+     "load": {"title": "第一层辐射负载研究原型", "path": "research/radiation_load_layer1/radiation_load_layer1_reference.py", "note": "声明常数，尚未接入正式控制引擎。未给出足以将这些数值作为本器件实测值的一手证据。"},
+     "unverified_range": {"title": "负载实施指导中的未核实范围", "path": "research/radiation_load_layer1/14_第一层负载参数化_给Codex的实施指导_2026-09-18.md", "note": "第十二节第3项提到2.5–7.8 MRayl，但未建立逐个端点的一手出处。保留历史文本不等于认可该范围。"},
+@@ -26,7 +29,8 @@
+     "control": {"group": "控制与验收假设", "identity": "假设控制／验收参数，非实测或器件额定值", "frequency_scope": "本项目0.8–1.0 MHz准稳态控制；载波瞬态未由这些时长保证。", "measurement_conditions": "Python离散准稳态；扫描、试探、保护均计时；无传感器或执行器延迟实测。", "adoption_reason": "采用当前冻结配置用于同口径对照；本次不重新调参，不声称最优。", "limitations": "需另做敏感性与硬件验证；数值来源是项目配置，不是文献推荐值。", "formal_use": true, "status": "假设／派生", "source_ids": ["config"]},
+     "research": {"group": "负载研究原型（未接入）", "identity": "研究原型声明值；原始出处待补", "frequency_scope": "原型用于0.9 MHz附近的假设计算；没有材料实测频段依据。", "measurement_conditions": "假设圆形活塞和等效半波厚度；不是已确定器件结构。介质温度、压力、制备条件未登记为实测。", "adoption_reason": "保留原型数值以复现历史研究，不将其升级为正式模型默认参数。", "limitations": "需补齐材料、几何和介质的一手来源及适用性验证；不自动采用Saijo数值。", "formal_use": false, "status": "研究假设", "source_ids": ["load"]},
+     "saijo": {"group": "Saijo文献参考（不采用）", "identity": "已发表样本统计，非本项目器件／负载辨识", "frequency_scope": "原文测量100–200 MHz；没有0.8–1.0 MHz适用性证据。", "measurement_conditions": "12例尸检人腹主动脉；福尔马林固定、冷冻10 μm切片、玻片载片，无石蜡包埋、测量时无盖玻片；SAM测区100×100 μm，25×25采样。", "adoption_reason": "仅登记文献参考，用于比较组织类型与审查参数量级；不写入运行配置。", "limitations": "均值±标准差（SD），不是置信区间或仪器精度；未测密度和声阻抗。不得由声速直接得到ρc，不得将高频衰减斜率直接外推至0.9 MHz。", "formal_use": false, "status": "文献参考／不采用", "source_ids": ["saijo"]},
+-    "pending": {"group": "待核实（禁止作为默认）", "identity": "未建立原始出处的历史说法", "frequency_scope": "未核实", "measurement_conditions": "组织、频段、温度及测量方法均未核实。", "adoption_reason": "保留问题线索并明确隔离，不作为默认参数或敏感性扫描上下界。", "limitations": "需逐端点找到原始论文、表格与条件；Saijo1998未测声阻抗，不能为此范围背书。", "formal_use": false, "status": "待核实", "source_ids": ["unverified_range"]}
++    "pending": {"group": "待核实（禁止作为默认）", "identity": "未建立原始出处的历史说法", "frequency_scope": "未核实", "measurement_conditions": "组织、频段、温度及测量方法均未核实。", "adoption_reason": "保留问题线索并明确隔离，不作为默认参数或敏感性扫描上下界。", "limitations": "需逐端点找到原始论文、表格与条件；Saijo1998未测声阻抗，不能为此范围背书。", "formal_use": false, "status": "待核实", "source_ids": ["unverified_range"]},
++    "candidate": {"group": "合成候选基线（未设为默认）", "identity": "合成构造值：非器件拟合、非实测", "frequency_scope": "本项目0.8–1.0 MHz电学扫描；基准0.9 MHz。不是实测适用频段。", "measurement_conditions": "无实测；保留默认基线C0、Rm、fs，指定k_eff=0.45反算Qm，再按5/3均匀缩放阻抗、按stage2规则重设匹配与源标定。", "adoption_reason": "宽峰下的算法对照与电流余量研究；只在显式选择候选配置时使用，不替换默认配置。", "limitations": "不能解释为同一器件只增加阻尼，也不能解释为几何缩小（同长度缩面积时Q、fs都会变）。最大端口有功功率不等于最大振幅或声功率。", "formal_use": false, "status": "合成候选", "source_ids": ["candidate_design"]}
+   },
+   "entries": [
+     {"id":"bvd.c0","profile":"bvd","name":"静态电容 C0","value":6.858064105198409e-12,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","C0_F"]}},
+@@ -93,6 +97,17 @@
+     {"id":"load.blood.c","profile":"research","name":"原型血液声速","value":1570,"unit":"m/s","binding":{"source":"load","mode":"constant","name":"MEDIA","path":["blood",1]}},
+     {"id":"load.calcif.rho","profile":"research","name":"原型钙化介质密度","value":1900,"unit":"kg/m³","binding":{"source":"load","mode":"constant","name":"MEDIA","path":["calcif",0]},"limitations":"声明值保留；未完成原始出处核验。Saijo未测密度，不得声称1900来自Saijo。"},
+     {"id":"load.calcif.c","profile":"research","name":"原型钙化介质声速","value":3600,"unit":"m/s","binding":{"source":"load","mode":"constant","name":"MEDIA","path":["calcif",1]},"limitations":"声明值保留；不以Saijo1760 m/s直接替换，组织制备和测量频段均不匹配。"},
++    {"id":"candidate.qm","profile":"candidate","name":"合成候选：机械品质因数 Qm","value":13.810857823361614,"unit":"1","binding":{"source":"candidate_design","path":["bvd","Qm"]}},
++    {"id":"candidate.keff","profile":"candidate","name":"合成候选：指定的有效耦合系数 k_eff","value":0.45,"unit":"1","binding":{"source":"candidate_design","path":["baseline_derivation","k_eff"]},"adoption_reason":"指定值，不是测量或拟合；Qm 由它与原工作点反算。"},
++    {"id":"candidate.c0","profile":"candidate","name":"合成候选：静态电容 C0","value":4.1148384631190455e-12,"unit":"F","display_unit":"pF","scale":1000000000000.0,"binding":{"source":"candidate_design","path":["bvd","C0_F"]}},
++    {"id":"candidate.rm","profile":"candidate","name":"合成候选：机械支路电阻 Rm","value":12254.90196078431,"unit":"Ω","binding":{"source":"candidate_design","path":["bvd","Rm_ohm"]}},
++    {"id":"candidate.match.l","profile":"candidate","name":"合成候选：匹配电感 Lmatch","value":0.0001380112924763264,"unit":"H","display_unit":"μH","scale":1000000.0,"binding":{"source":"candidate_design","path":["design","l_active_H"]}},
++    {"id":"candidate.match.c","profile":"candidate","name":"合成候选：匹配电容 Cmatch","value":2.2120771306603173e-10,"unit":"F","display_unit":"pF","scale":1000000000000.0,"binding":{"source":"candidate_design","path":["design","c_active_F"]}},
++    {"id":"candidate.a1","profile":"candidate","name":"合成候选：a=1时戴维南源电压（RMS）","value":4.90383615973994,"unit":"V RMS","source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["source_Vrms_for_a1"]}},
++    {"id":"candidate.irms_design","profile":"candidate","name":"合成候选：设计点换能器端电流（0.9 MHz、a=1、100 Vpp）","value":0.0030000000000000005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["transducer_Irms_A"]}},
++    {"id":"candidate.iamp_design","profile":"candidate","name":"合成候选：设计点功放输出端电流","value":0.04514376689236159,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["amplifier_output_Irms_A"]},"limitations":"若用户的5 mA指功放输出端，本候选在设计点不满足。"},
++    {"id":"candidate.current_soft","profile":"candidate","name":"合成候选：电流软阈值（换能器端口）","value":0.0045,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_soft_Arms"]}},
++    {"id":"candidate.current_hard","profile":"candidate","name":"合成候选：电流硬阈值（换能器端口）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_hard_Arms"]},"limitations":"按换能器端口解释用户的5 mA上限；测点未定。"},
+     {"id":"pending.calcif.impedance","profile":"pending","name":"钙化声阻抗历史范围（待核实）","value":[2.5,7.8],"unit":"MRayl","value_kind":"unverified_range"},
+     {"id":"saijo.intima.c","profile":"saijo","name":"Saijo正常内膜声速","value":1568,"sd":18,"unit":"m/s"},
+     {"id":"saijo.fibrosis.c","profile":"saijo","name":"Saijo纤维化组织声速","value":1677,"sd":18,"unit":"m/s"},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py b/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
+index 03dc80e..19ab352 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
+@@ -59,6 +59,8 @@ def render_parameter_sources():
+             st.error('待核实：不能作为默认参数、有效文献范围或扫描上下界。')
+         elif entry['profile'] in ('saijo', 'research'):
+             st.warning('独立参考／研究原型：未接入正式模型，不覆盖钙化默认值。')
++        elif entry['profile'] == 'candidate':
++            st.warning('合成候选：只在显式选择候选配置时使用；不是器件拟合或实测参数，不替换默认配置。')
+         with st.expander('来源、适用频段、测量条件和采用理由', expanded=True):
+             for label, key in [('单位（源文件口径）', 'unit'), ('适用频段与证据范围', 'frequency_scope'),
+                                ('测量／计算条件', 'measurement_conditions'), ('采用／保留理由', 'adoption_reason'),
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+index eb26bb0..ce5f4ac 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_parameter_sources.py
+@@ -113,6 +113,19 @@ class ParameterSourceTests(unittest.TestCase):
+             with self.assertRaises(ValueError):
+                 bound_value(binding, sources, root=tmp)
+ 
++    def test_synthetic_candidate_is_registered_but_not_formal(self):
++        e = self.entries()
++        cand = [x for x in e.values() if x['profile'] == 'candidate']
++        self.assertGreaterEqual(len(cand), 5)
++        self.assertTrue(all(x['formal_use'] is False for x in cand))
++        self.assertTrue(all(x['binding']['source'].startswith('candidate_') for x in cand))
++        self.assertLess(e['candidate.irms_design']['value'], e['candidate.current_soft']['value'])
++        self.assertLess(e['candidate.current_soft']['value'], e['candidate.current_hard']['value'])
++        # Measurement point undetermined: the amplifier side is far above 5 mA.
++        self.assertGreater(e['candidate.iamp_design']['value'], e['candidate.current_hard']['value'])
++        cfg = json.loads((PLATFORM/'current/unified/config.json').read_text(encoding='utf-8'))
++        self.assertNotIn('candidates/', cfg['baseline_design_file'])
++
+     def test_binding_cannot_escape_platform(self):
+         self.data['sources']['load']['path'] = '../outside.py'
+         with self.assertRaises(ValueError):
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index f87586d..52642c1 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -17,6 +17,15 @@ python run_unified.py --verify "outputs/具体批次目录"
+ python audit_batch.py "outputs/具体批次目录"
+ ```
+ 
++合成候选配置（2026-10-16，可选，不是默认）：
++
++```powershell
++python run_unified.py --config candidates/synthetic_q13p8_3mA/config.json --suite all
++python audit_batch.py "outputs/具体批次目录"
++```
++
++它保留默认基线的 C0、Rm、fs，指定 k_eff=0.45 反算 Qm=13.81，再按 5/3 均匀缩放阻抗使设计点为 100 Vpp / 3 mA，并重设匹配与源标定、电流软/硬限 4.5/5.0 mA（作用于换能器端口）、打开相位恢复门控。它是宽峰算法对照用的合成电路，不是任何器件的拟合结果，也不能用「缩小端面积、振速不变」解释；说明与限制见 `candidates/synthetic_q13p8_3mA/README.md`。`run_project.py validate` 只登记默认配置的批次。
++
+ 每次运行创建时间戳＋源码摘要的新输出目录，`exist_ok=False` 防止覆盖。
+ `--suite all` 包含原 12 段绝对日程和全部 34 个登记场景的独立基准→场景→基准试验。
+ 每个三段试验开始显式重置控制器；不在一个连续试验中悄悄重置失败预算。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
+new file mode 100644
+index 0000000..4014b91
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
+@@ -0,0 +1,40 @@
++# 合成候选基线：Q≈13.8、3 mA（可选配置，未设为默认）
++
++这是一套**可选的候选配置**，用来做宽峰下的算法对照与电流余量研究。它不是目标器件的物理基线，
++也不替换默认配置。默认配置仍是 `../../config.json`，即 Qm=800 的历史回归基线；那一组同样没有器件依据，
++只因为能与已登记批次逐字节对照而保留。
++
++## 它是什么
++
++- 保留默认基线的 C0、Rm、fs（fs 处 M = X_C0/Rm = 3.5068 不变），指定 k_eff = 0.45，按 BVD 关系反算
++  Qm = M(1−k²)/k² = 13.81。Lm、Cm、k_eff 一起改变：这是另一组等效电路，不能理解为「同一只器件放进血液、
++  只增加阻尼」。
++- 再把 BVD 阻抗按 5/3 均匀缩放（C0/k、Cm/k、Lm·k、Rm·k），使 0.9 MHz、a=1、100 Vpp 时换能器端电流为
++  3 mA；匹配网络按 stage2 规则重新设计，源幅度重新标定。这是一组**重新设计的合成电路**，不是几何缩小的推论。
++- 数值：C0 4.1148 pF、Rm 12254.90 Ω、Lm 29.930 mH、Cm 1.0448 pF、fs 0.9 MHz；匹配 L 138.011 μH、
++  C 221.208 pF；a=1 源 4.90384 V RMS；0.9 MHz 换能器端 100 Vpp / 3.000 mA RMS / 102 mW，
++  功放输出端 45.14 mA RMS。
++- 配置差别：电流软/硬限 4.5/5.0 mA（作用于换能器端口），相位反馈中心恢复门控打开；
++  其余控制、保护与验收参数和默认配置相同。
++
++## 它不是什么
++
++- 不是任何确定尺寸、材料、血液负载器件的拟合结果，未实测。k_eff 0.45、Q 13.8 落在审查分支 review/24 用简化模型
++  （轴向极化实心圆柱、两种一维振动极限、前端刚性障板活塞辐射、背面空气；不含封装、侧壁与横向模态）
++  算出的范围里，但那些范围只是该模型的结果，不能推广为所有微型超声器件的规律。
++- 不能用「端面积缩为 0.6 倍、同电压下振速不变、Q 不变」来解释 3 mA：同材料同长度缩面积时，
++  按同一 Mason 模型重算，Q 与 fs 都会变，|Z| 的比约 1.9 而不是 5/3。
++- 5 mA 的测点未定。这里的电流限值按换能器端口解释；若 5 mA 指功放输出端，本候选与默认配置在设计点都不满足
++  （分别约 45 mA 与 58 mA）。
++- 最大端口有功功率不自动等于最大振幅或声功率：P_Rm 把内部损耗与辐射合在一起，真实器件里需要单独识别。
++
++## 怎么跑
++
++```
++python run_unified.py --config candidates/synthetic_q13p8_3mA/config.json --suite all
++python audit_batch.py outputs/<该批次目录>
++```
++
++`run_project.py validate` 只登记默认配置的批次；候选批次不会被登记为当前结果。
++三个 JSON 由审查分支的 `review/baseline_3mA_parameters.py` 从原冻结文件推导（`--check` 可逐值复核）；
++本目录的候选批次与审查分支 review/24 第十五节、review/25 的数字逐值相同，见 review/26。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+new file mode 100644
+index 0000000..ad7d88d
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+@@ -0,0 +1,82 @@
++{
++  "version": "plan-three-strategy-v1-candidate-synthetic-q13p8-3mA",
++  "parameter_origin": "synthetic_candidate_constructed_not_a_device_fit_non_measured",
++  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp; user: 5 mA RMS is an upper limit, recommended lower, measurement point unspecified (transducer port or amplifier output)",
++  "baseline_design_file": "candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json",
++  "baseline_calibration_file": "candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json",
++  "current_limit_measurement_point": "transducer_port, i.e. one interpretation of the user 5 mA upper limit; under the amplifier-output interpretation this candidate draws about 45 mA RMS at its design point and does not comply",
++  "frequency_min_Hz": 800000,
++  "frequency_max_Hz": 1000000,
++  "initial_frequency_Hz": 900000,
++  "control_tick_us": 20000,
++  "segment_us": 800000,
++  "scan_point_us": 1500,
++  "point_acquire_timeout_us": 500000,
++  "scan_period_us": 500000,
++  "scan_amplitude": 0.4,
++  "scan_levels_Hz": [
++    [
++      50000,
++      5000
++    ],
++    [
++      5000,
++      1000
++    ],
++    [
++      1000,
++      100
++    ]
++  ],
++  "scan_max_recentres": 3,
++  "scan_validation_relative_tolerance": 0.1,
++  "failed_scan_retry_us": 50000,
++  "failed_scan_max_retries": 2,
++  "scan_preemption_max_retries": 4,
++  "scan_measurement_fault_max_retries": 2,
++  "scan_nonstationary_max_retries": 2,
++  "scan_max_coarse_fallbacks": 2,
++  "scan_max_points": 400,
++  "scan_max_duration_us": 300000,
++  "scan_budget_origin": "declared_not_tuned; every class is bounded and any exhaustion reaches the same latch; rationale and the sensitivity that is NOT established in review/13",
++  "failed_scan_exhaustion": "latched_low_hold_until_explicit_run_reset",
++  "hard_hold_us": 60000,
++  "recovery_hold_us": 100000,
++  "soft_hold_us": 100000,
++  "recovery_amplitude": 0.25,
++  "ramp_amplitude_per_s": 2.5,
++  "voltage_soft_Vpp": 130.0,
++  "voltage_hard_Vpp": 160.0,
++  "current_soft_Arms": 0.0045,
++  "current_hard_Arms": 0.005,
++  "phase_gain_Hz_per_deg": 5.0,
++  "phase_deadband_deg": 0.1,
++  "phase_max_step_Hz": 500.0,
++  "phase_probe_offset_Hz": 100.0,
++  "phase_slope_min_deg_per_Hz": 1e-06,
++  "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
++  "phase_centre_recovery_gate": true,
++  "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
++  "capture_threshold": 0.98,
++  "continuous_samples": 10,
++  "tail_window_us": 200000,
++  "reference_grid_step_Hz": 100,
++  "reference_policy": "soft_limits_and_source_amplitude_le_1",
++  "gamma_role": "monitor_only_no_claim_of_reflection_upper_bound",
++  "power_cap_role": "no_independent_absolute_power_cap; maximize_P_Rm_under_declared_V_I_and_source_amplitude_constraints",
++  "protection_assumption": "ideal_current_model_guard_at_command_instants; no_guard_at_unobserved_disturbance_boundaries",
++  "historical_schedule": [
++    "CASE_000_BASELINE",
++    "CASE_C0_P30",
++    "CASE_RM_P50",
++    "CASE_FS_M5",
++    "CASE_LMATCH_P10",
++    "CASE_QL_20",
++    "CASE_COMBINED_HIGH",
++    "CASE_000_BASELINE",
++    "CASE_LM_P20",
++    "CASE_000_BASELINE",
++    "CASE_CM_P20",
++    "CASE_000_BASELINE"
++  ]
++}
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json
+new file mode 100644
+index 0000000..c144a69
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json
+@@ -0,0 +1,73 @@
++{
++  "model_id": "SYNTHETIC_CANDIDATE_Q13P8_3MA",
++  "topology": "Rs -> series (R_L_ESR + Lmatch) -> port; shunt (Cmatch + R_C_ESR) across BVD port",
++  "comparison_source": "1 Vrms Thevenin source with fixed 50 ohm Rs for BEFORE/IDEAL/ACTIVE_LOSSY",
++  "bvd": {
++    "C0_F": 4.1148384631190455e-12,
++    "Rm_ohm": 12254.90196078431,
++    "Lm_H": 0.02993009655402198,
++    "Cm_F": 1.0448335909487233e-12,
++    "fs_Hz": 900000.0,
++    "Qm": 13.810857823361614
++  },
++  "matching_loss_assumptions": {
++    "source_class": "HYPOTHETICAL_BASELINE",
++    "inductor_Q_at_f0": 100.0,
++    "capacitor_Q_at_f0": 1000.0,
++    "esr_model": "fixed series R calculated at f0"
++  },
++  "design": {
++    "l_ideal_H": 0.00013814328270741726,
++    "c_ideal_F": 2.21334998915386e-10,
++    "l_active_H": 0.0001380112924763264,
++    "c_active_F": 2.2120771306603173e-10,
++    "r_l_active_ohm_at_f0": 7.804354726009067,
++    "r_c_active_ohm_at_f0": 0.7994243202761837,
++    "network_q": 15.6236371954704,
++    "optimizer_iterations": 75,
++    "optimizer_success": true
++  },
++  "calibration": {
++    "source_class": "DERIVED_VALUE from active matched baseline; not a hardware rating",
++    "calibration_frequency_Hz": 900000.0,
++    "target_transducer_Vpp": 100.0,
++    "unit_source_Vrms": 1.0,
++    "vport_per_unit_source_Vrms": 7.209730893864598,
++    "a1_source_Vrms": 4.90383615973994,
++    "a1_source_Vpp": 13.870143209519636,
++    "expected_p_rm_W": 0.10200000000000005,
++    "expected_total_iport_Arms": 0.0030000000000000005,
++    "rule": "freeze this Thevenin source amplitude for all future scenarios; protection may only reduce it"
++  },
++  "baseline_derivation": {
++    "status": "合成候选基线（宽峰算法对照用）：不是任何确定尺寸、材料、血液负载器件的拟合结果，未实测；不设为默认，也不宣称为目标器件参数",
++    "rule": "保留原基线 C0、Rm、fs（fs 处 M = X_C0/Rm 不变），指定 k_eff = 0.45，按 BVD 关系反算 Qm = M(1-k^2)/k^2；Lm、Cm、k_eff 随之改变，不能理解为同一器件只增加阻尼。再把 BVD 阻抗按 k = 5/3 均匀缩放，使 0.9 MHz、a=1、100 Vpp 时换能器端电流为 3 mA，并按 stage2 规则重新设计匹配网络、重新标定源幅度：这是一组重新设计的合成电路，不是几何缩小的推论",
++    "k_eff": 0.45,
++    "M_xc0_over_rm_at_fs": 3.506832237279909,
++    "impedance_scale": 1.6666666666666667,
++    "design_point_transducer_current_Arms": 0.003,
++    "design_point_amplifier_output_current_Arms": 0.04514376689236159,
++    "current_measurement_point": "限值作用于换能器端口，这只是用户「5 mA 上限」的一种测点解释；按功放输出端解释，本候选在设计点不满足",
++    "geometric_scaling_caveat": "同材料、同长度、端面积缩为 0.6 倍时，按本仓库 Mason 模型（血液、空气背衬）重算，Q、fs 都会变，|Z| 比约 1.9 而非 5/3；均匀缩放不能保证「电流减小而振速不变」",
++    "previous_baseline": {
++      "C0_F": 6.858064105198409e-12,
++      "Rm_ohm": 7352.941176470586,
++      "Lm_H": 1.0402283862215378,
++      "Cm_F": 3.006260036180247e-14,
++      "fs_Hz": 900000.0,
++      "Qm": 800.0,
++      "l_active_H": 0.00010672581904440851,
++      "c_active_F": 2.8359878734546773e-10,
++      "source_Vrms_for_a1": 6.217360894531728,
++      "design_point": "100 Vpp / 5.000 mA RMS / 170 mW at 0.9 MHz, a=1",
++      "registered_batch": "UNIFIED_20260923T013352_476445Z_f442bcda"
++    },
++    "evidence": [
++      "review/24 第八、十五节（数值）",
++      "review/26（审查意见与改正）",
++      "review/design_current_study.py",
++      "review/review_claims_check_20261016.py"
++    ],
++    "generator": "review/baseline_3mA_parameters.py"
++  }
++}
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json
+new file mode 100644
+index 0000000..7332a82
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json
+@@ -0,0 +1,19 @@
++{
++  "source_class": "DERIVED_VALUE; based on active matched baseline and AC RMS-equivalent convention",
++  "source_Vrms_for_a1": 4.90383615973994,
++  "source_Vpp_for_a1": 13.870143209519636,
++  "transducer_Vpp": 100.00000000000001,
++  "transducer_Irms_A": 0.0030000000000000005,
++  "P_Rm_W": 0.10200000000000005,
++  "P_port_W": 0.10200000000000005,
++  "Q_port_var": -0.02908607914449789,
++  "S_port_VA": 0.10606601717798216,
++  "P_source_W": 0.22136656841418598,
++  "P_Rs_W": 0.10189798446159412,
++  "P_L_ESR_W": 0.01590496033207281,
++  "P_C_ESR_W": 0.0015636236205190787,
++  "eta_elec": 0.4607741843346184,
++  "rule": "freeze this source amplitude for stage3-5; protection may reduce but strategies may not increase it",
++  "amplifier_output_Irms_A": 0.04514376689236159,
++  "baseline": "SYNTHETIC_CANDIDATE_Q13P8_3MA（合成候选，非默认）；推导见同目录设计文件的 baseline_derivation"
++}
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index 8688823..fbc6fa4 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -16,6 +16,7 @@ from models import model_v2_1 as model
+ ROOT = Path(__file__).resolve().parents[1]
+ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
+ BASE = 'CASE_000_BASELINE'
++CANDIDATE = ROOT/'candidates'/'synthetic_q13p8_3mA'/'config.json'
+ 
+ 
+ class UnifiedTests(unittest.TestCase):
+@@ -609,6 +610,58 @@ class CentreRecoveryGateTests(unittest.TestCase):
+             probes = [r for r in e.rows if r['kind'].startswith('PHASE_PROBE')]
+             self.assertTrue(all(r['duration_us'] == CFG['scan_point_us'] for r in probes))
+ 
++class SyntheticCandidateTests(unittest.TestCase):
++    """The Q=13.8 / 3 mA synthetic candidate is selectable but never the default.
++
++    It is a constructed circuit for broad-peak algorithm comparison, not a fit
++    to any device; its current limits act at the transducer port, which is
++    only one reading of the user's 5 mA upper limit.
++    """
++
++    def setUp(self):
++        self.addCleanup(model.configure, CFG)
++        self.cfg = json.loads(CANDIDATE.read_text(encoding='utf-8'))
++        model.configure(self.cfg)
++        self.cal = json.loads((ROOT/self.cfg['baseline_calibration_file']).read_text(encoding='utf-8'))
++
++    def test_default_configuration_does_not_use_the_candidate(self):
++        self.assertNotEqual(CFG['baseline_design_file'], self.cfg['baseline_design_file'])
++        self.assertNotIn('candidates/', CFG['baseline_design_file'])
++
++    def test_candidate_baseline_and_design_point(self):
++        design = json.loads((ROOT/self.cfg['baseline_design_file']).read_text(encoding='utf-8'))
++        self.assertEqual(model.BASELINE_ID, design['model_id'])
++        self.assertTrue(model.BASELINE_ID.startswith('SYNTHETIC_CANDIDATE'))
++        self.assertEqual(model.BASE_BVD.qm, design['bvd']['Qm'])
++        e = Engine(copy.deepcopy(self.cfg), [BASE], 'FIXED', 'TEST')
++        m = e.execute(900000, 1, 'CONTROL', 20000)
++        self.assertAlmostEqual(m.vpp, 100, places=6)
++        self.assertAlmostEqual(m.irms, self.cal['transducer_Irms_A'], places=12)
++        self.assertAlmostEqual(m.p_port_W, self.cal['P_port_W'], places=12)
++        # Inside its own limits, which act at the transducer port ...
++        self.assertLess(m.vpp, self.cfg['voltage_soft_Vpp'])
++        self.assertLess(m.irms, self.cfg['current_soft_Arms'])
++        # ... while the amplifier output current is far above 5 mA and only reported.
++        row = e.rows[-1]
++        amp = abs(complex(row['i_source_real_Arms'], row['i_source_imag_Arms']))
++        self.assertAlmostEqual(amp, self.cal['amplifier_output_Irms_A'], places=12)
++        self.assertGreater(amp, self.cfg['current_hard_Arms'])
++
++    def test_candidate_qm_family_is_relative(self):
++        cases = model.scenario_map()
++        self.assertIs(cases[BASE].bvd, model.BASE_BVD)
++        self.assertAlmostEqual(cases['CASE_QM_500'].bvd.qm/model.BASE_BVD.qm, .625, places=12)
++        self.assertEqual(cases['CASE_QM_800'].bvd.qm, model.BASE_BVD.qm)
++
++    def test_candidate_enables_the_gate(self):
++        self.assertIs(self.cfg['phase_centre_recovery_gate'], True)
++        e = Engine(copy.deepcopy(self.cfg), [BASE, 'CASE_FS_M3'], 'PHASE_FEEDBACK', 'TEST')
++        phi = float(model.response(900000, e.cases[BASE])['phase_deg'][0])
++        run_policy(Executor(e), 'PHASE_FEEDBACK', phi)
++        names = [x['event'] for x in e.events]
++        self.assertIn('CENTRE_RECOVERY_BEGIN', names)
++        self.assertIn('CENTRE_RECOVERY_COMPLETE', names)
++
+ 
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """换主基线补丁的独立核对：补丁不改旧行为、门控移植等于 v2、新批次等于 review/24 第十五节。
 
+〔2026-10-16 起作为 55fbe6e 组合补丁的核对记录保留；该补丁已作废，拆分后的三个补丁用
+review/check_split_patches.py 核对（它复用本文件的比较函数），见 review/26。〕
+
     python review/check_baseline_switch.py --orig <原 current/unified> --patched <补丁后 current/unified>
         --registered <旧登记批次目录> --new-batch <补丁树上正式运行器产出的新批次目录>
         --work <临时目录> [--candidate <v2 candidate.py 所在目录>] [--out <结果目录>]

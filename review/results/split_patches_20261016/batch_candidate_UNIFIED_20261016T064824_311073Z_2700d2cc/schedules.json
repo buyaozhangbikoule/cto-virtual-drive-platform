@@ -1,0 +1,756 @@
+{
+  "HISTORICAL_12": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_C0_P30"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_RM_P50"
+    },
+    {
+      "index": 3,
+      "start_us": 2400000,
+      "end_us": 3200000,
+      "case_id": "CASE_FS_M5"
+    },
+    {
+      "index": 4,
+      "start_us": 3200000,
+      "end_us": 4000000,
+      "case_id": "CASE_LMATCH_P10"
+    },
+    {
+      "index": 5,
+      "start_us": 4000000,
+      "end_us": 4800000,
+      "case_id": "CASE_QL_20"
+    },
+    {
+      "index": 6,
+      "start_us": 4800000,
+      "end_us": 5600000,
+      "case_id": "CASE_COMBINED_HIGH"
+    },
+    {
+      "index": 7,
+      "start_us": 5600000,
+      "end_us": 6400000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 8,
+      "start_us": 6400000,
+      "end_us": 7200000,
+      "case_id": "CASE_LM_P20"
+    },
+    {
+      "index": 9,
+      "start_us": 7200000,
+      "end_us": 8000000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 10,
+      "start_us": 8000000,
+      "end_us": 8800000,
+      "case_id": "CASE_CM_P20"
+    },
+    {
+      "index": 11,
+      "start_us": 8800000,
+      "end_us": 9600000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_000_BASELINE": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_C0_P10": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_C0_P10"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_C0_P20": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_C0_P20"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_C0_P30": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_C0_P30"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_RM_P15": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_RM_P15"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_RM_P30": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_RM_P30"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_RM_P50": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_RM_P50"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_FS_M1": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_FS_M1"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_FS_M3": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_FS_M3"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_FS_M5": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_FS_M5"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_LM_P5": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_LM_P5"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_LM_P10": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_LM_P10"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_LM_P20": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_LM_P20"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_CM_P5": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_CM_P5"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_CM_P10": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_CM_P10"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_CM_P20": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_CM_P20"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_RS_P5": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_RS_P5"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_RS_P10": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_RS_P10"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_RS_P20": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_RS_P20"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_LMATCH_P2": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_LMATCH_P2"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_LMATCH_P5": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_LMATCH_P5"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_LMATCH_P10": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_LMATCH_P10"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_CMATCH_M2": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_CMATCH_M2"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_CMATCH_M5": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_CMATCH_M5"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_CMATCH_M10": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_CMATCH_M10"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_QL_100": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_QL_100"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_QL_50": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_QL_50"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_QL_20": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_QL_20"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_QM_500": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_QM_500"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_QM_800": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_QM_800"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_QM_1000": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_QM_1000"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_COMBINED_LOW": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_COMBINED_LOW"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_COMBINED_MEDIUM": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_COMBINED_MEDIUM"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ],
+  "COVER_CASE_COMBINED_HIGH": [
+    {
+      "index": 0,
+      "start_us": 0,
+      "end_us": 800000,
+      "case_id": "CASE_000_BASELINE"
+    },
+    {
+      "index": 1,
+      "start_us": 800000,
+      "end_us": 1600000,
+      "case_id": "CASE_COMBINED_HIGH"
+    },
+    {
+      "index": 2,
+      "start_us": 1600000,
+      "end_us": 2400000,
+      "case_id": "CASE_000_BASELINE"
+    }
+  ]
+}

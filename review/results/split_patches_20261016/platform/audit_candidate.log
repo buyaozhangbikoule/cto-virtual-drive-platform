@@ -1,0 +1,19 @@
+{
+  "batch_id": "UNIFIED_20261016T064824_311073Z_2700d2cc",
+  "audit_pass": true,
+  "problems": [],
+  "manifest_files_verified": 239,
+  "timelines": 105,
+  "executed_rows": 23997,
+  "executed_actions": 23995,
+  "post_guard_hold_violation_rows": 0,
+  "pre_guard_hard_observations": 5,
+  "max_pre_guard_voltage_Vpp": 164.65993671053602,
+  "max_post_guard_hold_voltage_Vpp": 130.00000000000003,
+  "max_energy_recompute_error_J": 5.551115123125783e-17,
+  "max_voltage_recompute_error_Vpp": 5.684341886080802e-14,
+  "max_current_recompute_error_Arms": 1.3010426069826053e-18,
+  "max_power_recompute_error_W": 8.326672684688674e-17,
+  "scope": "saved-log, analytic-model and statistics audit; not independent LTspice/hardware proof"
+}
+AUDIT <main 副本>/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audits/UNIFIED_20261016T064824_311073Z_2700d2cc_20261016T064834_043822Z.json

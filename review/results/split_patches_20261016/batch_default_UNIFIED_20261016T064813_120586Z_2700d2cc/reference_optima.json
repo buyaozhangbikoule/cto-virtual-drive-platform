@@ -1,0 +1,410 @@
+{
+  "CASE_000_BASELINE": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_C0_P10": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16997415267154176,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16997415267154176,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_C0_P20": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16988764487355545,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16988764487355545,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_C0_P30": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.1697406401005215,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.1697406401005215,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_RM_P15": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16770686168933288,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16770686168933288,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_RM_P30": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16441629603922164,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16441629603922164,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_RM_P50": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.15919550478594954,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.15919550478594954,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_FS_M1": {
+    "policy": {
+      "frequency_Hz": 890900.0,
+      "power_W": 0.16922066660647422,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 890900.0,
+      "power_W": 0.16922066660647422,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_FS_M3": {
+    "policy": {
+      "frequency_Hz": 872800.0,
+      "power_W": 0.1604876355798904,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 872800.0,
+      "power_W": 0.1604876355798904,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_FS_M5": {
+    "policy": {
+      "frequency_Hz": 854800.0,
+      "power_W": 0.14023038267556054,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 854800.0,
+      "power_W": 0.14023038267556054,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_LM_P5": {
+    "policy": {
+      "frequency_Hz": 878100.0,
+      "power_W": 0.16416822810841983,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 878100.0,
+      "power_W": 0.16416822810841983,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_LM_P10": {
+    "policy": {
+      "frequency_Hz": 857900.0,
+      "power_W": 0.14427880142299795,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 857900.0,
+      "power_W": 0.14427880142299795,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_LM_P20": {
+    "policy": {
+      "frequency_Hz": 821400.0,
+      "power_W": 0.09619181078385662,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 821400.0,
+      "power_W": 0.09619181078385662,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_CM_P5": {
+    "policy": {
+      "frequency_Hz": 878100.0,
+      "power_W": 0.1642715331846926,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 878100.0,
+      "power_W": 0.1642715331846926,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_CM_P10": {
+    "policy": {
+      "frequency_Hz": 857900.0,
+      "power_W": 0.14429602049349552,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 857900.0,
+      "power_W": 0.14429602049349552,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_CM_P20": {
+    "policy": {
+      "frequency_Hz": 821400.0,
+      "power_W": 0.09644501502819033,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 821400.0,
+      "power_W": 0.09644501502819033,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_RS_P5": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.1623049506655055,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.1623049506655055,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_RS_P10": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.15512079556646444,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.15512079556646444,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_RS_P20": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.14211282886213067,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.14211282886213067,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_LMATCH_P2": {
+    "policy": {
+      "frequency_Hz": 900100.0,
+      "power_W": 0.16947695338622146,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900100.0,
+      "power_W": 0.16947695338622146,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_LMATCH_P5": {
+    "policy": {
+      "frequency_Hz": 900200.0,
+      "power_W": 0.16568766662952272,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900200.0,
+      "power_W": 0.16568766662952272,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_LMATCH_P10": {
+    "policy": {
+      "frequency_Hz": 900300.0,
+      "power_W": 0.14483388736834868,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900300.0,
+      "power_W": 0.14483388736834868,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_CMATCH_M2": {
+    "policy": {
+      "frequency_Hz": 899900.0,
+      "power_W": 0.1694862866858576,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 899900.0,
+      "power_W": 0.1694862866858576,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_CMATCH_M5": {
+    "policy": {
+      "frequency_Hz": 899800.0,
+      "power_W": 0.1650414564165698,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 899800.0,
+      "power_W": 0.1650414564165698,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_CMATCH_M10": {
+    "policy": {
+      "frequency_Hz": 899800.0,
+      "power_W": 0.14196790207836324,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 899800.0,
+      "power_W": 0.14196790207836324,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_QL_100": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_QL_50": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.152284950383969,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.152284950383969,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_QL_20": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.11305365910985797,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.11305365910985797,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_QM_500": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489844,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489844,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_QM_800": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_QM_1000": {
+    "policy": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 900000.0,
+      "power_W": 0.16999997832489855,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_COMBINED_LOW": {
+    "policy": {
+      "frequency_Hz": 890900.0,
+      "power_W": 0.15888087794549566,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 890900.0,
+      "power_W": 0.15888087794549566,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_COMBINED_MEDIUM": {
+    "policy": {
+      "frequency_Hz": 872900.0,
+      "power_W": 0.12390793831377583,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 872900.0,
+      "power_W": 0.12390793831377583,
+      "amplitude": 1.0
+    }
+  },
+  "CASE_COMBINED_HIGH": {
+    "policy": {
+      "frequency_Hz": 854900.0,
+      "power_W": 0.0725426263390658,
+      "amplitude": 1.0
+    },
+    "hard": {
+      "frequency_Hz": 854900.0,
+      "power_W": 0.0725426263390658,
+      "amplitude": 1.0
+    }
+  }
+}

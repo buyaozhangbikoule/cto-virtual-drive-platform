@@ -1,0 +1,64 @@
+{
+  "batch_id": "UNIFIED_20261016T064813_120586Z_2700d2cc",
+  "source_tree_sha256": "2700d2cc2fc5e14e76265998cc938b623699654e51c9d4f4b49ada45afb8482a",
+  "source_hashes": {
+    "README.md": "86c59720c6e0e7d4f36f810defa5be1da78eb5f4d05074807351391c5faba3dd",
+    "audit_batch.py": "adead493bd74d07656b49fe86ab744a9a0bfff48a0626eae0cfa2fc0739b43d5",
+    "candidates/synthetic_q13p8_3mA/README.md": "560f37abbf2f43e656042934343ccaddf8a7355929a200b889ac056942182b01",
+    "candidates/synthetic_q13p8_3mA/config.json": "c2510a09390692bb6fbd958862b4a1fba7d0f45ad585de9a14caa2361b348bc3",
+    "candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json": "282aa21d8e5acec107785b28f73cf0bad272dd4b3ac0d0c6d00bdb2b02361df1",
+    "candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json": "e4a90d4f33630e9172d16644d177f913f2dbcfa86ed99955092b1ca99094e3bb",
+    "config.json": "82df7426e9904572e0942a79e34321cc4b68c5eac34ed3c0b75d0625e3d2b2a8",
+    "controllers.py": "b977dc0e2c6c2085e261c49a305a11e181b270f5207464f5b21f01f7851028c5",
+    "engine.py": "54659dd6fa23f6cdaee330544f774c138f8f73831e7cdbed2aba44a7dc0dd233",
+    "metrics.py": "5234fdf88d0fea25dc85620d92f387a21ec399f7c3aeef24eaf26f5258f893aa",
+    "models/model_v2_1.py": "6d3da3e3f268b140ed097798bc9f6136b8793be4ba03bd2b99ad586fad952ab6",
+    "requirements.txt": "0bece1334a6220b95d272cee7a47b0ec32b9daea4cc3316836090d5fae0c22c9",
+    "run_unified.py": "a22b5bf4f695e9d7444b61779a54f09fd19fbd52400567ddbf9ea710d9d73362",
+    "stage2_matching/stage2_匹配设计参数.json": "6d768c0110792535508513ad73e895283013b98d75c68c2b3ee2df61cbdfc050",
+    "stage2_matching/stage2_控制源幅度校准.json": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4",
+    "tests/test_unified.py": "7abf864c13c753ca785f46d42cbe8615dfef3634e7d738e456560d11d449c5f2"
+  },
+  "python": "3.11.15 (main, Mar  3 2026, 09:26:23) [GCC 13.3.0]",
+  "numpy": "2.4.6",
+  "platform": "Linux-6.18.44-fc-v139-x86_64-with-glibc2.39",
+  "command": [
+    "run_unified.py",
+    "--suite",
+    "all"
+  ],
+  "source_model_provenance": "v2.1 circuit model from validation commit 650abdc87f3fcf10f5d4250aaf520efcfde3b56d; baseline MODEL_V2_1_HYPOTHETICAL; see integration_sources.json",
+  "config_file": "config.json",
+  "baseline_model_id": "MODEL_V2_1_HYPOTHETICAL",
+  "baseline_files": {
+    "design": {
+      "path": "stage2_matching/stage2_匹配设计参数.json",
+      "sha256": "6d768c0110792535508513ad73e895283013b98d75c68c2b3ee2df61cbdfc050"
+    },
+    "calibration": {
+      "path": "stage2_matching/stage2_控制源幅度校准.json",
+      "sha256": "ea21de799daff1958269bcf2f89ff47142dc85e25fbb13a63d2b1239ed6e1ba4"
+    }
+  },
+  "current_limit_measurement_point": "transducer_port; the user 5 mA RMS upper limit has no stated measurement point (transducer port or amplifier output); amplifier output current is reported separately",
+  "phase_centre_recovery_gate": false,
+  "amplifier_output_current_peak_mArms": {
+    "all_timelines": 75.48577514334904,
+    "historical_12": {
+      "FIXED": 75.45314509936463,
+      "PERIODIC_SCAN": 75.45314509936463,
+      "PHASE_FEEDBACK": 75.48577514334904
+    }
+  },
+  "strategies": [
+    "FIXED",
+    "PERIODIC_SCAN",
+    "PHASE_FEEDBACK"
+  ],
+  "suite_count": 35,
+  "tests_passed": 54,
+  "control_uses_schedule_or_offline_reference": false,
+  "ideal_guard_uses_current_model": true,
+  "phase_target_deg": -1.0782096368565852,
+  "physical_scope": "hypothetical linear quasi-steady electrical model; no hardware/acoustic claim"
+}

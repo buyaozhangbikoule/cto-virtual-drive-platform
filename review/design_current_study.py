@@ -9,7 +9,10 @@
 做法（运行前声明）
   · 元件：review/24 第八节的同工作点物理基线（k_eff 0.45、Q 13.81），按 k = 5 mA / I_d 均匀缩放阻抗：
     C0/k、Cm/k、Lm·k、Rm·k；Q、fs、k_eff 不变。物理上是同材料、同长度、端面积缩为 1/k 的元件
-    （直径缩为 1/√k）：同一电压下端面振速不变，总电流与功率按 1/k 变小。
+    （直径缩为 1/√k）：同一电压下端面振速不变，总电流与功率按 1/k 变小
+    〔已改正 2026-10-16，见 review/26：「物理基线」应为合成候选基线（保留原 C0、Rm、fs 后指定 k_eff 反算 Q）；
+    「同材料同长度缩面积、振速不变」的物理解释不成立——同长度缩面积时 Q、fs 都会变，|Z| 不按 1/k 的倍数变。
+    均匀缩放只是一组重新设计的合成电路。本脚本的计算不受影响。〕。
   · 匹配网络：按 stage2 原规则（integrated/outputs/v2_self_consistent_rebuild/stage2_matching/
     design_stage2.py 的 design_values）重新设计——理想 L 型网络作初值，再在有损模型（QL=100、QC=1000、
     ESR 取 0.9 MHz 值）上用 Nelder–Mead 最大化 0.9 MHz 处 P_Rm，容差同原脚本。

@@ -1,0 +1,539 @@
+{
+  "O": {
+    "batch": "UNIFIED_20261016T064843_411043Z_f442bcda",
+    "tests": "Ran 41 tests in 0.615s",
+    "vs_registered": {
+      "executions": {
+        "differing_cells": {
+          "phase_port_deg": 202,
+          "phase_input_deg": 29
+        },
+        "max_relative_difference": 2.4626231932713163e-16
+      },
+      "events": {
+        "files_with_crlf_in_registered": 74,
+        "structural_differences": [],
+        "max_relative_difference": 0.0
+      },
+      "per_segment_metrics.csv": {
+        "differing_columns": {
+          "whole_segment_power_std_W": 119,
+          "whole_segment_power_cv_pct": 114
+        },
+        "max_relative_difference": 1.6185639232402536e-15
+      },
+      "formal_three_strategy_summary.csv": {
+        "differing_columns": {},
+        "max_relative_difference": 0.0
+      },
+      "historical_12_three_strategy_table.csv": {
+        "differing_columns": {},
+        "max_relative_difference": 0.0
+      },
+      "registered34_target_segment_metrics.csv": {
+        "differing_columns": {
+          "whole_segment_power_std_W": 58,
+          "whole_segment_power_cv_pct": 56
+        },
+        "max_relative_difference": 1.6185639232402536e-15
+      },
+      "ok": true
+    }
+  },
+  "S1": {
+    "batch": "UNIFIED_20261016T064853_851859Z_c9d9a83a",
+    "tests": "Ran 44 tests in 0.614s",
+    "default_vs_O": {
+      "executions": {
+        "files": 105,
+        "mismatches": []
+      },
+      "events": {
+        "files": 105,
+        "mismatches": []
+      },
+      "per_segment_metrics.csv": {
+        "rows": 342,
+        "identical": true
+      },
+      "formal_three_strategy_summary.csv": {
+        "rows": 105,
+        "identical": true
+      },
+      "historical_12_three_strategy_table.csv": {
+        "rows": 3,
+        "identical": true
+      },
+      "registered34_target_segment_metrics.csv": {
+        "rows": 102,
+        "identical": true
+      },
+      "reference_optima.json": {
+        "identical": true
+      },
+      "phase_calibration.json": {
+        "identical": true
+      },
+      "schedules.json": {
+        "identical": true
+      },
+      "scenario_registry.json": {
+        "same_ids": true,
+        "text_only_differences": [],
+        "physics_differences": []
+      },
+      "scenario_registry_bytes_identical": true
+    },
+    "default_identical": true
+  },
+  "S2": {
+    "batch": "UNIFIED_20261016T064903_943806Z_bac3559c",
+    "tests": "Ran 50 tests in 0.807s",
+    "default_vs_O": {
+      "executions": {
+        "files": 105,
+        "mismatches": []
+      },
+      "events": {
+        "files": 105,
+        "mismatches": []
+      },
+      "per_segment_metrics.csv": {
+        "rows": 342,
+        "identical": true
+      },
+      "formal_three_strategy_summary.csv": {
+        "rows": 105,
+        "identical": true
+      },
+      "historical_12_three_strategy_table.csv": {
+        "rows": 3,
+        "identical": true
+      },
+      "registered34_target_segment_metrics.csv": {
+        "rows": 102,
+        "identical": true
+      },
+      "reference_optima.json": {
+        "identical": true
+      },
+      "phase_calibration.json": {
+        "identical": true
+      },
+      "schedules.json": {
+        "identical": true
+      },
+      "scenario_registry.json": {
+        "same_ids": true,
+        "text_only_differences": [],
+        "physics_differences": []
+      },
+      "scenario_registry_bytes_identical": true
+    },
+    "default_identical": true,
+    "gate_on_batch": "UNIFIED_20261016T064913_660350Z_bac3559c",
+    "gate_on_fixed_scan_vs_O": {
+      "executions": {
+        "files": 70,
+        "mismatches": []
+      },
+      "events": {
+        "files": 70,
+        "mismatches": []
+      },
+      "per_segment_metrics.csv": {
+        "rows": 228,
+        "identical": true
+      },
+      "formal_three_strategy_summary.csv": {
+        "rows": 70,
+        "identical": true
+      },
+      "historical_12_three_strategy_table.csv": {
+        "rows": 2,
+        "identical": true
+      },
+      "registered34_target_segment_metrics.csv": {
+        "rows": 68,
+        "identical": true
+      },
+      "reference_optima.json": {
+        "identical": true
+      },
+      "phase_calibration.json": {
+        "identical": true
+      },
+      "schedules.json": {
+        "identical": true
+      },
+      "scenario_registry.json": {
+        "same_ids": true,
+        "text_only_differences": [],
+        "physics_differences": []
+      },
+      "scenario_registry_bytes_identical": true
+    },
+    "gate_on_phase_h12": [
+      7,
+      70.104969
+    ],
+    "v2_registered": [
+      7,
+      70.104969
+    ],
+    "ablation_old_baseline": {
+      "unique_perturbations": 31,
+      "target_settled_on": 15,
+      "target_settled_off": 14,
+      "settled_gained": [
+        "COVER_CASE_CMATCH_M2"
+      ],
+      "settled_lost": [],
+      "target_energy_higher": 22,
+      "target_energy_lower": 3,
+      "pre_guard_current_higher": [],
+      "pre_guard_current_lower": [
+        "COVER_CASE_CMATCH_M10",
+        "COVER_CASE_COMBINED_HIGH"
+      ],
+      "pre_guard_voltage_higher": [],
+      "max_pre_guard_current_mA_on": 5.499581229803299,
+      "max_pre_guard_current_mA_off": 5.499581229803299,
+      "trial_peak_current_higher": [
+        "COVER_CASE_CM_P10",
+        "COVER_CASE_CM_P20",
+        "COVER_CASE_CM_P5",
+        "COVER_CASE_COMBINED_HIGH",
+        "COVER_CASE_COMBINED_LOW",
+        "COVER_CASE_COMBINED_MEDIUM",
+        "COVER_CASE_FS_M1",
+        "COVER_CASE_FS_M3",
+        "COVER_CASE_FS_M5",
+        "COVER_CASE_LMATCH_P5",
+        "COVER_CASE_LM_P10",
+        "COVER_CASE_LM_P20",
+        "COVER_CASE_LM_P5"
+      ],
+      "trial_peak_voltage_higher": [
+        "COVER_CASE_LMATCH_P10"
+      ],
+      "max_trial_peak_current_mA_on": 5.499581229803299,
+      "max_trial_peak_current_mA_off": 5.501728768160031,
+      "max_trial_peak_voltage_Vpp_on": 188.22471135207078,
+      "max_trial_peak_voltage_Vpp_off": 188.22471135207078
+    },
+    "v2_candidate_replay": {
+      "schedules": 35,
+      "mismatches": []
+    }
+  },
+  "F": {
+    "batch": "UNIFIED_20261016T064926_004532Z_2700d2cc",
+    "tests": "Ran 54 tests in 0.967s",
+    "default_vs_O": {
+      "executions": {
+        "files": 105,
+        "mismatches": []
+      },
+      "events": {
+        "files": 105,
+        "mismatches": []
+      },
+      "per_segment_metrics.csv": {
+        "rows": 342,
+        "identical": true
+      },
+      "formal_three_strategy_summary.csv": {
+        "rows": 105,
+        "identical": true
+      },
+      "historical_12_three_strategy_table.csv": {
+        "rows": 3,
+        "identical": true
+      },
+      "registered34_target_segment_metrics.csv": {
+        "rows": 102,
+        "identical": true
+      },
+      "reference_optima.json": {
+        "identical": true
+      },
+      "phase_calibration.json": {
+        "identical": true
+      },
+      "schedules.json": {
+        "identical": true
+      },
+      "scenario_registry.json": {
+        "same_ids": true,
+        "text_only_differences": [],
+        "physics_differences": []
+      },
+      "scenario_registry_bytes_identical": true
+    },
+    "default_identical": true,
+    "validate_batch": "UNIFIED_20261016T064813_120586Z_2700d2cc",
+    "validate_batch_vs_O": {
+      "executions": {
+        "files": 105,
+        "mismatches": []
+      },
+      "events": {
+        "files": 105,
+        "mismatches": []
+      },
+      "per_segment_metrics.csv": {
+        "rows": 342,
+        "identical": true
+      },
+      "formal_three_strategy_summary.csv": {
+        "rows": 105,
+        "identical": true
+      },
+      "historical_12_three_strategy_table.csv": {
+        "rows": 3,
+        "identical": true
+      },
+      "registered34_target_segment_metrics.csv": {
+        "rows": 102,
+        "identical": true
+      },
+      "reference_optima.json": {
+        "identical": true
+      },
+      "phase_calibration.json": {
+        "identical": true
+      },
+      "schedules.json": {
+        "identical": true
+      },
+      "scenario_registry.json": {
+        "same_ids": true,
+        "text_only_differences": [],
+        "physics_differences": []
+      },
+      "scenario_registry_bytes_identical": true
+    },
+    "validate_batch_identical": true
+  },
+  "C": {
+    "batch": "UNIFIED_20261016T064936_515444Z_2700d2cc",
+    "tests": "Ran 54 tests in 0.843s",
+    "deliverable": "UNIFIED_20261016T064824_311073Z_2700d2cc",
+    "vs_deliverable": {
+      "executions": {
+        "files": 105,
+        "mismatches": []
+      },
+      "events": {
+        "files": 105,
+        "mismatches": []
+      },
+      "per_segment_metrics.csv": {
+        "rows": 342,
+        "identical": true
+      },
+      "formal_three_strategy_summary.csv": {
+        "rows": 105,
+        "identical": true
+      },
+      "historical_12_three_strategy_table.csv": {
+        "rows": 3,
+        "identical": true
+      },
+      "registered34_target_segment_metrics.csv": {
+        "rows": 102,
+        "identical": true
+      },
+      "reference_optima.json": {
+        "identical": true
+      },
+      "phase_calibration.json": {
+        "identical": true
+      },
+      "schedules.json": {
+        "identical": true
+      },
+      "scenario_registry.json": {
+        "same_ids": true,
+        "text_only_differences": [],
+        "physics_differences": []
+      },
+      "scenario_registry_bytes_identical": true
+    },
+    "deliverable_identical": true,
+    "vs_reviewed_55fbe6e": {
+      "executions_sha256_checked": 105,
+      "executions_mismatch": [],
+      "events_checked": 105,
+      "events_mismatch": [],
+      "tables_identical": {
+        "per_segment_metrics.csv": true,
+        "formal_three_strategy_summary.csv": true,
+        "historical_12_three_strategy_table.csv": true,
+        "registered34_target_segment_metrics.csv": true
+      },
+      "json_identical": {
+        "reference_optima.json": true,
+        "phase_calibration.json": true,
+        "schedules.json": true
+      },
+      "scenario_physics_differences": [],
+      "scenario_text_only_differences": [
+        "CASE_QM_1000",
+        "CASE_QM_500",
+        "CASE_QM_800"
+      ]
+    },
+    "reviewed_identical": true,
+    "vs_study": {
+      "reference": "review/results/design_current_20261015/design_current_study.json [3mA | 按需求 4.5/5.0 mA]",
+      "checked": [
+        "固定频率→FIXED",
+        "v2→PHASE_FEEDBACK（门控开）"
+      ],
+      "mismatches": []
+    },
+    "tables": {
+      "FIXED": {
+        "h12_settled": 7,
+        "h12_energy_pct": 92.34802536394825,
+        "h12_peak_pre_guard_V": 163.60410150288436,
+        "h12_peak_current_mA": 3.0745849454232794,
+        "h12_hard_violation_ms": 0.0,
+        "cover_target_settled": 25,
+        "cover_unique_target_settled": 22,
+        "cover_unique_target_energy_sum": 2906.924586134476,
+        "cover_count": 34,
+        "cover_unique_count": 31
+      },
+      "PERIODIC_SCAN": {
+        "h12_settled": 1,
+        "h12_energy_pct": 53.18227674446201,
+        "h12_peak_pre_guard_V": 164.65993671053602,
+        "h12_peak_current_mA": 3.234808704892669,
+        "h12_hard_violation_ms": 0.0,
+        "cover_target_settled": 0,
+        "cover_unique_target_settled": 0,
+        "cover_unique_target_energy_sum": 1944.7019323450324,
+        "cover_count": 34,
+        "cover_unique_count": 31
+      },
+      "PHASE_FEEDBACK": {
+        "h12_settled": 7,
+        "h12_energy_pct": 91.53351485978357,
+        "h12_peak_pre_guard_V": 164.21250977959724,
+        "h12_peak_current_mA": 3.089471805650202,
+        "h12_hard_violation_ms": 0.0,
+        "cover_target_settled": 25,
+        "cover_unique_target_settled": 22,
+        "cover_unique_target_energy_sum": 2901.663419123725,
+        "cover_count": 34,
+        "cover_unique_count": 31
+      }
+    },
+    "default_tables": {
+      "FIXED": {
+        "h12_settled": 7,
+        "h12_energy_pct": 73.77834015632311,
+        "h12_peak_pre_guard_V": 188.22471135207078,
+        "h12_peak_current_mA": 5.1241662511780515,
+        "h12_hard_violation_ms": 0.0,
+        "cover_target_settled": 18,
+        "cover_unique_target_settled": 15,
+        "cover_unique_target_energy_sum": 1870.7659962364921,
+        "cover_count": 34,
+        "cover_unique_count": 31
+      },
+      "PERIODIC_SCAN": {
+        "h12_settled": 1,
+        "h12_energy_pct": 41.958641853267814,
+        "h12_peak_pre_guard_V": 188.22471135207078,
+        "h12_peak_current_mA": 5.1241662511780515,
+        "h12_hard_violation_ms": 0.0,
+        "cover_target_settled": 0,
+        "cover_unique_target_settled": 0,
+        "cover_unique_target_energy_sum": 1460.2847908679112,
+        "cover_count": 34,
+        "cover_unique_count": 31
+      },
+      "PHASE_FEEDBACK": {
+        "h12_settled": 6,
+        "h12_energy_pct": 57.337358679119646,
+        "h12_peak_pre_guard_V": 188.2203887619446,
+        "h12_peak_current_mA": 5.381451308738694,
+        "h12_hard_violation_ms": 0.0,
+        "cover_target_settled": 17,
+        "cover_unique_target_settled": 14,
+        "cover_unique_target_energy_sum": 1886.7189992001502,
+        "cover_count": 34,
+        "cover_unique_count": 31
+      }
+    },
+    "configuration": {
+      "version": "plan-three-strategy-v1-candidate-synthetic-q13p8-3mA",
+      "current_soft_Arms": 0.0045,
+      "current_hard_Arms": 0.005,
+      "phase_centre_recovery_gate": true,
+      "baseline_design_file": "candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json"
+    },
+    "baseline": "SYNTHETIC_CANDIDATE_Q13P8_3MA",
+    "amplifier_output_current_peak_mArms": {
+      "all_timelines": 57.860029610112235,
+      "historical_12": {
+        "FIXED": 57.36487051045887,
+        "PERIODIC_SCAN": 57.860029610112235,
+        "PHASE_FEEDBACK": 57.41540784059702
+      }
+    }
+  },
+  "D": {
+    "batch": "UNIFIED_20261016T064946_731374Z_2700d2cc",
+    "tests": "Ran 54 tests in 0.819s",
+    "fixed_scan_identical_to_C": true,
+    "phase_gate_off_table": {
+      "h12_settled": 5,
+      "h12_energy_pct": 82.40820112863295,
+      "h12_peak_pre_guard_V": 166.9518695598534,
+      "h12_peak_current_mA": 3.1010494275193747,
+      "h12_hard_violation_ms": 0.0,
+      "cover_target_settled": 24,
+      "cover_unique_target_settled": 21,
+      "cover_unique_target_energy_sum": 2898.4078189485317,
+      "cover_count": 34,
+      "cover_unique_count": 31
+    },
+    "ablation_summary": {
+      "unique_perturbations": 31,
+      "target_settled_on": 22,
+      "target_settled_off": 21,
+      "settled_gained": [
+        "COVER_CASE_LM_P5"
+      ],
+      "settled_lost": [],
+      "target_energy_higher": 18,
+      "target_energy_lower": 8,
+      "pre_guard_current_higher": [],
+      "pre_guard_current_lower": [
+        "COVER_CASE_C0_P10",
+        "COVER_CASE_C0_P20",
+        "COVER_CASE_C0_P30",
+        "COVER_CASE_LMATCH_P10",
+        "COVER_CASE_LMATCH_P2",
+        "COVER_CASE_LMATCH_P5",
+        "COVER_CASE_QL_20",
+        "COVER_CASE_QL_50"
+      ],
+      "pre_guard_voltage_higher": [],
+      "max_pre_guard_current_mA_on": 3.089471805650202,
+      "max_pre_guard_current_mA_off": 3.1010494275193747,
+      "trial_peak_current_higher": [],
+      "trial_peak_voltage_higher": [],
+      "max_trial_peak_current_mA_on": 3.089471805650202,
+      "max_trial_peak_current_mA_off": 3.1549341785733107,
+      "max_trial_peak_voltage_Vpp_on": 163.60410150288436,
+      "max_trial_peak_voltage_Vpp_off": 163.60410150288436
+    }
+  },
+  "failures": []
+}
