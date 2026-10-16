@@ -26,6 +26,10 @@ BVD 用动生导纳峰与半功率宽度提取、C0 取夹持电容）。材料�
      c. 换成把负载匹配到 50 Ω 的无损网络时，所需源电压与功放电流。
   5. 线缆对测量的影响：近端（功放侧）导纳相位在谐振附近的摆幅，与换能器端口相比。
   6. 平台用的峰宽：直接驱动、恒定源幅度时端口功率的半功率宽度。
+  7. 〔补充，review/29 第六节〕前端 λ/4 匹配层（Liu 等的导管用了环氧匹配层）：环氧 1150 kg/m³、2500 m/s
+     （声明值，约 2.9 MRayl）与 review/24 的 6 MRayl 层，层厚为 0.9 MHz 的 λ/4，按一维平面波变换后接圆活塞辐射。
+  8. 〔补充〕电极方式与阻抗量级：端面电极细杆（Codex）与内外壁电极的径向极化管（Liu 等：PZT-5H、
+     外径/内径 1.35/0.73 mm、长 2.5 mm）的夹持电容、0.9 MHz 容抗，以及 100 Vpp 时仅 C0 支路的电流。
 """
 from __future__ import annotations
 
@@ -52,6 +56,8 @@ CODEX_B = dict(c0=6.778976436547607e-13, rm=9368.265426159336, lm=0.095161966977
 CABLE_PF = (0.0, 5.0, 10.0, 30.0, 100.0, 150.0)
 BACKING_RAYL = (1.5e6, 3.0e6)
 EPOXY_BLOCK = (1200.0, 2500.0)    # 声明值：大块环氧背衬，ρc = 3.0 MRayl
+EPOXY_LAYER = (1150.0, 2500.0)    # 声明值：未填充环氧匹配层，约 2.9 MRayl
+PZT5H_EPS = dict(eps33T=3400.0, eps33S=1470.0)   # review/24 MATERIALS['PZT-5H']
 CALCIF = PR.MEDIA['calcif']
 
 
@@ -95,14 +101,18 @@ def element(d, length=L_CODEX):
     return el
 
 
-def zfun(el, front='fluid', back_rayl=0.0, back_block=None):
+def zfun(el, front='fluid', back_rayl=0.0, back_block=None, layer=None):
     a = el['D'] / 2.0
 
     def z(f):
         f = np.atleast_1d(np.asarray(f, dtype=float))
         rho0, c0 = FLUID if front == 'fluid' else CALCIF
         zb = back_rayl * el['A'] if back_block is None else PR.piston_z(f, a, *back_block)
-        return PR.mason_z(f, el, PR.piston_z(f, a, rho0, c0), zb)
+        zf = PR.piston_z(f, a, rho0, c0)
+        if layer is not None:                  # λ/4 层（按 0.9 MHz 定厚），一维平面波变换
+            rho_l, c_l = layer
+            zf = PR.through_layer(f, zf, el['A'], rho_l, c_l, c_l / (4.0 * 0.9e6))
+        return PR.mason_z(f, el, zf, zb)
     return z
 
 
@@ -266,6 +276,36 @@ def main():
     res['half_power_width_Hz'] = widths
     print(f"\n== 6. 端口功率半功率宽度（恒定端口电压）：B {widths['B_L1p8']:.0f} Hz，调到 0.9 MHz 后 {widths['B_tuned']:.0f} Hz；"
           f"平台默认 2142 Hz、合成候选 86872 Hz")
+
+    # 7. 前端匹配层
+    layers = []
+    for lab, e in (('L 1.8 mm', el), (f'L {l9*1e3:.3f} mm', el9)):
+        layers.append(summary(e, zfun(e), f'{lab}，无匹配层'))
+        for name, lay in (('环氧层 2.9 MRayl', EPOXY_LAYER), ('6 MRayl 层', (PR.MATCH_LAYER['rho'], PR.MATCH_LAYER['c']))):
+            layers.append(summary(e, zfun(e, layer=lay), f'{lab}，λ/4 {name}'))
+    res['front_matching_layer'] = layers
+    print('\n== 7. 前端 λ/4 匹配层（层厚按 0.9 MHz；后端自由）')
+    for c in layers:
+        print(f"  {c['case']:<26} fs {c['fs_Hz']/1e3:7.2f} kHz  Q {c['Q']:6.1f}  Rm {c['Rm_ohm']:7.0f} Ω"
+              f"  100 Vpp@fs {c['I_at_fs_100Vpp_mA']:5.2f} mA {c['P_at_fs_100Vpp_mW']:6.1f} mW")
+
+    # 8. 电极方式与阻抗量级
+    eps0, v = PR.EPS0, 100.0 / SQ8
+    ro, ri, lt = 1.35e-3 / 2, 0.73e-3 / 2, 2.5e-3
+    tube = {k: 2 * math.pi * e * eps0 * lt / math.log(ro / ri) for k, e in (('clamped', PZT5H_EPS['eps33S']), ('free', PZT5H_EPS['eps33T']))}
+    w9 = 2 * math.pi * 0.9e6
+    elec = dict(rod_end_electrodes_C0_pF=el9['C0'] * 1e12, rod_Xc0_ohm=1 / (w9 * el9['C0']),
+                tube_lateral_C_clamped_pF=tube['clamped'] * 1e12, tube_lateral_C_free_pF=tube['free'] * 1e12,
+                tube_Xc0_clamped_ohm=1 / (w9 * tube['clamped']), tube_Xc0_free_ohm=1 / (w9 * tube['free']),
+                tube_C0_branch_current_at_100Vpp_mA=(v * w9 * tube['clamped'] * 1e3, v * w9 * tube['free'] * 1e3),
+                min_abs_Z_for_100Vpp_within_5mA_ohm=v / 5e-3)
+    res['electrode_configuration'] = elec
+    print('\n== 8. 电极方式与阻抗量级（0.9 MHz）')
+    print(f"  端面电极杆（L {l9*1e3:.3f} mm）：C0 {elec['rod_end_electrodes_C0_pF']:.3f} pF，容抗 {elec['rod_Xc0_ohm']/1e3:.0f} kΩ")
+    print(f"  内外壁电极管（Liu 等尺寸，PZT-5H）：C 夹持 {elec['tube_lateral_C_clamped_pF']:.0f} pF / 自由 {elec['tube_lateral_C_free_pF']:.0f} pF，"
+          f"容抗 {elec['tube_Xc0_clamped_ohm']:.0f} / {elec['tube_Xc0_free_ohm']:.0f} Ω；100 Vpp 时仅 C0 支路 "
+          f"{elec['tube_C0_branch_current_at_100Vpp_mA'][0]:.0f}–{elec['tube_C0_branch_current_at_100Vpp_mA'][1]:.0f} mA")
+    print(f"  100 Vpp 且 ≤ 5 mA 要求端口 |Z| ≥ {elec['min_abs_Z_for_100Vpp_within_5mA_ohm']:.0f} Ω")
 
     if a.out:
         out = pathlib.Path(a.out).resolve()

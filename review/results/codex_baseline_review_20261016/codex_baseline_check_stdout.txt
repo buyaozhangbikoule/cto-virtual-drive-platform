@@ -36,4 +36,17 @@
 
 == 6. 端口功率半功率宽度（恒定端口电压）：B 15547 Hz，调到 0.9 MHz 后 16825 Hz；平台默认 2142 Hz、合成候选 86872 Hz
 
+== 7. 前端 λ/4 匹配层（层厚按 0.9 MHz；后端自由）
+  L 1.8 mm，无匹配层              fs  873.58 kHz  Q   56.2  Rm    9311 Ω  100 Vpp@fs  3.80 mA  134.3 mW
+  L 1.8 mm，λ/4 环氧层 2.9 MRayl fs  958.76 kHz  Q   17.7  Rm   41894 Ω  100 Vpp@fs  0.84 mA   29.9 mW
+  L 1.8 mm，λ/4 6 MRayl 层     fs  668.19 kHz  Q   22.1  Rm   50830 Ω  100 Vpp@fs  0.74 mA   24.6 mW
+  L 1.747 mm，无匹配层            fs  900.00 kHz  Q   53.5  Rm    9206 Ω  100 Vpp@fs  3.85 mA  135.8 mW
+  L 1.747 mm，λ/4 环氧层 2.9 MRayl fs  980.69 kHz  Q   19.2  Rm   35105 Ω  100 Vpp@fs  1.01 mA   35.6 mW
+  L 1.747 mm，λ/4 6 MRayl 层   fs 1074.28 kHz  Q   18.9  Rm   52367 Ω  100 Vpp@fs  0.68 mA   23.9 mW
+
+== 8. 电极方式与阻抗量级（0.9 MHz）
+  端面电极杆（L 1.747 mm）：C0 0.643 pF，容抗 275 kΩ
+  内外壁电极管（Liu 等尺寸，PZT-5H）：C 夹持 333 pF / 自由 769 pF，容抗 532 / 230 Ω；100 Vpp 时仅 C0 支路 66–154 mA
+  100 Vpp 且 ≤ 5 mA 要求端口 |Z| ≥ 7071 Ω
+
 已写入 /home/user/cto-virtual-drive-platform/review/results/codex_baseline_review_20261016/codex_baseline_check.json
