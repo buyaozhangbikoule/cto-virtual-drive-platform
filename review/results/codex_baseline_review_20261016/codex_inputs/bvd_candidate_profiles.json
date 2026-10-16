@@ -1,0 +1,68 @@
+[
+  {
+    "id": "APC880_D0.4_L1.8_front_BMF",
+    "parameter_status": "unmeasured_model_candidate",
+    "model": "C0 parallel (Rm + Lm + Cm series)",
+    "valid_fit_band_Hz": [
+      800000,
+      1000000
+    ],
+    "C0_F": 4.3197695762618923e-13,
+    "Rm_ohm": 10106.549460982515,
+    "Lm_H": 0.1488209100556721,
+    "Cm_F": 2.2204660467262949e-13,
+    "fs_Hz": 875520.0280648058,
+    "Q_loaded": 81.00410050907966,
+    "power_target_W": null,
+    "point_at_fs_100Vpp": {
+      "I_Arms": 0.0034992688707677377,
+      "P_W": 0.12368217311217512
+    },
+    "loss_note": "Dielectric conductance omitted for legacy four-element BVD; quantify against full model. See candidate_parameters.json.",
+    "drive_note": "Not a complete platform configuration. Source voltage, cable, matching and current measurement locations must be explicit."
+  },
+  {
+    "id": "APC880_D0.5_L1.8_front_BMF",
+    "parameter_status": "unmeasured_model_candidate",
+    "model": "C0 parallel (Rm + Lm + Cm series)",
+    "valid_fit_band_Hz": [
+      800000,
+      1000000
+    ],
+    "C0_F": 6.778976436547607e-13,
+    "Rm_ohm": 9368.265426159336,
+    "Lm_H": 0.0951619669770087,
+    "Cm_F": 3.4870353270187705e-13,
+    "fs_Hz": 873695.8099102303,
+    "Q_loaded": 55.76277071210622,
+    "power_target_W": null,
+    "point_at_fs_100Vpp": {
+      "I_Arms": 0.0037762399700049464,
+      "P_W": 0.13342918279296193
+    },
+    "loss_note": "Dielectric conductance omitted for legacy four-element BVD; quantify against full model. See candidate_parameters.json.",
+    "drive_note": "Not a complete platform configuration. Source voltage, cable, matching and current measurement locations must be explicit."
+  },
+  {
+    "id": "APC880_D0.6_L1.8_front_BMF",
+    "parameter_status": "unmeasured_model_candidate",
+    "model": "C0 parallel (Rm + Lm + Cm series)",
+    "valid_fit_band_Hz": [
+      800000,
+      1000000
+    ],
+    "C0_F": 9.81277487583285e-13,
+    "Rm_ohm": 8715.303001131726,
+    "Lm_H": 0.06586082448115385,
+    "Cm_F": 5.052864160000037e-13,
+    "fs_Hz": 872444.3583034271,
+    "Q_loaded": 41.42497733487115,
+    "power_target_W": null,
+    "point_at_fs_100Vpp": {
+      "I_Arms": 0.004061151898964579,
+      "P_W": 0.143425879724168
+    },
+    "loss_note": "Dielectric conductance omitted for legacy four-element BVD; quantify against full model. See candidate_parameters.json.",
+    "drive_note": "Not a complete platform configuration. Source voltage, cable, matching and current measurement locations must be explicit."
+  }
+]

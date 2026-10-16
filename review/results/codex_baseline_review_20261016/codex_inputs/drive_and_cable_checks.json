@@ -1,0 +1,124 @@
+{
+  "status": "model_only",
+  "current_limits_apply_to": [
+    "amplifier_output",
+    "ceramic_electrodes"
+  ],
+  "source_R_ohm": 50,
+  "topology": "Thevenin source and series 50 ohm driving ceramic parallel stray capacitance; no matching",
+  "cable_source": "https://catalog.belden.com/techdata/EN/MRG1781_techdata.pdf",
+  "cable_sweep_is_not_a_real_cable_measurement": true,
+  "results": [
+    {
+      "stray_C_pF": 0.0,
+      "both_current_limits_mA": 4.0,
+      "f_Hz": 873650.0,
+      "ceramic_Vpp": 99.99999999999999,
+      "ceramic_I_mA": 3.7953544110228177,
+      "amplifier_I_mA": 3.7953544110228177,
+      "port_P_mW": 134.08922145182444,
+      "source_required_Vpp": 100.53635895268717,
+      "model_front_peak_displacement_nm": 277.6806066898464
+    },
+    {
+      "stray_C_pF": 0.0,
+      "both_current_limits_mA": 5.0,
+      "f_Hz": 873650.0,
+      "ceramic_Vpp": 99.99999999999999,
+      "ceramic_I_mA": 3.7953544110228177,
+      "amplifier_I_mA": 3.7953544110228177,
+      "port_P_mW": 134.08922145182444,
+      "source_required_Vpp": 100.53635895268717,
+      "model_front_peak_displacement_nm": 277.6806066898464
+    },
+    {
+      "stray_C_pF": 5.0,
+      "both_current_limits_mA": 4.0,
+      "f_Hz": 873650.0,
+      "ceramic_Vpp": 99.99999999999999,
+      "ceramic_I_mA": 3.7953544110228177,
+      "amplifier_I_mA": 3.9529885580669575,
+      "port_P_mW": 134.08922145182444,
+      "source_required_Vpp": 100.53648044134161,
+      "model_front_peak_displacement_nm": 277.6806066898464
+    },
+    {
+      "stray_C_pF": 5.0,
+      "both_current_limits_mA": 5.0,
+      "f_Hz": 873650.0,
+      "ceramic_Vpp": 99.99999999999999,
+      "ceramic_I_mA": 3.7953544110228177,
+      "amplifier_I_mA": 3.9529885580669575,
+      "port_P_mW": 134.08922145182444,
+      "source_required_Vpp": 100.53648044134161,
+      "model_front_peak_displacement_nm": 277.6806066898464
+    },
+    {
+      "stray_C_pF": 10.0,
+      "both_current_limits_mA": 4.0,
+      "f_Hz": 874875.0,
+      "ceramic_Vpp": 99.99999999999999,
+      "ceramic_I_mA": 3.7254761646158583,
+      "amplifier_I_mA": 3.9947410248667126,
+      "port_P_mW": 130.80645035930465,
+      "source_required_Vpp": 100.52345158919162,
+      "model_front_peak_displacement_nm": 273.56778388934646
+    },
+    {
+      "stray_C_pF": 10.0,
+      "both_current_limits_mA": 5.0,
+      "f_Hz": 873650.0,
+      "ceramic_Vpp": 99.99999999999999,
+      "ceramic_I_mA": 3.7953544110228177,
+      "amplifier_I_mA": 4.327909565169001,
+      "port_P_mW": 134.08922145182444,
+      "source_required_Vpp": 100.53678925242015,
+      "model_front_peak_displacement_nm": 277.6806066898464
+    },
+    {
+      "stray_C_pF": 30.0,
+      "both_current_limits_mA": 4.0,
+      "f_Hz": 878525.0,
+      "ceramic_Vpp": 78.51446650479193,
+      "ceramic_I_mA": 2.4661486809883937,
+      "amplifier_I_mA": 3.999999999999999,
+      "port_P_mW": 59.50027595546669,
+      "source_required_Vpp": 78.81904383647691,
+      "model_front_peak_displacement_nm": 183.12124818701895
+    },
+    {
+      "stray_C_pF": 30.0,
+      "both_current_limits_mA": 5.0,
+      "f_Hz": 878525.0,
+      "ceramic_Vpp": 98.14308313098991,
+      "ceramic_I_mA": 3.082685851235492,
+      "amplifier_I_mA": 4.999999999999999,
+      "port_P_mW": 92.96918118041668,
+      "source_required_Vpp": 98.5238047955961,
+      "model_front_peak_displacement_nm": 228.90156023377372
+    },
+    {
+      "stray_C_pF": 100.0,
+      "both_current_limits_mA": 4.0,
+      "f_Hz": 875075.0,
+      "ceramic_Vpp": 20.7621088148204,
+      "ceramic_I_mA": 0.7694186389980932,
+      "amplifier_I_mA": 4.0,
+      "port_P_mW": 5.590773042348465,
+      "source_required_Vpp": 20.877207209593955,
+      "model_front_peak_displacement_nm": 56.5336488619543
+    },
+    {
+      "stray_C_pF": 100.0,
+      "both_current_limits_mA": 5.0,
+      "f_Hz": 875075.0,
+      "ceramic_Vpp": 25.9526360185255,
+      "ceramic_I_mA": 0.9617732987476164,
+      "amplifier_I_mA": 5.0,
+      "port_P_mW": 8.735582878669476,
+      "source_required_Vpp": 26.096509011992442,
+      "model_front_peak_displacement_nm": 70.66706107744287
+    }
+  ],
+  "matched_50ohm_load_at_5mA_max_active_power_W": 0.00125
+}
