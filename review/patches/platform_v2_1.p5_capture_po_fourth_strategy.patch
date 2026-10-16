@@ -1,0 +1,760 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/catalog.py b/integrated/CTO_virtual_drive_platform_v2_1/current/catalog.py
+index 9fb9c81fba05319be5afccd7848f8e0696da8274..d8e133086ab873df2d27f5d1a5b87fe30441d208 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/catalog.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/catalog.py
+@@ -6,9 +6,12 @@ import json
+ from pathlib import Path
+ 
+ PLATFORM = Path(__file__).resolve().parents[1]
+-STRATEGIES = {"FIXED", "PERIODIC_SCAN", "PHASE_FEEDBACK"}
++# The formal strategy set, in display order. A batch must contain exactly
++# these; every count below follows from it (35 suites x strategies).
++STRATEGIES = ("FIXED", "PERIODIC_SCAN", "PHASE_FEEDBACK", "CAPTURE_PO")
+ LABELS = {"FIXED": "固定频率＋共同保护", "PERIODIC_SCAN": "周期扫频＋共同保护",
+-          "PHASE_FEEDBACK": "相位误差闭环＋共同保护"}
++          "PHASE_FEEDBACK": "相位误差闭环＋共同保护", "CAPTURE_PO": "捕获＋扰动观察跟踪＋共同保护"}
++SUITES, CASES = 35, 34
+ 
+ 
+ class EvidenceError(ValueError):
+@@ -56,9 +59,11 @@ def validate_batch(folder, audit_file, root=PLATFORM):
+     meta, audit = read_json(folder / "run_metadata.json"), read_json(audit_file)
+     if folder.name != meta["batch_id"] or manifest["batch_id"] != folder.name or audit["batch_id"] != folder.name:
+         raise EvidenceError("批次标识不一致")
+-    if set(meta["strategies"]) != STRATEGIES or meta["suite_count"] != 35 or meta["tests_passed"] < 41:
++    n = len(STRATEGIES)
++    if (sorted(meta["strategies"]) != sorted(STRATEGIES) or meta["suite_count"] != SUITES
++            or meta["tests_passed"] < 41):
+         raise EvidenceError("正式策略/覆盖范围/行为测试不完整")
+-    if audit.get("audit_pass") is not True or audit.get("problems") or audit.get("timelines") != 105:
++    if audit.get("audit_pass") is not True or audit.get("problems") or audit.get("timelines") != SUITES*n:
+         raise EvidenceError("完整批次复核未通过")
+     if audit["manifest_files_verified"] != len(manifest["files"]):
+         raise EvidenceError("复核覆盖的文件数不一致")
+@@ -66,12 +71,12 @@ def validate_batch(folder, audit_file, root=PLATFORM):
+     target = read_rows(folder / "registered34_target_segment_metrics.csv")
+     overall = read_rows(folder / "formal_three_strategy_summary.csv")
+     cases = {r["case_id"] for r in read_json(folder / "scenario_registry.json")}
+-    if len(cases) != 34 or len(hist) != 3 or {r["strategy"] for r in hist} != STRATEGIES:
++    if len(cases) != CASES or len(hist) != n or {r["strategy"] for r in hist} != set(STRATEGIES):
+         raise EvidenceError("登记场景或12段综合表不完整")
+     pairs = {(r["case_id"], r["strategy"]) for r in target}
+-    if len(target) != 102 or pairs != {(c,s) for c in cases for s in STRATEGIES}:
+-        raise EvidenceError("34场景三策略覆盖不完整或重复")
+-    if len(overall) != 105 or len({(r['suite'],r['strategy']) for r in overall}) != 105:
++    if len(target) != CASES*n or pairs != {(c,s) for c in cases for s in STRATEGIES}:
++        raise EvidenceError("34场景×正式策略覆盖不完整或重复")
++    if len(overall) != SUITES*n or len({(r['suite'],r['strategy']) for r in overall}) != SUITES*n:
+         raise EvidenceError("综合表出现缺行或重复")
+     for row in read_rows(folder / "per_segment_metrics.csv"):
+         if row["settled"] != "True" and row["steady_error_pct"] != "":
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+index 959c531297ea6d60b0d988b18567cc5821282327..9a411f3950fcbd29dca715f69bcfe2254141b218 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/dashboard.py
+@@ -6,12 +6,12 @@ import matplotlib.pyplot as plt
+ import numpy as np
+ import pandas as pd
+ import streamlit as st
+-from current.catalog import PLATFORM, LABELS, load_active, read_json
++from current.catalog import PLATFORM, LABELS, STRATEGIES, load_active, read_json
+ from current.provenance_ui import source_page_link
+ 
+-ORDER = ['FIXED','PERIODIC_SCAN','PHASE_FEEDBACK']
++ORDER = list(STRATEGIES)
+ STYLE = {'FIXED':('#667085','-',2.0), 'PERIODIC_SCAN':('#1765b5','--',2.2),
+-         'PHASE_FEEDBACK':('#c94a3a','-.',1.7)}
++         'PHASE_FEEDBACK':('#c94a3a','-.',1.7), 'CAPTURE_PO':('#2f855a',':',2.4)}
+ plt.rcParams.update({'font.sans-serif':['Microsoft YaHei','SimHei','DejaVu Sans'],
+                      'axes.unicode_minus':False,'font.size':11})
+ 
+@@ -50,14 +50,14 @@ def held(ax, frame, values, name):
+ 
+ 
+ def render_results():
+-    st.title('统一三策略结果')
+-    st.caption('当前同批次、同口径准稳态比较 · 非历史结果拼表 · 不包含P&O扩展策略')
++    st.title('统一正式策略结果')
++    st.caption('当前同批次、同口径准稳态比较 · 非历史结果拼表 · CAPTURE_PO＝功率下降触发的全频带捕获＋P&O跟踪；早期未纳入的P&O扩展实现不在此表')
+     ev = evidence()
+     folder, audit, meta = ev['folder'], ev['audit'], ev['metadata']
+     st.code(meta['batch_id'],language=None)
+     st.success(f"证据核验通过：{audit['manifest_files_verified']}个文件；{audit['timelines']}条执行时序；"
+                f"{audit['executed_rows']:,}条执行记录；{meta['tests_passed']}项控制行为测试。")
+-    st.warning('统一比较已经完成，但不代表三种策略均通过稳态验收，更不代表全过程硬限已获证明。'
++    st.warning('统一比较已经完成，但不代表各策略均通过稳态验收，更不代表全过程硬限已获证明。'
+                '本页结果仅适用于冻结假设模型、登记扰动、当前控制参数。')
+     hist = pd.read_csv(folder/'historical_12_three_strategy_table.csv')
+     target = pd.read_csv(folder/'registered34_target_segment_metrics.csv')
+@@ -90,8 +90,8 @@ def render_results():
+             'scan_truncated_by_run_end':'终点截断','scan_exhaustions':'重试耗尽'}),hide_index=True,width='stretch')
+         a,b,c = st.columns(3)
+         with a: download(folder/'historical_12_three_strategy_table.csv','下载12段综合表','hist_csv')
+-        with b: download(folder/'registered34_target_segment_metrics.csv','下载34条目×3策略表','target_csv')
+-        with c: download(folder/'formal_three_strategy_summary.csv','下载105条综合结果','all_csv')
++        with b: download(folder/'registered34_target_segment_metrics.csv',f'下载34条目×{len(ORDER)}策略表','target_csv')
++        with c: download(folder/'formal_three_strategy_summary.csv',f'下载{35*len(ORDER)}条综合结果','all_csv')
+     with tabs[1]:
+         schedules = read_json(folder/'schedules.json')
+         suite = st.selectbox('选择日程',['HISTORICAL_12']+sorted(s for s in schedules if s!='HISTORICAL_12'),
+@@ -113,7 +113,7 @@ def render_results():
+             held(axs[1],rows,rows.p_rm_W*1000,strategy)
+             capture = 100*rows.p_rm_W.to_numpy()/np.array([refs[c]['policy']['power_W'] for c in rows.case_id])
+             held(axs[2],rows,capture,strategy)
+-        axs[0].legend(loc='lower left',bbox_to_anchor=(0,1.02),ncol=3,frameon=False)
++        axs[0].legend(loc='lower left',bbox_to_anchor=(0,1.02),ncol=len(ORDER),frameon=False)
+         for ax,label in zip(axs,['频率 (MHz)','运动支路有功功率 (mW)','功率捕获率 (%)']):
+             ax.set_ylabel(label); ax.set_xlim(lo,hi); ax.grid(alpha=.2)
+             for seg in segments:
+@@ -159,12 +159,19 @@ def render_results():
+ 
+ - 正式运行：`python run_project.py validate`；独立新目录，旧结果不覆盖。
+ - 周期扫频：±50 kHz/5 kHz → ±5 kHz/1 kHz → ±1 kHz/0.1 kHz；异常分类、边缘重定位和有界粗扫回退按配置执行，不等于单次±100 kHz均匀扫频。
+-- 相位：匹配输入相位 arg(V_input/I_source)，基准标定后冻结；邻频试探计时，不用扰动真值更新目标。
++- 相位：本批次配置 `phase_tracker` 决定——gain_v1 为匹配输入相位 arg(V_input/I_source)、基准标定后冻结、固定 Hz/° 增益；newton_v2 可选换能器端相位 arg(V_port/I_port)，步长按实测斜率归一化，并可在每次捕获后重学目标。邻频试探计时，不用扰动真值更新目标。
++- 捕获（相位 newton_v2 重学模式与 CAPTURE_PO 共用）：只在功率连续下降超过阈值时启动，先查记忆点，再全频带 5 kHz 粗扫、按实测峰宽细化，第二峰一并细化，锚点逐级复测，增益不足 2% 不移动；失败计入同一套扫描预算与锁存。
++- CAPTURE_PO：开机不捕获；P&O 在最小步长下连续无改进即停驻，捕获或召回后直接停驻；功率或保持点输入阻抗变化先查记忆，大幅下降才捕获。
+ - 共用保护、执行时钟、测量有效性、指标函数和源／匹配／BVD配置。
+ - 采用扫描失败分类补丁；旧P&O边缘扫描补丁、独立PI、去嵌相位及辐射负载参考未接入正式引擎。
+ ''')
+         phase = read_json(folder/'phase_calibration.json')
+-        st.write(f"本批次冻结目标输入相位：{phase['target_deg']:.6f}°。")
++        if cfg.get('phase_tracker', 'gain_v1') == 'gain_v1':
++            st.write(f"本批次冻结目标输入相位：{phase['target_deg']:.6f}°。")
++        else:
++            st.write('本批次相位反馈为 newton_v2：目标由控制器开机第一个有效控制样本学得'
++                     + ('，并在每次捕获或记忆召回后重学' if cfg.get('phase_target_policy') == 'relearn_after_capture' else '，之后冻结')
++                     + '；见事件 PHASE_TARGET_LEARNED。phase_calibration.json 记录的是 gain_v1 的输入相位标定值，本批次未使用。')
+         st.info('采样20 ms、每扫频点1.5 ms、各保护保持时长、增益、失败预算均为假设控制参数，不是实测实时性能。'
+                 '当前理想保护使用精确模型判断允许幅度，尚未证明真实传感／执行延迟下的硬限。')
+         st.json(cfg,expanded=False)
+@@ -184,13 +191,14 @@ def render_versions():
+     ev = evidence()
+     st.success('当前统一批次：'+ev['metadata']['batch_id'])
+     for category, body in [
+-        ('当前正式准稳态比较', 'current/unified：固定、周期扫频、相位反馈；冻结模型＋统一保护＋统一指标。新增批次已全量复核。完成比较不等于全部通过。'),
++        ('当前正式准稳态比较', 'current/unified：固定、周期扫频、相位反馈、捕获＋P&O；冻结模型＋统一保护＋统一指标。新增批次已全量复核。完成比较不等于全部通过。'),
+         ('历史结果／独立实验', '原 results/tables、figures、evidence、历史P&O、相位消融、LTspice AC、瞬态重放与五轮反馈记录保留原身份。不能与当前批次拼成同次控制实验。'),
+         ('研究原型：尚未接入', 'research/radiation_load_layer1：第一层辐射负载参考快照；原型自检不等于34场景控制结果已使用该负载。独立PI、去嵌相位、8组合消融仍为扩展研究。'),
+     ]:
+         st.subheader(category);st.write(body)
+     st.subheader('已采用与未采用的补丁')
+     st.markdown('''- **已采用**：`plan_three_strategy.scan_fault_taxonomy.patch`，来自审核分支；覆盖 config/controllers/metrics/tests，41项行为测试。新增预算有界但未调优。
++- **已采用（2026-10-16，审查分支 review/26–27 的拆分补丁）**：P1 参数由配置与设计文件读取；P2 相位中心恢复门控（开关，默认关）；P3 合成候选配置（不设为默认）；P4 功率下降触发的捕获与相位反馈 newton_v2（开关，默认仍为原定律）；P5 第四种正式策略 CAPTURE_PO。
+ - **未采用到正式引擎**：针对历史P&O的 `run_stage4_5_control.edge_aware_scan.patch`、去嵌相位原型、独立PI、辐射负载层。不能把“有代码”当成“本批次已使用”。
+ - **本次额外整合**：官方CLI、批次登记／哈希校验、网页读表和证据说明；不改变既有物理阈值与验收门槛。
+ - **没有执行**：PPT／旧讲稿修改、GitHub推送、新的LTspice或COMSOL求解。''')
+@@ -201,7 +209,7 @@ def render_versions():
+         items=read_json(ledger)['artifacts']
+         st.dataframe(pd.DataFrame(items),hide_index=True,width='stretch')
+         st.caption('上表是来源与身份索引，不宣称所有外部历史目录已打包到本目录；缺失时应回原仓库／归档查证。')
+-    st.page_link('pages/04_统一三策略结果.py',label='查看当前统一三策略表和时序')
++    st.page_link('pages/04_统一三策略结果.py',label='查看当前统一正式策略表和时序')
+     st.page_link('pages/02_参数探索与历史结果.py',label='查看参数探索与历史成果')
+     st.page_link('pages/03_LTspice闭环验证.py',label='查看独立LTspice接口实验')
+     source_page_link()
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index e279f253783f05698906811b7d9a826d3d14dc48..f474b86c658dfda484ffcf4bd81c7ddec562597d 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -6,7 +6,7 @@
+     "design": {"title": "冻结假设模型与匹配设计", "path": "current/unified/stage2_matching/stage2_匹配设计参数.json", "note": "项目内部设计记录，不是器件手册或测量结果。"},
+     "model": {"title": "当前统一引擎的BVD/戴维南源模型", "path": "current/unified/models/model_v2_1.py", "note": "模型明确声明参数为假设、派生值或扫描变量；交流功率按RMS相量计算。"},
+     "calibration": {"title": "源幅度标定记录", "path": "current/unified/stage2_matching/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准；正式模型读取本文件中的source_Vrms_for_a1。"},
+-    "config": {"title": "统一三策略配置", "path": "current/unified/config.json", "note": "控制时序、阈值及预算为仿真假设；不是实时硬件性能或器件额定值。"},
++    "config": {"title": "统一正式策略配置", "path": "current/unified/config.json", "note": "控制时序、阈值及预算为仿真假设；不是实时硬件性能或器件额定值。"},
+     "candidate_design": {"title": "合成候选基线设计文件（未设为默认）", "path": "current/unified/candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json", "note": "由审查分支 review/baseline_3mA_parameters.py 从原冻结文件推导；推导、限制与测点说明写在文件的 baseline_derivation。"},
+     "candidate_calibration": {"title": "合成候选源幅度标定", "path": "current/unified/candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准。"},
+     "candidate_config": {"title": "合成候选运行配置", "path": "current/unified/candidates/synthetic_q13p8_3mA/config.json", "note": "仅在 run_unified.py --config 显式选择时使用；run_project.py validate 不登记它。"},
+@@ -116,6 +116,13 @@
+     {"id":"noise_sigmas","profile":"control","name":"噪声放宽倍数","value":2.0,"unit":"σ","adoption_reason":"各判据门槛取声明值与 2 倍噪声估计中的较大者；无噪声时等于声明值。","config_key":"noise_sigmas"},
+     {"id":"probe_amplitude_margin","profile":"control","name":"试探／改频的幅度余量","value":0.05,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"试探点或新频点已知软限余量低于当前幅度时，先在原频率把幅度降到余量的 95% 再改频，免得保护器先降幅再进入 100 ms 软限保持。","config_key":"probe_amplitude_margin"},
+     {"id":"full_amplitude_threshold","profile":"control","name":"视为满幅的幅度","value":0.999,"unit":"1","config_key":"full_amplitude_threshold"},
++    {"id":"po_step_initial_per_width","profile":"control","name":"P&O 初始步长（峰宽比例）","value":0.125,"unit":"1","adoption_reason":"开机或功率变化后从 1/8 峰宽开始；捕获或召回之后直接停驻，不再试探。","config_key":"po_step_initial_per_width"},
++    {"id":"po_step_min_per_width","profile":"control","name":"P&O 最小步长（峰宽比例）","value":0.025,"unit":"1","adoption_reason":"1/40 峰宽处的功率损失约 0.25%。","config_key":"po_step_min_per_width"},
++    {"id":"po_step_max_per_width","profile":"control","name":"P&O 最大步长（峰宽比例）","value":0.5,"unit":"1","config_key":"po_step_max_per_width"},
++    {"id":"po_grow","profile":"control","name":"P&O 成功后步长放大","value":1.5,"unit":"倍","config_key":"po_grow"},
++    {"id":"po_shrink","profile":"control","name":"P&O 无改进时步长缩小","value":0.5,"unit":"倍","config_key":"po_shrink"},
++    {"id":"po_move_threshold","profile":"control","name":"P&O 移动所需增益","value":0.002,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"试探点须比保持点近几个样本的平均高 0.2%（或噪声估计的 2 倍差值标准差，取大者）才移动。","config_key":"po_move_threshold"},
++    {"id":"po_park_comparisons","profile":"control","name":"P&O 停驻所需的无改进比较次数（最小步长下）","value":3,"unit":"次","config_key":"po_park_comparisons"},
+     {"id":"load.rho_pzt","profile":"research","name":"原型压电材料密度","value":7500,"unit":"kg/m³","binding":{"source":"load","mode":"constant","name":"RHO_PZT"}},
+     {"id":"load.c_d","profile":"research","name":"原型厚度模式声速","value":4340,"unit":"m/s","binding":{"source":"load","mode":"constant","name":"C_D"}},
+     {"id":"load.radius","profile":"research","name":"假设活塞半径","value":0.0005,"unit":"m","display_unit":"mm","scale":1000,"binding":{"source":"load","mode":"constant","name":"PISTON_RADIUS_M"}},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py b/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
+index 19ab352b62a5ab7b7e6c7d0f84d3a9012218f036..3c460de37a913b4522d5a7dcdbc9d1de2a968aaf 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
+@@ -111,5 +111,5 @@ def render_parameter_sources():
+         st.download_button('下载完整参数来源表（CSV）', buffer.getvalue().encode('utf-8-sig'),
+             file_name='参数来源登记.csv', mime='text/csv')
+     st.code('python -B -X utf8 -m current.parameter_sources', language='powershell')
+-    st.caption('本页核对本地声明与登记，不替代“统一三策略结果”页对保存批次的哈希及源码漂移核查。'
++    st.caption('本页核对本地声明与登记，不替代“统一正式策略结果”页对保存批次的哈希及源码漂移核查。'
+                '滑块探索值仍是扫描变量，不会改变基线身份；本次没有新的闭环或声场实验。')
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_catalog.py b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_catalog.py
+index 9009ce31bde90ba96c7d7f9f884bfc91614df575..d4bc350c937053e5f4fae44373f1b8a5d6707e93 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_catalog.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_catalog.py
+@@ -4,7 +4,8 @@ from pathlib import Path
+ import shutil
+ import uuid
+ import unittest
+-from current.catalog import EvidenceError, PLATFORM, inside, load_active, register_batch, sha, validate_batch
++from current.catalog import (CASES, EvidenceError, PLATFORM, STRATEGIES, SUITES, inside, load_active,
++                             register_batch, sha, validate_batch)
+ 
+ 
+ class CatalogTests(unittest.TestCase):
+@@ -17,7 +18,7 @@ class CatalogTests(unittest.TestCase):
+         self.folder.mkdir(parents=True)
+         self.audit = self.root/'current/unified/audits/receipt.json'
+         self.audit.parent.mkdir()
+-        self.s = ['FIXED','PERIODIC_SCAN','PHASE_FEEDBACK']
++        self.s = list(STRATEGIES)
+         self.cases = ['CASE_'+str(i) for i in range(34)]
+         self.json('run_metadata.json',dict(batch_id=self.folder.name,strategies=self.s,suite_count=35,tests_passed=41,source_hashes={}))
+         for name in ['configuration.json','reference_optima.json','phase_calibration.json','schedules.json','integration_sources.json']:
+@@ -32,7 +33,7 @@ class CatalogTests(unittest.TestCase):
+                 self.json(f'events/{suite}_{s}.json',[])
+                 self.csv(f'executions/{suite}_{s}.csv',[dict(dummy='fixture')])
+         self.csv('formal_three_strategy_summary.csv',rows)
+-        self.csv('historical_12_three_strategy_table.csv',rows[:3])
++        self.csv('historical_12_three_strategy_table.csv',rows[:len(self.s)])
+         self.csv('registered34_target_segment_metrics.csv',[dict(case_id=c,strategy=s) for c in self.cases for s in self.s])
+         self.csv('per_segment_metrics.csv',[dict(settled=False,steady_error_pct='')])
+         self.seal()
+@@ -55,7 +56,7 @@ class CatalogTests(unittest.TestCase):
+     def seal(self):
+         files={p.relative_to(self.folder).as_posix():sha(p) for p in self.folder.rglob('*') if p.is_file() and p.name!='manifest.json'}
+         self.json('manifest.json',dict(batch_id=self.folder.name,files=files))
+-        self.audit.write_text(json.dumps(dict(batch_id=self.folder.name,audit_pass=True,problems=[],timelines=105,manifest_files_verified=len(files))),encoding='utf-8')
++        self.audit.write_text(json.dumps(dict(batch_id=self.folder.name,audit_pass=True,problems=[],timelines=SUITES*len(self.s),manifest_files_verified=len(files))),encoding='utf-8')
+ 
+     def valid(self):
+         return validate_batch(self.folder,self.audit,self.root)
+@@ -91,6 +92,13 @@ class CatalogTests(unittest.TestCase):
+         self.json(p.name,d);self.seal()
+         with self.assertRaises(EvidenceError):self.valid()
+ 
++    def test_batch_without_the_fourth_strategy_rejected(self):
++        # A three-strategy batch (the formal set before CAPTURE_PO) is incomplete now.
++        p=self.folder/'run_metadata.json';d=json.loads(p.read_text())
++        d['strategies']=[s for s in STRATEGIES if s!='CAPTURE_PO']
++        self.json(p.name,d);self.seal()
++        with self.assertRaises(EvidenceError):self.valid()
++
+     def test_incomplete_target_coverage_rejected(self):
+         self.csv('registered34_target_segment_metrics.csv',[dict(case_id=c,strategy=s) for c in self.cases[:-1] for s in self.s]);self.seal()
+         with self.assertRaises(EvidenceError):self.valid()
+@@ -112,8 +120,8 @@ class CatalogTests(unittest.TestCase):
+         if not (PLATFORM/'current/active_batch.json').exists():self.skipTest('first full run not yet registered')
+         actual=load_active()
+         self.assertEqual(actual['source_drift'],[])
+-        self.assertEqual(len(actual['targets']),102)
+-        self.assertEqual(actual['audit']['timelines'],105)
++        self.assertEqual(len(actual['targets']),CASES*len(STRATEGIES))
++        self.assertEqual(actual['audit']['timelines'],SUITES*len(STRATEGIES))
+ 
+ 
+ if __name__=='__main__':unittest.main()
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_ui.py b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_ui.py
+index adbb853983ff14641d93432942ea334347c545be..eb99f831aded7dd7d3560a82d3d166f9fa8f117e 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_ui.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/tests/test_ui.py
+@@ -2,7 +2,7 @@ import os
+ from pathlib import Path
+ import tempfile
+ import unittest
+-from current.catalog import PLATFORM
++from current.catalog import PLATFORM, STRATEGIES
+ 
+ # Streamlit's test harness also creates temporary files. Keep them inside a known
+ # workspace subtree (the Windows Store Python's default temp ACL can differ).
+@@ -21,11 +21,11 @@ class UITests(unittest.TestCase):
+ 
+     def test_default_current_results_and_selection(self):
+         a=self.app()
+-        self.assertEqual(a.title[0].value,'统一三策略结果')
+-        self.assertEqual(a.dataframe[0].value.shape[0],3)
++        self.assertEqual(a.title[0].value,'统一正式策略结果')
++        self.assertEqual(a.dataframe[0].value.shape[0],len(STRATEGIES))
+         a.selectbox[1].set_value(3).run()
+         self.assertEqual(len(a.exception),0)
+-        self.assertEqual(a.dataframe[4].value.shape[0],3)
++        self.assertEqual(a.dataframe[4].value.shape[0],len(STRATEGIES))
+         a.selectbox[0].set_value('COVER_CASE_COMBINED_HIGH').run()
+         self.assertEqual(len(a.exception),0,[e.message for e in a.exception])
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index 5a95fec9358781503e7e2aaa46e8503ba1f160a2..f2a264a0107b2ccb92e568d738654b4a4ae0fd87 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -2,7 +2,7 @@
+ 
+ 2026-09-22整合：上游 validation/plan-three-strategy-v1-20260917 的 650abdc，合入 review/patches/plan_three_strategy.scan_fault_taxonomy.patch。补丁覆盖配置、控制器、指标及测试；已有物理阈值、原扰动时长、98%/10样本标准不变。项目正式入口为上两级的 `python run_project.py validate`，它会执行新批次、复核并显式登记；不要靠目录时间自行选取“最新”结果。来源见 `../integration_sources.json`。
+ 
+-本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**；2026-10-16 起另有功率下降触发的全频带捕获程序，以及相位反馈的第二定律 newton_v2（配置开关，默认仍为原定律），见下文「正式策略」与审查分支 review/27。
++本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**；2026-10-16 起另有第四种正式策略 CAPTURE_PO（功率下降触发的全频带捕获＋扰动观察跟踪）、两者共用的捕获程序，以及相位反馈的第二定律 newton_v2（配置开关，默认仍为原定律），见下文「正式策略」与审查分支 review/27。
+ 历史平台、Claude 送审代码、P&O/相位消融文件及旧结果均未覆盖。本文不是全部项目完成声明。
+ 
+ ## 如何运行
+@@ -35,7 +35,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ - `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。2026-10-16 起 C0、Rm、fs、Qm、匹配与源标定全部从配置指定的设计/标定文件读取（默认即 `stage2_matching/` 这一对；原写死在模型里的 Qm=800 移入设计文件，数值不变），模型里的限值常量从配置读取；`run_unified.py --config <文件>` 可运行另一套配置，正式登记仍只用默认 `config.json`。
+ - `engine.py`：共用实际执行、保护、整数微秒时间和分段积分日志。
+-- `controllers.py`：三个控制器与捕获程序；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
++- `controllers.py`：四个正式控制器与共用的捕获程序；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
+ - `metrics.py`：唯一正式指标函数，不合格段的稳态误差为空值，不以尾窗/回退替代。
+ - `tests/test_unified.py`：故障注入和边界行为测试；这些测试不代表真实器件实验。
+ - `run_unified.py`：测试、校准冻结、批量运行、源码快照与哈希清单。
+@@ -61,10 +61,11 @@ python audit_batch.py "outputs/具体批次目录"
+ 3. **PHASE_FEEDBACK**：基准 0.9 MHz 输入相位标定约 −1.078209637°，每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
+    中心恢复门控（`phase_centre_recovery_gate`，2026-10-16 加入，默认配置关闭）：保护器在改频的那一拍从不升幅（新频点允许幅度更低时先在旧频率降幅），之后在新频率保持不动、按 2.5/s 渐升；渐升未完就再改频，幅度会停在上次被压到的水平（棘轮）。打开开关后，采纳一个新中心要等新中心上两个相邻 20 ms、NORMAL、未冻结、有效且实际幅度相同的普通控制样本，才做下一次相位更新。它只等待，不加幅、不加步长、不加试探，也不读取模型或场景；关闭即原正式相位路径，结果逐字节不变。默认关闭的理由：review/23 的逐场景协议（保护前电流峰值不得上升）在 Qm=800 基线上不满足（13/31）。它不改变相位目标本身——冻结的输入相位目标不是最大功率判据，见审查分支 review/25 第六节、review/26。
+ 
+-4. **捕获程序**（2026-10-16 加入；相位 newton_v2 的重学模式使用）：只在功率连续 3 个样本低于参考 90% 时启动，从不按定时器，开机不捕获。锚点 → 记忆点（开机点永不淘汰，另记 4 个，频率与功率同时相符才算同一负载状态）→ 0.8–1.0 MHz 全带 5 kHz 粗扫 → 对最佳点（另一局部最大若达 80% 且相隔 ≥3 点也细化）每级步长 1/5、窗口 ±1 个上一级步长，直到步长 < 0.1×实测峰宽或到 100 Hz → 每级之后复测锚点（变化即非平稳）→ 复核 → 不比锚点高 2% 则不移动。点驻留 = clip(10/(π×峰宽), 200 μs, 1.5 ms)，峰宽取上次捕获实测值，第一次之前取设计点有载半功率宽度 `nominal_peak_width_Hz`；全部点按 `capture_scan_amplitude` = 0.65（= 130 Vpp ÷ 2×100 Vpp）。失败计入与周期扫频相同的四类预算，耗尽同样低幅锁存（锁存与重试等待幅度为 `capture_scan_amplitude`）。准稳态模型没有建立过程，驻留缩短只省了时间，测量误差看不出来。
+-5. **PHASE_FEEDBACK 的 newton_v2**（`phase_tracker = newton_v2`；默认配置为 `gain_v1`，即上面第 3 条的原定律，结果逐字节不变）：步长 = `phase_newton_fraction`×误差÷实测斜率（两次邻频试探，偏移 max(100 Hz, 0.05×峰宽)），限幅 0.25×峰宽；目标取开机第一个有效控制样本。`phase_signal` 选 `input` 或 `port`；`phase_target_policy = relearn_after_capture` 时，功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，连续 3 个样本低于参考 90% 才捕获，每次召回或捕获后在所选点重学目标；`frozen` 时不捕获、不召回。换能器端相位看不见匹配网络的变化，小于捕获阈值的损失不会被纠正。
++4. **CAPTURE_PO**（2026-10-16 加入，第四种正式策略）：开机不捕获，以设计点有载半功率宽度为初始峰宽做两侧扰动观察：每次比较在 f±步长 各试探一点，试探点比保持点近几个样本的平均高 `po_move_threshold`（或噪声估计的 2 倍差值标准差）才移动；移动则步长 ×1.5，否则 ×0.5，限制在峰宽的 1/40～1/2；最小步长下连续 3 次无改进即停驻、不再试探。功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，无匹配则重新开始扰动观察；连续 3 个样本低于参考 90% 才做全频带捕获（第 5 条）。捕获或召回之后直接停驻：捕获已把落点放在其最后一级步长之内，再试探只会损失样本。
++5. **捕获程序**（2026-10-16 加入；相位 newton_v2 的重学模式与 CAPTURE_PO 共用）：只在功率连续 3 个样本低于参考 90% 时启动，从不按定时器，开机不捕获。锚点 → 记忆点（开机点永不淘汰，另记 4 个，频率与功率同时相符才算同一负载状态）→ 0.8–1.0 MHz 全带 5 kHz 粗扫 → 对最佳点（另一局部最大若达 80% 且相隔 ≥3 点也细化）每级步长 1/5、窗口 ±1 个上一级步长，直到步长 < 0.1×实测峰宽或到 100 Hz → 每级之后复测锚点（变化即非平稳）→ 复核 → 不比锚点高 2% 则不移动。点驻留 = clip(10/(π×峰宽), 200 μs, 1.5 ms)，峰宽取上次捕获实测值，第一次之前取设计点有载半功率宽度 `nominal_peak_width_Hz`；全部点按 `capture_scan_amplitude` = 0.65（= 130 Vpp ÷ 2×100 Vpp）。失败计入与周期扫频相同的四类预算，耗尽同样低幅锁存（锁存与重试等待幅度为 `capture_scan_amplitude`）。准稳态模型没有建立过程，驻留缩短只省了时间，测量误差看不出来。
++6. **PHASE_FEEDBACK 的 newton_v2**（`phase_tracker = newton_v2`；默认配置为 `gain_v1`，即上面第 3 条的原定律，结果逐字节不变）：步长 = `phase_newton_fraction`×误差÷实测斜率（两次邻频试探，偏移 max(100 Hz, 0.05×峰宽)），限幅 0.25×峰宽；目标取开机第一个有效控制样本。`phase_signal` 选 `input` 或 `port`；`phase_target_policy = relearn_after_capture` 时，功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，连续 3 个样本低于参考 90% 才捕获，每次召回或捕获后在所选点重学目标；`frozen` 时不捕获、不召回。换能器端相位看不见匹配网络的变化，小于捕获阈值的损失不会被纠正。
+ 
+-三者共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
++各策略共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
+ 未添加 PI 积分器，因此不存在需要伪装为已实现的“积分饱和修复”。
+ 
+ ## 保护与失败处理
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+index 4f40de7c08e1b78bd9690b51b0efe94f730ddbca..6b65971dd3f94aeba382ef90af0472cf12675da6 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+@@ -90,6 +90,14 @@
+   "noise_sigmas": 2.0,
+   "probe_amplitude_margin": 0.05,
+   "full_amplitude_threshold": 0.999,
++  "po_step_initial_per_width": 0.125,
++  "po_step_min_per_width": 0.025,
++  "po_step_max_per_width": 0.5,
++  "po_grow": 1.5,
++  "po_shrink": 0.5,
++  "po_move_threshold": 0.002,
++  "po_park_comparisons": 3,
++  "po_rule": "CAPTURE_PO: two-sided perturb-and-observe on the measured soft-feasible power; each comparison probes f_op -+ step and moves only to a side that beats the mean of the recent CONTROL samples by po_move_threshold (or noise_sigmas measured difference sigmas, if larger); a move grows the step by po_grow, a comparison without one shrinks it by po_shrink, within [po_step_min_per_width, po_step_max_per_width] x peak width, starting at po_step_initial_per_width x width; po_park_comparisons comparisons at the minimum step without a move park it until the power monitor reports a change; a confirmed drop goes to recall and then the capture scan described in capture_scan_rule",
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 11ec588509602e0744bbdb9549b36773c099278b..57d9d3a0bdbc880a38ae6aaf1faac0912865739d 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -90,6 +90,14 @@
+   "noise_sigmas": 2.0,
+   "probe_amplitude_margin": 0.05,
+   "full_amplitude_threshold": 0.999,
++  "po_step_initial_per_width": 0.125,
++  "po_step_min_per_width": 0.025,
++  "po_step_max_per_width": 0.5,
++  "po_grow": 1.5,
++  "po_shrink": 0.5,
++  "po_move_threshold": 0.002,
++  "po_park_comparisons": 3,
++  "po_rule": "CAPTURE_PO: two-sided perturb-and-observe on the measured soft-feasible power; each comparison probes f_op -+ step and moves only to a side that beats the mean of the recent CONTROL samples by po_move_threshold (or noise_sigmas measured difference sigmas, if larger); a move grows the step by po_grow, a comparison without one shrinks it by po_shrink, within [po_step_min_per_width, po_step_max_per_width] x peak width, starting at po_step_initial_per_width x width; po_park_comparisons comparisons at the minimum step without a move park it until the power monitor reports a change; a confirmed drop goes to recall and then the capture scan described in capture_scan_rule",
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+index df437ae4a0b4f2a48e8d272d2096359e12b10f75..d1c464b35ebf8631c949d4b4326e89913884d759 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+@@ -9,7 +9,7 @@ import math
+ import numpy as np
+ from engine import Engine, Measurement, finite, measured_score, valid_measurement, wrap_deg
+ 
+-STRATEGIES = ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK')
++STRATEGIES = ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK', 'CAPTURE_PO')
+ 
+ 
+ def grid(center: float, half: float, step: float, low: float, high: float) -> list[float]:
+@@ -1007,7 +1007,7 @@ class FrequencyMemory:
+ 
+ class CaptureSupervisor:
+     """Width estimate, headroom map, memory, power monitor and the failure budget
+-    around capture(); used by the phase tracker's relearn policy.
++    around capture(); shared by the phase tracker and CAPTURE_PO.
+ 
+     respond() is the one decision point. A confirmed change of either kind
+     first probes the remembered operating points at the present amplitude
+@@ -1336,10 +1336,183 @@ def run_phase_v2(io: Executor):
+             last = io.control(f_op, low if sup.failed_episode else 1.)
+ 
+ 
++# ---------------------------------------------------------------------------
++# CAPTURE_PO: power-drop-triggered capture plus perturb-and-observe tracking.
++# ---------------------------------------------------------------------------
++
++class PerturbObserve:
++    """Two-sided perturb-and-observe on the measured soft-feasible power.
++
++    Each comparison probes f_op - step and f_op + step (short probes, the same
++    probe rule as the phase tracker) and moves the held point only to a side
++    that beats the mean of the recent CONTROL samples there by po_move_threshold
++    (or noise_sigmas measured difference sigmas, if larger). A move grows the
++    step by po_grow, a comparison without one shrinks it by po_shrink; steps
++    stay within [po_step_min_per_width, po_step_max_per_width] x width and start
++    at po_step_initial_per_width x width. After po_park_comparisons comparisons
++    at the minimum step without a move the tracker parks: no more probes until
++    the power monitor reports a change. After a capture or a recall it starts
++    parked: the capture already placed the point within its final step, at
++    most capture_scan_refine_step_per_width of the width, and probing a point
++    that close to the peak can only cost samples. The width is the capture's
++    measured half-power width, or the nominal design width before any capture.
++    """
++
++    def __init__(self, cfg: dict):
++        self.cfg = cfg
++        self.parked = True
++        self.width = float(cfg['nominal_peak_width_Hz'])
++        self.step = None
++        self.quiet = 0
++        self.scores = []
++        self.held = None
++
++    def start(self, io: Executor, width: float, reason: str, f_op: float):
++        cfg = self.cfg
++        self.width = float(width)
++        self.step = self.width*cfg['po_step_initial_per_width']
++        self.parked, self.quiet, self.scores = False, 0, []
++        io.event('PO_START', reason=reason, frequency_Hz=f_op, step_Hz=self.step, width_Hz=self.width)
++
++    def hold(self, io: Executor, width: float, reason: str, f_op: float):
++        self.width = float(width)
++        self.step = self.width*self.cfg['po_step_initial_per_width']
++        self.parked, self.quiet, self.scores = True, 0, []
++        io.event('PO_PARK', reason=reason, frequency_Hz=f_op, step_Hz=self.step, width_Hz=self.width)
++
++    def bounds(self) -> tuple[float, float]:
++        return (self.width*self.cfg['po_step_min_per_width'],
++                self.width*self.cfg['po_step_max_per_width'])
++
++    def observe(self, score: float):
++        self.scores = (self.scores+[score])[-int(self.cfg['reference_samples']):]
++
++    def compare(self, io: Executor, f_op: float, last: Measurement,
++                sup: CaptureSupervisor) -> tuple[float, Measurement | None]:
++        cfg = io.cfg
++        lo_f, hi_f = float(cfg['frequency_min_Hz']), float(cfg['frequency_max_Hz'])
++        s0 = float(np.mean(self.scores)) if self.scores else measured_score(last, cfg)
++        dwell = settle_dwell_us(cfg, self.width)
++        c_now = soft_headroom(last, cfg)
++        smallest, largest = self.bounds()
++        results = []
++        for sign, kind in ((-1, 'PO_PROBE_MINUS'), (1, 'PO_PROBE_PLUS')):
++            f = float(np.clip(f_op+sign*self.step, lo_f, hi_f))
++            if abs(f-f_op) <= 1e-7:
++                continue
++            m = probe(io, f, safe_amplitude(cfg, last.amplitude, (c_now, sup.headroom.predict(f))),
++                      kind, dwell)
++            if m is None:
++                io.event('PO_PROBE_FAILED', frequency_Hz=f, step_Hz=self.step)
++                self.step = max(self.step*cfg['po_shrink'], smallest)
++                self.quiet = 0
++                return f_op, None
++            sup.check_headroom(m)
++            results.append((measured_score(m, cfg), f, m))
++        if not results:
++            return f_op, None
++        best_score, best_f, best_m = max(results, key=lambda r: (r[0], -abs(r[1]-f_op)))
++        margin = max(cfg['po_move_threshold'], cfg['noise_sigmas']*sup.noise.sigma_diff)
++        if best_score > s0*(1+margin):
++            io.event('PO_MOVE', from_frequency_Hz=f_op, to_frequency_Hz=best_f, score_W=best_score,
++                     held_score_W=s0, step_Hz=self.step, margin=margin)
++            self.step = min(self.step*cfg['po_grow'], largest)
++            self.quiet = 0
++            return best_f, best_m
++        at_minimum = self.step <= smallest*(1+1e-9)
++        self.step = max(self.step*cfg['po_shrink'], smallest)
++        self.quiet = self.quiet+1 if at_minimum else 0
++        self.held = s0
++        if self.quiet >= cfg['po_park_comparisons']:
++            self.parked = True
++            io.event('PO_PARK', reason='CONVERGED', frequency_Hz=f_op, step_Hz=self.step,
++                     width_Hz=self.width, held_score_W=s0)
++        return f_op, None
++
++
++def run_capture_po(io: Executor):
++    """CAPTURE_PO: perturb-and-observe tracking with power-drop-triggered capture.
++
++    Starts tracking at the start frequency with the nominal width (no capture
++    at t=0). A parked tracker restarts on a confirmed power change that no
++    remembered point explains; a confirmed drop goes to recall and then a full
++    capture (CaptureSupervisor.respond), after which the tracker holds the
++    chosen point, parked, with the measured width. Capture failures are charged to
++    the scan budgets and reach the same latched low hold as a periodic scan.
++    """
++    cfg = io.cfg
++    tick = cfg['control_tick_us']
++    low = cfg['capture_scan_amplitude']
++    sup = CaptureSupervisor(cfg)
++    po = PerturbObserve(cfg)
++    plateau = Plateau(cfg)
++    f_op = float(cfg['initial_frequency_Hz'])
++    po.start(io, sup.width, 'START', f_op)
++    last = None
++    while not io.finished:
++        if sup.latched:
++            io.control(f_op, low, 'FAILED_SCAN_LATCHED_HOLD')
++            continue
++        if sup.failed_episode and not sup.budget.can_start(io.time):
++            last = io.control(f_op, low, 'FAILED_SCAN_RETRY_WAIT')
++            continue
++        usable = comparable(last, f_op, io.time, tick)
++        score = measured_score(last, cfg) if usable else None
++        sup.noise.observe(last if usable else None, score, sup.width)
++        sup.check_headroom(last if usable else None)
++        if usable:
++            po.observe(score)
++        here = (valid_measurement(last) and last.time_us == io.time
++                and abs(last.frequency_Hz-f_op) <= 1e-7)
++        if here or sup.failed_episode:
++            trigger = sup.observe(io, last, usable, f_op) if here and not sup.failed_episode else None
++            if trigger == 'TRACK' and not po.parked:
++                trigger = None             # already tracking: the change is the tracker's own
++            outcome = sup.respond(io, f_op, trigger, last, usable)
++            if isinstance(outcome, CaptureResult):
++                f_op = float(outcome.frequency_Hz)
++                po.hold(io, sup.width, outcome.source, f_op)
++                plateau.prev = None
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++            if outcome == 'FAILED':
++                # Never adopt a failed capture's last point as the new operating point.
++                if not io.finished:
++                    last = io.control(f_op, low, 'FAILED_SCAN_ROLLBACK')
++                continue
++            if outcome == 'NO_MEMORY_MATCH':
++                if trigger == 'TRACK':
++                    po.start(io, sup.width, 'POWER_CHANGE', f_op)
++                plateau.prev = None
++                po.scores = []
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++            if trigger == 'TRACK' and po.parked and sup.recalled:
++                po.start(io, sup.width, 'POWER_CHANGE', f_op)
++        if not po.parked and usable and plateau.ready(last, f_op, io.time):
++            new, sample = po.compare(io, f_op, last, sup)
++            if new != f_op:
++                prepare_move(io, new, soft_headroom(sample, cfg), settle_dwell_us(cfg, po.width))
++                f_op = new
++                po.scores = []
++            if po.parked:
++                # Learn the parked level (the memory keeps it), checked against
++                # the held score the last comparison measured.
++                sup.reset_reference(prior=po.held)
++        elif not usable:
++            plateau.prev = None
++        if not io.finished:
++            last = io.control(f_op, low if sup.failed_episode else 1.)
++
++
+ def run_policy(io: Executor, strategy: str, target_phase: float):
+     if strategy not in STRATEGIES:
+         raise ValueError(strategy)
+     cfg = io.cfg
++    if strategy == 'CAPTURE_PO':
++        return run_capture_po(io)
+     if strategy == 'PHASE_FEEDBACK' and phase_mode(cfg)[0] == 'newton_v2':
+         return run_phase_v2(io)
+     target = float(cfg['initial_frequency_Hz'])
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index 52eae729a0338dd30d0641cb5f828b8629376059..bbe995429b4fd0d4528acb0a7b0302c1571a462f 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -73,11 +73,12 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+     soft = f"{config['voltage_soft_Vpp']:g} Vpp / {config['current_soft_Arms']*1000:g} mA RMS"
+     hard = f"{config['voltage_hard_Vpp']:g} Vpp / {config['current_hard_Arms']*1000:g} mA RMS"
+     pre_peak = max(r['peak_pre_guard_voltage_Vpp'] for r in hist)
+-    lines = [f'# 计划书三策略统一准稳态验证 — {batch}', '',
+-      '这是独立新实现的一次同批次比较，不覆盖历史结果，也不是旧三策略结果的重新拼表。', '',
++    lines = [f'# 计划书正式策略统一准稳态验证（{len(STRATEGIES)} 种）— {batch}', '',
++      '这是独立新实现的一次同批次比较，不覆盖历史结果，也不是旧三策略结果的重新拼表。'
++      '文件名中的 three_strategy 是沿用的历史名称，表内含全部正式策略。', '',
+       '## 本批次真实完成', '',
+       f'- 行为测试：{test_result.testsRun} 项全部通过；包括无效/零功率扫描、扫描幅度同步、硬停锁存、失败重试耗尽和无回退统计。',
+-      '- 正式策略：FIXED / PERIODIC_SCAN / PHASE_FEEDBACK；P&O 不纳入此批次正式比较。',
++      '- 正式策略：' + ' / '.join(STRATEGIES) + '。CAPTURE_PO = 功率下降触发的全频带捕获＋扰动观察（P&O）跟踪；与早期未纳入的 P_AND_O 不是同一实现。',
+       '- 共用同一模型、配置、执行保护器、整数微秒时钟、虚拟测量和指标计算函数。',
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+       *phase_lines(config),
+@@ -105,7 +106,7 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+         err = 'NA（未通过，不回退）' if r['steady_error_pct'] is None else f"{r['steady_error_pct']:.6f}"
+         lines.append(f"|{r['strategy']}|{'通过' if r['settled'] else '未通过'}|{r['max_consecutive_qualified_samples']}|{timing}|{err}|{r['fixed_tail_error_pct']:.3f}|")
+     lines += ['', '## 必须一并汇报的限制', '',
+-      '1. “完成统一比较”不等于“三种控制都通过验收”。未通过是本批次有效结果；没有改变 98% / 10 样本门槛或延长原扰动段。',
++      '1. “完成统一比较”不等于“各策略都通过验收”。未通过是本批次有效结果；没有改变 98% / 10 样本门槛或延长原扰动段。',
+       f'2. 捕获率参考是 {soft} 软阈值及 a≤1 下、100 Hz 离散网格的策略可行最大 P_Rm；不是仅受 {hard} 硬限约束的最大值。两种参考都写在 reference_optima.json。',
+       '   100 Hz 网格参考是近似值；连续调频可能落在网格点之间，使比值略高于100%。不将其截断成100%，也不解读为效率超过100%；audit_batch.py 提供10 Hz网格复核作为误差诊断，不更换正式分母。',
+       '3. 能量是准稳态分段保持积分，含扫描、相位试探、停机、等待和渐升。不是 LTspice 瞬态电能，也不是声学效率。',
+@@ -113,7 +114,7 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+       '5. 扰动发生在保持区间内部时不免费触发保护；只把电学响应按真实时间边界拆分入账。仍不包含连续 RLC 瞬态、测量噪声、功放动态或硬件执行延迟。',
+       '6. 已采用扫描失败分类补丁：寻峰失败、保护抢占、无效测量、非平稳扫描分别计数；重试预算分别为2/4/2/2，间隔至少50 ms；任一预算耗尽即低幅锁存。每次扫描至多400点、300 ms、2次粗扫回退。以上均为预登记假设，未优化，也未完成预算敏感性验证；截断记录另列。',
+       '7. 相位固定目标可能在扰动后不再对应高功率。不同扰动的相位曲线可非单调；邻频测斜率也不保证全局寻优。换能器端相位看不见匹配网络的变化；重学目标只在功率下降触发捕获或记忆召回时发生，小于捕获阈值的损失不会被纠正。',
+-      '   捕获的点驻留按峰宽的时间常数取值；准稳态模型没有建立过程，驻留过短造成的测量误差在这里看不出来，只计入了时间成本。',
++      '   捕获与 CAPTURE_PO 的点驻留按峰宽的时间常数取值；准稳态模型没有建立过程，驻留过短造成的测量误差在这里看不出来，只计入了时间成本。',
+       '8. 反射代理只监测，无已验证的反射上限；未独立规定绝对功率上限。没有把这两项冒充为已经完成的约束。',
+       '9. 本轮没有重新运行 LTspice、真实器件或 COMSOL。电路模型结构来自已存档 v2.1，基线参数为上述冻结设计文件，不代表本轮每个控制动作已经由 LTspice 复核。',
+       '10. 本轮不调参优化排名。此处为模糊推测内容：进一步整定相位增益、扫描周期或失败后可观测重置规则可能改善表现，但本批次没有验证。', '',
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index cfca78179898dd4a50fa9712a15ad4f13b2d5de2..7b178b8feca9fabad19a392ad426a6f9e7948817 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -9,8 +9,8 @@ import unittest
+ from unittest.mock import patch
+ import numpy as np
+ 
+-from controllers import (STRATEGIES, CaptureResult, CentreRecoveryGate, Executor,
+-                         FrequencyMemory, HeadroomMap, NoiseFloor, PointResult, PowerMonitor,
++from controllers import (STRATEGIES, CaptureResult, CaptureSupervisor, CentreRecoveryGate, Executor,
++                         FrequencyMemory, HeadroomMap, NoiseFloor, PerturbObserve, PointResult, PowerMonitor,
+                          RetryBudget, ScanBudget, ScanResult, capture, coarse_peaks, grid,
+                          newton_phase_update, peak_width, phase_mode, phase_update, probe,
+                          run_policy, scan, settle_dwell_us)
+@@ -23,7 +23,7 @@ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
+ BASE = 'CASE_000_BASELINE'
+ CANDIDATE = ROOT/'candidates'/'synthetic_q13p8_3mA'/'config.json'
+ V2 = dict(phase_tracker='newton_v2', phase_signal='port', phase_target_policy='relearn_after_capture')
+-# Every key the capture and the second phase tracker added (review/27).
++# Every key the capture, the second phase tracker and CAPTURE_PO added (review/27).
+ NEW_KEYS = (
+     'phase_tracker', 'phase_signal', 'phase_target_policy', 'phase_tracker_rule',
+     'phase_newton_fraction', 'phase_probe_offset_per_width', 'phase_max_step_per_width',
+@@ -35,7 +35,9 @@ NEW_KEYS = (
+     'capture_scan_drop_fraction', 'capture_scan_rule', 'track_change_fraction',
+     'impedance_change_fraction', 'drop_confirm_samples', 'reference_samples', 'memory_size',
+     'memory_match_tolerance', 'noise_window_samples', 'noise_same_point_per_width', 'noise_sigmas',
+-    'probe_amplitude_margin', 'full_amplitude_threshold')
++    'probe_amplitude_margin', 'full_amplitude_threshold', 'po_step_initial_per_width',
++    'po_step_min_per_width', 'po_step_max_per_width', 'po_grow', 'po_shrink', 'po_move_threshold',
++    'po_park_comparisons', 'po_rule')
+ 
+ 
+ def half_power_width(case, centre_Hz: float) -> float:
+@@ -743,8 +745,8 @@ class CaptureAndPhaseV2Tests(unittest.TestCase):
+                     phase_mode(dict(CFG, **over))
+ 
+     def test_new_keys_leave_the_three_original_strategies_unchanged(self):
+-        """Strip every key added for the capture and newton_v2: the three
+-        original strategies log exactly the same rows and events."""
++        """Strip every key added for the capture, newton_v2 and CAPTURE_PO: the
++        three original strategies log exactly the same rows and events."""
+         self.assertTrue(set(NEW_KEYS) <= set(CFG))
+         stripped = {k: v for k, v in CFG.items() if k not in NEW_KEYS}
+         for strategy in ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK'):
+@@ -1012,5 +1014,87 @@ class CaptureAndPhaseV2Tests(unittest.TestCase):
+         self.assertEqual(overall['scan_failures_search'], len(failures))
+ 
+ 
++class CapturePOTests(unittest.TestCase):
++    """CAPTURE_PO: perturb-and-observe tracking with power-drop-triggered capture."""
++
++    @classmethod
++    def setUpClass(cls):
++        cls.refs = references(CFG)
++
++    def run_po(self, ids, cfg=None):
++        e = Engine(copy.deepcopy(cfg or CFG), ids, 'CAPTURE_PO', 'TEST')
++        run_policy(Executor(e), 'CAPTURE_PO', 0.)
++        return e
++
++    def test_capture_po_is_the_fourth_formal_strategy(self):
++        self.assertEqual(STRATEGIES, ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK', 'CAPTURE_PO'))
++
++    def test_no_capture_at_start_and_it_parks_on_the_baseline(self):
++        e = self.run_po([BASE])
++        names = [x['event'] for x in e.events]
++        self.assertNotIn('SCAN_ATTEMPT_START', names)
++        parked = [x['time_us'] for x in e.events if x['event'] == 'PO_PARK']
++        self.assertTrue(parked)
++        self.assertFalse(any(r['kind'].startswith('PO_PROBE') and r['start_us'] >= parked[0] for r in e.rows))
++        per, _ = evaluate(e.rows, e.events, CFG, self.refs)
++        self.assertTrue(per[0]['settled'])
++
++    def test_a_drop_is_captured_and_the_return_is_recalled(self):
++        e = self.run_po([BASE, 'CASE_FS_M5', BASE])
++        success = [x for x in e.events if x['event'] == 'SCAN_SUCCESS']
++        self.assertEqual(success[0]['source'], 'SCAN')
++        back = [x for x in e.events if x['time_us'] >= 2*CFG['segment_us'] and
++                (x['event'] == 'MEMORY_RECALLED' or (x['event'] == 'SCAN_SUCCESS' and x['source'] == 'MEMORY'))]
++        self.assertTrue(back)
++        self.assertEqual(back[0]['frequency_Hz'], 900000.)
++        per, _ = evaluate(e.rows, e.events, CFG, self.refs)
++        self.assertTrue(per[1]['settled'])
++        self.assertTrue(per[2]['settled'])
++
++    def test_po_moves_uphill_and_parks_within_its_smallest_step(self):
++        e = Engine(copy.deepcopy(CFG), [BASE], 'CAPTURE_PO', 'TEST')
++        io, sup, po = Executor(e), CaptureSupervisor(CFG), PerturbObserve(CFG)
++        f = 900300.
++        po.start(io, 2142., 'TEST', f)
++        for _ in range(60):
++            io.control(f, 1.)
++            m = io.control(f, 1.)
++            po.observe(measured_score(m, CFG))
++            new, _ = po.compare(io, f, m, sup)
++            f = new
++            if po.parked:
++                break
++        self.assertTrue(po.parked)
++        moves = [x for x in e.events if x['event'] == 'PO_MOVE']
++        self.assertTrue(moves)
++        self.assertLess(moves[0]['to_frequency_Hz'], 900300.)
++        self.assertLessEqual(abs(f-900000.), CFG['po_step_min_per_width']*2142.*1.01)
++
++    def test_capture_po_failures_reach_the_same_latch(self):
++        def failing(io, trusted, width, memory=(), noise=0.):
++            io.execute(880000, CFG['capture_scan_amplitude'], 'FORCED_FAILED_CAPTURE_POINT', 1500)
++            return CaptureResult(False, None, 'FORCED', 'PREEMPTED_PROTECTION')
++        with patch('controllers.capture', side_effect=failing):
++            e = self.run_po([BASE, 'CASE_FS_M5', BASE])
++        failures = [x for x in e.events if x['event'] == 'SCAN_FAILURE']
++        self.assertEqual(len(failures), CFG['scan_preemption_max_retries']+1)
++        self.assertTrue(all(x['budget_class'] == 'preemption' for x in failures))
++        self.assertTrue(any(r['kind'] == 'FAILED_SCAN_LATCHED_HOLD' for r in e.rows))
++        after = [r for r in e.rows if r['start_us'] >= failures[0]['time_us']]
++        self.assertTrue(all(r['applied_amplitude'] <= CFG['capture_scan_amplitude']+1e-12 for r in after))
++
++    def test_candidate_baseline_runs_all_four_strategies(self):
++        self.addCleanup(model.configure, CFG)
++        cfg = json.loads(CANDIDATE.read_text(encoding='utf-8'))
++        model.configure(cfg)
++        refs = references(cfg)
++        for strategy in STRATEGIES:
++            with self.subTest(strategy=strategy):
++                e = Engine(copy.deepcopy(cfg), [BASE, 'CASE_COMBINED_HIGH'], strategy, 'TEST')
++                run_policy(Executor(e), strategy, float(model.response(900000, e.cases[BASE])['phase_deg'][0]))
++                per, overall = evaluate(e.rows, e.events, cfg, refs)
++                self.assertEqual(overall['logged_duration_s'], 1.6)
++
++
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current_app.py b/integrated/CTO_virtual_drive_platform_v2_1/current_app.py
+index 2861fb03c8fac4c2268e40bdc5634d6f8c275455..1856bf7d429905456f41f3f3e8d9c9496bdd0607 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current_app.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current_app.py
+@@ -3,13 +3,13 @@ import streamlit as st
+ 
+ st.set_page_config(page_title='CTO虚拟电学平台 · 当前交付入口', layout='wide')
+ page = st.navigation({
+-    '当前统一结果': [st.Page('pages/04_统一三策略结果.py', title='统一三策略结果', default=True),
++    '当前统一结果': [st.Page('pages/04_统一三策略结果.py', title='统一正式策略结果', default=True),
+                     st.Page('pages/05_版本与证据分区.py', title='版本、补丁与证据分区')],
+     '参数与依据': [st.Page('pages/06_参数来源登记.py', title='参数来源登记')],
+     '历史与独立实验': [st.Page('pages/02_参数探索与历史结果.py', title='参数探索／历史结果'),
+                        st.Page('pages/03_LTspice闭环验证.py', title='LTspice反馈接口（独立实验）')],
+ })
+ with st.sidebar:
+-    st.caption('当前正式比较：固定／扫频／相位反馈。P&O、幅度PI、去嵌相位和负载层为扩展研究。')
++    st.caption('当前正式比较：固定／扫频／相位反馈／捕获＋P&O。早期P&O实现、幅度PI、去嵌相位和负载层为扩展研究。')
+     st.caption('假设线性BVD电学仿真，非器件／声学／临床验证。')
+ page.run()

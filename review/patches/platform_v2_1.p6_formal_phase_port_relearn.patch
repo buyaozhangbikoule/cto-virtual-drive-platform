@@ -1,0 +1,145 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index f2a264a0107b2ccb92e568d738654b4a4ae0fd87..0212831c9fb89a01426a83f3b827f84e1624dc21 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -2,7 +2,7 @@
+ 
+ 2026-09-22整合：上游 validation/plan-three-strategy-v1-20260917 的 650abdc，合入 review/patches/plan_three_strategy.scan_fault_taxonomy.patch。补丁覆盖配置、控制器、指标及测试；已有物理阈值、原扰动时长、98%/10样本标准不变。项目正式入口为上两级的 `python run_project.py validate`，它会执行新批次、复核并显式登记；不要靠目录时间自行选取“最新”结果。来源见 `../integration_sources.json`。
+ 
+-本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**；2026-10-16 起另有第四种正式策略 CAPTURE_PO（功率下降触发的全频带捕获＋扰动观察跟踪）、两者共用的捕获程序，以及相位反馈的第二定律 newton_v2（配置开关，默认仍为原定律），见下文「正式策略」与审查分支 review/27。
++本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**；2026-10-16 起另有第四种正式策略 CAPTURE_PO（功率下降触发的全频带捕获＋扰动观察跟踪）、两者共用的捕获程序，以及相位反馈的第二定律 newton_v2。〔P6，2026-10-16〕正式配置的 PHASE_FEEDBACK 改为 newton_v2＋换能器端相位＋捕获后重学目标；原定律 gain_v1 仍可由配置选回，旧结果可复现。见下文「正式策略」与审查分支 review/27。
+ 历史平台、Claude 送审代码、P&O/相位消融文件及旧结果均未覆盖。本文不是全部项目完成声明。
+ 
+ ## 如何运行
+@@ -58,12 +58,12 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ 1. **FIXED**：0.9 MHz、不主动选频，名义幅度 a=1，受共同保护改变实际幅度。
+ 2. **PERIODIC_SCAN**：每 0.5 s 的绝对周期到期后、在保护允许时启动。三级局部扫描为 ±50 kHz/5 kHz → ±5 kHz/1 kHz → ±1 kHz/0.1 kHz，边缘峰最多重定位 3 次。每点 1.5 ms，低幅请求 a=0.4，但仍必须经过保护。选频比较从实际 V/I/P 推算的软阈值可行功率，不查询当前场景最优表。起止锚点和最终候选复测验证失败即拒收。它只能确认局部候选，不证明全局最优。
+-3. **PHASE_FEEDBACK**：基准 0.9 MHz 输入相位标定约 −1.078209637°，每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
++3. **PHASE_FEEDBACK（原定律 gain_v1；P6 起不是正式配置，配置 `phase_tracker = gain_v1` 可选回）**：基准 0.9 MHz 输入相位标定约 −1.078209637°，每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
+    中心恢复门控（`phase_centre_recovery_gate`，2026-10-16 加入，默认配置关闭）：保护器在改频的那一拍从不升幅（新频点允许幅度更低时先在旧频率降幅），之后在新频率保持不动、按 2.5/s 渐升；渐升未完就再改频，幅度会停在上次被压到的水平（棘轮）。打开开关后，采纳一个新中心要等新中心上两个相邻 20 ms、NORMAL、未冻结、有效且实际幅度相同的普通控制样本，才做下一次相位更新。它只等待，不加幅、不加步长、不加试探，也不读取模型或场景；关闭即原正式相位路径，结果逐字节不变。默认关闭的理由：review/23 的逐场景协议（保护前电流峰值不得上升）在 Qm=800 基线上不满足（13/31）。它不改变相位目标本身——冻结的输入相位目标不是最大功率判据，见审查分支 review/25 第六节、review/26。
+ 
+ 4. **CAPTURE_PO**（2026-10-16 加入，第四种正式策略）：开机不捕获，以设计点有载半功率宽度为初始峰宽做两侧扰动观察：每次比较在 f±步长 各试探一点，试探点比保持点近几个样本的平均高 `po_move_threshold`（或噪声估计的 2 倍差值标准差）才移动；移动则步长 ×1.5，否则 ×0.5，限制在峰宽的 1/40～1/2；最小步长下连续 3 次无改进即停驻、不再试探。功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，无匹配则重新开始扰动观察；连续 3 个样本低于参考 90% 才做全频带捕获（第 5 条）。捕获或召回之后直接停驻：捕获已把落点放在其最后一级步长之内，再试探只会损失样本。
+ 5. **捕获程序**（2026-10-16 加入；相位 newton_v2 的重学模式与 CAPTURE_PO 共用）：只在功率连续 3 个样本低于参考 90% 时启动，从不按定时器，开机不捕获。锚点 → 记忆点（开机点永不淘汰，另记 4 个，频率与功率同时相符才算同一负载状态）→ 0.8–1.0 MHz 全带 5 kHz 粗扫 → 对最佳点（另一局部最大若达 80% 且相隔 ≥3 点也细化）每级步长 1/5、窗口 ±1 个上一级步长，直到步长 < 0.1×实测峰宽或到 100 Hz → 每级之后复测锚点（变化即非平稳）→ 复核 → 不比锚点高 2% 则不移动。点驻留 = clip(10/(π×峰宽), 200 μs, 1.5 ms)，峰宽取上次捕获实测值，第一次之前取设计点有载半功率宽度 `nominal_peak_width_Hz`；全部点按 `capture_scan_amplitude` = 0.65（= 130 Vpp ÷ 2×100 Vpp）。失败计入与周期扫频相同的四类预算，耗尽同样低幅锁存（锁存与重试等待幅度为 `capture_scan_amplitude`）。准稳态模型没有建立过程，驻留缩短只省了时间，测量误差看不出来。
+-6. **PHASE_FEEDBACK 的 newton_v2**（`phase_tracker = newton_v2`；默认配置为 `gain_v1`，即上面第 3 条的原定律，结果逐字节不变）：步长 = `phase_newton_fraction`×误差÷实测斜率（两次邻频试探，偏移 max(100 Hz, 0.05×峰宽)），限幅 0.25×峰宽；目标取开机第一个有效控制样本。`phase_signal` 选 `input` 或 `port`；`phase_target_policy = relearn_after_capture` 时，功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，连续 3 个样本低于参考 90% 才捕获，每次召回或捕获后在所选点重学目标；`frozen` 时不捕获、不召回。换能器端相位看不见匹配网络的变化，小于捕获阈值的损失不会被纠正。
++6. **PHASE_FEEDBACK 的 newton_v2**（`phase_tracker = newton_v2`；P6 起为正式配置，并取 `phase_signal = port`、`phase_target_policy = relearn_after_capture`；P4/P5 单独合入时默认仍为第 3 条的原定律）：步长 = `phase_newton_fraction`×误差÷实测斜率（两次邻频试探，偏移 max(100 Hz, 0.05×峰宽)），限幅 0.25×峰宽；目标取开机第一个有效控制样本。`phase_signal` 选 `input` 或 `port`；`phase_target_policy = relearn_after_capture` 时，功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，连续 3 个样本低于参考 90% 才捕获，每次召回或捕获后在所选点重学目标；`frozen` 时不捕获、不召回。换能器端相位看不见匹配网络的变化，小于捕获阈值的损失不会被纠正。
+ 
+ 各策略共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
+ 未添加 PI 积分器，因此不存在需要伪装为已实现的“积分饱和修复”。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
+index 4014b915c80c0287311996bfaac43a15f47fb735..03710285013216cd40721a4f3082eb43037008fe 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/README.md
+@@ -14,7 +14,7 @@
+ - 数值：C0 4.1148 pF、Rm 12254.90 Ω、Lm 29.930 mH、Cm 1.0448 pF、fs 0.9 MHz；匹配 L 138.011 μH、
+   C 221.208 pF；a=1 源 4.90384 V RMS；0.9 MHz 换能器端 100 Vpp / 3.000 mA RMS / 102 mW，
+   功放输出端 45.14 mA RMS。
+-- 配置差别：电流软/硬限 4.5/5.0 mA（作用于换能器端口），相位反馈中心恢复门控打开；
++- 配置差别：电流软/硬限 4.5/5.0 mA（作用于换能器端口），相位反馈中心恢复门控打开（门控只作用于原相位定律 gain_v1；P6 起正式相位定律为 newton_v2，候选配置随默认配置继承），设计点有载半功率宽度 86872 Hz；
+   其余控制、保护与验收参数和默认配置相同。
+ 
+ ## 它不是什么
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+index 6b65971dd3f94aeba382ef90af0472cf12675da6..3d4d2ea2f483eb38e9a4b11ccca72bebf50f29a6 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+@@ -57,9 +57,9 @@
+   "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
+   "phase_centre_recovery_gate": true,
+   "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
+-  "phase_tracker": "gain_v1",
+-  "phase_signal": "input",
+-  "phase_target_policy": "frozen",
++  "phase_tracker": "newton_v2",
++  "phase_signal": "port",
++  "phase_target_policy": "relearn_after_capture",
+   "phase_tracker_rule": "gain_v1 = the original law: input phase arg(V_input/I_source), target frozen at the 0.9 MHz baseline calibration, step = phase_gain_Hz_per_deg x error, probes +-phase_probe_offset_Hz; it accepts only phase_signal input with phase_target_policy frozen. newton_v2: step = phase_newton_fraction x error / measured slope, clipped to phase_max_step_per_width x peak width, probes +-max(phase_probe_offset_Hz, phase_probe_offset_per_width x width), target learned from the first valid CONTROL sample; phase_signal port = arg(V_port/I_port) at the transducer terminals; relearn_after_capture re-learns the target at the point each power-drop-triggered capture chooses, frozen never captures",
+   "phase_newton_fraction": 0.7,
+   "phase_probe_offset_per_width": 0.05,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 57d9d3a0bdbc880a38ae6aaf1faac0912865739d..3f74ce1cba838551ac20d71c9153c2e82ceb2252 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -57,9 +57,9 @@
+   "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
+   "phase_centre_recovery_gate": false,
+   "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
+-  "phase_tracker": "gain_v1",
+-  "phase_signal": "input",
+-  "phase_target_policy": "frozen",
++  "phase_tracker": "newton_v2",
++  "phase_signal": "port",
++  "phase_target_policy": "relearn_after_capture",
+   "phase_tracker_rule": "gain_v1 = the original law: input phase arg(V_input/I_source), target frozen at the 0.9 MHz baseline calibration, step = phase_gain_Hz_per_deg x error, probes +-phase_probe_offset_Hz; it accepts only phase_signal input with phase_target_policy frozen. newton_v2: step = phase_newton_fraction x error / measured slope, clipped to phase_max_step_per_width x peak width, probes +-max(phase_probe_offset_Hz, phase_probe_offset_per_width x width), target learned from the first valid CONTROL sample; phase_signal port = arg(V_port/I_port) at the transducer terminals; relearn_after_capture re-learns the target at the point each power-drop-triggered capture chooses, frozen never captures",
+   "phase_newton_fraction": 0.7,
+   "phase_probe_offset_per_width": 0.05,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index 7b178b8feca9fabad19a392ad426a6f9e7948817..9f1fbae18cdae76d83471e781368f813e1be2fab 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -23,6 +23,7 @@ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
+ BASE = 'CASE_000_BASELINE'
+ CANDIDATE = ROOT/'candidates'/'synthetic_q13p8_3mA'/'config.json'
+ V2 = dict(phase_tracker='newton_v2', phase_signal='port', phase_target_policy='relearn_after_capture')
++GAIN_V1 = dict(phase_tracker='gain_v1', phase_signal='input', phase_target_policy='frozen')
+ # Every key the capture, the second phase tracker and CAPTURE_PO added (review/27).
+ NEW_KEYS = (
+     'phase_tracker', 'phase_signal', 'phase_target_policy', 'phase_tracker_rule',
+@@ -576,6 +577,7 @@ class CentreRecoveryGateTests(unittest.TestCase):
+ 
+     def run_phase(self, gate_on, ids):
+         cfg = copy.deepcopy(CFG)
++        cfg.update(GAIN_V1)            # the gate belongs to the original law
+         cfg['phase_centre_recovery_gate'] = gate_on
+         e = Engine(cfg, ids, 'PHASE_FEEDBACK', 'TEST')
+         phi = float(model.response(900000, e.cases[BASE])['phase_deg'][0])
+@@ -691,7 +693,8 @@ class SyntheticCandidateTests(unittest.TestCase):
+ 
+     def test_candidate_enables_the_gate(self):
+         self.assertIs(self.cfg['phase_centre_recovery_gate'], True)
+-        e = Engine(copy.deepcopy(self.cfg), [BASE, 'CASE_FS_M3'], 'PHASE_FEEDBACK', 'TEST')
++        # The gate acts on the original law only; the formal law is newton_v2 since P6.
++        e = Engine(dict(copy.deepcopy(self.cfg), **GAIN_V1), [BASE, 'CASE_FS_M3'], 'PHASE_FEEDBACK', 'TEST')
+         phi = float(model.response(900000, e.cases[BASE])['phase_deg'][0])
+         run_policy(Executor(e), 'PHASE_FEEDBACK', phi)
+         names = [x['event'] for x in e.events]
+@@ -728,9 +731,14 @@ class CaptureAndPhaseV2Tests(unittest.TestCase):
+         b = model.BASE_BVD
+         self.assertAlmostEqual(m.phase_port_deg, -math.degrees(math.atan(2*np.pi*b.fs*b.c0*b.rm)), places=6)
+ 
+-    def test_default_phase_feedback_is_the_original_law(self):
+-        self.assertEqual(phase_mode(CFG), ('gain_v1', 'input', 'frozen'))
+-        e = self.engine([BASE, 'CASE_FS_M5'])
++    def test_formal_phase_feedback_is_port_phase_with_relearning(self):
++        # P6: the formal PHASE_FEEDBACK is newton_v2 on the transducer-port phase.
++        self.assertEqual(phase_mode(CFG), ('newton_v2', 'port', 'relearn_after_capture'))
++        self.assertEqual(V2, dict(zip(('phase_tracker', 'phase_signal', 'phase_target_policy'), phase_mode(CFG))))
++
++    def test_the_original_law_is_still_selectable(self):
++        self.assertEqual(phase_mode(dict(CFG, **GAIN_V1)), ('gain_v1', 'input', 'frozen'))
++        e = self.engine([BASE, 'CASE_FS_M5'], **GAIN_V1)
+         run_policy(Executor(e), 'PHASE_FEEDBACK', float(model.response(900000, e.cases[BASE])['phase_deg'][0]))
+         names = {x['event'] for x in e.events}
+         self.assertIn('PHASE_UPDATE', names)
+@@ -742,17 +750,18 @@ class CaptureAndPhaseV2Tests(unittest.TestCase):
+                      dict(phase_tracker='gain_v2'), dict(phase_signal='voltage')):
+             with self.subTest(**over):
+                 with self.assertRaises(ValueError):
+-                    phase_mode(dict(CFG, **over))
++                    phase_mode(dict(CFG, **dict(GAIN_V1, **over)))
+ 
+     def test_new_keys_leave_the_three_original_strategies_unchanged(self):
+         """Strip every key added for the capture, newton_v2 and CAPTURE_PO: the
+-        three original strategies log exactly the same rows and events."""
++        three original strategies (PHASE_FEEDBACK under its original law) log
++        exactly the same rows and events."""
+         self.assertTrue(set(NEW_KEYS) <= set(CFG))
+         stripped = {k: v for k, v in CFG.items() if k not in NEW_KEYS}
+         for strategy in ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK'):
+             with self.subTest(strategy=strategy):
+                 logs = []
+-                for cfg in (copy.deepcopy(CFG), copy.deepcopy(stripped)):
++                for cfg in (dict(copy.deepcopy(CFG), **GAIN_V1), copy.deepcopy(stripped)):
+                     e = Engine(cfg, [BASE, 'CASE_FS_M5'], strategy, 'TEST')
+                     run_policy(Executor(e), strategy, float(model.response(900000, e.cases[BASE])['phase_deg'][0]))
+                     logs.append((e.rows, e.events))

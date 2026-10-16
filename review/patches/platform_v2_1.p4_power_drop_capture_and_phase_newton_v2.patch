@@ -1,0 +1,1612 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index 92d6b74d692dc7dfc92421b27f759f88f642df7b..e279f253783f05698906811b7d9a826d3d14dc48 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -88,6 +88,34 @@
+     {"id":"continuous_samples","profile":"control","name":"连续合格控制样本数","value":10,"unit":"样本","config_key":"continuous_samples"},
+     {"id":"tail_window_us","profile":"control","name":"固定尾窗诊断长度","value":200000,"unit":"μs","display_unit":"ms","scale":0.001,"config_key":"tail_window_us","limitations":"尾窗指标不是稳态验收的回退样本；未验收稳态误差为NA。"},
+     {"id":"reference_grid_step_Hz","profile":"control","name":"离线安全参考网格步长","value":100,"unit":"Hz","config_key":"reference_grid_step_Hz","limitations":"离线评价用；不能让控制器免费读取真实最优频率。"},
++    {"id":"phase_newton_fraction","profile":"control","name":"相位反馈 newton_v2：每次更新修正的误差比例 κ","value":0.7,"unit":"1","adoption_reason":"步长 = κ×误差/实测斜率（斜率来自两次邻频试探），每次修正误差的 70%；声明值，未寻优。gain_v1 的固定 5 Hz/° 每次修正的比例是 5×|斜率|：Qm=800 输入相位约 43%，宽约 40 倍的峰上约 0.1%（review/27）。","limitations":"只在 phase_tracker=newton_v2 时使用；默认配置仍为 gain_v1。斜率噪声会直接进入步长。","config_key":"phase_newton_fraction"},
++    {"id":"phase_probe_offset_per_width","profile":"control","name":"相位试探偏移（峰宽比例）","value":0.05,"unit":"1","adoption_reason":"偏移 = max(phase_probe_offset_Hz, 0.05×峰宽)：宽峰上 ±100 Hz 两点的相位差太小，按峰宽放大；窄峰上仍是 100 Hz 量级。","config_key":"phase_probe_offset_per_width"},
++    {"id":"phase_max_step_per_width","profile":"control","name":"相位单步上限（峰宽比例）","value":0.25,"unit":"1","adoption_reason":"开发中由 0.5 改为 0.25：远离谐振处测得的斜率很小，按半个峰宽限幅时牛顿步越过相位曲线的线性区（review/27 开发记录）。","limitations":"依据登记日程上的轨迹排错改定，不是独立验证的值。","config_key":"phase_max_step_per_width"},
++    {"id":"nominal_peak_width_Hz","profile":"control","name":"设计点有载半功率宽度（标称峰宽）","value":2142,"unit":"Hz","display_unit":"kHz","scale":0.001,"adoption_reason":"由默认设计文件推导：a=1 时 P_Rm(f) 两个半功率点的间距（1 Hz 网格、交点线性插值）取整到 1 Hz；第一次捕获测出峰宽之前，用它定驻留、试探偏移与步长。tests/test_unified.py 逐值复核。","limitations":"设计知识，不是实测峰宽；候选配置同式得 86872 Hz。","config_key":"nominal_peak_width_Hz"},
++    {"id":"capture_scan_amplitude","profile":"control","name":"捕获扫描幅度比例 a","value":0.65,"unit":"1","adoption_reason":"= 软限 130 Vpp ÷（2×100 Vpp）：只要频带内 a=1 时端口电压不超过名义值的两倍，扫描点就不进入软限、不触发降幅保持；登记场景的最大值为 198.2 Vpp（默认）与 173.0 Vpp（候选）。","limitations":"超过两倍的负载仍由共同保护处理，代价计入时间；扫描后回到满幅按 2.5/s 渐升约 140 ms，这是每次捕获的主要能量代价。","config_key":"capture_scan_amplitude"},
++    {"id":"capture_scan_coarse_step_Hz","profile":"control","name":"捕获粗扫步长（覆盖全频带）","value":5000,"unit":"Hz","display_unit":"kHz","scale":0.001,"adoption_reason":"0.8–1.0 MHz 全带 41 点；半功率宽约 2 kHz 的窄峰在相邻粗扫点之间仍可见（最大偏离 2.5 kHz），再由细化找回。","config_key":"capture_scan_coarse_step_Hz"},
++    {"id":"capture_scan_refine_factor","profile":"control","name":"捕获细化步长缩小倍数","value":5,"unit":"1","adoption_reason":"每级步长为上一级的 1/5，窗口为上一级最佳点 ±1 个上一级步长。","config_key":"capture_scan_refine_factor"},
++    {"id":"capture_scan_refine_step_per_width","profile":"control","name":"捕获细化停止条件（步长/峰宽）","value":0.1,"unit":"1","adoption_reason":"步长小于 0.1×实测峰宽即停止细化：落点偏差不超过半个步长，功率损失约 ≤0.25%。","config_key":"capture_scan_refine_step_per_width"},
++    {"id":"capture_scan_min_step_Hz","profile":"control","name":"捕获最小步长","value":100,"unit":"Hz","adoption_reason":"与周期扫频最细一级相同。","config_key":"capture_scan_min_step_Hz"},
++    {"id":"capture_scan_dwell_min_us","profile":"control","name":"捕获／试探最短驻留","value":200,"unit":"μs","display_unit":"ms","scale":0.001,"adoption_reason":"驻留按峰宽规则缩短时的下限：0.9 MHz 下约 180 个载波周期。","config_key":"capture_scan_dwell_min_us"},
++    {"id":"capture_scan_settle_time_constants","profile":"control","name":"点驻留的时间常数个数","value":10,"unit":"1","adoption_reason":"驻留 = 10/(π×峰宽)，夹在 [capture_scan_dwell_min_us, scan_point_us]：Qm=800 设计点约 1.49 ms（与原 1.5 ms 点时相当），候选取下限 200 μs。","limitations":"准稳态模型没有建立过程：驻留过短造成的测量误差在这里看不出来，只计入了时间成本。","config_key":"capture_scan_settle_time_constants"},
++    {"id":"capture_scan_secondary_peak_ratio","profile":"control","name":"第二峰保留门槛（相对最高粗扫点）","value":0.8,"unit":"1","adoption_reason":"粗扫可能落在窄峰旁边而低估它，宽峰响应也可能双驼峰（候选若干场景次峰为主峰的 70–98%），达到 80% 的另一个局部最大一并细化。","config_key":"capture_scan_secondary_peak_ratio"},
++    {"id":"capture_scan_peak_separation_steps","profile":"control","name":"第二峰最小间隔（粗扫步数）","value":3,"unit":"点","config_key":"capture_scan_peak_separation_steps"},
++    {"id":"capture_scan_max_peaks","profile":"control","name":"一次捕获最多细化的峰数","value":2,"unit":"个","config_key":"capture_scan_max_peaks"},
++    {"id":"capture_scan_gain_threshold","profile":"control","name":"移动所需的最小增益（不值得不动）","value":0.02,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"捕获或记忆召回的结果不比锚点高 2%（或噪声估计的 2 倍差值标准差，取大者）就留在原处。","config_key":"capture_scan_gain_threshold"},
++    {"id":"capture_scan_min_interval_us","profile":"control","name":"两次捕获的最小间隔","value":100000,"unit":"μs","display_unit":"ms","scale":0.001,"config_key":"capture_scan_min_interval_us"},
++    {"id":"capture_scan_drop_fraction","profile":"control","name":"触发捕获的功率下降比例","value":0.1,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"相对已学到的参考功率连续 drop_confirm_samples 个样本低于 90% 才捕获；绝不按定时器，也不在开机时捕获。","limitations":"小于 10% 的损失不触发捕获；换能器端相位看不见匹配网络变化，这类损失可能一直留着。","config_key":"capture_scan_drop_fraction"},
++    {"id":"track_change_fraction","profile":"control","name":"触发记忆召回／局部跟踪的功率变化比例","value":0.02,"unit":"1","display_unit":"%","scale":100,"config_key":"track_change_fraction"},
++    {"id":"impedance_change_fraction","profile":"control","name":"触发记忆召回／局部跟踪的输入阻抗变化比例","value":0.05,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"开发中加入（review/27）：负载回到基准时，保持点上的功率可能几乎不变（候选 FS−3%→基准：+1.6%），而最优点已在约 25 kHz 外；保持频率不变时，该点的输入阻抗会明显变化。","limitations":"只在保持频率未变时比较；依据登记日程上的排错加入。","config_key":"impedance_change_fraction"},
++    {"id":"drop_confirm_samples","profile":"control","name":"变化确认样本数","value":3,"unit":"样本","config_key":"drop_confirm_samples"},
++    {"id":"reference_samples","profile":"control","name":"参考功率取样数","value":3,"unit":"样本","config_key":"reference_samples"},
++    {"id":"memory_size","profile":"control","name":"记忆的工作点数（另加开机点）","value":4,"unit":"个","adoption_reason":"开机点永不淘汰；其余按频率与功率同时相符才视为同一负载状态。","config_key":"memory_size"},
++    {"id":"memory_match_tolerance","profile":"control","name":"记忆匹配容差","value":0.03,"unit":"1","display_unit":"%","scale":100,"config_key":"memory_match_tolerance"},
++    {"id":"noise_window_samples","profile":"control","name":"噪声估计窗口","value":8,"unit":"差值","config_key":"noise_window_samples"},
++    {"id":"noise_same_point_per_width","profile":"control","name":"噪声估计中视为同一点的频率差（峰宽比例）","value":0.01,"unit":"1","adoption_reason":"开发中加入：相位环在噪声下每拍都会微动，只认完全同频的差值时噪声永远估不出来；0.01 峰宽处的真实功率差约 0.04%。","config_key":"noise_same_point_per_width"},
++    {"id":"noise_sigmas","profile":"control","name":"噪声放宽倍数","value":2.0,"unit":"σ","adoption_reason":"各判据门槛取声明值与 2 倍噪声估计中的较大者；无噪声时等于声明值。","config_key":"noise_sigmas"},
++    {"id":"probe_amplitude_margin","profile":"control","name":"试探／改频的幅度余量","value":0.05,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"试探点或新频点已知软限余量低于当前幅度时，先在原频率把幅度降到余量的 95% 再改频，免得保护器先降幅再进入 100 ms 软限保持。","config_key":"probe_amplitude_margin"},
++    {"id":"full_amplitude_threshold","profile":"control","name":"视为满幅的幅度","value":0.999,"unit":"1","config_key":"full_amplitude_threshold"},
+     {"id":"load.rho_pzt","profile":"research","name":"原型压电材料密度","value":7500,"unit":"kg/m³","binding":{"source":"load","mode":"constant","name":"RHO_PZT"}},
+     {"id":"load.c_d","profile":"research","name":"原型厚度模式声速","value":4340,"unit":"m/s","binding":{"source":"load","mode":"constant","name":"C_D"}},
+     {"id":"load.radius","profile":"research","name":"假设活塞半径","value":0.0005,"unit":"m","display_unit":"mm","scale":1000,"binding":{"source":"load","mode":"constant","name":"PISTON_RADIUS_M"}},
+@@ -108,6 +136,7 @@
+     {"id":"candidate.iamp_design","profile":"candidate","name":"合成候选：设计点功放输出端电流","value":0.04514376689236159,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_calibration"],"binding":{"source":"candidate_calibration","path":["amplifier_output_Irms_A"]},"limitations":"若用户的5 mA指功放输出端，本候选在设计点不满足。"},
+     {"id":"candidate.current_soft","profile":"candidate","name":"合成候选：电流软阈值（换能器端口）","value":0.0045,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_soft_Arms"]}},
+     {"id":"candidate.current_hard","profile":"candidate","name":"合成候选：电流硬阈值（换能器端口）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_hard_Arms"]},"limitations":"按换能器端口解释用户的5 mA上限；测点未定。"},
++    {"id":"candidate.nominal_width","profile":"candidate","name":"合成候选：设计点有载半功率宽度","value":86872,"unit":"Hz","display_unit":"kHz","scale":0.001,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["nominal_peak_width_Hz"]},"adoption_reason":"与默认配置同式推导（review/baseline_3mA_parameters.py 写入候选配置）。"},
+     {"id":"pending.calcif.impedance","profile":"pending","name":"钙化声阻抗历史范围（待核实）","value":[2.5,7.8],"unit":"MRayl","value_kind":"unverified_range"},
+     {"id":"saijo.intima.c","profile":"saijo","name":"Saijo正常内膜声速","value":1568,"sd":18,"unit":"m/s"},
+     {"id":"saijo.fibrosis.c","profile":"saijo","name":"Saijo纤维化组织声速","value":1677,"sd":18,"unit":"m/s"},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index 52642c18d5d1822f27c8a2d54e17ee3886e9f5c7..5a95fec9358781503e7e2aaa46e8503ba1f160a2 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -2,7 +2,7 @@
+ 
+ 2026-09-22整合：上游 validation/plan-three-strategy-v1-20260917 的 650abdc，合入 review/patches/plan_three_strategy.scan_fault_taxonomy.patch。补丁覆盖配置、控制器、指标及测试；已有物理阈值、原扰动时长、98%/10样本标准不变。项目正式入口为上两级的 `python run_project.py validate`，它会执行新批次、复核并显式登记；不要靠目录时间自行选取“最新”结果。来源见 `../integration_sources.json`。
+ 
+-本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**。
++本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**；2026-10-16 起另有功率下降触发的全频带捕获程序，以及相位反馈的第二定律 newton_v2（配置开关，默认仍为原定律），见下文「正式策略」与审查分支 review/27。
+ 历史平台、Claude 送审代码、P&O/相位消融文件及旧结果均未覆盖。本文不是全部项目完成声明。
+ 
+ ## 如何运行
+@@ -35,7 +35,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ - `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。2026-10-16 起 C0、Rm、fs、Qm、匹配与源标定全部从配置指定的设计/标定文件读取（默认即 `stage2_matching/` 这一对；原写死在模型里的 Qm=800 移入设计文件，数值不变），模型里的限值常量从配置读取；`run_unified.py --config <文件>` 可运行另一套配置，正式登记仍只用默认 `config.json`。
+ - `engine.py`：共用实际执行、保护、整数微秒时间和分段积分日志。
+-- `controllers.py`：三个控制器；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
++- `controllers.py`：三个控制器与捕获程序；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
+ - `metrics.py`：唯一正式指标函数，不合格段的稳态误差为空值，不以尾窗/回退替代。
+ - `tests/test_unified.py`：故障注入和边界行为测试；这些测试不代表真实器件实验。
+ - `run_unified.py`：测试、校准冻结、批量运行、源码快照与哈希清单。
+@@ -51,7 +51,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ 相量统一 RMS；`S_port=V_port*conj(I_port)`，P=实部，Q=虚部。
+ 频率记录 Hz，电压 Vpp，电流 A RMS（汇总另外给 mA RMS），功率 W，时间整数 us。
+-相位控制测点为 `arg(V_input/I_source)`；换能器端口相位另列，二者不混用。
++原相位定律（gain_v1）的测点为 `arg(V_input/I_source)`；换能器端口相位 `arg(V_port/I_port)` 另列（执行记录 `phase_port_deg`，测量 `Measurement.phase_port_deg`），只有 newton_v2 且 `phase_signal = port` 时才用作判据，二者不混用。
+ 理想 C0 不耗散，因此本模型 P_port=P_Rm；P_Rm 不是声功率。
+ 
+ ## 正式策略
+@@ -61,6 +61,9 @@ python audit_batch.py "outputs/具体批次目录"
+ 3. **PHASE_FEEDBACK**：基准 0.9 MHz 输入相位标定约 −1.078209637°，每轮测试前冻结；增益 5 Hz/°、死区 0.1°、单次最大 500 Hz 均为假设控制参数。误差超死区时真实执行 f±100 Hz 邻频试探，各 1.5 ms，按测得斜率符号更新频率。试探被保护打断则本次斜率作废，不用免费模型查询补齐。未用去嵌机械相位，也未把相位目标自动更新为扰动后最优点。
+    中心恢复门控（`phase_centre_recovery_gate`，2026-10-16 加入，默认配置关闭）：保护器在改频的那一拍从不升幅（新频点允许幅度更低时先在旧频率降幅），之后在新频率保持不动、按 2.5/s 渐升；渐升未完就再改频，幅度会停在上次被压到的水平（棘轮）。打开开关后，采纳一个新中心要等新中心上两个相邻 20 ms、NORMAL、未冻结、有效且实际幅度相同的普通控制样本，才做下一次相位更新。它只等待，不加幅、不加步长、不加试探，也不读取模型或场景；关闭即原正式相位路径，结果逐字节不变。默认关闭的理由：review/23 的逐场景协议（保护前电流峰值不得上升）在 Qm=800 基线上不满足（13/31）。它不改变相位目标本身——冻结的输入相位目标不是最大功率判据，见审查分支 review/25 第六节、review/26。
+ 
++4. **捕获程序**（2026-10-16 加入；相位 newton_v2 的重学模式使用）：只在功率连续 3 个样本低于参考 90% 时启动，从不按定时器，开机不捕获。锚点 → 记忆点（开机点永不淘汰，另记 4 个，频率与功率同时相符才算同一负载状态）→ 0.8–1.0 MHz 全带 5 kHz 粗扫 → 对最佳点（另一局部最大若达 80% 且相隔 ≥3 点也细化）每级步长 1/5、窗口 ±1 个上一级步长，直到步长 < 0.1×实测峰宽或到 100 Hz → 每级之后复测锚点（变化即非平稳）→ 复核 → 不比锚点高 2% 则不移动。点驻留 = clip(10/(π×峰宽), 200 μs, 1.5 ms)，峰宽取上次捕获实测值，第一次之前取设计点有载半功率宽度 `nominal_peak_width_Hz`；全部点按 `capture_scan_amplitude` = 0.65（= 130 Vpp ÷ 2×100 Vpp）。失败计入与周期扫频相同的四类预算，耗尽同样低幅锁存（锁存与重试等待幅度为 `capture_scan_amplitude`）。准稳态模型没有建立过程，驻留缩短只省了时间，测量误差看不出来。
++5. **PHASE_FEEDBACK 的 newton_v2**（`phase_tracker = newton_v2`；默认配置为 `gain_v1`，即上面第 3 条的原定律，结果逐字节不变）：步长 = `phase_newton_fraction`×误差÷实测斜率（两次邻频试探，偏移 max(100 Hz, 0.05×峰宽)），限幅 0.25×峰宽；目标取开机第一个有效控制样本。`phase_signal` 选 `input` 或 `port`；`phase_target_policy = relearn_after_capture` 时，功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，连续 3 个样本低于参考 90% 才捕获，每次召回或捕获后在所选点重学目标；`frozen` 时不捕获、不召回。换能器端相位看不见匹配网络的变化，小于捕获阈值的损失不会被纠正。
++
+ 三者共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
+ 未添加 PI 积分器，因此不存在需要伪装为已实现的“积分饱和修复”。
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+index ad7d88dc7dc4c2b010ebfccd2f5a8a776d3cd285..4f40de7c08e1b78bd9690b51b0efe94f730ddbca 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+@@ -57,6 +57,39 @@
+   "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
+   "phase_centre_recovery_gate": true,
+   "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
++  "phase_tracker": "gain_v1",
++  "phase_signal": "input",
++  "phase_target_policy": "frozen",
++  "phase_tracker_rule": "gain_v1 = the original law: input phase arg(V_input/I_source), target frozen at the 0.9 MHz baseline calibration, step = phase_gain_Hz_per_deg x error, probes +-phase_probe_offset_Hz; it accepts only phase_signal input with phase_target_policy frozen. newton_v2: step = phase_newton_fraction x error / measured slope, clipped to phase_max_step_per_width x peak width, probes +-max(phase_probe_offset_Hz, phase_probe_offset_per_width x width), target learned from the first valid CONTROL sample; phase_signal port = arg(V_port/I_port) at the transducer terminals; relearn_after_capture re-learns the target at the point each power-drop-triggered capture chooses, frozen never captures",
++  "phase_newton_fraction": 0.7,
++  "phase_probe_offset_per_width": 0.05,
++  "phase_max_step_per_width": 0.25,
++  "nominal_peak_width_Hz": 86872,
++  "capture_scan_amplitude": 0.65,
++  "capture_scan_coarse_step_Hz": 5000,
++  "capture_scan_refine_factor": 5,
++  "capture_scan_refine_step_per_width": 0.1,
++  "capture_scan_min_step_Hz": 100,
++  "capture_scan_dwell_min_us": 200,
++  "capture_scan_settle_time_constants": 10,
++  "capture_scan_secondary_peak_ratio": 0.8,
++  "capture_scan_peak_separation_steps": 3,
++  "capture_scan_max_peaks": 2,
++  "capture_scan_gain_threshold": 0.02,
++  "capture_scan_min_interval_us": 100000,
++  "capture_scan_drop_fraction": 0.1,
++  "capture_scan_rule": "started only by a measured power drop (capture_scan_drop_fraction below the learned reference for drop_confirm_samples comparable samples), never on a timer and never at t=0; anchor, remembered points first, then a coarse pass over the whole band, refinement at 1/capture_scan_refine_factor of the step over +-1 previous step until the step is below capture_scan_refine_step_per_width x the measured half-power width or reaches capture_scan_min_step_Hz, a second local maximum within capture_scan_secondary_peak_ratio refined too, anchor re-measured after every level, final validation, and no move unless the winner beats the anchor by capture_scan_gain_threshold; dwell = clip(capture_scan_settle_time_constants/(pi x width), capture_scan_dwell_min_us, scan_point_us); all points at capture_scan_amplitude = voltage_soft_Vpp/(2 x 100 Vpp); failures use the scan budgets and latch above; nominal_peak_width_Hz is the design point's loaded P_Rm half-power width, used until a capture measures one",
++  "track_change_fraction": 0.02,
++  "impedance_change_fraction": 0.05,
++  "drop_confirm_samples": 3,
++  "reference_samples": 3,
++  "memory_size": 4,
++  "memory_match_tolerance": 0.03,
++  "noise_window_samples": 8,
++  "noise_same_point_per_width": 0.01,
++  "noise_sigmas": 2.0,
++  "probe_amplitude_margin": 0.05,
++  "full_amplitude_threshold": 0.999,
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index 47426873908557dbb33c3e2a32c20aa55d6deda6..11ec588509602e0744bbdb9549b36773c099278b 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -57,6 +57,39 @@
+   "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
+   "phase_centre_recovery_gate": false,
+   "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
++  "phase_tracker": "gain_v1",
++  "phase_signal": "input",
++  "phase_target_policy": "frozen",
++  "phase_tracker_rule": "gain_v1 = the original law: input phase arg(V_input/I_source), target frozen at the 0.9 MHz baseline calibration, step = phase_gain_Hz_per_deg x error, probes +-phase_probe_offset_Hz; it accepts only phase_signal input with phase_target_policy frozen. newton_v2: step = phase_newton_fraction x error / measured slope, clipped to phase_max_step_per_width x peak width, probes +-max(phase_probe_offset_Hz, phase_probe_offset_per_width x width), target learned from the first valid CONTROL sample; phase_signal port = arg(V_port/I_port) at the transducer terminals; relearn_after_capture re-learns the target at the point each power-drop-triggered capture chooses, frozen never captures",
++  "phase_newton_fraction": 0.7,
++  "phase_probe_offset_per_width": 0.05,
++  "phase_max_step_per_width": 0.25,
++  "nominal_peak_width_Hz": 2142,
++  "capture_scan_amplitude": 0.65,
++  "capture_scan_coarse_step_Hz": 5000,
++  "capture_scan_refine_factor": 5,
++  "capture_scan_refine_step_per_width": 0.1,
++  "capture_scan_min_step_Hz": 100,
++  "capture_scan_dwell_min_us": 200,
++  "capture_scan_settle_time_constants": 10,
++  "capture_scan_secondary_peak_ratio": 0.8,
++  "capture_scan_peak_separation_steps": 3,
++  "capture_scan_max_peaks": 2,
++  "capture_scan_gain_threshold": 0.02,
++  "capture_scan_min_interval_us": 100000,
++  "capture_scan_drop_fraction": 0.1,
++  "capture_scan_rule": "started only by a measured power drop (capture_scan_drop_fraction below the learned reference for drop_confirm_samples comparable samples), never on a timer and never at t=0; anchor, remembered points first, then a coarse pass over the whole band, refinement at 1/capture_scan_refine_factor of the step over +-1 previous step until the step is below capture_scan_refine_step_per_width x the measured half-power width or reaches capture_scan_min_step_Hz, a second local maximum within capture_scan_secondary_peak_ratio refined too, anchor re-measured after every level, final validation, and no move unless the winner beats the anchor by capture_scan_gain_threshold; dwell = clip(capture_scan_settle_time_constants/(pi x width), capture_scan_dwell_min_us, scan_point_us); all points at capture_scan_amplitude = voltage_soft_Vpp/(2 x 100 Vpp); failures use the scan budgets and latch above; nominal_peak_width_Hz is the design point's loaded P_Rm half-power width, used until a capture measures one",
++  "track_change_fraction": 0.02,
++  "impedance_change_fraction": 0.05,
++  "drop_confirm_samples": 3,
++  "reference_samples": 3,
++  "memory_size": 4,
++  "memory_match_tolerance": 0.03,
++  "noise_window_samples": 8,
++  "noise_same_point_per_width": 0.01,
++  "noise_sigmas": 2.0,
++  "probe_amplitude_margin": 0.05,
++  "full_amplitude_threshold": 0.999,
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+index 872be36c1833d7b95ea559dd8372bb841c1dfe4b..df437ae4a0b4f2a48e8d272d2096359e12b10f75 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+@@ -163,6 +163,7 @@ class Executor:
+     def __init__(self, engine: Engine):
+         self._engine = engine
+         self.cfg = engine.cfg
++        self.last = None    # latest executed sample: where the drive is now
+ 
+     @property
+     def time(self):
+@@ -176,22 +177,27 @@ class Executor:
+         self._engine.event(name, **kw)
+ 
+     def execute(self, f, a, kind, duration):
+-        return self._engine.execute(f, a, kind, int(duration))
++        m = self._engine.execute(f, a, kind, int(duration))
++        if m is not None:
++            self.last = m
++        return m
+ 
+     def control(self, f, a, kind='CONTROL'):
+         return self.execute(f, a, kind, self._engine.control_duration()) if not self.finished else None
+ 
+-    def point(self, f, a, kind) -> PointResult:
++    def point(self, f, a, kind, dwell_us=None) -> PointResult:
+         """Deferred actions consume logged time; latch/hold cannot be bypassed.
+ 
+         The status separates the three ways a point can fail to produce data.
+         Protection state is read from the returned sample, never from the plant.
++        dwell_us defaults to scan_point_us; the capture passes its own dwell.
+         """
++        dwell = self.cfg['scan_point_us'] if dwell_us is None else int(dwell_us)
+         start = self.time
+         while not self.finished and self.time-start < self.cfg['point_acquire_timeout_us']:
+             point_start = self.time
+-            m = self.execute(f, a, kind, self.cfg['scan_point_us'])
+-            if m is None or self.time-point_start != self.cfg['scan_point_us']:
++            m = self.execute(f, a, kind, dwell)
++            if m is None or self.time-point_start != dwell:
+                 return PointResult(POINT_TRUNCATED)  # truncated dwell is not a measurement
+             if not valid_measurement(m):
+                 # Invalid data aborts, not a successful zero-power boundary peak.
+@@ -442,10 +448,900 @@ def gated_phase_update(io: Executor, m: Measurement, target_phase: float,
+     return new
+ 
+ 
++# ---------------------------------------------------------------------------
++# Power-drop-triggered capture and the second phase tracker
++# (config: phase_tracker = newton_v2).
++#
++# One capture procedure serves every controller that has to re-find the peak:
++# a global coarse pass over the band, a refinement whose step and point dwell
++# follow the measured peak width, a second-peak check, anchor re-measurements,
++# a final validation and a gain threshold before moving. It is started by a
++# measured power drop, never on a timer, and it reuses the scan failure
++# classes, budgets and latch above, so a failed capture is charged exactly
++# like a failed periodic scan. Every number is declared in config.json and
++# parameter_sources.json. They were not searched for a better score, but they
++# are not independent of the registered schedules either: logic defects found
++# while tracing those schedules were fixed, and one number
++# (phase_max_step_per_width) was changed for that reason; review/27 lists them.
++# ---------------------------------------------------------------------------
++
++PHASE_TRACKERS = ('gain_v1', 'newton_v2')
++PHASE_SIGNALS = ('input', 'port')
++PHASE_TARGET_POLICIES = ('frozen', 'relearn_after_capture')
++
++
++def phase_mode(cfg: dict) -> tuple[str, str, str]:
++    mode = (cfg.get('phase_tracker', 'gain_v1'), cfg.get('phase_signal', 'input'),
++            cfg.get('phase_target_policy', 'frozen'))
++    if (mode[0] not in PHASE_TRACKERS or mode[1] not in PHASE_SIGNALS
++            or mode[2] not in PHASE_TARGET_POLICIES):
++        raise ValueError(f'unknown phase feedback mode {mode!r}')
++    if mode[0] == 'gain_v1' and mode[1:] != ('input', 'frozen'):
++        # The fixed Hz/deg gain was declared for the input phase on one peak
++        # width; it is not carried over to another signal or target policy.
++        raise ValueError('phase_tracker gain_v1 supports only the input phase with a frozen target')
++    return mode
++
++
++def phase_of(m: Measurement, signal: str) -> float | None:
++    return m.phase_port_deg if signal == 'port' else m.phase_input_deg
++
++
++def comparable(m: Measurement | None, f: float, now: int, tick: int) -> bool:
++    """A sample a tracker may use: settled at f, ordinary, on the control lattice."""
++    return (valid_measurement(m) and m.state == 'NORMAL' and not m.frozen
++            and m.time_us == now and now % tick == 0 and abs(m.frequency_Hz-f) <= 1e-7)
++
++
++def soft_headroom(m: Measurement, cfg: dict) -> float | None:
++    """Amplitude at which this measured point would reach a soft limit (linear scaling)."""
++    if not valid_measurement(m):
++        return None
++    return min(cfg['voltage_soft_Vpp']*m.amplitude/m.vpp,
++               cfg['current_soft_Arms']*m.amplitude/m.irms)
++
++
++def safe_amplitude(cfg: dict, a_now: float, headrooms) -> float:
++    """Highest amplitude <= a_now that keeps probe_amplitude_margin under each known headroom."""
++    a = a_now
++    for c in headrooms:
++        if c is not None and finite(c):
++            a = min(a, (1-cfg['probe_amplitude_margin'])*c)
++    return max(a, 0.)
++
++
++def settle_dwell_us(cfg: dict, width_Hz: float | None) -> int:
++    """Point dwell from the loaded peak width: k time constants of 1/(pi*width).
++
++    Clipped to [capture_scan_dwell_min_us, scan_point_us]; scan_point_us is also the
++    dwell when no width is known. Only the time cost follows from this rule:
++    the quasi-steady model has no settling transient, so a dwell that is too
++    short for a real resonator would not show up here as a measurement error.
++    """
++    if width_Hz is None or not finite(width_Hz) or width_Hz <= 0:
++        return int(cfg['scan_point_us'])
++    k_tau = cfg['capture_scan_settle_time_constants']*1e6/(math.pi*width_Hz)
++    return int(min(cfg['scan_point_us'], max(cfg['capture_scan_dwell_min_us'], math.ceil(k_tau))))
++
++
++def peak_width(fs: list[float], g: list[float], i: int) -> float | None:
++    """Half-power width of g (power per unit amplitude squared) around the local
++    maximum reached uphill from index i, by linear interpolation of the crossings.
++
++    None when fewer than three points lie above half power (the level did not
++    resolve the peak) or neither crossing lies inside the window. With only one
++    crossing inside (a peak near the band or window edge) the width is twice
++    that half-width.
++    """
++    j = i
++    while True:
++        k = max((n for n in (j-1, j+1) if 0 <= n < len(g)), key=lambda n: g[n])
++        if g[k] <= g[j]:
++            break
++        j = k
++    half = g[j]/2
++    lo = j
++    while lo > 0 and g[lo] > half:
++        lo -= 1
++    hi = j
++    while hi < len(g)-1 and g[hi] > half:
++        hi += 1
++    if sum(1 for n in range(lo, hi+1) if g[n] > half) < 3:
++        return None
++    left = right = None
++    if g[lo] <= half:
++        left = fs[lo]+(half-g[lo])/(g[lo+1]-g[lo])*(fs[lo+1]-fs[lo])
++    if g[hi] <= half:
++        right = fs[hi]-(half-g[hi])/(g[hi-1]-g[hi])*(fs[hi]-fs[hi-1])
++    if left is not None and right is not None:
++        return float(right-left)
++    if left is not None:
++        return float(2*(fs[j]-left))
++    if right is not None:
++        return float(2*(right-fs[j]))
++    return None
++
++
++def coarse_peaks(scores: list[float], cfg: dict) -> list[int]:
++    """The best coarse point, then any separate local maximum nearly as high.
++
++    A 5 kHz pass can land beside a narrow peak and under-read it, and a broad
++    response can have two humps, so a second local maximum within
++    capture_scan_secondary_peak_ratio of the best and at least
++    capture_scan_peak_separation_steps away is refined too.
++    """
++    best = int(np.argmax(scores))
++    n = len(scores)
++    local = [i for i in range(n) if (i == 0 or scores[i] >= scores[i-1])
++             and (i == n-1 or scores[i] >= scores[i+1])]
++    others = sorted((i for i in local if abs(i-best) >= cfg['capture_scan_peak_separation_steps']
++                     and scores[i] >= cfg['capture_scan_secondary_peak_ratio']*scores[best]),
++                    key=lambda i: (-scores[i], i))
++    return [best]+others[:max(0, int(cfg['capture_scan_max_peaks'])-1)]
++
++
++class HeadroomMap:
++    """Soft-limit headroom measured by the last capture, used to choose probe and
++    move amplitudes. A prediction, not a guard: the common guard still checks
++    every command against the present plant. It is used only while it agrees
++    with what is measured now: any measured headroom off its prediction by more
++    than scan_validation_relative_tolerance, or any confirmed power change,
++    clears it, because both mean the load it was measured on has gone."""
++
++    def __init__(self):
++        self.f, self.c = [], []
++
++    def clear(self):
++        self.f, self.c = [], []
++
++    def check(self, f: float, measured: float | None, tolerance: float):
++        predicted = self.predict(f)
++        if predicted is not None and measured is not None and abs(measured/predicted-1) > tolerance:
++            self.clear()
++
++    def replace(self, pairs):
++        points = sorted({float(f): float(c) for f, c in pairs
++                         if c is not None and finite(f, c)}.items())
++        self.f = [p[0] for p in points]
++        self.c = [p[1] for p in points]
++
++    def predict(self, f: float) -> float | None:
++        if len(self.f) < 2 or not self.f[0] <= f <= self.f[-1]:
++            return None
++        return float(np.interp(f, self.f, self.c))
++
++
++def probe(io: Executor, f: float, a: float, kind: str, dwell: int) -> Measurement | None:
++    """One probe point at f and amplitude a.
++
++    A needed amplitude reduction is made first, at the present frequency, as
++    its own short action: the guard then never has to pre-empt the probe
++    (PREPARE) or open a soft hold for it (FOLDBACK) on a margin it was given.
++    Returns the probe sample only when it executed in full, NORMAL and
++    unfrozen at f.
++    """
++    drive = io.last
++    if drive is not None and a < drive.amplitude-1e-12:
++        io.execute(drive.frequency_Hz, a, 'AMPLITUDE_BACKOFF', dwell)
++    t0 = io.time
++    m = io.execute(f, a, kind, dwell)
++    ok = (m is not None and io.time-t0 == dwell and valid_measurement(m)
++          and m.state == 'NORMAL' and not m.frozen and abs(m.frequency_Hz-f) < 1e-7)
++    return m if ok else None
++
++
++def predicted_headroom(f: float, left: Measurement, right: Measurement,
++                       headroom: HeadroomMap, cfg: dict) -> float | None:
++    """Soft-limit headroom expected at f: the capture's map while it still agrees
++    with measurement, otherwise interpolated between the two probes just
++    measured, and beyond them the nearer probe's value. Never extrapolated: a
++    straight line carried far past two close probes can predict any value,
++    including none at all, and the guard is there for what a prediction misses."""
++    mapped = headroom.predict(f)
++    if mapped is not None:
++        return mapped
++    c_left, c_right = soft_headroom(left, cfg), soft_headroom(right, cfg)
++    f_left, f_right = left.frequency_Hz, right.frequency_Hz
++    if c_left is None or c_right is None or f_right <= f_left:
++        return None
++    return float(np.interp(f, [f_left, f_right], [c_left, c_right]))
++
++
++def prepare_move(io: Executor, f_new: float, headroom: float | None, dwell: int):
++    """Before the CONTROL action that changes frequency: when the new point's known
++    headroom is below the present amplitude, lower it here first, at the present
++    frequency, so that the frequency change itself is free and unfrozen."""
++    drive = io.last
++    if drive is None or abs(drive.frequency_Hz-f_new) <= 1e-7:
++        return
++    a = safe_amplitude(io.cfg, drive.amplitude, (headroom,))
++    if a < drive.amplitude-1e-12:
++        io.execute(drive.frequency_Hz, a, 'AMPLITUDE_BACKOFF', dwell)
++
++
++@dataclass(frozen=True)
++class CaptureResult:
++    ok: bool
++    frequency_Hz: float | None
++    reason: str
++    status: str = SCAN_SEARCH_FAILED
++    source: str = ''                     # SCAN, MEMORY or STAY when ok
++    score_W: float | None = None
++    width_Hz: float | None = None
++    measurement: Measurement | None = None   # sample at the chosen frequency
++    anchor_score_W: float | None = None
++    headroom: tuple = ()                 # (frequency_Hz, headroom) measured on the way
++    band_edge: bool = False
++    points: int = 0
++
++
++def capture(io: Executor, trusted_frequency: float, width_hint: float | None,
++            memory=(), noise: float = 0.) -> CaptureResult:
++    """Find the measured soft-feasible power maximum over the whole band.
++
++    1. Anchor at the trusted frequency. 2. Remembered operating points (when
++    the caller passes them): the best one whose power matches what it had when
++    remembered and beats the anchor by the gain threshold is taken without a
++    search.
++    3. Coarse pass at capture_scan_coarse_step_Hz over the band. 4. For the best
++    coarse point, and a second peak if one qualifies, refinements at 1/5 of
++    the previous step over +-1 previous step, until the step is below
++    capture_scan_refine_step_per_width of the estimated width or reaches
++    capture_scan_min_step_Hz. The anchor is re-measured after every level, as in
++    scan(). 5. Validation at the winner. 6. Gain threshold: a winner that does
++    not beat the anchor by capture_scan_gain_threshold (or noise_sigmas measured
++    difference sigmas, if larger) leaves the drive where it is (STAY).
++    All points are at capture_scan_amplitude = voltage_soft_Vpp/(2 x 100 Vpp):
++    it stays under the soft limits as long as the port voltage at a=1 is at
++    most twice nominal anywhere in the band (on the registered sets the worst
++    is 198.2 Vpp on the default baseline, 173.0 Vpp on the candidate); the
++    common guard still decides every point.
++    """
++    cfg = io.cfg
++    amp = cfg['capture_scan_amplitude']
++    lo, hi = float(cfg['frequency_min_Hz']), float(cfg['frequency_max_Hz'])
++    start_us = io.time
++    width = width_hint
++    dwell = settle_dwell_us(cfg, width)
++    gain = max(cfg['capture_scan_gain_threshold'], cfg['noise_sigmas']*noise)
++    seen = []
++    count = 0
++
++    def fail(reason, status):
++        return CaptureResult(False, None, reason, status, points=count)
++
++    def take(f, kind):
++        nonlocal count
++        if count >= cfg['scan_max_points'] or io.time-start_us >= cfg['scan_max_duration_us']:
++            return None, fail('SCAN_COST_CAP_REACHED', SCAN_SEARCH_FAILED)
++        p = io.point(f, amp, kind, dwell)
++        count += 1
++        if not p.ok:
++            return None, fail('INVALID_POINT_OR_PROTECTION_OR_END', p.status)
++        s = measured_score(p.measurement, cfg)
++        if s is None or not math.isfinite(s):
++            return None, fail('INVALID_POINT_OR_PROTECTION_OR_END', SCAN_INVALID)
++        seen.append((float(f), soft_headroom(p.measurement, cfg)))
++        return p.measurement, None
++
++    anchor, failed = take(trusted_frequency, 'CAPTURE_ANCHOR_START')
++    if failed:
++        return failed
++    # A capture may be asked for while the guard is still holding or ramping
++    # after a trip; Executor.point waits that out on the first point. The wait
++    # is logged like any other time but is not search cost, so the duration
++    # budget starts once the anchor has been measured.
++    start_us = io.time
++    latest_anchor = anchor
++    anchor_score = measured_score(anchor, cfg)
++
++    def recheck(kind, level_index, level_step):
++        nonlocal latest_anchor
++        m, failed = take(trusted_frequency, kind)
++        if failed:
++            return failed
++        latest_anchor = m
++        if changed_anchor(anchor, m, cfg):
++            io.event('SCAN_NONSTATIONARY_DETECTED', procedure='CAPTURE', stage=kind,
++                     level_index=level_index, level_step_Hz=level_step, walked_to_edge=False)
++            return fail('ANCHOR_CHANGED_OR_INVALID', SCAN_NONSTATIONARY)
++        return None
++
++    hits = []
++    for f_mem, s_mem, w_mem in memory:
++        m, failed = take(f_mem, 'CAPTURE_MEMORY')
++        if failed:
++            return failed
++        s = measured_score(m, cfg)
++        match = abs(s/s_mem-1) <= max(cfg['memory_match_tolerance'], cfg['noise_sigmas']*noise)
++        better = s >= (1+gain)*anchor_score
++        io.event('CAPTURE_MEMORY_CHECK', frequency_Hz=f_mem, remembered_score_W=s_mem,
++                 measured_score_W=s, anchor_score_W=anchor_score, match=match, better=better)
++        if match and better:
++            hits.append((s, -abs(f_mem-trusted_frequency), f_mem, w_mem, m))
++    if hits:
++        # The best match, not the first: two load states can share a power level.
++        s, _, f_mem, w_mem, m = max(hits, key=lambda h: (h[0], h[1]))
++        if abs(io.last.frequency_Hz-f_mem) > 1e-7:
++            again, failed = take(f_mem, 'CAPTURE_MEMORY')
++            if failed:
++                return failed
++            m, s = again, measured_score(again, cfg)
++        return CaptureResult(True, float(f_mem), 'MEMORY_RECALLED', SCAN_VALID, 'MEMORY', s,
++                             w_mem if w_mem is not None else width, m, anchor_score,
++                             tuple(seen), f_mem in (lo, hi), count)
++
++    step = float(cfg['capture_scan_coarse_step_Hz'])
++    fs = [float(f) for f in np.arange(lo, hi+step/2, step)]
++    if fs[-1] < hi:
++        fs.append(hi)
++    level = []
++    for f in fs:
++        m, failed = take(f, 'CAPTURE_POINT')
++        if failed:
++            return failed
++        level.append(m)
++    scores = [measured_score(m, cfg) for m in level]
++    if max(scores) <= 1e-15 or max(scores)-min(scores) <= max(scores)*1e-12:
++        return fail('FLAT_OR_NO_SIGNAL', SCAN_SEARCH_FAILED)
++    failed = recheck('CAPTURE_ANCHOR_LEVEL', 0, step)
++    if failed:
++        return failed
++    g = [m.p_port_W/m.amplitude**2 for m in level]
++    peaks = coarse_peaks(scores, cfg)
++    if len(peaks) > 1:
++        io.event('CAPTURE_MULTI_PEAK', frequencies_Hz=[fs[i] for i in peaks],
++                 scores_W=[scores[i] for i in peaks])
++    candidates = []
++    for rank, i in enumerate(peaks):
++        center, best_score = fs[i], scores[i]
++        w = peak_width(fs, g, i)
++        if w is not None and rank == 0:
++            width = w
++            dwell = settle_dwell_us(cfg, width)
++        current = step
++        level_index = 0
++        while ((w is None or current >= cfg['capture_scan_refine_step_per_width']*w)
++               and current > cfg['capture_scan_min_step_Hz']+1e-9):
++            level_index += 1
++            new = max(float(cfg['capture_scan_min_step_Hz']), current/cfg['capture_scan_refine_factor'])
++            for recentre in range(cfg['scan_max_recentres']+1):
++                xs = grid(center, current, new, lo, hi)
++                ms = []
++                for f in xs:
++                    m, failed = take(f, 'CAPTURE_POINT')
++                    if failed:
++                        return failed
++                    ms.append(m)
++                ss = [measured_score(m, cfg) for m in ms]
++                k = int(np.argmax(ss))
++                center, best_score = xs[k], ss[k]
++                if not (k in (0, len(xs)-1) and center not in (lo, hi)):
++                    break
++                io.event('SCAN_RECENTRE', procedure='CAPTURE', frequency_Hz=center, level_step_Hz=new)
++            wl = peak_width(xs, [m.p_port_W/m.amplitude**2 for m in ms], k)
++            if wl is not None:
++                w = wl
++                if rank == 0:
++                    width = w
++                    dwell = settle_dwell_us(cfg, width)
++            failed = recheck('CAPTURE_ANCHOR_LEVEL', level_index, new)
++            if failed:
++                return failed
++            current = new
++        candidates.append((best_score, center, w))
++    best_score, center, w = max(candidates, key=lambda c: (c[0], -abs(c[1]-trusted_frequency)))
++    if w is not None:
++        width = w
++    final, failed = take(center, 'CAPTURE_VALIDATE')
++    if failed:
++        return failed
++    score = measured_score(final, cfg)
++    if abs(score-best_score)/max(best_score, 1e-15) > cfg['scan_validation_relative_tolerance']:
++        failed = recheck('CAPTURE_ANCHOR_VALIDATE', -1, 0.)
++        return failed or fail('FINAL_VALIDATION_FAILED', SCAN_SEARCH_FAILED)
++    if score < (1+gain)*anchor_score:
++        stay = measured_score(latest_anchor, cfg)
++        return CaptureResult(True, float(trusted_frequency), 'GAIN_BELOW_THRESHOLD', SCAN_VALID,
++                             'STAY', stay, width, latest_anchor, anchor_score, tuple(seen),
++                             trusted_frequency in (lo, hi), count)
++    return CaptureResult(True, float(center), 'CAPTURED', SCAN_VALID, 'SCAN', score, width, final,
++                         anchor_score, tuple(seen), center in (lo, hi), count)
++
++
++class NoiseFloor:
++    """Scatter of consecutive comparable samples at one held point and amplitude.
++
++    1.4826*median(|d|) over the last noise_window_samples relative differences
++    estimates the standard deviation of a difference of two single samples;
++    zero until four differences exist. Two samples count as the same point when
++    their frequencies differ by at most noise_same_point_per_width of the peak
++    width (a tracker dithering on noise still yields an estimate; the true
++    power difference over that distance near a peak is about 0.04 %). A real
++    load step is one outlier and barely moves the median. Used only to widen
++    decision thresholds.
++
++    The phase scatter is kept the same way from pairs at exactly the same
++    frequency (near a narrow peak even 1 % of the width moves the phase by
++    degrees). It widens the newton_v2 deadband: a deadband below the phase
++    noise keeps the loop probing forever, and near a soft limit every probe
++    costs an amplitude dip that breaks the acceptance run (found by the
++    measurement-noise study, review/27).
++    """
++
++    def __init__(self, cfg: dict):
++        self.cfg = cfg
++        self.tick = cfg['control_tick_us']
++        self.window = int(cfg['noise_window_samples'])
++        self.d = []
++        self.phase_d = []
++        self.prev = None
++
++    def observe(self, m: Measurement | None, score: float | None, width: float | None = None,
++                phase: float | None = None):
++        if m is None or score is None:
++            self.prev = None
++            return
++        p, self.prev = self.prev, (m.time_us, m.frequency_Hz, m.amplitude, score, phase)
++        if p is None or m.time_us-p[0] != self.tick or abs(m.amplitude-p[2]) > 1e-12:
++            return
++        near = 1e-7 if width is None else self.cfg['noise_same_point_per_width']*width
++        if abs(m.frequency_Hz-p[1]) <= near and p[3] > 0:
++            self.d = (self.d+[(score-p[3])/p[3]])[-self.window:]
++        if abs(m.frequency_Hz-p[1]) <= 1e-7 and finite(phase, p[4]):
++            self.phase_d = (self.phase_d+[wrap_deg(phase-p[4])])[-self.window:]
++
++    @property
++    def sigma_diff(self) -> float:
++        return 0. if len(self.d) < 4 else 1.4826*float(np.median(np.abs(self.d)))
++
++    @property
++    def phase_sigma_deg(self) -> float:
++        """Single-sample phase scatter (degrees); zero until four differences exist."""
++        return 0. if len(self.phase_d) < 4 else 1.4826*float(np.median(np.abs(self.phase_d)))/math.sqrt(2)
++
++
++class PowerMonitor:
++    """Reference power and drop triggers from CONTROL samples at the held point.
++
++    After reset() the mean of reference_samples settled (comparable) samples
++    becomes the reference, together with the mean input impedance and the
++    frequency they were taken at. Then drop_confirm_samples consecutive valid
++    samples below (1 - capture_scan_drop_fraction) of the power ask for a
++    capture, and the same number off it by more than track_change_fraction
++    (either way; widened to noise_sigmas single-sample sigmas when the measured
++    scatter is larger) ask for local tracking. So does the same number, still
++    at the reference frequency, whose input impedance is off the reference by
++    more than impedance_change_fraction (same widening): a load can move the
++    peak away while the power at the held point hardly changes, and the
++    impedance there shows it. A reset may carry the value just measured at the
++    new point (the held score at a park, the validated score of a capture or
++    recall); a reference that then comes out off that value by the same
++    thresholds means the load changed in between, so the earlier value stays
++    the reference and the drop or change is reported at once instead of being
++    absorbed as the new normal. A change may be confirmed from samples the guard
++    is still holding or ramping: the score is per unit of soft-feasible drive,
++    so a load that has moved the peak away reads low at any amplitude, and
++    waiting for a recovery ramp to finish first would only delay the response.
++    """
++
++    def __init__(self, cfg: dict):
++        self.cfg = cfg
++        self.reset()
++
++    def reset(self, prior: float | None = None):
++        self.ref, self.zin, self.f, self.collect, self.low, self.off = None, None, None, [], 0, 0
++        self.prior = prior
++
++    def observe(self, m: Measurement, score: float, settled: bool, noise_diff: float) -> str | None:
++        cfg = self.cfg
++        zin = complex(m.zin_real, m.zin_imag)
++        if self.ref is None:
++            if settled:
++                self.collect.append((score, zin, m.frequency_Hz))
++                if len(self.collect) >= cfg['reference_samples']:
++                    self.ref = float(np.mean([c[0] for c in self.collect]))
++                    self.zin = complex(np.mean([c[1] for c in self.collect]))
++                    self.f = self.collect[-1][2]
++                    prior, self.prior = self.prior, None
++                    if prior is not None and prior > 0:
++                        n = cfg['drop_confirm_samples']
++                        ratio = self.ref/prior
++                        if ratio < 1-cfg['capture_scan_drop_fraction']:
++                            self.ref, self.low = prior, n
++                            return 'CAPTURE'
++                        if abs(ratio-1) > max(cfg['track_change_fraction'],
++                                              cfg['noise_sigmas']*noise_diff/math.sqrt(2)):
++                            self.ref, self.off = prior, n
++                            return 'TRACK'
++                    return 'REFERENCE'
++            return None
++        ratio = score/self.ref
++        widen = cfg['noise_sigmas']*noise_diff/math.sqrt(2)
++        track = max(cfg['track_change_fraction'], widen)
++        moved = (abs(m.frequency_Hz-self.f) <= 1e-7 and
++                 abs(zin-self.zin)/max(abs(self.zin), 1e-15) > max(cfg['impedance_change_fraction'], widen))
++        self.low = self.low+1 if ratio < 1-cfg['capture_scan_drop_fraction'] else 0
++        self.off = self.off+1 if abs(ratio-1) > track or moved else 0
++        if self.low >= cfg['drop_confirm_samples']:
++            return 'CAPTURE'
++        if self.off >= cfg['drop_confirm_samples'] and self.low == 0:
++            # A drop still being confirmed takes precedence: answering it as a
++            # mere change would accept the collapsed level as the new reference.
++            return 'TRACK'
++        return None
++
++
++class FrequencyMemory:
++    """The start point plus the last memory_size operating points, each with the
++    reference power learned there, the width estimate at the time and the
++    soft-limit headroom measured there.
++
++    An entry stands for a load state, not only a frequency: a newer reference
++    replaces an older one only when both its frequency (within merge_Hz) and
++    its power (within memory_match_tolerance) agree. The start point, learned
++    at the calibration state every schedule begins in, is never evicted.
++    """
++
++    def __init__(self, cfg: dict):
++        self.size = int(cfg['memory_size'])
++        self.tolerance = cfg['memory_match_tolerance']
++        self.start = None
++        self.recent = []
++
++    @property
++    def items(self) -> list:
++        return self.recent+([self.start] if self.start is not None else [])
++
++    def remember(self, f: float, score: float, width: float | None, headroom: float | None,
++                 merge_Hz: float):
++        entry = (float(f), float(score), width, headroom)
++        if self.start is None:
++            self.start = entry
++            return
++        same = lambda it: abs(it[0]-f) <= merge_Hz and abs(it[1]/score-1) <= self.tolerance  # noqa: E731
++        if same(self.start):
++            return
++        self.recent = ([entry]+[it for it in self.recent if not same(it)])[:self.size]
++
++
++class CaptureSupervisor:
++    """Width estimate, headroom map, memory, power monitor and the failure budget
++    around capture(); used by the phase tracker's relearn policy.
++
++    respond() is the one decision point. A confirmed change of either kind
++    first probes the remembered operating points at the present amplitude
++    (recall): a load that has come back to a remembered state is found in a
++    few probes and without lowering the drive. Only a confirmed drop goes on
++    to a full capture, and only after capture_scan_min_interval_us since the
++    previous one; a failed capture is retried on the scan budget's schedule.
++    """
++
++    def __init__(self, cfg: dict):
++        self.cfg = cfg
++        self.budget = ScanBudget(cfg)
++        self.memory = FrequencyMemory(cfg)
++        self.monitor = PowerMonitor(cfg)
++        self.noise = NoiseFloor(cfg)
++        self.headroom = HeadroomMap()
++        self.width = float(cfg['nominal_peak_width_Hz'])   # design value until a capture measures it
++        self.failed_episode = False
++        self.last_capture_end = None
++        self.recalled = False      # memory already probed for the change now being handled
++
++    @property
++    def latched(self) -> bool:
++        return self.budget.exhausted
++
++    def merge_Hz(self) -> float:
++        return max(self.cfg['capture_scan_min_step_Hz'], self.cfg['capture_scan_refine_step_per_width']*self.width)
++
++    def reset_reference(self, prior: float | None = None):
++        self.monitor.reset(prior)
++        self.recalled = False
++
++    def observe(self, io: Executor, m: Measurement, settled: bool, f_op: float) -> str | None:
++        score = measured_score(m, self.cfg)
++        verdict = self.monitor.observe(m, score, settled, self.noise.sigma_diff)
++        if verdict == 'REFERENCE':
++            self.memory.remember(f_op, self.monitor.ref, self.width, soft_headroom(m, self.cfg),
++                                 self.merge_Hz())
++            io.event('POWER_REFERENCE_LEARNED', frequency_Hz=f_op, reference_W=self.monitor.ref,
++                     samples=self.cfg['reference_samples'])
++            return None
++        n = self.cfg['drop_confirm_samples']
++        if (verdict == 'CAPTURE' and self.monitor.low == n) or (verdict == 'TRACK' and self.monitor.off == n):
++            # (also reached at once when a new reference contradicts the prior one)
++            io.event('POWER_CHANGE_DETECTED', trigger=verdict, frequency_Hz=f_op, score_W=score,
++                     reference_W=self.monitor.ref, ratio=score/self.monitor.ref)
++            self.headroom.clear()
++        return verdict
++
++    def check_headroom(self, m: Measurement | None):
++        if valid_measurement(m):
++            self.headroom.check(m.frequency_Hz, soft_headroom(m, self.cfg),
++                                self.cfg['scan_validation_relative_tolerance'])
++
++    def due(self, t: int, trigger: str | None, last: Measurement | None) -> bool:
++        """A retry when the budget allows it, or a confirmed drop after the minimum interval.
++
++        A capture may start while the guard is still holding or ramping after a
++        trip (its first point simply waits in Executor.point); it never starts
++        on an invalid sample, so not during HARD_TRIP or after a data fault.
++        """
++        if not valid_measurement(last) or not self.budget.can_start(t):
++            return False
++        if self.failed_episode:
++            return last.state == 'NORMAL' and not last.frozen
++        return trigger == 'CAPTURE' and (self.last_capture_end is None or
++                                         t-self.last_capture_end >= self.cfg['capture_scan_min_interval_us'])
++
++    def recall(self, io: Executor, f_op: float, last: Measurement) -> CaptureResult | None:
++        """Probe every remembered point at the present amplitude, keeping the
++        declared margin under the headroom measured there, and take the best one
++        whose power matches what was remembered and beats the present point by
++        the gain threshold. All are probed, not the first match: two load states
++        can share a power level by coincidence."""
++        cfg = self.cfg
++        now = measured_score(last, cfg)
++        noise = self.noise.sigma_diff
++        gain = max(cfg['capture_scan_gain_threshold'], cfg['noise_sigmas']*noise)
++        dwell = settle_dwell_us(cfg, self.width)
++        hits = []
++        for f, s_mem, w_mem, c_mem in self.memory.items:
++            if abs(f-f_op) <= self.merge_Hz():
++                continue
++            m = probe(io, f, safe_amplitude(cfg, last.amplitude, (c_mem,)), 'MEMORY_PROBE', dwell)
++            if m is None:
++                io.event('MEMORY_PROBE_FAILED', frequency_Hz=f)
++                break
++            s = measured_score(m, cfg)
++            match = abs(s/s_mem-1) <= max(cfg['memory_match_tolerance'], cfg['noise_sigmas']*noise)
++            better = s >= (1+gain)*now
++            io.event('CAPTURE_MEMORY_CHECK', procedure='RECALL', frequency_Hz=f, remembered_score_W=s_mem,
++                     measured_score_W=s, anchor_score_W=now, match=match, better=better)
++            if match and better:
++                hits.append((s, -abs(f-f_op), f, w_mem, m))
++        if not hits:
++            return None
++        s, _, f, w_mem, m = max(hits, key=lambda h: (h[0], h[1]))
++        if w_mem is not None:
++            self.width = float(w_mem)
++        self.reset_reference(prior=s)
++        io.event('MEMORY_RECALLED', frequency_Hz=f, score_W=s, previous_score_W=now, width_Hz=self.width)
++        if abs(io.last.frequency_Hz-f) > 1e-7:
++            # Probed earlier in this pass: the drive is elsewhere now. The CONTROL
++            # action that follows moves there; its headroom was measured just now.
++            prepare_move(io, f, soft_headroom(m, cfg), dwell)
++        return CaptureResult(True, float(f), 'MEMORY_RECALLED', SCAN_VALID, 'MEMORY', s,
++                             self.width, m, now)
++
++    def respond(self, io: Executor, f_op: float, trigger: str | None, last: Measurement | None,
++                settled: bool):
++        """Returns a CaptureResult to move to, 'FAILED' after a failed capture,
++        'NO_MEMORY_MATCH' after a recall that found nothing, or None."""
++        if self.failed_episode:
++            if self.due(io.time, None, last):
++                return self.attempt(io, f_op, 'RETRY', with_memory=False) or 'FAILED'
++            return None
++        if trigger is None:
++            return None
++        if not self.recalled and settled:
++            self.recalled = True
++            hit = self.recall(io, f_op, last)
++            # Nothing remembered fits: for a drop, the capture follows on a later
++            # sample, since the probes have just moved the drive.
++            return hit if hit is not None else 'NO_MEMORY_MATCH'
++        if trigger == 'CAPTURE' and self.due(io.time, trigger, last):
++            return self.attempt(io, f_op, trigger, with_memory=not self.recalled) or 'FAILED'
++        return None
++
++    def attempt(self, io: Executor, f_op: float, trigger: str | None,
++                with_memory: bool = True) -> CaptureResult | None:
++        cfg = self.cfg
++        self.budget.start(io.time)
++        start = io.time
++        io.event('SCAN_ATTEMPT_START', attempt=self.budget.attempts, trusted_frequency_Hz=f_op,
++                 procedure='CAPTURE', trigger=trigger, width_hint_Hz=self.width,
++                 dwell_us=settle_dwell_us(cfg, self.width))
++        memory = ([(f, s, w) for f, s, w, _ in self.memory.items if abs(f-f_op) > 1e-7]
++                  if with_memory else [])
++        result = capture(io, f_op, self.width, memory, self.noise.sigma_diff)
++        self.last_capture_end = io.time
++        if result.ok:
++            self.budget.success()
++            self.failed_episode = False
++            if result.width_Hz is not None:
++                self.width = float(result.width_Hz)
++            self.headroom.replace(result.headroom)
++            self.reset_reference(prior=result.score_W)
++            io.event('SCAN_SUCCESS', procedure='CAPTURE', frequency_Hz=result.frequency_Hz,
++                     band_edge=result.band_edge, source=result.source, reason=result.reason,
++                     score_W=result.score_W, anchor_score_W=result.anchor_score_W,
++                     width_Hz=self.width, points=result.points, duration_us=io.time-start)
++            return result
++        budget_class = self.budget.classify(result.status)
++        if budget_class is None:
++            io.event('SCAN_TRUNCATED_BY_RUN_END', procedure='CAPTURE', reason=result.reason,
++                     status=result.status, trusted_frequency_unchanged_Hz=f_op)
++            return None
++        self.budget.fail(budget_class, io.time)
++        self.failed_episode = True
++        io.event('SCAN_FAILURE', procedure='CAPTURE', reason=result.reason, status=result.status,
++                 budget_class=budget_class, trusted_frequency_unchanged_Hz=f_op,
++                 episode_failures_in_class=self.budget.episode[budget_class],
++                 class_limit=self.budget.limit[budget_class],
++                 total_failures=self.budget.total_failures,
++                 total_search=self.budget.total['search'],
++                 total_preemption=self.budget.total['preemption'],
++                 total_measurement=self.budget.total['measurement'],
++                 total_nonstationary=self.budget.total['nonstationary'],
++                 retry_not_before_us=self.budget.not_before)
++        if self.budget.exhausted:
++            io.event('SCAN_RETRIES_EXHAUSTED', procedure='CAPTURE', budget_class=self.budget.exhausted_class)
++        return None
++
++
++class Plateau:
++    """A held point is ready for the next comparison when its CONTROL sample is
++    comparable and at full amplitude, or, below full amplitude, when two
++    consecutive comparable samples one tick apart show the same amplitude (the
++    guard has stopped ramping). Waiting is all it does."""
++
++    def __init__(self, cfg: dict):
++        self.cfg = cfg
++        self.prev = None
++
++    def ready(self, m: Measurement | None, f: float, now: int) -> bool:
++        tick = self.cfg['control_tick_us']
++        if not comparable(m, f, now, tick):
++            self.prev = None
++            return False
++        p, self.prev = self.prev, m
++        if m.amplitude >= self.cfg['full_amplitude_threshold']:
++            return True
++        return (p is not None and m.time_us-p.time_us == tick and abs(p.frequency_Hz-f) <= 1e-7
++                and abs(m.amplitude-p.amplitude) <= 1e-12)
++
++
++def newton_phase_update(io: Executor, m: Measurement, signal: str, target: float,
++                        f_op: float, width: float, headroom: HeadroomMap,
++                        phase_sigma_deg: float = 0.) -> tuple[float, float | None]:
++    """Phase step that divides the error by the measured slope (newton_v2).
++
++    gain_v1 multiplies the error by a fixed Hz/deg gain. Its fraction of the
++    error corrected per update is gain*|slope|, which depends on the peak
++    width and the signal: about 43 % on the Qm=800 input phase, 0.1 % on the
++    input phase of a peak 40 times wider. The two executed neighbour probes
++    already measure the slope, so here the step is phase_newton_fraction of
++    error/slope, clipped to phase_max_step_per_width of the width; the probe
++    offset is phase_probe_offset_per_width of the width, never below
++    phase_probe_offset_Hz. Probes keep the declared margin under the measured
++    or mapped soft-limit headroom. The deadband is phase_deadband_deg or
++    noise_sigmas measured single-sample phase sigmas, whichever is larger.
++    Returns the new centre and the headroom predicted there (None when unknown).
++    """
++    cfg = io.cfg
++    error = wrap_deg(target-phase_of(m, signal))
++    if abs(error) <= max(cfg['phase_deadband_deg'], cfg['noise_sigmas']*phase_sigma_deg):
++        return f_op, None
++    delta = max(cfg['phase_probe_offset_Hz'], cfg['phase_probe_offset_per_width']*width)
++    lo = max(cfg['frequency_min_Hz'], f_op-delta)
++    hi = min(cfg['frequency_max_Hz'], f_op+delta)
++    dwell = settle_dwell_us(cfg, width)
++    c_now = soft_headroom(m, cfg)
++    left = right = None
++    if hi > lo:
++        left = probe(io, lo, safe_amplitude(cfg, m.amplitude, (c_now, headroom.predict(lo))),
++                     'PHASE_PROBE_MINUS', dwell)
++        if left is not None:
++            right = probe(io, hi, safe_amplitude(cfg, m.amplitude, (c_now, headroom.predict(hi))),
++                          'PHASE_PROBE_PLUS', dwell)
++    if (left is None or right is None or
++            not finite(phase_of(left, signal), phase_of(right, signal))):
++        io.event('PHASE_PROBE_FAILED', signal=signal)
++        return f_op, None
++    slope = wrap_deg(phase_of(right, signal)-phase_of(left, signal))/(hi-lo)
++    if not finite(slope) or abs(slope) < cfg['phase_slope_min_deg_per_Hz']:
++        io.event('PHASE_SLOPE_UNRESOLVED', signal=signal)
++        return f_op, None
++    limit = cfg['phase_max_step_per_width']*width
++    raw = f_op+float(np.clip(cfg['phase_newton_fraction']*error/slope, -limit, limit))
++    candidate = float(np.clip(raw, cfg['frequency_min_Hz'], cfg['frequency_max_Hz']))
++    if candidate != raw:
++        io.event('FREQUENCY_SATURATION', raw_frequency_Hz=raw)
++    io.event('PHASE_UPDATE', measured_error_deg=error, measured_slope_deg_per_Hz=slope,
++             proposed_frequency_Hz=candidate, signal=signal, law='newton_v2')
++    for probe_sample in (left, right):
++        headroom.check(probe_sample.frequency_Hz, soft_headroom(probe_sample, cfg),
++                       cfg['scan_validation_relative_tolerance'])
++    return candidate, predicted_headroom(candidate, left, right, headroom, cfg)
++
++
++def run_phase_v2(io: Executor):
++    """PHASE_FEEDBACK with phase_tracker = newton_v2.
++
++    The target is learned from the first comparable CONTROL sample at the start
++    frequency (the calibration state every schedule begins in). With
++    phase_target_policy = relearn_after_capture, a confirmed power change
++    first probes the remembered points (recall) and a confirmed drop then
++    starts a capture (CaptureSupervisor.respond); after either, the target is
++    re-learned from the sample at the chosen point and the monitor learns a new
++    reference there. A change that matches no remembered point is accepted as
++    the new reference. With frozen there is never a recall or capture, and the
++    first target is kept.
++    """
++    cfg = io.cfg
++    _, signal, policy = phase_mode(cfg)
++    relearn = policy == 'relearn_after_capture'
++    tick = cfg['control_tick_us']
++    low = cfg['capture_scan_amplitude']
++    sup = CaptureSupervisor(cfg)
++    plateau = Plateau(cfg)
++    f_op = float(cfg['initial_frequency_Hz'])
++    target = None
++    last = None
++    while not io.finished:
++        if relearn and sup.latched:
++            io.control(f_op, low, 'FAILED_SCAN_LATCHED_HOLD')
++            continue
++        if relearn and sup.failed_episode and not sup.budget.can_start(io.time):
++            last = io.control(f_op, low, 'FAILED_SCAN_RETRY_WAIT')
++            continue
++        usable = comparable(last, f_op, io.time, tick) and finite(phase_of(last, signal))
++        sup.noise.observe(last if usable else None, measured_score(last, cfg) if usable else None,
++                          sup.width, phase_of(last, signal) if usable else None)
++        sup.check_headroom(last if usable else None)
++        if usable and target is None:
++            target = float(phase_of(last, signal))
++            io.event('PHASE_TARGET_LEARNED', source='INITIAL_SAMPLE', signal=signal,
++                     target_deg=target, frequency_Hz=f_op)
++        here = (valid_measurement(last) and last.time_us == io.time
++                and abs(last.frequency_Hz-f_op) <= 1e-7)
++        if relearn and (here or sup.failed_episode):
++            trigger = sup.observe(io, last, usable, f_op) if here and not sup.failed_episode else None
++            outcome = sup.respond(io, f_op, trigger, last, usable)
++            if isinstance(outcome, CaptureResult):
++                f_op = float(outcome.frequency_Hz)
++                learned = phase_of(outcome.measurement, signal)
++                if finite(learned):
++                    target = float(learned)
++                    io.event('PHASE_TARGET_LEARNED', source=outcome.source, signal=signal,
++                             target_deg=target, frequency_Hz=f_op)
++                plateau.prev = None
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++            if outcome == 'FAILED':
++                # Never adopt a failed capture's last point as the new centre.
++                if not io.finished:
++                    last = io.control(f_op, low, 'FAILED_SCAN_ROLLBACK')
++                continue
++            if outcome == 'NO_MEMORY_MATCH':
++                if trigger == 'TRACK':
++                    sup.reset_reference()      # a new level, nothing remembered: accept it
++                plateau.prev = None
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++        if target is not None and usable and plateau.ready(last, f_op, io.time):
++            new, headroom = newton_phase_update(io, last, signal, target, f_op, sup.width, sup.headroom,
++                                                sup.noise.phase_sigma_deg)
++            if new != f_op:
++                prepare_move(io, new, headroom, settle_dwell_us(cfg, sup.width))
++                f_op = new
++        elif not usable:
++            plateau.prev = None
++        if not io.finished:
++            last = io.control(f_op, low if sup.failed_episode else 1.)
++
++
+ def run_policy(io: Executor, strategy: str, target_phase: float):
+     if strategy not in STRATEGIES:
+         raise ValueError(strategy)
+     cfg = io.cfg
++    if strategy == 'PHASE_FEEDBACK' and phase_mode(cfg)[0] == 'newton_v2':
++        return run_phase_v2(io)
+     target = float(cfg['initial_frequency_Hz'])
+     next_scan = cfg['scan_period_us']
+     retry = ScanBudget(cfg)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py
+index 155f3004be81d2b09695a13c0ed8bf7a1ca125eb..b1da87e19cec0fc794cdd9a7dcf334e435f76abe 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py
+@@ -39,6 +39,10 @@ class Measurement:
+     valid: bool
+     state: str
+     frozen: bool
++    # arg(V_port / I_port) at the transducer terminals, the same port where vpp
++    # and irms are read; None when no drive is applied. Not required by
++    # valid_measurement, so the input-phase paths are unchanged.
++    phase_port_deg: float | None = None
+ 
+ 
+ def valid_measurement(m: Measurement | None) -> bool:
+@@ -254,7 +258,8 @@ class Engine:
+         r = pieces[-1]
+         m = Measurement(self.t, f, a, r['vport_Vpp'], r['iport_Arms'], r['p_port_W'],
+                         r['phase_input_deg'], r['zin_real_ohm'], r['zin_imag_ohm'],
+-                        r['measurement_valid'], r['protection_state'], r['frequency_frozen'])
++                        r['measurement_valid'], r['protection_state'], r['frequency_frozen'],
++                        r['phase_port_deg'])
+         if self.measurement_filter is not None:
+             m = self.measurement_filter(m, kind)
+             for row in pieces:
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index 4e31f3987434dee4b9fbd4b58def95eb9642f7b9..52eae729a0338dd30d0641cb5f828b8629376059 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -14,7 +14,7 @@ import sys
+ import unittest
+ import numpy as np
+ 
+-from controllers import Executor, STRATEGIES, run_policy
++from controllers import Executor, STRATEGIES, phase_mode, run_policy
+ from engine import Engine
+ from metrics import evaluate, references
+ from models import model_v2_1 as model
+@@ -53,6 +53,19 @@ def verify(folder):
+     return not bad
+ 
+ 
++def phase_lines(config):
++    tracker, signal, policy = phase_mode(config)
++    if tracker == 'gain_v1':
++        return ['- 相位反馈：原定律 gain_v1——输入相位 arg(V_input/I_source)，目标仅在基准 0.9 MHz 标定一次并冻结；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。',
++                '- 相位反馈中心恢复门控（只作用于 gain_v1）：' + ('开启（采纳新中心后，须在新中心得到两个连续、同幅度、NORMAL 未冻结的普通控制样本，才做下一次相位更新；只等待，不加幅、不加步长）。' if config.get('phase_centre_recovery_gate', False) else '关闭（原正式相位路径）。')]
++    name = {'input': '输入相位 arg(V_input/I_source)', 'port': '换能器端相位 arg(V_port/I_port)'}[signal]
++    rule = ('每次功率下降触发的捕获（或记忆召回）之后，在所选频点重学目标' if policy == 'relearn_after_capture'
++            else '目标冻结，不捕获、不召回')
++    return [f'- 相位反馈：newton_v2——{name}；目标取开机第一个有效控制样本（基准 0.9 MHz），{rule}；'
++            '步长 = 系数×误差/实测斜率（两次邻频试探），探针偏移与步长上限按峰宽；试探的时间、幅度与保护全部入账。',
++            '- 中心恢复门控只作用于 gain_v1；newton_v2 自带平台等待（满幅，或两个连续同幅度的普通控制样本）。']
++
++
+ def make_report(folder, batch, config, overall, segments, test_result, amplifier):
+     hist = [r for r in overall if r['suite']=='HISTORICAL_12']
+     fs = [r for r in segments if r['suite']=='HISTORICAL_12' and r['segment_index']==3]
+@@ -67,10 +80,9 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+       '- 正式策略：FIXED / PERIODIC_SCAN / PHASE_FEEDBACK；P&O 不纳入此批次正式比较。',
+       '- 共用同一模型、配置、执行保护器、整数微秒时钟、虚拟测量和指标计算函数。',
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+-      '- 相位目标仅在基准 0.9 MHz 标定一次；邻频斜率由真实执行的两次准稳态试探估计，时间/幅度/保护全部入账。',
++      *phase_lines(config),
+       f"- 基线：{model.BASELINE_ID}（{config.get('baseline_design_file', model.DEFAULT_DESIGN_FILE)}）；保护软限 {soft}、硬限 {hard}。",
+-      '- 电流限值作用于换能器端口；用户 5 mA 上限的测点未定（换能器端或功放输出端），功放输出端电流见下表最后一列，不受限值约束。',
+-      '- 相位反馈中心恢复门控：' + ('开启（采纳新中心后，须在新中心得到两个连续、同幅度、NORMAL 未冻结的普通控制样本，才做下一次相位更新；只等待，不加幅、不加步长）。' if config.get('phase_centre_recovery_gate', False) else '关闭（原正式相位路径）。'), '',
++      '- 电流限值作用于换能器端口；用户 5 mA 上限的测点未定（换能器端或功放输出端），功放输出端电流见下表最后一列，不受限值约束。', '',
+       '## 历史 12 段日程的新批次结果', '',
+       '|策略|通过段数/12|全程电能 J|相对策略可行参考电能 %|峰值 Vpp（含保护前）|峰值 mA RMS（含保护前）|扫描失败次数|功放输出端电流峰值 mA RMS|',
+       '|---|---:|---:|---:|---:|---:|---:|---:|']
+@@ -100,7 +112,8 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+       '4. 共同保护器在指令时刻使用当前精确模型作理想可行幅度检查：这是理想安全接口，不是仅靠有延迟传感器的真实保护。候选硬越限与实际施加后的越限分别记录。',
+       '5. 扰动发生在保持区间内部时不免费触发保护；只把电学响应按真实时间边界拆分入账。仍不包含连续 RLC 瞬态、测量噪声、功放动态或硬件执行延迟。',
+       '6. 已采用扫描失败分类补丁：寻峰失败、保护抢占、无效测量、非平稳扫描分别计数；重试预算分别为2/4/2/2，间隔至少50 ms；任一预算耗尽即低幅锁存。每次扫描至多400点、300 ms、2次粗扫回退。以上均为预登记假设，未优化，也未完成预算敏感性验证；截断记录另列。',
+-      '7. 相位固定目标可能在扰动后不再对应高功率。不同扰动的相位曲线可非单调；邻频测斜率也不保证全局寻优。',
++      '7. 相位固定目标可能在扰动后不再对应高功率。不同扰动的相位曲线可非单调；邻频测斜率也不保证全局寻优。换能器端相位看不见匹配网络的变化；重学目标只在功率下降触发捕获或记忆召回时发生，小于捕获阈值的损失不会被纠正。',
++      '   捕获的点驻留按峰宽的时间常数取值；准稳态模型没有建立过程，驻留过短造成的测量误差在这里看不出来，只计入了时间成本。',
+       '8. 反射代理只监测，无已验证的反射上限；未独立规定绝对功率上限。没有把这两项冒充为已经完成的约束。',
+       '9. 本轮没有重新运行 LTspice、真实器件或 COMSOL。电路模型结构来自已存档 v2.1，基线参数为上述冻结设计文件，不代表本轮每个控制动作已经由 LTspice 复核。',
+       '10. 本轮不调参优化排名。此处为模糊推测内容：进一步整定相位增益、扫描周期或失败后可观测重置规则可能改善表现，但本批次没有验证。', '',
+@@ -202,6 +215,7 @@ def main():
+                         for k,v in model.BASELINE_FILES.items()},
+         current_limit_measurement_point=config.get('current_limit_measurement_point','transducer_port'),
+         phase_centre_recovery_gate=bool(config.get('phase_centre_recovery_gate',False)),
++        phase_feedback=dict(zip(('tracker','signal','target_policy'),phase_mode(config))),
+         amplifier_output_current_peak_mArms=dict(all_timelines=max(amplifier.values()),
+             historical_12={s:amplifier[('HISTORICAL_12',s)] for s in STRATEGIES}),
+         strategies=STRATEGIES,suite_count=len(schedules),tests_passed=result.testsRun,
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index fbc6fa450810539dc6cd97b72bfea572a27168de..cfca78179898dd4a50fa9712a15ad4f13b2d5de2 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -1,14 +1,19 @@
++import cmath
+ import copy
+ from dataclasses import replace
+ import json
++import math
+ from pathlib import Path
+ import tempfile
+ import unittest
+ from unittest.mock import patch
+ import numpy as np
+ 
+-from controllers import (CentreRecoveryGate, Executor, PointResult, RetryBudget, ScanBudget,
+-                         ScanResult, grid, phase_update, run_policy, scan)
++from controllers import (STRATEGIES, CaptureResult, CentreRecoveryGate, Executor,
++                         FrequencyMemory, HeadroomMap, NoiseFloor, PointResult, PowerMonitor,
++                         RetryBudget, ScanBudget, ScanResult, capture, coarse_peaks, grid,
++                         newton_phase_update, peak_width, phase_mode, phase_update, probe,
++                         run_policy, scan, settle_dwell_us)
+ from engine import Engine, Measurement, Protection, measured_score, valid_measurement
+ from metrics import energy, evaluate, references
+ from models import model_v2_1 as model
+@@ -17,6 +22,34 @@ ROOT = Path(__file__).resolve().parents[1]
+ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
+ BASE = 'CASE_000_BASELINE'
+ CANDIDATE = ROOT/'candidates'/'synthetic_q13p8_3mA'/'config.json'
++V2 = dict(phase_tracker='newton_v2', phase_signal='port', phase_target_policy='relearn_after_capture')
++# Every key the capture and the second phase tracker added (review/27).
++NEW_KEYS = (
++    'phase_tracker', 'phase_signal', 'phase_target_policy', 'phase_tracker_rule',
++    'phase_newton_fraction', 'phase_probe_offset_per_width', 'phase_max_step_per_width',
++    'nominal_peak_width_Hz', 'capture_scan_amplitude', 'capture_scan_coarse_step_Hz',
++    'capture_scan_refine_factor', 'capture_scan_refine_step_per_width', 'capture_scan_min_step_Hz',
++    'capture_scan_dwell_min_us', 'capture_scan_settle_time_constants',
++    'capture_scan_secondary_peak_ratio', 'capture_scan_peak_separation_steps',
++    'capture_scan_max_peaks', 'capture_scan_gain_threshold', 'capture_scan_min_interval_us',
++    'capture_scan_drop_fraction', 'capture_scan_rule', 'track_change_fraction',
++    'impedance_change_fraction', 'drop_confirm_samples', 'reference_samples', 'memory_size',
++    'memory_match_tolerance', 'noise_window_samples', 'noise_same_point_per_width', 'noise_sigmas',
++    'probe_amplitude_margin', 'full_amplitude_threshold')
++
++
++def half_power_width(case, centre_Hz: float) -> float:
++    """Half-power width of P_Rm(f) at a=1 around the maximum nearest centre_Hz (1 Hz grid)."""
++    f = np.arange(centre_Hz-300000., centre_Hz+300000., 1.)
++    p = model.response(f, case)['p_rm_W']
++    j = int(np.argmax(p))
++    half = p[j]/2
++    lo, hi = j, j
++    while p[lo] > half:
++        lo -= 1
++    while p[hi] > half:
++        hi += 1
++    return float((f[hi]-(half-p[hi])/(p[hi-1]-p[hi]))-(f[lo]+(half-p[lo])/(p[lo+1]-p[lo])))
+ 
+ 
+ class UnifiedTests(unittest.TestCase):
+@@ -304,15 +337,16 @@ class UnifiedTests(unittest.TestCase):
+ 
+     def test_all_strategies_identical_schedule_and_duration(self):
+         timelines = []
+-        for s in ('FIXED','PERIODIC_SCAN','PHASE_FEEDBACK'):
++        for s in STRATEGIES:
+             e = self.engine([BASE,'CASE_FS_M5'],s)
+             phi = float(model.response(900000,e.cases[BASE])['phase_deg'][0])
+             run_policy(Executor(e),s,phi)
+             per,overall = evaluate(e.rows,e.events,CFG,self.refs)
+             self.assertEqual(overall['logged_duration_s'],1.6)
+             timelines.append([(r['case_id'],r['start_s'],r['end_s']) for r in per])
+-        self.assertEqual(timelines[0],timelines[1])
+-        self.assertEqual(timelines[0],timelines[2])
++        self.assertEqual(len(timelines),len(STRATEGIES))
++        for other in timelines[1:]:
++            self.assertEqual(timelines[0],other)
+ 
+ 
+ class ScanFaultTaxonomyTests(unittest.TestCase):
+@@ -663,5 +697,320 @@ class SyntheticCandidateTests(unittest.TestCase):
+         self.assertIn('CENTRE_RECOVERY_COMPLETE', names)
+ 
+ 
++class CaptureAndPhaseV2Tests(unittest.TestCase):
++    """Transducer-port phase with a target re-learned after each capture, and the
++    shared power-drop-triggered capture (config: phase_tracker = newton_v2)."""
++
++    @classmethod
++    def setUpClass(cls):
++        cls.refs = references(CFG)
++
++    def engine(self, ids, strategy='PHASE_FEEDBACK', **over):
++        cfg = copy.deepcopy(CFG)
++        cfg.update(over)
++        return Engine(cfg, ids, strategy, 'TEST')
++
++    @staticmethod
++    def sample(t, f=900000., zr=1e3, settled=True):
++        return Measurement(t, f, 1., 100., .005, .1, -1., zr, -10., True, 'NORMAL', not settled, -15.)
++
++    # ---- the port phase is measured, the default law is the old one ------
++
++    def test_measurement_reports_the_port_phase(self):
++        e = self.engine([BASE])
++        m = e.execute(900000, 1, 'CONTROL', 20000)
++        z = complex(model.response(900000, e.cases[BASE])['z_bvd'][0])
++        self.assertAlmostEqual(m.phase_port_deg, math.degrees(cmath.phase(z)), places=9)
++        self.assertEqual(m.phase_port_deg, e.rows[-1]['phase_port_deg'])
++        # At fs the BVD port phase is -atan(Rm*w*C0) = -atan(1/M), M = X_C0/Rm.
++        b = model.BASE_BVD
++        self.assertAlmostEqual(m.phase_port_deg, -math.degrees(math.atan(2*np.pi*b.fs*b.c0*b.rm)), places=6)
++
++    def test_default_phase_feedback_is_the_original_law(self):
++        self.assertEqual(phase_mode(CFG), ('gain_v1', 'input', 'frozen'))
++        e = self.engine([BASE, 'CASE_FS_M5'])
++        run_policy(Executor(e), 'PHASE_FEEDBACK', float(model.response(900000, e.cases[BASE])['phase_deg'][0]))
++        names = {x['event'] for x in e.events}
++        self.assertIn('PHASE_UPDATE', names)
++        self.assertFalse({'PHASE_TARGET_LEARNED', 'SCAN_ATTEMPT_START', 'POWER_REFERENCE_LEARNED'} & names)
++        self.assertTrue(all('law' not in x for x in e.events if x['event'] == 'PHASE_UPDATE'))
++
++    def test_gain_v1_refuses_other_signals_and_policies(self):
++        for over in (dict(phase_signal='port'), dict(phase_target_policy='relearn_after_capture'),
++                     dict(phase_tracker='gain_v2'), dict(phase_signal='voltage')):
++            with self.subTest(**over):
++                with self.assertRaises(ValueError):
++                    phase_mode(dict(CFG, **over))
++
++    def test_new_keys_leave_the_three_original_strategies_unchanged(self):
++        """Strip every key added for the capture and newton_v2: the three
++        original strategies log exactly the same rows and events."""
++        self.assertTrue(set(NEW_KEYS) <= set(CFG))
++        stripped = {k: v for k, v in CFG.items() if k not in NEW_KEYS}
++        for strategy in ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK'):
++            with self.subTest(strategy=strategy):
++                logs = []
++                for cfg in (copy.deepcopy(CFG), copy.deepcopy(stripped)):
++                    e = Engine(cfg, [BASE, 'CASE_FS_M5'], strategy, 'TEST')
++                    run_policy(Executor(e), strategy, float(model.response(900000, e.cases[BASE])['phase_deg'][0]))
++                    logs.append((e.rows, e.events))
++                self.assertEqual(logs[0], logs[1])
++
++    # ---- declared rules -----------------------------------------------------
++
++    def test_nominal_width_is_the_design_points_own_half_power_width(self):
++        self.addCleanup(model.configure, CFG)
++        for path in (ROOT/'config.json', CANDIDATE):
++            with self.subTest(config=str(path.relative_to(ROOT))):
++                cfg = json.loads(path.read_text(encoding='utf-8'))
++                model.configure(cfg)
++                self.assertEqual(cfg['nominal_peak_width_Hz'],
++                                 round(half_power_width(model.scenario_map()[BASE], 900000.)))
++
++    def test_dwell_follows_the_width_within_its_bounds(self):
++        self.assertEqual(settle_dwell_us(CFG, None), CFG['scan_point_us'])
++        self.assertEqual(settle_dwell_us(CFG, 2142.), math.ceil(10e6/(math.pi*2142.)))
++        self.assertEqual(settle_dwell_us(CFG, 86872.), CFG['capture_scan_dwell_min_us'])
++        self.assertEqual(settle_dwell_us(CFG, 500.), CFG['scan_point_us'])
++
++    def test_peak_width_estimator(self):
++        f0, w = 900000., 2000.
++        lorentz = lambda x: 1/(1+(2*(x-f0)/w)**2)  # noqa: E731
++        fs = [float(x) for x in np.arange(f0-10000, f0+10001, 100.)]
++        self.assertAlmostEqual(peak_width(fs, [lorentz(x) for x in fs], 0), w, delta=.01*w)
++        coarse = [float(x) for x in np.arange(f0-50000, f0+50001, 5000.)]
++        self.assertIsNone(peak_width(coarse, [lorentz(x) for x in coarse], 10))   # under-resolved
++        right = [x for x in fs if x >= f0-300]                                     # one crossing inside
++        self.assertAlmostEqual(peak_width(right, [lorentz(x) for x in right], 0), w, delta=.05*w)
++
++    def test_a_second_coarse_peak_is_kept_only_when_close_and_separate(self):
++        s = [1., 2., 10., 2., 1., 1., 1., 8.5, 1., 1.]
++        self.assertEqual(coarse_peaks(s, CFG), [2, 7])
++        s[7] = 7.9
++        self.assertEqual(coarse_peaks(s, CFG), [2])
++        self.assertEqual(coarse_peaks([1., 9., 10., 9.5, 1.], CFG), [2])
++
++    # ---- capture ------------------------------------------------------------
++
++    def test_capture_finds_the_band_optimum_after_a_large_shift(self):
++        e = self.engine(['CASE_FS_M5'], 'PHASE_FEEDBACK')
++        # Born at a=1 on this load the old command would already exceed the hard
++        # limit (the guard trips it, as it should); start from the capture amplitude.
++        e.protection.amplitude = CFG['capture_scan_amplitude']
++        r = capture(Executor(e), 900000., CFG['nominal_peak_width_Hz'])
++        best = self.refs['CASE_FS_M5']['policy']
++        self.assertTrue(r.ok)
++        self.assertEqual(r.source, 'SCAN')
++        self.assertLessEqual(abs(r.frequency_Hz-best['frequency_Hz']), CFG['capture_scan_min_step_Hz'])
++        q = model.response(r.frequency_Hz, e.cases['CASE_FS_M5'])
++        self.assertGreaterEqual(float(q['p_rm_W'][0])/best['power_W'], .99)
++        width = half_power_width(e.cases['CASE_FS_M5'], best['frequency_Hz'])
++        self.assertLess(abs(r.width_Hz/width-1), .2)
++        rows = [x for x in e.rows if x['kind'].startswith('CAPTURE')]
++        self.assertTrue(all(x['applied_amplitude'] <= CFG['capture_scan_amplitude']+1e-12 for x in rows))
++        self.assertTrue(all(x['protection_state'] == 'NORMAL' for x in rows))
++        self.assertLessEqual(r.points, CFG['scan_max_points'])
++
++    def test_capture_stays_when_the_gain_is_below_the_threshold(self):
++        r = capture(Executor(self.engine([BASE], 'PHASE_FEEDBACK')), 900000., CFG['nominal_peak_width_Hz'])
++        self.assertTrue(r.ok)
++        self.assertEqual((r.source, r.frequency_Hz), ('STAY', 900000.))
++
++    def test_capture_takes_the_best_remembered_point_without_a_search(self):
++        e = self.engine([BASE], 'PHASE_FEEDBACK')
++        io = Executor(e)
++        base = measured_score(io.control(900000., 1.), CFG)
++        r = capture(io, 905000., 2142., [(854800., .14, 1500.), (900000., base, 2142.)])
++        self.assertTrue(r.ok)
++        self.assertEqual((r.source, r.frequency_Hz, r.points), ('MEMORY', 900000., 3))
++        self.assertFalse(any(x['kind'] == 'CAPTURE_POINT' for x in e.rows))
++
++    def test_capture_detects_a_plant_that_moves_under_it(self):
++        e = self.engine([BASE], 'PHASE_FEEDBACK')
++        e.measurement_filter = lambda m, k: (replace(m, zin_real=m.zin_real*3, p_port_W=m.p_port_W*3)
++                                             if k == 'CAPTURE_ANCHOR_LEVEL' else m)
++        r = capture(Executor(e), 900000., 2142.)
++        self.assertFalse(r.ok)
++        self.assertEqual(r.status, 'NONSTATIONARY_SCAN')
++        self.assertEqual(ScanBudget.classify(r.status), 'nonstationary')
++
++    def test_capture_failure_classes(self):
++        e = self.engine([BASE], 'PHASE_FEEDBACK')
++        e.measurement_filter = lambda m, k: replace(m, p_port_W=float('nan')) if k == 'CAPTURE_POINT' else m
++        self.assertEqual(capture(Executor(e), 900000., 2142.).status, 'INVALID_MEASUREMENT')
++        e = self.engine([BASE], 'PHASE_FEEDBACK')
++        e.protection.hard_until = 60000
++        self.assertEqual(capture(Executor(e), 900000., 2142.).status, 'PREEMPTED_PROTECTION')
++        e = self.engine([BASE], 'PHASE_FEEDBACK')
++        e.t = e.end-500
++        e.protection.last_us = e.t
++        r = capture(Executor(e), 900000., 2142.)
++        self.assertEqual(r.status, 'END_OF_RUN_TRUNCATED')
++        self.assertIsNone(ScanBudget.classify(r.status))
++
++    def test_capture_refines_a_second_peak_and_keeps_the_better(self):
++        self.addCleanup(model.configure, CFG)
++        cfg = json.loads(CANDIDATE.read_text(encoding='utf-8'))
++        model.configure(cfg)
++        e = Engine(copy.deepcopy(cfg), ['CASE_LMATCH_P10'], 'PHASE_FEEDBACK', 'TEST')
++        r = capture(Executor(e), 900000., cfg['nominal_peak_width_Hz'])
++        self.assertTrue(any(x['event'] == 'CAPTURE_MULTI_PEAK' for x in e.events))
++        best = references(cfg)['CASE_LMATCH_P10']['policy']
++        q = model.response(r.frequency_Hz, e.cases['CASE_LMATCH_P10'])
++        a = min(1., cfg['voltage_soft_Vpp']/float(q['vport_vpp'][0]), cfg['current_soft_Arms']/float(q['iport_irms_A'][0]))
++        self.assertGreaterEqual(float(q['p_rm_W'][0])*a*a/best['power_W'], .99)
++
++    # ---- tracker ------------------------------------------------------------
++
++    def test_port_relearn_relearns_after_a_capture(self):
++        e = self.engine([BASE, 'CASE_FS_M5'], **V2)
++        run_policy(Executor(e), 'PHASE_FEEDBACK', 0.)
++        learned = [x for x in e.events if x['event'] == 'PHASE_TARGET_LEARNED']
++        self.assertEqual(learned[0]['source'], 'INITIAL_SAMPLE')
++        self.assertAlmostEqual(learned[0]['target_deg'], e.rows[0]['phase_port_deg'])
++        self.assertIn('SCAN', [x['source'] for x in learned[1:]])
++        self.assertGreater(abs(learned[-1]['target_deg']-learned[0]['target_deg']), 1.)
++        per, _ = evaluate(e.rows, e.events, e.cfg, self.refs)
++        self.assertTrue(per[1]['settled'])
++
++    def test_frozen_policy_never_captures_or_recalls(self):
++        e = self.engine([BASE, 'CASE_FS_M5'], **dict(V2, phase_target_policy='frozen'))
++        run_policy(Executor(e), 'PHASE_FEEDBACK', 0.)
++        names = [x['event'] for x in e.events]
++        self.assertEqual(names.count('PHASE_TARGET_LEARNED'), 1)
++        self.assertNotIn('SCAN_ATTEMPT_START', names)
++        self.assertFalse({'MEMORY_PROBE', 'CAPTURE_POINT'} & {r['kind'] for r in e.rows})
++
++    def test_newton_step_divides_by_the_measured_slope(self):
++        e = self.engine([BASE], **V2)
++        io = Executor(e)
++        m = io.control(900000., 1.)
++        new, _ = newton_phase_update(io, m, 'port', m.phase_port_deg+2., 900000., 2142., HeadroomMap())
++        update = [x for x in e.events if x['event'] == 'PHASE_UPDATE'][-1]
++        self.assertAlmostEqual(new, 900000.+CFG['phase_newton_fraction']*update['measured_error_deg']
++                               / update['measured_slope_deg_per_Hz'], places=6)
++        probes = [r for r in e.rows if r['kind'].startswith('PHASE_PROBE')]
++        offset = max(CFG['phase_probe_offset_Hz'], CFG['phase_probe_offset_per_width']*2142.)
++        self.assertEqual({round(abs(r['frequency_Hz']-900000.), 6) for r in probes}, {round(offset, 6)})
++        self.assertTrue(all(r['duration_us'] == settle_dwell_us(CFG, 2142.) for r in probes))
++        m = io.control(900000., 1.)
++        far, _ = newton_phase_update(io, m, 'port', m.phase_port_deg+80., 900000., 2142., HeadroomMap())
++        self.assertLessEqual(abs(far-900000.), CFG['phase_max_step_per_width']*2142.+1e-6)
++
++    def test_the_deadband_widens_to_the_measured_phase_scatter(self):
++        # Post-hoc (review/27): a deadband below the phase noise keeps the loop probing.
++        floor = NoiseFloor(CFG)
++        rng = np.random.default_rng(7)
++        for k in range(CFG['noise_window_samples']+1):
++            floor.observe(self.sample(20000*(k+1)), .1, 2142., -15.+rng.normal(0., .3))
++        self.assertGreater(floor.phase_sigma_deg, .1)
++        self.assertLess(floor.phase_sigma_deg, .6)
++        floor.observe(self.sample(10**6, f=901000.), .1, 2142., 40.)   # another frequency: not a pair
++        self.assertLess(floor.phase_sigma_deg, .6)
++        e = self.engine([BASE], **V2)
++        io = Executor(e)
++        m = io.control(900000., 1.)
++        error = 2*floor.phase_sigma_deg*.9
++        new, _ = newton_phase_update(io, m, 'port', m.phase_port_deg+error, 900000., 2142., HeadroomMap(),
++                                     floor.phase_sigma_deg)
++        self.assertEqual(new, 900000.)
++        self.assertFalse(any(r['kind'].startswith('PHASE_PROBE') for r in e.rows))
++        new, _ = newton_phase_update(io, m, 'port', m.phase_port_deg+error, 900000., 2142., HeadroomMap())
++        self.assertNotEqual(new, 900000.)
++
++    def test_a_probe_lowers_the_drive_first_instead_of_letting_the_guard_preempt(self):
++        e = self.engine([BASE], **V2)
++        io = Executor(e)
++        io.control(900000., 1.)
++        self.assertIsNotNone(probe(io, 900200., .9, 'PO_PROBE_PLUS', 1500))
++        (k0, f0, a0, s0), (k1, f1, a1, s1) = [(r['kind'], r['frequency_Hz'], r['applied_amplitude'],
++                                               r['protection_state']) for r in e.rows[-2:]]
++        self.assertEqual((k0, f0, k1, f1), ('AMPLITUDE_BACKOFF', 900000., 'PO_PROBE_PLUS', 900200.))
++        self.assertEqual((s0, s1), ('NORMAL', 'NORMAL'))
++        self.assertAlmostEqual(a0, .9, places=12)
++        self.assertAlmostEqual(a1, .9, places=12)
++
++    # ---- monitor, memory, map -------------------------------------------------
++
++    def test_power_monitor_triggers_and_precedence(self):
++        n, r = CFG['drop_confirm_samples'], CFG['reference_samples']
++
++        def learned(monitor):
++            self.assertIsNone(monitor.observe(self.sample(0, settled=False), .1, False, 0.))
++            verdicts = [monitor.observe(self.sample(k+1), .1, True, 0.) for k in range(r)]
++            self.assertEqual(verdicts, [None]*(r-1)+['REFERENCE'])
++            return monitor
++        mon = learned(PowerMonitor(CFG))
++        self.assertEqual([mon.observe(self.sample(10+k, settled=False), .05, False, 0.) for k in range(n)],
++                         [None]*(n-1)+['CAPTURE'])
++        mon = learned(PowerMonitor(CFG))
++        self.assertEqual([mon.observe(self.sample(10+k), .103, True, 0.) for k in range(n)],
++                         [None]*(n-1)+['TRACK'])
++        mon = learned(PowerMonitor(CFG))
++        self.assertEqual([mon.observe(self.sample(10+k, zr=1.2e3), .1, True, 0.) for k in range(n)][-1], 'TRACK')
++        mon = learned(PowerMonitor(CFG))
++        self.assertEqual([mon.observe(self.sample(10+k, f=901000., zr=1.2e3), .1, True, 0.) for k in range(n)],
++                         [None]*n)
++        # A change and a drop confirmed on the same sample: the drop wins.
++        mon = learned(PowerMonitor(CFG))
++        mon.observe(self.sample(10), .103, True, 0.)
++        verdicts = [mon.observe(self.sample(11+k), .05, True, 0.) for k in range(n)]
++        self.assertNotIn('TRACK', verdicts)
++        self.assertEqual(verdicts[-1], 'CAPTURE')
++
++    def test_a_reference_that_contradicts_the_value_just_measured_is_not_accepted(self):
++        mon = PowerMonitor(CFG)
++        mon.reset(prior=.1)
++        r = CFG['reference_samples']
++        self.assertEqual([mon.observe(self.sample(k), .05, True, 0.) for k in range(r)], [None]*(r-1)+['CAPTURE'])
++        self.assertEqual(mon.ref, .1)
++
++    def test_memory_keeps_the_start_point_and_tells_load_states_apart(self):
++        size = CFG['memory_size']
++        mem = FrequencyMemory(CFG)
++        mem.remember(900000., .17, 2142., 1.1, 200.)
++        for k in range(size+2):
++            mem.remember(850000.+1000*k, .1, 2000., 1., 200.)
++        self.assertEqual(len(mem.items), size+1)
++        self.assertEqual(mem.items[-1][:2], (900000., .17))
++        f = 850000.+1000*(size+1)
++        mem.remember(f, .05, 2000., 1., 200.)
++        self.assertEqual(sum(1 for it in mem.items if it[0] == f), 2)
++        mem.remember(f, .0501, 2000., 1., 200.)
++        self.assertEqual(sum(1 for it in mem.items if it[0] == f), 2)
++
++    def test_headroom_map_is_dropped_once_it_disagrees(self):
++        h = HeadroomMap()
++        h.replace([(850000., 1.), (900000., 1.2)])
++        self.assertAlmostEqual(h.predict(875000.), 1.1)
++        self.assertIsNone(h.predict(950000.))
++        h.check(875000., 1.11, .1)
++        self.assertIsNotNone(h.predict(875000.))
++        h.check(875000., .9, .1)
++        self.assertIsNone(h.predict(875000.))
++
++    def test_failed_captures_use_the_scan_budget_and_reach_the_latch(self):
++        e = self.engine([BASE, 'CASE_FS_M5', BASE], **V2)
++
++        def failing(io, trusted, width, memory=(), noise=0.):
++            io.execute(880000, CFG['capture_scan_amplitude'], 'FORCED_FAILED_CAPTURE_POINT', 1500)
++            return CaptureResult(False, None, 'FORCED', 'SEARCH_FAILED')
++        with patch('controllers.capture', side_effect=failing):
++            run_policy(Executor(e), 'PHASE_FEEDBACK', 0.)
++        starts = [x for x in e.events if x['event'] == 'SCAN_ATTEMPT_START']
++        failures = [x for x in e.events if x['event'] == 'SCAN_FAILURE']
++        self.assertEqual(len(failures), CFG['failed_scan_max_retries']+1)
++        self.assertTrue(all(x['procedure'] == 'CAPTURE' and x['budget_class'] == 'search' for x in failures))
++        for f, s in zip(failures, starts[1:]):
++            self.assertGreaterEqual(s['time_us']-f['time_us'], CFG['failed_scan_retry_us'])
++        self.assertTrue(any(x['event'] == 'SCAN_RETRIES_EXHAUSTED' for x in e.events))
++        after = [r for r in e.rows if r['start_us'] >= failures[0]['time_us']]
++        self.assertTrue(all(r['applied_amplitude'] <= CFG['capture_scan_amplitude']+1e-12 for r in after))
++        self.assertTrue(any(r['kind'] == 'FAILED_SCAN_LATCHED_HOLD' for r in after))
++        self.assertEqual(len({x['trusted_frequency_unchanged_Hz'] for x in failures}), 1)
++        _, overall = evaluate(e.rows, e.events, e.cfg, self.refs)
++        self.assertEqual(overall['scan_failures_search'], len(failures))
++
++
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

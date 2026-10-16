@@ -20,6 +20,8 @@
   4. 源幅度标定到 0.9 MHz、a=1 时换能器端 100 Vpp 并冻结。
   5. 候选配置：电流软/硬限 4.5/5.0 mA，作用于换能器端口——这只是用户「5 mA 上限」的一种测点解释；
      按功放输出端解释，本候选在设计点的功放电流为 45.14 mA rms，不满足。相位反馈恢复门控打开。
+     〔补充 2026-10-16，review/27〕P4 起配置里有 nominal_peak_width_Hz（设计点有载半功率宽度），
+     候选取本候选自己的值（同式推导，86872 Hz）；其余新增项随默认配置继承。
 
 只读 --root；--write 只写 <副本>/candidates/synthetic_q13p8_3mA/ 下三个文件（README.md 手写，不由本脚本生成），
 拒绝写原目录、workspace/、outputs/。--check 重新推导并与副本里的文件逐值比较。
@@ -128,11 +130,38 @@ def derive(root: pathlib.Path) -> tuple[dict, dict, dict]:
                    Cm_pF=bvd.cm * 1e12, L_match_uH=dm['l_active_H'] * 1e6, C_match_pF=dm['c_active_F'] * 1e12,
                    network_q=dm['network_q'], iterations=dm['iterations'], a1_Vrms=a1,
                    V_Vpp=s('vport_vpp'), I_mA=s('iport_irms_A') * 1e3, P_mW=s('p_rm_W') * 1e3,
-                   amplifier_mA=i_amp * 1e3)
+                   amplifier_mA=i_amp * 1e3,
+                   loaded_width_Hz=loaded_width(model, probe, a1))
     return design, cal, summary
 
 
-def candidate_config(default_cfg: dict) -> dict:
+def loaded_width(model, scenario, a1) -> float:
+    """设计点的有载半功率宽度：a=1 时 P_Rm(f) 的半功率点间距（1 Hz 网格、交点线性插值）。
+
+    〔补充 2026-10-16，review/27〕P4 起配置项 nominal_peak_width_Hz 取此值（四舍五入到 1 Hz）：
+    控制器在第一次捕获测得峰宽之前，按它定点驻留、探针偏移与步长。默认配置同式得 2142 Hz。
+    """
+    import numpy as np
+    saved = model.SOURCE_A1_VRMS
+    try:
+        model.SOURCE_A1_VRMS = a1
+        f = np.arange(600000.0, 1200000.0, 1.0)
+        p = model.response(f, scenario, 1.0)['p_rm_W']
+    finally:
+        model.SOURCE_A1_VRMS = saved
+    j = int(np.argmax(p))
+    half = p[j] / 2
+    lo, hi = j, j
+    while p[lo] > half:
+        lo -= 1
+    while p[hi] > half:
+        hi += 1
+    left = f[lo] + (half - p[lo]) / (p[lo + 1] - p[lo])
+    right = f[hi] - (half - p[hi]) / (p[hi - 1] - p[hi])
+    return float(right - left)
+
+
+def candidate_config(default_cfg: dict, width_Hz: float | None = None) -> dict:
     cfg = dict(default_cfg)
     cfg.update({
         'version': 'plan-three-strategy-v1-candidate-synthetic-q13p8-3mA',
@@ -149,6 +178,8 @@ def candidate_config(default_cfg: dict) -> dict:
         'current_hard_Arms': 0.005,
         'phase_centre_recovery_gate': True,
     })
+    if 'nominal_peak_width_Hz' in cfg:          # P4 及以后的配置才有此项
+        cfg['nominal_peak_width_Hz'] = round(width_Hz)
     return cfg
 
 
@@ -170,7 +201,8 @@ def main():
     if {'workspace', 'outputs'} & set(dest.parts):
         raise SystemExit(f'拒绝写入 workspace/ 或 outputs/：{dest}')
     design, cal, summary = derive(root)
-    cfg = candidate_config(json.loads((dest / 'config.json').read_text(encoding='utf-8')))
+    cfg = candidate_config(json.loads((dest / 'config.json').read_text(encoding='utf-8')),
+                           summary['loaded_width_Hz'])
     for key, value in summary.items():
         print(f'{key:>12} = {value!r}')
     out = dest / CANDIDATE_DIR

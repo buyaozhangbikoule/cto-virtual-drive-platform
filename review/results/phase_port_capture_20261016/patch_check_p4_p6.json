@@ -1,0 +1,79 @@
+{
+  "stages": {
+    "p3": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 54 tests in 0.722s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 88,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    },
+    "p4": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 78 tests in 2.066s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 117,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    },
+    "p5": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 84 tests in 3.057s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    },
+    "p6": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 85 tests in 2.576s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    }
+  },
+  "timelines": {
+    "default": {
+      "p4_original_three_equal_p3": true,
+      "p5_original_three_equal_p3": true,
+      "p6_fixed_and_periodic_scan_equal_p3": true,
+      "p6_capture_po_equals_p5": true,
+      "p6_gain_v1_phase_equals_p3_phase": true,
+      "p6_phase_feedback_changed": true
+    },
+    "candidate": {
+      "p4_original_three_equal_p3": true,
+      "p5_original_three_equal_p3": true,
+      "p6_fixed_and_periodic_scan_equal_p3": true,
+      "p6_capture_po_equals_p5": true,
+      "p6_gain_v1_phase_equals_p3_phase": true,
+      "p6_phase_feedback_changed": true
+    }
+  },
+  "ok": true
+}

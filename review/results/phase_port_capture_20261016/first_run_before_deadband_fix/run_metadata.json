@@ -1,0 +1,38 @@
+{
+  "script": "review/phase_port_capture_study.py",
+  "root": "/tmp/claude-0/-home-user-cto-virtual-drive-platform/bc293afb-98ff-55d3-b088-2c39b9b0faae/scratchpad/b4/wt_p6/integrated/CTO_virtual_drive_platform_v2_1/current/unified",
+  "jobs": 186,
+  "suites": 6560,
+  "seconds": 184.5,
+  "held_out": {
+    "seed": 20261016,
+    "n": 40,
+    "generator": "Random combined loads around the configured baseline (declared before running).\n\n    fs ×U(0.95,1.02); C0 ×U(0.90,1.30); Rm ×U(1.00,1.50); Qm ×U(0.625,1.25), Lm/Cm re-derived at the new fs;\n    Lmatch ×U(0.97,1.08); Cmatch ×U(0.92,1.03); inductor Q U(20,100); Rs ×U(1.00,1.20). Independent draws."
+  },
+  "noise": {
+    "sigmas": [
+      0.005,
+      0.02
+    ],
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "model": "P, Vpp, Irms, Re Zin, Im Zin x (1+sigma N); input and port phase + sigma rad N"
+  },
+  "self_check": {
+    "checked": 560,
+    "problems": [],
+    "ok": true
+  },
+  "python": "3.11.15 (main, Mar  3 2026, 09:26:23) [GCC 13.3.0]",
+  "numpy": "2.4.6"
+}
