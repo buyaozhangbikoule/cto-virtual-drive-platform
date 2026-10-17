@@ -1,0 +1,139 @@
+{
+  "rod_L_m": 0.0017467,
+  "f0_Hz": 900000.0,
+  "q_l": 100.0,
+  "rows": [
+    {
+      "cable_pF": 0.0,
+      "f_Hz": 882000.0,
+      "detune": -0.02,
+      "port_mA": 1.7355039385039854,
+      "amp_mA": 1.7355039385039854,
+      "amp_compensated_mA": 1.7355039385039854,
+      "port_Vpp_max_if_amp_limited": 100.0,
+      "comp_inductor_mH": null,
+      "inductor_loss_mW": 0.0
+    },
+    {
+      "cable_pF": 0.0,
+      "f_Hz": 900000.0,
+      "detune": 0.0,
+      "port_mA": 3.8452947354223723,
+      "amp_mA": 3.8452947354223723,
+      "amp_compensated_mA": 3.8452947354223723,
+      "port_Vpp_max_if_amp_limited": 100.0,
+      "comp_inductor_mH": null,
+      "inductor_loss_mW": 0.0
+    },
+    {
+      "cable_pF": 0.0,
+      "f_Hz": 918000.0,
+      "detune": 0.02,
+      "port_mA": 1.5149469222306753,
+      "amp_mA": 1.5149469222306753,
+      "amp_compensated_mA": 1.5149469222306753,
+      "port_Vpp_max_if_amp_limited": 100.0,
+      "comp_inductor_mH": null,
+      "inductor_loss_mW": 0.0
+    },
+    {
+      "cable_pF": 30.0,
+      "f_Hz": 882000.0,
+      "detune": -0.02,
+      "port_mA": 1.7355039385039854,
+      "amp_mA": 7.511776504508566,
+      "amp_compensated_mA": 1.5413489242751683,
+      "port_Vpp_max_if_amp_limited": 66.56215073756523,
+      "comp_inductor_mH": 1.0423990086660266,
+      "inductor_loss_mW": 2.1205750411731095
+    },
+    {
+      "cable_pF": 30.0,
+      "f_Hz": 900000.0,
+      "detune": 0.0,
+      "port_mA": 3.8452947354223723,
+      "amp_mA": 7.278183697813501,
+      "amp_compensated_mA": 3.9052057746236626,
+      "port_Vpp_max_if_amp_limited": 68.6984584011268,
+      "comp_inductor_mH": 1.0423990086660266,
+      "inductor_loss_mW": 2.1205750411731095
+    },
+    {
+      "cable_pF": 30.0,
+      "f_Hz": 918000.0,
+      "detune": 0.02,
+      "port_mA": 1.5149469222306753,
+      "amp_mA": 4.836343226909128,
+      "amp_compensated_mA": 1.3441752125023054,
+      "port_Vpp_max_if_amp_limited": 100.0,
+      "comp_inductor_mH": 1.0423990086660266,
+      "inductor_loss_mW": 2.1205750411731095
+    },
+    {
+      "cable_pF": 100.0,
+      "f_Hz": 882000.0,
+      "detune": -0.02,
+      "port_mA": 1.7355039385039854,
+      "amp_mA": 21.20812162965561,
+      "amp_compensated_mA": 1.1730719666433367,
+      "port_Vpp_max_if_amp_limited": 23.575873843577124,
+      "comp_inductor_mH": 0.312719702599808,
+      "inductor_loss_mW": 7.068583470577032
+    },
+    {
+      "cable_pF": 100.0,
+      "f_Hz": 900000.0,
+      "detune": 0.0,
+      "port_mA": 3.8452947354223723,
+      "amp_mA": 20.53959909125105,
+      "amp_compensated_mA": 4.045006023526713,
+      "port_Vpp_max_if_amp_limited": 24.343221003421515,
+      "comp_inductor_mH": 0.312719702599808,
+      "inductor_loss_mW": 7.068583470577032
+    },
+    {
+      "cable_pF": 100.0,
+      "f_Hz": 918000.0,
+      "detune": 0.02,
+      "port_mA": 1.5149469222306753,
+      "amp_mA": 19.071433447885216,
+      "amp_compensated_mA": 1.065115360681621,
+      "port_Vpp_max_if_amp_limited": 26.21722176082384,
+      "comp_inductor_mH": 0.312719702599808,
+      "inductor_loss_mW": 7.068583470577032
+    },
+    {
+      "cable_pF": 150.0,
+      "f_Hz": 882000.0,
+      "detune": -0.02,
+      "port_mA": 1.7355039385039854,
+      "amp_mA": 31.001422994055552,
+      "amp_compensated_mA": 1.0380946371264372,
+      "port_Vpp_max_if_amp_limited": 16.128291920531314,
+      "comp_inductor_mH": 0.20847980173320535,
+      "inductor_loss_mW": 10.602875205865548
+    },
+    {
+      "cable_pF": 150.0,
+      "f_Hz": 900000.0,
+      "detune": 0.0,
+      "port_mA": 3.8452947354223723,
+      "amp_mA": 30.417244847716518,
+      "amp_compensated_mA": 4.144869565835081,
+      "port_Vpp_max_if_amp_limited": 16.43804369867299,
+      "comp_inductor_mH": 0.20847980173320535,
+      "inductor_loss_mW": 10.602875205865548
+    },
+    {
+      "cable_pF": 150.0,
+      "f_Hz": 918000.0,
+      "detune": 0.02,
+      "port_mA": 1.5149469222306753,
+      "amp_mA": 29.263160240667283,
+      "amp_compensated_mA": 1.0268674000435347,
+      "port_Vpp_max_if_amp_limited": 17.08632956549735,
+      "comp_inductor_mH": 0.20847980173320535,
+      "inductor_loss_mW": 10.602875205865548
+    }
+  ]
+}
