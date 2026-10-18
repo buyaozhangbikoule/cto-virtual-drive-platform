@@ -1,0 +1,1316 @@
+{
+  "batch_id": "UNIFIED_20261018T002408_829457Z_01da8553",
+  "audit_pass": true,
+  "problems": [],
+  "manifest_files_verified": 385,
+  "timelines": 175,
+  "executed_rows": 34281,
+  "executed_actions": 34281,
+  "post_guard_hold_violation_rows": 0,
+  "pre_guard_hard_observations": 0,
+  "user_current_limit_recomputed": {
+    "value_Arms": 0.005,
+    "rows_above": 0,
+    "timelines_with_rows_above": 0,
+    "max_post_guard_current_mArms": 3.825975151396499
+  },
+  "max_pre_guard_voltage_Vpp": 100.53901102706016,
+  "max_post_guard_hold_voltage_Vpp": 100.53901102706016,
+  "max_energy_recompute_error_J": 5.551115123125783e-17,
+  "max_voltage_recompute_error_Vpp": 4.263256414560601e-14,
+  "max_current_recompute_error_Arms": 1.3010426069826053e-18,
+  "max_power_recompute_error_W": 9.71445146547012e-17,
+  "grid_reference_diagnostic_only": [
+    {
+      "case_id": "CASE_000_BASELINE",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_C0_P10",
+      "grid_100Hz_power_W": 0.1350351376438648,
+      "grid_10Hz_power_W": 0.13503619920151005,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007861343823467593
+    },
+    {
+      "case_id": "CASE_C0_P20",
+      "grid_100Hz_power_W": 0.1350351363628341,
+      "grid_10Hz_power_W": 0.13503619798778396,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007861842320933121
+    },
+    {
+      "case_id": "CASE_C0_P30",
+      "grid_100Hz_power_W": 0.13503513497750508,
+      "grid_10Hz_power_W": 0.13503619666975414,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007862340784425825
+    },
+    {
+      "case_id": "CASE_RM_P15",
+      "grid_100Hz_power_W": 0.11758683200091422,
+      "grid_10Hz_power_W": 0.11758753190919798,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0005952267544406808
+    },
+    {
+      "case_id": "CASE_RM_P30",
+      "grid_100Hz_power_W": 0.10413156975697568,
+      "grid_10Hz_power_W": 0.10413205531650069,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0004662942526767466
+    },
+    {
+      "case_id": "CASE_RM_P50",
+      "grid_100Hz_power_W": 0.09034713032903986,
+      "grid_10Hz_power_W": 0.09034744710915367,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.00035062554024634096
+    },
+    {
+      "case_id": "CASE_FS_M1",
+      "grid_100Hz_power_W": 0.13503522830413606,
+      "grid_10Hz_power_W": 0.13503621681343697,
+      "grid_10Hz_frequency_Hz": 891120.0,
+      "relative_increase_pct": 0.0007320380861486342
+    },
+    {
+      "case_id": "CASE_FS_M3",
+      "grid_100Hz_power_W": 0.13503540078534831,
+      "grid_10Hz_power_W": 0.13503623353484911,
+      "grid_10Hz_frequency_Hz": 873120.0,
+      "relative_increase_pct": 0.0006166897687176487
+    },
+    {
+      "case_id": "CASE_FS_M5",
+      "grid_100Hz_power_W": 0.13503556330333827,
+      "grid_10Hz_power_W": 0.1350362261634337,
+      "grid_10Hz_frequency_Hz": 855120.0,
+      "relative_increase_pct": 0.0004908781651380423
+    },
+    {
+      "case_id": "CASE_LM_P5",
+      "grid_100Hz_power_W": 0.13503421960853484,
+      "grid_10Hz_power_W": 0.13503623048138744,
+      "grid_10Hz_frequency_Hz": 878430.0,
+      "relative_increase_pct": 0.001489157976708455
+    },
+    {
+      "case_id": "CASE_LM_P10",
+      "grid_100Hz_power_W": 0.13503350509098522,
+      "grid_10Hz_power_W": 0.13503618261977932,
+      "grid_10Hz_frequency_Hz": 858230.0,
+      "relative_increase_pct": 0.00198286254384783
+    },
+    {
+      "case_id": "CASE_LM_P20",
+      "grid_100Hz_power_W": 0.13503621422526976,
+      "grid_10Hz_power_W": 0.13503621422526976,
+      "grid_10Hz_frequency_Hz": 821700.0,
+      "relative_increase_pct": 0.0
+    },
+    {
+      "case_id": "CASE_CM_P5",
+      "grid_100Hz_power_W": 0.13503440683459064,
+      "grid_10Hz_power_W": 0.13503623080500712,
+      "grid_10Hz_frequency_Hz": 878430.0,
+      "relative_increase_pct": 0.0013507449391880755
+    },
+    {
+      "case_id": "CASE_CM_P10",
+      "grid_100Hz_power_W": 0.13503397863034458,
+      "grid_10Hz_power_W": 0.13503619155949673,
+      "grid_10Hz_frequency_Hz": 858230.0,
+      "relative_increase_pct": 0.001638794305391933
+    },
+    {
+      "case_id": "CASE_CM_P20",
+      "grid_100Hz_power_W": 0.13503622046654332,
+      "grid_10Hz_power_W": 0.13503622046654332,
+      "grid_10Hz_frequency_Hz": 821700.0,
+      "relative_increase_pct": 0.0
+    },
+    {
+      "case_id": "CASE_RS_P5",
+      "grid_100Hz_power_W": 0.13496262116135757,
+      "grid_10Hz_power_W": 0.13496368158085337,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007857134713740166
+    },
+    {
+      "case_id": "CASE_RS_P10",
+      "grid_100Hz_power_W": 0.13489016187254657,
+      "grid_10Hz_power_W": 0.1348912212259441,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007853451896133734
+    },
+    {
+      "case_id": "CASE_RS_P20",
+      "grid_100Hz_power_W": 0.1347454181559133,
+      "grid_10Hz_power_W": 0.13474647539128615,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007846169371328315
+    },
+    {
+      "case_id": "CASE_LMATCH_P2",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_LMATCH_P5",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_LMATCH_P10",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_CMATCH_M2",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_CMATCH_M5",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_CMATCH_M10",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_QL_100",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_QL_50",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_QL_20",
+      "grid_100Hz_power_W": 0.13503513882059734,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845290252882
+    },
+    {
+      "case_id": "CASE_QM_500",
+      "grid_100Hz_power_W": 0.13503580584132582,
+      "grid_10Hz_power_W": 0.13503622064585205,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0003071811388366541
+    },
+    {
+      "case_id": "CASE_QM_800",
+      "grid_100Hz_power_W": 0.13503513882059745,
+      "grid_10Hz_power_W": 0.13503620031093236,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.0007860845289364704
+    },
+    {
+      "case_id": "CASE_QM_1000",
+      "grid_100Hz_power_W": 0.13503452319346532,
+      "grid_10Hz_power_W": 0.1350361815539279,
+      "grid_10Hz_frequency_Hz": 900120.0,
+      "relative_increase_pct": 0.00122810109841609
+    },
+    {
+      "case_id": "CASE_COMBINED_LOW",
+      "grid_100Hz_power_W": 0.11753172399805777,
+      "grid_10Hz_power_W": 0.11753258521144505,
+      "grid_10Hz_frequency_Hz": 891120.0,
+      "relative_increase_pct": 0.0007327497274722816
+    },
+    {
+      "case_id": "CASE_COMBINED_MEDIUM",
+      "grid_100Hz_power_W": 0.10404530325702246,
+      "grid_10Hz_power_W": 0.10404594601640632,
+      "grid_10Hz_frequency_Hz": 873120.0,
+      "relative_increase_pct": 0.0006177687639219442
+    },
+    {
+      "case_id": "CASE_COMBINED_HIGH",
+      "grid_100Hz_power_W": 0.09021747441383884,
+      "grid_10Hz_power_W": 0.09021791833660117,
+      "grid_10Hz_frequency_Hz": 855120.0,
+      "relative_increase_pct": 0.0004920585121803711
+    }
+  ],
+  "timeline_recomputations": [
+    {
+      "suite": "COVER_CASE_000_BASELINE",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_000_BASELINE",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_000_BASELINE",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_000_BASELINE",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_000_BASELINE",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_C0_P10",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32401790811238573
+    },
+    {
+      "suite": "COVER_CASE_C0_P10",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.3240132890721377
+    },
+    {
+      "suite": "COVER_CASE_C0_P10",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.32401790811238573
+    },
+    {
+      "suite": "COVER_CASE_C0_P10",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625373989572516
+    },
+    {
+      "suite": "COVER_CASE_C0_P10",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 124,
+      "energy_J_recomputed": 0.3240264624347309
+    },
+    {
+      "suite": "COVER_CASE_C0_P20",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32401790681865383
+    },
+    {
+      "suite": "COVER_CASE_C0_P20",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.3240132877784059
+    },
+    {
+      "suite": "COVER_CASE_C0_P20",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.32401790681865383
+    },
+    {
+      "suite": "COVER_CASE_C0_P20",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625373924440608
+    },
+    {
+      "suite": "COVER_CASE_C0_P20",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 128,
+      "energy_J_recomputed": 0.3240337217499852
+    },
+    {
+      "suite": "COVER_CASE_C0_P30",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32401790544151876
+    },
+    {
+      "suite": "COVER_CASE_C0_P30",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.3240132864012708
+    },
+    {
+      "suite": "COVER_CASE_C0_P30",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.32401790544151876
+    },
+    {
+      "suite": "COVER_CASE_C0_P30",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625373853997562
+    },
+    {
+      "suite": "COVER_CASE_C0_P30",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 128,
+      "energy_J_recomputed": 0.32403914196207595
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M10",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M10",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M10",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M10",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M10",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M2",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M2",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M2",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M2",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M2",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M5",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M5",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M5",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M5",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_CMATCH_M5",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_CM_P10",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.31887734525162537
+    },
+    {
+      "suite": "COVER_CASE_CM_P10",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.3047253619149776
+    },
+    {
+      "suite": "COVER_CASE_CM_P10",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.22051739420662736
+    },
+    {
+      "suite": "COVER_CASE_CM_P10",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.15294941875762252
+    },
+    {
+      "suite": "COVER_CASE_CM_P10",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.30493374611257723
+    },
+    {
+      "suite": "COVER_CASE_CM_P20",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.31872558883790836
+    },
+    {
+      "suite": "COVER_CASE_CM_P20",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.30413763829761165
+    },
+    {
+      "suite": "COVER_CASE_CM_P20",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.21738909646999366
+    },
+    {
+      "suite": "COVER_CASE_CM_P20",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 368,
+      "energy_J_recomputed": 0.14364523364522414
+    },
+    {
+      "suite": "COVER_CASE_CM_P20",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.30414827120307303
+    },
+    {
+      "suite": "COVER_CASE_CM_P5",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.31938666218475936
+    },
+    {
+      "suite": "COVER_CASE_CM_P5",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.306316866167327
+    },
+    {
+      "suite": "COVER_CASE_CM_P5",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.23087233591468914
+    },
+    {
+      "suite": "COVER_CASE_CM_P5",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.15914621603740225
+    },
+    {
+      "suite": "COVER_CASE_CM_P5",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.30795163768846623
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_HIGH",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 177,
+      "energy_J_recomputed": 0.2813780617076087
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_HIGH",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.272622381191357
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_HIGH",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.21838920037059667
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_HIGH",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.1382779306527345
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_HIGH",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.27273259666913297
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_LOW",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3073326212087096
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_LOW",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.29982426336606827
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_LOW",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.2607838846730032
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_LOW",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.17422559390099338
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_LOW",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 194,
+      "energy_J_recomputed": 0.304384646504801
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_MEDIUM",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.29355757845344743
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_MEDIUM",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.28340619959998165
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_MEDIUM",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.22337534423854274
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_MEDIUM",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.14598512153523951
+    },
+    {
+      "suite": "COVER_CASE_COMBINED_MEDIUM",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.28412233075029075
+    },
+    {
+      "suite": "COVER_CASE_FS_M1",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3211914909226319
+    },
+    {
+      "suite": "COVER_CASE_FS_M1",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.312957452352953
+    },
+    {
+      "suite": "COVER_CASE_FS_M1",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.26747676142193016
+    },
+    {
+      "suite": "COVER_CASE_FS_M1",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.18130978810534026
+    },
+    {
+      "suite": "COVER_CASE_FS_M1",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 144,
+      "energy_J_recomputed": 0.31975639713085385
+    },
+    {
+      "suite": "COVER_CASE_FS_M3",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3191110690052417
+    },
+    {
+      "suite": "COVER_CASE_FS_M3",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.30568516294474884
+    },
+    {
+      "suite": "COVER_CASE_FS_M3",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.2255829638897566
+    },
+    {
+      "suite": "COVER_CASE_FS_M3",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.15616778888746638
+    },
+    {
+      "suite": "COVER_CASE_FS_M3",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.3065238832004465
+    },
+    {
+      "suite": "COVER_CASE_FS_M5",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.31861630855837003
+    },
+    {
+      "suite": "COVER_CASE_FS_M5",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.3046411540029242
+    },
+    {
+      "suite": "COVER_CASE_FS_M5",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.21957757785366122
+    },
+    {
+      "suite": "COVER_CASE_FS_M5",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.15250413135353358
+    },
+    {
+      "suite": "COVER_CASE_FS_M5",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.3047863084785173
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P10",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P10",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P10",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P10",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P10",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P2",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P2",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P2",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P2",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P2",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P5",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P5",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P5",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P5",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_LMATCH_P5",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_LM_P10",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.31822117543914047
+    },
+    {
+      "suite": "COVER_CASE_LM_P10",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.30461648726436974
+    },
+    {
+      "suite": "COVER_CASE_LM_P10",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.2197626038123523
+    },
+    {
+      "suite": "COVER_CASE_LM_P10",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.15272606924686577
+    },
+    {
+      "suite": "COVER_CASE_LM_P10",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.30479208341059116
+    },
+    {
+      "suite": "COVER_CASE_LM_P20",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3164252425264285
+    },
+    {
+      "suite": "COVER_CASE_LM_P20",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.30400891945683256
+    },
+    {
+      "suite": "COVER_CASE_LM_P20",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.2169720382908235
+    },
+    {
+      "suite": "COVER_CASE_LM_P20",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 368,
+      "energy_J_recomputed": 0.14346429486305684
+    },
+    {
+      "suite": "COVER_CASE_LM_P20",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.30401031011704416
+    },
+    {
+      "suite": "COVER_CASE_LM_P5",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3193082411259371
+    },
+    {
+      "suite": "COVER_CASE_LM_P5",
+      "strategy": "CAPTURE_PO",
+      "rows": 189,
+      "energy_J_recomputed": 0.3061611188570421
+    },
+    {
+      "suite": "COVER_CASE_LM_P5",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.22966536986445685
+    },
+    {
+      "suite": "COVER_CASE_LM_P5",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.15882897247701167
+    },
+    {
+      "suite": "COVER_CASE_LM_P5",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 187,
+      "energy_J_recomputed": 0.30769163330095983
+    },
+    {
+      "suite": "COVER_CASE_QL_100",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_100",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_QL_100",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_100",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_QL_100",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_20",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_20",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_QL_20",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_20",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_QL_20",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_50",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_50",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_QL_50",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QL_50",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21625374049393267
+    },
+    {
+      "suite": "COVER_CASE_QL_50",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QM_1000",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240049674941331
+    },
+    {
+      "suite": "COVER_CASE_QM_1000",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32400034845388515
+    },
+    {
+      "suite": "COVER_CASE_QM_1000",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240049674941331
+    },
+    {
+      "suite": "COVER_CASE_QM_1000",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21615991253671257
+    },
+    {
+      "suite": "COVER_CASE_QM_1000",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 124,
+      "energy_J_recomputed": 0.32401476604764406
+    },
+    {
+      "suite": "COVER_CASE_QM_500",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240319334864833
+    },
+    {
+      "suite": "COVER_CASE_QM_500",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32402731444623534
+    },
+    {
+      "suite": "COVER_CASE_QM_500",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240319334864833
+    },
+    {
+      "suite": "COVER_CASE_QM_500",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21645649487785767
+    },
+    {
+      "suite": "COVER_CASE_QM_500",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 126,
+      "energy_J_recomputed": 0.3240193219905734
+    },
+    {
+      "suite": "COVER_CASE_QM_800",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QM_800",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.32401329028246717
+    },
+    {
+      "suite": "COVER_CASE_QM_800",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_QM_800",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.2162537404939329
+    },
+    {
+      "suite": "COVER_CASE_QM_800",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3240179093227151
+    },
+    {
+      "suite": "COVER_CASE_RM_P15",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 132,
+      "energy_J_recomputed": 0.3100621861940982
+    },
+    {
+      "suite": "COVER_CASE_RM_P15",
+      "strategy": "CAPTURE_PO",
+      "rows": 200,
+      "energy_J_recomputed": 0.30920491288842916
+    },
+    {
+      "suite": "COVER_CASE_RM_P15",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3100668052343464
+    },
+    {
+      "suite": "COVER_CASE_RM_P15",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.20741992180890947
+    },
+    {
+      "suite": "COVER_CASE_RM_P15",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 180,
+      "energy_J_recomputed": 0.30922022817945555
+    },
+    {
+      "suite": "COVER_CASE_RM_P30",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 132,
+      "energy_J_recomputed": 0.29930244730716193
+    },
+    {
+      "suite": "COVER_CASE_RM_P30",
+      "strategy": "CAPTURE_PO",
+      "rows": 200,
+      "energy_J_recomputed": 0.2985591112754701
+    },
+    {
+      "suite": "COVER_CASE_RM_P30",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.2993070663474101
+    },
+    {
+      "suite": "COVER_CASE_RM_P30",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.20060274155202973
+    },
+    {
+      "suite": "COVER_CASE_RM_P30",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 184,
+      "energy_J_recomputed": 0.29857893049515616
+    },
+    {
+      "suite": "COVER_CASE_RM_P50",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 132,
+      "energy_J_recomputed": 0.288278416377386
+    },
+    {
+      "suite": "COVER_CASE_RM_P50",
+      "strategy": "CAPTURE_PO",
+      "rows": 200,
+      "energy_J_recomputed": 0.2876496806169985
+    },
+    {
+      "suite": "COVER_CASE_RM_P50",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.2882830354176341
+    },
+    {
+      "suite": "COVER_CASE_RM_P50",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.1936139015643687
+    },
+    {
+      "suite": "COVER_CASE_RM_P50",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 184,
+      "energy_J_recomputed": 0.28767020156482404
+    },
+    {
+      "suite": "COVER_CASE_RS_P10",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32390197471231785
+    },
+    {
+      "suite": "COVER_CASE_RS_P10",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.3238973556720699
+    },
+    {
+      "suite": "COVER_CASE_RS_P10",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.32390197471231785
+    },
+    {
+      "suite": "COVER_CASE_RS_P10",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.2161801420658389
+    },
+    {
+      "suite": "COVER_CASE_RS_P10",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32390197471231785
+    },
+    {
+      "suite": "COVER_CASE_RS_P20",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3237862265085051
+    },
+    {
+      "suite": "COVER_CASE_RS_P20",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.3237816074682571
+    },
+    {
+      "suite": "COVER_CASE_RS_P20",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.3237862265085051
+    },
+    {
+      "suite": "COVER_CASE_RS_P20",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21610666180247734
+    },
+    {
+      "suite": "COVER_CASE_RS_P20",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.3237862265085051
+    },
+    {
+      "suite": "COVER_CASE_RS_P5",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32395991869171026
+    },
+    {
+      "suite": "COVER_CASE_RS_P5",
+      "strategy": "CAPTURE_PO",
+      "rows": 132,
+      "energy_J_recomputed": 0.3239552996514623
+    },
+    {
+      "suite": "COVER_CASE_RS_P5",
+      "strategy": "FIXED",
+      "rows": 120,
+      "energy_J_recomputed": 0.32395991869171026
+    },
+    {
+      "suite": "COVER_CASE_RS_P5",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 336,
+      "energy_J_recomputed": 0.21621692649346846
+    },
+    {
+      "suite": "COVER_CASE_RS_P5",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 120,
+      "energy_J_recomputed": 0.32395991869171026
+    },
+    {
+      "suite": "HISTORICAL_12",
+      "strategy": "ADMITTANCE_TRACK",
+      "rows": 539,
+      "energy_J_recomputed": 1.199413592065898
+    },
+    {
+      "suite": "HISTORICAL_12",
+      "strategy": "CAPTURE_PO",
+      "rows": 734,
+      "energy_J_recomputed": 1.1526910308160097
+    },
+    {
+      "suite": "HISTORICAL_12",
+      "strategy": "FIXED",
+      "rows": 480,
+      "energy_J_recomputed": 0.8365930351987959
+    },
+    {
+      "suite": "HISTORICAL_12",
+      "strategy": "PERIODIC_SCAN",
+      "rows": 1570,
+      "energy_J_recomputed": 0.5629534835607293
+    },
+    {
+      "suite": "HISTORICAL_12",
+      "strategy": "PHASE_FEEDBACK",
+      "rows": 775,
+      "energy_J_recomputed": 1.1529569056913733
+    }
+  ],
+  "scope": "saved-log, analytic-model and statistics audit; not independent LTspice/hardware proof"
+}

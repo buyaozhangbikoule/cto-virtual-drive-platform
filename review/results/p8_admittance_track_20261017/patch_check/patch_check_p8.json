@@ -1,0 +1,80 @@
+{
+  "stages": {
+    "p7": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 90 tests in 3.181s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 124,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      }
+    },
+    "p8": {
+      "unified_tests": {
+        "ok": true,
+        "ran": "Ran 110 tests in 4.304s"
+      },
+      "registry": {
+        "ok": true,
+        "summary": "{\n  \"ok\": true,\n  \"parameters\": 143,\n  \"issues\": []\n}"
+      },
+      "candidate_derivation": {
+        "ok": true,
+        "summary": "复核：一致"
+      },
+      "physical_candidate_files": {
+        "ok": true,
+        "summary": "{\"checked\": 3, \"mismatches\": []}"
+      },
+      "strategy_sets": {
+        "ok": true,
+        "formal": [
+          "FIXED",
+          "PERIODIC_SCAN",
+          "PHASE_FEEDBACK",
+          "CAPTURE_PO"
+        ],
+        "extra": [
+          "ADMITTANCE_TRACK"
+        ]
+      },
+      "admittance_track_runs": {
+        "ok": true,
+        "runs": {
+          "config.json": {
+            "duration_us": 9600000,
+            "hard_rows": 0
+          },
+          "candidates/synthetic_q13p8_3mA/config.json": {
+            "duration_us": 9600000,
+            "hard_rows": 0
+          },
+          "candidates/physical_apc880_d05_L1747/config.json": {
+            "duration_us": 9600000,
+            "hard_rows": 0
+          }
+        }
+      }
+    }
+  },
+  "timelines": {
+    "default": {
+      "p8_fixed_equals_p7": true,
+      "p8_periodic_scan_equals_p7": true,
+      "p8_phase_feedback_equals_p7": true,
+      "p8_capture_po_equals_p7": true
+    },
+    "candidate": {
+      "p8_fixed_equals_p7": true,
+      "p8_periodic_scan_equals_p7": true,
+      "p8_phase_feedback_equals_p7": true,
+      "p8_capture_po_equals_p7": true
+    }
+  },
+  "ok": true
+}

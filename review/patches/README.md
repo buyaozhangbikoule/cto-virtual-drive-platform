@@ -13,6 +13,7 @@
 | `platform_v2_1.p5_capture_po_fourth_strategy.patch` | 第四种正式策略 CAPTURE_PO（捕获＋P&O 跟踪、停驻、记忆召回）；平台正式策略集合改为四个（证据核对、网页、测试） | **待合入，第 5 个**（在 P4 之上） | review/27；原三种策略逐字节不变；只有三种策略的旧批次判为不完整，合入后须 `run_project.py validate` |
 | `platform_v2_1.p6_formal_phase_port_relearn.patch` | 只改配置：正式 PHASE_FEEDBACK 改为换能器端相位＋捕获后重学；原定律可由配置选回 | **待合入，第 6 个，可不打**（在 P5 之上） | review/27；FIXED、PERIODIC_SCAN 与 P3 相同，CAPTURE_PO 与 P5 相同，选回原定律时 PHASE_FEEDBACK 与 P3 相同 |
 | `platform_v2_1.p7_user_current_limit_transducer_port.patch` | 用户 5 mA 上限的测点在换能器端：配置记录 `user_current_limit_Arms`，报告逐策略核对与 `user_current_limit_check.csv`，复核逐条重数，网页上限线，来源登记改绑；不改限值与控制行为 | **待合入，第 7 个**（在 P6 之上；不打 P6 时可直接打在 P5 之上） | review/28；两种基线四种策略 2×140 条时序与 P6（或 P5）逐字节相同 |
+| `platform_v2_1.p8_direct_drive_current_points_admittance_track.patch` | 直接驱动（无匹配网络或只有并联电容）与功放输出端电流；电流限值测点配置项 `current_limit_points`（默认只限换能器端）；可选的物理候选 `candidates/physical_apc880_d05_L1747/`（APC 880 杆 D 0.5 mm、L 1.7467 mm，0.9 MHz，直接驱动，两处都限 4.5/5.0 mA）；非正式的第五种策略 ADMITTANCE_TRACK（`--extra-strategy`，不进正式集合与网页）；每段恢复时间指标；20 项新测试 | **待合入，第 8 个**（在 P7 之上，需要 P6） | review/32；两种基线四种正式策略 2×140 条时序与 P7 逐字节相同（review/check_p8_patch.py） |
 | `platform_v2_1.physical_baseline_3mA_phase_gate.patch` | 55fbe6e 的组合补丁：把 Q=13.8、3 mA 当成默认「物理基线」并改限值、加门控 | **已作废，勿应用** | review/25；审查意见与改正见 review/26 |
 
 sha256：
@@ -25,10 +26,11 @@ adb206ae06a2d964ae6d5f02677a3d090ba54fe1c30fd192a6c909ccded36af2  platform_v2_1.
 b92692df2a340f475899b491fbaed445a47d55a2aa1b46672934dac7eac41827  platform_v2_1.p5_capture_po_fourth_strategy.patch
 4bceb56333d5b32578542ca6e6074e9426778fc3753e6742ecaea4e260d7f88c  platform_v2_1.p6_formal_phase_port_relearn.patch
 d8e17ff6e69a8aedf28e8cfe15e95f0bb3e5a89709774593f2fe65c7ea6c8f2b  platform_v2_1.p7_user_current_limit_transducer_port.patch
+774ab237fd8fc8f69a24c722779b34bf0211b894762186751212f85a9ae7d0cc  platform_v2_1.p8_direct_drive_current_points_admittance_track.patch
 7d7c8f9e08862d49e59ca95452f040b42e6ed2200086add0497cf3ee5e88b2ed  platform_v2_1.physical_baseline_3mA_phase_gate.patch（作废）
 ```
 
-在仓库根目录按 P1→P2→P3→P4→P5→P6→P7 依次 `git apply`（P6 可不打，P7 可直接打在 P5 上），每步之后在 `integrated/CTO_virtual_drive_platform_v2_1/` 下运行
+在仓库根目录按 P1→P2→P3→P4→P5→P6→P7 依次 `git apply`（P6 可不打，P7 可直接打在 P5 上；〔补充 2026-10-17〕P8 打在 P7 之上，需要 P6），每步之后在 `integrated/CTO_virtual_drive_platform_v2_1/` 下运行
 `python run_project.py validate`，并把补丁拷进 `current/patches/`、在 `current/integration_sources.json` 追加来源与哈希。
 
 ## 早期补丁

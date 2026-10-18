@@ -1,0 +1,68 @@
+[
+ {
+  "control_tick_ms": 20.0,
+  "strategy": "CAPTURE_PO",
+  "target_settled": 39,
+  "target_segments": 39,
+  "needs_control": 18,
+  "sustained_95_median_ms": 91.0,
+  "sustained_95_max_ms": 91.084,
+  "sustained_95_missing": 0,
+  "historical_energy_pct": 94.11759816320473
+ },
+ {
+  "control_tick_ms": 20.0,
+  "strategy": "ADMITTANCE_TRACK",
+  "target_settled": 39,
+  "target_segments": 39,
+  "needs_control": 18,
+  "sustained_95_median_ms": 20.0,
+  "sustained_95_max_ms": 51.2,
+  "sustained_95_missing": 0,
+  "historical_energy_pct": 97.93251050945594
+ },
+ {
+  "control_tick_ms": 10.0,
+  "strategy": "CAPTURE_PO",
+  "target_settled": 39,
+  "target_segments": 39,
+  "needs_control": 18,
+  "sustained_95_median_ms": 51.0,
+  "sustained_95_max_ms": 51.084,
+  "sustained_95_missing": 0,
+  "historical_energy_pct": 96.88543013697522
+ },
+ {
+  "control_tick_ms": 10.0,
+  "strategy": "ADMITTANCE_TRACK",
+  "target_settled": 39,
+  "target_segments": 39,
+  "needs_control": 18,
+  "sustained_95_median_ms": 10.0,
+  "sustained_95_max_ms": 31.2,
+  "sustained_95_missing": 0,
+  "historical_energy_pct": 98.93258078755485
+ },
+ {
+  "control_tick_ms": 5.0,
+  "strategy": "CAPTURE_PO",
+  "target_settled": 39,
+  "target_segments": 39,
+  "needs_control": 18,
+  "sustained_95_median_ms": 31.0,
+  "sustained_95_max_ms": 31.084,
+  "sustained_95_missing": 0,
+  "historical_energy_pct": 98.2693461238581
+ },
+ {
+  "control_tick_ms": 5.0,
+  "strategy": "ADMITTANCE_TRACK",
+  "target_settled": 39,
+  "target_segments": 39,
+  "needs_control": 18,
+  "sustained_95_median_ms": 5.0,
+  "sustained_95_max_ms": 21.2,
+  "sustained_95_missing": 0,
+  "historical_energy_pct": 99.43261592660157
+ }
+]

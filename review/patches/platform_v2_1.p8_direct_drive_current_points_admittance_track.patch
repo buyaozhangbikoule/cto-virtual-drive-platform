@@ -1,0 +1,1997 @@
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/README.md b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+index fa5d55b..39b2c28 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/README.md
+@@ -65,7 +65,7 @@ Janů连续极值拟合完成合成回收、Jacobian和多初值对照；“0.22
+ - 连续验收：有效CONTROL、NORMAL、未冻结、≥98%、20 ms格点连续10样本；未通过不用回退样本。
+ - 参考为当前场景130 Vpp／5.5 mA软阈值、a≤1下100 Hz网格最大P_Rm；不是硬限最大值，不等于恢复基准功率。离散参考可能使比值略高于100%，不截断掩盖。
+ - 理想保护依赖精确当前模型。保护前预测可超过160 Vpp；保护后记录受限不证明真实动态硬限。反射代理只监测；未独立定义绝对功率上限。
+-- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。用户后来说明5 mA是上限、推荐更小，但测点未定：平台电流限值作用于换能器端口，功放输出端电流另列（现有匹配网络下设计点约58 mA），两种解释都保留。〔2026-10-16 补充〕用户已确认测点在换能器端，与平台电流限值同一测点；功放输出端电流不受此上限约束。默认配置的设计点 5 mA 正好在上限上，软/硬阈值 5.5/6 mA 高于上限：正式批次四种策略都有超过 5 mA 的时段，34 个场景中 11 个的验收参考点电流在 5 mA 以上，其中 4 个在不超过 5 mA 时达不到 98% 门槛。合成候选的 4.5/5.0 mA 不超过上限。批次报告逐策略列出核对结果（user_current_limit_check.csv）。
++- 最新5 mA RMS与50 Ω为用户推荐口径，不是实测器件额定值。本批次保留冻结假设BVD及源标定，未据此反推真实结构／模式。原配置中RMS假设文字留在快照供追溯。用户后来说明5 mA是上限、推荐更小，但测点未定：平台电流限值作用于换能器端口，功放输出端电流另列（现有匹配网络下设计点约58 mA），两种解释都保留。〔2026-10-16 补充〕用户已确认测点在换能器端，与平台电流限值同一测点；功放输出端电流不受此上限约束。默认配置的设计点 5 mA 正好在上限上，软/硬阈值 5.5/6 mA 高于上限：正式批次四种策略都有超过 5 mA 的时段，34 个场景中 11 个的验收参考点电流在 5 mA 以上，其中 4 个在不超过 5 mA 时达不到 98% 门槛。合成候选的 4.5/5.0 mA 不超过上限。批次报告逐策略列出核对结果（user_current_limit_check.csv）。〔2026-10-17 补充，P8〕用户随后表示测点尚未确定。电流限值的测点改为配置项 `current_limit_points`（默认只限换能器端，默认与合成候选的结果不变）；新增可选的物理候选 current/unified/candidates/physical_apc880_d05_L1747/（APC 880 杆，D 0.5 mm、L 1.7467 mm，0.9 MHz，50 Ω 源直接驱动，两处都限 4.5/5.0 mA，设计点 100 Vpp / 3.82 mA）；另有非正式的第五种策略 ADMITTANCE_TRACK，只在 `run_unified.py --extra-strategy ADMITTANCE_TRACK` 时运行，不进入正式批次与网页。见审查分支 review/32。
+ 
+ ## 历史保留与移交边界
+ 
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+index b769de3..4fec941 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/parameter_sources.json
+@@ -1,6 +1,6 @@
+ {
+   "schema_version": 1,
+-  "updated": "2026-10-16",
++  "updated": "2026-10-17",
+   "scope": "只读来源登记：正式配置的全部数值型参数、BVD/源/匹配基线、负载原型声明常数、Saijo参考及待核实范围。不是所有历史脚本内部常数的完整目录，也不是新的仿真批次。",
+   "sources": {
+     "design": {"title": "冻结假设模型与匹配设计", "path": "current/unified/stage2_matching/stage2_匹配设计参数.json", "note": "项目内部设计记录，不是器件手册或测量结果。"},
+@@ -10,6 +10,9 @@
+     "candidate_design": {"title": "合成候选基线设计文件（未设为默认）", "path": "current/unified/candidates/synthetic_q13p8_3mA/stage2_匹配设计参数.json", "note": "由审查分支 review/baseline_3mA_parameters.py 从原冻结文件推导；推导、限制与测点说明写在文件的 baseline_derivation。"},
+     "candidate_calibration": {"title": "合成候选源幅度标定", "path": "current/unified/candidates/synthetic_q13p8_3mA/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准。"},
+     "candidate_config": {"title": "合成候选运行配置", "path": "current/unified/candidates/synthetic_q13p8_3mA/config.json", "note": "仅在 run_unified.py --config 显式选择时使用；run_project.py validate 不登记它。"},
++    "candidate_physical_design": {"title": "物理候选基线设计文件（未设为默认，直接驱动）", "path": "current/unified/candidates/physical_apc880_d05_L1747/stage2_匹配设计参数.json", "note": "由审查分支 review/physical_candidate_parameters.py 从 Codex 候选推导（长度 1.7467 mm）的 BVD 生成；推导、限制与测点说明写在文件的 baseline_derivation。"},
++    "candidate_physical_calibration": {"title": "物理候选源幅度标定（直接驱动）", "path": "current/unified/candidates/physical_apc880_d05_L1747/stage2_控制源幅度校准.json", "note": "数值标定，不是仪器校准。"},
++    "candidate_physical_config": {"title": "物理候选运行配置", "path": "current/unified/candidates/physical_apc880_d05_L1747/config.json", "note": "仅在 run_unified.py --config 显式选择时使用；run_project.py validate 不登记它。"},
+     "user_design": {"title": "用户设计工况与推荐量级", "path": "README.md", "note": "用户给出的0.8–1.0 MHz、约100 Vpp、不超过160 Vpp、约5 mA RMS和50 Ω；允许后续协商。没有独立器件辨识或额定规格证据。历史配置原有的RMS假设文字保留不改。"},
+     "load": {"title": "第一层辐射负载研究原型", "path": "research/radiation_load_layer1/radiation_load_layer1_reference.py", "note": "声明常数，尚未接入正式控制引擎。未给出足以将这些数值作为本器件实测值的一手证据。"},
+     "unverified_range": {"title": "负载实施指导中的未核实范围", "path": "research/radiation_load_layer1/14_第一层负载参数化_给Codex的实施指导_2026-09-18.md", "note": "第十二节第3项提到2.5–7.8 MRayl，但未建立逐个端点的一手出处。保留历史文本不等于认可该范围。"},
+@@ -30,7 +33,8 @@
+     "research": {"group": "负载研究原型（未接入）", "identity": "研究原型声明值；原始出处待补", "frequency_scope": "原型用于0.9 MHz附近的假设计算；没有材料实测频段依据。", "measurement_conditions": "假设圆形活塞和等效半波厚度；不是已确定器件结构。介质温度、压力、制备条件未登记为实测。", "adoption_reason": "保留原型数值以复现历史研究，不将其升级为正式模型默认参数。", "limitations": "需补齐材料、几何和介质的一手来源及适用性验证；不自动采用Saijo数值。", "formal_use": false, "status": "研究假设", "source_ids": ["load"]},
+     "saijo": {"group": "Saijo文献参考（不采用）", "identity": "已发表样本统计，非本项目器件／负载辨识", "frequency_scope": "原文测量100–200 MHz；没有0.8–1.0 MHz适用性证据。", "measurement_conditions": "12例尸检人腹主动脉；福尔马林固定、冷冻10 μm切片、玻片载片，无石蜡包埋、测量时无盖玻片；SAM测区100×100 μm，25×25采样。", "adoption_reason": "仅登记文献参考，用于比较组织类型与审查参数量级；不写入运行配置。", "limitations": "均值±标准差（SD），不是置信区间或仪器精度；未测密度和声阻抗。不得由声速直接得到ρc，不得将高频衰减斜率直接外推至0.9 MHz。", "formal_use": false, "status": "文献参考／不采用", "source_ids": ["saijo"]},
+     "pending": {"group": "待核实（禁止作为默认）", "identity": "未建立原始出处的历史说法", "frequency_scope": "未核实", "measurement_conditions": "组织、频段、温度及测量方法均未核实。", "adoption_reason": "保留问题线索并明确隔离，不作为默认参数或敏感性扫描上下界。", "limitations": "需逐端点找到原始论文、表格与条件；Saijo1998未测声阻抗，不能为此范围背书。", "formal_use": false, "status": "待核实", "source_ids": ["unverified_range"]},
+-    "candidate": {"group": "合成候选基线（未设为默认）", "identity": "合成构造值：非器件拟合、非实测", "frequency_scope": "本项目0.8–1.0 MHz电学扫描；基准0.9 MHz。不是实测适用频段。", "measurement_conditions": "无实测；保留默认基线C0、Rm、fs，指定k_eff=0.45反算Qm，再按5/3均匀缩放阻抗、按stage2规则重设匹配与源标定。", "adoption_reason": "宽峰下的算法对照与电流余量研究；只在显式选择候选配置时使用，不替换默认配置。", "limitations": "不能解释为同一器件只增加阻尼，也不能解释为几何缩小（同长度缩面积时Q、fs都会变）。最大端口有功功率不等于最大振幅或声功率。", "formal_use": false, "status": "合成候选", "source_ids": ["candidate_design"]}
++    "candidate": {"group": "合成候选基线（未设为默认）", "identity": "合成构造值：非器件拟合、非实测", "frequency_scope": "本项目0.8–1.0 MHz电学扫描；基准0.9 MHz。不是实测适用频段。", "measurement_conditions": "无实测；保留默认基线C0、Rm、fs，指定k_eff=0.45反算Qm，再按5/3均匀缩放阻抗、按stage2规则重设匹配与源标定。", "adoption_reason": "宽峰下的算法对照与电流余量研究；只在显式选择候选配置时使用，不替换默认配置。", "limitations": "不能解释为同一器件只增加阻尼，也不能解释为几何缩小（同长度缩面积时Q、fs都会变）。最大端口有功功率不等于最大振幅或声功率。", "formal_use": false, "status": "合成候选", "source_ids": ["candidate_design"]},
++    "physical_candidate": {"group": "物理候选基线（未设为默认）", "identity": "一维压电杆模型推导、最小二乘拟合的 BVD：非实测", "frequency_scope": "本项目0.8–1.0 MHz电学扫描；基准0.9 MHz，有载 fs 0.9 MHz。不是实测适用频段。", "measurement_conditions": "无实测；APC 880 端面电极杆 D 0.5 mm、L 1.7467 mm，前端类血液液体、无限障板，后端空气背衬；50 Ω 源直接驱动，无匹配网络、无线缆。", "adoption_reason": "按用户 2026-10-17 的要求（0.9 MHz 附近、约 100 Vpp、电流小于 5 mA 且越小越好、直径不超过 2 mm）选的初步主候选；只在显式选择候选配置时使用，不替换默认配置。", "limitations": "材料常数为手册典型值；前端取无限障板，是对 5 mA 上限最有利的边界（review/29 第 7.4 节），导管几何会把 Q 与电流移动一倍左右。最大端口有功功率对同一器件对应最大端面振幅，不同器件之间不能这样比。", "formal_use": false, "status": "物理候选", "source_ids": ["candidate_physical_design"]}
+   },
+   "entries": [
+     {"id":"bvd.c0","profile":"bvd","name":"静态电容 C0","value":6.858064105198409e-12,"unit":"F","display_unit":"pF","scale":1e12,"binding":{"source":"design","path":["bvd","C0_F"]}},
+@@ -87,6 +91,8 @@
+     {"id":"capture_threshold","profile":"control","name":"功率捕获验收门槛","value":0.98,"unit":"1","display_unit":"%","scale":100,"config_key":"capture_threshold","limitations":"相对当前场景软限安全参考，不等于恢复基准170 mW，更不是声学效率。"},
+     {"id":"continuous_samples","profile":"control","name":"连续合格控制样本数","value":10,"unit":"样本","config_key":"continuous_samples"},
+     {"id":"tail_window_us","profile":"control","name":"固定尾窗诊断长度","value":200000,"unit":"μs","display_unit":"ms","scale":0.001,"config_key":"tail_window_us","limitations":"尾窗指标不是稳态验收的回退样本；未验收稳态误差为NA。"},
++    {"id":"recovery_fraction","profile":"control","name":"恢复时间指标的功率门槛（相对验收参考）","value":0.95,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"每段报告首次达到与持续达到参考 95% 的时间（含试探、保持的全部执行行）；只作反应速度指标，不改变 98% × 10 个控制样本的验收。","config_key":"recovery_fraction"},
++    {"id":"recovery_sustain_us","profile":"control","name":"恢复时间指标的持续窗口","value":40000,"unit":"μs","display_unit":"ms","scale":0.001,"adoption_reason":"连续 40 ms 不低于门槛才算持续达到（Codex 2026-10-17 的建议）。","config_key":"recovery_sustain_us"},
+     {"id":"reference_grid_step_Hz","profile":"control","name":"离线安全参考网格步长","value":100,"unit":"Hz","config_key":"reference_grid_step_Hz","limitations":"离线评价用；不能让控制器免费读取真实最优频率。"},
+     {"id":"phase_newton_fraction","profile":"control","name":"相位反馈 newton_v2：每次更新修正的误差比例 κ","value":0.7,"unit":"1","adoption_reason":"步长 = κ×误差/实测斜率（斜率来自两次邻频试探），每次修正误差的 70%；声明值，未寻优。gain_v1 的固定 5 Hz/° 每次修正的比例是 5×|斜率|：Qm=800 输入相位约 43%，宽约 40 倍的峰上约 0.1%（review/27）。","limitations":"只在 phase_tracker=newton_v2 时使用；默认配置仍为 gain_v1。斜率噪声会直接进入步长。","config_key":"phase_newton_fraction"},
+     {"id":"phase_probe_offset_per_width","profile":"control","name":"相位试探偏移（峰宽比例）","value":0.05,"unit":"1","adoption_reason":"偏移 = max(phase_probe_offset_Hz, 0.05×峰宽)：宽峰上 ±100 Hz 两点的相位差太小，按峰宽放大；窄峰上仍是 100 Hz 量级。","config_key":"phase_probe_offset_per_width"},
+@@ -123,6 +129,13 @@
+     {"id":"po_shrink","profile":"control","name":"P&O 无改进时步长缩小","value":0.5,"unit":"倍","config_key":"po_shrink"},
+     {"id":"po_move_threshold","profile":"control","name":"P&O 移动所需增益","value":0.002,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"试探点须比保持点近几个样本的平均高 0.2%（或噪声估计的 2 倍差值标准差，取大者）才移动。","config_key":"po_move_threshold"},
+     {"id":"po_park_comparisons","profile":"control","name":"P&O 停驻所需的无改进比较次数（最小步长下）","value":3,"unit":"次","config_key":"po_park_comparisons"},
++    {"id":"admittance_model_tolerance","profile":"control","name":"ADMITTANCE_TRACK：导纳模型残差门槛","value":0.02,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"测得的端口导纳与模型预测相差超过 2%（或 2 倍实测样本间散布，取大者）才更新 BVD 估计；去嵌后 X/R 差 0.02 约为 0.01 个峰宽，电压限时功率损失约 0.01%。","config_key":"admittance_model_tolerance"},
++    {"id":"admittance_move_gain","profile":"control","name":"ADMITTANCE_TRACK：移频所需的预测增益","value":0.005,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"模型预测新点的软限可行功率高于保持点 0.5% 以上才移频；只有动生支路的估计刚更新时（或开机第一个样本）才判断。","config_key":"admittance_move_gain"},
++    {"id":"admittance_max_model_moves","profile":"control","name":"ADMITTANCE_TRACK：未收敛前允许的连续模型移频次数","value":4,"unit":"次","adoption_reason":"连续 4 次移频后预测仍有增益，即判为模型失效，转入捕获。","config_key":"admittance_max_model_moves"},
++    {"id":"admittance_min_separation_per_width","profile":"control","name":"ADMITTANCE_TRACK：两点解 Lm 的最小间距（峰宽比例）","value":0.25,"unit":"1","adoption_reason":"两点斜率的噪声与点距成反比；小于 1/4 峰宽时只更新 Rm 与 fs（review/30 第三节）。","config_key":"admittance_min_separation_per_width"},
++    {"id":"admittance_search_span_widths","profile":"control","name":"ADMITTANCE_TRACK：模型最优点的搜索范围（峰宽）","value":6.0,"unit":"峰宽","adoption_reason":"在保持点与估计 fs 之间、并向两侧各外延 6 个动生峰宽内找软限可行最大功率；网格 1/200 峰宽，再在最优点附近按 1 Hz 细化。","config_key":"admittance_search_span_widths"},
++    {"id":"admittance_fit_max_residual","profile":"control","name":"ADMITTANCE_TRACK：捕获点拟合 BVD 的残差上限","value":0.05,"unit":"1","display_unit":"%","scale":100,"adoption_reason":"捕获之后用捕获的测点重拟合 BVD；相对 RMS 残差超过 5%（或 2 倍实测散布）就保留原估计。","config_key":"admittance_fit_max_residual"},
++    {"id":"admittance_max_parameter_ratio","profile":"control","name":"ADMITTANCE_TRACK：一次更新允许的 Q、Rm 变化倍数","value":2.0,"unit":"倍","adoption_reason":"器件的 Q 与 Rm 不会在两个样本之间成倍跳变；超过 2 倍说明保持点离谐振太远、C0 估计又有误，去嵌不可靠，转入捕获。登记场景中 Rm 最多变 1.5 倍、Qm 1.6 倍。","config_key":"admittance_max_parameter_ratio"},
+     {"id":"load.rho_pzt","profile":"research","name":"原型压电材料密度","value":7500,"unit":"kg/m³","binding":{"source":"load","mode":"constant","name":"RHO_PZT"}},
+     {"id":"load.c_d","profile":"research","name":"原型厚度模式声速","value":4340,"unit":"m/s","binding":{"source":"load","mode":"constant","name":"C_D"}},
+     {"id":"load.radius","profile":"research","name":"假设活塞半径","value":0.0005,"unit":"m","display_unit":"mm","scale":1000,"binding":{"source":"load","mode":"constant","name":"PISTON_RADIUS_M"}},
+@@ -144,6 +157,16 @@
+     {"id":"candidate.current_soft","profile":"candidate","name":"合成候选：电流软阈值（换能器端口）","value":0.0045,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_soft_Arms"]}},
+     {"id":"candidate.current_hard","profile":"candidate","name":"合成候选：电流硬阈值（换能器端口）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["current_hard_Arms"]},"limitations":"等于用户5 mA RMS上限，测点在换能器端（2026-10-16确认）。〔原：按换能器端口解释用户的5 mA上限；测点未定。〕"},
+     {"id":"candidate.nominal_width","profile":"candidate","name":"合成候选：设计点有载半功率宽度","value":86872,"unit":"Hz","display_unit":"kHz","scale":0.001,"source_ids":["candidate_config"],"binding":{"source":"candidate_config","path":["nominal_peak_width_Hz"]},"adoption_reason":"与默认配置同式推导（review/baseline_3mA_parameters.py 写入候选配置）。"},
++    {"id":"physical.c0","profile":"physical_candidate","name":"物理候选：静态电容 C0","value":6.987135501654816e-13,"unit":"F","display_unit":"pF","scale":1000000000000.0,"binding":{"source":"candidate_physical_design","path":["bvd","C0_F"]}},
++    {"id":"physical.rm","profile":"physical_candidate","name":"物理候选：机械支路电阻 Rm","value":9256.753684748222,"unit":"Ω","binding":{"source":"candidate_physical_design","path":["bvd","Rm_ohm"]}},
++    {"id":"physical.fs","profile":"physical_candidate","name":"物理候选：机械支路串联谐振频率 fs","value":900124.2252361794,"unit":"Hz","display_unit":"MHz","scale":1e-06,"binding":{"source":"candidate_physical_design","path":["bvd","fs_Hz"]}},
++    {"id":"physical.qm","profile":"physical_candidate","name":"物理候选：有载品质因数 Q（BVD 拟合）","value":53.1671157123813,"unit":"1","binding":{"source":"candidate_physical_design","path":["bvd","Qm"]},"limitations":"辐射负载与材料内耗合在一起的有载 Q，不是材料 Qm（APC 880 取 1000）。"},
++    {"id":"physical.a1","profile":"physical_candidate","name":"物理候选：a=1时戴维南源电压（RMS）","value":35.546269790689884,"unit":"V RMS","source_ids":["candidate_physical_calibration"],"binding":{"source":"candidate_physical_calibration","path":["source_Vrms_for_a1"]},"adoption_reason":"0.9 MHz、a=1 时换能器端 100 Vpp；直接驱动下源开路约 100.5 Vpp。"},
++    {"id":"physical.irms_design","profile":"physical_candidate","name":"物理候选：设计点换能器端电流（0.9 MHz、a=1、100 Vpp）","value":0.0038236009589234054,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_physical_calibration"],"binding":{"source":"candidate_physical_calibration","path":["transducer_Irms_A"]},"limitations":"直接驱动、无线缆时功放输出端电流与它相同；有线缆时功放端还要供线缆充电电流（review/31）。"},
++    {"id":"physical.current_soft","profile":"physical_candidate","name":"物理候选：电流软阈值（换能器端与功放输出端）","value":0.0045,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_physical_config"],"binding":{"source":"candidate_physical_config","path":["current_soft_Arms"]}},
++    {"id":"physical.current_hard","profile":"physical_candidate","name":"物理候选：电流硬阈值（换能器端与功放输出端）","value":0.005,"unit":"A RMS","display_unit":"mA RMS","scale":1000,"source_ids":["candidate_physical_config"],"binding":{"source":"candidate_physical_config","path":["current_hard_Arms"]},"limitations":"等于用户 5 mA RMS 上限；测点未定（2026-10-17），两处都限（current_limit_points）。"},
++    {"id":"physical.nominal_width","profile":"physical_candidate","name":"物理候选：设计点有载半功率宽度","value":17022,"unit":"Hz","display_unit":"kHz","scale":0.001,"source_ids":["candidate_physical_config"],"binding":{"source":"candidate_physical_config","path":["nominal_peak_width_Hz"]},"adoption_reason":"与默认配置同式推导（review/physical_candidate_parameters.py 写入候选配置）。"},
++    {"id":"physical.capture_amplitude","profile":"physical_candidate","name":"物理候选：捕获扫描幅度比例 a","value":1.0,"unit":"1","source_ids":["candidate_physical_config"],"binding":{"source":"candidate_physical_config","path":["capture_scan_amplitude"]},"adoption_reason":"直接驱动下无源负载的端口电压不超过源开路电压（约 100.5 Vpp），a = min(1, 130 ÷ 100.5) = 1；L 型匹配的 0.65 规则在这里不需要。"},
+     {"id":"pending.calcif.impedance","profile":"pending","name":"钙化声阻抗历史范围（待核实）","value":[2.5,7.8],"unit":"MRayl","value_kind":"unverified_range"},
+     {"id":"saijo.intima.c","profile":"saijo","name":"Saijo正常内膜声速","value":1568,"sd":18,"unit":"m/s"},
+     {"id":"saijo.fibrosis.c","profile":"saijo","name":"Saijo纤维化组织声速","value":1677,"sd":18,"unit":"m/s"},
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py b/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
+index 3c460de..93a052e 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/provenance_ui.py
+@@ -61,6 +61,8 @@ def render_parameter_sources():
+             st.warning('独立参考／研究原型：未接入正式模型，不覆盖钙化默认值。')
+         elif entry['profile'] == 'candidate':
+             st.warning('合成候选：只在显式选择候选配置时使用；不是器件拟合或实测参数，不替换默认配置。')
++        elif entry['profile'] == 'physical_candidate':
++            st.warning('物理候选：只在显式选择候选配置时使用；一维模型推导的拟合值，未实测，不替换默认配置。')
+         with st.expander('来源、适用频段、测量条件和采用理由', expanded=True):
+             for label, key in [('单位（源文件口径）', 'unit'), ('适用频段与证据范围', 'frequency_scope'),
+                                ('测量／计算条件', 'measurement_conditions'), ('采用／保留理由', 'adoption_reason'),
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+index a194950..957c3c4 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/README.md
+@@ -3,6 +3,7 @@
+ 2026-09-22整合：上游 validation/plan-three-strategy-v1-20260917 的 650abdc，合入 review/patches/plan_three_strategy.scan_fault_taxonomy.patch。补丁覆盖配置、控制器、指标及测试；已有物理阈值、原扰动时长、98%/10样本标准不变。项目正式入口为上两级的 `python run_project.py validate`，它会执行新批次、复核并显式登记；不要靠目录时间自行选取“最新”结果。来源见 `../integration_sources.json`。
+ 
+ 本目录补齐固定频率、周期扫频、相位误差闭环的**同批次、同口径准稳态比较**；2026-10-16 起另有第四种正式策略 CAPTURE_PO（功率下降触发的全频带捕获＋扰动观察跟踪）、两者共用的捕获程序，以及相位反馈的第二定律 newton_v2。〔P6，2026-10-16〕正式配置的 PHASE_FEEDBACK 改为 newton_v2＋换能器端相位＋捕获后重学目标；原定律 gain_v1 仍可由配置选回，旧结果可复现。见下文「正式策略」与审查分支 review/27。
++〔P8，2026-10-17〕模型可直接驱动（无匹配网络）并给出功放输出端电流；电流限值的测点做成配置项 `current_limit_points`（默认只限换能器端，结果与 P7 逐字节相同）；新增可选的物理候选 `candidates/physical_apc880_d05_L1747/`；新增**非正式**的第五种策略 ADMITTANCE_TRACK（去嵌导纳模型在前的 CAPTURE_PO，`--extra-strategy` 才运行）；每段另报恢复时间指标。见下文与审查分支 review/32。
+ 历史平台、Claude 送审代码、P&O/相位消融文件及旧结果均未覆盖。本文不是全部项目完成声明。
+ 
+ ## 如何运行
+@@ -24,7 +25,16 @@ python run_unified.py --config candidates/synthetic_q13p8_3mA/config.json --suit
+ python audit_batch.py "outputs/具体批次目录"
+ ```
+ 
+-它保留默认基线的 C0、Rm、fs，指定 k_eff=0.45 反算 Qm=13.81，再按 5/3 均匀缩放阻抗使设计点为 100 Vpp / 3 mA，并重设匹配与源标定、电流软/硬限 4.5/5.0 mA（作用于换能器端口）、打开相位恢复门控。它是宽峰算法对照用的合成电路，不是任何器件的拟合结果，也不能用「缩小端面积、振速不变」解释；说明与限制见 `candidates/synthetic_q13p8_3mA/README.md`。`run_project.py validate` 只登记默认配置的批次。
++物理候选配置（2026-10-17，可选，不是默认；见 `candidates/physical_apc880_d05_L1747/README.md`）：
++
++```powershell
++python run_unified.py --config candidates/physical_apc880_d05_L1747/config.json --suite all
++python run_unified.py --config candidates/physical_apc880_d05_L1747/config.json --suite all --extra-strategy ADMITTANCE_TRACK
++```
++
++`--extra-strategy ADMITTANCE_TRACK` 在四种正式策略之外再跑第五种（任何配置都可以加）；这样的批次报告与审计照常生成，但策略集合不是正式集合，不能登记为当前结果。
++
++合成候选：它保留默认基线的 C0、Rm、fs，指定 k_eff=0.45 反算 Qm=13.81，再按 5/3 均匀缩放阻抗使设计点为 100 Vpp / 3 mA，并重设匹配与源标定、电流软/硬限 4.5/5.0 mA（作用于换能器端口）、打开相位恢复门控。它是宽峰算法对照用的合成电路，不是任何器件的拟合结果，也不能用「缩小端面积、振速不变」解释；说明与限制见 `candidates/synthetic_q13p8_3mA/README.md`。`run_project.py validate` 只登记默认配置的批次。
+ 
+ 每次运行创建时间戳＋源码摘要的新输出目录，`exist_ok=False` 防止覆盖。
+ `--suite all` 包含原 12 段绝对日程和全部 34 个登记场景的独立基准→场景→基准试验。
+@@ -35,7 +45,8 @@ python audit_batch.py "outputs/具体批次目录"
+ 
+ - `models/model_v2_1.py`、`stage2_matching/`：从第二轮审核 testbed 复制、冻结的 v2.1 线性电路模型及源标定；Rm-only 派生 Qm 修正保留。2026-10-16 起 C0、Rm、fs、Qm、匹配与源标定全部从配置指定的设计/标定文件读取（默认即 `stage2_matching/` 这一对；原写死在模型里的 Qm=800 移入设计文件，数值不变），模型里的限值常量从配置读取；`run_unified.py --config <文件>` 可运行另一套配置，正式登记仍只用默认 `config.json`。
+ - `engine.py`：共用实际执行、保护、整数微秒时间和分段积分日志。
+-- `controllers.py`：四个正式控制器与共用的捕获程序；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。
++- `controllers.py`：四个正式控制器与共用的捕获程序；窄数据接口不提供场景编号、扰动开始时刻、离线最优频率或真值去嵌相位。2026-10-17 起另有非正式的 ADMITTANCE_TRACK（`EXTRA_STRATEGIES`）。
++- `admittance.py`（P8）：ADMITTANCE_TRACK 的去嵌导纳模型：由测量的 V、I、换能器端相位算端口导纳，按估计 C0 去嵌得动生 R + jX，一点或两点更新 BVD，捕获点拟合 BVD，以及「估计 BVD＋声明的源与匹配网络」的软限可行最优。只读 Measurement 与设计文件（与 `nominal_peak_width_Hz` 同类的设计知识），不读场景。
+ - `metrics.py`：唯一正式指标函数，不合格段的稳态误差为空值，不以尾窗/回退替代。
+ - `tests/test_unified.py`：故障注入和边界行为测试；这些测试不代表真实器件实验。
+ - `run_unified.py`：测试、校准冻结、批量运行、源码快照与哈希清单。
+@@ -64,6 +75,7 @@ python audit_batch.py "outputs/具体批次目录"
+ 4. **CAPTURE_PO**（2026-10-16 加入，第四种正式策略）：开机不捕获，以设计点有载半功率宽度为初始峰宽做两侧扰动观察：每次比较在 f±步长 各试探一点，试探点比保持点近几个样本的平均高 `po_move_threshold`（或噪声估计的 2 倍差值标准差）才移动；移动则步长 ×1.5，否则 ×0.5，限制在峰宽的 1/40～1/2；最小步长下连续 3 次无改进即停驻、不再试探。功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，无匹配则重新开始扰动观察；连续 3 个样本低于参考 90% 才做全频带捕获（第 5 条）。捕获或召回之后直接停驻：捕获已把落点放在其最后一级步长之内，再试探只会损失样本。
+ 5. **捕获程序**（2026-10-16 加入；相位 newton_v2 的重学模式与 CAPTURE_PO 共用）：只在功率连续 3 个样本低于参考 90% 时启动，从不按定时器，开机不捕获。锚点 → 记忆点（开机点永不淘汰，另记 4 个，频率与功率同时相符才算同一负载状态）→ 0.8–1.0 MHz 全带 5 kHz 粗扫 → 对最佳点（另一局部最大若达 80% 且相隔 ≥3 点也细化）每级步长 1/5、窗口 ±1 个上一级步长，直到步长 < 0.1×实测峰宽或到 100 Hz → 每级之后复测锚点（变化即非平稳）→ 复核 → 不比锚点高 2% 则不移动。点驻留 = clip(10/(π×峰宽), 200 μs, 1.5 ms)，峰宽取上次捕获实测值，第一次之前取设计点有载半功率宽度 `nominal_peak_width_Hz`；全部点按 `capture_scan_amplitude` = 0.65（= 130 Vpp ÷ 2×100 Vpp）。失败计入与周期扫频相同的四类预算，耗尽同样低幅锁存（锁存与重试等待幅度为 `capture_scan_amplitude`）。准稳态模型没有建立过程，驻留缩短只省了时间，测量误差看不出来。
+ 6. **PHASE_FEEDBACK 的 newton_v2**（`phase_tracker = newton_v2`；P6 起为正式配置，并取 `phase_signal = port`、`phase_target_policy = relearn_after_capture`；P4/P5 单独合入时默认仍为第 3 条的原定律）：步长 = `phase_newton_fraction`×误差÷实测斜率（两次邻频试探，偏移 max(100 Hz, 0.05×峰宽)），限幅 0.25×峰宽；目标取开机第一个有效控制样本。`phase_signal` 选 `input` 或 `port`；`phase_target_policy = relearn_after_capture` 时，功率相对参考变化超过 2%（或保持频率未变时输入阻抗变化超过 5%）先以当前幅度查记忆点，连续 3 个样本低于参考 90% 才捕获，每次召回或捕获后在所选点重学目标；`frozen` 时不捕获、不召回。换能器端相位看不见匹配网络的变化，小于捕获阈值的损失不会被纠正。
++7. **ADMITTANCE_TRACK**（2026-10-17，P8；**非正式策略**，只在 `--extra-strategy ADMITTANCE_TRACK` 时运行，catalog、网页与 `run_project.py validate` 都不包含它）：在 CAPTURE_PO 前面加一个去嵌导纳模型。每个可比的普通控制样本（NORMAL、未冻结、在保持频率、在 20 ms 格点上）都算端口导纳 Y = I/V（vpp、irms、`phase_port_deg`），按估计 C0 去嵌得动生 R + jX。Y 与模型预测相差超过 `admittance_model_tolerance`（2%，或 2 倍实测样本间散布）就更新估计：Rm = R，Lm 不变时由 X 得 fs；上一个保持点与本点相距 ≥ `admittance_min_separation_per_width`（1/4 峰宽）时由两点同时解 Lm。在保持点所在的同一负载上偏离预测，说明负载变了，更早的点不再用于两点估计。更新后在「估计 BVD＋声明的源与匹配网络」上求软限可行最优（乘以实测的端口电压传输比 k），预测增益超过 `admittance_move_gain`（0.5%）就直接移过去，不加试探点；新频点预测余量低于当前幅度时先在原频率降幅（prepare_move）。只有动生支路的估计刚更新（或开机第一个样本）才会移频：k 单独变化说明匹配网络变了，模型不知道最优点移到了哪里，那时交给 CAPTURE_PO 原有的功率监视、记忆召回、P&O 与捕获。模型解释了的功率变化（例如 Rm 增大、峰整体变低）用模型预测值重学功率参考，不再启动一次找不到更好点的捕获；移频后同样以预测功率为先验重学，实测低于预测 10% 即触发捕获。一次更新中 Q 或 Rm 变化超过 `admittance_max_parameter_ratio`（2 倍）、更新不物理、或连续 `admittance_max_model_moves`（4）次移频仍未收敛，判为模型失效，立即捕获，并用捕获的测点重拟合 BVD（相对 RMS 残差 ≤ `admittance_fit_max_residual` 才采用）。先验是设计文件的 BVD。捕获与失败计入同一套扫描预算与锁存。
+ 
+ 各策略共用 20 ms 普通控制采样时间格点。长扫描会错过格点，其成本照实计入；短试探在本格点间消耗时间，不能额外凑足验收样本。
+ 未添加 PI 积分器，因此不存在需要伪装为已实现的“积分饱和修复”。
+@@ -71,6 +83,7 @@ python audit_batch.py "outputs/具体批次目录"
+ ## 保护与失败处理
+ 
+ - 电压硬限 160 Vpp 是用户边界；130 Vpp 软限、5.5/6 mA RMS 软/硬限是待验证的假设控制阈值。电流限值作用于换能器端口；用户后来说明 5 mA RMS 是上限，但测点未定（换能器端或功放输出端），所以批次报告另列功放输出端电流，两种解释都保留。〔2026-10-16 补充〕用户已确认 5 mA 的测点在换能器端。配置项 `user_current_limit_Arms`（0.005 A）记录这一上限：每个批次逐行核对保护后的换能器端电流，报告「用户电流上限核对」一节和 `user_current_limit_check.csv` 列出各策略超限的时长、行数与电能，并列出验收参考点电流超过上限的场景；它只核对、报告，不改变保护阈值。默认配置的软/硬限 5.5/6 mA 高于上限，结果不满足用户电流边界；合成候选的 4.5/5.0 mA 不超过上限。功放输出端电流不受此上限约束，仍另列。
++- 〔P8，2026-10-17〕电流限值的测点由 `current_limit_points` 指定：`transducer_port`（默认）、`amplifier_output`，或两者（取较大者）。保护器、测量评分、软限余量、验收参考、实际越限和用户上限核对都按它取电流；只有限了功放输出端，执行记录才另加 `isource_Arms`、`pre_guard_isource_Arms` 两列，`Measurement.irms_source` 始终给出功放输出端电流。用户 2026-10-17 表示测点尚未确定，物理候选两处都限（软/硬 4.5/5.0 mA）；默认与合成候选配置仍只限换能器端。
+ - 所有普通控制、扫描、相位试探、重试等待和回退都调用同一个保护器，实际幅度每次同步；先降幅再改变频率，渐升冻结频率。
+ - 假设硬停保持 60 ms、恢复保持 100 ms、软降幅保持 100 ms；渐升速率 2.5 每秒（等价每 20 ms +0.05），不能通过密集扫描点加速升幅。
+ - 无效/无信号/平坦扫描不得成功。失败保留旧可信目标，不采用末扫描频率；实际回退动作也走保护接口，并保持 a≤0.4。
+@@ -89,6 +102,7 @@ python audit_batch.py "outputs/具体批次目录"
+ - `first_qualified_sample_ms`：该段第一个合格控制样本，不保证以后形成10个连续样本。
+ - `recovery_enter_ms` / `recovery_confirm_ms`：首个成功10样本窗口的第一个/第十个采样时刻，相对扰动段起点；未成功均为空。
+ - `steady_error_pct`：首个已确认10样本窗口的平均绝对相对功率误差；未通过为空。不存在任何回退样本。
++- `first_recovery_level_ms` / `sustained_recovery_level_ms`（P8）：从段起点到第一行达到参考 `recovery_fraction`（95%）的时间，以及到第一段连续 `recovery_sustain_us`（40 ms）不低于它的起点的时间；所有执行行都算（试探、保持在内）。这是反应速度指标，不改变上面的验收。`energy_shortfall_J` = 参考电能 − 实际电能。
+ - `fixed_tail_error_pct`：最后200 ms所有执行阶段的时间加权功率缺额，单列诊断，不冒充稳态指标。
+ - `energy_J`：含扫描/试探/保护/等待/渐升的 P_Rm 分段保持积分，不是瞬态模拟。
+ - 捕获率分母是软阈值130 Vpp/5.5 mA和a≤1下的100 Hz网格最大P_Rm，明确叫“策略可行参考”；另存160 Vpp/6 mA硬限下参考，不混用。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/admittance.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/admittance.py
+new file mode 100644
+index 0000000..1bbef09
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/admittance.py
+@@ -0,0 +1,212 @@
++"""De-embedded admittance model behind ADMITTANCE_TRACK (review/32).
++
++The controller's own plant model: an estimate of the BVD (C0, Rm, Lm, Cm)
++behind the DECLARED source and matching network, plus one measured scale
++factor k for what the declared network does not explain. It starts from the
++design file's BVD (design knowledge of the same kind as nominal_peak_width_Hz)
++and is then corrected only from Measurement fields: frequency, amplitude, vpp,
++irms, phase_port_deg and irms_source. It never sees a scenario.
++
++Conventions
++- phase_port_deg = arg(V_port/I_port) (engine.py); the port admittance is Y = I/V.
++- Motional impedance Zm = 1/(Y - j*w*C0) = R + jX with X = w*Lm - 1/(w*Cm).
++- With Lm known, one point's X gives 1/Cm = w*(w*Lm - X), i.e. a new fs; two
++  points at least min_separation_per_width x width apart give Lm and 1/Cm.
++"""
++from __future__ import annotations
++
++import cmath
++from dataclasses import dataclass
++import math
++
++import numpy as np
++
++from engine import Measurement, finite
++from models import model_v2_1 as model
++
++SQ8 = 2*math.sqrt(2)
++
++
++@dataclass(frozen=True)
++class Estimate:
++    c0: float
++    rm: float
++    lm: float
++    cm: float
++
++    @property
++    def fs(self) -> float:
++        return 1/(2*math.pi*math.sqrt(self.lm*self.cm))
++
++    @property
++    def q(self) -> float:
++        return 2*math.pi*self.fs*self.lm/self.rm
++
++    @property
++    def width(self) -> float:
++        """Half-power width of the motional branch, fs/Q."""
++        return self.fs/self.q
++
++    def bvd(self) -> model.BVD:
++        return model.BVD(c0=self.c0, rm=self.rm, lm=self.lm, cm=self.cm, qm=self.q, fs=self.fs)
++
++
++def from_bvd(b: model.BVD) -> Estimate:
++    return Estimate(b.c0, b.rm, b.lm, b.cm)
++
++
++def design_prior() -> Estimate:
++    """The configured design file's BVD: what the controller knows before any measurement."""
++    return from_bvd(model.BASE_BVD)
++
++
++def port_admittance(m: Measurement) -> complex | None:
++    """Y = I/V at the transducer port; None without a port phase."""
++    if m.phase_port_deg is None or not finite(m.vpp, m.irms, m.phase_port_deg) or m.vpp <= 0 or m.irms <= 0:
++        return None
++    return (m.irms/(m.vpp/SQ8))*cmath.exp(-1j*math.radians(m.phase_port_deg))
++
++
++def admittance(f: float, est: Estimate) -> complex:
++    w = 2*math.pi*f
++    return 1j*w*est.c0 + 1/(est.rm + 1j*(w*est.lm - 1/(w*est.cm)))
++
++
++def motional(f: float, y: complex, c0: float) -> complex:
++    return 1/(y - 1j*2*math.pi*f*c0)
++
++
++def fit_bvd(frequency_Hz, y) -> tuple[Estimate, float] | None:
++    """BVD from port admittances, with its relative RMS residual.
++
++    For a given C0 the motional branch is a weighted linear least squares
++    (weights |Ym|^2, heavier near resonance). C0 is taken on 401 points of
++    [0, 2 max|Im(Y)/w|], physical fits only (all three positive), then refined
++    by golden section between the neighbours of the best one. A single golden
++    section falls into non-physical minima: near resonance Im(Y)/w is far
++    above C0 (review/30). None when no physical fit exists.
++    """
++    f = np.asarray(frequency_Hz, dtype=float)
++    y = np.asarray(y, dtype=complex)
++    if len(f) < 5 or np.ptp(f) <= 0:
++        return None
++    w = 2*np.pi*f
++    w0 = float(np.median(w))
++    u = w/w0
++
++    def solve(c0):
++        ym = y - 1j*w*c0
++        z = 1/ym
++        wt = np.abs(ym)**2
++        rm = float(np.sum(wt*z.real)/np.sum(wt))
++        a = np.column_stack([u, -1/u])*np.sqrt(wt)[:, None]
++        (p, q), *_ = np.linalg.lstsq(a, z.imag*np.sqrt(wt), rcond=None)
++        lm, dinv = p/w0, q*w0
++        fit = 1j*w*c0 + 1/(rm + 1j*(lm*w - dinv/w))
++        return float(np.sum(np.abs(fit-y)**2)), (c0, rm, lm, dinv)
++
++    def resid(c0):
++        r, (_, rm, lm, dinv) = solve(c0)
++        return r if (rm > 0 and lm > 0 and dinv > 0) else math.inf
++
++    grid = np.linspace(0., 2*float(np.max(np.abs(y.imag/w))), 401)
++    res = np.array([resid(c) for c in grid])
++    k = int(np.argmin(res))
++    if not math.isfinite(res[k]):
++        return None
++    lo, hi = grid[max(k-1, 0)], grid[min(k+1, len(grid)-1)]
++    g = (math.sqrt(5)-1)/2
++    x1, x2 = hi-g*(hi-lo), lo+g*(hi-lo)
++    r1, r2 = resid(x1), resid(x2)
++    for _ in range(60):
++        if r1 < r2:
++            hi, x2, r2 = x2, x1, r1
++            x1 = hi-g*(hi-lo)
++            r1 = resid(x1)
++        else:
++            lo, x1, r1 = x1, x2, r2
++            x2 = lo+g*(hi-lo)
++            r2 = resid(x2)
++    r, (c0, rm, lm, dinv) = solve(0.5*(lo+hi))
++    if not (rm > 0 and lm > 0 and dinv > 0):
++        return None
++    return Estimate(c0, rm, lm, 1/dinv), math.sqrt(r/len(f))/float(np.mean(np.abs(y)))
++
++
++def update(est: Estimate, points, min_separation_per_width: float) -> Estimate | None:
++    """points: (frequency_Hz, Zm) in time order. Rm and fs from the last point;
++    Lm from the last two first, when they are at least min_separation_per_width
++    x width apart (the slope's noise falls with the separation). None when the
++    data do not fit a BVD (1/Cm or R not positive)."""
++    lm = est.lm
++    if len(points) >= 2:
++        (fa, za), (fb, zb) = points[-2], points[-1]
++        if abs(fb-fa) >= min_separation_per_width*est.width:
++            wa, wb = 2*math.pi*fa, 2*math.pi*fb
++            det = wa/wb - wb/wa
++            two = (za.imag/wb - zb.imag/wa)/det
++            if two > 0:
++                lm = two
++    f, z = points[-1]
++    w = 2*math.pi*f
++    dinv = w*(lm*w - z.imag)
++    if dinv <= 0 or z.real <= 0:
++        return None
++    return Estimate(est.c0, float(z.real), lm, 1/dinv)
++
++
++class PlantModel:
++    """The estimate behind the declared source and network (model.BASE_MATCH,
++    model.BASE_RS, the calibrated source), scaled by k: the measured port
++    voltage per unit drive over the predicted one at the held point. k = 1
++    while the declared network still holds; it is the only place where a
++    network change shows, since the port admittance does not depend on it."""
++
++    def __init__(self, cfg: dict, est: Estimate):
++        self.cfg = cfg
++        self.est = est
++        self.k = 1.0
++        self.points = model.current_points(cfg)
++
++    def unit(self, f) -> dict:
++        scenario = model.Scenario('ADMITTANCE_ESTIMATE', 'estimate', 'estimate', 'estimate',
++                                  'controller estimate behind the declared network',
++                                  self.est.bvd(), model.BASE_MATCH, model.BASE_RS)
++        return model.response(f, scenario, 1.0)
++
++    def transfer(self, m: Measurement) -> float:
++        return (m.vpp/m.amplitude)/float(self.unit(m.frequency_Hz)['vport_vpp'][0])
++
++    def headroom(self, f) -> np.ndarray:
++        """Amplitude at which f would reach a soft limit."""
++        q = self.unit(f)
++        return np.minimum(self.cfg['voltage_soft_Vpp']/(self.k*q['vport_vpp']),
++                          self.cfg['current_soft_Arms']/(self.k*model.limited_current(q, self.points)))
++
++    def power(self, f) -> np.ndarray:
++        """Soft-feasible port power with a <= 1."""
++        q = self.unit(f)
++        a = np.clip(np.minimum(self.cfg['voltage_soft_Vpp']/(self.k*q['vport_vpp']),
++                               self.cfg['current_soft_Arms']/(self.k*model.limited_current(q, self.points))),
++                    0., 1.)
++        return self.k**2*q['p_port_W']*a*a
++
++    def optimum(self, centre: float) -> tuple[float, float]:
++        """(frequency, power) of the model's soft-feasible maximum inside the
++        band, between centre and the estimated fs and admittance_search_span_widths
++        widths beyond either: a grid of 1/200 width, then 1 Hz around the best
++        point (a current limit puts a corner in the feasible power)."""
++        cfg = self.cfg
++        lo_band, hi_band = float(cfg['frequency_min_Hz']), float(cfg['frequency_max_Hz'])
++        span = cfg['admittance_search_span_widths']*self.est.width
++        lo = max(lo_band, min(centre, self.est.fs)-span)
++        hi = min(hi_band, max(centre, self.est.fs)+span)
++        if hi <= lo:
++            return centre, float(self.power(centre)[0])
++        step = max(1., self.est.width/200)
++        f = np.append(np.arange(lo, hi, step), hi)
++        k = int(np.argmax(self.power(f)))
++        f = np.arange(max(lo, f[k]-step), min(hi, f[k]+step)+0.5, 1.)
++        p = self.power(f)
++        k = int(np.argmax(p))
++        return float(f[k]), float(p[k])
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
+index f5ede49..180f4fe 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/audit_batch.py
+@@ -38,6 +38,9 @@ def audit(folder: Path):
+     max_energy_error = max_voltage_error = max_current_error = max_power_error = 0.
+     details = []
+     limit = config.get('user_current_limit_Arms')  # absent before P7: nothing to recompute
++    points = model.current_points(config)          # transducer port unless the batch limits the amplifier too (P8)
++    logged = {'transducer_port': 'iport_Arms', 'amplifier_output': 'isource_Arms'}
++    current = lambda r: max(float(r[logged[p]]) for p in points)  # noqa: E731
+     user_recomputed = {}
+     for path in sorted((folder/'executions').glob('*.csv')):
+         rows = read_csv(path)
+@@ -51,9 +54,9 @@ def audit(folder: Path):
+         max_pre_guard_voltage=max(max_pre_guard_voltage,max(float(r['pre_guard_vport_Vpp']) for r in rows))
+         max_post_guard_voltage=max(max_post_guard_voltage,max(float(r['vport_Vpp']) for r in rows))
+         if limit is not None:
+-            above = [r for r in rows if float(r['iport_Arms'])>limit]
++            above = [r for r in rows if current(r)>limit]
+             user_recomputed[key] = (len(above),sum(int(r['duration_us']) for r in above),
+-                                    1000*max(float(r['iport_Arms']) for r in rows))
++                                    1000*max(current(r) for r in rows))
+         max_all_v=max(float(r['vport_Vpp']) for r in rows)
+         max_all_v=max(max_all_v,max(float(r['pre_guard_vport_Vpp']) for r in rows))
+         if abs(max_all_v-float(summary['peak_voltage_Vpp']))>1e-9:
+@@ -97,10 +100,13 @@ def audit(folder: Path):
+             f = np.array([float(r['frequency_Hz']) for r in cr])
+             a = np.array([float(r['applied_amplitude']) for r in cr])
+             q = model.response(f,model.scenario_map()[case_id])
+-            for name,pred in [('vport_Vpp',q['vport_vpp']*a),('iport_Arms',q['iport_irms_A']*a),('p_rm_W',q['p_rm_W']*a*a)]:
++            checks = [('vport_Vpp',q['vport_vpp']*a),('iport_Arms',q['iport_irms_A']*a),('p_rm_W',q['p_rm_W']*a*a)]
++            if 'isource_Arms' in cr[0]:
++                checks.append(('isource_Arms',q['isource_irms_A']*a))
++            for name,pred in checks:
+                 err = float(np.max(abs(np.array([float(r[name]) for r in cr])-pred)))
+                 if name=='vport_Vpp': max_voltage_error=max(max_voltage_error,err)
+-                elif name=='iport_Arms': max_current_error=max(max_current_error,err)
++                elif name in ('iport_Arms','isource_Arms'): max_current_error=max(max_current_error,err)
+                 else: max_power_error=max(max_power_error,err)
+                 if err>1e-9:
+                     problems.append('response:'+path.name+':'+name)
+@@ -127,7 +133,8 @@ def audit(folder: Path):
+     frequencies = np.arange(config['frequency_min_Hz'],config['frequency_max_Hz']+1,10.)
+     for case in model.all_scenarios():
+         q=model.response(frequencies,case)
+-        a=np.minimum.reduce([np.ones(len(frequencies)),config['voltage_soft_Vpp']/q['vport_vpp'],config['current_soft_Arms']/q['iport_irms_A']])
++        a=np.minimum.reduce([np.ones(len(frequencies)),config['voltage_soft_Vpp']/q['vport_vpp'],
++                             config['current_soft_Arms']/model.limited_current(q,points)])
+         p=q['p_rm_W']*a*a
+         k=int(np.argmax(p))
+         coarse=refs[case.case_id]['policy']['power_W']
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/README.md b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/README.md
+new file mode 100644
+index 0000000..a82d7fc
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/README.md
+@@ -0,0 +1,58 @@
++# 物理候选基线：APC 880 端面电极杆 D 0.5 mm、L 1.7467 mm，直接驱动（可选配置，未设为默认）
++
++这是一套**可选的候选配置**（P8，2026-10-17）。它按用户 2026-10-17 的要求选定：
++
++- 0.9 MHz 附近；
++- 约 100 Vpp；
++- 电流不超过 5 mA，越小越好；
++- 直径不超过 2 mm。
++
++它是初步主候选，不替换默认配置。默认配置仍是 `../../config.json`（Qm=800 的历史回归基线），合成候选 `../synthetic_q13p8_3mA/` 留作宽峰对照。
++
++## 它是什么
++
++- 器件：一维压电杆模型，APC 880 端面电极杆，D 0.5 mm、L 1.7467 mm。
++  - 前端为类血液液体、无限障板，后端空气背衬。
++  - 长度取使有载 fs 落在 0.9 MHz 的值。
++- BVD：Codex 的 `derive_candidates.py` 在 0.8–1.0 MHz 上最小二乘拟合，|Z| 最大相对误差 1.83%。
++  - 运行记录与复现方法见审查分支 `review/results/p8_admittance_track_20261017/codex_L1747/`。
++  - 拟合值：C0 0.6987 pF，Rm 9256.75 Ω，Lm 87.020 mH，Cm 0.35927 pF，fs 900.124 kHz，有载 Q 53.17。
++  - 本仓库一维模型在同一长度下得 Q 53.5、Rm 9206 Ω，两者相差 1% 以内（review/29 第 3.1 节）。
++- 驱动：50 Ω 戴维南源直接接换能器，没有匹配网络，也没有线缆。设计文件的 `l_active_H`、`c_active_F` 都是 0。
++  - a=1 时源电压 35.546 V RMS，开路 100.54 Vpp。
++  - 0.9 MHz 时换能器端 100 Vpp、3.824 mA RMS、135.0 mW。功放输出端电流与它相同。
++- 与合成候选配置的差别（其余控制、保护与验收参数相同）：
++  - 电流限值两处都限（`current_limit_points` = 换能器端、功放输出端），软/硬 4.5/5.0 mA。
++    用户 2026-10-17 表示 5 mA 的测点尚未确定（review/31）；没有线缆时两处电流相同，这个选择不改变结果。
++  - 捕获扫描幅度 `capture_scan_amplitude` = 1。
++    无源负载上，端口电压不超过源开路电压（约 100.5 Vpp），在 130 Vpp 软限以内。
++    L 型匹配的 0.65 规则（软限 ÷ 两倍名义电压）在这里不需要。
++    34 个登记场景在全频带、a=1 时都低于软限，由测试逐一核对。
++  - 设计点有载半功率宽度 `nominal_peak_width_Hz` = 17022 Hz，与默认配置同式推导。
++- 34 个登记场景里，`CASE_LMATCH_*`、`CASE_CMATCH_*`、`CASE_QL_*` 九个与基准相同，因为没有匹配网络。
++  组合场景中只有 C0、Rm、fs、Rs 起作用。
++
++## 它不是什么
++
++- 未实测。
++  - 材料常数是手册典型值。
++  - 前端取无限障板，这是对 5 mA 上限最有利的边界（review/29 第 7.4 节）。导管几何会把 Q 与电流移动一倍左右。
++  - 封装、侧壁与横向模态不在模型里。
++- 有导管线缆时，功放输出端还要供线缆的充电电流：100 pF、换能器端 100 Vpp 时约 20 mA。
++  - 本配置没有线缆。
++  - 要研究线缆，在设计文件里把 `c_active_F` 设为线缆电容（`l_active_H` 保持 0），并重新标定源幅度。
++  - 两处都限时，长线缆还需要补偿电感（review/31 第二节）。模型目前不含补偿电感。
++- 最大端口有功功率对同一器件对应最大端面振幅；不同器件之间不能这样比。
++
++## 怎么跑
++
++```
++python run_unified.py --config candidates/physical_apc880_d05_L1747/config.json --suite all
++python run_unified.py --config candidates/physical_apc880_d05_L1747/config.json --suite all --extra-strategy ADMITTANCE_TRACK
++python audit_batch.py outputs/<该批次目录>
++```
++
++`run_project.py validate` 只登记默认配置的批次，候选批次不会被登记为当前结果。
++
++三个 JSON 由审查分支的 `review/physical_candidate_parameters.py` 生成，`--check` 可以逐值复核。
++平台测试 `DirectDriveAndCurrentPointTests` 用平台模型再核一次：设计点、功率平衡、标称峰宽、与合成候选配置的差别。
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/config.json
+new file mode 100644
+index 0000000..ebd9c18
+--- /dev/null
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/config.json
+@@ -0,0 +1,139 @@
++{
++  "version": "plan-three-strategy-v1-candidate-physical-apc880-d05-L1747-direct",
++  "parameter_origin": "physical_candidate_1d_rod_model_least_squares_bvd_direct_drive_non_measured",
++  "user_boundaries": "0.8-1.0 MHz, start 0.9 MHz, nominal port 100 Vpp, hard 160 Vpp, 50 ohm source; user: 5 mA RMS is an upper limit, recommended lower, measuring point not decided (2026-10-17); 0.9 MHz is acceptable for now",
++  "baseline_design_file": "candidates/physical_apc880_d05_L1747/stage2_匹配设计参数.json",
++  "baseline_calibration_file": "candidates/physical_apc880_d05_L1747/stage2_控制源幅度校准.json",
++  "current_limit_measurement_point": "both: transducer_port and amplifier_output. The user has not decided where the 5 mA RMS upper limit is measured (2026-10-17, review/31), so both are limited; without a cable (this candidate) the two currents are equal, so the choice changes nothing here",
++  "user_current_limit_Arms": 0.005,
++  "user_current_limit_rule": "user upper limit on the RMS current, applied at both current_limit_points (measuring point not decided, 2026-10-17); every execution row after the guard is checked against it at both points and reported per strategy; it does not change the guard limits",
++  "frequency_min_Hz": 800000,
++  "frequency_max_Hz": 1000000,
++  "initial_frequency_Hz": 900000,
++  "control_tick_us": 20000,
++  "segment_us": 800000,
++  "scan_point_us": 1500,
++  "point_acquire_timeout_us": 500000,
++  "scan_period_us": 500000,
++  "scan_amplitude": 0.4,
++  "scan_levels_Hz": [
++    [
++      50000,
++      5000
++    ],
++    [
++      5000,
++      1000
++    ],
++    [
++      1000,
++      100
++    ]
++  ],
++  "scan_max_recentres": 3,
++  "scan_validation_relative_tolerance": 0.1,
++  "failed_scan_retry_us": 50000,
++  "failed_scan_max_retries": 2,
++  "scan_preemption_max_retries": 4,
++  "scan_measurement_fault_max_retries": 2,
++  "scan_nonstationary_max_retries": 2,
++  "scan_max_coarse_fallbacks": 2,
++  "scan_max_points": 400,
++  "scan_max_duration_us": 300000,
++  "scan_budget_origin": "declared_not_tuned; every class is bounded and any exhaustion reaches the same latch; rationale and the sensitivity that is NOT established in review/13",
++  "failed_scan_exhaustion": "latched_low_hold_until_explicit_run_reset",
++  "hard_hold_us": 60000,
++  "recovery_hold_us": 100000,
++  "soft_hold_us": 100000,
++  "recovery_amplitude": 0.25,
++  "ramp_amplitude_per_s": 2.5,
++  "voltage_soft_Vpp": 130.0,
++  "voltage_hard_Vpp": 160.0,
++  "current_soft_Arms": 0.0045,
++  "current_hard_Arms": 0.005,
++  "current_limit_points": [
++    "transducer_port",
++    "amplifier_output"
++  ],
++  "phase_gain_Hz_per_deg": 5.0,
++  "phase_deadband_deg": 0.1,
++  "phase_max_step_Hz": 500.0,
++  "phase_probe_offset_Hz": 100.0,
++  "phase_slope_min_deg_per_Hz": 1e-06,
++  "phase_probe_mode": "executed_neighbour_measurements_at_current_amplitude",
++  "phase_centre_recovery_gate": true,
++  "phase_centre_recovery_rule": "when true: after an accepted changed centre, no new phase update until two consecutive NORMAL, unfrozen 20 ms CONTROL samples at the new centre show the same applied amplitude; off in this default configuration (review/23 per-trial pre-guard current-peak rule fails on the Qm=800 baseline, 13/31)",
++  "phase_tracker": "newton_v2",
++  "phase_signal": "port",
++  "phase_target_policy": "relearn_after_capture",
++  "phase_tracker_rule": "gain_v1 = the original law: input phase arg(V_input/I_source), target frozen at the 0.9 MHz baseline calibration, step = phase_gain_Hz_per_deg x error, probes +-phase_probe_offset_Hz; it accepts only phase_signal input with phase_target_policy frozen. newton_v2: step = phase_newton_fraction x error / measured slope, clipped to phase_max_step_per_width x peak width, probes +-max(phase_probe_offset_Hz, phase_probe_offset_per_width x width), target learned from the first valid CONTROL sample; phase_signal port = arg(V_port/I_port) at the transducer terminals; relearn_after_capture re-learns the target at the point each power-drop-triggered capture chooses, frozen never captures",
++  "phase_newton_fraction": 0.7,
++  "phase_probe_offset_per_width": 0.05,
++  "phase_max_step_per_width": 0.25,
++  "nominal_peak_width_Hz": 17022,
++  "capture_scan_amplitude": 1.0,
++  "capture_scan_coarse_step_Hz": 5000,
++  "capture_scan_refine_factor": 5,
++  "capture_scan_refine_step_per_width": 0.1,
++  "capture_scan_min_step_Hz": 100,
++  "capture_scan_dwell_min_us": 200,
++  "capture_scan_settle_time_constants": 10,
++  "capture_scan_secondary_peak_ratio": 0.8,
++  "capture_scan_peak_separation_steps": 3,
++  "capture_scan_max_peaks": 2,
++  "capture_scan_gain_threshold": 0.02,
++  "capture_scan_min_interval_us": 100000,
++  "capture_scan_drop_fraction": 0.1,
++  "capture_scan_rule": "started only by a measured power drop (capture_scan_drop_fraction below the learned reference for drop_confirm_samples comparable samples), never on a timer and never at t=0; anchor, remembered points first, then a coarse pass over the whole band, refinement at 1/capture_scan_refine_factor of the step over +-1 previous step until the step is below capture_scan_refine_step_per_width x the measured half-power width or reaches capture_scan_min_step_Hz, a second local maximum within capture_scan_secondary_peak_ratio refined too, anchor re-measured after every level, final validation, and no move unless the winner beats the anchor by capture_scan_gain_threshold; dwell = clip(capture_scan_settle_time_constants/(pi x width), capture_scan_dwell_min_us, scan_point_us); all points at capture_scan_amplitude = voltage_soft_Vpp/(2 x 100 Vpp); failures use the scan budgets and latch above; nominal_peak_width_Hz is the design point's loaded P_Rm half-power width, used until a capture measures one. This candidate (direct drive): the port voltage of a passive load cannot exceed the source open-circuit voltage, so capture_scan_amplitude = min(1, voltage_soft_Vpp / source open-circuit Vpp) = 1 instead of the L-match rule voltage_soft_Vpp/(2 x 100 Vpp)",
++  "track_change_fraction": 0.02,
++  "impedance_change_fraction": 0.05,
++  "drop_confirm_samples": 3,
++  "reference_samples": 3,
++  "memory_size": 4,
++  "memory_match_tolerance": 0.03,
++  "noise_window_samples": 8,
++  "noise_same_point_per_width": 0.01,
++  "noise_sigmas": 2.0,
++  "probe_amplitude_margin": 0.05,
++  "full_amplitude_threshold": 0.999,
++  "po_step_initial_per_width": 0.125,
++  "po_step_min_per_width": 0.025,
++  "po_step_max_per_width": 0.5,
++  "po_grow": 1.5,
++  "po_shrink": 0.5,
++  "po_move_threshold": 0.002,
++  "po_park_comparisons": 3,
++  "po_rule": "CAPTURE_PO: two-sided perturb-and-observe on the measured soft-feasible power; each comparison probes f_op -+ step and moves only to a side that beats the mean of the recent CONTROL samples by po_move_threshold (or noise_sigmas measured difference sigmas, if larger); a move grows the step by po_grow, a comparison without one shrinks it by po_shrink, within [po_step_min_per_width, po_step_max_per_width] x peak width, starting at po_step_initial_per_width x width; po_park_comparisons comparisons at the minimum step without a move park it until the power monitor reports a change; a confirmed drop goes to recall and then the capture scan described in capture_scan_rule",
++  "admittance_model_tolerance": 0.02,
++  "admittance_move_gain": 0.005,
++  "admittance_max_model_moves": 4,
++  "admittance_min_separation_per_width": 0.25,
++  "admittance_search_span_widths": 6.0,
++  "admittance_fit_max_residual": 0.05,
++  "admittance_max_parameter_ratio": 2.0,
++  "admittance_rule": "ADMITTANCE_TRACK (opt-in, run_unified.py --extra-strategy ADMITTANCE_TRACK; not a formal strategy): CAPTURE_PO with a de-embedded admittance model in front. Each comparable CONTROL sample gives the port admittance Y = I/V from vpp, irms and phase_port_deg; Zm = 1/(Y - j w C0_est) = R + jX. When Y is off the model's prediction by more than admittance_model_tolerance (or noise_sigmas x the measured sample-to-sample scatter of Y), the estimate is updated: Rm = R, fs from X with Lm held, and Lm from the previous held point too when the two are at least admittance_min_separation_per_width widths apart. The model's soft-feasible optimum (estimate behind the declared source and network, scaled by the measured port-voltage transfer k) is searched within admittance_search_span_widths widths; a predicted gain above admittance_move_gain moves the held point there at once (drive lowered first when the model predicts less headroom). More than admittance_max_model_moves moves without convergence, or a non-physical update, start a capture, whose points refit the BVD when the fit's relative RMS residual is below admittance_fit_max_residual (noise-widened). A level change the model explains relearns the power reference instead of starting a capture; a change it does not see (network: k only) is left to the CAPTURE_PO path. Prior: the design file's BVD.",
++  "capture_threshold": 0.98,
++  "continuous_samples": 10,
++  "tail_window_us": 200000,
++  "recovery_fraction": 0.95,
++  "recovery_sustain_us": 40000,
++  "reference_grid_step_Hz": 100,
++  "reference_policy": "soft_limits_and_source_amplitude_le_1",
++  "gamma_role": "monitor_only_no_claim_of_reflection_upper_bound",
++  "power_cap_role": "no_independent_absolute_power_cap; maximize_P_Rm_under_declared_V_I_and_source_amplitude_constraints",
++  "protection_assumption": "ideal_current_model_guard_at_command_instants; no_guard_at_unobserved_disturbance_boundaries",
++  "historical_schedule": [
++    "CASE_000_BASELINE",
++    "CASE_C0_P30",
++    "CASE_RM_P50",
++    "CASE_FS_M5",
++    "CASE_LMATCH_P10",
++    "CASE_QL_20",
++    "CASE_COMBINED_HIGH",
++    "CASE_000_BASELINE",
++    "CASE_LM_P20",
++    "CASE_000_BASELINE",
++    "CASE_CM_P20",
++    "CASE_000_BASELINE"
++  ]
++}
+diff --git "a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json" "b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json"
+new file mode 100644
+index 0000000..80847ca
+--- /dev/null
++++ "b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/stage2_\345\214\271\351\205\215\350\256\276\350\256\241\345\217\202\346\225\260.json"
+@@ -0,0 +1,61 @@
++{
++  "model_id": "PHYSICAL_CANDIDATE_APC880_D05_L1747_DIRECT",
++  "topology": "direct drive: Rs -> transducer port; no matching network, no cable (l_active_H = c_active_F = 0)",
++  "comparison_source": "Thevenin source with fixed 50 ohm Rs straight into the BVD",
++  "bvd": {
++    "C0_F": 6.987135501654816e-13,
++    "Rm_ohm": 9256.753684748222,
++    "Lm_H": 0.08702008233437314,
++    "Cm_F": 3.592657969380343e-13,
++    "fs_Hz": 900124.2252361794,
++    "Qm": 53.1671157123813
++  },
++  "matching_loss_assumptions": {
++    "source_class": "NOT_USED_DIRECT_DRIVE",
++    "inductor_Q_at_f0": 100.0,
++    "capacitor_Q_at_f0": 1000.0,
++    "esr_model": "no matching elements: with l_active_H = c_active_F = 0 both ESRs are zero; the two Q values only satisfy the file format and enter no result"
++  },
++  "design": {
++    "l_ideal_H": 0.0,
++    "c_ideal_F": 0.0,
++    "l_active_H": 0.0,
++    "c_active_F": 0.0,
++    "r_l_active_ohm_at_f0": 0.0,
++    "r_c_active_ohm_at_f0": 0.0,
++    "network": "none (direct drive)"
++  },
++  "calibration": {
++    "source_class": "DERIVED_VALUE for direct drive; not a hardware rating",
++    "calibration_frequency_Hz": 900000.0,
++    "target_transducer_Vpp": 100.0,
++    "unit_source_Vrms": 1.0,
++    "vport_per_unit_source_Vrms": 0.9946286703925113,
++    "a1_source_Vrms": 35.546269790689884,
++    "a1_source_Vpp": 100.54003365953335,
++    "expected_p_rm_W": 0.13500746221779766,
++    "expected_total_iport_Arms": 0.0038236009589234054,
++    "rule": "freeze this Thevenin source amplitude for all future scenarios; protection may only reduce it"
++  },
++  "baseline_derivation": {
++    "status": "物理候选（未设为默认）：一维压电杆模型＋无限障板辐射推导、最小二乘拟合的 BVD；未实测，不宣称为目标器件参数",
++    "element": "APC 880 端面电极杆，D 0.5 mm，L 1.7467 mm（有载 fs 0.9 MHz）；前端类血液液体、无限障板，后端空气背衬",
++    "bvd_source": "Codex derive_candidates.py（sha256 183f76411b15945031248c50daa3cbedd85f5a1f7732421d40c3f0ed36951a23，原样）用本仓库重建的假设文件、长度改为 1.7467 mm 运行；候选 APC880_D0.5_L1.8_front_BMF（标识沿用 Codex 的默认长度 1.8 mm）；0.8–1.0 MHz 最小二乘拟合，|Z| 最大相对误差 1.83%",
++    "bvd_run_file": "review/results/p8_admittance_track_20261017/codex_L1747/candidate_parameters.json",
++    "bvd_run_file_sha256": "574fb9c873753f41a1bd077e2a2509cc88b5839373acd202109dff58f90b0c2b",
++    "assumptions_sha256": "97346acea825c721d1b831f9aa8ce881c3330b1b446f90ed8ce004c0b0022b16",
++    "repository_model_comparison": "本仓库一维模型同一长度：Q 53.5、Rm 9206 Ω、100 Vpp 时 3.85 mA、136 mW（review/29 第 3.1 节），与本 BVD 相差 1% 以内",
++    "design_point_transducer_current_Arms": 0.0038236009589234054,
++    "design_point_amplifier_output_current_Arms": 0.0038236009589234054,
++    "current_measurement_point": "5 mA 的测点未定（用户 2026-10-17），换能器端与功放输出端都限，软/硬 4.5/5.0 mA（review/31）；直接驱动、无线缆时两处电流相同",
++    "registered_scenarios_note": "无匹配网络：CASE_LMATCH_*、CASE_CMATCH_*、CASE_QL_* 九个场景与基准相同，组合场景中只有 C0、Rm、fs、Rs 起作用",
++    "capture_scan_amplitude": "a = min(1, voltage_soft_Vpp ÷ 源开路 Vpp) = min(1, 130 ÷ 100.54) = 1：无源负载上端口电压不超过源开路电压；L 型匹配的 0.65 规则（软限 ÷ 两倍名义电压）在这里不需要",
++    "evidence": [
++      "review/29 第 3.1、7.3 节",
++      "review/30 第五、六节",
++      "review/31",
++      "review/32"
++    ],
++    "generator": "review/physical_candidate_parameters.py"
++  }
++}
+diff --git "a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/stage2_\346\216\247\345\210\266\346\272\220\345\271\205\345\272\246\346\240\241\345\207\206.json" "b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/stage2_\346\216\247\345\210\266\346\272\220\345\271\205\345\272\246\346\240\241\345\207\206.json"
+new file mode 100644
+index 0000000..d6469c4
+--- /dev/null
++++ "b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/physical_apc880_d05_L1747/stage2_\346\216\247\345\210\266\346\272\220\345\271\205\345\272\246\346\240\241\345\207\206.json"
+@@ -0,0 +1,19 @@
++{
++  "source_class": "DERIVED_VALUE; direct drive and AC RMS-equivalent convention",
++  "source_Vrms_for_a1": 35.546269790689884,
++  "source_Vpp_for_a1": 100.54003365953335,
++  "transducer_Vpp": 99.99999999999999,
++  "transducer_Irms_A": 0.0038236009589234054,
++  "P_Rm_W": 0.13500746221779766,
++  "P_port_W": 0.1350074622177976,
++  "Q_port_var": -0.006920297093327908,
++  "S_port_VA": 0.13518470833030624,
++  "P_source_W": 0.13573845843245164,
++  "P_Rs_W": 0.0007309962146539993,
++  "P_L_ESR_W": 0.0,
++  "P_C_ESR_W": 0.0,
++  "eta_elec": 0.9946146713091062,
++  "rule": "freeze this source amplitude for stage3-5; protection may reduce but strategies may not increase it",
++  "amplifier_output_Irms_A": 0.0038236009589234054,
++  "baseline": "PHYSICAL_CANDIDATE_APC880_D05_L1747_DIRECT（物理候选，非默认）；推导见同目录设计文件的 baseline_derivation"
++}
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+index 5d10f22..302c6e3 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/candidates/synthetic_q13p8_3mA/config.json
+@@ -51,6 +51,7 @@
+   "voltage_hard_Vpp": 160.0,
+   "current_soft_Arms": 0.0045,
+   "current_hard_Arms": 0.005,
++  "current_limit_points": ["transducer_port"],
+   "phase_gain_Hz_per_deg": 5.0,
+   "phase_deadband_deg": 0.1,
+   "phase_max_step_Hz": 500.0,
+@@ -100,9 +101,19 @@
+   "po_move_threshold": 0.002,
+   "po_park_comparisons": 3,
+   "po_rule": "CAPTURE_PO: two-sided perturb-and-observe on the measured soft-feasible power; each comparison probes f_op -+ step and moves only to a side that beats the mean of the recent CONTROL samples by po_move_threshold (or noise_sigmas measured difference sigmas, if larger); a move grows the step by po_grow, a comparison without one shrinks it by po_shrink, within [po_step_min_per_width, po_step_max_per_width] x peak width, starting at po_step_initial_per_width x width; po_park_comparisons comparisons at the minimum step without a move park it until the power monitor reports a change; a confirmed drop goes to recall and then the capture scan described in capture_scan_rule",
++  "admittance_model_tolerance": 0.02,
++  "admittance_move_gain": 0.005,
++  "admittance_max_model_moves": 4,
++  "admittance_min_separation_per_width": 0.25,
++  "admittance_search_span_widths": 6.0,
++  "admittance_fit_max_residual": 0.05,
++  "admittance_max_parameter_ratio": 2.0,
++  "admittance_rule": "ADMITTANCE_TRACK (opt-in, run_unified.py --extra-strategy ADMITTANCE_TRACK; not a formal strategy): CAPTURE_PO with a de-embedded admittance model in front. Each comparable CONTROL sample gives the port admittance Y = I/V from vpp, irms and phase_port_deg; Zm = 1/(Y - j w C0_est) = R + jX. When Y is off the model's prediction by more than admittance_model_tolerance (or noise_sigmas x the measured sample-to-sample scatter of Y), the estimate is updated: Rm = R, fs from X with Lm held, and Lm from the previous held point too when the two are at least admittance_min_separation_per_width widths apart. The model's soft-feasible optimum (estimate behind the declared source and network, scaled by the measured port-voltage transfer k) is searched within admittance_search_span_widths widths; a predicted gain above admittance_move_gain moves the held point there at once (drive lowered first when the model predicts less headroom). More than admittance_max_model_moves moves without convergence, or a non-physical update, start a capture, whose points refit the BVD when the fit's relative RMS residual is below admittance_fit_max_residual (noise-widened). A level change the model explains relearns the power reference instead of starting a capture; a change it does not see (network: k only) is left to the CAPTURE_PO path. Prior: the design file's BVD.",
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
++  "recovery_fraction": 0.95,
++  "recovery_sustain_us": 40000,
+   "reference_grid_step_Hz": 100,
+   "reference_policy": "soft_limits_and_source_amplitude_le_1",
+   "gamma_role": "monitor_only_no_claim_of_reflection_upper_bound",
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+index ad67728..1748564 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/config.json
+@@ -51,6 +51,7 @@
+   "voltage_hard_Vpp": 160.0,
+   "current_soft_Arms": 0.0055,
+   "current_hard_Arms": 0.006,
++  "current_limit_points": ["transducer_port"],
+   "phase_gain_Hz_per_deg": 5.0,
+   "phase_deadband_deg": 0.1,
+   "phase_max_step_Hz": 500.0,
+@@ -100,9 +101,19 @@
+   "po_move_threshold": 0.002,
+   "po_park_comparisons": 3,
+   "po_rule": "CAPTURE_PO: two-sided perturb-and-observe on the measured soft-feasible power; each comparison probes f_op -+ step and moves only to a side that beats the mean of the recent CONTROL samples by po_move_threshold (or noise_sigmas measured difference sigmas, if larger); a move grows the step by po_grow, a comparison without one shrinks it by po_shrink, within [po_step_min_per_width, po_step_max_per_width] x peak width, starting at po_step_initial_per_width x width; po_park_comparisons comparisons at the minimum step without a move park it until the power monitor reports a change; a confirmed drop goes to recall and then the capture scan described in capture_scan_rule",
++  "admittance_model_tolerance": 0.02,
++  "admittance_move_gain": 0.005,
++  "admittance_max_model_moves": 4,
++  "admittance_min_separation_per_width": 0.25,
++  "admittance_search_span_widths": 6.0,
++  "admittance_fit_max_residual": 0.05,
++  "admittance_max_parameter_ratio": 2.0,
++  "admittance_rule": "ADMITTANCE_TRACK (opt-in, run_unified.py --extra-strategy ADMITTANCE_TRACK; not a formal strategy): CAPTURE_PO with a de-embedded admittance model in front. Each comparable CONTROL sample gives the port admittance Y = I/V from vpp, irms and phase_port_deg; Zm = 1/(Y - j w C0_est) = R + jX. When Y is off the model's prediction by more than admittance_model_tolerance (or noise_sigmas x the measured sample-to-sample scatter of Y), the estimate is updated: Rm = R, fs from X with Lm held, and Lm from the previous held point too when the two are at least admittance_min_separation_per_width widths apart. The model's soft-feasible optimum (estimate behind the declared source and network, scaled by the measured port-voltage transfer k) is searched within admittance_search_span_widths widths; a predicted gain above admittance_move_gain moves the held point there at once (drive lowered first when the model predicts less headroom). More than admittance_max_model_moves moves without convergence, or a non-physical update, start a capture, whose points refit the BVD when the fit's relative RMS residual is below admittance_fit_max_residual (noise-widened). A level change the model explains relearns the power reference instead of starting a capture; a change it does not see (network: k only) is left to the CAPTURE_PO path. Prior: the design file's BVD.",
+   "capture_threshold": 0.98,
+   "continuous_samples": 10,
+   "tail_window_us": 200000,
++  "recovery_fraction": 0.95,
++  "recovery_sustain_us": 40000,
+   "reference_grid_step_Hz": 100,
+   "reference_policy": "soft_limits_and_source_amplitude_le_1",
+   "gamma_role": "monitor_only_no_claim_of_reflection_upper_bound",
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+index d1c464b..bc9beb1 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/controllers.py
+@@ -7,9 +7,13 @@ from __future__ import annotations
+ from dataclasses import dataclass
+ import math
+ import numpy as np
+-from engine import Engine, Measurement, finite, measured_score, valid_measurement, wrap_deg
++import admittance as AM
++from engine import Engine, Measurement, finite, limited_irms, measured_score, valid_measurement, wrap_deg
+ 
+ STRATEGIES = ('FIXED', 'PERIODIC_SCAN', 'PHASE_FEEDBACK', 'CAPTURE_PO')
++# Run only when asked for (run_unified.py --extra-strategy); not part of the
++# formal set the catalog, the dashboard and run_project.py validate expect.
++EXTRA_STRATEGIES = ('ADMITTANCE_TRACK',)
+ 
+ 
+ def grid(center: float, half: float, step: float, low: float, high: float) -> list[float]:
+@@ -497,8 +501,11 @@ def soft_headroom(m: Measurement, cfg: dict) -> float | None:
+     """Amplitude at which this measured point would reach a soft limit (linear scaling)."""
+     if not valid_measurement(m):
+         return None
++    irms = limited_irms(m, cfg)
++    if irms is None:
++        return None
+     return min(cfg['voltage_soft_Vpp']*m.amplitude/m.vpp,
+-               cfg['current_soft_Arms']*m.amplitude/m.irms)
++               cfg['current_soft_Arms']*m.amplitude/irms)
+ 
+ 
+ def safe_amplitude(cfg: dict, a_now: float, headrooms) -> float:
+@@ -673,6 +680,7 @@ class CaptureResult:
+     headroom: tuple = ()                 # (frequency_Hz, headroom) measured on the way
+     band_edge: bool = False
+     points: int = 0
++    samples: tuple = ()                  # every valid Measurement taken, in order (review/32)
+ 
+ 
+ def capture(io: Executor, trusted_frequency: float, width_hint: float | None,
+@@ -705,6 +713,7 @@ def capture(io: Executor, trusted_frequency: float, width_hint: float | None,
+     dwell = settle_dwell_us(cfg, width)
+     gain = max(cfg['capture_scan_gain_threshold'], cfg['noise_sigmas']*noise)
+     seen = []
++    taken = []
+     count = 0
+ 
+     def fail(reason, status):
+@@ -722,6 +731,7 @@ def capture(io: Executor, trusted_frequency: float, width_hint: float | None,
+         if s is None or not math.isfinite(s):
+             return None, fail('INVALID_POINT_OR_PROTECTION_OR_END', SCAN_INVALID)
+         seen.append((float(f), soft_headroom(p.measurement, cfg)))
++        taken.append(p.measurement)
+         return p.measurement, None
+ 
+     anchor, failed = take(trusted_frequency, 'CAPTURE_ANCHOR_START')
+@@ -769,7 +779,7 @@ def capture(io: Executor, trusted_frequency: float, width_hint: float | None,
+             m, s = again, measured_score(again, cfg)
+         return CaptureResult(True, float(f_mem), 'MEMORY_RECALLED', SCAN_VALID, 'MEMORY', s,
+                              w_mem if w_mem is not None else width, m, anchor_score,
+-                             tuple(seen), f_mem in (lo, hi), count)
++                             tuple(seen), f_mem in (lo, hi), count, tuple(taken))
+ 
+     step = float(cfg['capture_scan_coarse_step_Hz'])
+     fs = [float(f) for f in np.arange(lo, hi+step/2, step)]
+@@ -844,9 +854,9 @@ def capture(io: Executor, trusted_frequency: float, width_hint: float | None,
+         stay = measured_score(latest_anchor, cfg)
+         return CaptureResult(True, float(trusted_frequency), 'GAIN_BELOW_THRESHOLD', SCAN_VALID,
+                              'STAY', stay, width, latest_anchor, anchor_score, tuple(seen),
+-                             trusted_frequency in (lo, hi), count)
++                             trusted_frequency in (lo, hi), count, tuple(taken))
+     return CaptureResult(True, float(center), 'CAPTURED', SCAN_VALID, 'SCAN', score, width, final,
+-                         anchor_score, tuple(seen), center in (lo, hi), count)
++                         anchor_score, tuple(seen), center in (lo, hi), count, tuple(taken))
+ 
+ 
+ class NoiseFloor:
+@@ -1507,10 +1517,324 @@ def run_capture_po(io: Executor):
+             last = io.control(f_op, low if sup.failed_episode else 1.)
+ 
+ 
++class AdmittanceTracker:
++    """Follows the resonance from each comparable CONTROL sample (review/32).
++
++    The sample's port admittance, de-embedded with the estimated C0, gives the
++    motional R + jX at the held point. When it is off the model's prediction
++    by more than admittance_model_tolerance (or noise_sigmas times the measured
++    sample-to-sample scatter of Y, if larger), the estimate is updated from it:
++    Rm and fs, and Lm from the previous held point as well when the two are at
++    least admittance_min_separation_per_width widths apart. A predicted
++    soft-feasible gain above admittance_move_gain then moves the held point to
++    the model's optimum at once, without probes. k, the measured over predicted
++    port voltage per unit drive, is refreshed when it is off by the same
++    tolerance. While k is off 1 by more than the tolerance, the declared
++    network does not explain the port voltage and the model does not know where
++    that has put the optimum (network): it neither moves the point nor explains
++    a level change, and the power monitor, P&O and the capture are in charge;
++    k coming back to 1 (the declared network again) gives the model back. A
++    model move the next measurement shows to be worse is undone by the caller
++    (suspended) until P&O parks by itself, a capture or recall lands, or the
++    load changes again. The prior is the design file's BVD; the first sample
++    may move to the prior's optimum.
++
++    Memory: the estimate of each load that ends (the design prior first, never
++    evicted, then memory_size more) is kept. When a held point shows a new
++    load, the sample is first compared with every remembered estimate; one
++    that predicts it within the tolerance is taken as it is, without a probe
++    or an update, and the point moves straight to its optimum. A load that
++    comes back is then one move away, also when the last load had misled a
++    one-point update (its Lm).
++    """
++
++    def __init__(self, cfg: dict):
++        self.cfg = cfg
++        self.plant = AM.PlantModel(cfg, AM.design_prior())
++        self.points = []     # (frequency, Y): latest comparable sample per held point of this load, newest last
++        self.d = []          # relative |dY| of consecutive same-point, same-amplitude samples
++        self.prev = None
++        self.moves = 0
++        self.best = None     # cached (estimate, k, centre) -> optimum
++        self.fresh = True    # the first sample may move to the prior's optimum
++        self.level = None
++        self.network = False    # k off 1: the declared network does not explain the port voltage
++        self.suspended = False  # a model move measured worse; no model moves until the next change
++        self.memory = [self.plant.est]   # estimates of earlier loads; the design prior is never evicted
++
++    def remember(self, est: AM.Estimate):
++        tol = self.cfg['memory_match_tolerance']
++        if any(all(abs(a/b-1) <= tol for a, b in ((e.c0, est.c0), (e.rm, est.rm), (e.lm, est.lm), (e.cm, est.cm)))
++               for e in self.memory):
++            return
++        self.memory = [self.memory[0]]+([est]+self.memory[1:])[:int(self.cfg['memory_size'])]
++
++    def recall(self, f: float, y: complex, tolerance: float) -> AM.Estimate | None:
++        best = min(self.memory, key=lambda e: abs(y-AM.admittance(f, e)))
++        return best if abs(y-AM.admittance(f, best))/abs(y) <= tolerance else None
++
++    def release(self):
++        """P&O parked by itself, a capture or recall landed, or the load changed: a move
++        that measured worse no longer blocks the model."""
++        self.suspended = False
++
++    @property
++    def scatter(self) -> float:
++        return 0. if len(self.d) < 4 else 1.4826*float(np.median(self.d))
++
++    def optimum(self, f_op: float) -> tuple[float, float]:
++        key = (self.plant.est, self.plant.k, f_op)
++        if self.best is None or self.best[0] != key:
++            self.best = (key, self.plant.optimum(f_op))
++        return self.best[1]
++
++    def observe(self, io: Executor, m: Measurement, f_op: float) -> tuple[str, float | None, bool]:
++        """(verdict, frequency, network). verdict: MOVE (to frequency), EXPLAINED
++        (estimate updated and the level it predicts here changed: stay), HOLD,
++        LOST (no physical or plausible update, or no convergence) or NONE (no
++        port admittance). network: k has just moved off 1, i.e. the declared
++        network has just stopped explaining the port voltage. self.level is the
++        soft-feasible power the model predicts where the drive will be (after
++        MOVE: at the new point)."""
++        cfg = self.cfg
++        y = AM.port_admittance(m)
++        if y is None:
++            self.prev = None
++            return 'NONE', None, False
++        p, self.prev = self.prev, (m.time_us, m.frequency_Hz, m.amplitude, y)
++        if (p is not None and m.time_us-p[0] == cfg['control_tick_us'] and abs(m.frequency_Hz-p[1]) <= 1e-7
++                and abs(m.amplitude-p[2]) <= 1e-12):
++            self.d = (self.d+[abs(y-p[3])/abs(p[3])])[-int(cfg['noise_window_samples']):]
++        est = self.plant.est
++        tolerance = max(cfg['admittance_model_tolerance'], cfg['noise_sigmas']*self.scatter)
++        residual = abs(y-AM.admittance(f_op, est))/abs(y)
++        held = bool(self.points) and abs(self.points[-1][0]-f_op) <= 1e-7
++        recalled = False
++        if held and residual > tolerance:
++            # Off the prediction at a point already held: the load changed, and
++            # the earlier points belong to the old load.
++            self.points = [(f_op, y)]
++            self.release()
++            self.remember(est)
++            known = self.recall(f_op, y, tolerance)
++            if known is not None:
++                io.event('ADMITTANCE_MEMORY_MATCH', frequency_Hz=f_op, fs_Hz=known.fs, q=known.q,
++                         rm_ohm=known.rm, residual=abs(y-AM.admittance(f_op, known))/abs(y))
++                self.plant.est = est = known
++                residual, recalled = abs(y-AM.admittance(f_op, est))/abs(y), True
++        elif held:
++            self.points[-1] = (f_op, y)
++        else:
++            self.points = (self.points+[(f_op, y)])[-2:]
++        level_before = float(self.plant.power(f_op)[0])
++        updated = False
++        if residual > tolerance:
++            new = AM.update(est, [(f, AM.motional(f, v, est.c0)) for f, v in self.points],
++                            cfg['admittance_min_separation_per_width'])
++            # A device's Q and Rm do not jump by large factors between samples;
++            # an update that says so came from a point where the motional branch
++            # is too small to de-embed (far from resonance, C0 off), not from
++            # the device. The capture finds the resonance then.
++            ratio = cfg['admittance_max_parameter_ratio']
++            if new is None or not (1/ratio <= new.q/est.q <= ratio and 1/ratio <= new.rm/est.rm <= ratio):
++                io.event('ADMITTANCE_MODEL_LOST', frequency_Hz=f_op, residual=residual,
++                         reason='NON_PHYSICAL_UPDATE' if new is None else 'IMPLAUSIBLE_UPDATE',
++                         q_ratio=None if new is None else new.q/est.q,
++                         rm_ratio=None if new is None else new.rm/est.rm)
++                return 'LOST', None, False
++            self.plant.est, updated = new, True
++        k = self.plant.transfer(m)
++        if abs(k/self.plant.k-1) > tolerance:
++            self.plant.k = k
++        network = abs(self.plant.k-1) > tolerance
++        started, self.network = network and not self.network, network
++        f_best, p_best = self.optimum(f_op)
++        p_here = float(self.plant.power(f_op)[0])
++        updated = updated or recalled
++        if updated or started:
++            est = self.plant.est
++            io.event('ADMITTANCE_MODEL_UPDATE', frequency_Hz=f_op, residual=residual, tolerance=tolerance,
++                     bvd_updated=updated, fs_Hz=est.fs, q=est.q, rm_ohm=est.rm, transfer=self.plant.k,
++                     network_changed=network, optimum_Hz=f_best, predicted_gain=p_best/p_here-1)
++        # Only a changed motional branch moves the point (and the first sample,
++        # which checks the prior). After a k change the measured power, not the
++        # declared network's shape, decides, or the model and P&O would undo
++        # each other's moves.
++        fresh, self.fresh = self.fresh, False
++        trusted = not (self.network or self.suspended)
++        if (trusted and (updated or fresh) and p_best > p_here*(1+cfg['admittance_move_gain'])
++                and abs(f_best-f_op) > 1e-7):
++            self.moves += 1
++            if self.moves > cfg['admittance_max_model_moves']:
++                io.event('ADMITTANCE_MODEL_LOST', reason='NO_CONVERGENCE', frequency_Hz=f_op,
++                         moves=self.moves-1)
++                self.moves = 0
++                return 'LOST', None, started
++            io.event('ADMITTANCE_MOVE', from_frequency_Hz=f_op, to_frequency_Hz=f_best,
++                     predicted_gain=p_best/p_here-1, move=self.moves)
++            self.level = p_best
++            return 'MOVE', f_best, started
++        self.moves = 0
++        self.level = p_here
++        if trusted and updated and abs(p_here/level_before-1) > cfg['track_change_fraction']:
++            return 'EXPLAINED', None, started
++        return 'HOLD', None, started
++
++    def refit(self, io: Executor, result: CaptureResult):
++        """After a capture or recall: refit the BVD from the capture's points when
++        it took enough of them and the fit is close; keep the estimate otherwise.
++        Either way, the next comparable sample restarts the point history."""
++        cfg = self.cfg
++        self.points, self.prev, self.moves, self.best = [], None, 0, None
++        self.release()
++        pairs = [(m.frequency_Hz, AM.port_admittance(m)) for m in result.samples]
++        pairs = [(f, y) for f, y in pairs if y is not None]
++        if len({f for f, _ in pairs}) < 5:
++            return
++        fit = AM.fit_bvd([f for f, _ in pairs], [y for _, y in pairs])
++        limit = max(cfg['admittance_fit_max_residual'], cfg['noise_sigmas']*self.scatter)
++        adopted = fit is not None and fit[1] <= limit
++        if adopted:
++            self.plant.est = fit[0]
++        io.event('ADMITTANCE_REFIT', points=len(pairs), adopted=adopted,
++                 residual=None if fit is None else fit[1], limit=limit,
++                 fs_Hz=self.plant.est.fs, q=self.plant.est.q, rm_ohm=self.plant.est.rm)
++
++
++def run_admittance_track(io: Executor):
++    """ADMITTANCE_TRACK: CAPTURE_PO with the admittance model in front (review/32).
++
++    Every comparable CONTROL sample goes to the AdmittanceTracker first. A
++    resonance that moved is followed at once (MOVE): the drive is lowered first
++    when the model predicts less headroom at the new point (prepare_move), and
++    the power reference is relearnt there with the predicted level as its prior.
++    The first comparable sample at the new point is checked against the one
++    before the move: worse by more than po_move_threshold (or noise_sigmas
++    measured difference sigmas) undoes the move, suspends model moves and
++    starts P&O at the old point. A level the model explains (EXPLAINED: Rm, or
++    a peak that only became lower) relearns the reference instead of starting a
++    capture that could find nothing better. A changed network (k) starts P&O at
++    once. Everything else is CAPTURE_PO unchanged: the power monitor, the memory
++    recall, P&O, and the capture, which also runs when the model is LOST and
++    refits the BVD from its points. Captures and their failures use the same
++    scan budgets and latch. Starts parked at the start frequency.
++    """
++    cfg = io.cfg
++    tick = cfg['control_tick_us']
++    low = cfg['capture_scan_amplitude']
++    sup = CaptureSupervisor(cfg)
++    po = PerturbObserve(cfg)
++    plateau = Plateau(cfg)
++    tracker = AdmittanceTracker(cfg)
++    f_op = float(cfg['initial_frequency_Hz'])
++    po.hold(io, sup.width, 'START', f_op)
++    last = None
++    lost = False
++    pending = None      # (frequency, score, headroom) before the last model move
++    while not io.finished:
++        if sup.latched:
++            io.control(f_op, low, 'FAILED_SCAN_LATCHED_HOLD')
++            continue
++        if sup.failed_episode and not sup.budget.can_start(io.time):
++            last = io.control(f_op, low, 'FAILED_SCAN_RETRY_WAIT')
++            continue
++        usable = comparable(last, f_op, io.time, tick)
++        score = measured_score(last, cfg) if usable else None
++        sup.noise.observe(last if usable else None, score, sup.width)
++        sup.check_headroom(last if usable else None)
++        if usable and pending is not None:
++            f_back, s_back, c_back = pending
++            pending = None
++            margin = max(cfg['po_move_threshold'], cfg['noise_sigmas']*sup.noise.sigma_diff)
++            if score < s_back*(1-margin):
++                io.event('ADMITTANCE_MOVE_UNDONE', from_frequency_Hz=f_op, to_frequency_Hz=f_back,
++                         score_W=score, previous_score_W=s_back, margin=margin)
++                tracker.suspended = True
++                prepare_move(io, f_back, c_back, settle_dwell_us(cfg, sup.width))
++                f_op = f_back
++                sup.reset_reference(prior=s_back)
++                po.start(io, sup.width, 'ADMITTANCE_UNDONE', f_op)
++                plateau.prev = None
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++        if usable:
++            po.observe(score)
++            if not sup.failed_episode and not lost:    # a lost model waits for its capture
++                verdict, f_new, network = tracker.observe(io, last, f_op)
++                # The reference is relearnt with the level the model predicts as its
++                # prior: a level that comes out far below it means the model was wrong,
++                # and the monitor asks for the capture at once (PowerMonitor.observe).
++                if verdict == 'MOVE':
++                    pending = (f_op, score, soft_headroom(last, cfg))
++                    prepare_move(io, f_new, float(tracker.plant.headroom(f_new)[0]), settle_dwell_us(cfg, sup.width))
++                    f_op = f_new
++                    sup.reset_reference(prior=tracker.level)
++                    po.hold(io, sup.width, 'ADMITTANCE_MOVE', f_op)
++                    plateau.prev = None
++                    if not io.finished:
++                        last = io.control(f_op, 1.)
++                    continue
++                if verdict == 'EXPLAINED':
++                    sup.reset_reference(prior=tracker.level)
++                if network and po.parked:
++                    po.start(io, sup.width, 'ADMITTANCE_NETWORK', f_op)
++                lost = lost or verdict == 'LOST'
++        here = (valid_measurement(last) and last.time_us == io.time
++                and abs(last.frequency_Hz-f_op) <= 1e-7)
++        if here or sup.failed_episode:
++            trigger = sup.observe(io, last, usable, f_op) if here and not sup.failed_episode else None
++            if trigger == 'TRACK' and not po.parked:
++                trigger = None             # already tracking: the change is the tracker's own
++            if lost and here and not sup.failed_episode and sup.due(io.time, 'CAPTURE', last):
++                outcome = sup.attempt(io, f_op, 'ADMITTANCE_LOST') or 'FAILED'
++            else:
++                outcome = sup.respond(io, f_op, trigger, last, usable)
++            if isinstance(outcome, CaptureResult):
++                lost = False
++                f_op = float(outcome.frequency_Hz)
++                tracker.refit(io, outcome)
++                po.hold(io, sup.width, outcome.source, f_op)
++                plateau.prev = None
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++            if outcome == 'FAILED':
++                lost = False               # the retries on the scan budget refit when they succeed
++                if not io.finished:
++                    last = io.control(f_op, low, 'FAILED_SCAN_ROLLBACK')
++                continue
++            if outcome == 'NO_MEMORY_MATCH':
++                if trigger == 'TRACK':
++                    po.start(io, sup.width, 'POWER_CHANGE', f_op)
++                plateau.prev = None
++                po.scores = []
++                if not io.finished:
++                    last = io.control(f_op, 1.)
++                continue
++            if trigger == 'TRACK' and po.parked and sup.recalled:
++                po.start(io, sup.width, 'POWER_CHANGE', f_op)
++        if not po.parked and usable and plateau.ready(last, f_op, io.time):
++            new, sample = po.compare(io, f_op, last, sup)
++            if new != f_op:
++                prepare_move(io, new, soft_headroom(sample, cfg), settle_dwell_us(cfg, po.width))
++                f_op = new
++                po.scores = []
++            if po.parked:
++                sup.reset_reference(prior=po.held)
++                tracker.release()          # the measured optimum for this network is found
++        elif not usable:
++            plateau.prev = None
++        if not io.finished:
++            last = io.control(f_op, low if sup.failed_episode else 1.)
++
++
+ def run_policy(io: Executor, strategy: str, target_phase: float):
+-    if strategy not in STRATEGIES:
++    if strategy not in STRATEGIES + EXTRA_STRATEGIES:
+         raise ValueError(strategy)
+     cfg = io.cfg
++    if strategy == 'ADMITTANCE_TRACK':
++        return run_admittance_track(io)
+     if strategy == 'CAPTURE_PO':
+         return run_capture_po(io)
+     if strategy == 'PHASE_FEEDBACK' and phase_mode(cfg)[0] == 'newton_v2':
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py
+index b1da87e..9067688 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/engine.py
+@@ -43,6 +43,9 @@ class Measurement:
+     # and irms are read; None when no drive is applied. Not required by
+     # valid_measurement, so the input-phase paths are unchanged.
+     phase_port_deg: float | None = None
++    # RMS current at the amplifier output (review/32). Read by the limits only
++    # when current_limit_points includes amplifier_output.
++    irms_source: float | None = None
+ 
+ 
+ def valid_measurement(m: Measurement | None) -> bool:
+@@ -53,6 +56,16 @@ def valid_measurement(m: Measurement | None) -> bool:
+                 m.p_port_W > 1e-15)
+ 
+ 
++def limited_irms(m: Measurement, cfg: dict) -> float | None:
++    """The measured current the limits apply to: the largest over the configured
++    points (transducer port by default). None when a configured point was not
++    measured, so a limit is never judged on the wrong current."""
++    values = [m.irms if p == 'transducer_port' else m.irms_source for p in model.current_points(cfg)]
++    if not finite(*values) or min(values) <= 0:
++        return None
++    return values[0] if len(values) == 1 else max(values)
++
++
+ def measured_score(m: Measurement, cfg: dict) -> float | None:
+     """Linear scaling of ACTUALLY measured power/V/I; no load/oracle query.
+ 
+@@ -61,8 +74,11 @@ def measured_score(m: Measurement, cfg: dict) -> float | None:
+     """
+     if not valid_measurement(m):
+         return None
++    irms = limited_irms(m, cfg)
++    if irms is None:
++        return None
+     cap = min(1.0, cfg['voltage_soft_Vpp'] * m.amplitude / m.vpp,
+-              cfg['current_soft_Arms'] * m.amplitude / m.irms)
++              cfg['current_soft_Arms'] * m.amplitude / irms)
+     return m.p_port_W * (cap / m.amplitude) ** 2
+ 
+ 
+@@ -78,9 +94,10 @@ class Protection:
+         self.soft_until = -1
+         self.last_us = 0
+         self.prev_candidate_limited = False
++        self.points = model.current_points(cfg)
+ 
+     def limits(self, unit: dict) -> tuple[float, float]:
+-        v, i = float(unit['vport_vpp'][0]), float(unit['iport_irms_A'][0])
++        v, i = float(unit['vport_vpp'][0]), float(model.limited_current(unit, self.points)[0])
+         if not finite(v, i) or v <= 0 or i <= 0:
+             raise ValueError('invalid unit response')
+         return (min(1., self.cfg['voltage_soft_Vpp']/v, self.cfg['current_soft_Arms']/i),
+@@ -179,6 +196,10 @@ class Engine:
+         self.rows, self.events = [], []
+         self.action_id = 0
+         self.measurement_filter = None  # fault injection only, recorded by tests
++        # Amplifier-output columns only when that current is limited, so a
++        # transducer-port configuration logs exactly what it logged before.
++        self.points = model.current_points(cfg)
++        self.amplifier_limited = 'amplifier_output' in self.points
+ 
+     def event(self, name: str, **data):
+         self.events.append(dict(time_us=self.t, strategy=self.strategy,
+@@ -218,6 +239,7 @@ class Engine:
+             zin = vin/isrc if abs(isrc) > 1e-15 else None
+             phase = math.degrees(math.atan2(zin.imag, zin.real)) if zin is not None else None
+             p, v, i = scalar('p_port_W'), scalar('vport_vpp'), scalar('iport_irms_A')
++            i_lim = float(model.limited_current(q, self.points)[0])
+             row = dict(suite=self.suite, strategy=self.strategy, action_id=self.action_id,
+                        kind=kind, start_us=self.t, end_us=stop, duration_us=stop-self.t,
+                        action_start_us=t0, action_end_us=end,
+@@ -245,13 +267,16 @@ class Engine:
+                            None if zin is None else zin.real,None if zin is None else zin.imag)
+                            and a>1e-9 and p>1e-15 and v>0 and i>0,
+                        actual_hard_violation=v>self.cfg['voltage_hard_Vpp']+1e-8 or
+-                       i>self.cfg['current_hard_Arms']+1e-12,
++                       i_lim>self.cfg['current_hard_Arms']+1e-12,
+                        actual_soft_excess=v>self.cfg['voltage_soft_Vpp']+1e-8 or
+-                       i>self.cfg['current_soft_Arms']+1e-12,
++                       i_lim>self.cfg['current_soft_Arms']+1e-12,
+                        candidate_soft_limited=guard['candidate_soft_limited'],
+                        candidate_hard_rejected=guard['candidate_hard_rejected'],
+                        observed_hold_hard=guard['observed_hold_hard'],
+                        frequency_saturated=guard['frequency_saturated'])
++            if self.amplifier_limited:
++                row.update(isource_Arms=scalar('isource_irms_A'),
++                           pre_guard_isource_Arms=float(pre_guard['isource_irms_A'][0]))
+             pieces.append(row)
+             self.rows.append(row)
+             self.t = stop
+@@ -259,7 +284,8 @@ class Engine:
+         m = Measurement(self.t, f, a, r['vport_Vpp'], r['iport_Arms'], r['p_port_W'],
+                         r['phase_input_deg'], r['zin_real_ohm'], r['zin_imag_ohm'],
+                         r['measurement_valid'], r['protection_state'], r['frequency_frozen'],
+-                        r['phase_port_deg'])
++                        r['phase_port_deg'],
++                        abs(complex(r['i_source_real_Arms'], r['i_source_imag_Arms'])))
+         if self.measurement_filter is not None:
+             m = self.measurement_filter(m, kind)
+             for row in pieces:
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/metrics.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/metrics.py
+index 9d3fdf7..19e7508 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/metrics.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/metrics.py
+@@ -8,11 +8,13 @@ from models import model_v2_1 as model
+ def references(cfg: dict) -> dict:
+     fs = np.arange(cfg['frequency_min_Hz'], cfg['frequency_max_Hz']+1,
+                    cfg['reference_grid_step_Hz'], dtype=float)
++    points = model.current_points(cfg)
+     result = {}
+     for case in model.all_scenarios():
+         q = model.response(fs, case)
++        current = model.limited_current(q, points)
+         def feasible(v, i):
+-            a = np.minimum.reduce([np.ones(len(fs)), v/q['vport_vpp'], i/q['iport_irms_A']])
++            a = np.minimum.reduce([np.ones(len(fs)), v/q['vport_vpp'], i/current])
+             power = q['p_rm_W']*a*a
+             idx = int(np.argmax(power))
+             return dict(frequency_Hz=float(fs[idx]), power_W=float(power[idx]), amplitude=float(a[idx]))
+@@ -30,6 +32,28 @@ def energy(rows: list[dict], start: int, end: int, refs: dict) -> tuple[float,fl
+     return actual, optimal
+ 
+ 
++def recovery_times(rows: list[dict], start: int, ref: float, cfg: dict) -> tuple[float | None, float | None]:
++    """Time from the segment start to the first executed row at or above
++    recovery_fraction of the policy reference, and to the start of the first
++    unbroken stretch at or above it that lasts recovery_sustain_us (review/32).
++    Every row counts, probes and holds included: this is what the load gets,
++    not the acceptance rule, which keeps its own 98 % x 10 CONTROL samples."""
++    level = cfg['recovery_fraction']*ref
++    first = sustained = run_start = None
++    for r in rows:
++        if r['p_rm_W'] >= level:
++            if first is None:
++                first = r['start_us']
++            if run_start is None:
++                run_start = r['start_us']
++            if sustained is None and r['end_us']-run_start >= cfg['recovery_sustain_us']:
++                sustained = run_start
++        else:
++            run_start = None
++    return (None if first is None else (first-start)/1000,
++            None if sustained is None else (sustained-start)/1000)
++
++
+ def count_events(events, start, end):
+     counts = {}
+     for e in events:
+@@ -105,6 +129,11 @@ def evaluate(rows: list[dict], events: list[dict], cfg: dict, refs: dict) -> tup
+         pre = [r for r in rs if r.get('pre_guard_sample_here',r['start_us']==r['action_start_us'])]
+         pre_v = max([r['pre_guard_vport_Vpp'] for r in pre]+[0.])
+         pre_i = max([r['pre_guard_iport_Arms'] for r in pre]+[0.])
++        first_95, sustained_95 = recovery_times(rs, start, ref, cfg)
++        # Logged only when the amplifier output is limited (engine row columns).
++        source = ({} if 'isource_Arms' not in rs[0] else dict(
++            peak_source_current_mArms=1000*max([r['isource_Arms'] for r in rs]+
++                                               [r['pre_guard_isource_Arms'] for r in pre])))
+         segment_metrics.append(dict(suite=rs[0]['suite'],strategy=rs[0]['strategy'],
+             segment_index=segment,case_id=rs[0]['case_id'],start_s=start/1e6,end_s=end/1e6,
+             settled=confirmed is not None, max_consecutive_qualified_samples=max_run,
+@@ -139,7 +168,9 @@ def evaluate(rows: list[dict], events: list[dict], cfg: dict, refs: dict) -> tup
+             scan_coarse_fallbacks=counts.get('SCAN_COARSE_FALLBACK',0),
+             frequency_saturation_events=counts.get('FREQUENCY_SATURATION',0),
+             phase_probe_failures=counts.get('PHASE_PROBE_FAILED',0),
+-            noncontrol_duration_ms=sum(r['duration_us'] for r in rs if r['kind']!='CONTROL')/1000))
++            noncontrol_duration_ms=sum(r['duration_us'] for r in rs if r['kind']!='CONTROL')/1000,
++            first_recovery_level_ms=first_95, sustained_recovery_level_ms=sustained_95,
++            energy_shortfall_J=optimal-actual, **source))
+     actual, optimal = energy(rows,0,full_end,refs)
+     counts = count_events(events,0,full_end+1)  # include a scan truncated at final endpoint
+     comparable = energy(rows,800000,min(full_end,6400000),refs) if full_end>=6400000 else (None,None)
+@@ -167,4 +198,6 @@ def evaluate(rows: list[dict], events: list[dict], cfg: dict, refs: dict) -> tup
+                    total_executed_actions=len({r['action_id'] for r in rows}),
+                    logged_duration_s=sum(r['duration_us'] for r in rows)/1e6,
+                    steady_error_aggregation='not_averaged_over_unaccepted_segments')
++    if 'peak_source_current_mArms' in segment_metrics[0]:
++        overall['peak_source_current_mArms'] = max(r['peak_source_current_mArms'] for r in segment_metrics)
+     return segment_metrics, overall
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
+index 37cb60e..52dc3bb 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/models/model_v2_1.py
+@@ -11,6 +11,13 @@ module configures itself from config.json on import, so the default pair
+ under stage2_matching/ is used unless a configuration names another one.
+ Qm=800 used to be a literal here; it now sits in the default design file with
+ the same value.
++
++Direct drive (2026-10-17, review/32): a design file with l_active_H = 0 and
++c_active_F = 0 has no matching network; the 50 ohm source drives the
++transducer itself. A nonzero c_active_F with l_active_H = 0 is a shunt
++capacitance across the port, e.g. a cable. The current limits apply where
++current_limit_points says (transducer port by default, amplifier output, or
++both); response() reports both currents.
+ """
+ 
+ from __future__ import annotations
+@@ -72,6 +79,26 @@ def bvd_from_fs_qm(*, c0: float, rm: float, fs: float, qm: float) -> BVD:
+ 
+ BASE_RS = 50.0
+ 
++# Where the current limits apply (review/32): the transducer port, the
++# amplifier output, or both. The key names the response() entry measured there.
++CURRENT_POINT_KEYS = {"transducer_port": "iport_irms_A", "amplifier_output": "isource_irms_A"}
++
++
++def current_points(cfg: dict) -> tuple[str, ...]:
++    """The configured current-limit points; the transducer port when unset."""
++    points = tuple(cfg.get("current_limit_points", ("transducer_port",)))
++    if not points or len(set(points)) != len(points) or any(p not in CURRENT_POINT_KEYS for p in points):
++        raise ValueError(f"current_limit_points must be a non-empty subset of {sorted(CURRENT_POINT_KEYS)}")
++    return points
++
++
++def limited_current(q: dict, points: tuple[str, ...] | None = None) -> np.ndarray:
++    """The largest current over the limited points, per frequency of a response()."""
++    points = CURRENT_POINTS if points is None else points
++    if len(points) == 1:
++        return q[CURRENT_POINT_KEYS[points[0]]]
++    return np.maximum.reduce([q[CURRENT_POINT_KEYS[p]] for p in points])
++
+ 
+ def _read_json(name: str) -> tuple[Path, dict]:
+     path = Path(name)
+@@ -89,7 +116,7 @@ def configure(cfg: dict) -> None:
+     the configuration they run; scenarios built afterwards use it.
+     """
+     global BASELINE_ID, BASELINE_FILES, BASE_BVD, BASE_MATCH, SOURCE_A1_VRMS
+-    global VPP_SOFT, VPP_HARD, IRMS_SOFT, IRMS_HARD
++    global VPP_SOFT, VPP_HARD, IRMS_SOFT, IRMS_HARD, CURRENT_POINTS
+     design_path, design = _read_json(cfg.get("baseline_design_file", DEFAULT_DESIGN_FILE))
+     cal_path, cal = _read_json(cfg.get("baseline_calibration_file", DEFAULT_CALIBRATION_FILE))
+     BASELINE_ID = str(design["model_id"])
+@@ -113,6 +140,7 @@ def configure(cfg: dict) -> None:
+     VPP_HARD = float(cfg["voltage_hard_Vpp"])
+     IRMS_SOFT = float(cfg["current_soft_Arms"])
+     IRMS_HARD = float(cfg["current_hard_Arms"])
++    CURRENT_POINTS = current_points(cfg)
+ 
+ 
+ configure(json.loads((ROOT / "config.json").read_text(encoding="utf-8")))
+@@ -133,9 +161,16 @@ def response(
+ 
+     # ESR is a frequency-independent resistor derived from the declared Q at f0.
+     r_l = 2 * math.pi * F0 * m.l_h / m.ql
+-    r_c = 1 / (2 * math.pi * F0 * m.c_f * m.qc)
+-    z_c_match = r_c + 1 / (1j * w * m.c_f)
+-    z_parallel = 1 / (1 / z_bvd + 1 / z_c_match)
++    if m.c_f > 0:
++        r_c = 1 / (2 * math.pi * F0 * m.c_f * m.qc)
++        z_c_match = r_c + 1 / (1j * w * m.c_f)
++        z_parallel = 1 / (1 / z_bvd + 1 / z_c_match)
++    else:
++        # No shunt element across the port. With l_h = 0 as well this is direct
++        # drive: the source sees the transducer itself (review/32).
++        r_c = 0.0
++        z_c_match = None
++        z_parallel = z_bvd
+     z_in = r_l + 1j * w * m.l_h + z_parallel
+ 
+     source_v = SOURCE_A1_VRMS * float(amplitude)
+@@ -145,7 +180,7 @@ def response(
+     i_m = v_port / z_m
+     i_c0 = 1j * w * p.c0 * v_port
+     i_port = i_m + i_c0
+-    i_c_match = v_port / z_c_match
++    i_c_match = v_port / z_c_match if z_c_match is not None else np.zeros_like(v_port)
+ 
+     s_port = v_port * np.conj(i_port)
+     p_rm = np.abs(i_m) ** 2 * p.rm
+@@ -177,6 +212,7 @@ def response(
+         "gamma": gamma,
+         "vport_vpp": np.abs(v_port) * 2 * math.sqrt(2),
+         "iport_irms_A": np.abs(i_port),
++        "isource_irms_A": np.abs(i_source),
+         "phase_deg": np.angle(z_in, deg=True),
+         "r_l_ohm": np.full(f.shape, r_l),
+         "r_c_ohm": np.full(f.shape, r_c),
+@@ -197,7 +233,7 @@ def allowed_amplitude(
+             [
+                 np.ones_like(unit["vport_vpp"]),
+                 v_limit / np.maximum(unit["vport_vpp"], 1e-30),
+-                i_limit / np.maximum(unit["iport_irms_A"], 1e-30),
++                i_limit / np.maximum(limited_current(unit), 1e-30),
+             ]
+         )
+     return np.clip(a, 0.0, 1.0)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+index c64f064..216fc8c 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/run_unified.py
+@@ -14,7 +14,7 @@ import sys
+ import unittest
+ import numpy as np
+ 
+-from controllers import Executor, STRATEGIES, phase_mode, run_policy
++from controllers import EXTRA_STRATEGIES, Executor, STRATEGIES, phase_mode, run_policy
+ from engine import Engine
+ from metrics import evaluate, references
+ from models import model_v2_1 as model
+@@ -66,55 +66,74 @@ def phase_lines(config):
+             '- 中心恢复门控只作用于 gain_v1；newton_v2 自带平台等待（满幅，或两个连续同幅度的普通控制样本）。']
+ 
+ 
+-def user_limit_check(rows, limit_Arms):
+-    """Transducer-port current after the guard against the user's upper limit; reported only, the guard is unchanged."""
+-    above = [r for r in rows if r['iport_Arms'] > limit_Arms]
++ROW_CURRENT = {'transducer_port': ('iport_Arms', 'pre_guard_iport_Arms'),
++               'amplifier_output': ('isource_Arms', 'pre_guard_isource_Arms')}
++
++
++def row_current(r, points, pre=False):
++    """The largest logged current over the limited points (review/32)."""
++    return max(r[ROW_CURRENT[p][pre]] for p in points)
++
++
++def user_limit_check(rows, limit_Arms, points=('transducer_port',)):
++    """Current after the guard at the limited points (the transducer port unless the configuration
++    also limits the amplifier output) against the user's upper limit; reported only, the guard is unchanged."""
++    above = [r for r in rows if row_current(r, points) > limit_Arms]
+     pre = [r for r in rows if r['pre_guard_sample_here']]
+     return dict(user_limit_mArms=1000*limit_Arms,
+-                peak_post_guard_mArms=1000*max(r['iport_Arms'] for r in rows),
++                peak_post_guard_mArms=1000*max(row_current(r, points) for r in rows),
+                 rows=len(rows), rows_above=len(above),
+                 time_us=sum(r['duration_us'] for r in rows), time_above_us=sum(r['duration_us'] for r in above),
+                 energy_J=sum(r['p_rm_W']*r['duration_us'] for r in rows)/1e6,
+                 energy_above_J=sum(r['p_rm_W']*r['duration_us'] for r in above)/1e6,
+-                peak_pre_guard_mArms=1000*max([r['pre_guard_iport_Arms'] for r in pre]+[0.]),
+-                pre_guard_predictions_above=sum(r['pre_guard_iport_Arms'] > limit_Arms for r in pre))
++                peak_pre_guard_mArms=1000*max([row_current(r, points, True) for r in pre]+[0.]),
++                pre_guard_predictions_above=sum(row_current(r, points, True) > limit_Arms for r in pre))
+ 
+ 
+ def reference_currents(config, ref, cases):
+     """Per case: transducer-port current at the policy reference optimum (the acceptance denominator), and the
+     best P_Rm on the same grid with the current also capped at the user limit, as a fraction of that reference."""
+     capped = references(dict(config,current_soft_Arms=min(config['current_soft_Arms'],config['user_current_limit_Arms'])))
+-    return {cid: dict(current_Arms=float(model.response(r['policy']['frequency_Hz'],cases[cid])['iport_irms_A'][0])*r['policy']['amplitude'],
++    points = model.current_points(config)
++    return {cid: dict(current_Arms=float(model.limited_current(model.response(r['policy']['frequency_Hz'],cases[cid]),points)[0])*r['policy']['amplitude'],
+                       within_limit_fraction=capped[cid]['policy']['power_W']/r['policy']['power_W'])
+             for cid, r in ref.items()}
+ 
+ 
++def both_points(config):
++    return set(model.current_points(config)) == {'transducer_port','amplifier_output'}
++
++
+ def current_limit_line(config):
+     user, soft, hard = (1000*config[k] for k in ('user_current_limit_Arms','current_soft_Arms','current_hard_Arms'))
+     verdict = (f'本配置电流软/硬限 {soft:g}/{hard:g} mA 不超过该上限' if config['current_hard_Arms'] <= config['user_current_limit_Arms']
+                else f'本配置电流软/硬限 {soft:g}/{hard:g} mA 高于该上限，保护放行的电流可以超过它，结果不满足用户电流边界')
++    if both_points(config):
++        return (f'- 电流限值同时作用于换能器端口与功放输出端（取两处较大者）：用户 {user:g} mA RMS 上限的测点尚未确定'
++                f'（用户 2026-10-17），两处都限。{verdict}，逐策略核对见「用户电流上限核对」一节；两处电流的峰值另见下表最后一列。')
+     return (f'- 电流限值作用于换能器端口；用户 {user:g} mA RMS 上限的测点也在换能器端（用户 2026-10-16 确认）。{verdict}，'
+             '逐策略核对见「用户电流上限核对」一节。功放输出端电流不受这一上限约束，见下表最后一列。')
+ 
+ 
+-def user_limit_lines(config, user_limit, ref_current):
++def user_limit_lines(config, user_limit, ref_current, strategies=STRATEGIES):
+     suites = len({suite for suite, _ in user_limit})
+     limit = config['user_current_limit_Arms']
+     above = {cid: v for cid, v in ref_current.items() if v['current_Arms'] > limit}
+     blocked = {cid: v for cid, v in above.items() if v['within_limit_fraction'] < config['capture_threshold']}
+-    lines = ['', f"### 用户电流上限核对（换能器端 {1000*config['user_current_limit_Arms']:g} mA RMS）", '',
+-             '逐行统计保护后的换能器端电流，覆盖本批次全部日程；只核对、报告，不改变保护阈值。'
++    where = '换能器端与功放输出端' if both_points(config) else '换能器端'
++    lines = ['', f"### 用户电流上限核对（{where} {1000*config['user_current_limit_Arms']:g} mA RMS）", '',
++             f'逐行统计保护后的{where}电流' + ('（两处取较大者）' if both_points(config) else '') + '，覆盖本批次全部日程；只核对、报告，不改变保护阈值。'
+              '保护前预测是旧指令在新负载下的准稳态预测，只计点数，不赋予持续时间。逐日程数字见 user_current_limit_check.csv。', '',
+              f'|策略|保护后峰值 mA RMS|超过上限的时间 %|超过上限的执行行|含超限行的日程/{suites}|超限期间电能占全程 %|保护前预测峰值 mA RMS|保护前预测超限点数|',
+              '|---|---:|---:|---:|---:|---:|---:|---:|']
+-    for name in STRATEGIES:
++    for name in strategies:
+         rs = [v for (_, s), v in user_limit.items() if s == name]
+         time_us, energy = sum(v['time_us'] for v in rs), sum(v['energy_J'] for v in rs)
+         lines.append(f"|{name}|{max(v['peak_post_guard_mArms'] for v in rs):.3f}|"
+                      f"{100*sum(v['time_above_us'] for v in rs)/time_us:.2f}|{sum(v['rows_above'] for v in rs)}|"
+                      f"{sum(v['rows_above'] > 0 for v in rs)}|{100*sum(v['energy_above_J'] for v in rs)/energy if energy else 0.:.2f}|"
+                      f"{max(v['peak_pre_guard_mArms'] for v in rs):.3f}|{sum(v['pre_guard_predictions_above'] for v in rs)}|")
+-    text = f'验收参考（软限可行最大 P_Rm 点，同一参考网格）处的换能器端电流：{len(above)}/{len(ref_current)} 个场景超过上限'
++    text = f'验收参考（软限可行最大 P_Rm 点，同一参考网格）处的{where}电流：{len(above)}/{len(ref_current)} 个场景超过上限'
+     if above:
+         text += ('（' + '、'.join(f"{cid} {1000*v['current_Arms']:.3f} mA" for cid, v in above.items()) + '）。'
+                  f"同一网格上把电流也限在上限以内，{len(blocked)} 个场景最多只能达到参考的 "
+@@ -127,19 +146,22 @@ def user_limit_lines(config, user_limit, ref_current):
+     return lines
+ 
+ 
+-def make_report(folder, batch, config, overall, segments, test_result, amplifier, user_limit, ref_current):
++def make_report(folder, batch, config, overall, segments, test_result, amplifier, user_limit, ref_current,
++                strategies=STRATEGIES):
+     hist = [r for r in overall if r['suite']=='HISTORICAL_12']
+     fs = [r for r in segments if r['suite']=='HISTORICAL_12' and r['segment_index']==3]
+     coverage = [r for r in segments if r['suite'].startswith('COVER_') and r['segment_index']==1]
+     soft = f"{config['voltage_soft_Vpp']:g} Vpp / {config['current_soft_Arms']*1000:g} mA RMS"
+     hard = f"{config['voltage_hard_Vpp']:g} Vpp / {config['current_hard_Arms']*1000:g} mA RMS"
+     pre_peak = max(r['peak_pre_guard_voltage_Vpp'] for r in hist)
++    extra = [s for s in strategies if s not in STRATEGIES]
+     lines = [f'# 计划书正式策略统一准稳态验证（{len(STRATEGIES)} 种）— {batch}', '',
+       '这是独立新实现的一次同批次比较，不覆盖历史结果，也不是旧三策略结果的重新拼表。'
+       '文件名中的 three_strategy 是沿用的历史名称，表内含全部正式策略。', '',
+       '## 本批次真实完成', '',
+       f'- 行为测试：{test_result.testsRun} 项全部通过；包括无效/零功率扫描、扫描幅度同步、硬停锁存、失败重试耗尽和无回退统计。',
+       '- 正式策略：' + ' / '.join(STRATEGIES) + '。CAPTURE_PO = 功率下降触发的全频带捕获＋扰动观察（P&O）跟踪；与早期未纳入的 P_AND_O 不是同一实现。',
++      *([f"- 另运行（非正式策略，--extra-strategy）：{' / '.join(extra)}。ADMITTANCE_TRACK = 去嵌导纳模型在前的 CAPTURE_PO（review/32）；本批次因此不能登记为正式批次。"] if extra else []),
+       '- 共用同一模型、配置、执行保护器、整数微秒时钟、虚拟测量和指标计算函数。',
+       '- 原 12 段日程保留，每段 0.8 s；另做登记场景的基准→场景→基准覆盖试验（若以 --suite all 运行）。',
+       *phase_lines(config),
+@@ -155,11 +177,11 @@ def make_report(folder, batch, config, overall, segments, test_result, amplifier
+     if coverage:
+         lines += ['', '### 34 个登记场景的目标扰动段覆盖', '',
+                   '每个独立试验为基准0.8 s→目标场景0.8 s→基准0.8 s；下表仅统计中间段，不用基准段增加通过率。', '',
+-                  f'|策略|目标场景通过数/{len(coverage)//len(STRATEGIES)}|', '|---|---:|']
+-        for name in STRATEGIES:
++                  f'|策略|目标场景通过数/{len(coverage)//len(strategies)}|', '|---|---:|']
++        for name in strategies:
+             count=sum(r['settled'] for r in coverage if r['strategy']==name)
+-            lines.append(f'|{name}|{count}/{len(coverage)//len(STRATEGIES)}|')
+-    lines += user_limit_lines(config, user_limit, ref_current)
++            lines.append(f'|{name}|{count}/{len(coverage)//len(strategies)}|')
++    lines += user_limit_lines(config, user_limit, ref_current, strategies)
+     lines += ['', '### fs−5% 段（2.4–3.2 s）', '',
+       '|策略|连续验收|最长合格串|进入/确认 ms|稳态误差 %|固定尾窗误差 %|',
+       '|---|---|---:|---|---|---:|']
+@@ -197,6 +219,8 @@ def main():
+     parser.add_argument('--suite',choices=['historical','all'],default='all')
+     parser.add_argument('--config',type=Path,default=ROOT/'config.json',
+                         help='run configuration; default config.json (other baselines live under candidates/)')
++    parser.add_argument('--extra-strategy',action='append',choices=EXTRA_STRATEGIES,default=[],
++                        help='also run a non-formal strategy (repeatable); the batch then cannot be registered')
+     parser.add_argument('--test-only',action='store_true')
+     parser.add_argument('--verify',type=Path)
+     args = parser.parse_args()
+@@ -211,6 +235,7 @@ def main():
+     config_path = args.config.resolve()
+     config = json.loads(config_path.read_text(encoding='utf-8'))
+     model.configure(config)  # tests above ran on the default configuration
++    strategies = STRATEGIES + tuple(dict.fromkeys(args.extra_strategy))
+     source_files = [p for p in ROOT.rglob('*') if p.is_file() and
+                     p.suffix in ('.py','.json','.md','.txt') and
+                     not ({'outputs','audits','__pycache__'} & set(p.relative_to(ROOT).parts))]
+@@ -252,13 +277,14 @@ def main():
+     all_segments, all_overall = [], []
+     amplifier, user_limit = {}, {}
+     for suite, ids in schedules.items():
+-        for strategy in STRATEGIES:
++        for strategy in strategies:
+             engine = Engine(config,ids,strategy,suite)
+             run_policy(Executor(engine),strategy,phase)
+             per, summary = evaluate(engine.rows,engine.events,config,ref)
+             amplifier[(suite,strategy)] = 1000*max(abs(complex(r['i_source_real_Arms'],r['i_source_imag_Arms']))
+                                                    for r in engine.rows)
+-            user_limit[(suite,strategy)] = user_limit_check(engine.rows,config['user_current_limit_Arms'])
++            user_limit[(suite,strategy)] = user_limit_check(engine.rows,config['user_current_limit_Arms'],
++                                                            model.current_points(config))
+             for row in per:
+                 row['batch_id'] = batch
+             summary['batch_id'] = batch
+@@ -283,7 +309,7 @@ def main():
+         current_limit_measurement_point=config.get('current_limit_measurement_point','transducer_port'),
+         phase_centre_recovery_gate=bool(config.get('phase_centre_recovery_gate',False)),
+         phase_feedback=dict(zip(('tracker','signal','target_policy'),phase_mode(config))),
+-        user_current_limit=dict(value_Arms=config['user_current_limit_Arms'],measurement_point='transducer_port',
++        user_current_limit=dict(value_Arms=config['user_current_limit_Arms'],measurement_point='+'.join(model.current_points(config)),
+             guard_hard_limit_within=config['current_hard_Arms']<=config['user_current_limit_Arms'],
+             peak_post_guard_mArms=max(v['peak_post_guard_mArms'] for v in user_limit.values()),
+             rows_above=sum(v['rows_above'] for v in user_limit.values()),
+@@ -294,11 +320,11 @@ def main():
+             reference_optimum_current_max_Arms=max(v['current_Arms'] for v in ref_current.values()),
+             per_timeline_file='user_current_limit_check.csv'),
+         amplifier_output_current_peak_mArms=dict(all_timelines=max(amplifier.values()),
+-            historical_12={s:amplifier[('HISTORICAL_12',s)] for s in STRATEGIES}),
+-        strategies=STRATEGIES,suite_count=len(schedules),tests_passed=result.testsRun,
++            historical_12={s:amplifier[('HISTORICAL_12',s)] for s in strategies}),
++        strategies=strategies,suite_count=len(schedules),tests_passed=result.testsRun,
+         control_uses_schedule_or_offline_reference=False,ideal_guard_uses_current_model=True,
+         phase_target_deg=phase,physical_scope='hypothetical linear quasi-steady electrical model; no hardware/acoustic claim'))
+-    make_report(folder,batch,config,all_overall,all_segments,result,amplifier,user_limit,ref_current)
++    make_report(folder,batch,config,all_overall,all_segments,result,amplifier,user_limit,ref_current,strategies)
+     json_write(folder/'manifest.json',dict(batch_id=batch,source_tree_sha256=code_id,
+         files={p.relative_to(folder).as_posix():sha(p) for p in sorted(folder.rglob('*')) if p.is_file()}))
+     assert verify(folder)
+diff --git a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+index 60553dc..f88de00 100644
+--- a/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
++++ b/integrated/CTO_virtual_drive_platform_v2_1/current/unified/tests/test_unified.py
+@@ -9,13 +9,14 @@ import unittest
+ from unittest.mock import patch
+ import numpy as np
+ 
+-from controllers import (STRATEGIES, CaptureResult, CaptureSupervisor, CentreRecoveryGate, Executor,
+-                         FrequencyMemory, HeadroomMap, NoiseFloor, PerturbObserve, PointResult, PowerMonitor,
+-                         RetryBudget, ScanBudget, ScanResult, capture, coarse_peaks, grid,
++import admittance as AM
++from controllers import (EXTRA_STRATEGIES, STRATEGIES, AdmittanceTracker, CaptureResult, CaptureSupervisor, CentreRecoveryGate,
++                         Executor, FrequencyMemory, HeadroomMap, NoiseFloor, PerturbObserve, PointResult,
++                         PowerMonitor, RetryBudget, ScanBudget, ScanResult, capture, coarse_peaks, grid,
+                          newton_phase_update, peak_width, phase_mode, phase_update, probe,
+-                         run_policy, scan, settle_dwell_us)
++                         run_policy, scan, settle_dwell_us, soft_headroom)
+ from engine import Engine, Measurement, Protection, measured_score, valid_measurement
+-from metrics import energy, evaluate, references
++from metrics import energy, evaluate, recovery_times, references
+ from models import model_v2_1 as model
+ from run_unified import current_limit_line, reference_currents, user_limit_check, user_limit_lines
+ 
+@@ -23,6 +24,12 @@ ROOT = Path(__file__).resolve().parents[1]
+ CFG = json.loads((ROOT/'config.json').read_text(encoding='utf-8'))
+ BASE = 'CASE_000_BASELINE'
+ CANDIDATE = ROOT/'candidates'/'synthetic_q13p8_3mA'/'config.json'
++PHYSICAL = ROOT/'candidates'/'physical_apc880_d05_L1747'/'config.json'
++# Every key P8 added (direct drive, limit points, ADMITTANCE_TRACK, recovery metrics; review/32).
++P8_KEYS = ('current_limit_points', 'admittance_model_tolerance', 'admittance_move_gain',
++           'admittance_max_model_moves', 'admittance_min_separation_per_width', 'admittance_search_span_widths',
++           'admittance_fit_max_residual', 'admittance_max_parameter_ratio', 'admittance_rule',
++           'recovery_fraction', 'recovery_sustain_us')
+ V2 = dict(phase_tracker='newton_v2', phase_signal='port', phase_target_policy='relearn_after_capture')
+ GAIN_V1 = dict(phase_tracker='gain_v1', phase_signal='input', phase_target_policy='frozen')
+ # Every key the capture, the second phase tracker and CAPTURE_PO added (review/27).
+@@ -1184,5 +1191,271 @@ class UserCurrentLimitTests(unittest.TestCase):
+         self.assertEqual(user_limit_check(e.rows, self.cand['user_current_limit_Arms'])['rows_above'], 0)
+ 
+ 
++class DirectDriveAndCurrentPointTests(unittest.TestCase):
++    """Direct drive, the amplifier-output current and configurable limit points (P8, review/32)."""
++
++    def setUp(self):
++        self.addCleanup(model.configure, CFG)
++        self.cfg = json.loads(PHYSICAL.read_text(encoding='utf-8'))
++        model.configure(self.cfg)
++        self.cal = json.loads((ROOT/self.cfg['baseline_calibration_file']).read_text(encoding='utf-8'))
++
++    def cable(self, c_f=100e-12):
++        """The candidate with a shunt capacitance across the port, e.g. a cable."""
++        return replace(model.scenario_map()[BASE], matching=replace(model.BASE_MATCH, c_f=c_f))
++
++    def test_points_default_to_the_transducer_port_and_are_validated(self):
++        self.assertEqual(model.current_points(CFG), ('transducer_port',))
++        self.assertEqual(model.current_points({}), ('transducer_port',))
++        self.assertEqual(model.current_points(self.cfg), ('transducer_port', 'amplifier_output'))
++        for bad in ([], ['amplifier'], ['transducer_port', 'transducer_port']):
++            with self.subTest(points=bad), self.assertRaises(ValueError):
++                model.current_points(dict(current_limit_points=bad))
++
++    def test_direct_drive_design_point_and_power_balance(self):
++        design = json.loads((ROOT/self.cfg['baseline_design_file']).read_text(encoding='utf-8'))
++        self.assertEqual(model.BASELINE_ID, design['model_id'])
++        self.assertEqual((model.BASE_MATCH.l_h, model.BASE_MATCH.c_f), (0., 0.))
++        q = model.response(np.arange(800000., 1000001., 500.), model.scenario_map()[BASE])
++        np.testing.assert_array_equal(q['z_in'], q['z_bvd'])          # no network at all
++        np.testing.assert_allclose(q['isource_irms_A'], q['iport_irms_A'], rtol=1e-14)   # one current, two expressions
++        self.assertLess(np.max(np.abs(q['power_balance_error_W'])), 1e-15)
++        # A passive load cannot raise the port above the source's open-circuit voltage.
++        self.assertTrue(np.all(q['vport_vpp'] <= self.cal['source_Vpp_for_a1']*(1+1e-12)))
++        e = Engine(copy.deepcopy(self.cfg), [BASE], 'FIXED', 'TEST')
++        m = e.execute(900000, 1, 'CONTROL', 20000)
++        self.assertAlmostEqual(m.vpp, 100, places=9)
++        self.assertAlmostEqual(m.irms, self.cal['transducer_Irms_A'], places=12)
++        self.assertAlmostEqual(m.irms_source/m.irms, 1., places=14)
++        self.assertAlmostEqual(m.p_port_W, self.cal['P_port_W'], places=12)
++        self.assertLess(m.irms, self.cfg['current_soft_Arms'])
++
++    def test_a_shunt_capacitance_splits_the_two_currents(self):
++        q = model.response(900000., self.cable())
++        v, i_port = complex(q['v_port'][0]), complex(q['i_port'][0])
++        z_c = q['r_c_ohm'][0] + 1/(1j*2*np.pi*900000.*100e-12)
++        self.assertAlmostEqual(q['isource_irms_A'][0], abs(i_port+v/z_c), places=15)
++        self.assertGreater(q['isource_irms_A'][0], 4*q['iport_irms_A'][0])   # about 20 mA against 3.8 mA
++
++    def test_the_guard_limits_the_amplifier_current_only_when_configured(self):
++        unit = model.response(900000., self.cable())
++        v, i_port, i_amp = (float(unit[k][0]) for k in ('vport_vpp', 'iport_irms_A', 'isource_irms_A'))
++        both = Protection(self.cfg).limits(unit)
++        port = Protection(dict(self.cfg, current_limit_points=['transducer_port'])).limits(unit)
++        self.assertAlmostEqual(both[0], self.cfg['current_soft_Arms']/i_amp, places=12)
++        self.assertAlmostEqual(both[1], self.cfg['current_hard_Arms']/i_amp, places=12)
++        self.assertAlmostEqual(port[0], min(1., self.cfg['voltage_soft_Vpp']/v, self.cfg['current_soft_Arms']/i_port),
++                               places=12)
++
++    def test_measured_score_and_headroom_use_the_limited_current(self):
++        m = Measurement(0, 9e5, 1., 100., .003, .1, -1., 1e4, -10., True, 'NORMAL', False, -2., .009)
++        both, port = self.cfg, dict(self.cfg, current_limit_points=['transducer_port'])
++        self.assertAlmostEqual(measured_score(m, port), .1, places=15)          # 3 mA, 100 Vpp: inside
++        self.assertAlmostEqual(measured_score(m, both), .1*(4.5/9)**2, places=15)  # 9 mA at the amplifier
++        self.assertAlmostEqual(soft_headroom(m, both), .0045/.009, places=15)
++        self.assertIsNone(measured_score(replace(m, irms_source=None), both))    # a limited point not measured
++        self.assertAlmostEqual(measured_score(replace(m, irms_source=None), port), .1, places=15)
++
++    def test_amplifier_columns_are_logged_only_when_limited(self):
++        e = Engine(copy.deepcopy(self.cfg), [BASE], 'FIXED', 'TEST')
++        e.execute(900000, 1, 'CONTROL', 20000)
++        self.assertAlmostEqual(e.rows[-1]['isource_Arms']/e.rows[-1]['iport_Arms'], 1., places=14)
++        self.assertIn('pre_guard_isource_Arms', e.rows[-1])
++        model.configure(CFG)
++        e = Engine(copy.deepcopy(CFG), [BASE], 'FIXED', 'TEST')
++        e.execute(900000, 1, 'CONTROL', 20000)
++        self.assertNotIn('isource_Arms', e.rows[-1])
++
++    def test_p8_keys_leave_the_four_formal_strategies_unchanged(self):
++        """Strip every key P8 added: the four formal strategies log exactly the same rows and events."""
++        model.configure(CFG)
++        self.assertTrue(set(P8_KEYS) <= set(CFG))
++        stripped = {k: v for k, v in CFG.items() if k not in P8_KEYS}
++        for strategy in STRATEGIES:
++            with self.subTest(strategy=strategy):
++                logs = []
++                for cfg in (copy.deepcopy(CFG), copy.deepcopy(stripped)):
++                    e = Engine(cfg, [BASE, 'CASE_FS_M5'], strategy, 'TEST')
++                    run_policy(Executor(e), strategy, float(model.response(900000, e.cases[BASE])['phase_deg'][0]))
++                    logs.append((e.rows, e.events))
++                self.assertEqual(logs[0], logs[1])
++
++    def test_physical_candidate_files(self):
++        self.assertEqual(self.cfg['nominal_peak_width_Hz'],
++                         round(half_power_width(model.scenario_map()[BASE], 900000.)))
++        synthetic = json.loads(CANDIDATE.read_text(encoding='utf-8'))
++        self.assertEqual({k for k in self.cfg if self.cfg[k] != synthetic.get(k)},
++                         {'version', 'parameter_origin', 'user_boundaries', 'baseline_design_file',
++                          'baseline_calibration_file', 'current_limit_measurement_point', 'user_current_limit_rule',
++                          'current_limit_points', 'nominal_peak_width_Hz', 'capture_scan_amplitude',
++                          'capture_scan_rule'})
++        self.assertLessEqual(self.cfg['current_hard_Arms'], self.cfg['user_current_limit_Arms'])
++        # Every registered scenario stays inside the soft limits at a=1 anywhere in the band,
++        # which is what lets the capture scan at full drive (capture_scan_amplitude = 1).
++        self.assertEqual(self.cfg['capture_scan_amplitude'], 1.)
++        f = np.arange(self.cfg['frequency_min_Hz'], self.cfg['frequency_max_Hz']+1, 100.)
++        for case in model.all_scenarios():
++            q = model.response(f, case)
++            self.assertLess(q['vport_vpp'].max(), self.cfg['voltage_soft_Vpp'])
++            self.assertLess(model.limited_current(q).max(), self.cfg['current_soft_Arms'])
++
++    def test_report_and_check_follow_both_points(self):
++        line = current_limit_line(self.cfg)
++        self.assertIn('功放输出端', line)
++        self.assertIn('尚未确定', line)
++        rows = [dict(iport_Arms=.004, isource_Arms=.0052, duration_us=20000, p_rm_W=.1, pre_guard_sample_here=True,
++                     pre_guard_iport_Arms=.004, pre_guard_isource_Arms=.0053)]
++        both = user_limit_check(rows, .005, ('transducer_port', 'amplifier_output'))
++        self.assertEqual((both['rows_above'], user_limit_check(rows, .005)['rows_above']), (1, 0))
++        self.assertAlmostEqual(both['peak_post_guard_mArms'], 5.2, places=12)
++        self.assertEqual(both['pre_guard_predictions_above'], 1)
++        text = '\n'.join(user_limit_lines(self.cfg, {('S', 'ADMITTANCE_TRACK'): both},
++                                          {BASE: dict(current_Arms=.0038, within_limit_fraction=1.)},
++                                          ('ADMITTANCE_TRACK',)))
++        self.assertIn('换能器端与功放输出端', text)
++        self.assertIn('|ADMITTANCE_TRACK|5.200|', text)
++
++    def test_recovery_times(self):
++        rows = [dict(start_us=s, end_us=e, p_rm_W=p) for s, e, p in
++                [(0, 20000, .1), (20000, 21500, .96), (21500, 40000, .5), (40000, 60000, .97), (60000, 100000, 1.)]]
++        self.assertEqual(recovery_times(rows, 0, 1., CFG), (20., 40.))
++        self.assertEqual(recovery_times(rows[:3], 0, 1., CFG), (20., None))
++
++    def test_capture_returns_every_valid_point_it_took(self):
++        model.configure(CFG)
++        e = Engine(copy.deepcopy(CFG), ['CASE_FS_M5'], 'CAPTURE_PO', 'TEST')
++        e.protection.amplitude = CFG['capture_scan_amplitude']   # as in the capture tests above
++        r = capture(Executor(e), 900000., CFG['nominal_peak_width_Hz'])
++        self.assertTrue(r.ok)
++        self.assertEqual(len(r.samples), r.points)
++        self.assertTrue(all(valid_measurement(m) for m in r.samples))
++
++
++class AdmittanceTrackTests(unittest.TestCase):
++    """ADMITTANCE_TRACK, the opt-in fifth strategy (P8, review/32), on the physical candidate."""
++
++    def setUp(self):
++        self.addCleanup(model.configure, CFG)
++        self.cfg = json.loads(PHYSICAL.read_text(encoding='utf-8'))
++        model.configure(self.cfg)
++        self.refs = references(self.cfg)
++
++    def run_track(self, ids, cfg=None):
++        e = Engine(copy.deepcopy(cfg or self.cfg), ids, 'ADMITTANCE_TRACK', 'TEST')
++        run_policy(Executor(e), 'ADMITTANCE_TRACK', 0.)
++        return e
++
++    def test_it_is_not_a_formal_strategy(self):
++        self.assertNotIn('ADMITTANCE_TRACK', STRATEGIES)
++        self.assertEqual(EXTRA_STRATEGIES, ('ADMITTANCE_TRACK',))
++        with self.assertRaises(ValueError):
++            run_policy(Executor(Engine(copy.deepcopy(self.cfg), [BASE], 'X', 'TEST')), 'X', 0.)
++
++    def test_fit_and_updates(self):
++        true = AM.design_prior()
++        f = np.linspace(850e3, 950e3, 21)
++        est, residual = AM.fit_bvd(f, [AM.admittance(x, true) for x in f])
++        self.assertLess(residual, 1e-9)
++        for a, b in ((est.c0, true.c0), (est.rm, true.rm), (est.lm, true.lm), (est.cm, true.cm)):
++            self.assertAlmostEqual(a/b, 1., places=6)
++        # One point with Lm held finds a shifted fs exactly while Lm is unchanged ...
++        moved = replace(true, cm=true.cm/1.1)
++        one = AM.update(true, [(9e5, AM.motional(9e5, AM.admittance(9e5, moved), true.c0))], .25)
++        self.assertAlmostEqual(one.fs/moved.fs, 1., places=9)
++        # ... and two points far enough apart find a changed Lm as well.
++        both = replace(true, lm=true.lm*1.2)
++        pts = [(x, AM.motional(x, AM.admittance(x, both), true.c0)) for x in (9e5, both.fs+.3*both.width)]
++        two = AM.update(true, pts, .25)
++        self.assertAlmostEqual(two.lm/both.lm, 1., places=9)
++        self.assertAlmostEqual(two.fs/both.fs, 1., places=9)
++
++    def test_it_follows_an_fs_shift_in_two_moves_without_a_capture(self):
++        e = self.run_track([BASE, 'CASE_FS_M5'])
++        moves = [x for x in e.events if x['event'] == 'ADMITTANCE_MOVE' and x['time_us'] >= self.cfg['segment_us']]
++        self.assertEqual(len(moves), 2)
++        self.assertNotIn('SCAN_ATTEMPT_START', [x['event'] for x in e.events])
++        self.assertLessEqual(abs(moves[-1]['to_frequency_Hz']-self.refs['CASE_FS_M5']['policy']['frequency_Hz']), 100.)
++        per, _ = evaluate(e.rows, e.events, self.cfg, self.refs)
++        self.assertTrue(per[1]['settled'])
++        self.assertLessEqual(per[1]['sustained_recovery_level_ms'], 40.)
++
++    def test_a_lower_peak_is_explained_without_a_capture(self):
++        # Rm +50 %: the peak stays where it is and drops by a third. The model explains the
++        # level and relearns the reference; CAPTURE_PO's power monitor reports a change.
++        e = self.run_track([BASE, 'CASE_RM_P50'])
++        late = [x for x in e.events if x['time_us'] >= self.cfg['segment_us']]
++        self.assertFalse({'SCAN_ATTEMPT_START', 'ADMITTANCE_MOVE', 'POWER_CHANGE_DETECTED'} & {x['event'] for x in late})
++        update = next(x for x in late if x['event'] == 'ADMITTANCE_MODEL_UPDATE')
++        self.assertAlmostEqual(update['rm_ohm']/model.BASE_BVD.rm, 1.5, places=9)
++        po = Engine(copy.deepcopy(self.cfg), [BASE, 'CASE_RM_P50'], 'CAPTURE_PO', 'TEST')
++        run_policy(Executor(po), 'CAPTURE_PO', 0.)
++        self.assertIn('POWER_CHANGE_DETECTED', [x['event'] for x in po.events])
++
++    def test_an_implausible_update_falls_back_to_a_capture_and_refits(self):
++        # fs -5 % with C0 +30 %: away from the new peak the motional branch is too small to
++        # de-embed with the old C0; the update is refused and the capture finds the peak.
++        e = self.run_track([BASE, 'CASE_COMBINED_HIGH'])
++        lost = [x for x in e.events if x['event'] == 'ADMITTANCE_MODEL_LOST']
++        self.assertEqual(lost[0]['reason'], 'IMPLAUSIBLE_UPDATE')
++        start = next(x for x in e.events if x['event'] == 'SCAN_ATTEMPT_START')
++        self.assertEqual(start['trigger'], 'ADMITTANCE_LOST')
++        refit = next(x for x in e.events if x['event'] == 'ADMITTANCE_REFIT')
++        self.assertTrue(refit['adopted'])
++        self.assertAlmostEqual(refit['fs_Hz']/model.scenario_map()['CASE_COMBINED_HIGH'].bvd.fs, 1., places=6)
++        per, _ = evaluate(e.rows, e.events, self.cfg, self.refs)
++        self.assertTrue(per[1]['settled'])
++
++    def test_a_load_that_comes_back_is_recognised_without_a_probe(self):
++        # Lm +20 % and back: the remembered design estimate predicts the first sample after the
++        # return, so the point goes straight back in one move, with no probe and no capture.
++        e = self.run_track([BASE, 'CASE_LM_P20', BASE])
++        late = [x for x in e.events if x['time_us'] >= 2*self.cfg['segment_us']]
++        match = [x for x in late if x['event'] == 'ADMITTANCE_MEMORY_MATCH']
++        self.assertEqual(len(match), 1)
++        self.assertAlmostEqual(match[0]['fs_Hz'], model.BASE_BVD.fs, places=6)
++        self.assertEqual(len([x for x in late if x['event'] == 'ADMITTANCE_MOVE']), 1)
++        self.assertFalse(any(r['kind'] not in ('CONTROL', 'AMPLITUDE_BACKOFF')
++                             for r in e.rows if r['start_us'] >= 2*self.cfg['segment_us']))
++        per, _ = evaluate(e.rows, e.events, self.cfg, self.refs)
++        self.assertLessEqual(per[2]['sustained_recovery_level_ms'], 20.)
++
++    def test_a_model_move_that_measures_worse_is_undone(self):
++        # Force one wrong model move on the baseline: the next sample is worse, the move is undone,
++        # model moves are suspended and P&O takes over from the old point.
++        real = AdmittanceTracker.observe
++        calls = []
++
++        def wrong_once(tracker, io, m, f_op):
++            if not calls and m.time_us >= 100000:
++                calls.append(f_op)
++                tracker.level = 1.
++                return 'MOVE', f_op+20000., False
++            return real(tracker, io, m, f_op)
++        with patch.object(AdmittanceTracker, 'observe', wrong_once):
++            e = self.run_track([BASE])
++        undone = [x for x in e.events if x['event'] == 'ADMITTANCE_MOVE_UNDONE']
++        self.assertEqual(len(undone), 1)
++        self.assertEqual(undone[0]['to_frequency_Hz'], calls[0])
++        self.assertIn('ADMITTANCE_UNDONE', [x.get('reason') for x in e.events if x['event'] == 'PO_START'])
++        per, _ = evaluate(e.rows, e.events, self.cfg, self.refs)
++        self.assertTrue(per[0]['settled'])
++
++    def test_a_network_change_alone_never_moves_the_point(self):
++        # Default baseline, Lmatch +10 %: the port admittance is unchanged, only k moves.
++        model.configure(CFG)
++        e = self.run_track([BASE, 'CASE_LMATCH_P10'], CFG)
++        late = [x for x in e.events if x['time_us'] >= CFG['segment_us']]
++        self.assertNotIn('ADMITTANCE_MOVE', [x['event'] for x in late])
++        self.assertTrue(any(x['event'] == 'ADMITTANCE_MODEL_UPDATE' and x['network_changed'] and not x['bvd_updated']
++                            for x in late))
++
++    def test_the_historical_schedule_on_the_candidate(self):
++        e = self.run_track(self.cfg['historical_schedule'])
++        _, overall = evaluate(e.rows, e.events, self.cfg, self.refs)
++        self.assertEqual(overall['logged_duration_s'], 9.6)
++        self.assertEqual(overall['settled_segments'], 12)
++        self.assertEqual(overall['actual_hard_violation_duration_ms'], 0.)
++
++
+ if __name__ == '__main__':
+     unittest.main(verbosity=2)

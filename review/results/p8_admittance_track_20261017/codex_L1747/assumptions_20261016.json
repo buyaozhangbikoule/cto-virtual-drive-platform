@@ -1,0 +1,33 @@
+{
+  "purpose": "review/32: same reconstruction, length 1.7467 mm (loaded fs 0.9 MHz)",
+  "material": {
+    "rho_kg_m3": 7600.0,
+    "eps33T_relative": 1050.0,
+    "Y33E_Pa": 72000000000.0,
+    "k33": 0.62,
+    "Qm_vendor_typical": 1000.0,
+    "tan_delta_vendor_low_frequency": 0.004
+  },
+  "geometry": {
+    "length_m": 0.0017467,
+    "diameters_m": [
+      0.0004,
+      0.0005,
+      0.0006
+    ]
+  },
+  "fit": {
+    "band_Hz": [
+      800000.0,
+      1000000.0
+    ],
+    "samples": 1601,
+    "acceptance_max_relative_impedance_error": 0.05
+  },
+  "boundary": {
+    "radiation_load_multipliers_for_sensitivity": [
+      0.5,
+      2.0
+    ]
+  }
+}

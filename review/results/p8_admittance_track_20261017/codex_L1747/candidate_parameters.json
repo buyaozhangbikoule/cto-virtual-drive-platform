@@ -1,0 +1,914 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-16",
+  "purpose": "review/32: same reconstruction, length 1.7467 mm (loaded fs 0.9 MHz)",
+  "assumptions_file": "assumptions_20261016.json",
+  "assumptions_sha256": "97346acea825c721d1b831f9aa8ce881c3330b1b446f90ed8ce004c0b0022b16",
+  "script_sha256": "183f76411b15945031248c50daa3cbedd85f5a1f7732421d40c3f0ed36951a23",
+  "power_target_W": null,
+  "candidates": [
+    {
+      "id": "APC880_D0.4_L1.8_front_BMF",
+      "status": "unmeasured_model_candidate",
+      "element": {
+        "d": 0.0004,
+        "length": 0.0017467,
+        "area": 1.2566370614359172e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 4.1174485764034717e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 914201.9649685763,
+        "free_lossless_fp": 1122953.648684783,
+        "k2": 0.3844,
+        "assumed_free_Q": 1000.0,
+        "elastic_eta": 0.000645301450972988,
+        "free_local_Q_check": 1000.0000000958382
+      },
+      "bvd": {
+        "c0": 4.4525985194539246e-13,
+        "rm": 10003.06274708748,
+        "fs": 901977.2519513881,
+        "q": 77.08101243298063,
+        "lm": 0.1360520062446736,
+        "cm": 2.2884643091871163e-13,
+        "fp_bvd_lossless": 1109821.1663440878,
+        "k_eff_bvd": 0.5826501791621268,
+        "motional_bandwidth_Hz": 11701.678837387188,
+        "amplitude_ringdown_tau_s": 2.7202069942885615e-05,
+        "fit": {
+          "iterations": 10,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.013316325624990358,
+          "relative_Y_L2_error": 0.005238727956706099,
+          "max_relative_Z_error_without_dielectric": 0.01621018990257625,
+          "passes_5percent_gate": true
+        }
+      },
+      "dielectric_conductance": {
+        "formula": "G(f)=2*pi*f*C_clamped*tan_delta",
+        "C_clamped_F": 4.1174485764034717e-13,
+        "tan_delta": 0.004
+      },
+      "points": {
+        "at_900k_100Vpp": {
+          "f_Hz": 900000.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.003393575531510365,
+          "amplifier_Arms": 0.003393575531510365,
+          "port_P_W": 0.11266417457587359,
+          "port_phase_deg": -20.112926829949995,
+          "power_factor": 0.9390166931564221,
+          "required_Thevenin_Vpp": 100.4507922654593,
+          "source_50ohm_loss_W": 0.0005758177444032929,
+          "bvd_port_P_W": 0.1121395746588379
+        },
+        "at_fs_100Vpp": {
+          "f_Hz": 901977.2519513881,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.0035438575486870043,
+          "amplifier_Arms": 0.0035438575486870043,
+          "port_P_W": 0.12525961827978263,
+          "port_phase_deg": -1.3478442714509076,
+          "power_factor": 0.9997233159362011,
+          "required_Thevenin_Vpp": 100.5010391645297,
+          "source_50ohm_loss_W": 0.0006279463162692932,
+          "bvd_port_P_W": 0.12497339477135871
+        }
+      },
+      "constrained_optima": {
+        "V100_I4mA": {
+          "f_Hz": 901950.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.003544378038883193,
+          "amplifier_Arms": 0.003544378038883193,
+          "port_P_W": 0.12526290421724995,
+          "port_phase_deg": -1.615085298325899,
+          "power_factor": 0.9996027289577442,
+          "required_Thevenin_Vpp": 100.50105260984805,
+          "source_50ohm_loss_W": 0.0006281307841258735,
+          "bvd_port_P_W": 0.12497068335607286,
+          "binding_constraint": "voltage",
+          "front_displacement_peak_m": 3.812388803068252e-07,
+          "front_velocity_rms_m_s": 1.5277226544575355,
+          "model_front_radiation_P_W": 0.11551117908410967
+        },
+        "V100_I5mA": {
+          "f_Hz": 901950.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.003544378038883193,
+          "amplifier_Arms": 0.003544378038883193,
+          "port_P_W": 0.12526290421724995,
+          "port_phase_deg": -1.615085298325899,
+          "power_factor": 0.9996027289577442,
+          "required_Thevenin_Vpp": 100.50105260984805,
+          "source_50ohm_loss_W": 0.0006281307841258735,
+          "bvd_port_P_W": 0.12497068335607286,
+          "binding_constraint": "voltage",
+          "front_displacement_peak_m": 3.812388803068252e-07,
+          "front_velocity_rms_m_s": 1.5277226544575355,
+          "model_front_radiation_P_W": 0.11551117908410967
+        },
+        "V160_I5mA": {
+          "f_Hz": 904875.0,
+          "port_Vpp": 160.0,
+          "ceramic_Arms": 0.0049996991906910565,
+          "amplifier_Arms": 0.0049996991906910565,
+          "port_P_W": 0.2565603935181752,
+          "port_phase_deg": 24.88794975532644,
+          "power_factor": 0.9071325449857498,
+          "required_Thevenin_Vpp": 160.64167658068837,
+          "source_50ohm_loss_W": 0.0012498495998698404,
+          "bvd_port_P_W": 0.2570809700753698,
+          "binding_constraint": "voltage",
+          "front_displacement_peak_m": 5.424037392410416e-07,
+          "front_velocity_rms_m_s": 2.1806006388540937,
+          "model_front_radiation_P_W": 0.23673066941705528
+        }
+      },
+      "verification": {
+        "free_analytic_relative_error": 4.908032117851247e-13,
+        "power_balance_relative_error": 1.5609594158362033e-15,
+        "independent_mason_relative_error": 1.684425822806828e-13,
+        "passive": true
+      },
+      "load_sensitivity": [
+        {
+          "scale": 0.5,
+          "bvd": {
+            "c0": 4.44253227666575e-13,
+            "rm": 5457.051812551536,
+            "fs": 908038.0802111451,
+            "q": 141.12013787822647,
+            "lm": 0.13497804673441924,
+            "cm": 2.2759829297545273e-13,
+            "fp_bvd_lossless": 1116671.4641596535,
+            "k_eff_bvd": 0.5820333204343963,
+            "motional_bandwidth_Hz": 6434.503918885746,
+            "amplitude_ringdown_tau_s": 4.946921941402935e-05,
+            "fit": {
+              "iterations": 10,
+              "band_Hz": [
+                800000.0,
+                1000000.0
+              ],
+              "max_relative_Z_error": 0.005789853235244367,
+              "relative_Y_L2_error": 0.002336232938136135,
+              "max_relative_Z_error_without_dielectric": 0.008377982338943386,
+              "passes_5percent_gate": true
+            }
+          },
+          "normal": {
+            "f_Hz": 912000.0,
+            "port_Vpp": 99.64656913810094,
+            "ceramic_Arms": 0.004,
+            "amplifier_Arms": 0.004,
+            "port_P_W": 0.09066216796377456,
+            "port_phase_deg": 49.957763068175346,
+            "power_factor": 0.6433521426654563,
+            "required_Thevenin_Vpp": 100.01144172226171,
+            "source_50ohm_loss_W": 0.0007999999999999999,
+            "bvd_port_P_W": 0.09063037209472809,
+            "binding_constraint": "current",
+            "front_displacement_peak_m": 4.335534624301837e-07,
+            "front_velocity_rms_m_s": 1.756719280281619,
+            "model_front_radiation_P_W": 0.07792726635883311
+          }
+        },
+        {
+          "scale": 2.0,
+          "bvd": {
+            "c0": 4.5052574979479057e-13,
+            "rm": 18713.77873702502,
+            "fs": 890176.1081992275,
+            "q": 41.23481559468059,
+            "lm": 0.13796526031909848,
+            "cm": 2.3169606112372773e-13,
+            "fp_bvd_lossless": 1095415.6082527465,
+            "k_eff_bvd": 0.582769112360773,
+            "motional_bandwidth_Hz": 21587.973545201516,
+            "amplitude_ringdown_tau_s": 1.4744778407167508e-05,
+            "fit": {
+              "iterations": 7,
+              "band_Hz": [
+                800000.0,
+                1000000.0
+              ],
+              "max_relative_Z_error": 0.029994874082810315,
+              "relative_Y_L2_error": 0.011571936937524301,
+              "max_relative_Z_error_without_dielectric": 0.0335909997660135,
+              "passes_5percent_gate": true
+            }
+          },
+          "normal": {
+            "f_Hz": 890050.0,
+            "port_Vpp": 99.99999999999999,
+            "ceramic_Arms": 0.0019071353191770029,
+            "amplifier_Arms": 0.0019071353191770029,
+            "port_P_W": 0.0673322926499922,
+            "port_phase_deg": -3.043782732286953,
+            "power_factor": 0.9985892505245517,
+            "required_Thevenin_Vpp": 100.26933019334729,
+            "source_50ohm_loss_W": 0.00018185825628261844,
+            "bvd_port_P_W": 0.06679809830059083,
+            "binding_constraint": "voltage",
+            "front_displacement_peak_m": 2.0659799917409444e-07,
+            "front_velocity_rms_m_s": 0.8169686403098134,
+            "model_front_radiation_P_W": 0.0644804594169727
+          }
+        }
+      ]
+    },
+    {
+      "id": "APC880_D0.5_L1.8_front_BMF",
+      "status": "unmeasured_model_candidate",
+      "element": {
+        "d": 0.0005,
+        "length": 0.0017467,
+        "area": 1.9634954084936208e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 6.433513400630425e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 914201.9649685763,
+        "free_lossless_fp": 1122953.648684783,
+        "k2": 0.3844,
+        "assumed_free_Q": 1000.0,
+        "elastic_eta": 0.0006453014509729877,
+        "free_local_Q_check": 1000.0000000958395
+      },
+      "bvd": {
+        "c0": 6.987135501654816e-13,
+        "rm": 9256.753684748222,
+        "fs": 900124.2252361794,
+        "q": 53.1671157123813,
+        "lm": 0.08702008233437314,
+        "cm": 3.592657969380343e-13,
+        "fp_bvd_lossless": 1107621.7168436402,
+        "k_eff_bvd": 0.5827326362274197,
+        "motional_bandwidth_Hz": 16930.09321975619,
+        "amplitude_ringdown_tau_s": 1.88014254884519e-05,
+        "fit": {
+          "iterations": 11,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.018333218771709594,
+          "relative_Y_L2_error": 0.007581226177810944,
+          "max_relative_Z_error_without_dielectric": 0.021308750982797657,
+          "passes_5percent_gate": true
+        }
+      },
+      "dielectric_conductance": {
+        "formula": "G(f)=2*pi*f*C_clamped*tan_delta",
+        "C_clamped_F": 6.433513400630425e-13,
+        "tan_delta": 0.004
+      },
+      "points": {
+        "at_900k_100Vpp": {
+          "f_Hz": 900000.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.003840290825175019,
+          "amplifier_Arms": 0.003840290825175019,
+          "port_P_W": 0.13561857073722075,
+          "port_phase_deg": -2.7487102500108334,
+          "power_factor": 0.9988494662379725,
+          "required_Thevenin_Vpp": 100.54247765627328,
+          "source_50ohm_loss_W": 0.0007373916810961714,
+          "bvd_port_P_W": 0.1350256525483902
+        },
+        "at_fs_100Vpp": {
+          "f_Hz": 900124.2252361794,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.003837930422719811,
+          "amplifier_Arms": 0.003837930422719811,
+          "port_P_W": 0.13561630514056322,
+          "port_phase_deg": -1.9054088783970484,
+          "power_factor": 0.9994470815486921,
+          "required_Thevenin_Vpp": 100.54246684019168,
+          "source_50ohm_loss_W": 0.0007364854964819132,
+          "bvd_port_P_W": 0.13505473400585305
+        }
+      },
+      "constrained_optima": {
+        "V100_I4mA": {
+          "f_Hz": 900050.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.0038394412001699087,
+          "amplifier_Arms": 0.0038394412001699087,
+          "port_P_W": 0.13562475420231546,
+          "port_phase_deg": -2.409255515645944,
+          "power_factor": 0.9991160525023487,
+          "required_Thevenin_Vpp": 100.54250160771038,
+          "source_50ohm_loss_W": 0.0007370654364781074,
+          "bvd_port_P_W": 0.13504435009514215,
+          "binding_constraint": "voltage",
+          "front_displacement_peak_m": 2.645268135369352e-07,
+          "front_velocity_rms_m_s": 1.0577942629771115,
+          "model_front_radiation_P_W": 0.12828852808596117
+        },
+        "V100_I5mA": {
+          "f_Hz": 900050.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.0038394412001699087,
+          "amplifier_Arms": 0.0038394412001699087,
+          "port_P_W": 0.13562475420231546,
+          "port_phase_deg": -2.409255515645944,
+          "power_factor": 0.9991160525023487,
+          "required_Thevenin_Vpp": 100.54250160771038,
+          "source_50ohm_loss_W": 0.0007370654364781074,
+          "bvd_port_P_W": 0.13504435009514215,
+          "binding_constraint": "voltage",
+          "front_displacement_peak_m": 2.645268135369352e-07,
+          "front_velocity_rms_m_s": 1.0577942629771115,
+          "model_front_radiation_P_W": 0.12828852808596117
+        },
+        "V160_I5mA": {
+          "f_Hz": 905600.0,
+          "port_Vpp": 159.9215344257882,
+          "ceramic_Arms": 0.004999999999999999,
+          "amplifier_Arms": 0.004999999999999999,
+          "port_P_W": 0.24299211275653948,
+          "port_phase_deg": 30.736329997281853,
+          "power_factor": 0.8595283746966756,
+          "required_Thevenin_Vpp": 160.52971956402277,
+          "source_50ohm_loss_W": 0.0012499999999999996,
+          "bvd_port_P_W": 0.24395626760359126,
+          "binding_constraint": "current",
+          "front_displacement_peak_m": 3.501708651946505e-07,
+          "front_velocity_rms_m_s": 1.4089036478816348,
+          "model_front_radiation_P_W": 0.23001817474093908
+        }
+      },
+      "verification": {
+        "free_analytic_relative_error": 4.911728488897905e-13,
+        "power_balance_relative_error": 1.1719863655210825e-15,
+        "independent_mason_relative_error": 1.3734771213668978e-13,
+        "passive": true
+      },
+      "load_sensitivity": [
+        {
+          "scale": 0.5,
+          "bvd": {
+            "c0": 6.947824703478958e-13,
+            "rm": 4944.431724229891,
+            "fs": 907103.590987239,
+            "q": 99.570401752428,
+            "lm": 0.0863793415400902,
+            "cm": 3.563826901082326e-13,
+            "fp_bvd_lossless": 1115752.6811458957,
+            "k_eff_bvd": 0.58226786416757,
+            "motional_bandwidth_Hz": 9110.173053661698,
+            "amplitude_ringdown_tau_s": 3.494004826350151e-05,
+            "fit": {
+              "iterations": 20,
+              "band_Hz": [
+                800000.0,
+                1000000.0
+              ],
+              "max_relative_Z_error": 0.008223457228949719,
+              "relative_Y_L2_error": 0.0034029851796718333,
+              "max_relative_Z_error_without_dielectric": 0.01084359978959669,
+              "passes_5percent_gate": true
+            }
+          },
+          "normal": {
+            "f_Hz": 913575.0,
+            "port_Vpp": 99.92639988491023,
+            "ceramic_Arms": 0.004,
+            "amplifier_Arms": 0.004,
+            "port_P_W": 0.08414876774951524,
+            "port_phase_deg": 53.45457556767485,
+            "power_factor": 0.5954599022150846,
+            "required_Thevenin_Vpp": 100.26427284012286,
+            "source_50ohm_loss_W": 0.0007999999999999999,
+            "bvd_port_P_W": 0.08404906002445031,
+            "binding_constraint": "current",
+            "front_displacement_peak_m": 2.797319970517561e-07,
+            "front_velocity_rms_m_s": 1.1354060994800999,
+            "model_front_radiation_P_W": 0.07582937486108099
+          }
+        },
+        {
+          "scale": 2.0,
+          "bvd": {
+            "c0": 7.14396959301839e-13,
+            "rm": 17480.265597481903,
+            "fs": 886532.8712671667,
+            "q": 28.03041759322034,
+            "lm": 0.0879635773931732,
+            "cm": 3.6639344349909123e-13,
+            "fp_bvd_lossless": 1090424.9607280884,
+            "k_eff_bvd": 0.5822414327801488,
+            "motional_bandwidth_Hz": 31627.52992597551,
+            "amplitude_ringdown_tau_s": 1.0064329618177505e-05,
+            "fit": {
+              "iterations": 14,
+              "band_Hz": [
+                800000.0,
+                1000000.0
+              ],
+              "max_relative_Z_error": 0.03901959004310803,
+              "relative_Y_L2_error": 0.016215219909747065,
+              "max_relative_Z_error_without_dielectric": 0.042827234689630574,
+              "passes_5percent_gate": true
+            }
+          },
+          "normal": {
+            "f_Hz": 886250.0,
+            "port_Vpp": 99.99999999999999,
+            "ceramic_Arms": 0.002052598312588342,
+            "amplifier_Arms": 0.002052598312588342,
+            "port_P_W": 0.072350779235243,
+            "port_phase_deg": -4.457739459756749,
+            "power_factor": 0.9969749328471071,
+            "required_Thevenin_Vpp": 100.28940565475921,
+            "source_50ohm_loss_W": 0.00021065799164202544,
+            "bvd_port_P_W": 0.07150424269944358,
+            "binding_constraint": "voltage",
+            "front_displacement_peak_m": 1.4244341074928138e-07,
+            "front_velocity_rms_m_s": 0.5608716426039824,
+            "model_front_radiation_P_W": 0.07022730940327387
+          }
+        }
+      ]
+    },
+    {
+      "id": "APC880_D0.6_L1.8_front_BMF",
+      "status": "unmeasured_model_candidate",
+      "element": {
+        "d": 0.0006,
+        "length": 0.0017467,
+        "area": 2.8274333882308133e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 9.26425929690781e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 914201.9649685763,
+        "free_lossless_fp": 1122953.648684783,
+        "k2": 0.3844,
+        "assumed_free_Q": 1000.0,
+        "elastic_eta": 0.0006453014509729878,
+        "free_local_Q_check": 1000.0000000958386
+      },
+      "bvd": {
+        "c0": 1.011699901895637e-12,
+        "rm": 8585.667982359333,
+        "fs": 898905.4994331264,
+        "q": 39.63106342600912,
+        "lm": 0.06024429271493657,
+        "cm": 5.203508621302986e-13,
+        "fp_bvd_lossless": 1106177.3492461522,
+        "k_eff_bvd": 0.5827892890193587,
+        "motional_bandwidth_Hz": 22681.841508274836,
+        "amplitude_ringdown_tau_s": 1.4033687964342059e-05,
+        "fit": {
+          "iterations": 11,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.02158523503717498,
+          "relative_Y_L2_error": 0.009503841427887124,
+          "max_relative_Z_error_without_dielectric": 0.024597304785819594,
+          "passes_5percent_gate": true
+        }
+      },
+      "dielectric_conductance": {
+        "formula": "G(f)=2*pi*f*C_clamped*tan_delta",
+        "C_clamped_F": 9.26425929690781e-13,
+        "tan_delta": 0.004
+      },
+      "points": {
+        "at_900k_100Vpp": {
+          "f_Hz": 900000.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.004100513047496068,
+          "amplifier_Arms": 0.004100513047496068,
+          "port_P_W": 0.14477582282656887,
+          "port_phase_deg": 3.0039471515282004,
+          "power_factor": 0.9986259269194747,
+          "required_Thevenin_Vpp": 100.57910788233463,
+          "source_50ohm_loss_W": 0.0008407103626342745,
+          "bvd_port_P_W": 0.1442757571551299
+        },
+        "at_fs_100Vpp": {
+          "f_Hz": 898905.4994331264,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.004145854636305732,
+          "amplifier_Arms": 0.004145854636305732,
+          "port_P_W": 0.14643674073710522,
+          "port_phase_deg": -2.5164861224328408,
+          "power_factor": 0.9990356293083265,
+          "required_Thevenin_Vpp": 100.58575025719593,
+          "source_50ohm_loss_W": 0.0008594055332688867,
+          "bvd_port_P_W": 0.14561762960239014
+        }
+      },
+      "constrained_optima": {
+        "V100_I4mA": {
+          "f_Hz": 901300.0,
+          "port_Vpp": 99.99398305595133,
+          "ceramic_Arms": 0.004,
+          "amplifier_Arms": 0.004,
+          "port_P_W": 0.13951826683913876,
+          "port_phase_deg": 9.389354938758082,
+          "power_factor": 0.9866024891332463,
+          "required_Thevenin_Vpp": 100.55213205529355,
+          "source_50ohm_loss_W": 0.0007999999999999999,
+          "bvd_port_P_W": 0.13940333831373813,
+          "binding_constraint": "current",
+          "front_displacement_peak_m": 1.9282853114894514e-07,
+          "front_velocity_rms_m_s": 0.77215686089695,
+          "model_front_radiation_P_W": 0.13387648200408594
+        },
+        "V100_I5mA": {
+          "f_Hz": 898775.0,
+          "port_Vpp": 99.99999999999999,
+          "ceramic_Arms": 0.004148691548790136,
+          "amplifier_Arms": 0.004148691548790136,
+          "port_P_W": 0.14645276034082422,
+          "port_phase_deg": -3.17844321592406,
+          "power_factor": 0.9984616956224202,
+          "required_Thevenin_Vpp": 100.58581630182259,
+          "source_50ohm_loss_W": 0.0008605820783501349,
+          "bvd_port_P_W": 0.14559834779926967,
+          "binding_constraint": "voltage",
+          "front_displacement_peak_m": 1.9854078860658266e-07,
+          "front_velocity_rms_m_s": 0.7928035694900937,
+          "model_front_radiation_P_W": 0.1404950100444819
+        },
+        "V160_I5mA": {
+          "f_Hz": 907675.0,
+          "port_Vpp": 159.83324578438183,
+          "ceramic_Arms": 0.005,
+          "amplifier_Arms": 0.005,
+          "port_P_W": 0.23220543456033835,
+          "port_phase_deg": 34.73192567767718,
+          "power_factor": 0.8218267062034658,
+          "required_Thevenin_Vpp": 160.41487089923703,
+          "source_50ohm_loss_W": 0.00125,
+          "bvd_port_P_W": 0.23367161258519187,
+          "binding_constraint": "current",
+          "front_displacement_peak_m": 2.45690796383127e-07,
+          "front_velocity_rms_m_s": 0.9907957441399508,
+          "model_front_radiation_P_W": 0.2229373196744111
+        }
+      },
+      "verification": {
+        "free_analytic_relative_error": 4.908406433906603e-13,
+        "power_balance_relative_error": 1.3319276850174054e-15,
+        "independent_mason_relative_error": 7.270308416081043e-14,
+        "passive": true
+      },
+      "load_sensitivity": [
+        {
+          "scale": 0.5,
+          "bvd": {
+            "c0": 1.001435059731554e-12,
+            "rm": 4528.889851863308,
+            "fs": 906497.7200561868,
+            "q": 75.35570734346243,
+            "lm": 0.059918554062084406,
+            "cm": 5.144527658652174e-13,
+            "fp_bvd_lossless": 1115292.6825214375,
+            "k_eff_bvd": 0.5825580672078424,
+            "motional_bandwidth_Hz": 12029.582788261507,
+            "amplitude_ringdown_tau_s": 2.6460592340276188e-05,
+            "fit": {
+              "iterations": 10,
+              "band_Hz": [
+                800000.0,
+                1000000.0
+              ],
+              "max_relative_Z_error": 0.009961879399530409,
+              "relative_Y_L2_error": 0.004298969770085225,
+              "max_relative_Z_error_without_dielectric": 0.012601051557834949,
+              "passes_5percent_gate": true
+            }
+          },
+          "normal": {
+            "f_Hz": 916025.0,
+            "port_Vpp": 99.9391330070345,
+            "ceramic_Arms": 0.004,
+            "amplifier_Arms": 0.004,
+            "port_P_W": 0.07934801910749853,
+            "port_phase_deg": 55.84615456949178,
+            "power_factor": 0.561416941456583,
+            "required_Thevenin_Vpp": 100.25781127415325,
+            "source_50ohm_loss_W": 0.0007999999999999999,
+            "bvd_port_P_W": 0.07917503385625659,
+            "binding_constraint": "current",
+            "front_displacement_peak_m": 1.9613768665281761e-07,
+            "front_velocity_rms_m_s": 0.7982395573281832,
+            "model_front_radiation_P_W": 0.07342086883445482
+          }
+        },
+        {
+          "scale": 2.0,
+          "bvd": {
+            "c0": 1.0425396086524404e-12,
+            "rm": 16278.983560156887,
+            "fs": 884034.0433956771,
+            "q": 20.680833065811814,
+            "lm": 0.060610303069292486,
+            "cm": 5.347561998359444e-13,
+            "fp_bvd_lossless": 1087374.8459325323,
+            "k_eff_bvd": 0.5822658770483221,
+            "motional_bandwidth_Hz": 42746.53929957511,
+            "amplitude_ringdown_tau_s": 7.446448096137565e-06,
+            "fit": {
+              "iterations": 23,
+              "band_Hz": [
+                800000.0,
+                1000000.0
+              ],
+              "max_relative_Z_error": 0.04306031403079273,
+              "relative_Y_L2_error": 0.01911287066466056,
+              "max_relative_Z_error_without_dielectric": 0.04697328123475349,
+              "passes_5percent_gate": true
+            }
+          },
+          "normal": {
+            "f_Hz": 883600.0,
+            "port_Vpp": 99.99999999999999,
+            "ceramic_Arms": 0.0022112801738975335,
+            "amplifier_Arms": 0.0022112801738975335,
+            "port_P_W": 0.07777551603360217,
+            "port_phase_deg": -5.83481603633183,
+            "power_factor": 0.9948191178453816,
+            "required_Thevenin_Vpp": 100.3111071019906,
+            "source_50ohm_loss_W": 0.0002444880003736153,
+            "bvd_port_P_W": 0.07678016817176891,
+            "binding_constraint": "voltage",
+            "front_displacement_peak_m": 1.0652560175664063e-07,
+            "front_velocity_rms_m_s": 0.41819089590171366,
+            "model_front_radiation_P_W": 0.07605623047144779
+          }
+        }
+      ]
+    }
+  ],
+  "primary_sensitivity": [
+    {
+      "name": "length_minus5pct",
+      "element": {
+        "d": 0.0005,
+        "length": 0.00171,
+        "area": 1.9634954084936208e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 6.571589389988985e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 933822.5568483112,
+        "free_lossless_fp": 1147054.466758895,
+        "k2": 0.3844,
+        "assumed_free_Q": 1000,
+        "elastic_eta": 0.0006453014509545205,
+        "free_local_Q_check": 1000.0
+      },
+      "bvd": {
+        "c0": 7.13785858458869e-13,
+        "rm": 9173.619274304861,
+        "fs": 919277.9075636965,
+        "q": 51.44502818974139,
+        "lm": 0.08170665477826476,
+        "cm": 3.6685056055106046e-13,
+        "fp_bvd_lossless": 1131104.2997011303,
+        "k_eff_bvd": 0.5826460326541897,
+        "motional_bandwidth_Hz": 17869.130213578323,
+        "amplitude_ringdown_tau_s": 1.781339563701397e-05,
+        "fit": {
+          "iterations": 7,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.01567013088192711,
+          "relative_Y_L2_error": 0.007508438869374796,
+          "max_relative_Z_error_without_dielectric": 0.01769046343587309,
+          "passes_5percent_gate": true
+        }
+      },
+      "normal": {
+        "f_Hz": 919200.0,
+        "port_Vpp": 99.99999999999999,
+        "ceramic_Arms": 0.0038713106757067603,
+        "amplifier_Arms": 0.0038713106757067603,
+        "port_P_W": 0.13674468936811437,
+        "port_phase_deg": -2.4665795581717163,
+        "power_factor": 0.9990734946715589,
+        "required_Thevenin_Vpp": 100.54698151820095,
+        "source_50ohm_loss_W": 0.0007493523173920567,
+        "bvd_port_P_W": 0.13626890403528388,
+        "binding_constraint": "voltage",
+        "front_displacement_peak_m": 2.5564877971602115e-07,
+        "front_velocity_rms_m_s": 1.0440435393551626,
+        "model_front_radiation_P_W": 0.1295948268815947
+      }
+    },
+    {
+      "name": "length_plus5pct",
+      "element": {
+        "d": 0.0005,
+        "length": 0.00189,
+        "area": 1.9634954084936208e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 5.945723733799558e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 844887.0752437102,
+        "free_lossless_fp": 1037811.1842104287,
+        "k2": 0.3844,
+        "assumed_free_Q": 1000,
+        "elastic_eta": 0.0006453014510133067,
+        "free_local_Q_check": 999.9999998362874
+      },
+      "bvd": {
+        "c0": 6.451089562270475e-13,
+        "rm": 9549.389434507348,
+        "fs": 832447.4558125447,
+        "q": 60.28076810881137,
+        "lm": 0.11005700334200481,
+        "cm": 3.321306221997315e-13,
+        "fp_bvd_lossless": 1024568.0729128353,
+        "k_eff_bvd": 0.5829803755971624,
+        "motional_bandwidth_Hz": 13809.503128923534,
+        "amplitude_ringdown_tau_s": 2.3050060759760536e-05,
+        "fit": {
+          "iterations": 13,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.06774516635232401,
+          "relative_Y_L2_error": 0.007612164220023767,
+          "max_relative_Z_error_without_dielectric": 0.08752658745304867,
+          "passes_5percent_gate": false
+        }
+      },
+      "normal": {
+        "f_Hz": 832400.0,
+        "port_Vpp": 99.99999999999999,
+        "ceramic_Arms": 0.0037279267872936143,
+        "amplifier_Arms": 0.0037279267872936143,
+        "port_P_W": 0.13170703276697676,
+        "port_phase_deg": -2.176474088693432,
+        "power_factor": 0.9992785943856901,
+        "required_Thevenin_Vpp": 100.52683012497813,
+        "source_50ohm_loss_W": 0.0006948719065710644,
+        "bvd_port_P_W": 0.13090778627766086,
+        "binding_constraint": "voltage",
+        "front_displacement_peak_m": 3.006340790653583e-07,
+        "front_velocity_rms_m_s": 1.1118217138712203,
+        "model_front_radiation_P_W": 0.1236150628092889
+      }
+    },
+    {
+      "name": "free_Q_500",
+      "element": {
+        "d": 0.0005,
+        "length": 0.0018,
+        "area": 1.9634954084936208e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 6.243009920489535e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 887131.4290058957,
+        "free_lossless_fp": 1089701.7434209501,
+        "k2": 0.3844,
+        "assumed_free_Q": 500,
+        "elastic_eta": 0.0012906027407096406,
+        "free_local_Q_check": 500.0000000338379
+      },
+      "bvd": {
+        "c0": 6.77692332539895e-13,
+        "rm": 9897.799740865667,
+        "fs": 873694.2315122134,
+        "q": 52.77561325600028,
+        "lm": 0.09515521929412162,
+        "cm": 3.487295201103597e-13,
+        "fp_bvd_lossless": 1075241.7700806207,
+        "k_eff_bvd": 0.5828830296733816,
+        "motional_bandwidth_Hz": 16554.88544063255,
+        "amplitude_ringdown_tau_s": 1.922754991723025e-05,
+        "fit": {
+          "iterations": 11,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.023494433922723726,
+          "relative_Y_L2_error": 0.007133567859815348,
+          "max_relative_Z_error_without_dielectric": 0.02867531826475525,
+          "passes_5percent_gate": true
+        }
+      },
+      "normal": {
+        "f_Hz": 873650.0,
+        "port_Vpp": 99.99999999999999,
+        "ceramic_Arms": 0.003592153467160203,
+        "amplifier_Arms": 0.003592153467160203,
+        "port_P_W": 0.12690278362004234,
+        "port_phase_deg": -2.2626778680124913,
+        "power_factor": 0.9992203247387496,
+        "required_Thevenin_Vpp": 100.50761313565587,
+        "source_50ohm_loss_W": 0.0006451783265815535,
+        "bvd_port_P_W": 0.12630422283992837,
+        "binding_constraint": "voltage",
+        "front_displacement_peak_m": 2.627952544246676e-07,
+        "front_velocity_rms_m_s": 1.0200462655529479,
+        "model_front_radiation_P_W": 0.11328086407146216
+      }
+    },
+    {
+      "name": "free_Q_1500",
+      "element": {
+        "d": 0.0005,
+        "length": 0.0018,
+        "area": 1.9634954084936208e-07,
+        "eps_d": 5.723169918437664e-09,
+        "c_d": 116959064327.4854,
+        "h": 2802788404.397706,
+        "beta": 174728343.60175425,
+        "velocity": 3922.9262763154206,
+        "c_clamped": 6.243009920489535e-13,
+        "rho": 7600.0,
+        "tan_delta": 0.004,
+        "free_lossless_fs": 887131.4290058957,
+        "free_lossless_fp": 1089701.7434209501,
+        "k2": 0.3844,
+        "assumed_free_Q": 1500,
+        "elastic_eta": 0.0004302009772863101,
+        "free_local_Q_check": 1499.9999999661584
+      },
+      "bvd": {
+        "c0": 6.779570041707373e-13,
+        "rm": 9191.65426983062,
+        "fs": 873696.2878082594,
+        "q": 56.835847326244924,
+        "lm": 0.09516465134259562,
+        "cm": 3.486933151554054e-13,
+        "fp_bvd_lossless": 1075154.031668897,
+        "k_eff_bvd": 0.5827879150737317,
+        "motional_bandwidth_Hz": 15372.275226110954,
+        "amplitude_ringdown_tau_s": 2.07067517008229e-05,
+        "fit": {
+          "iterations": 12,
+          "band_Hz": [
+            800000.0,
+            1000000.0
+          ],
+          "max_relative_Z_error": 0.025584435775289866,
+          "relative_Y_L2_error": 0.00766716180620098,
+          "max_relative_Z_error_without_dielectric": 0.03077007368138409,
+          "passes_5percent_gate": true
+        }
+      },
+      "normal": {
+        "f_Hz": 873650.0,
+        "port_Vpp": 99.99999999999999,
+        "ceramic_Arms": 0.003868304548065723,
+        "amplifier_Arms": 0.003868304548065723,
+        "port_P_W": 0.13666907196032646,
+        "port_phase_deg": -2.148537483845837,
+        "power_factor": 0.999296992889994,
+        "required_Thevenin_Vpp": 100.54667837959536,
+        "source_50ohm_loss_W": 0.0007481890038292979,
+        "bvd_port_P_W": 0.13600513316185206,
+        "binding_constraint": "voltage",
+        "front_displacement_peak_m": 2.8302430258645527e-07,
+        "front_velocity_rms_m_s": 1.0985658152240299,
+        "model_front_radiation_P_W": 0.13139201530770914
+      }
+    }
+  ]
+}
